@@ -1,0 +1,6 @@
+v 3
+d Command to run robust median instrumental variable estimator 
+d commonly applied in Mendelian randomization studies
+d Recreates the R code of Bowden et al., Genetic Epidemiology, 2016, 
+d DOI: 10.1002/gepi.21965
+p mrmedian
