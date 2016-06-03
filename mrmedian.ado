@@ -1,8 +1,9 @@
-*! version 0.1.0 3jun2016 Tom Palmer
+*! version 0.1.0 03jun2016 Tom Palmer
 program mrmedian, eclass
-version 9.2 // maybe need 14.0 because of changes in seed
-syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string)]
+version 14.1 // maybe need 14.0 because of changes in seed
+syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string) reps(integer 1000)]
 
+local callersversion = _caller()
 tokenize `"`varlist'"'
 /*
 4 variables
@@ -18,7 +19,7 @@ qui gen double `weights' = (`2'/`3')^-2 `if' `in'
 
 ** number of instruments
 tempname k
-qui count `if' `in' // TODO: maybe need to check for different patterns of missing data
+qui count `if' `in' // TODO: missing data patterns??
 scalar `k' = r(N)
 
 ** put variables into Mata
@@ -33,8 +34,8 @@ if _rc {
 }
 
 ** seed option
-if "`seed'" == "" {
-	local seed .
+if "`seed'" != "" {
+	version `callersversion': set seed `seed'
 }
 
 ** weighted options
@@ -55,18 +56,18 @@ if "`weighted'" == "" & "`penweighted'" == "" {
 	mata `ones' = J(rows(`1'), 1, 1)
 	mata `b1' = weighted_median(`betaiv', `ones')
 	mata `s1' = weighted_median_boot(`1', `3', `2', `4', ///
-		`ones', seed=`seed')
+		`ones', reps=`reps')
 }
 else if "`weighted'" == "weighted" {
 	mata `b1' = weighted_median(`betaiv', `weights')
 	mata `s1' = weighted_median_boot(`1', `3', `2', `4', ///
-		`weights', seed=`seed')
+		`weights', reps=`reps')
 }
 else if "`penweighted'" == "penweighted" {
 	mata `pw' = pen_weights(`1', `3', `2')
 	mata `b1' = weighted_median(`betaiv', `pw')
 	mata `s1' = weighted_median_boot(`1', `3', `2', `4', ///
-		`pw', seed=`seed')
+		`pw', reps=`reps')
 }
 
 mata st_matrix("b", `b1')
@@ -78,7 +79,7 @@ matrix rownames V = `names'
 ereturn post b V
 ereturn display
 
-mata mata drop `1' `2' `3' `4' `betaiv' `weights' seed `b1' `s1'
+mata mata drop `1' `2' `3' `4' `betaiv' `weights' `b1' `s1'
 if "`weighted'" == "" & "`penweighted'" == "" mata mata drop `ones'
 if "`penweighted'" == "penweighted" mata mata drop `pw'
 
@@ -88,7 +89,9 @@ ereturn scalar k = scalar(`k')
 end
 
 mata
-real scalar weighted_median(real colvector betaiv, real colvector weights) 
+mata set matastrict on
+real scalar weighted_median(real colvector betaiv, 
+	real colvector weights) 
 {
 	real colvector order, betaivorder, weightsorder, weightssum
 	real scalar below, weightedest
@@ -109,20 +112,16 @@ real scalar weighted_median_boot(real colvector byg,
 	real colvector sebyg,
 	real colvector sebxg,
 	real colvector weights, 
-	| real scalar seed, real scalar reps)
+	real scalar reps)
 {
-	real scalar sd
+	real scalar sd, k
 	real colvector med, bxgboot, bygboot, bivboot
-	if (seed != .) {
-		rseed(seed)
-	}
-	if (reps == .) {
-		reps = 1000
-	}
+	k = rows(byg)
 	med = J(reps, 1, .)
+	bivboot = J(k, 1, .)
 	for (i=1; i<=reps; i++) {
-		bxgboot = rnormal(1, 1, bxg, sebxg)
 		bygboot = rnormal(1, 1, byg, sebyg)
+		bxgboot = rnormal(1, 1, bxg, sebxg)
 		bivboot = bygboot :/ bxgboot
 		med[i] = weighted_median(bivboot, weights)
 	}
