@@ -11,6 +11,11 @@ Installation in Stata (in versions 13 and above)
 . net install mrmedian, from(https://raw.github.com/remlapmot/stata.mrmedian/master/) replace force
 ```
 
+To uninstall issue in Stata:
+```
+. ado uninstall mrmedian
+```
+
 Author
 =======
 Tom Palmer
