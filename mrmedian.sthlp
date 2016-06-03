@@ -8,7 +8,9 @@
 {viewerjumpto "References" "mrmedian##references"}{...}
 {title:Title}
 
-
+{p 5}
+{bf:mrmedian} {hline 2} Weighted median of instrumental variable estimates
+{p_end}
 
 {marker syntax}{...}
 {title:Syntax}
