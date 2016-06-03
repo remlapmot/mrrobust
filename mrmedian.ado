@@ -1,29 +1,21 @@
 *! version 0.1.0 3jun2016 Tom Palmer
 program mrmedian
 version 9.2 // maybe need 14.0 because of changes in seed
-syntax varlist(min=2 max=4) [if] [in] [, Weighted PENWeighted seed(string)]
-tempvar betaiv weights
+syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string)]
+
 tokenize `"`varlist'"'
 /*
-2 variables:
-1: betaiv
-2: weights
-
 4 variables
 1: gd beta
 2: gd SE
 3: gp beta
 4: gp SE
 */
-if "`4'" == "" & "`3'" != "" {
-	di as err "Specifying 3 varnames is not allowed; " ///
-		"please specify 2 or 4 varnames"
-	exit 198
-}
-else if "`3'" != "" & "`4'" != "" {
-	qui gen double `betaiv' = `1'/`3' `if'
-	qui gen double `weights' = (`2'/`3')^-2 `if'
-}
+
+tempvar betaiv weights
+qui gen double `betaiv' = `1'/`3' `if'
+qui gen double `weights' = (`2'/`3')^-2 `if'
+
 qui putmata `1' `2' `3' `4' `betaiv' `weights' `if', replace
 
 ** check if moremata installed
