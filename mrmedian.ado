@@ -1,5 +1,5 @@
 *! version 0.1.0 3jun2016 Tom Palmer
-program mrmedian
+program mrmedian, eclass
 version 9.2 // maybe need 14.0 because of changes in seed
 syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string)]
 
@@ -13,10 +13,16 @@ tokenize `"`varlist'"'
 */
 
 tempvar betaiv weights
-qui gen double `betaiv' = `1'/`3' `if'
-qui gen double `weights' = (`2'/`3')^-2 `if'
+qui gen double `betaiv' = `1'/`3' `if' `in'
+qui gen double `weights' = (`2'/`3')^-2 `if' `in'
 
-qui putmata `1' `2' `3' `4' `betaiv' `weights' `if', replace
+** number of instruments
+tempname k
+qui count `if' `in' // TODO: maybe need to check for different patterns of missing data
+scalar `k' = r(N)
+
+** put variables into Mata
+qui putmata `1' `2' `3' `4' `betaiv' `weights' `if' `in', replace
 
 ** check if moremata installed
 capt mata mata which mm_which()
@@ -76,6 +82,9 @@ mata mata drop `1' `2' `3' `4' `betaiv' `weights' seed `b1' `s1'
 if "`weighted'" == "" & "`penweighted'" == "" mata mata drop `ones'
 if "`penweighted'" == "penweighted" mata mata drop `pw'
 
+ereturn local cmd "mrmedian"
+ereturn local cmdline `"mrmedian `0'"'
+ereturn scalar k = scalar(`k')
 end
 
 mata
