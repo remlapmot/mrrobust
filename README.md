@@ -8,7 +8,7 @@ Installation
 
 Installation in Stata (in versions 13 and above)
 ```
-. net install mrmedian, from(https://raw.github.com/remlapmot/stata.mrmedian/master/) replace
+. net install mrmedian, from(https://raw.github.com/remlapmot/stata.mrmedian/master/) replace force
 ```
 
 Author
