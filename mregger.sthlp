@@ -17,7 +17,7 @@
 {title:Syntax}
 
 {p 8 16 2}
-{opt mregger} {genotype-disease} {genotype-phenotype} [{it:aweight}] {ifin} 
+{opt mregger} {var:_gd} {var:_gp} [{it:aweight}] {ifin} 
 [{cmd:,} {it:options}]
 
 {synoptset 20 tabbed}{...}
@@ -45,10 +45,10 @@ and their standard errors for individual genotypes).
 See Bowden et al. Int J Epi, 2015, for more information.
 
 {pstd}
-{genotype-disease} variable containing the genotype-disease association estimates.
+{var:_gd} variable containing the genotype-disease association estimates.
 
 {pstd}
-{phenotype-disease} variable containing the phenotype-disease association estimates.
+{var:_gp} variable containing the phenotype-disease association estimates.
 
 {pstd}
 For the analytic weights you need to specify the inverse of the 

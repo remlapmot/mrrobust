@@ -17,7 +17,7 @@
 {title:Syntax}
 
 {p 8 16 2}
-{opt mrmedian} {varname1} {varname2} {varname3} {varname4} {ifin} 
+{opt mrmedian} {var:_gd} {var:_gdse} {var:_gp} {var:_gpse} {ifin} 
 [{cmd:,} {it:options}]
 
 {synoptset 20 tabbed}{...}
@@ -39,19 +39,19 @@ estimator on summary level data (i.e. reported genotype-disease and phenotype
 genotypes).
 
 {pstd}
-{varname1} is a variable containing the genotype-disease association estimates.
+{var:_gd} is a variable containing the genotype-disease association estimates.
 
 {pstd}
-{varname2} is a variable containing the genotype-disease association standard 
-errors.
+{var:_gdse} is a variable containing the genotype-disease association estimate 
+standard errors.
 
 {pstd}
-{varname3} is a variable containing the phenotype-disease association 
+{var:_gp} is a variable containing the phenotype-disease association 
 estimates.
 
 {pstd}
-{varname4} is a variable containing the phenotype-disease association standard 
-errors.
+{var:_gpse} is a variable containing the phenotype-disease association 
+estimate standard errors.
 
 {marker options}{...}
 {title:Options}
