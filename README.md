@@ -5,7 +5,7 @@ In the package there are the following commands:
 
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al., Int J Epi, 2015 <http://dx.doi.org/10.1093/ije/dyv080>. Use with summary data (i.e. per SNP/genotype associations with the disease outcome and exposure/phenotype).
 
- - `mrmedian` and `mrmedianobs` implement all 3 (unweighted, weighted, and penalized weighted) median IV estimators robust to 50% invalid instruments in Bowden et al., Gen Epi, 2016 <http://dx.doi.org/10.1002/gepi.21965>. These Stata programs are based on the R code given in the supplementary material of the paper. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
+ - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al., Gen Epi, 2016 <http://dx.doi.org/10.1002/gepi.21965>. These Stata programs are based on the R code given in the supplementary material of that paper. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
 
 Installation
 ============
