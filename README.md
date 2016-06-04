@@ -28,6 +28,13 @@ If you find `net install` fails with an error message that you have two copies o
 . adoupdate
 ```
 
+To view the helpfiles which have examples at towards the end, issue:
+```
+. help mregger
+. help mrmedian
+. help mrmedianobs
+```
+
 Author
 =======
 Tom Palmer
