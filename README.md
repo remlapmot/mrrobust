@@ -16,6 +16,11 @@ To uninstall issue in Stata:
 . ado uninstall mrmedian
 ```
 
+If you find `net install` reports you have two copies of the package installed simply run:
+```
+adoupdate
+```
+
 Author
 =======
 Tom Palmer
