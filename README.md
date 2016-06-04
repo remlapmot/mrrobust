@@ -1,5 +1,5 @@
 # mrmedian and mregger
-This package contains several commands implementing estimator robust to certain proportions of invalid instrumental variables that are becoming widely used in Mendelian randomization studies especially.
+This package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies.
 
 `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al., Int J Epi, 2015 <http://dx.doi.org/10.1093/ije/dyv080>.
 
@@ -23,7 +23,7 @@ To uninstall issue in Stata:
 . ado uninstall mrmedian
 ```
 
-If you find `net install` fails with an error message saying that you have two copies of the package installed simply run the following to delete one of them:
+If you find `net install` fails with an error message that you have two copies of the package installed simply run the following command in Stata to delete one of them:
 ```
 . adoupdate
 ```
