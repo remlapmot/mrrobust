@@ -20,7 +20,7 @@ To uninstall issue in Stata:
 . ado uninstall mrmedian
 ```
 
-If you find `net install` reports you have two copies of the package installed simply run:
+If you find `net install` fails with an error message saying that you have two copies of the package installed simply run the following to delete one of them:
 ```
 . adoupdate
 ```
