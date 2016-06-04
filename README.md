@@ -18,7 +18,7 @@ To uninstall issue in Stata:
 
 If you find `net install` reports you have two copies of the package installed simply run:
 ```
-adoupdate
+. adoupdate
 ```
 
 Author
