@@ -3,4 +3,4 @@ d Commands to run instrumental variable estimator robust to invalid instruments.
 d MR-Egger estimator from: Bowden et al., Int. J. Epi., 2015 DOI:10.1093/ije/dyv080
 d Median estimators from: Bowden et al., Gen. Epi., 2016, DOI:10.1002/gepi.21965 .
 d Applied in Mendelian randomization studies.
-p mrmedian
+p mrrobust
