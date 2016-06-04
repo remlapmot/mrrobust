@@ -1,5 +1,5 @@
 # mrmedian and mregger
-This package contains several commands implementing estimator robust to certain proportions of invalid instrumental variables.
+This package contains several commands implementing estimator robust to certain proportions of invalid instrumental variables that are becoming widely used in Mendelian randomization studies especially.
 
 `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al., Int J Epi, 2015 <http://dx.doi.org/10.1093/ije/dyv080>.
 
