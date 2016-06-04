@@ -1,7 +1,11 @@
 # mrmedian
-The `mrmedian` command implements all 3 (unweighted, weighted, and penalized weighted) median IV estimators robust to 50% invalid instruments in Bowden et al., Gen Epi, 2016. <http://dx.doi.org/10.1002/gepi.21965>. 
+The `mrmedian` package implements all 3 (unweighted, weighted, and penalized weighted) median IV estimators robust to 50% invalid instruments in Bowden et al., Gen Epi, 2016. <http://dx.doi.org/10.1002/gepi.21965>. 
 
-This Stata program is based on the R code given in the supplementary material of the paper.
+These Stata programs are based on the R code given in the supplementary material of the paper.
+
+There are two commands:
+ - `mrmedian` for use with summary data (i.e. genotype-disease and genotype-phenotype associations and their standard errors)
+ - `mrmedianobs` for use with individual level data.
 
 Installation
 ============
