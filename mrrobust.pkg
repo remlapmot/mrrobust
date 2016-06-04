@@ -1,0 +1,12 @@
+v 3
+d mrrobust
+d Author: Tom Palmer
+d Distribution-Date: 20160604
+f mrmedian.ado
+f mrmedian.sthlp
+f mrmedianobs.ado
+f mrmedianobs_work.ado
+f mrmedianobs.sthlp
+f mregger.ado
+f mregger.sthlp
+e
