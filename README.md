@@ -12,7 +12,7 @@ Installation
 
 Installation in Stata (in versions 13 and above)
 ```
-. net install mrmedian, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+. net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
 If you find that `net install` fails with an error message about their being two copies of the package installed run the following command in Stata to delete one of them:
@@ -22,7 +22,7 @@ If you find that `net install` fails with an error message about their being two
 
 To uninstall issue in Stata:
 ```
-. ado uninstall mrmedian
+. ado uninstall mrrobust
 ```
 
 To view the helpfiles which have examples at towards the end, issue:
