@@ -80,21 +80,19 @@ see {helpb set_seed}.
 al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:. use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
 
-{pstd}Select observations{p_end}
-{phang2}{cmd:. gen byte sel1 = (ldlcp2 < 1e-8)}{p_end}
+{pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
+{phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
 {pstd}Unweighted median estimator{p_end}
-{phang2}{cmd:. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1"}{p_end}
 
 {pstd}Weighted median estimator{p_end}
-{phang2}{cmd:. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, }
-{cmd: weighted}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, weighted"}{p_end}
 
 {pstd}Penalized weighted median estimator{p_end}
-{phang2}{cmd:. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, }
-{cmd: penweighted}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, penweighted"}{p_end}
 
 {marker results}{...}
 {title:Stored results}
@@ -124,13 +122,13 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. 
 Consistent estimation in Mendelian randomization with some invalid instruments
  using a weighted median estimator. Genetic Epidemiology. 
-DOI: 10.1002/gepi.21965
+DOI: {browse "http://dx.doi.org/10.1002/gepi.21965"}
 {p_end}
 
 {phang}
 Do et al., 2013. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
-10.1038/ng.2795
+{browse "http://dx.doi.org/10.1038/ng.2795"}
 {p_end}
 
 {marker author}

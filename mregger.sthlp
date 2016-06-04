@@ -30,6 +30,7 @@
 {synopt :{opt re:}}random effects version of the estimators{p_end}
 {synopt :{opt recons:}}random intercept in an MR-Egger model{p_end}
 {synopt :{opt reslope:}}random slope in an MR-Egger model{p_end}
+{synopt :{opt *:}}extra options for gsem for random effects estimation{p_end}
 
 {marker description}{...}
 {title:Description}
@@ -78,6 +79,10 @@ variance/covariance).
 {opt reslope} specifies a random slope in the model. Can be specified with 
 {opt recons}.
 
+{phang}
+{opt *} extra options passed through the {cmd:gsem} command, 
+see {help gsem_command:gsem}.
+
 {marker examples}{...}
 {title:Example 1}
 
@@ -85,22 +90,22 @@ variance/covariance).
 al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:. use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
 
-{pstd}Select observations{p_end}
-{phang2}{cmd:. gen byte sel1 = (ldlcp2 < 1e-8)}{p_end}
+{pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
+{phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
 {pstd}IVW{p_end}
-{phang2}{cmd:. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, ivw}{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, ivw"}{p_end}
 
 {pstd}IVW with random effects{p_end}
-{phang2}{cmd:. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, ivw re}{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, ivw re"}{p_end}
 
 {pstd}MR-Egger{p_end}
-{phang2}{cmd:. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1}{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1"}{p_end}
 
 {pstd}MR-Egger with fixed effect standard errors{p_end}
-{phang2}{cmd:. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, fe}{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, fe"}{p_end}
 
 {marker results}{...}
 {title:Stored results}
@@ -130,7 +135,7 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 Bowden J, Davey Smith G, Burgess S. 2015. 
 Mendelian randomization with invalid instruments: effect estimation and bias 
 detection through Egger regression. International Journal of Epidemiology. 
-DOI: 10.1093/ije/dyv080
+DOI: {browse "http://dx.doi.org/10.1093/ije/dyv080"}
 {p_end}
 
 {marker author}

@@ -79,19 +79,19 @@ see {helpb set_seed}.
 {pstd}Simulated test dataset.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:. use https://raw.github.com/remlapmot/mrmedian/master/mrmedianobs_testdata, clear}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/mrmedianobs_testdata, clear"}{p_end}
 
 {pstd}Unweighted median estimator{p_end}
-{phang2}{cmd:. mrmedianobs y (x = z1-z20)}{p_end}
+{phang2}{cmd:.} {stata "mrmedianobs y (x = z1-z20)"}{p_end}
 
 {pstd}Weighted median estimator{p_end}
-{phang2}{cmd:. mrmedianobs y (x = z1-z20), weighted}{p_end}
+{phang2}{cmd:.} {stata "mrmedianobs y (x = z1-z20), weighted"}{p_end}
 
 {pstd}Penalized weighted median estimator{p_end}
-{phang2}{cmd:. mrmedianobs y (x = z1-z20), weighted}{p_end}
+{phang2}{cmd:.} {stata "mrmedianobs y (x = z1-z20), penweighted"}{p_end}
 
-{pstd}Unweighted median estimator with percentile CI limits{p_end}
-{phang2}{cmd:. mrmedianobs y (x = z1-z20), obsboot all}{p_end}
+{pstd}Unweighted median estimator with percentile CI limits of observation level bootstrapping{p_end}
+{phang2}{cmd:.} {stata "mrmedianobs y (x = z1-z20), obsboot all"}{p_end}
 
 
 {marker results}{...}
@@ -122,7 +122,7 @@ see {helpb set_seed}.
 Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. 
 Consistent estimation in Mendelian randomization with some invalid instruments
  using a weighted median estimator. Genetic Epidemiology. 
-DOI: 10.1002/gepi.21965
+DOI: {browse "http://dx.doi.org/10.1002/gepi.21965"}
 {p_end}
 
 {marker author}
