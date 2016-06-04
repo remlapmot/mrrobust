@@ -1,4 +1,4 @@
-# Stata commands for MR-Egger and weighted Median estimators
+# Stata commands for MR-Egger, IVW, and weighted Median estimators
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
 
 In the package there are the following commands:
