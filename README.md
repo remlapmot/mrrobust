@@ -1,4 +1,4 @@
-# mrmedian and mregger
+# Stata commands for MR-Egger and weighted Median estimators
 This package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies.
 
 `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al., Int J Epi, 2015 <http://dx.doi.org/10.1093/ije/dyv080>.
