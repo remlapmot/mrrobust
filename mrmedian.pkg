@@ -4,4 +4,6 @@ d Author: Tom Palmer
 d Distribution-Date: 20160603
 f mrmedian.ado
 f mrmedian.sthlp
+f mrmedianobs.ado
+f mrmedianobs_work.ado
 e

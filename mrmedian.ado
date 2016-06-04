@@ -1,7 +1,17 @@
 *! version 0.1.0 03jun2016 Tom Palmer
 program mrmedian, eclass
-version 14.1 // maybe need 14.0 because of changes in seed
-syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string) reps(integer 1000)]
+version 9
+local version : di "version " string(_caller()) ", missing :"
+if replay() {
+        if _by() {
+                error 190
+        }
+        `version' Display `0'
+        exit
+}
+
+syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string) ///
+        reps(integer 1000)]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -77,15 +87,20 @@ matrix colnames b = `names'
 matrix colnames V = `names' 
 matrix rownames V = `names'
 ereturn post b V
-ereturn display
+Display
 
-mata mata drop `1' `2' `3' `4' `betaiv' `weights' `b1' `s1'
+mata mata drop `1' `2' `3' `4' `betaiv' `weights' `b1' `s1' reps
 if "`weighted'" == "" & "`penweighted'" == "" mata mata drop `ones'
 if "`penweighted'" == "penweighted" mata mata drop `pw'
 
 ereturn local cmd "mrmedian"
 ereturn local cmdline `"mrmedian `0'"'
 ereturn scalar k = scalar(`k')
+end
+
+program Display
+version 9
+ereturn display
 end
 
 mata
