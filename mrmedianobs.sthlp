@@ -1,28 +1,32 @@
 {smcl}
-{* *! version 0.1.0  3jun2016 Tom Palmer}{...}
-{viewerjumpto "Syntax" "mrmedian##syntax"}{...}
-{viewerjumpto "Description" "mrmedian##description"}{...}
-{viewerjumpto "Options" "mrmedian##options"}{...}
-{viewerjumpto "Examples" "mrmedian##examples"}{...}
-{viewerjumpto "Stored results" "mrmedian##results"}{...}
-{viewerjumpto "References" "mrmedian##references"}{...}
-{viewerjumpto "Author" "mrmedian##author"}{...}
+{* *! version 0.1.0  4jun2016 Tom Palmer}{...}
+{viewerjumpto "Syntax" "mrmedianobs##syntax"}{...}
+{viewerjumpto "Description" "mrmedianobs##description"}{...}
+{viewerjumpto "Options" "mrmedianobs##options"}{...}
+{viewerjumpto "Examples" "mrmedianobs##examples"}{...}
+{viewerjumpto "Stored results" "mrmedianobs##results"}{...}
+{viewerjumpto "References" "mrmedianobs##references"}{...}
+{viewerjumpto "Author" "mrmedianobs##author"}{...}
 {title:Title}
 
 {p 5}
-{bf:mrmedian} {hline 2} Weighted median of instrumental variable estimates
+{bf:mrmedianobs} {hline 2} Weighted median of instrumental variable estimates
 {p_end}
 
 {marker syntax}{...}
 {title:Syntax}
 
-{p 8 16 2}
-{opt mrmedian} {varname1} {varname2} {varname3} {varname4} {ifin} 
-[{cmd:,} {it:options}]
+{p 8 14 2}
+{cmd:mrmedianobs} {depvar} [{it:{help varlist:varlist1}}] 
+{cmd:(}{var:_endog} {cmd:=} {varlist:_ivs}{cmd:)} {ifin}
+ [{cmd:,} {it:options}]
 
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
+{synopt :{opt all:}}report percentile and bias corrected confidence intervals{p_end}
+{synopt :{opt obsboot:}}obtain standard error by bootstrapping at observation 
+level{p_end}
 {synopt :{opt penw:eighted}}penalized weighted estimator{p_end}
 {synopt :{opt reps:(#)}}number of bootstrap replications to obtain standard error{p_end}
 {synopt :{opt seed:(#)}}seed for random number generator for bootstrapping to 
@@ -33,28 +37,24 @@ obtain standard error{p_end}
 {title:Description}
 
 {pstd}
-{cmd:mrmedian} performs unweighted, weighted, and penalized median IV 
-estimator on summary level data (i.e. reported genotype-disease and phenotype
--disease association estimates and their standard errors for individual 
-genotypes).
+{cmd:mrmedian} performs unweighted, weighted, and penalized IV estimator on 
+observation level data.
 
-{pstd}
-{varname1} is a variable containing the genotype-disease association estimates.
-
-{pstd}
-{varname2} is a variable containing the genotype-disease association standard 
-errors.
-
-{pstd}
-{varname3} is a variable containing the phenotype-disease association 
-estimates.
-
-{pstd}
-{varname4} is a variable containing the phenotype-disease association standard 
-errors.
+{col 10}{depvar}: {col 26}outcome variable
+{col 10}{varlist:1}: {col 26}covariates to adjust for
+{col 10}{var:_endog}: {col 26}treatment received or exposure variable (endogenous variable)
+{col 10}{varlist:_ivs}: {col 26}instrumental variables
 
 {marker options}{...}
 {title:Options}
+
+{phang}
+{opt all} report percentile and bias corrected bootstrap confidence interval 
+limits (only applies to observation level bootstrapping with {opt obsboot}).
+
+{phang}
+{opt obsboot} obtain bootstrap standard error by bootstrapping at the 
+observation level.
 
 {phang}
 {opt reps(#)} specifies the number of bootstrap replications for obtaining the
@@ -76,25 +76,23 @@ see {helpb set_seed}.
 {marker examples}{...}
 {title:Example 1}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
+{pstd}Simulated test dataset.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:. use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear}{p_end}
-
-{pstd}Select observations{p_end}
-{phang2}{cmd:. gen byte sel1 = (ldlcp2 < 1e-8)}{p_end}
+{phang2}{cmd:. use https://raw.github.com/remlapmot/mrmedian/master/mrmedianobs_testdata, clear}{p_end}
 
 {pstd}Unweighted median estimator{p_end}
-{phang2}{cmd:. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1}{p_end}
+{phang2}{cmd:. mrmedianobs y (x = z1-z20)}{p_end}
 
 {pstd}Weighted median estimator{p_end}
-{phang2}{cmd:. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, }
-{cmd: weighted}{p_end}
+{phang2}{cmd:. mrmedianobs y (x = z1-z20), weighted}{p_end}
 
 {pstd}Penalized weighted median estimator{p_end}
-{phang2}{cmd:. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, }
-{cmd: penweighted}{p_end}
+{phang2}{cmd:. mrmedianobs y (x = z1-z20), weighted}{p_end}
+
+{pstd}Unweighted median estimator with percentile CI limits{p_end}
+{phang2}{cmd:. mrmedianobs y (x = z1-z20), obsboot all}{p_end}
+
 
 {marker results}{...}
 {title:Stored results}
@@ -108,7 +106,7 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}
-{synopt:{cmd:e(cmd)}}{cmd:mrmedian}{p_end}
+{synopt:{cmd:e(cmd)}}{cmd:mrmedianobs}{p_end}
 {synopt:{cmd:e(cmdline)}}command as typed{p_end}
 
 {synoptset 20 tabbed}{...}
@@ -125,12 +123,6 @@ Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016.
 Consistent estimation in Mendelian randomization with some invalid instruments
  using a weighted median estimator. Genetic Epidemiology. 
 DOI: 10.1002/gepi.21965
-{p_end}
-
-{phang}
-Do et al., 2013. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
-10.1038/ng.2795
 {p_end}
 
 {marker author}

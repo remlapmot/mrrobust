@@ -13,7 +13,21 @@ if replay() {
 tokenize `"`0'"', parse(",")
 local beforeopts `1'
 
-syntax [anything] [if] [in] [, obsboot seed(string) reps(integer 50)]
+syntax [anything] [if] [in] [, obsboot seed(string) reps(integer 50) ///
+        PENWeighted Weighted all]
+        
+** weighted options
+if "`weighted'" == "weighted" & "`penweighted'" == "penweighted" {
+	di as err "Specify both weighted and penweighted options " ///
+		"is not allowed."
+	exit 198
+}
+
+** all requires obsboot
+if "`all'" == "all" & "`obsboot'" == "" {
+        di as err "all requires obsboot is specified"
+        exit 198
+}
 
 local callersversion = _caller()
 ** seed option
@@ -21,7 +35,7 @@ if "`seed'" != "" {
 	version `callersversion': set seed `seed'
 }
 
-mrmedianobs_work `beforeopts' `if' `in'
+mrmedianobs_work `beforeopts' `if' `in', `weighted' `penweighted'
 mat b = e(b)
 scalar k = e(k)
 if "`obsboot'" == "" {
@@ -29,7 +43,10 @@ if "`obsboot'" == "" {
 }
 else {
         bootstrap beta=_b[beta], reps(`reps') notable noheader nolegend: ///
-                mrmedianobs_work `1' `if'
+                mrmedianobs_work `1' `if', `weighted' `penweighted'
+        if "`all'" == "all" {
+                estat bootstrap, all noheader
+        }
         mat b = e(b)
         mat V = e(V)
         di _n
