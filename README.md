@@ -25,7 +25,7 @@ To uninstall issue in Stata:
 . ado uninstall mrrobust
 ```
 
-To view the helpfiles which have examples at towards the end, issue:
+To view the helpfiles which have examples near the end, issue:
 ```
 . help mregger
 . help mrmedian
