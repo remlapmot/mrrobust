@@ -44,11 +44,13 @@ if "`ivw'" == "ivw" {
         }
         else if "`re'" == "re" {
                 tempvar genoDisease slope
-                cap gen double genoDisease = `1'*sqrt(`invvar')
-                if _rc != 0 qui replace genoDisease = `1'*sqrt(`invvar')
-                cap gen double slope = `2'*sqrt(`invvar')
-                if _rc != 0 qui replace slope = `2'*sqrt(`invvar')
-                cap gsem (genoDisease <- slope c.M#c.slope, nocons), ///
+                cap gen double genoDisease = `1'*sqrt(`invvar') `if' `in'
+                if _rc != 0 qui replace genoDisease = `1'*sqrt(`invvar') ///
+                        `if' `in'
+                cap gen double slope = `2'*sqrt(`invvar') `if' `in'
+                if _rc != 0 qui replace slope = `2'*sqrt(`invvar') `if' `in'
+                cap gsem (genoDisease <- slope c.M#c.slope, nocons) ///
+                        `if' `in', ///
                         var(e.genoDisease@1)
         }
 }
@@ -68,10 +70,10 @@ else {
         else if "`re'" == "re" {
                 tempvar gd2tr gp2tr
                 cap gen double genoDisease = ``1'2'*sqrt(`invvar') `if' `in'
-                if _rc != 0 qui replace genoDisease = ``1'2'*sqrt(`invvar') ///
+                if _rc != 0 qui replace genoDisease= ``1'2'*sqrt(`invvar') ///
                         `if' `in'
                 cap gen double slope = ``2'2'*sqrt(`invvar') `if' `in'
-                if _rc != 0 qui replace slope = ``2'2'*sqrt(`invvar') `if' `in'
+                if _rc != 0 qui replace slope= ``2'2'*sqrt(`invvar') `if' `in'
                 if "`reslope'" == "" & "`recons'" == "recons" {
                         cap gsem (genoDisease <- slope M@1) `if' `in', ///
                                 var(e.genoDisease@1) `options'
