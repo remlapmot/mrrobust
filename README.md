@@ -32,6 +32,8 @@ To view the helpfiles which have examples near the end, issue:
 . help mrmedianobs
 ```
 
+Version 12: It appears that the `net install` command does not work under Stata version 12 (and lower) because this webpage has a https address rather than a http address. One way around this is to download the files manually and save them on your adopath. 
+
 Author
 =======
 Tom Palmer
