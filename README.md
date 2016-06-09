@@ -10,7 +10,7 @@ In the package there are the following commands:
 Installation
 ============
 
-This package uses functions in Ben Jann's `moremata` package, so intall that first with:
+This package uses functions in Ben Jann's `moremata` package, so install that first with:
 ```
 ssc install moremata
 ```
@@ -37,7 +37,7 @@ To view the helpfiles which have examples near the end, issue:
 . help mrmedianobs
 ```
 
-Stata version 12: It appears that the `net install` command does not work under Stata version 12 (and earlier versions) because this webpage has a https address rather than a http address. One way around this is to download the files manually and save them on your adopath. In this case you also need to install the `moremata` package manually from SSC, which is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip> (extract the files and save on your adopath).
+Stata version 12: It appears that the `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. One way around this is to download the files manually and save them on your adopath. In this case you also need to install the `moremata` package manually from SSC. The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip> (extract the files and save on your adopath).
 
 Author
 =======
