@@ -39,6 +39,10 @@ estimator on summary level data (i.e. reported genotype-disease and phenotype
 genotypes).
 
 {pstd}
+See {browse "http://dx.doi.org/10.1002/gepi.21965":Bowden et al., Gen Epi, 2016}
+, for more information.
+
+{pstd}
 {var:_gd} is a variable containing the genotype-disease association estimates.
 
 {pstd}

@@ -38,8 +38,8 @@ qui putmata `1' `2' `3' `4' `betaiv' `weights' `if' `in', replace
 ** check if moremata installed
 capt mata mata which mm_which()
 if _rc {
-	di as error "mm_which() from -moremata- is required; type -ssc ///
-		install moremata- to obtain it"
+	di as err "The -moremata- package is required; install using"
+        di "{stata ssc install moremata}"
 	exit 499
 }
 
