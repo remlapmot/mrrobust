@@ -3,6 +3,7 @@
 {viewerjumpto "Syntax" "mreggerplot##syntax"}{...}
 {viewerjumpto "Description" "mreggerplot##description"}{...}
 {viewerjumpto "Examples" "mreggerplot##examples"}{...}
+{viewerjumpto "References" "mreggerplot##references"}{...}
 {viewerjumpto "Author" "mreggerplot##author"}{...}
 {title:Title}
 
@@ -70,7 +71,7 @@ estimate standard errors.
 {title:Examples}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
+al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
@@ -93,7 +94,27 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 {pstd}Scatter plot of MR-Egger model adding an IVW line for comparison{p_end}
 {phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)"}{p_end}
 {phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw"}{p_end}
-{phang2}{cmd:.} {stata "addplot : function _b[ldlcbeta]*x if sel1==1, range(0 0.5) lc(gs0) lp(dash)"}{p_end}
+{phang2}{cmd:.} {stata "addplot : function _b[ldlcbeta]*x if sel1==1, range(0 0.5) lc(gs0) lp(longdash)"}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted"}{p_end}
+{phang2}{cmd:.} {stata "addplot : function _b[beta]*x if sel1==1, range(0 0.5) lc(gs0) lp(shortdash)"}{p_end}
+
+
+{marker references}{...}
+{title:References}
+
+{marker bowden}{...}
+{phang}
+Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. 
+Consistent estimation in Mendelian randomization with some invalid instruments
+ using a weighted median estimator. Genetic Epidemiology. 
+DOI: {browse "http://dx.doi.org/10.1002/gepi.21965"}
+{p_end}
+
+{phang}
+Do et al., 2013. Common variants associated with plasma triglycerides and risk
+ for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
+{browse "http://dx.doi.org/10.1038/ng.2795"}
+{p_end}
 
 
 {marker author}
