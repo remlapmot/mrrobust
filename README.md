@@ -10,9 +10,10 @@ In the package there are the following commands:
 Installation
 ============
 
-This package uses functions in Ben Jann's `moremata` package, so install that first with:
+This package uses functions in Ben Jann's `moremata` package and `addplot` command, so install those first with:
 ```
 ssc install moremata
+ssc install addplot
 ```
 
 Then to install `mrrobust` issue in Stata (in versions 13 and above)
