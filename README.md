@@ -39,7 +39,10 @@ To view the helpfiles which have examples near the end, issue:
 . help mreggerplot
 ```
 
-Stata version 12: It appears that the `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. One way around this is to download the files manually (for each file right click over the filename above and click "Save link as...") and save them on your adopath. In this case you also need to install the `moremata` and `addplot` packages manually from SSC. The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. And the `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip> (extract the files and save on your adopath).
+## Stata version 12 and earlier
+It appears that the `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. One way around this is to download the files manually (for each file right click over the filename above and click "Save link as...") and save them on your adopath. 
+
+In this case you also need to install the `moremata` and `addplot` packages manually from SSC. The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. And the `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip> (extract the files and save on your adopath).
 
 Author
 =======
