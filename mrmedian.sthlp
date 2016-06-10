@@ -90,13 +90,13 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
 {pstd}Unweighted median estimator{p_end}
-{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1"}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
 
 {pstd}Weighted median estimator{p_end}
-{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, weighted"}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted"}{p_end}
 
 {pstd}Penalized weighted median estimator{p_end}
-{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, penweighted"}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, penweighted"}{p_end}
 
 {marker results}{...}
 {title:Stored results}

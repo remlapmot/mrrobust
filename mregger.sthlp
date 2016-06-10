@@ -101,13 +101,13 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
 {pstd}IVW{p_end}
-{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, ivw"}{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw"}{p_end}
 
 {pstd}MR-Egger{p_end}
-{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1"}{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
 
 {pstd}MR-Egger with fixed effect standard errors{p_end}
-{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1, fe"}{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe"}{p_end}
 
 {marker results}{...}
 {title:Stored results}
