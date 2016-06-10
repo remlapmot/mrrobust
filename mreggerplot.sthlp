@@ -69,7 +69,8 @@ estimate standard errors.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Simulated test dataset.{p_end}
+{pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
+al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
