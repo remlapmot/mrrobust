@@ -10,22 +10,27 @@
 
 {phang}
 {bf:mrrobust} {hline 2} Suite of commands implementing estimators robust to 
-certain proportions of invalid instrumental variables. Commonly applied in 
-Mendelian randomization (MR) studies.
+certain proportions of invalid instrumental variables which are 
+becoming commonly applied in Mendelian randomization (MR) studies.
 
 
 {title:Commands}{marker commands}
 
 {col 7}{bf:{help mregger:mregger}}{...}
-{col 22}MR-Egger and inverse-variance weighted (IVW) estimators
+{col 20}MR-Egger and inverse-variance weighted (IVW) estimators.
 
 {col 7}{bf:{help mrmedian:mrmedian}}{...}
-{col 22}Unweighted, weighted, and penalized weighted median estimators for 
-summary level data
+{col 20}Unweighted, weighted, and penalized weighted median estimators for 
+summary level data.
 
 {col 7}{bf:{help mrmedianobs:mrmedianobs}}{...}
-{col 22}Unweighted, weighted, and penalized weighted median estimators for 
-individual level data
+{col 20}Unweighted, weighted, and penalized weighted median estimators for 
+individual level data.
+
+{col 7}{bf:{help mreggerplot:mreggerplot}}{...}
+{col 20}Scatter plot showing instrument specific estimates with IVW, 
+MR-Egger, or median fitted line and confidence interval.
+
 
 {marker description}{...}
 {title:Description}
