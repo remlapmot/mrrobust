@@ -14,8 +14,8 @@ Installation
 
 This package uses functions in Ben Jann's `moremata` and `addplot` packages, so install those first with:
 ```
-ssc install moremata
-ssc install addplot
+. ssc install moremata
+. ssc install addplot
 ```
 
 Then to install `mrrobust` issue in Stata (in versions 13 and above)
