@@ -34,7 +34,6 @@
 {synopt :{opt nolci:}}Do not confidence interval around fitted line{p_end}
 {synopt :{opt noline:}}Do not plot fitted line{p_end}
 {synopt :{opt nomcis:}}Do not confidence intervals around markers{p_end}
-{synopt :{opt penweighted:}}Penalised weights for median estimator{p_end}
 {synopt :{opt penw:eighted}}penalized weighted estimator{p_end}
 {synopt :{opt re:}}random effect estimator for fitted line{p_end}
 {synopt :{opt recons:}}random intercept for fitted line{p_end}
