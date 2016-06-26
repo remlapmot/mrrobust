@@ -8,6 +8,7 @@ syntax varlist(min=4 max=4) [if] [in] [, ivw fe re ///
         nomcis nolci errorbars Level(cilevel) wmarkers ///
         PENWeighted reps(integer 50) seed(string) Weighted ///
         ellipses mlabel(varname) legend(string) ///
+        linetop ///
          *]
 
 local callersversion = _caller()
@@ -115,37 +116,41 @@ if "`median'" == "median" {
         la var `medianline' "Median"
 }
 
-// plot confidence intervals around fitted line
-if "`lci'" == "" {
-        // code for cis around lines
-        if "`egger'" == "egger" {
-                addplot : lfitci `eggery' `eggerx' `if' `in' ///
-                        [aw=1/(`2'^2)], nofit fcolor("204 204 204") /// // gs12
-                        fintensity(inten50) level(`level')
+if "`linetop'" == "" {
+        // plot confidence intervals around fitted line
+        if "`lci'" == "" {
+                // code for cis around lines
+                if "`egger'" == "egger" {
+                        addplot : lfitci `eggery' `eggerx' `if' `in' ///
+                                [aw=1/(`2'^2)], nofit ///
+                                fcolor("204 204 204") ///
+                                fintensity(inten50) level(`level')
+                }
+                if "`ivw'" == "ivw" {
+                        addplot : lfitci `1' `3' `if' `in' [aw=1/(`2'^2)], ///
+                                estopts(nocons) nofit ///
+                                fcolor("204 204 204") ///
+                                fintensity(inten50) level(`level')
+                }
         }
-        if "`ivw'" == "ivw" {
-                addplot : lfitci `1' `3' `if' `in' [aw=1/(`2'^2)], ///
-                        estopts(nocons) nofit fcolor("204 204 204") /// // gs12
-                        fintensity(inten50) level(`level')
-        }
-}
 
-// plot fitted line
-if "`line'" == "" {
-        if "`egger'" == "egger" {
-                addplot : line `eggerline' `eggerx' `if' `in', ///
-                        lc(gs0) sort ///
-                         // legend(order(3 4 2) rows(1))
-        }
-        if "`ivw'" == "ivw" {
-                addplot : line `ivwline' `3' `if' `in', ///
-                        lc(gs0) sort ///
-                         // legend(order(3 4 2) rows(1))
-        }
-        if "`median'" == "median" {
-                addplot : line `medianline' `3' `if' `in', ///
-                        lc(gs0) sort ///
-                        // legend(`legend')
+        // plot fitted line
+        if "`line'" == "" {
+                if "`egger'" == "egger" {
+                        addplot : line `eggerline' `eggerx' `if' `in', ///
+                                lc(gs0) sort ///
+                                 // legend(order(3 4 2) rows(1))
+                }
+                if "`ivw'" == "ivw" {
+                        addplot : line `ivwline' `3' `if' `in', ///
+                                lc(gs0) sort ///
+                                 // legend(order(3 4 2) rows(1))
+                }
+                if "`median'" == "median" {
+                        addplot : line `medianline' `3' `if' `in', ///
+                                lc(gs0) sort ///
+                                // legend(`legend')
+                }
         }
 }
 
@@ -219,13 +224,54 @@ if "`errorbars'" == "errorbars" & "`mcis'" == "" {
 // replot the markers with colour
 if "`egger'" == "egger" {
         addplot : scatter `eggery' `eggerx' `if' `in' `weight', ///
-                m(s) mc(gs6) mlabel(`mlabel') ///
+                m(s) mc(gs6) mlabel(`mlabel') mlabcolor(black) ///
+                mlabsize(vsmall) ///
                 legend(`legend')
 }
 else {
         addplot : scatter `1' `3' `if' `in' `weight', ///
-                m(s) mc(gs6) mlabel(`mlabel') ///
+                m(s) mc(gs6) mlabel(`mlabel') mlabcolor(black) ///
+                mlabsize(vsmall) ///
                 legend(`legend')
+}
+
+// draw fitted line (and ci) on top
+if "`linetop'" != "" {
+        // plot confidence intervals around fitted line
+        if "`lci'" == "" {
+                // code for cis around lines
+                if "`egger'" == "egger" {
+                        addplot : lfitci `eggery' `eggerx' `if' `in' ///
+                                [aw=1/(`2'^2)], nofit ///
+                                fcolor("204 204 204") ///
+                                fintensity(inten50) level(`level')
+                }
+                if "`ivw'" == "ivw" {
+                        addplot : lfitci `1' `3' `if' `in' [aw=1/(`2'^2)], ///
+                                estopts(nocons) nofit ///
+                                fcolor("204 204 204") ///
+                                fintensity(inten50) level(`level')
+                }
+        }
+
+        // plot fitted line
+        if "`line'" == "" {
+                if "`egger'" == "egger" {
+                        addplot : line `eggerline' `eggerx' `if' `in', ///
+                                lc(gs0) sort ///
+                                 // legend(order(3 4 2) rows(1))
+                }
+                if "`ivw'" == "ivw" {
+                        addplot : line `ivwline' `3' `if' `in', ///
+                                lc(gs0) sort ///
+                                 // legend(order(3 4 2) rows(1))
+                }
+                if "`median'" == "median" {
+                        addplot : line `medianline' `3' `if' `in', ///
+                                lc(gs0) sort ///
+                                // legend(`legend')
+                }
+        }
 }
 
 end

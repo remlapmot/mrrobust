@@ -22,18 +22,19 @@
 {synopthdr}
 {synoptline}
 {synopt :{opt egger:}}MR-Egger estimator for fitted line{p_end}
-{synopt :{opt ellipses:}}Marker confidence intervals as ellipses{p_end}
-{synopt :{opt errorbars:}}Marker confidence intervals as capped lines{p_end}
+{synopt :{opt ellipses:}}marker confidence intervals as ellipses{p_end}
+{synopt :{opt errorbars:}}marker confidence intervals as capped lines{p_end}
 {synopt :{opt fe:}}fixed effect standard errors for fitted line{p_end}
 {synopt :{opt ivw:}}IVW line (default is MR-Egger){p_end}
 {p2col:{cmd:legend(}{it:string}{cmd:)}}legend options{p_end}
 {p2col:{cmd:level(}{it:#}{cmd:)}}set confidence level; default is
        {cmd:level(95)}{p_end}
+{synopt :{opt linetop:}}draw fitted line (and CI) on top of points{p_end}
 {synopt :{opt median:}}median estimator for fitted line{p_end}
 {synopt :{opt mlabel:(string)}}variable containing marker labels{p_end}
-{synopt :{opt nolci:}}Do not confidence interval around fitted line{p_end}
-{synopt :{opt noline:}}Do not plot fitted line{p_end}
-{synopt :{opt nomcis:}}Do not confidence intervals around markers{p_end}
+{synopt :{opt nolci:}}do not plot confidence interval around fitted line{p_end}
+{synopt :{opt noline:}}do not plot fitted line{p_end}
+{synopt :{opt nomcis:}}do not plot confidence intervals around markers{p_end}
 {synopt :{opt penw:eighted}}penalized weighted estimator{p_end}
 {synopt :{opt re:}}random effect estimator for fitted line{p_end}
 {synopt :{opt recons:}}random intercept for fitted line{p_end}
@@ -42,7 +43,7 @@
 {synopt :{opt seed:(#)}}seed for random number generator for bootstrapping to 
 obtain standard error{p_end}
 {synopt :{opt w:eighted}}weighted median estimator{p_end}
-{synopt :{opt wmarkers:}}Weighted markers{p_end}
+{synopt :{opt wmarkers:}}weighted markers{p_end}
 
 {marker description}{...}
 {title:Description}
