@@ -12,10 +12,11 @@ In the package there are the following commands:
 Installation
 ============
 
-This package uses functions in Ben Jann's `moremata` and `addplot` packages, so install those first with:
+This package uses functions in Ben Jann's `moremata` and `addplot` packages and the `heterogi` command by Orsini et al., so install those first with:
 ```
-. ssc install moremata
 . ssc install addplot
+. ssc install moremata
+. ssc install heterogi
 ```
 
 Then to install `mrrobust` issue in Stata (in versions 13 and above)
@@ -23,10 +24,11 @@ Then to install `mrrobust` issue in Stata (in versions 13 and above)
 . net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
-If you find that `net install` fails with an error message about there being two copies of the package installed run the command below in Stata to delete one of them. Also run this command to check for updates:
+If `net install` fails with an error message about there being two copies of the package installed run the command below in Stata to delete one of them:
 ```
 . adoupdate
 ```
+Also run this command to check for updates.
 
 To uninstall issue in Stata:
 ```
@@ -42,9 +44,13 @@ To view the helpfiles which have examples near the end, issue:
 ```
 
 ## Stata version 12 and earlier
-The `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. One way around this is to download the files manually (either click the green "Clone or download" button and then download as zip and then extract, or for each file right click over the filename above and click "Save link as..."). Then save the files on your adopath. 
+The `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. In this case please download the files manually (either click the green "Clone or download" button above and then download as zip and then extract, or for each file right click over the filename above and click "Save link as..."). Then save the files on your adopath. 
 
-In this case you also need to install the `moremata` and `addplot` packages manually from SSC. The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. And the `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. Again extract the files and save them on your adopath.
+In this case you also need to install the `addplot`, `moremata` and `heterogi` packages manually from SSC. 
+ * The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
+ * The `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
+ * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
+For the two zip archives extract the files and save them on your adopath.
 
 Author
 =======
