@@ -11,7 +11,7 @@ if replay() {
 }
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
-        reslope recons *]
+        reslope recons noHETerogi *]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -56,14 +56,36 @@ if "`ivw'" == "" & "`re'" == "re" & "`reslope'" == "" & "`recons'" == "" {
         local recons recons
 }
 
+if "`heterogi'" == "" {
+        // check if heterogi is installed
+        capture which heterogi
+        if _rc {
+                di as error "-heterogi- from SSC is required; install using"
+                di "{stata ssc install heterogi}"
+                exit 499
+        }
+}
+
 if "`ivw'" == "ivw" {
+        if "`heterogi'" == "" {
+                tempname gdtr gptr invse 
+                qui gen double `invse' = sqrt(`invvar') `if' `in'
+                qui gen double `gdtr' = `1'*`invse' `if' `in'
+                qui gen double `gptr' = `2'*`invse' `if' `in'
+                qui sem (`gdtr' <- `gptr', nocons) `if' `in'
+                if e(converged) == 1 {
+                        local qstat = _b[var(e.`gdtr'):_cons]*e(N)
+                        local df = e(N) - 1
+                }
+        }
+
         if "`fe'" == "" & "`re'" == "" {
                 qui reg `1' `2' [aw=`invvar'] `if' `in', nocons
         }
         else if "`fe'" == "fe" {
                 qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
                 // alt:
-                // sem (`gdtr' <- `gptr', nocons), var(e.`gdtr'@1)
+                // sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
         }
         else if "`re'" == "re" {
                 tempvar genoDisease slope
@@ -132,7 +154,23 @@ if "`re'" == "" {
         ereturn post b V
 }
 
-Display, `re'
+if "`ivw'" == "" {
+        local qstat 0
+        local df 1
+}
+
+Display, `re' qstat(`qstat') df(`df') `heterogi' `ivw'
+if "`heterogi'" == "" {
+        ereturn scalar I2 = r(I2)
+        ereturn scalar ub_I2_M1 = r(ub_I2_M1)
+        ereturn scalar lb_I2_M1 = r(lb_I2_M1)
+        ereturn scalar ub_H_M1 = r(ub_H_M1)
+        ereturn scalar lb_H_M1 = r(lb_H_M1)
+        ereturn scalar H = r(H)
+        ereturn scalar pval = r(pval)
+        ereturn scalar df = r(df)
+        ereturn scalar Q = r(Q)
+}
 
 if "`re'" == "" {
         ereturn local cmd "mregger"
@@ -143,10 +181,15 @@ local k = r(N)
 ereturn scalar k = `k'
 end
 
-program Display
-syntax [, re]
+program Display, rclass
+syntax [, re qstat(real 0) df(integer 1) Level(cilevel) noHETerogi IVW]
 if "`re'" == "" {
         ereturn display
+        if "`heterogi'" == "" & "`ivw'" == "ivw" {
+                di _n as txt _c "Heterogeneity/pleiotropy statistics"
+                heterogi `qstat' `df', level(`level')
+                return add
+        }
 }
 else {
        `version' gsem, noheader nocnsr nodvhead

@@ -27,6 +27,8 @@
 {p_end}
 {synopt :{opt ivw:}}Inverse-variance weighted estimator (default is MR-Egger)
 {p_end}
+{synopt:{opt nohet:erogi}}Do not display heterogeneity/pleiotropy 
+statistics{p_end}
 {synopt :{opt re:}}random effects version of the estimators{p_end}
 {synopt :{opt recons:}}random intercept in an MR-Egger model{p_end}
 {synopt :{opt reslope:}}random slope in an MR-Egger model{p_end}
@@ -67,6 +69,12 @@ unconstrained as in standard linear regression).
 
 {phang}
 {opt ivw} specifies IVW model, the default is MR-Egger.
+
+{phang}
+{opt noheterogi} suppresses display of heterogeneity/pleiotropy 
+statistics reported with method ivw. These are meta-analysis Cochran's Q-test 
+and Higgins I-squared statistics applied across the individual instrumental 
+variable estimates as suggested by Del Greco et al. (2015).
 
 {phang}
 {opt re} specifies random effects versions of the models. In the random 
@@ -142,6 +150,13 @@ Bowden J, Davey Smith G, Burgess S. 2015.
 Mendelian randomization with invalid instruments: effect estimation and bias 
 detection through Egger regression. International Journal of Epidemiology. 
 DOI: {browse "http://dx.doi.org/10.1093/ije/dyv080"}
+{p_end}
+
+{phang}
+Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in 
+Mendelian randomization studies with summary data and a continuous outcome. 
+Statistics in Medicine, 34, 21, 2926-2940. DOI: 
+{browse "http://dx.doi.org/10.1002/sim.6522"}
 {p_end}
 
 {marker author}
