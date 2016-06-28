@@ -62,10 +62,11 @@ genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
 {title:Options}
 
 {phang}
-{opt fe} specifies fixed effect standard errors (i.e. variance of residuals) 
-constrained to 1 (as in F.E. meta-analysis models). The default is 
+{opt fe} specifies fixed effect standard errors (i.e. variance of residuals 
+constrained to 1 as in fixed effect meta-analysis models). The default is 
 to use multiplicative standard errors (i.e. variance of residuals 
-unconstrained as in standard linear regression).
+unconstrained as in standard linear regression), see Thompson and Sharp 
+ (1999) for further details.
 
 {phang}
 {opt ivw} specifies IVW model, the default is MR-Egger.
@@ -153,10 +154,16 @@ DOI: {browse "http://dx.doi.org/10.1093/ije/dyv080"}
 {p_end}
 
 {phang}
-Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in 
+Del Greco F M, Minelli C, Sheehan NA, Thompson JR. 2015. Detecting pleiotropy in 
 Mendelian randomization studies with summary data and a continuous outcome. 
 Statistics in Medicine, 34, 21, 2926-2940. DOI: 
 {browse "http://dx.doi.org/10.1002/sim.6522"}
+{p_end}
+
+{phang}
+Thompson SG, Sharp SJ. 1999. Explaining heterogeneity in meta-analysis: a 
+comparison of methods. Statistics in Medicine, 18, 20, 2693-2708. DOI: 
+{browse "http://dx.doi.org/10.1002/(SICI)1097-0258(19991030)18:20<2693::AID-SIM235>3.0.CO;2-V"}
 {p_end}
 
 {marker author}
