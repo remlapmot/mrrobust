@@ -47,8 +47,9 @@ if "`re'" == "" & ("`recons'" != "" | "`reslope'" != "") {
         exit 198
 }
 if "`ivw'" == "ivw" & "`re'" == "re" & "`recons'" == "recons" {
-        di as err _c "for IVW estimator option recons not allowed"
+        di as err _c "For IVW estimator option recons not allowed "
         di as err "for re estimation (as there is no constant)"
+        exit 198
 }
 if "`ivw'" == "" & "`re'" == "re" & "`reslope'" == "" & "`recons'" == "" {
         // by default include both random _cons and slope
@@ -113,26 +114,30 @@ else {
                 qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', scale(1)
         }
         else if "`re'" == "re" {
-                tempvar gd2tr gp2tr
-                cap gen double genoDisease = ``1'2'*sqrt(`invvar') `if' `in'
+                // tempvar gd2tr gp2tr
+                cap gen double genoDisease = ``1'2'*sqrt(`invvar') `if' `in' 
                 if _rc != 0 qui replace genoDisease= ``1'2'*sqrt(`invvar') ///
                         `if' `in'
                 cap gen double slope = ``2'2'*sqrt(`invvar') `if' `in'
                 if _rc != 0 qui replace slope= ``2'2'*sqrt(`invvar') `if' `in'
+                cap gen double cons = sqrt(`invvar') `if' `in'
+                if _rc != 0 qui replace cons = sqrt(`invvar') `if' `in'
                 if "`reslope'" == "" & "`recons'" == "recons" {
-                        cap `version' gsem (genoDisease <- slope M@1) ///
-                                `if' `in', ///
+                        cap `version' gsem (genoDisease <- slope ///
+                                cons c.cons#M@1) ///
+                                `if' `in', nocons ///
                                 var(e.genoDisease@1) `options'
                 }
                 else if "`reslope'" == "reslope" & "`recons'" == "" {
                         cap `version' gsem ///
-                                (genoDisease <- slope c.slope#c.M@1) ///
-                                `if' `in', var(e.genoDisease@1) `options'
+                                (genoDisease <- slope cons c.slope#c.M@1) ///
+                                `if' `in', nocons var(e.genoDisease@1) ///
+                                `options'
                 }  
                 else if "`reslope'" == "reslope" & "`recons'" == "recons" {
-                        cap `version' gsem (genoDisease <- slope M1@1 ///
-                                c.slope#c.M2@1) `if' `in', ///
-                                        var(e.genoDisease@1) `options'
+                        cap `version' gsem (genoDisease <- slope cons ///
+                                c.cons#M1@1 c.slope#c.M2@1) `if' `in', ///
+                                nocons var(e.genoDisease@1) `options'
                 }
                 drop genoDisease
                 drop slope
