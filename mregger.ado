@@ -11,7 +11,7 @@ if replay() {
 }
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
-        reslope recons noHETerogi *]
+        reslope recons noHETerogi noRESCale *]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -79,9 +79,16 @@ if "`ivw'" == "ivw" {
                         local df = e(N) - 1
                 }
         }
-
         if "`fe'" == "" & "`re'" == "" {
-                qui reg `1' `2' [aw=`invvar'] `if' `in', nocons
+                // qui reg `1' `2' [aw=`invvar'] `if' `in', nocons
+                qui glm `1' `2' [iw=`invvar'] `if' `in', nocons
+                if e(phi) < 1 & "`rescale'" == "" {
+                        di as txt _c "Residual variance =", e(phi) "; "
+                        di as txt _c "rerunning with residual "
+                        di as txt "variance set to 1"
+                        qui glm `1' `2' [iw=`invvar'] `if' `in', ///
+                                nocons scale(1)
+                }
         }
         else if "`fe'" == "fe" {
                 qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
@@ -105,7 +112,16 @@ else {
         qui gen double ``1'2' = `1'*sign(`2') `if' `in'
         qui gen double ``2'2' = abs(`2') `if' `in'
         if "`fe'" == "" & "`re'" == "" {
-                qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
+                // qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
+                qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in'
+                if e(phi) < 1 & "`rescale'" == "" {
+                        di as txt _c "Residual variance =", e(phi) "; "
+                        di as txt _c "rerunning with residual "
+                        di as txt "variance set to 1"
+                        qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', ///
+                                scale(1)
+                }
+                
         }
         else if "`fe'" == "fe" {
                 // alternative syntax:

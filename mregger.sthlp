@@ -29,6 +29,7 @@
 {p_end}
 {synopt:{opt nohet:erogi}}Do not display heterogeneity/pleiotropy 
 statistics{p_end}
+{synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
 {synopt :{opt re:}}random effects version of the estimators{p_end}
 {synopt :{opt recons:}}random intercept in an MR-Egger model{p_end}
 {synopt :{opt reslope:}}random slope in an MR-Egger model{p_end}
@@ -72,10 +73,15 @@ unconstrained as in standard linear regression), see Thompson and Sharp
 {opt ivw} specifies IVW model, the default is MR-Egger.
 
 {phang}
-{opt noheterogi} suppresses display of heterogeneity/pleiotropy 
+{opt nohet:erogi} suppresses display of heterogeneity/pleiotropy 
 statistics reported with method ivw. These are meta-analysis Cochran's Q-test 
 and Higgins I-squared statistics applied across the individual instrumental 
 variable estimates as suggested by Del Greco et al. (2015).
+
+{phang}
+{opt noresc:ale} specifies that the residual variance is not set to 1 (if 
+it is found to be less than 1). Bowden et al. (2016) rescale the residual
+ variance to be 1 if it is found to be less than 1.
 
 {phang}
 {opt re} specifies random effects versions of the models. In the random 
@@ -129,7 +135,7 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 {synopt:{cmd:e(k)}}number of instruments{p_end}
 
 {synoptset 20 tabbed}{...}
-If {opt re} is not specified:
+    If {opt re} is not specified:
 {p2col 5 20 24 2: Macros}{p_end}
 {synopt:{cmd:e(cmd)}}{cmd:mregger}{p_end}
 {synopt:{cmd:e(cmdline)}}command as typed{p_end}
@@ -139,8 +145,14 @@ If {opt re} is not specified:
 {synopt:{cmd:e(b)}}coefficient vector{p_end}
 {synopt:{cmd:e(V)}}variance-covariance matrix of the estimates{p_end}
 
+{pstd}
 If {opt re} is specified: {cmd:mregger} additionally returns the e-class 
 results from {cmd:gsem}.
+
+{pstd}
+If {opt ivw} is specified (and {opt noheterogi} is not): {cmd:mregger} 
+additionally returns the r-class results of {cmd:heterogi} in the e-class 
+results.
 
 {marker references}{...}
 {title:References}
@@ -150,20 +162,26 @@ results from {cmd:gsem}.
 Bowden J, Davey Smith G, Burgess S. 2015. 
 Mendelian randomization with invalid instruments: effect estimation and bias 
 detection through Egger regression. International Journal of Epidemiology. 
-DOI: {browse "http://dx.doi.org/10.1093/ije/dyv080"}
+{browse "http://dx.doi.org/10.1093/ije/dyv080":DOI}
 {p_end}
+
+{phang}
+Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. Consistent estimation 
+in Mendelian randomization with some invalid instruments using a weighted 
+median estimator. Genetic Epidemiology, published online 7 April.
+{browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 
 {phang}
 Del Greco F M, Minelli C, Sheehan NA, Thompson JR. 2015. Detecting pleiotropy in 
 Mendelian randomization studies with summary data and a continuous outcome. 
-Statistics in Medicine, 34, 21, 2926-2940. DOI: 
-{browse "http://dx.doi.org/10.1002/sim.6522"}
+Statistics in Medicine, 34, 21, 2926-2940. 
+{browse "http://dx.doi.org/10.1002/sim.6522":DOI}
 {p_end}
 
 {phang}
 Thompson SG, Sharp SJ. 1999. Explaining heterogeneity in meta-analysis: a 
-comparison of methods. Statistics in Medicine, 18, 20, 2693-2708. DOI: 
-{browse "http://dx.doi.org/10.1002/(SICI)1097-0258(19991030)18:20<2693::AID-SIM235>3.0.CO;2-V"}
+comparison of methods. Statistics in Medicine, 18, 20, 2693-2708. 
+{browse "http://dx.doi.org/10.1002/(SICI)1097-0258(19991030)18:20<2693::AID-SIM235>3.0.CO;2-V":DOI}
 {p_end}
 
 {marker author}
