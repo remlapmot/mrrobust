@@ -11,7 +11,7 @@ if replay() {
 }
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
-        reslope recons noHETerogi noRESCale *]
+        reslope recons noHETerogi noRESCale PENWeighted *]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -67,8 +67,12 @@ if "`heterogi'" == "" {
         }
 }
 
+if "`penweighted'" == "penweighted" {
+        tempvar pweights rweights
+}
+
 if "`ivw'" == "ivw" {
-        if "`heterogi'" == "" {
+        if "`heterogi'" == "" & "`penweighted'" == "" {
                 tempname gdtr gptr invse 
                 qui gen double `invse' = sqrt(`invvar') `if' `in'
                 qui gen double `gdtr' = `1'*`invse' `if' `in'
@@ -80,14 +84,36 @@ if "`ivw'" == "ivw" {
                 }
         }
         if "`fe'" == "" & "`re'" == "" {
+                tempname betaivw
                 // qui reg `1' `2' [aw=`invvar'] `if' `in', nocons
                 qui glm `1' `2' [iw=`invvar'] `if' `in', nocons
+                scalar `betaivw' = _b[`2']
+                if "`penweighted'" != "" {
+                        qui gen double `pweights' = chi2tail(1, ///
+                                (`2'^2*`invvar')* ///
+                                (`1'/`2' - scalar(`betaivw'))^2) `if' `in'
+                        qui gen double `rweights' = `pweights'*20 `if' `in'
+                        qui replace `rweights' = 1 if `rweights' > 1 
+                        qui replace `rweights' = `invvar'*`rweights' `if' `in'
+                        qui glm `1' `2' [iw=`rweights'] `if' `in', nocons
+                }
                 if e(phi) < 1 & "`rescale'" == "" {
                         di as txt _c "Residual variance =", e(phi) "; "
                         di as txt _c "rerunning with residual "
                         di as txt "variance set to 1"
-                        qui glm `1' `2' [iw=`invvar'] `if' `in', ///
-                                nocons scale(1)
+                        if "`penweighted'" == "" {
+                                qui glm `1' `2' [iw=`invvar'] `if' `in', ///
+                                        nocons scale(1)
+                        }
+                        else {
+                                qui glm `1' `2' [iw=`rweights'] `if' `in', ///
+                                        nocons scale(1)                        
+                        }
+                }
+                else if e(phi) < 1 & "`rescale'" != "" {
+                        di as txt _c "Residual variance =", e(phi)
+                        di as txt _c "; recommend refitting without "
+                        di as txt "norescale option"
                 }
         }
         else if "`fe'" == "fe" {
@@ -112,16 +138,38 @@ else {
         qui gen double ``1'2' = `1'*sign(`2') `if' `in'
         qui gen double ``2'2' = abs(`2') `if' `in'
         if "`fe'" == "" & "`re'" == "" {
+                tempname betaegger interegger                
                 // qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
                 qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in'
+                scalar `betaegger' = _b[``2'2']
+                scalar `interegger'= _b[_cons]
+                if "`penweighted'" != "" {
+                        qui gen double `pweights' = chi2tail(1, ///
+                                `invvar'*(``1'2' - scalar(`interegger') - ///
+                                scalar(`betaegger')*``2'2')^2) `if' `in'
+                        qui gen double `rweights' = `pweights'*20 `if' `in'
+                        qui replace `rweights' = 1 if `rweights' > 1
+                        qui replace `rweights' = `invvar'*`rweights' `if' `in' 
+                        qui glm ``1'2' ``2'2' [iw=`rweights'] `if' `in'
+                }
                 if e(phi) < 1 & "`rescale'" == "" {
                         di as txt _c "Residual variance =", e(phi) "; "
                         di as txt _c "rerunning with residual "
                         di as txt "variance set to 1"
-                        qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', ///
-                                scale(1)
+                        if "`penweighted'" == "" {
+                                qui glm ``1'2' ``2'2' [iw=`invvar'] ///
+                                        `if' `in', scale(1)
+                        }
+                        else {
+                                qui glm ``1'2' ``2'2' [iw=`rweights'] ///
+                                        `if' `in', scale(1)
+                        }
                 }
-                
+                else if e(phi) < 1 & "`rescale'" != "" {
+                        di as txt _c "Residual variance =", e(phi)
+                        di as txt _c "; recommend refitting without "
+                        di as txt "norescale option"
+                }
         }
         else if "`fe'" == "fe" {
                 // alternative syntax:
@@ -175,13 +223,13 @@ if "`re'" == "" {
         ereturn post b V
 }
 
-if "`ivw'" == "" {
+if "`ivw'" == "" | ("`ivw'" == "ivw" & "`penweighted'" != "") {
         local qstat 0
         local df 1
 }
 
-Display, `re' qstat(`qstat') df(`df') `heterogi' `ivw'
-if "`heterogi'" == "" {
+Display, `re' qstat(`qstat') df(`df') `heterogi' `ivw' `penweighted'
+if "`heterogi'" == "" & "`penweighted'" == "" {
         ereturn scalar I2 = r(I2)
         ereturn scalar ub_I2_M1 = r(ub_I2_M1)
         ereturn scalar lb_I2_M1 = r(lb_I2_M1)
@@ -203,10 +251,11 @@ ereturn scalar k = `k'
 end
 
 program Display, rclass
-syntax [, re qstat(real 0) df(integer 1) Level(cilevel) noHETerogi IVW]
+syntax [, re qstat(real 0) df(integer 1) Level(cilevel) noHETerogi IVW ///
+        PENWeighted]
 if "`re'" == "" {
         ereturn display
-        if "`heterogi'" == "" & "`ivw'" == "ivw" {
+        if "`heterogi'" == "" & "`ivw'" == "ivw" & "`penweighted'" == "" {
                 di _n as txt _c "Heterogeneity/pleiotropy statistics"
                 heterogi `qstat' `df', level(`level')
                 return add

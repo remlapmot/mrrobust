@@ -30,6 +30,7 @@
 {synopt:{opt nohet:erogi}}Do not display heterogeneity/pleiotropy 
 statistics{p_end}
 {synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
+{synopt :{opt penw:eighted}}Use penalized weights{p_end}
 {synopt :{opt re:}}random effects version of the estimators{p_end}
 {synopt :{opt recons:}}random intercept in an MR-Egger model{p_end}
 {synopt :{opt reslope:}}random slope in an MR-Egger model{p_end}
@@ -83,6 +84,10 @@ variable estimates as suggested by Del Greco et al. (2015).
 it is found to be less than 1). Bowden et al. (2016) rescale the residual
  variance to be 1 if it is found to be less than 1.
 
+{phang}
+{opt penw:eighted} specifies using penalized weights as described in Burgess 
+et al. (2016).
+ 
 {phang}
 {opt re} specifies random effects versions of the models. In the random 
 effects output the Ms are the random effects (hence we only estimate their 
@@ -170,6 +175,12 @@ Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. Consistent estimation
 in Mendelian randomization with some invalid instruments using a weighted 
 median estimator. Genetic Epidemiology, published online 7 April.
 {browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
+
+{phang}
+Burgess S, Bowden J, Dudbridge F, Thompson SG. 2016. Robust instrumental 
+variable methods using candidate instruments with application to Mendelian 
+randomization. arXiv:1606.03729v1. 
+{browse "https://arxiv.org/abs/1606.03729":Link}
 
 {phang}
 Del Greco F M, Minelli C, Sheehan NA, Thompson JR. 2015. Detecting pleiotropy in 
