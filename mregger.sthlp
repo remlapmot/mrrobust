@@ -75,9 +75,10 @@ unconstrained as in standard linear regression), see Thompson and Sharp
 
 {phang}
 {opt nohet:erogi} suppresses display of heterogeneity/pleiotropy 
-statistics reported with method ivw. These are meta-analysis Cochran's Q-test 
-and Higgins I-squared statistics applied across the individual instrumental 
-variable estimates as suggested by Del Greco et al. (2015).
+statistics. In the heterogeneity output 
+model based Q-statistics are reported by multiplying the variance of the 
+residuals by the degrees of freedom. The use of Q-statistics across separate 
+IV estimates was suggested by Del Greco et al. (2015).
 
 {phang}
 {opt noresc:ale} specifies that the residual variance is not set to 1 (if 
@@ -155,7 +156,7 @@ If {opt re} is specified: {cmd:mregger} additionally returns the e-class
 results from {cmd:gsem}.
 
 {pstd}
-If {opt ivw} is specified (and {opt noheterogi} is not): {cmd:mregger} 
+If {opt noheterogi} is not specified {cmd:mregger} 
 additionally returns the r-class results of {cmd:heterogi} in the e-class 
 results.
 

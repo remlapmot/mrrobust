@@ -2,6 +2,7 @@
 program mregger, eclass
 version 9
 local version : di "version " string(_caller()) ", missing :"
+local replay = replay()
 if replay() {
         if _by() {
                 error 190
@@ -11,7 +12,7 @@ if replay() {
 }
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
-        reslope recons noHETerogi noRESCale PENWeighted *]
+        reslope recons noHETerogi noRESCale PENWeighted Level(cilevel) *]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -78,9 +79,11 @@ if "`ivw'" == "ivw" {
                 qui gen double `gdtr' = `1'*`invse' `if' `in'
                 qui gen double `gptr' = `2'*`invse' `if' `in'
                 qui sem (`gdtr' <- `gptr', nocons) `if' `in'
+                // alternative: glm `gdtr' `gptr' `if' `in', nocons
                 if e(converged) == 1 {
-                        local qstat = _b[var(e.`gdtr'):_cons]*e(N)
                         local df = e(N) - 1
+                        local qstat = _b[var(e.`gdtr'):_cons]*e(N)
+                        // if using glm: local qstat = e(phi)*(e(N) - 1)
                 }
         }
         if "`fe'" == "" & "`re'" == "" {
@@ -93,7 +96,7 @@ if "`ivw'" == "ivw" {
                                 (`2'^2*`invvar')* ///
                                 (`1'/`2' - scalar(`betaivw'))^2) `if' `in'
                         qui gen double `rweights' = `pweights'*20 `if' `in'
-                        qui replace `rweights' = 1 if `rweights' > 1 
+                        qui replace `rweights' = 1 if `rweights' > 1
                         qui replace `rweights' = `invvar'*`rweights' `if' `in'
                         qui glm `1' `2' [iw=`rweights'] `if' `in', nocons
                 }
@@ -137,6 +140,19 @@ else {
         tempvar `1'2 `2'2
         qui gen double ``1'2' = `1'*sign(`2') `if' `in'
         qui gen double ``2'2' = abs(`2') `if' `in'
+        if "`heterogi'" == "" & "`penweighted'" == "" {
+                tempname gdtr gptr invse
+                qui gen double `invse' = sqrt(`invvar') `if' `in'
+                qui gen double `gdtr' = ``1'2'*`invse' `if' `in'
+                qui gen double `gptr' = ``2'2'*`invse' `if' `in'
+                qui sem (`gdtr' <- `gptr' `invse', nocons) `if' `in'
+                // alternative: glm `gdtr' `gptr' `invse' `if' `in', nocons 
+                if e(converged) == 1 {
+                        local df = e(N) - 2
+                        local qstat = _b[var(e.`gdtr'):_cons]*e(N)
+                        // if using glm: local qstat di e(phi)*(e(N) - 2)
+                }
+        }
         if "`fe'" == "" & "`re'" == "" {
                 tempname betaegger interegger                
                 // qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
@@ -223,13 +239,17 @@ if "`re'" == "" {
         ereturn post b V
 }
 
-if "`ivw'" == "" | ("`ivw'" == "ivw" & "`penweighted'" != "") {
+if "`penweighted'" != "" | "`heterogi'" != "" {
         local qstat 0
         local df 1
 }
 
-Display, `re' qstat(`qstat') df(`df') `heterogi' `ivw' `penweighted'
-if "`heterogi'" == "" & "`penweighted'" == "" {
+Display , `re' level(`level')
+if "`heterogi'" == "" & "`penweighted'" == "" & "`re'" == "" {
+        di _n as txt _c "Heterogeneity/pleiotropy statistics"
+        heterogi `qstat' `df', level(`level')
+}
+if "`heterogi'" == "" & "`penweighted'" == "" & "`re'" == "" {
         ereturn scalar I2 = r(I2)
         ereturn scalar ub_I2_M1 = r(ub_I2_M1)
         ereturn scalar lb_I2_M1 = r(lb_I2_M1)
@@ -251,18 +271,12 @@ ereturn scalar k = `k'
 end
 
 program Display, rclass
-syntax [, re qstat(real 0) df(integer 1) Level(cilevel) noHETerogi IVW ///
-        PENWeighted]
+syntax [, re Level(cilevel)]
 if "`re'" == "" {
-        ereturn display
-        if "`heterogi'" == "" & "`ivw'" == "ivw" & "`penweighted'" == "" {
-                di _n as txt _c "Heterogeneity/pleiotropy statistics"
-                heterogi `qstat' `df', level(`level')
-                return add
-        }
+        ereturn display, level(`level')
 }
 else {
-       `version' gsem, noheader nocnsr nodvhead
+       `version' gsem, noheader nocnsr nodvhead level(`level')
 }
 end
 exit
