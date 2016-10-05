@@ -50,11 +50,11 @@ See {browse "http://dx.doi.org/10.1002/gepi.21965":Bowden et al., Gen Epi, 2016}
 standard errors.
 
 {pstd}
-{var:_gp} is a variable containing the phenotype-disease association 
+{var:_gp} is a variable containing the genotype-phenotype association 
 estimates.
 
 {pstd}
-{var:_gpse} is a variable containing the phenotype-disease association 
+{var:_gpse} is a variable containing the genotype-phenotype association 
 estimate standard errors.
 
 {marker options}{...}

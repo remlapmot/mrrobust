@@ -54,7 +54,7 @@ See {browse "http://dx.doi.org/10.1093/ije/dyv080":Bowden et al., Int J Epi, 201
 {var:_gd} variable containing the genotype-disease association estimates.
 
 {pstd}
-{var:_gp} variable containing the phenotype-disease association estimates.
+{var:_gp} variable containing the genotype-phenotype association estimates.
 
 {pstd}
 For the analytic weights you need to specify the inverse of the 

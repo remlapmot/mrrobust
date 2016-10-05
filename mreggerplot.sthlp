@@ -59,11 +59,11 @@ obtain standard error{p_end}
 standard errors.
 
 {pstd}
-{var:_gp} is a variable containing the phenotype-disease association 
+{var:_gp} is a variable containing the genotype-phenotype association 
 estimates.
 
 {pstd}
-{var:_gpse} is a variable containing the phenotype-disease association 
+{var:_gpse} is a variable containing the genotype-phenotype association 
 estimate standard errors.
 
 
