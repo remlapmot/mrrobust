@@ -8,7 +8,7 @@ local inst `s(inst)'
 local 0 `s(zero)'
 local k = wordcount("`inst'") // no. instruments
 tokenize `inst'
-syntax [if] [in]
+syntax [if] [in] [, PENWeighted Weighted]
 mata gd = gdse = gp = gpse = J(`k', 1, .)
 forvalues i=1/`k' {
         qui regress `lhs' ``i'' `exog' `if' `in'
@@ -22,6 +22,6 @@ preserve
 drop _all
 cap set obs `k'
 qui getmata gd gdse gp gpse, double replace
-qui mrmedian gd gdse gp gpse
+qui mrmedian gd gdse gp gpse, `weighted' `penweighted'
 restore
 end
