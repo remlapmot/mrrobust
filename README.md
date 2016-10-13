@@ -24,13 +24,12 @@ Then to install `mrrobust` issue in Stata (in versions 13 and above)
 . net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
-If `net install` fails with an error message about there being two copies of the package installed run the command below in Stata to delete one of them:
+If `net install` fails with an error message that there are two copies of the package installed run `adoupdate` in Stata to delete one of them. Also run `adoupdate` to check for updates, or to update the package if you know an update is available run:
 ```
-. adoupdate
+. adoupdate mrrobust, update
 ```
-Also run this command to check for updates.
 
-To uninstall issue in Stata:
+To uninstall the package, issue in Stata:
 ```
 . ado uninstall mrrobust
 ```
