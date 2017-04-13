@@ -12,7 +12,8 @@ if replay() {
 }
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
-        reslope recons noHETerogi noRESCale PENWeighted Level(cilevel) *]
+        reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
+        gxse(varname numeric) tdist *]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -58,7 +59,7 @@ if "`ivw'" == "" & "`re'" == "re" & "`reslope'" == "" & "`recons'" == "" {
         local recons recons
 }
 
-if "`heterogi'" == "" {
+if "`heterogi'" != "" {
         // check if heterogi is installed
         capture which heterogi
         if _rc {
@@ -72,8 +73,12 @@ if "`penweighted'" == "penweighted" {
         tempvar pweights rweights
 }
 
+tempname phi // residual variance
+tempname dfr // degrees of freedom of residuals
+
+** estimation
 if "`ivw'" == "ivw" {
-        if "`heterogi'" == "" & "`penweighted'" == "" {
+        if "`heterogi'" != "" & "`penweighted'" == "" {
                 tempname gdtr gptr invse 
                 qui gen double `invse' = sqrt(`invvar') `if' `in'
                 qui gen double `gdtr' = `1'*`invse' `if' `in'
@@ -84,6 +89,7 @@ if "`ivw'" == "ivw" {
                         local df = e(N) - 1
                         local qstat = _b[var(e.`gdtr'):_cons]*e(N)
                         // if using glm: local qstat = e(phi)*(e(N) - 1)
+                        scalar `dfr' = e(N) - (e(df_m) - 1)
                 }
         }
         if "`fe'" == "" & "`re'" == "" {
@@ -99,6 +105,7 @@ if "`ivw'" == "ivw" {
                         qui replace `rweights' = 1 if `rweights' > 1
                         qui replace `rweights' = `invvar'*`rweights' `if' `in'
                         qui glm `1' `2' [iw=`rweights'] `if' `in', nocons
+                        scalar `dfr' = e(df)
                 }
                 if e(phi) < 1 & "`rescale'" == "" {
                         di as txt _c "Residual variance =", e(phi) "; "
@@ -107,10 +114,12 @@ if "`ivw'" == "ivw" {
                         if "`penweighted'" == "" {
                                 qui glm `1' `2' [iw=`invvar'] `if' `in', ///
                                         nocons scale(1)
+                                scalar `dfr' = e(df)
                         }
                         else {
                                 qui glm `1' `2' [iw=`rweights'] `if' `in', ///
                                         nocons scale(1)                        
+                                scalar `dfr' = e(df)
                         }
                 }
                 else if e(phi) < 1 & "`rescale'" != "" {
@@ -121,6 +130,7 @@ if "`ivw'" == "ivw" {
         }
         else if "`fe'" == "fe" {
                 qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
+                scalar `dfr' = e(df)
                 // alt:
                 // sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
         }
@@ -140,7 +150,7 @@ else {
         tempvar `1'2 `2'2
         qui gen double ``1'2' = `1'*sign(`2') `if' `in'
         qui gen double ``2'2' = abs(`2') `if' `in'
-        if "`heterogi'" == "" & "`penweighted'" == "" {
+        if "`heterogi'" != "" & "`penweighted'" == "" {
                 tempname gdtr gptr invse
                 qui gen double `invse' = sqrt(`invvar') `if' `in'
                 qui gen double `gdtr' = ``1'2'*`invse' `if' `in'
@@ -151,6 +161,7 @@ else {
                         local df = e(N) - 2
                         local qstat = _b[var(e.`gdtr'):_cons]*e(N)
                         // if using glm: local qstat di e(phi)*(e(N) - 2)
+                        scalar `dfr' = e(N) - (e(df_m) - 1)
                 }
         }
         if "`fe'" == "" & "`re'" == "" {
@@ -159,6 +170,8 @@ else {
                 qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in'
                 scalar `betaegger' = _b[``2'2']
                 scalar `interegger'= _b[_cons]
+                scalar `phi' = e(phi)
+                scalar `dfr' = e(df)
                 if "`penweighted'" != "" {
                         qui gen double `pweights' = chi2tail(1, ///
                                 `invvar'*(``1'2' - scalar(`interegger') - ///
@@ -167,6 +180,8 @@ else {
                         qui replace `rweights' = 1 if `rweights' > 1
                         qui replace `rweights' = `invvar'*`rweights' `if' `in' 
                         qui glm ``1'2' ``2'2' [iw=`rweights'] `if' `in'
+                        scalar `phi' = e(phi)
+                        scalar `dfr' = e(df)
                 }
                 if e(phi) < 1 & "`rescale'" == "" {
                         di as txt _c "Residual variance =", e(phi) "; "
@@ -175,10 +190,12 @@ else {
                         if "`penweighted'" == "" {
                                 qui glm ``1'2' ``2'2' [iw=`invvar'] ///
                                         `if' `in', scale(1)
+                                scalar `dfr' = e(df)
                         }
                         else {
                                 qui glm ``1'2' ``2'2' [iw=`rweights'] ///
                                         `if' `in', scale(1)
+                                scalar `dfr' = e(df)
                         }
                 }
                 else if e(phi) < 1 & "`rescale'" != "" {
@@ -192,6 +209,7 @@ else {
                 // sem (``1'2' <- ``2'2') [iw=`invvar'] `if' `in', ///
                 //       var(e.``1'2'@1)
                 qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', scale(1)
+                scalar `dfr' = e(df)
         }
         else if "`re'" == "re" {
                 // tempvar gd2tr gp2tr
@@ -239,17 +257,34 @@ if "`re'" == "" {
         ereturn post b V
 }
 
-if "`penweighted'" != "" | "`heterogi'" != "" {
+if "`penweighted'" != "" | "`heterogi'" == "" {
         local qstat 0
         local df 1
 }
 
+if "`tdist'" != "" {
+        * use t-dist for ereturn display Wald test and CI limits
+        di "dfr", `dfr'
+        ereturn scalar df_r  = `dfr'
+}
+
+** start of displaying output
+** display coefficient table
 Display , `re' level(`level')
-if "`heterogi'" == "" & "`penweighted'" == "" & "`re'" == "" {
-        di _n as txt _c "Heterogeneity/pleiotropy statistics"
+if "`ivw'" == "" & "`re'" == "" {
+        if "`fe'" == "" {
+                di as txt "Residual standard error:", %6.3f sqrt(`phi')
+        }
+        else {
+                di as txt "Residual standard error:", 1
+        }
+}
+
+if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
+        di as txt "Heterogeneity/pleiotropy statistics:" _c
         heterogi `qstat' `df', level(`level')
 }
-if "`heterogi'" == "" & "`penweighted'" == "" & "`re'" == "" {
+if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
         ereturn scalar I2 = r(I2)
         ereturn scalar ub_I2_M1 = r(ub_I2_M1)
         ereturn scalar lb_I2_M1 = r(lb_I2_M1)
@@ -259,6 +294,43 @@ if "`heterogi'" == "" & "`penweighted'" == "" & "`re'" == "" {
         ereturn scalar pval = r(pval)
         ereturn scalar df = r(df)
         ereturn scalar Q = r(Q)
+}
+
+if "`gxse'" != "" & "`ivw'" == "" {
+        ** I-squared GX
+        tempname gammabar nobs qgx QGX I2GX
+        
+        if "`penweighted'" == "" {
+                * weighted mean of genotype-exposure associations
+                qui su ``2'2' [aw=1/(`gxse'^2)] `if' `in'
+                scalar `nobs' = r(N)
+                scalar `gammabar' = r(mean)
+        
+                * QGX
+                qui gen double `qgx' = (``2'2' - `gammabar')^2/(`gxse'^2) `if' `in'
+        }
+        else {
+                tempvar gxscaled segxscaled
+                qui gen double `gxscaled' = ``2'2'*sqrt(`invvar') `if' `in'
+                qui gen double `segxscaled' = `gxse'*sqrt(`invvar') `if' `in'
+                qui su `gxscaled' [aw=1/(`segxscaled'^2)] `if' `in'
+                scalar `nobs' = r(N)
+                scalar `gammabar' = r(mean)
+                
+                * QGX
+                qui gen double `qgx' = ///
+                        (`gxscaled' - `gammabar')^2/(`segxscaled'^2) `if' `in'
+        }
+        qui su `qgx' `if' `in'
+        scalar `QGX' = r(sum)
+        
+        * I2GX
+        scalar `I2GX' = (`QGX' - (`nobs' - 1))/`QGX'
+        scalar `I2GX' = max(0, `I2GX')
+        
+        di as txt "I^2_GX statistic:", %6.2f 100*`I2GX' "%"
+        ereturn scalar I2GX = `I2GX'
+        // heterogi `QGX' `nobs', level(`level')
 }
 
 if "`re'" == "" {
