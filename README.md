@@ -50,7 +50,7 @@ In this case you also need to install the `addplot`, `moremata`, and `heterogi` 
  * The `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
  * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
 
-Extract the two zip archives and save all files on your adopath.
+Extract the zip archives and save all files on your adopath.
 
 Author
 =======
