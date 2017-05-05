@@ -55,3 +55,8 @@ Extract the zip archives and save all files on your adopath.
 Author
 =======
 Tom Palmer
+
+Licence
+=======
+CC-BY
+
