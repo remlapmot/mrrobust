@@ -87,7 +87,8 @@ matrix colnames b = `names'
 matrix colnames V = `names' 
 matrix rownames V = `names'
 ereturn post b V
-Display
+local ngeno = scalar(`k')
+Display, k(`ngeno')
 
 mata mata drop `1' `2' `3' `4' `betaiv' `weights' `b1' `s1' reps
 if "`weighted'" == "" & "`penweighted'" == "" mata mata drop `ones'
@@ -100,6 +101,13 @@ end
 
 program Display
 version 9
+syntax [, K(integer 0)]
+if "`k'" == "0" {
+        local k = e(k)
+}
+local digits : strlen local k
+local colstart = 79 - (22 + `digits') 
+di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 ereturn display
 end
 
