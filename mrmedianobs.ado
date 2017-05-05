@@ -35,9 +35,14 @@ if "`seed'" != "" {
 	version `callersversion': set seed `seed'
 }
 
+qui count `if' `in' // !missing(`lhs',`endog',) // and all instruments
+local nobs = r(N)
+
 mrmedianobs_work `beforeopts' `if' `in', `weighted' `penweighted'
+
 mat b = e(b)
-scalar k = e(k)
+tempname k
+scalar `k' = e(k)
 if "`obsboot'" == "" {
         mat V = e(V)
 }
@@ -52,13 +57,29 @@ else {
         di _n
 }
 ereturn post b V
-Display
+local ngeno = scalar(`k')
+Display, k(`ngeno') n(`nobs')
 ereturn local cmd "mrmedianobs"
 ereturn local cmdline `"mrmedianobs `0'"'
-ereturn scalar k = scalar(k)
+ereturn scalar k = scalar(`k')
+ereturn scalar N = `nobs'
 end
 
 program Display
+version 9
+syntax [, K(integer 0) N(integer 0)]
+if "`k'" == "0" {
+        local k = e(k)
+}
+if "`n'" == "0" {
+        local n = e(N)
+}
+local digits1 : strlen local k
+local digits2 : strlen local n
+local colstart1 = 79 - (22 + `digits1')
+local colstart2 = 79 - (16 + `digits2')
+di _n(1) _col(`colstart1') "Number of genotypes = " as res %`digits1'.0fc `k'
+di _col(`colstart2') "Number of obs = " as res %`digits2'.0fc `n'
 ereturn display
 end
 exit

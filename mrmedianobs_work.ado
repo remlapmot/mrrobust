@@ -18,6 +18,7 @@ forvalues i=1/`k' {
         mata gp[`i'] = st_matrix("e(b)")[1]
         mata gpse[`i'] = sqrt(st_matrix("e(V)")[1,1])
 }
+ereturn scalar k = `k'
 preserve
 drop _all
 cap set obs `k'
