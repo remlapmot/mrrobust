@@ -269,6 +269,14 @@ if "`tdist'" != "" {
 }
 
 ** start of displaying output
+
+// number of genotypes (i.e. rows of data used in estimation)
+qui count `if' `in'
+local k = r(N)
+local digits : strlen local k
+local colstart = 79 - (22 + `digits') 
+di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
+
 ** display coefficient table
 Display , `re' level(`level')
 if "`ivw'" == "" & "`re'" == "" {
@@ -337,14 +345,13 @@ if "`re'" == "" {
         ereturn local cmd "mregger"
         ereturn local cmdline `"mregger `0'"'
 }
-qui count `if' `in'
-local k = r(N)
 ereturn scalar k = `k'
 end
 
 program Display, rclass
 syntax [, re Level(cilevel)]
 if "`re'" == "" {
+        // regression output
         ereturn display, level(`level')
 }
 else {
