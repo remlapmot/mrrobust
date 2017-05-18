@@ -74,8 +74,8 @@ if "`k'" == "0" {
 if "`n'" == "0" {
         local n = e(N)
 }
-local digits1 : strlen local k
-local digits2 : strlen local n
+local digits1 : length local k
+local digits2 : length local n
 local colstart1 = 79 - (22 + `digits1')
 local colstart2 = 79 - (16 + `digits2')
 di _n(1) _col(`colstart1') "Number of genotypes = " as res %`digits1'.0fc `k'
