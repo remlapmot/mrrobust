@@ -273,7 +273,7 @@ if "`tdist'" != "" {
 // number of genotypes (i.e. rows of data used in estimation)
 qui count `if' `in'
 local k = r(N)
-local digits : strlen local k
+local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 
