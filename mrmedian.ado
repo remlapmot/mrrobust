@@ -105,7 +105,7 @@ syntax [, K(integer 0)]
 if "`k'" == "0" {
         local k = e(k)
 }
-local digits : strlen local k
+local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 ereturn display
