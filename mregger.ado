@@ -16,6 +16,15 @@ syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
         gxse(varname numeric) tdist *]
 
 local callersversion = _caller()
+
+// number of genotypes (i.e. rows of data used in estimation)
+qui count `if' `in'
+local k = r(N)
+if `k' < 3 {
+        di as err "mregger requires a minimum of 3 genotypes"
+        exit 2001
+}
+
 tokenize `"`varlist'"'
 /*
 2 variables:
@@ -269,10 +278,6 @@ if "`tdist'" != "" {
 }
 
 ** start of displaying output
-
-// number of genotypes (i.e. rows of data used in estimation)
-qui count `if' `in'
-local k = r(N)
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
