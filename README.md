@@ -52,9 +52,9 @@ In this case you also need to install the `addplot`, `moremata`, and `heterogi` 
 
 Extract the zip archives and save all files on your adopath.
 
-Author
+Authors
 =======
-Tom Palmer
+Tom Palmer, Wesley Spiller, Neil Davies
 
 Licence
 =======
