@@ -37,6 +37,10 @@ if "`seed'" != "" {
 
 qui count `if' `in' // !missing(`lhs',`endog',) // and all instruments
 local nobs = r(N)
+if `nobs' < 3 {
+        di as err "mrmedianobs needs a minimum of 3 observations"
+        exit 2001
+}
 
 mrmedianobs_work `beforeopts', `weighted' `penweighted' reps(`reps')
 mat b = e(b)
