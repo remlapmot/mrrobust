@@ -38,11 +38,12 @@ if "`seed'" != "" {
 qui count `if' `in' // !missing(`lhs',`endog',) // and all instruments
 local nobs = r(N)
 
-mrmedianobs_work `beforeopts' `if' `in', `weighted' `penweighted'
-
+mrmedianobs_work `beforeopts', `weighted' `penweighted' reps(`reps')
 mat b = e(b)
 tempname k
 scalar `k' = e(k)
+local nreps = e(reps)
+
 if "`obsboot'" == "" {
         mat V = e(V)
 }
@@ -54,32 +55,39 @@ else {
         }
         mat b = e(b)
         mat V = e(V)
-        di _n
+        local nreps = e(N_reps)
 }
 ereturn post b V
 local ngeno = scalar(`k')
-Display, k(`ngeno') n(`nobs')
+Display, k(`ngeno') n(`nobs') reps(`nreps')
 ereturn local cmd "mrmedianobs"
 ereturn local cmdline `"mrmedianobs `0'"'
 ereturn scalar k = scalar(`k')
 ereturn scalar N = `nobs'
+ereturn scalar reps = `nreps'
 end
 
 program Display
 version 9
-syntax [, K(integer 0) N(integer 0)]
+syntax [, K(integer 0) N(integer 0) reps(integer 0)]
 if "`k'" == "0" {
         local k = e(k)
 }
 if "`n'" == "0" {
         local n = e(N)
 }
+if "`reps'" == "0" {
+        local reps = e(reps)
+}
 local digits1 : length local k
 local digits2 : length local n
+local digits3 : length local reps
 local colstart1 = 79 - (22 + `digits1')
 local colstart2 = 79 - (16 + `digits2')
+local colstart3 = 79 - (15 + `digits3')
 di _n(1) _col(`colstart1') "Number of genotypes = " as res %`digits1'.0fc `k'
 di _col(`colstart2') "Number of obs = " as res %`digits2'.0fc `n'
+di _col(`colstart3') "Replications = " as res %`digits3'.0fc `reps'
 ereturn display
 end
 exit

@@ -62,7 +62,7 @@ estimate standard errors.
 
 {phang}
 {opt reps(#)} specifies the number of bootstrap replications for obtaining the
- standard error.
+ standard error. The default is 1000 replications.
 
 {phang}
 {opt seed(#)} specifies the initial value of the random-number seed. 

@@ -88,7 +88,7 @@ matrix colnames V = `names'
 matrix rownames V = `names'
 ereturn post b V
 local ngeno = scalar(`k')
-Display, k(`ngeno')
+Display, k(`ngeno') reps(`reps')
 
 mata mata drop `1' `2' `3' `4' `betaiv' `weights' `b1' `s1' reps
 if "`weighted'" == "" & "`penweighted'" == "" mata mata drop `ones'
@@ -97,17 +97,24 @@ if "`penweighted'" == "penweighted" mata mata drop `pw'
 ereturn local cmd "mrmedian"
 ereturn local cmdline `"mrmedian `0'"'
 ereturn scalar k = scalar(`k')
+ereturn scalar reps = `reps'
 end
 
 program Display
 version 9
-syntax [, K(integer 0)]
+syntax , [K(integer 0) reps(integer 0)] 
 if "`k'" == "0" {
         local k = e(k)
+}
+if "`reps'" == "0" {
+        local reps = e(reps)
 }
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
+local digits2 : length local reps
+local colstart2 = 79 - (15 + `digits2')
+di _col(`colstart2') "Replications = " as res %`digits2'.0fc `reps'
 ereturn display
 end
 
