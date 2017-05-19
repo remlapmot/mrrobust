@@ -31,6 +31,10 @@ qui gen double `weights' = (`2'/`3')^-2 `if' `in'
 tempname k
 qui count `if' `in' // TODO: missing data patterns??
 scalar `k' = r(N)
+if scalar(`k') < 3 {
+        di as err "mrmedian requires a minimum of 3 genotypes"
+        exit 2001
+}
 
 ** put variables into Mata
 qui putmata `1' `2' `3' `4' `betaiv' `weights' `if' `in', replace
