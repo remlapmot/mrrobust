@@ -56,6 +56,10 @@ Authors
 =======
 Tom Palmer, Wesley Spiller, Neil Davies
 
+Citation
+========
+Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. bioRxiv, published online 25th May 2017 <https://doi.org/10.1101/142125>.
+
 Licence
 =======
 CC-BY
