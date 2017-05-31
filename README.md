@@ -1,6 +1,8 @@
 # mrrobust package: Stata commands for MR-Egger, IVW, and weighted median estimators
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
 
+These commands are used with summary data of the genotype-phenotype and genotype-outcome associations. Such data can be obtained from MR-Base <http://www.mrbase.org> (Hemani et al., MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. bioRxiv, 2016, <https://doi.org/10.1101/078972>).
+
 In the package there are the following commands:
 
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al., Int J Epi, 2015 <http://dx.doi.org/10.1093/ije/dyv080>. Use with summary data (i.e. per SNP/genotype associations with the disease outcome and exposure/phenotype).
@@ -19,7 +21,7 @@ This package uses functions in Ben Jann's `moremata` and `addplot` packages and 
 . ssc install heterogi
 ```
 
-Then to install `mrrobust` issue in Stata (in versions 13 and above)
+To install `mrrobust` issue in Stata (in versions 13 and above)
 ```
 . net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
