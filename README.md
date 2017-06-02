@@ -8,6 +8,8 @@ In the package there are the following commands:
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al., Int J Epi, 2015 <http://dx.doi.org/10.1093/ije/dyv080>. Use with summary data (i.e. per SNP/genotype associations with the disease outcome and exposure/phenotype).
 
  - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al., Gen Epi, 2016 <http://dx.doi.org/10.1002/gepi.21965>. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
+ 
+ - `mrmodal` implements the zero modal estimator of Hartwig et al., biorxiv, 2017 <http://dx.doi.org/10.1101/126102>. Use with summary data.
 
  - `mreggerplot` implements a scatter plot with fitted line (either from IVW, MR-Egger, or weighted median estimators) and confidence interval.
 
@@ -42,16 +44,18 @@ To view the helpfiles which have examples near the end, issue:
 . help mregger
 . help mrmedian
 . help mrmedianobs
+. help mrmodal
 . help mreggerplot
 ```
 
 ## Stata version 12 and earlier
 The `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. In this case please download the files manually (either click the green "Clone or download" button above and then download as zip and then extract, or for each file right click over the filename above and click "Save link as..."). Then save the files on your adopath. 
 
-In this case you also need to install the `addplot`, `moremata`, and `heterogi` packages manually from SSC. 
+In this case you also need to install the `addplot`, `kdens`, `moremata`, and `heterogi` packages manually from SSC. 
  * The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
  * The `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
  * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
+ * The `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
 
 Extract the zip archives and save all files on your adopath.
 
