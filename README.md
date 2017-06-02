@@ -14,9 +14,10 @@ In the package there are the following commands:
 Installation
 ============
 
-This package uses functions in Ben Jann's `moremata` and `addplot` packages and the `heterogi` command by Orsini et al., so install those first with:
+This package uses functions in Ben Jann's `addplot`, `kdens`, and `moremata` packages and the `heterogi` command by Orsini et al., so install those first with:
 ```
 . ssc install addplot
+. ssc install kdens
 . ssc install moremata
 . ssc install heterogi
 ```
