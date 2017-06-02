@@ -23,6 +23,9 @@ becoming commonly applied in Mendelian randomization (MR) studies.
 {col 20}Unweighted, weighted, and penalized weighted median estimators for 
 summary level data.
 
+{col 7}{bf:{help mrmodal:mrmodal}}{...}
+{col 20}Modal estimator for summary level data.
+
 {col 7}{bf:{help mrmedianobs:mrmedianobs}}{...}
 {col 20}Unweighted, weighted, and penalized weighted median estimators for 
 individual level data.
@@ -39,6 +42,10 @@ MR-Egger, or median fitted line and confidence interval.
 {cmd:mrrobust} is a suite of programs imlementing recently developed 
 estimators which are robust to certain proportions of invalid instrumental 
 variables. 
+
+{pstd}
+Most of the commands are designed to use summary level data as provided by 
+repositories such as {browse "http://www.mrbase.org":MR-Base}.
 
 {pstd}
 The estimators were developed in the context of MR studies but 
