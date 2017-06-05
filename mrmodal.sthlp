@@ -23,7 +23,7 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt :{opt l:evel(#)}}confidence level{p_end}
+{synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt :{opt nome:}}NOME assumption{p_end}
 {synopt :{opt phi:(#)}}value of phi (for bandwidth){p_end}
 {synopt :{opt reps:(#)}}number of bootstrap replications to obtain standard error{p_end}
@@ -66,7 +66,7 @@ estimate standard errors.
 {title:Options}
 
 {phang}
-{opt level(#)} specifies the confidence level.
+{opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
 
 {phang}
 {opt nome} specifies the NOME (no measurement error in the genotype-phenotype 
