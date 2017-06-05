@@ -25,6 +25,7 @@
 {synopthdr}
 {synoptline}
 {synopt :{opt all:}}report percentile and bias corrected confidence intervals{p_end}
+{synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt :{opt obsboot:}}obtain standard error by bootstrapping at observation 
 level{p_end}
 {synopt :{opt penw:eighted}}penalized weighted estimator{p_end}
@@ -51,6 +52,9 @@ observation level data.
 {phang}
 {opt all} report percentile and bias corrected bootstrap confidence interval 
 limits (only applies to observation level bootstrapping with {opt obsboot}).
+
+{phang}
+{opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
 
 {phang}
 {opt obsboot} obtain bootstrap standard error by bootstrapping at the 

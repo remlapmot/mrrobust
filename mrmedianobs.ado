@@ -14,7 +14,7 @@ tokenize `"`0'"', parse(",")
 local beforeopts `1'
 
 syntax [anything] [if] [in] [, obsboot seed(string) reps(integer 50) ///
-        PENWeighted Weighted all]
+        PENWeighted Weighted all Level(cilevel)]
         
 ** weighted options
 if "`weighted'" == "weighted" & "`penweighted'" == "penweighted" {
@@ -63,7 +63,7 @@ else {
 }
 ereturn post b V
 local ngeno = scalar(`k')
-Display, k(`ngeno') n(`nobs') reps(`nreps')
+Display, k(`ngeno') n(`nobs') reps(`nreps') level(`level')
 ereturn local cmd "mrmedianobs"
 ereturn local cmdline `"mrmedianobs `0'"'
 ereturn scalar k = scalar(`k')
@@ -73,7 +73,7 @@ end
 
 program Display
 version 9
-syntax [, K(integer 0) N(integer 0) reps(integer 0)]
+syntax [, K(integer 0) N(integer 0) reps(integer 0) Level(cilevel)]
 if "`k'" == "0" {
         local k = e(k)
 }
@@ -92,6 +92,6 @@ local colstart3 = 79 - (15 + `digits3')
 di _n(1) _col(`colstart1') "Number of genotypes = " as res %`digits1'.0fc `k'
 di _col(`colstart2') "Number of obs = " as res %`digits2'.0fc `n'
 di _col(`colstart3') "Replications = " as res %`digits3'.0fc `reps'
-ereturn display
+ereturn display, level(`level')
 end
 exit
