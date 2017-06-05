@@ -1,15 +1,15 @@
 # mrrobust package: Stata commands for MR-Egger, IVW, and weighted median estimators
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
 
-These commands are used with summary data of the genotype-phenotype and genotype-outcome associations. Such data can be obtained from MR-Base <http://www.mrbase.org> (Hemani et al., MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. bioRxiv, 2016, <https://doi.org/10.1101/078972>).
+These commands are used with summary data of the genotype-phenotype and genotype-outcome associations. Such data can be obtained from MR-Base <http://www.mrbase.org> (Hemani et al. 2016).
 
 In the package there are the following commands:
 
- - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al., Int J Epi, 2015 <http://dx.doi.org/10.1093/ije/dyv080>. Use with summary data (i.e. per SNP/genotype associations with the disease outcome and exposure/phenotype).
+ - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015. Use with summary data (per SNP/genotype associations with the disease outcome and exposure/phenotype).
 
- - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al., Gen Epi, 2016 <http://dx.doi.org/10.1002/gepi.21965>. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
+ - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al. 2016. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
  
- - `mrmodal` implements the zero modal estimator of Hartwig et al., biorxiv, 2017 <http://dx.doi.org/10.1101/126102>. Use with summary data.
+ - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017. Use with summary data.
 
  - `mreggerplot` implements a scatter plot with fitted line (either from IVW, MR-Egger, or weighted median estimators) and confidence interval.
 
@@ -65,9 +65,16 @@ Tom Palmer, Wesley Spiller, Neil Davies
 
 Citation
 ========
-Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. bioRxiv, published online 25th May 2017 <https://doi.org/10.1101/142125>.
+Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. bioRxiv, published online 25th May 2017. <https://doi.org/10.1101/142125>.
+
+References
+==========
+
+ * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 2015, 44, 2, 512-525. <http://dx.doi.org/10.1093/ije/dyv080>
+ * Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian randomization with some invalid instruments using a weighted median estimator. Genetic Epidemiology, published online 7 April 2016. <http://dx.doi.org/10.1002/gepi.21965>
+ * Hartwig FP, Davey Smith G, Bowden J. Robust inference in two-sample Mendelian randomisation via the zero modal pleiotropy assumption. bioRxiv. <http://dx.doi.org/10.1101/126102>
+ * Hemani G et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. bioRxiv, 2016. <https://doi.org/10.1101/078972>)
 
 Licence
 =======
 CC-BY
-
