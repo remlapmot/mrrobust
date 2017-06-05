@@ -23,6 +23,7 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
+{synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt :{opt penw:eighted}}penalized weighted estimator{p_end}
 {synopt :{opt reps:(#)}}number of bootstrap replications to obtain standard error{p_end}
 {synopt :{opt seed:(#)}}seed for random number generator for bootstrapping to 
@@ -59,6 +60,9 @@ estimate standard errors.
 
 {marker options}{...}
 {title:Options}
+
+{phang}
+{opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
 
 {phang}
 {opt reps(#)} specifies the number of bootstrap replications for obtaining the

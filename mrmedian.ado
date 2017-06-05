@@ -11,7 +11,7 @@ if replay() {
 }
 
 syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string) ///
-        reps(integer 1000)]
+        reps(integer 1000) Level(cilevel)]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -92,7 +92,7 @@ matrix colnames V = `names'
 matrix rownames V = `names'
 ereturn post b V
 local ngeno = scalar(`k')
-Display, k(`ngeno') reps(`reps')
+Display, k(`ngeno') reps(`reps') level(`level')
 
 mata mata drop `1' `2' `3' `4' `betaiv' `weights' `b1' `s1' reps
 if "`weighted'" == "" & "`penweighted'" == "" mata mata drop `ones'
@@ -106,7 +106,7 @@ end
 
 program Display
 version 9
-syntax , [K(integer 0) reps(integer 0)] 
+syntax , [K(integer 0) reps(integer 0) Level(cilevel)] 
 if "`k'" == "0" {
         local k = e(k)
 }
@@ -119,7 +119,7 @@ di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 local digits2 : length local reps
 local colstart2 = 79 - (15 + `digits2')
 di _col(`colstart2') "Replications = " as res %`digits2'.0fc `reps'
-ereturn display
+ereturn display, level(`level')
 end
 
 mata
