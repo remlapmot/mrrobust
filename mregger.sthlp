@@ -30,6 +30,7 @@
 statistics{p_end}
 {synopt :{opt ivw:}}Inverse-variance weighted estimator (default is MR-Egger)
 {p_end}
+{synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
 {synopt :{opt penw:eighted}}Use penalized weights{p_end}
 {synopt :{opt re:}}random effects version of the estimators{p_end}
@@ -88,6 +89,9 @@ residuals by the degrees of freedom (Del Greco et al., 2015).
  
 {phang}
 {opt ivw} specifies IVW model, the default is MR-Egger.
+
+{phang}
+{opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
 
 {phang}
 {opt noresc:ale} specifies that the residual variance is not set to 1 (if 

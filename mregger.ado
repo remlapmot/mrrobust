@@ -273,8 +273,10 @@ if "`penweighted'" != "" | "`heterogi'" == "" {
 
 if "`tdist'" != "" {
         * use t-dist for ereturn display Wald test and CI limits
-        di "dfr", `dfr'
         ereturn scalar df_r  = `dfr'
+}
+else {
+        ereturn scalar df_r = .
 }
 
 ** start of displaying output
