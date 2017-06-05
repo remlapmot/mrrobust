@@ -73,7 +73,7 @@ References
  * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 2015, 44, 2, 512-525. <http://dx.doi.org/10.1093/ije/dyv080>
  * Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian randomization with some invalid instruments using a weighted median estimator. Genetic Epidemiology, published online 7 April 2016. <http://dx.doi.org/10.1002/gepi.21965>
  * Hartwig FP, Davey Smith G, Bowden J. Robust inference in two-sample Mendelian randomisation via the zero modal pleiotropy assumption. bioRxiv. <http://dx.doi.org/10.1101/126102>
- * Hemani G et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. bioRxiv, 2016. <https://doi.org/10.1101/078972>)
+ * Hemani G et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. bioRxiv, 2016. <https://doi.org/10.1101/078972>
 
 Licence
 =======
