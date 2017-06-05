@@ -1,4 +1,4 @@
-# mrrobust package: Stata commands for MR-Egger, IVW, and weighted median estimators
+# mrrobust package: Stata commands for IVW, MR-Egger, median, and modal estimators
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
 
 These commands are used with summary data of the genotype-phenotype and genotype-outcome associations. Such data can be obtained from MR-Base <http://www.mrbase.org> (Hemani et al. 2016).
