@@ -3,6 +3,9 @@
 {vieweralsosee "mregger" "mregger"}{...}
 {vieweralsosee "mrmedian" "mrmedian"}{...}
 {vieweralsosee "mrmedianobs" "mrmedianobs"}{...}
+{vieweralsosee "mrmodal" "mrmodal"}{...}
+{vieweralsosee "mrratio" "mrratio"}{...}
+{vieweralsosee "mreggerplot" "mreggerplot"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
@@ -13,7 +16,6 @@
 certain proportions of invalid instrumental variables which are 
 becoming commonly applied in Mendelian randomization (MR) studies.
 
-
 {title:Commands}{marker commands}
 
 {col 7}{bf:{help mregger:mregger}}{...}
@@ -23,17 +25,19 @@ becoming commonly applied in Mendelian randomization (MR) studies.
 {col 20}Unweighted, weighted, and penalized weighted median estimators for 
 summary level data.
 
-{col 7}{bf:{help mrmodal:mrmodal}}{...}
-{col 20}Modal estimator for summary level data.
-
 {col 7}{bf:{help mrmedianobs:mrmedianobs}}{...}
 {col 20}Unweighted, weighted, and penalized weighted median estimators for 
 individual level data.
 
+{col 7}{bf:{help mrmodal:mrmodal}}{...}
+{col 20}Modal estimator for summary level data.
+
+{col 7}{bf:{help mrratio:mrratio}}{...}
+{col 20}Ratio (Wald) estimator for summary level data.
+
 {col 7}{bf:{help mreggerplot:mreggerplot}}{...}
 {col 20}Scatter plot showing instrument specific estimates with IVW, 
 MR-Egger, or median fitted line and confidence interval.
-
 
 {marker description}{...}
 {title:Description}
@@ -50,7 +54,6 @@ repositories such as {browse "http://www.mrbase.org":MR-Base}.
 {pstd}
 The estimators were developed in the context of MR studies but 
 could be used in other studies using instrumental variables.
-
 
 {title:Author}{marker author}
 
