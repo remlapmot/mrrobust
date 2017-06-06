@@ -31,11 +31,6 @@ If you have previously installed the package and `net install` fails with an err
 . adoupdate mrrobust, update
 ```
 
-To uninstall the package, issue in Stata:
-```
-. ado uninstall mrrobust
-```
-
 There is a summary helpfile listing the commands:
 ```
 . help mrrobust
@@ -51,6 +46,11 @@ To view the helpfiles, which have examples near the end, for each command issue:
 . help mreggerplot
 ```
 
+To uninstall the package, issue in Stata:
+```
+. ado uninstall mrrobust
+```
+
 ### Stata version 12 and earlier
 The `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. In this case please download the files manually (either click the green "Clone or download" button above and then download as zip and then extract, or for each file right click over the filename above and click "Save link as..."). Then save the files on your adopath. 
 
@@ -60,6 +60,8 @@ In this case you also need to install the `addplot`, `kdens`, `moremata`, and `h
  * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
  * The `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
 Extract the zip archives and save all files on your adopath.
+
+To uninstall a manual installation simply delete the files you placed on your adopath.
 
 ## Authors
 Tom Palmer, Wesley Spiller, Neil Davies
