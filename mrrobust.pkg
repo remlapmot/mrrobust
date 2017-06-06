@@ -1,7 +1,7 @@
 v 3
 d mrrobust
 d Author: Tom Palmer
-d Distribution-Date: 20170605
+d Distribution-Date: 20170606
 f mrmedian.ado
 f mrmedian.sthlp
 f mrmedianobs.ado
@@ -14,4 +14,6 @@ f mreggerplot.ado
 f mreggerplot.sthlp
 f mrmodal.ado
 f mrmodal.sthlp
+f mrratio.ado
+f mrratio.sthlp
 e
