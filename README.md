@@ -1,14 +1,14 @@
-# mrrobust package: Stata commands for IVW, MR-Egger, median, and modal estimators
+# mrrobust package: Stata commands for ratio, IVW, MR-Egger, median, and modal estimators
 
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
 
 These commands are used with summary data of the genotype-phenotype and genotype-outcome associations. Such data can be obtained from MR-Base <http://www.mrbase.org> (Hemani et al. 2016).
 
 In the package there are the following commands:
+ - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals.
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015. Use with summary data (per SNP/genotype associations with the disease outcome and exposure/phenotype).
  - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al. 2016. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
  - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017. Use with summary data.
- - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with different standard errors/confidence intervals.
  - `mreggerplot` implements a scatter plot with fitted line (either from IVW, MR-Egger, or weighted median estimators) and confidence interval.
 
 ## Installation
@@ -38,11 +38,11 @@ There is a summary helpfile listing the commands:
 
 To view the helpfiles, which have examples near the end, for each command issue:
 ```
+. help mrratio
 . help mregger
 . help mrmedian
 . help mrmedianobs
 . help mrmodal
-. help mrratio
 . help mreggerplot
 ```
 
