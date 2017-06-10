@@ -33,11 +33,14 @@ individual level data.
 {col 20}Modal estimator for summary level data.
 
 {col 7}{bf:{help mrratio:mrratio}}{...}
-{col 20}Ratio (Wald) estimator for summary level data.
+{col 20}Ratio (Wald) estimator for summary level data for a single genotype.
+
+{col 7}{bf:{help mrivests:mrivests}}{...}
+{col 20}Generate ratio (Wald) estimates for summary level data in dataset.
 
 {col 7}{bf:{help mreggerplot:mreggerplot}}{...}
 {col 20}Scatter plot showing instrument specific estimates with IVW, 
-MR-Egger, or median fitted line and confidence interval.
+{col 20}MR-Egger, or median fitted line and confidence interval.
 
 {marker description}{...}
 {title:Description}
@@ -57,4 +60,5 @@ could be used in other studies using instrumental variables.
 
 {title:Author}{marker author}
 
-{p}Tom Palmer. Please report any bugs or issues you find.
+{pstd}
+Tom Palmer. Please report any bugs or issues you find.
