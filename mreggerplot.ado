@@ -4,12 +4,12 @@ version 12
 local version : di "version " string(_caller()) ", missing :"
 
 syntax varlist(min=4 max=4) [if] [in] [, ivw fe re ///
-        reslope recons median egger noline ///
-        nomcis nolci errorbars Level(cilevel) wmarkers ///
+        reslope recons median egger noLINE ///
+        noMCIS noLCI errorbars Level(cilevel) wmarkers ///
         PENWeighted reps(integer 50) seed(string) Weighted ///
-        ellipses mlabel(varname) legend(string) ///
-        linetop ///
-         *]
+        ellipses mlabel(varname) legend(string asis) ///
+        linetop GPCI ///
+        mleglabel(string) * ]
 
 local callersversion = _caller()
 
@@ -37,6 +37,15 @@ if "`ivw'" == "" & "`median'" == "" & "`egger'" == "" {
         local egger egger
 }
 
+if `"`mleglabel'"' == "" {
+        local mleglabel Instruments
+}
+
+if "`errorbars'" == "errorbars" & "`ellipses'" == "ellipses" {
+        di as err "Options ellipses and errorbars cannot both be specified"
+        exit 198
+}
+
 tokenize `"`varlist'"'
 /*
 4 variables:
@@ -60,6 +69,104 @@ local k = r(N)
 
 local percentile = 1 - (1 - `level'/100)/2
 
+if "`gpci'" == "gpci" & "`mcis'" == "nomcis" {
+        di as err "nomcis and gpci options may not be specified together"
+        exit 198
+}
+
+local legendwc : word count `legend'
+if `legendwc' == 0 {
+        local legend on
+}
+
+if "`median'" == "median" {
+        local lci nolci
+}
+
+if "`ellipses'" == "" & "`errorbars'" == "" {
+        // set default as errobars
+        local errorbars errorbars
+}
+
+// set-up local for legend
+if `"`legend'"' == "on" {
+        if "`egger'" == "egger" {
+                local lname MR-Egger
+        }
+        if "`median'" == "median" {
+                local lname Median
+        }
+        if "`ivw'" == "ivw" {
+                local lname IVW
+        }
+        if "`lci'" == "" & "`gpci'" == "" & ///
+                "`mcis'" == "" {
+                if "`line'" == "" {
+                        local lleg 3 "`lname'"
+                }
+                else {
+                        local lleg ""
+                }
+                if "`linetop'" == "" {
+                        if "`errorbars'" == "errorbars" {
+                                local mlabn 5
+                        }
+                        else {
+                                local mlabn = 4 + `k'
+                        }
+                        local legend `"order(`mlabn' "`mleglabel'" 4 "`level'% CIs" `lleg' 2 "`lname' `level'% CI") rows(1) size(small)"'
+                }
+                else {
+                        local legend `"order(3 "`mleglabel'" 2 "`level'% CIs" 5 "`lname'" 4 "`lname' `level'% CI") rows(1) size(small)"'
+                }
+        }
+        if "`line'" == "" & "`lci'" == "" & "`gpci'" == "gpci" & ///
+                "`mcis'" == "" {
+                if "`linetop'" == "" {
+                        local legend `"order(6 "`mleglabel'" 4 "`level'% CIs" 3 "`lname'" 2 "`lname' `level'% CI") rows(1) size(small)"'
+                }
+                else {
+                        local legend `"order(4 "`mleglabel'" 2 "`level'% CIs" 6 "`lname'" 5 "`lname' `level'% CI") rows(1) size(small)"'
+                }
+        }
+        if "`line'" == "" & "`lci'" == "" & "`gpci'" == "" & ///
+                "`mcis'" == "nomcis" {
+                if "`linetop'" == "" {
+                        local legend `"order(4 "`mleglabel'" 3 "`lname'" 2 "`lname' `level'% CI") rows(1) size(small)"'
+                }
+                else {
+                        local legend `"order(2 "`mleglabel'" 4 "`lname'" 3 "`lname' `level'% CI") rows(1) size(small)"'
+                }
+        }
+        if "`line'" == "" & "`lci'" == "nolci" & "`gpci'" == "" & ///
+                "`mcis'" == "" {
+                if "`linetop'" == "" {
+                        local legend `"order(4 "`mleglabel'" 3 "`level'% CIs" 2 "`lname'") rows(1) size(small)"'
+                }
+                else {
+                        local legend `"order(3 "`mleglabel'" 2 "`level'% CIs" 4 "`lname'") rows(1) size(small)"'
+                }
+        }
+        if "`line'" == "" & "`lci'" == "nolci" & ///
+                "`gpci'" == "gpci" & "`mcis'" == "" {
+                if "`linetop'" == "" {
+                        local legend `"order(5 "`mleglabel'" 4 "`level'% CIs" 2 "`lname'") rows(1) size(small)"'
+                }
+                else {
+                        local legend `"order(4 "`mleglabel'" 2 "`level'% CIs" 5 "`lname'") rows(1) size(small)"'
+                }
+        }
+        if "`line'" == "" & "`lci'" == "nolci" & "`gpci'" == "" & ///
+                "`mcis'" == "nomcis" {
+                if "`linetop'" == "" {
+                        local legend `"order(3 "`mleglabel'" 2 "`lname'") rows(1) size(small)"'
+                }
+                else {
+                        local legend `"order(2 "`mleglabel'" 3 "`lname'") rows(1) size(small)"'
+                }
+        }
+}
+
 // weighted markers
 if "`wmarkers'" == "wmarkers" {
         tempvar weightvar
@@ -75,16 +182,22 @@ if "`egger'" == "egger" {
 tempvar eggery eggerx
         qui gen double `eggery' = `1'*sign(`3') `if' `in'
         qui gen double `eggerx' = abs(`3') `if' `in'
-        la var `eggery' `""`1'{char 215}sign(`3')""'
-        la var `eggerx' "abs(`3')"
+        la var `eggery' `"Instrument-outcome associations"'
+        // la var `eggery' `""`1'{char 215}sign(`3')""'
+        la var `eggerx' `"Instrument-exposure associations"' 
+        // la var `eggerx' "abs(`3')"
 }
         
 // set up the plot using a scatter plot with invisible markers
 if ("`ivw'" == "ivw" | "`median'" == "median") & "`egger'" == "" {
-        twoway scatter `1' `3' `if' `in', mc(none)
+        la var `3' `"Instrument-exposure associations"'
+        la var `1' `"Instrument-outcome associations"'
+        twoway scatter `1' `3' `if' `in', mc(none) ///
+                graphregion(color(white)) `options'
 }
 else if "`egger'" == "egger" {
-        twoway scatter `eggery' `eggerx' `if' `in', mc(none)
+        twoway scatter `eggery' `eggerx' `if' `in', mc(none) ///
+                graphregion(color(white)) `options'
 }
 
 // fit ivw, mr-egger, or weighted median
@@ -124,13 +237,16 @@ if "`linetop'" == "" {
                         addplot : lfitci `eggery' `eggerx' `if' `in' ///
                                 [aw=1/(`2'^2)], nofit ///
                                 fcolor("204 204 204") ///
-                                fintensity(inten50) level(`level')
+                                fintensity(inten50) level(`level') ///
+                                alwidth(vthin) legend(`legend')
                 }
                 if "`ivw'" == "ivw" {
-                        addplot : lfitci `1' `3' `if' `in' [aw=1/(`2'^2)], ///
+                        addplot : lfitci `1' `3' `if' `in' ///
+                                [aw=1/(`2'^2)], ///
                                 estopts(nocons) nofit ///
                                 fcolor("204 204 204") ///
-                                fintensity(inten50) level(`level')
+                                fintensity(inten50) level(`level') ///
+                                alwidth(vthin) legend(`legend')
                 }
         }
 
@@ -139,41 +255,41 @@ if "`linetop'" == "" {
                 if "`egger'" == "egger" {
                         addplot : line `eggerline' `eggerx' `if' `in', ///
                                 lc(gs0) sort ///
-                                 // legend(order(3 4 2) rows(1))
+                                legend(`legend')
                 }
                 if "`ivw'" == "ivw" {
                         addplot : line `ivwline' `3' `if' `in', ///
                                 lc(gs0) sort ///
-                                 // legend(order(3 4 2) rows(1))
+                                legend(`legend')
                 }
                 if "`median'" == "median" {
                         addplot : line `medianline' `3' `if' `in', ///
                                 lc(gs0) sort ///
-                                // legend(`legend')
+                                legend(`legend')
                 }
         }
 }
 
 // plot 95% cis around markers
-if "`ellipses'" == "" & "`errorbars'" == "" {
-        // set default as errobars
-        local errorbars errorbars
-}
 if "`ellipses'" == "ellipses" & "`mcis'" == "" {
         // ellipses code
         tempvar x y
         if "`egger'" == "egger" {
                 qui gen double `y' = `eggery' `if' `in'
                 qui gen double `x' = `eggerx' `if' `in'
-                la var `y' "`1'{char 215}sign(`3')"
-                la var `x' "abs(`3')"
+                la var `y' "Instrument-outcome associations"
+                // la var `y' "`1'{char 215}sign(`3')"
+                la var `x' "Instrument-exposure associations"
+                //la var `x' "abs(`3')"
                 
         }
         else {
                 qui gen double `y' = `1' `if' `in' 
                 qui gen double `x' = `3' `if' `in'
-                la var `x' `1'
-                la var `y' `3'
+                // la var `x' `1'
+                la var `x' "Instrument-exposure associations"
+                // la var `y' `3'
+                la var `y' "Instrument-outcome associations"
         }
         tempvar t
         local obs = _N
@@ -194,7 +310,7 @@ if "`ellipses'" == "ellipses" & "`mcis'" == "" {
                 qui gen double `y`i'' = `gdval' + `gdseval'*`sqrtc'* ///
                         cos(`t' + acos(0))
                 local twycmd ///
-                        "`twycmd' line `y`i'' `x`i'', lc(gs8) || "
+                        "`twycmd' line `y`i'' `x`i'', lc(gs8) lw(vthin) || "
         }
         addplot : `twycmd', legend(`legend')
         if `obs' < 400 {
@@ -216,22 +332,29 @@ if "`errorbars'" == "errorbars" & "`mcis'" == "" {
         qui gen double `gdciupp' = `y' + invnormal(`percentile')*`2'
         qui gen double `gpcilow' = `x' - invnormal(`percentile')*`4'
         qui gen double `gpciupp' = `x' + invnormal(`percentile')*`4'
-        local rcgd rcap `gdcilow' `gdciupp' `x' `if' `in', lc(gs8)
-        local rcgp rcap `gpcilow' `gpciupp' `y' `if' `in', lc(gs8) horizontal 
-        addplot : `rcgd' || `rcgp' , legend(`legend')
+        local rcgd rcap `gdcilow' `gdciupp' `x' `if' `in', lc(gs0) ///
+                lwidth(vthin) msize(vsmall) mfcolor(gs0) mlcolor(gs0) ///
+                mcolor(gs0)
+        local rcgp rcap `gpcilow' `gpciupp' `y' `if' `in', lc(gs0) ///
+                lwidth(vthin) msize(vsmall) mfcolor(gs0) mlcolor(gs0) ///
+                mcolor(gs0) horizontal
+        addplot : `rcgd' , legend(`legend')
+        if "`gpci'" == "gpci" {
+                addplot : `rcgp' , legend(`legend')
+        }
 }
 
 // replot the markers with colour
 if "`egger'" == "egger" {
         addplot : scatter `eggery' `eggerx' `if' `in' `weight', ///
-                m(s) mc(gs6) mlabel(`mlabel') mlabcolor(black) ///
-                mlabsize(vsmall) ///
+                m(s) mc(gs0) mlabel(`mlabel') mlabcolor(black) ///
+                mlabsize(vsmall) msize(vsmall) ///
                 legend(`legend')
 }
 else {
         addplot : scatter `1' `3' `if' `in' `weight', ///
-                m(s) mc(gs6) mlabel(`mlabel') mlabcolor(black) ///
-                mlabsize(vsmall) ///
+                m(s) mc(gs0) mlabel(`mlabel') mlabcolor(black) ///
+                mlabsize(vsmall) msize(vsmall) ///
                 legend(`legend')
 }
 
@@ -244,13 +367,15 @@ if "`linetop'" != "" {
                         addplot : lfitci `eggery' `eggerx' `if' `in' ///
                                 [aw=1/(`2'^2)], nofit ///
                                 fcolor("204 204 204") ///
-                                fintensity(inten50) level(`level')
+                                fintensity(inten50) level(`level') ///
+                                alwidth(vthin) legend(`legend')
                 }
                 if "`ivw'" == "ivw" {
                         addplot : lfitci `1' `3' `if' `in' [aw=1/(`2'^2)], ///
                                 estopts(nocons) nofit ///
                                 fcolor("204 204 204") ///
-                                fintensity(inten50) level(`level')
+                                fintensity(inten50) level(`level') ///
+                                alwidth(vthin) legend(`legend')
                 }
         }
 
@@ -258,18 +383,15 @@ if "`linetop'" != "" {
         if "`line'" == "" {
                 if "`egger'" == "egger" {
                         addplot : line `eggerline' `eggerx' `if' `in', ///
-                                lc(gs0) sort ///
-                                 // legend(order(3 4 2) rows(1))
+                                lc(gs0) sort legend(`legend')
                 }
                 if "`ivw'" == "ivw" {
                         addplot : line `ivwline' `3' `if' `in', ///
-                                lc(gs0) sort ///
-                                 // legend(order(3 4 2) rows(1))
+                                lc(gs0) sort legend(`legend')
                 }
                 if "`median'" == "median" {
                         addplot : line `medianline' `3' `if' `in', ///
-                                lc(gs0) sort ///
-                                // legend(`legend')
+                                lc(gs0) sort legend(`legend')
                 }
         }
 }

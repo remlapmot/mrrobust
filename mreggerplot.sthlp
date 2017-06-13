@@ -25,11 +25,13 @@
 {synopt :{opt ellipses:}}marker confidence intervals as ellipses{p_end}
 {synopt :{opt errorbars:}}marker confidence intervals as capped lines{p_end}
 {synopt :{opt fe:}}fixed effect standard errors for fitted line{p_end}
+{synopt :{opt gpci:}}CIs around G-P associations{p_end}
 {synopt :{opt ivw:}}IVW line (default is MR-Egger){p_end}
 {p2col:{cmd:legend(}{it:string}{cmd:)}}legend options{p_end}
 {p2col:{cmd:level(}{it:#}{cmd:)}}set confidence level; default is
        {cmd:level(95)}{p_end}
 {synopt :{opt linetop:}}draw fitted line (and CI) on top of points{p_end}
+{p2col:{cmd:mleglabel(}{it:string}{cmd:)}}Label for data points in legend; default is Instruments{p_end}
 {synopt :{opt median:}}median estimator for fitted line{p_end}
 {synopt :{opt mlabel:(string)}}variable containing marker labels{p_end}
 {synopt :{opt nolci:}}do not plot confidence interval around fitted line{p_end}
@@ -44,6 +46,7 @@
 obtain standard error{p_end}
 {synopt :{opt w:eighted}}weighted median estimator{p_end}
 {synopt :{opt wmarkers:}}weighted markers{p_end}
+{p2col:{cmd:*}}Other options passed to the {cmd:twoway} plot{p_end}
 
 {marker description}{...}
 {title:Description}
@@ -66,7 +69,6 @@ estimates.
 {var:_gpse} is a variable containing the genotype-phenotype association 
 estimate standard errors.
 
-
 {marker examples}{...}
 {title:Examples}
 
@@ -80,24 +82,37 @@ al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, colum
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
 {pstd}Scatter plot of MR-Egger model{p_end}
-{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)"}{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
+
+{pstd}Scatter plot of MR-Egger model with genotype-phenotype CIs{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, gpci"}{p_end}
+
+{pstd}Scatter plot of MR-Egger model specifying own titles and legend label{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, title(Investigating pleiotropy: MR-Egger model fit) xtitle(Genotype-LDLC associations) ytitle(Genotype-CHD associations) mleglabel(Genotypes)"}{p_end}
 
 {pstd}Scatter plot of IVW model{p_end}
-{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ivw legend(off)"}{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ivw"}{p_end}
 
 {pstd}Scatter plot of unweighted median model{p_end}
-{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, median legend(off)"}{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, median"}{p_end}
 
 {pstd}Scatter plot of MR-Egger model using ellipses around points{p_end}
-{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ellipses legend(off)"}{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ellipses"}{p_end}
 
-{pstd}Scatter plot of MR-Egger model adding an IVW line for comparison{p_end}
-{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)"}{p_end}
+{pstd}Scatter plot of MR-Egger model adding an IVW line (with legend entry) for comparison{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
 {phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw"}{p_end}
-{phang2}{cmd:.} {stata "addplot : function _b[ldlcbeta]*x if sel1==1, range(0 0.5) lc(gs0) lp(longdash)"}{p_end}
-{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted"}{p_end}
-{phang2}{cmd:.} {stata "addplot : function _b[beta]*x if sel1==1, range(0 0.5) lc(gs0) lp(shortdash)"}{p_end}
+{phang2}{cmd:.} {stata `"addplot : function _b[ldlcbeta]*x if sel1==1, range(0 0.5) lc(gs0) lp(longdash) lw(vthin) legend(order(5 "Instruments" 4 "95% CIs" 3 "MR-Egger" 2 "MR-Egger 95% CI" 6 "IVW") rows(1) size(vsmall))"'}{p_end}
 
+{pstd}Scatter plot of MR-Egger model adding weighted median and modal lines (with legend entries) for comparison{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted"}{p_end}
+{phang2}{cmd:.} {stata "addplot : function _b[beta]*x if sel1==1, range(0 0.5) lc(gs0) lp(shortdash) lw(vthin)"}{p_end}
+{phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, phi(.25)"}{p_end}
+{phang2}{cmd:.} {stata `"addplot : function _b[beta]*x if sel1==1, range(0 0.5) lc(gs0) lp(longdash) legend(order(5 "Instruments" 4 "95% CIs" 3 "MR-Egger" 2 "MR-Egger 95% CI" 6 "Weighted median" 7 "Modal") rows(1) si(vsmall) symx(*.5))"'}{p_end}
+
+{pstd}Scatter plot without any fitted lines{p_end}
+{phang2}{cmd:.} {stata `"mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ivw noline nolci gpci legend(order(4 "Instruments" 3 "95% CI") size(vsmall) rows(1))"'}{p_end}
 
 {marker references}{...}
 {title:References}
@@ -115,7 +130,6 @@ Do et al., 2013. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
 {browse "http://dx.doi.org/10.1038/ng.2795"}
 {p_end}
-
 
 {marker author}
 {title:Author}
