@@ -84,6 +84,10 @@ al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, colum
 {pstd}Scatter plot of MR-Egger model{p_end}
 {phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
 
+{pstd}Scatter plot of MR-Egger model labelling outlying genotypes{p_end}
+{phang2}{cmd:.} {stata "gen mlabvar = rsid if abs(ldlcbeta) > .3"}{p_end}
+{phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, mlab(mlabvar) mlabsize(vsmall) mlabp(7) mlabc(gs0)"}{p_end}
+
 {pstd}Scatter plot of MR-Egger model with genotype-phenotype CIs{p_end}
 {phang2}{cmd:.} {stata "mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, gpci"}{p_end}
 
