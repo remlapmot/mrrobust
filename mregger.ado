@@ -98,7 +98,7 @@ if "`ivw'" == "ivw" {
                         local df = e(N) - 1
                         local qstat = _b[var(e.`gdtr'):_cons]*e(N)
                         // if using glm: local qstat = e(phi)*(e(N) - 1)
-                        scalar `dfr' = e(N) - (e(df_m) - 1)
+                        scalar `dfr' = e(df)
                 }
         }
         if "`fe'" == "" & "`re'" == "" {
@@ -106,6 +106,7 @@ if "`ivw'" == "ivw" {
                 // qui reg `1' `2' [aw=`invvar'] `if' `in', nocons
                 qui glm `1' `2' [iw=`invvar'] `if' `in', nocons
                 scalar `betaivw' = _b[`2']
+                scalar `dfr' = e(df)
                 if "`penweighted'" != "" {
                         qui gen double `pweights' = chi2tail(1, ///
                                 (`2'^2*`invvar')* ///
@@ -126,8 +127,9 @@ if "`ivw'" == "ivw" {
                                 scalar `dfr' = e(df)
                         }
                         else {
-                                qui glm `1' `2' [iw=`rweights'] `if' `in', ///
-                                        nocons scale(1)                        
+                                qui glm `1' `2' [iw=`rweights'] ///
+                                `if' `in', ///
+                                nocons scale(1)                        
                                 scalar `dfr' = e(df)
                         }
                 }
