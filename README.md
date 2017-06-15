@@ -1,4 +1,4 @@
-# mrrobust package: Stata commands for ratio, IVW, MR-Egger, median, and modal estimators, and an Egger scatter plot
+# mrrobust package: Stata commands for ratio, IVW, MR-Egger, median, and modal estimators, and an MR-Egger scatter plot
 
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
 
