@@ -5,7 +5,9 @@
 {vieweralsosee "mrmedianobs" "mrmedianobs"}{...}
 {vieweralsosee "mrmodal" "mrmodal"}{...}
 {vieweralsosee "mrratio" "mrratio"}{...}
+{vieweralsosee "mrivests" "mrivests"}{...}
 {vieweralsosee "mreggerplot" "mreggerplot"}{...}
+{vieweralsosee "mrforest" "mrforest"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
@@ -13,34 +15,26 @@
 
 {phang}
 {bf:mrrobust} {hline 2} Suite of commands implementing estimators robust to 
-certain proportions of invalid instrumental variables which are 
-becoming commonly applied in Mendelian randomization (MR) studies.
+certain proportions of invalid instrumental variables applied in Mendelian randomization (MR) studies.
 
 {title:Commands}{marker commands}
 
-{col 7}{bf:{help mregger:mregger}}{...}
-{col 20}MR-Egger and inverse-variance weighted (IVW) estimators.
+{synoptset 13 tabbed}{...}
+{synopt :{opt {help mregger}:}}MR-Egger and inverse-variance weighted (IVW) estimators.
 
-{col 7}{bf:{help mrmedian:mrmedian}}{...}
-{col 20}Unweighted, weighted, and penalized weighted median estimators for 
-summary level data.
+{synopt :{opt {help mrmedian}:}}Unweighted, weighted, and penalized weighted median estimators for summary level data.
 
-{col 7}{bf:{help mrmedianobs:mrmedianobs}}{...}
-{col 20}Unweighted, weighted, and penalized weighted median estimators for 
-individual level data.
+{synopt :{opt {help mrmedianobs}:}}Unweighted, weighted, and penalized weighted median estimators for individual level data.
 
-{col 7}{bf:{help mrmodal:mrmodal}}{...}
-{col 20}Modal estimator for summary level data.
+{synopt :{opt {help mrmodal}:}}Modal estimator for summary level data.
 
-{col 7}{bf:{help mrratio:mrratio}}{...}
-{col 20}Ratio (Wald) estimator for summary level data for a single genotype.
+{synopt :{opt {help mrratio}:}}Ratio (Wald) estimator for summary level data for a single genotype.
 
-{col 7}{bf:{help mrivests:mrivests}}{...}
-{col 20}Generate ratio (Wald) estimates for summary level data in dataset.
+{synopt :{opt {help mrivests}:}}Generate ratio (Wald) estimates for summary level data in dataset.
 
-{col 7}{bf:{help mreggerplot:mreggerplot}}{...}
-{col 20}Scatter plot showing instrument specific estimates with IVW, 
-{col 20}MR-Egger, or median fitted line and confidence interval.
+{synopt :{opt {help mreggerplot}:}}Scatter plot showing instrument specific estimates with IVW, MR-Egger, or median fitted line and confidence interval.
+
+{synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
 
 {marker description}{...}
 {title:Description}
