@@ -65,6 +65,7 @@ In this case you also need to install the `addplot`, `kdens`, `moremata`, `heter
  * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
  * The `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
  * The `metan` command is available here <https://ideas.repec.org/c/boc/bocode/s456798.html>
+ 
 Extract the zip archives and save all files on your adopath.
 
 To uninstall a manual installation simply delete the files you placed on your adopath.
