@@ -1,4 +1,4 @@
-# mrrobust package: Stata commands for ratio, IVW, MR-Egger, median, and modal estimators, and an MR-Egger scatter plot
+# mrrobust package: Stata commands for ratio, IVW, MR-Egger, median, and modal estimators, an MR-Egger scatter plot, and a forest plot
 
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
 
@@ -11,15 +11,17 @@ In the package there are the following commands:
  - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al. 2016. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
  - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017. Use with summary data.
  - `mreggerplot` implements a scatter plot with fitted line (either from IVW, MR-Egger, or weighted median estimators) and confidence interval.
+ - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger).
 
 ## Installation
 
-This package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages and the `heterogi` command by Orsini et al., so install those first:
+This package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command by Orsini et al., and the `metan` command (Harris et al.), so install those first:
 ```
 . ssc install addplot
 . ssc install kdens
 . ssc install moremata
 . ssc install heterogi
+. ssc install metan
 ```
 
 Then to install `mrrobust` issue in Stata (in versions 13 and above):
@@ -46,6 +48,7 @@ To view the helpfiles, which have examples near the end, for each command issue:
 . help mrmedianobs
 . help mrmodal
 . help mreggerplot
+. help mrforest
 ```
 
 To uninstall the package, issue in Stata:
@@ -61,6 +64,7 @@ In this case you also need to install the `addplot`, `kdens`, `moremata`, and `h
  * The `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
  * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
  * The `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
+ * The `metan` command is available here <https://ideas.repec.org/c/boc/bocode/s456798.html>
 Extract the zip archives and save all files on your adopath.
 
 To uninstall a manual installation simply delete the files you placed on your adopath.
