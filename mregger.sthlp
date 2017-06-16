@@ -130,7 +130,7 @@ see {help gsem_command:gsem}.
 {title:Example 1}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
+al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
@@ -147,6 +147,14 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 {pstd}MR-Egger with fixed effect standard errors{p_end}
 {phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe"}{p_end}
 
+{pstd}MR-Egger reporting {it:I^2_GX} statistic{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)"}{p_end}
+
+{pstd}MR-Egger with fixed effect standard errors and t-distribution 
+CI limits{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe tdist"}{p_end}
+
+
 {marker results}{...}
 {title:Stored results}
 
@@ -155,8 +163,10 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Scalars}{p_end}
+{synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} 
+option){p_end}
 {synopt:{cmd:e(k)}}number of instruments{p_end}
-{synopt:{cmd:e(I2GX)}}I^2_GX{p_end}
+{synopt:{cmd:e(I2GX)}}I^2_GX (with {cmd:gxse()} option){p_end}
 
 {synoptset 20 tabbed}{...}
     If {opt re} is not specified:
