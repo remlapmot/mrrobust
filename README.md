@@ -19,13 +19,14 @@ In the package there are the following commands:
 
 ## Installation
 
-This package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command by Orsini et al., and the `metan` command (Harris et al.), so install those first:
+This package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command by Orsini et al., the `metan` command (Harris et al.) and the `grc1leg` command (Wiggins). To install those use the following commands:
 ```
 . ssc install addplot
 . ssc install kdens
 . ssc install moremata
 . ssc install heterogi
 . ssc install metan
+. net install grc1leg, from(http://www.stata.com/users/vwiggins)
 ```
 
 Then to install `mrrobust` issue in Stata (in versions 13 and above):
