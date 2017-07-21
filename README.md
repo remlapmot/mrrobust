@@ -6,11 +6,11 @@
 [<p align="center"><img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300"></p>](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
 ## Overview
-The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
+The `mrrobust` package contains is a collection of commands for performing two-sample Mendelian randomization analyses using summary data of genotype-phenotype and genotype-outcome associations. 
 
-These commands are used with summary data of the genotype-phenotype and genotype-outcome associations. Such data can be obtained from MR-Base <http://www.mrbase.org> (Hemani et al. 2016).
+Such data can be obtained from repositories such as MR-Base <http://www.mrbase.org> (Hemani et al. 2016).
 
-In the package there are the following commands:
+The package contains the following commands:
  - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals.
  - `mrivests` automates calling `mrratio` on all the selected genotypes in your dataset.
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015. Use with summary data (per SNP/genotype associations with the disease outcome and exposure/phenotype).
@@ -21,7 +21,7 @@ In the package there are the following commands:
 
 ## Installation
 
-This package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command by Orsini et al., the `metan` command (Harris et al.) and the `grc1leg` command (Wiggins). To install those use the following commands:
+First install the dependencies. The package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins). Install those using the following commands:
 ```
 . ssc install addplot
 . ssc install kdens
@@ -31,22 +31,22 @@ This package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `h
 . net install grc1leg, from(http://www.stata.com/users/vwiggins)
 ```
 
-Then to install `mrrobust` issue in Stata (in versions 13 and above):
+To install `mrrobust` issue in Stata (in versions 13 and above):
 ```
 . net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
-If you have previously installed the package and `net install` fails with an error message that there are two copies of the package installed simply run `adoupdate`. Also run `adoupdate` to check for updates. To update the package if you know an update is available run:
+If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`. Also run `adoupdate` to check for updates. To update the package if you know an update is available run:
 ```
 . adoupdate mrrobust, update
 ```
 
-There is a summary helpfile listing the commands:
+There is a summary helpfile:
 ```
 . help mrrobust
 ```
 
-To view the helpfiles, which have examples near the end, for each command issue:
+The helpfile for each command has an example near the end:
 ```
 . help mrratio
 . help mrivests
@@ -63,8 +63,8 @@ To uninstall the package, issue in Stata:
 . ado uninstall mrrobust
 ```
 
-### Stata version 12 and earlier
-The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation for the other commands should all work.
+### Manual installation in Stata version 12 and earlier
+The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation commands for the other dependencies should work.
 
 To download `mrrobust` manually click the green "Clone or download" button above and then download as a zip archive. Then extract the zip archive on your computer. Then move the extracted files to your `adopath`. 
 
@@ -74,6 +74,7 @@ If you need to install the other commands manually:
  * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
  * The `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
  * The `metan` command is available here <https://ideas.repec.org/c/boc/bocode/s456798.html>.
+ * The `grc1leg` ado-file is here <http://www.stata.com/users/vwiggins/grc1leg/grc1leg.ado> and the helpfile is here <http://www.stata.com/users/vwiggins/grc1leg/grc1leg.hlp>
  
 Extract the zip archives and save all files on your `adopath`.
 
