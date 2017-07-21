@@ -64,16 +64,18 @@ To uninstall the package, issue in Stata:
 ```
 
 ### Stata version 12 and earlier
-The `net install` syntax above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. In this case please download the files manually (either click the green "Clone or download" button above and then download as zip and then extract, or for each file right click over the filename above and click "Save link as..."). Then save the files on your adopath. 
+The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation for the other commands should all work.
 
-In this case you also need to install the `addplot`, `kdens`, `moremata`, `heterogi`, and `metan` packages manually from SSC. 
+To download `mrrobust` manually click the green "Clone or download" button above and then download as a zip archive. Then extract the zip archive on your computer. Then move the extracted files to your `adopath`. 
+
+If you need to install the other commands manually: 
  * The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
  * The `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
  * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
  * The `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
- * The `metan` command is available here <https://ideas.repec.org/c/boc/bocode/s456798.html>
+ * The `metan` command is available here <https://ideas.repec.org/c/boc/bocode/s456798.html>.
  
-Extract the zip archives and save all files on your adopath.
+Extract the zip archives and save all files on your `adopath`.
 
 To uninstall a manual installation simply delete the files you placed on your adopath.
 
@@ -81,7 +83,7 @@ To uninstall a manual installation simply delete the files you placed on your ad
 Tom Palmer, Wesley Spiller, Neil Davies
 
 ## Citation
-Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. bioRxiv, published online 25th May 2017. <https://doi.org/10.1101/142125>.
+Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. bioRxiv, published online 25th May 2017. <https://doi.org/10.1101/142125>
 
 ## References
  * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 2015, 44, 2, 512-525. <http://dx.doi.org/10.1093/ije/dyv080>
