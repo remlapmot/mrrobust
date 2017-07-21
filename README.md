@@ -3,7 +3,7 @@
 ## Short video introduction
 [Click here for a short video demonstrating the use of the package.](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
-[<img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300">](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
+[<img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300" align="middle">](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
 ## Overview
 The `mrrobust` package contains several commands implementing estimators robust to certain proportions of invalid instrumental variables. Such estimators are becoming widely used, especially in Mendelian randomization studies in epidemiology.
