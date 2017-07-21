@@ -13,9 +13,9 @@ Such data can be obtained from repositories such as MR-Base <http://www.mrbase.o
 The package contains the following commands:
  - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals.
  - `mrivests` automates calling `mrratio` on all the selected genotypes in your dataset.
- - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015. Use with summary data (per SNP/genotype associations with the disease outcome and exposure/phenotype).
- - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al. 2016. Use `mrmedian` with summary data and `mrmedianobs` with individual level data.
- - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017. Use with summary data.
+ - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015.
+ - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al. 2016.
+ - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017.
  - `mreggerplot` implements a scatter plot with fitted line (either from IVW, MR-Egger, or weighted median estimators) and confidence interval.
  - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger).
 
