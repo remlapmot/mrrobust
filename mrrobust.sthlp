@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 0.1.0 Tom Palmer 05jun2016}{...}
+{* *! version 0.1.0 Tom Palmer 05jun2017}{...}
 {vieweralsosee "mregger" "mregger"}{...}
 {vieweralsosee "mrmedian" "mrmedian"}{...}
 {vieweralsosee "mrmedianobs" "mrmedianobs"}{...}
@@ -19,8 +19,10 @@ certain proportions of invalid instrumental variables applied in Mendelian rando
 
 {title:Commands}{marker commands}
 
-{synoptset 13 tabbed}{...}
+{synoptset 14 tabbed}{...}
 {synopt :{opt {help mregger}:}}MR-Egger and inverse-variance weighted (IVW) estimators.
+
+{synopt :{opt {help mreggersimex}:}}Simulation extrapolation algorithm for the MR-Egger model.
 
 {synopt :{opt {help mrmedian}:}}Unweighted, weighted, and penalized weighted median estimators for summary level data.
 
