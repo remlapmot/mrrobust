@@ -14,6 +14,7 @@ The package contains the following commands:
  - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals.
  - `mrivests` automates calling `mrratio` on all the selected genotypes in your dataset.
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015.
+ - `mreggersimex` implements the simulation extrapolation algorithm for the MR-Egger model.
  - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al. 2016.
  - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017.
  - `mreggerplot` implements a scatter plot with fitted line (either from IVW, MR-Egger, or weighted median estimators) and confidence interval.
@@ -51,6 +52,7 @@ The helpfile for each command has an example near the end:
 . help mrratio
 . help mrivests
 . help mregger
+. help mreggersimex
 . help mrmedian
 . help mrmedianobs
 . help mrmodal
