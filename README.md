@@ -64,6 +64,7 @@ To uninstall the package, issue in Stata:
 ```
 . ado uninstall mrrobust
 ```
+If this fails with an error mentioning multiple citations/instances of the package being installed simply issue `adoupdate mrrobust` which will leave you with just one instance of the package (which can then be uninstalled).
 
 ### Manual installation in Stata version 12 and earlier
 The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation commands for the other dependencies should work.
