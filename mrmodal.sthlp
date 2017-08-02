@@ -25,6 +25,7 @@
 {synoptline}
 {synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt :{opt nome:}}NOME assumption{p_end}
+{synopt :{opt nosave:}}Do not save density and vector of IV estimates in Mata{p_end}
 {synopt :{opt phi:(#)}}value of phi (for bandwidth){p_end}
 {synopt :{opt reps:(#)}}number of bootstrap replications to obtain standard error{p_end}
 {synopt :{opt seed:(#)}}seed for random number generator for bootstrapping to 
@@ -73,6 +74,11 @@ estimate standard errors.
 associations) assumption.
 
 {phang}
+{opt nosave} specifies that the density of the IV estimates and column vector 
+of IV estimates should not be saved in Mata. If not specified these are saved 
+in Mata as mrmodal_densityiv and mrmodal_g respectively.
+
+{phang}
 {opt phi(#)} specifies the parameter phi which is used in the calculation of 
 the bandwidth for the density estimation. Default is phi = 1, other values 
 commonly chosen are 0.25 and 0.5.
@@ -96,10 +102,13 @@ see {helpb set_seed}.
 {pstd}Using the data provided by Do et al., Nat Gen, 2013.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
+
+{pstd}Investigate what is a good value of phi to use (we want a smooth density plot){p_end}
+{phang2}{cmd:.} {stata "mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
 
 {pstd}Simple mode estimator{p_end}
 {phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}

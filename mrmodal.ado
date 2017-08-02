@@ -12,7 +12,7 @@ if replay() {
 }
 
 syntax varlist(min=4 max=4) [if] [in] [, Level(cilevel) ///
-        WEIGHTed NOME PHI(real 1) seed(string) reps(integer 1000)]
+        WEIGHTed NOME PHI(real 1) seed(string) reps(integer 1000) nosave]
 
 local callersversion = _caller()
 
@@ -75,11 +75,17 @@ else {
 ** estimation
 mata phi = strtoreal(st_local("phi"))
 qui putmata `betaiv' `sebetaiv' `sebetaivw', replace omitmissing
-mata mrmodal_beta = mrmodal_beta(`betaiv', `sebetaivw', phi)
+mata densityiv = g = .
+mata mrmodal_beta = mrmodal_beta(`betaiv', `sebetaivw', phi, densityiv, g)
+if "`save'" == "" {
+        mata mrmodal_densityiv = densityiv
+        mata mrmodal_g = g
+}
 mata reps = strtoreal(st_local("reps"))
+mata densityiv = g = .
 mata mrmodal_se = mrmodal_se(`betaiv', `sebetaiv', `sebetaivw', ///
-        phi, reps, `weightind')
-
+        phi, reps, `weightind', densityiv, g)
+mata mata drop densityiv g 
 mata st_matrix("b", mrmodal_beta)
 mata st_matrix("V", mrmodal_se^2)	
 local names beta
@@ -89,7 +95,7 @@ matrix rownames V = `names'
 ereturn post b V
 
 ** display coefficient table
-Display , level(`level') k(`k') reps(`reps')
+Display , level(`level') k(`k') reps(`reps') phi(`phi')
 
 mata mata drop `betaiv' `sebetaiv' `sebetaivw' 
 mata mata drop phi mrmodal_beta mrmodal_se reps
@@ -101,12 +107,15 @@ ereturn scalar phi = `phi'
 end
 
 program Display
-syntax , [K(integer 0) reps(integer 0) Level(cilevel)]
+syntax , [K(integer 0) reps(integer 0) Level(cilevel) PHI(real 0)]
 if "`k'" == "0" {
         local k = e(k)
 }
 if "`reps'" == "0" {
         local reps = e(reps)
+}
+if "`phi'" == "0" {
+        local phi = e(phi)
 }
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
@@ -114,6 +123,9 @@ di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 local digits2 : length local reps
 local colstart2 = 79 - (15 + `digits2')
 di _col(`colstart2') "Replications = " as res %`digits2'.0fc `reps'
+local digits3 : strlen local phi
+local colstart3 = 79 - (6 + `digits3')
+di _col(`colstart3') "Phi = " as res `phi'
 ereturn display, level(`level')
 end
 
@@ -129,9 +141,10 @@ real scalar function mrmodal_mad(real colvector x)
 
 real scalar function mrmodal_beta(real colvector betaiv,
         real colvector sebetaiv,
-        real scalar phi)
+        real scalar phi,
+        densityiv, g)
 {
-        real colvector densityiv, g, weights
+        real colvector weights
         real scalar sd, mad, min, max, m, cut, pos, maxd, h, s
         
         mad = mrmodal_mad(betaiv)
@@ -162,7 +175,8 @@ real scalar function mrmodal_se(real colvector betaiv,
         real colvector sebetaivw,
         real scalar phi,
         real scalar reps,
-        real scalar weightind)
+        real scalar weightind,
+        densityiv, g)
 {
         real colvector res, betaivboot
         real scalar n
@@ -171,10 +185,11 @@ real scalar function mrmodal_se(real colvector betaiv,
         for (i=1; i<=reps; i++) {
                 betaivboot = rnormal(1, 1, betaiv, sebetaiv)
                 if (weightind == 0) {
-                        res[i] = mrmodal_beta(betaivboot, sebetaivw, phi)
+                        res[i] = mrmodal_beta(betaivboot, sebetaivw, phi, densityiv, g)
                 }
                 else if (weightind == 1) {
-                        res[i] = mrmodal_beta(betaivboot, sebetaivw, phi)
+                        res[i] = mrmodal_beta(betaivboot, sebetaivw, phi,
+                        densityiv, g)
                 }
         }
         return(sqrt(variance(res)))

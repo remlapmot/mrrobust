@@ -1,12 +1,14 @@
 {smcl}
 {* *! version 0.1.0 Tom Palmer 05jun2017}{...}
 {vieweralsosee "mregger" "mregger"}{...}
+{vieweralsosee "mreggersimex" "mreggersimex"}{...}
+{vieweralsosee "mreggerplot" "mreggerplot"}{...}
 {vieweralsosee "mrmedian" "mrmedian"}{...}
 {vieweralsosee "mrmedianobs" "mrmedianobs"}{...}
 {vieweralsosee "mrmodal" "mrmodal"}{...}
+{vieweralsosee "mrmodalplot" "mrmodalplot"}{...}
 {vieweralsosee "mrratio" "mrratio"}{...}
 {vieweralsosee "mrivests" "mrivests"}{...}
-{vieweralsosee "mreggerplot" "mreggerplot"}{...}
 {vieweralsosee "mrforest" "mrforest"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
@@ -24,17 +26,19 @@ certain proportions of invalid instrumental variables applied in Mendelian rando
 
 {synopt :{opt {help mreggersimex}:}}Simulation extrapolation algorithm for the MR-Egger model.
 
+{synopt :{opt {help mreggerplot}:}}Scatter plot showing instrument specific estimates with IVW, MR-Egger, or median fitted line and confidence interval.
+
 {synopt :{opt {help mrmedian}:}}Unweighted, weighted, and penalized weighted median estimators for summary level data.
 
 {synopt :{opt {help mrmedianobs}:}}Unweighted, weighted, and penalized weighted median estimators for individual level data.
 
 {synopt :{opt {help mrmodal}:}}Modal estimator for summary level data.
 
+{synopt :{opt {help mrmodalplot}:}}Plot of density used in Modal estimator.
+
 {synopt :{opt {help mrratio}:}}Ratio (Wald) estimator for summary level data for a single genotype.
 
 {synopt :{opt {help mrivests}:}}Generate ratio (Wald) estimates for summary level data in dataset.
-
-{synopt :{opt {help mreggerplot}:}}Scatter plot showing instrument specific estimates with IVW, MR-Egger, or median fitted line and confidence interval.
 
 {synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
 
