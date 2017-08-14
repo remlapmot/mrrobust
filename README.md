@@ -99,6 +99,3 @@ Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool
 
 ## Acknowledgements
 Thanks to Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, Kawthar Al-Dabhani, Michalis Katsoulis, and Ghazaleh Fatemifar for helpful feedback and suggestions.
-
-## Licence
-CC-BY
