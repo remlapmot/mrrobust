@@ -20,6 +20,7 @@ The package contains the following commands:
  - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017.
  - `mrmodalplot` plot of density used in modal estimator.
  - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger).
+ - `mrfunnel` funnel plot of genotype specific IV estimates.
 
 ## Installation
 
@@ -60,6 +61,7 @@ The helpfile for each command has an example near the end:
 . help mrmodal
 . help mrmodalplot
 . help mrforest
+. help mrfunnel
 ```
 
 To uninstall the package, issue in Stata:
