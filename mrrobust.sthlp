@@ -10,14 +10,14 @@
 {vieweralsosee "mrratio" "mrratio"}{...}
 {vieweralsosee "mrivests" "mrivests"}{...}
 {vieweralsosee "mrforest" "mrforest"}{...}
+{vieweralsosee "mrfunnel" "mrfunnel"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
 {title:Title}
 
 {phang}
-{bf:mrrobust} {hline 2} Suite of commands implementing estimators robust to 
-certain proportions of invalid instrumental variables applied in Mendelian randomization (MR) studies.
+{bf:mrrobust} {hline 2} commands for two-sample Mendelian randomization (MR) analyses.
 
 {title:Commands}{marker commands}
 
@@ -42,6 +42,9 @@ certain proportions of invalid instrumental variables applied in Mendelian rando
 
 {synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
 
+{synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates.
+
+
 {marker description}{...}
 {title:Description}
 
@@ -56,9 +59,9 @@ repositories such as {browse "http://www.mrbase.org":MR-Base}.
 
 {pstd}
 The estimators were developed in the context of MR studies but 
-could be used in other studies using instrumental variables.
+could be used for other applications of instrumental variables.
 
 {title:Author}{marker author}
 
 {pstd}
-Tom Palmer. Please report any bugs or issues you find.
+Tom Palmer (tom.palmer@lancaster.ac.uk). Please report any bugs or issues you find.
