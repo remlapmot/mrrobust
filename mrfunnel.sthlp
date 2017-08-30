@@ -96,8 +96,8 @@ genotypes).{p_end}
 {pstd}Without adding the IVW and MR-Egger estimates{p_end}
 {phang2}{cmd:.} {stata "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, noivw nomregger"}{p_end}
 
-{pstd}Using a standardised {it:y}-axis{p_end}
-{phang2}{cmd:.} {stata "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(gpbetastd)"}{p_end}
+{pstd}Using an unstandardised {it:y}-axis{p_end}
+{phang2}{cmd:.} {stata "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(gpbeta)"}{p_end}
 
 {pstd}Using inverse IV SEs on the {it:y}-axis{p_end}
 {phang2}{cmd:.} {stata "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(invse)"}{p_end}
