@@ -58,7 +58,7 @@ if "`mregger'" == "" {
 // plot
 twoway scatter `yvar' `iv' `if'`in', ///
         mc(gs0) ///
-        xtitle("{it:{&beta}}{sub:IV}") ///
+        xtitle("{&beta}{sub:IV}") ///
         ytitle(`ytitle') ///
         `options'
 `ivwaddplot'
