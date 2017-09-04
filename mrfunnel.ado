@@ -1,5 +1,6 @@
 *! 0.1.0 Tom Palmer 29aug2017
 program mrfunnel
+version 9
 syntax varlist [if] [in] [, Metric(string) ///
         noivw nomregger ///
         MRIVESTSopts(string) ///
