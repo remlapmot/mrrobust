@@ -22,7 +22,8 @@ The package contains the following commands:
  - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger).
  - `mrfunnel` funnel plot of genotype specific IV estimates.
 
-## Installation (version 13 and later)
+## Installation
+### Stata version 13 and later
 
 First install the dependencies. The package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins). Install those using the following commands:
 ```
@@ -70,7 +71,7 @@ To uninstall the package, issue in Stata:
 ```
 If this fails with an error mentioning multiple citations/instances of the package being installed simply issue `adoupdate mrrobust` which will leave you with just one instance of the package (which can then be uninstalled).
 
-### Installation (version 12 and earlier)
+### Stata version 12 and earlier
 The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation commands for the other dependencies should work.
 
 To download `mrrobust` manually click the green "Clone or download" button above and then download as a zip archive. Then extract the zip archive on your computer. Then move the extracted files to your `adopath`. 
