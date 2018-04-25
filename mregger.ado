@@ -13,7 +13,7 @@ if replay() {
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
         reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
-        gxse(varname numeric) tdist *]
+        gxse(varname numeric) tdist RADial *]
 
 local callersversion = _caller()
 
@@ -85,6 +85,20 @@ if "`penweighted'" == "penweighted" {
 tempname phi // residual variance
 tempname dfr // degrees of freedom of residuals
 
+// temp variables for radial estimation
+if "`radial'" == "radial" {
+	tempvar wrad wrady wradx
+	qui gen double `wrad' = sqrt(`invvar') `if'`in'
+	qui gen double `wrady' = `wrad'*sign(`2')*`1' `if'`in'
+	qui gen double `wradx' = `wrad'*abs(`2') `if'`in'
+}
+
+// prevent option combinations I am uncertain of
+if "`radial'" != "" & "`penweighted'" != "" {
+	di as err "Options radial and penweighted currently not supported."
+	exit 198
+}
+
 ** estimation
 if "`ivw'" == "ivw" {
         if "`heterogi'" != "" & "`penweighted'" == "" {
@@ -92,14 +106,25 @@ if "`ivw'" == "ivw" {
                 qui gen double `invse' = sqrt(`invvar') `if' `in'
                 qui gen double `gdtr' = `1'*`invse' `if' `in'
                 qui gen double `gptr' = `2'*`invse' `if' `in'
-                qui sem (`gdtr' <- `gptr', nocons) `if' `in'
-                // alternative: glm `gdtr' `gptr' `if' `in', nocons
-                if e(converged) == 1 {
+				if "`radial'" == "" {
+					qui sem (`gdtr' <- `gptr', nocons) `if' `in'
+					// alternative: glm `gdtr' `gptr' `if' `in', nocons
+					if e(converged) == 1 {
                         local df = e(N) - 1
                         local qstat = _b[var(e.`gdtr'):_cons]*e(N)
                         // if using glm: local qstat = e(phi)*(e(N) - 1)
                         scalar `dfr' = e(df)
-                }
+					}
+				}
+                else {
+					qui sem (`wrady' <- `wradx', nocons) `if'`in'
+					if e(converged) == 1 {
+                        local df = e(N) - 1
+                        local qstat = _b[var(e.`wrad'):_cons]*e(N)
+                        // if using glm: local qstat = e(phi)*(e(N) - 1)
+                        scalar `dfr' = e(df)
+					}
+				}
         }
         if "`fe'" == "" & "`re'" == "" {
                 tempname betaivw
@@ -140,24 +165,40 @@ if "`ivw'" == "ivw" {
                 }
         }
         else if "`fe'" == "fe" {
-                qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
-                scalar `dfr' = e(df)
-                // alt:
-                // sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
+				if "`radial'" == "" {
+					qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
+					scalar `dfr' = e(df)
+					// alt:
+					// sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
+				}
+				else {
+					qui glm `wrady' `wradx' `if'`in', scale(1) nocons
+					scalar `dfr' = e(df)
+				}
         }
         else if "`re'" == "re" {
                 tempvar genoDisease slope
-                cap gen double genoDisease = `1'*sqrt(`invvar') `if' `in'
-                if _rc != 0 qui replace genoDisease = `1'*sqrt(`invvar') ///
-                        `if' `in'
-                cap gen double slope = `2'*sqrt(`invvar') `if' `in'
-                if _rc != 0 qui replace slope = `2'*sqrt(`invvar') `if' `in'
-                cap `version' gsem (genoDisease <- slope c.M#c.slope, nocons) ///
+                cap gen double `genoDisease' = `1'*sqrt(`invvar') `if' `in'
+                if _rc != 0 {
+					qui replace `genoDisease' = `1'*sqrt(`invvar') `if' `in'
+				}
+                cap gen double `slope' = `2'*sqrt(`invvar') `if' `in'
+                if _rc != 0 {
+					qui replace `slope' = `2'*sqrt(`invvar') `if' `in'
+				}
+				if "`radial'" == "" {
+					cap `version' gsem (`genoDisease' <- `slope' c.M#c.`slope', nocons) ///
                         `if' `in', ///
-                        var(e.genoDisease@1)
+                        var(e.`genoDisease'@1)
+				}
+				else {
+					cap `version' gsem (`wrady' <- `wradx' c.M#c.`wradx', nocons) ///
+                        `if' `in', ///
+                        var(e.`wrady'@1)
+				}
         }
 }
-else {
+else { // MR-Egger
         tempvar `1'2 `2'2
         qui gen double ``1'2' = `1'*sign(`2') `if' `in'
         qui gen double ``2'2' = abs(`2') `if' `in'
@@ -166,20 +207,39 @@ else {
                 qui gen double `invse' = sqrt(`invvar') `if' `in'
                 qui gen double `gdtr' = ``1'2'*`invse' `if' `in'
                 qui gen double `gptr' = ``2'2'*`invse' `if' `in'
+				
+				if "`radial'" == "" {
                 qui sem (`gdtr' <- `gptr' `invse', nocons) `if' `in'
                 // alternative: glm `gdtr' `gptr' `invse' `if' `in', nocons 
-                if e(converged) == 1 {
-                        local df = e(N) - 2
-                        local qstat = _b[var(e.`gdtr'):_cons]*e(N)
-                        // if using glm: local qstat di e(phi)*(e(N) - 2)
-                        scalar `dfr' = e(N) - (e(df_m) - 1)
-                }
+					if e(converged) == 1 {
+							local df = e(N) - 2
+							local qstat = _b[var(e.`gdtr'):_cons]*e(N)
+							// if using glm: local qstat di e(phi)*(e(N) - 2)
+							scalar `dfr' = e(N) - (e(df_m) - 1)
+					}
+				}
+				else {
+					qui sem (`wrady' <- `wradx') `if' `in'
+					if e(converged) == 1 {
+							local df = e(N) - 2
+							local qstat = _b[var(e.`wrady'):_cons]*e(N)
+							// if using glm: local qstat di e(phi)*(e(N) - 2)
+							scalar `dfr' = e(N) - (e(df_m) - 1)
+					}
+				}
+				
         }
         if "`fe'" == "" & "`re'" == "" {
-                tempname betaegger interegger                
-                // qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
-                qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in'
-                scalar `betaegger' = _b[``2'2']
+                tempname betaegger interegger
+				if "`radial'" == "" {
+					// qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
+					qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in'
+					scalar `betaegger' = _b[``2'2']
+				}
+				else {
+					qui glm `wrady' `wradx' `if' `in'
+					scalar `betaegger' = _b[`wradx']
+				}
                 scalar `interegger'= _b[_cons]
                 scalar `phi' = e(phi)
                 scalar `dfr' = e(df)
@@ -198,16 +258,22 @@ else {
                         di as txt _c "Residual variance =", e(phi) "; "
                         di as txt _c "rerunning with residual "
                         di as txt "variance set to 1"
-                        if "`penweighted'" == "" {
-                                qui glm ``1'2' ``2'2' [iw=`invvar'] ///
-                                        `if' `in', scale(1)
-                                scalar `dfr' = e(df)
-                        }
-                        else {
-                                qui glm ``1'2' ``2'2' [iw=`rweights'] ///
-                                        `if' `in', scale(1)
-                                scalar `dfr' = e(df)
-                        }
+						if "`radial'" == "" {
+							if "`penweighted'" == "" {
+								qui glm ``1'2' ``2'2' [iw=`invvar'] ///
+									`if' `in', scale(1)
+								scalar `dfr' = e(df)
+							}
+							else {
+								qui glm ``1'2' ``2'2' [iw=`rweights'] ///
+									`if' `in', scale(1)
+								scalar `dfr' = e(df)
+							}
+						}
+						else {
+							qui glm `wrady' `wradx' `if'`in', scale(1)
+							scalar `dfr' = e(df)
+						}
                 }
                 else if e(phi) < 1 & "`rescale'" != "" {
                         di as txt _c "Residual variance =", e(phi)
@@ -219,66 +285,129 @@ else {
                 // alternative syntax:
                 // sem (``1'2' <- ``2'2') [iw=`invvar'] `if' `in', ///
                 //       var(e.``1'2'@1)
-                qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', scale(1)
+				if "`radial'" == "" {
+					qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', scale(1)
+				}
+				else {
+					qui glm `wrady' `wradx' `if' `in', scale(1)
+				}
                 scalar `dfr' = e(df)
         }
         else if "`re'" == "re" {
-                // tempvar gd2tr gp2tr
-                cap gen double genoDisease = ``1'2'*sqrt(`invvar') `if' `in' 
-                if _rc != 0 qui replace genoDisease= ``1'2'*sqrt(`invvar') ///
+				tempvar genoDisease slope cons
+                cap gen double `genoDisease' = ``1'2'*sqrt(`invvar') `if' `in' 
+                if _rc != 0 qui replace `genoDisease' = ``1'2'*sqrt(`invvar') ///
                         `if' `in'
-                cap gen double slope = ``2'2'*sqrt(`invvar') `if' `in'
-                if _rc != 0 qui replace slope= ``2'2'*sqrt(`invvar') `if' `in'
-                cap gen double cons = sqrt(`invvar') `if' `in'
-                if _rc != 0 qui replace cons = sqrt(`invvar') `if' `in'
+                cap gen double `slope' = ``2'2'*sqrt(`invvar') `if' `in'
+                if _rc != 0 qui replace `slope' = ``2'2'*sqrt(`invvar') `if' `in'
+				if "`radial'" == "" {
+					cap gen double `cons' = sqrt(`invvar') `if' `in'
+				}
+				else {
+					cap gen byte `cons' = 1 `if' `in'
+				}
+                if _rc != 0 qui replace `cons' = sqrt(`invvar') `if' `in'
                 if "`reslope'" == "" & "`recons'" == "recons" {
-                        cap `version' gsem (genoDisease <- slope ///
-                                cons c.cons#M@1) ///
-                                `if' `in', nocons ///
-                                var(e.genoDisease@1) `options'
+					if "`radial'" == "" {
+						cap `version' gsem (`genoDisease' <- `slope' ///
+                            `cons' c.`cons'#M@1) ///
+                            `if' `in', nocons ///
+                            var(e.`genoDisease'@1) `options'
+					}
+					else {
+						cap `version' gsem (`wrady' <- `wradx' ///
+                            `cons' c.`cons'#M@1) ///
+                            `if' `in', nocons ///
+                            var(e.`wrady'@1) `options'					
+					}
                 }
                 else if "`reslope'" == "reslope" & "`recons'" == "" {
+					if "`radial'" == "" {
                         cap `version' gsem ///
-                                (genoDisease <- slope cons c.slope#c.M@1) ///
-                                `if' `in', nocons var(e.genoDisease@1) ///
-                                `options'
+                            (`genoDisease' <- `slope' `cons' c.`slope'#c.M@1) ///
+                            `if' `in', nocons var(e.`genoDisease'@1) ///
+                            `options'
+						}
+					else {
+                        cap `version' gsem ///
+                            (`wrady' <- `wradx' `cons' c.`wradx'#c.M@1) ///
+                            `if' `in', nocons var(e.`wrady'@1) ///
+                            `options'					
+					}
                 }  
                 else if "`reslope'" == "reslope" & "`recons'" == "recons" {
-                        cap `version' gsem (genoDisease <- slope cons ///
-                                c.cons#M1@1 c.slope#c.M2@1) `if' `in', ///
-                                nocons var(e.genoDisease@1) `options'
+					if "`radial'" == "" {
+                        cap `version' gsem (`genoDisease' <- `slope' `cons' ///
+                            c.`cons'#M1@1 c.`slope'#c.M2@1) `if' `in', ///
+                            nocons var(e.`genoDisease'@1) `options'
+					}
+					else {
+                        cap `version' gsem (`wrady' <- `wradx' `cons' ///
+                            c.`cons'#M1@1 c.`wradx'#c.M2@1) `if' `in', ///
+                            nocons var(e.`wrady'@1) `options'					
+					}
                 }
-                drop genoDisease
-                drop slope
         }
 }
 
+// column and rownames for e(b) and e(V)
+mat b = e(b)
+mat V = e(V)
 if "`re'" == "" {
-        mat b = e(b)
-        mat V = e(V)
-        if "`ivw'" == "" {
-                local names `1'*sign(`2'):slope `1'*sign(`2'):_cons
-        }
-        else {
-                local names `1':`2'
-        }
-        mat colnames b = `names'
-        mat colnames V = `names' 
-        mat rownames V = `names'
-        ereturn post b V
+	if "`radial'" == "" {
+		if "`ivw'" == "" {
+			local names `1'*sign(`2'):slope `1'*sign(`2'):_cons
+		}
+		else {
+			local names `1':`2'
+		}
+	}
+	else {
+		if "`ivw'" == "" {
+			local names radialGD:radialGP radialGD:_cons
+		}
+		else {
+			local names radialGD:radialGP
+		}
+	}
 }
-
+else {
+	if "`radial'" == "" {
+		if "`ivw'" == "" {
+			local names GD:GP GD:_cons GD:c._cons#c.M1 GD:c.GP#c.M2 /:var(M1) /:var(M2) /:cov(M1,M2) /:var(e.GD)
+		}
+		else {
+			local names GD:GP GD:c.GP#c.M /:var(M) /:var(e.GD)
+		}
+	}
+	else {
+		if "`ivw'" == "" {
+			local names radialGD:radialGP radialGD:_cons radialGD:c._cons#c.M1 radialGD:c.radialGP#c.M2 radialGD:cons /:var(M1) /:var(M2) /:cov(M1,M2) /:var(e.radialGD)
+		}
+		else {
+			local names radialGD:radialGP radialGD:c.radialGP#c.M radialGD:_cons /:var(M) /:var(e.radialGD)
+		}
+	}
+}
+if !("`re'" == "re" & "`radial'" == "") {
+	mat colnames b = `names'
+	mat colnames V = `names' 
+	mat rownames V = `names'
+	ereturn post b V
+}
+		
 if "`penweighted'" != "" | "`heterogi'" == "" {
         local qstat 0
         local df 1
 }
 
 if "`tdist'" != "" {
-        * use t-dist for ereturn display Wald test and CI limits
-        ereturn scalar df_r  = `dfr'
+    // use t-dist for ereturn display Wald test and CI limits
+    ereturn scalar df_r  = `dfr' 
 }
 else {
-        ereturn scalar df_r = .
+	// if df_r == . then Stata uses Normal dist
+    ereturn scalar df_r = .
 }
 
 ** start of displaying output
@@ -287,7 +416,7 @@ local colstart = 79 - (22 + `digits')
 di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 
 ** display coefficient table
-Display , `re' level(`level')
+Display , `re' level(`level') `radial'
 if "`ivw'" == "" & "`re'" == "" {
         if "`fe'" == "" {
                 di as txt "Residual standard error:", %6.3f sqrt(`phi')
@@ -358,13 +487,12 @@ ereturn scalar k = `k'
 end
 
 program Display, rclass
-syntax [, re Level(cilevel)]
-if "`re'" == "" {
-        // regression output
-        ereturn display, level(`level')
+syntax [, re Level(cilevel) radial]
+if "`re'" == "re" & "`radial'" == "" {
+    `version' gsem, noheader nocnsr nodvhead level(`level')
 }
 else {
-       `version' gsem, noheader nocnsr nodvhead level(`level')
+	ereturn display, level(`level') noomitted
 }
 end
 exit

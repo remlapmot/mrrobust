@@ -33,6 +33,7 @@ statistics{p_end}
 {synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
 {synopt :{opt penw:eighted}}Use penalized weights{p_end}
+{synopt :{opt rad:ial}}Use radial formulations of the models{p_end}
 {synopt :{opt re:}}random effects version of the estimators{p_end}
 {synopt :{opt recons:}}random intercept in an MR-Egger model{p_end}
 {synopt :{opt reslope:}}random slope in an MR-Egger model{p_end}
@@ -71,7 +72,8 @@ genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
 constrained to 1 as in fixed effect meta-analysis models). The default is 
 to use multiplicative standard errors (i.e. variance of residuals 
 unconstrained as in standard linear regression), see Thompson and Sharp 
- (1999) for further details. We recommend specifying this option when using an allelic score as the instrumental variable.
+(1999) for further details. We recommend specifying this option when using an 
+allelic score as the instrumental variable.
 
 {phang}
 {opt gxse(varname)} specifies the variable containing the genotype-phenotype 
@@ -95,12 +97,16 @@ residuals by the degrees of freedom (Del Greco et al., 2015).
 
 {phang}
 {opt noresc:ale} specifies that the residual variance is not set to 1 (if 
-it is found to be less than 1). Bowden et al. (2016) rescale the residual
- variance to be 1 if it is found to be less than 1.
+it is found to be less than 1). Bowden et al. (2016) rescale the residual 
+variance to be 1 if it is found to be less than 1.
 
 {phang}
 {opt penw:eighted} specifies using penalized weights as described in Burgess 
 et al. (2016).
+
+{phang}
+{opt rad:ial} specifies the radial formulation of the IVW and MR-Egger models 
+(Bowden et al., 2017). Note there is only a difference for the MR-Egger model.
  
 {phang}
 {opt re} specifies random effects versions of the models. In the random 
@@ -133,26 +139,28 @@ see {help gsem_command:gsem}.
 al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
-{pstd}IVW{p_end}
-{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw"}{p_end}
+{pstd}IVW (with fixed effect standard errors){p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe"}{p_end}
 
-{pstd}MR-Egger{p_end}
+{pstd}MR-Egger (with SEs using an unconstrained residual variance){p_end}
 {phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
 
-{pstd}MR-Egger with fixed effect standard errors{p_end}
-{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe"}{p_end}
+{pstd}MR-Egger reporting {it:I^2_GX} statistic and heterogeneity Q-test{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi"}{p_end}
 
-{pstd}MR-Egger reporting {it:I^2_GX} statistic{p_end}
-{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)"}{p_end}
+{pstd}MR-Egger using a t-distribution for inference & CI limits{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist"}{p_end}
 
-{pstd}MR-Egger with fixed effect standard errors and t-distribution 
-CI limits{p_end}
-{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe tdist"}{p_end}
+{pstd}MR-Egger using the radial formulation{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial"}{p_end}
+
+{pstd}MR-Egger using the radial formulation and reporting heterogeneity Q-test{p_end}
+{phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi"}{p_end}
 
 
 {marker results}{...}
@@ -206,8 +214,17 @@ median estimator. Genetic Epidemiology, published online 7 April.
 {browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 
 {phang}
-Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR. 2016. Assessing the suitability of summary data for two-sample Mendelian randomization analyses using MR-Egger regression: the role of the I-squared statistic. 
+Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR. 2016. 
+Assessing the suitability of summary data for two-sample Mendelian 
+randomization analyses using MR-Egger regression: the role of the I-squared 
+statistic. 
 International Journal of Epidemiology. {browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
+
+{phang}
+Bowden J, Spiller W, Del-Greco F, Sheehan NA, Thompson JR, Minelli C, Davey Smith G. 
+Improving the visualisation, interpretation and analysis of two-sample summary 
+data Mendelian randomization via the radial plot and radial regression. 
+bioRxiv 200378; {browse "https://doi.org/10.1101/200378":DOI}
 
 {phang}
 Burgess S, Bowden J, Dudbridge F, Thompson SG. 2016. Robust instrumental 
