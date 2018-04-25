@@ -1,7 +1,6 @@
 * mregger cscript
 * 04jun2016
 
-cd C:\Users\palmertm\Documents\all\work\mregger\code
 
 *** load in dataset
 use dodata, clear
@@ -10,7 +9,6 @@ use dodata, clear
 gen byte sel1 = (ldlcp2 < 1e-8)
 
 *** ivw
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
 assert abs(_b[ldlcbeta] - .482) < 1e-3
 assert abs(_se[ldlcbeta] - 0.060) < 1e-3
@@ -28,7 +26,6 @@ assert abs(_se[xcheck] - 0.060) < 1e-3
 
 
 *** mregger
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 assert abs(_b[slope] - .617) < 1e-3
 assert abs(_b[_cons] - -.009) < 1e-3
@@ -44,7 +41,6 @@ assert abs(_b[_cons] - -.009) < 1e-3
 mregger
 
 ** ci level
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
 
@@ -54,6 +50,7 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
 *** re
+discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, re noestimate
 mat b = e(b)
 mat b[1,1] = .575
@@ -96,7 +93,6 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, re recons
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, re reslope
 
 *** both
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, re recons reslope noestimate
 mat b = e(b)
 mat b[1,1] = .575
@@ -110,7 +106,6 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, re recons reslope from(b)
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, re recons vce(robust)
 
 * level
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 mregger
 mregger, level(90)
@@ -143,34 +138,25 @@ mregger chdbeta tgbeta [aw=1/(chdse^2)] if sel3==1, re recons reslope
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
 *** heterogi option - changed from noheterogi
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
 mregger
 
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, het
 mregger
 
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw heterogi
 mregger
 
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw het
 mregger
 
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi penweighted
 
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw heterogi penweighted
 
-
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 mregger
 
-discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
 eret list
 mregger
@@ -225,4 +211,72 @@ mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
 * testing less than 3 observations error message        
 rcof "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] in 1/2" == 2001 
 rcof "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] in 1" == 2001 
+
+// radial IVW
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw radial
+assert abs(_b[radialGP] - .482) < 1e-3
+assert abs(_se[radialGP] - 0.059) < 1e-3
+
+// radial IVW fe SEs
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw radial fe
+assert abs(_b[radialGP] - .482) < 1e-3
+assert abs(_se[radialGP] - .038) < 1e-3
+eret list
+
+// radial IVW re
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw radial re
+//assert abs(_b[radialGP] - .417) < 1e-3
+//assert abs(_se[radialGP] - .076) < 1e-3
+eret list
+
+// radial MR-Egger
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial
+assert abs(_b[radialGP] - .642) < 1e-3
+assert abs(_se[radialGP] - .115) < 1e-3
+assert abs(_b[_cons] - -.573) < 1e-3
+assert abs(_se[_cons] - .354) < 1e-3
+
+// radial MR-Egger fe
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial fe
+assert abs(_b[radialGP] - .642) < 1e-3
+assert abs(_se[radialGP] - .074) < 1e-3
+assert abs(_b[_cons] - -.573) < 1e-3
+assert abs(_se[_cons] - .229) < 1e-3
+
+// radial MR-Egger re
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial re
+assert abs(_b[radialGP] - .623) < 1e-3
+assert abs(_se[radialGP] - .106) < 1e-3
+assert abs(_b[_cons] - -.523) < 1e-3
+assert abs(_se[_cons] - .342) < 1e-3
+
+// disallow penweighted and radial for now
+discard 
+rcof "noi mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial penweighted" ///
+	== 198
+
+// mregger with radial formulation and tdist
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial tdist
+assert abs(_b[radialGP] - .642) < 1e-3
+assert abs(_se[radialGP] - .115) < 1e-3
+assert abs(_b[_cons] - -.573) < 1e-3
+assert abs(_se[_cons] - .354) < 1e-3
+
+// radial and heterogi
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial heterogi
+assert abs(e(Q) - 169.97) < 1e-2
+
+// radial and i2gx
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial gxse(ldlcse)
+//assert abs(e(Q) - 169.97) < 1e-2
+
 
