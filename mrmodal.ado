@@ -123,7 +123,7 @@ di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 local digits2 : length local reps
 local colstart2 = 79 - (15 + `digits2')
 di _col(`colstart2') "Replications = " as res %`digits2'.0fc `reps'
-local digits3 : strlen local phi
+local digits3 : length local phi // version 13 strlen bug was here
 local colstart3 = 79 - (6 + `digits3')
 di _col(`colstart3') "Phi = " as res `phi'
 ereturn display, level(`level')
