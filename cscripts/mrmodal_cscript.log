@@ -1,28 +1,10 @@
+----------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\palmertm\Documents\all\work\mregger\code/cscripts/mrmodal_cscript.log
+  log type:  text
+ opened on:  26 Apr 2018, 16:38:45
 
-  ___  ____  ____  ____  ____ (R)
- /__    /   ____/   /   ____/
-___/   /   /___/   /   /___/   15.0   Copyright 1985-2017 StataCorp LLC
-  Statistics/Data Analysis            StataCorp
-                                      4905 Lakeway Drive
-     Special Edition                  College Station, Texas 77845 USA
-                                      800-STATA-PC        http://www.stata.com
-                                      979-696-4600        stata@stata.com
-                                      979-696-4601 (fax)
-
-Single-user Stata perpetual license:
-       Serial number:  401506207283
-         Licensed to:  Tom Palmer
-                       Lancaster University
-
-Notes:
-      1.  Stata is running in batch mode.
-      2.  Unicode is supported; see help unicode_advice.
-      3.  Maximum number of variables is set to 5000; see help set_maxvar.
-
-
-running C:\Users\palmertm\profile.do ...
-
-. do mrmodal_cscript.do 
+. do "`filepath'/cscripts/`name'.do"
 
 . * mrmodal cscript
 . * 2jun2017
@@ -713,3 +695,11 @@ running C:\Users\palmertm\profile.do ...
 
 . 
 end of do-file
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\palmertm\Documents\all\work\mregger\code/cscripts/mrmodal
+> _cscript.log
+  log type:  text
+ closed on:  26 Apr 2018, 16:39:37
+-------------------------------------------------------------------------------
