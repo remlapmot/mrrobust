@@ -5,6 +5,9 @@
 
 [<p align="center"><img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300"></p>](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
+## Helpfile examples
+[Click here for some of the code and output for the examples in the helpfile.](./mrrobust-examples/mrrobust-examples.html)
+
 ## Overview
 The `mrrobust` package is a collection of commands for performing two-sample Mendelian randomization analyses using summary data of genotype-phenotype and genotype-outcome associations. 
 
