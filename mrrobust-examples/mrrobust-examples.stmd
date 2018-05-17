@@ -1,0 +1,95 @@
+% `mrrobust` examples
+% Tom Palmer
+% 17 May 2018
+
+# Install dependencies and `mrrobust` package
+	* ssc install addplot
+	* ssc install kdens
+	* ssc install moremata
+	* ssc install heterogi
+	* ssc install metan
+	* net install grc1leg, from(http://www.stata.com/users/vwiggins)
+	* net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+
+# Examples
+
+
+## `mrforest` examples
+Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates, 
+labelling the genotypes with their RSID.
+	mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
+		xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+	gr export mrforest.png, width(500) replace
+![Example forest plot of genotype specific IV estimates](mrforest.png)
+
+
+## `mregger` examples
+Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et al., 
+Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.
+
+Setup
+	use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+Select observations (p-value with exposure < 10^-8)
+	gen byte sel1 = (ldlcp2 < 1e-8)
+
+IVW (with fixed effect standard errors, i.e. variance of residuals 
+[residual variance] constrained to 1)
+	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+
+MR-Egger (with SEs using an unconstrained residual variance 
+[multiplicative random effects])
+	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+MR-Egger reporting I^2_GX statistic and heterogeneity Q-test
+	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
+
+MR-Egger using a t-distribution for inference (p-values) & CI limits
+	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
+
+MR-Egger using the radial formulation
+	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+
+MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-test
+	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
+
+
+## `mreggersimex` examples
+SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain 
+SEs)
+	mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
+		seed(12345) noboot
+	gr export mreggersimex-plot.png, width(500) replace
+![SIMEX applied to the MR-Egger model](mreggersimex-plot.png)
+
+
+## `mreggerplot` examples
+	mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+	gr export mreggerplot.png, width(500) replace
+![Scatter plot of the MR-Egger model](mreggerplot.png)
+
+
+## `mrmedian` examples
+Weighted median estimator.
+	mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+
+
+## `mrmodal` examples
+	mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+	gr export mrmodalplot.png, width(500) replace
+![Densities of the IV estimates using different values of psi](mrmodalplot.png)
+
+Simple mode estimator
+	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+Weighted mode estimator
+	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+
+Simple mode estimator with NOME assumption
+	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
+
+
+## `mrfunnel` examples
+	mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+	gr export mrfunnel.png, width(500) replace
+![Example funnel plot](mrfunnel.png)

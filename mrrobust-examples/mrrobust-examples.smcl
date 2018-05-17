@@ -1,0 +1,242 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}17 May 2018, 09:15:15
+{txt}
+{com}. //_1
+. * ssc install addplot
+. * ssc install kdens
+. * ssc install moremata
+. * ssc install heterogi
+. * ssc install metan
+. * net install grc1leg, from(http://www.stata.com/users/vwiggins)
+. * net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+. //_2
+. mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
+>     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+{res}{txt}
+{com}. gr export mrforest.png, width(500) replace
+{txt}(file mrforest.png written in PNG format)
+
+{com}. //_3
+. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+{txt}
+{com}. //_4
+. gen byte sel1 = (ldlcp2 < 1e-8)
+{txt}
+{com}. //_5
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+
+{col 55}Number of genotypes = {res}73
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}chdbeta      {txt}{c |}
+{space 4}ldlcbeta {c |}{col 14}{res}{space 2} .4815055{col 26}{space 2}  .038221{col 37}{space 1}   12.60{col 46}{space 3}0.000{col 54}{space 4} .4065938{col 67}{space 3} .5564173
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_6
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+{col 55}Number of genotypes = {res}73
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sign(ldlcb~a){txt}{c |}
+{res}chdbeta      {txt}{c |}
+{space 7}slope {c |}{col 14}{res}{space 2} .6173131{col 26}{space 2} .1034573{col 37}{space 1}    5.97{col 46}{space 3}0.000{col 54}{space 4} .4145405{col 67}{space 3} .8200858
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0087706{col 26}{space 2} .0054812{col 37}{space 1}   -1.60{col 46}{space 3}0.110{col 54}{space 4}-.0195136{col 67}{space 3} .0019723
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+Residual standard error:  1.548
+
+{com}. //_7
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
+
+{col 55}Number of genotypes = {res}73
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sign(ldlcb~a){txt}{c |}
+{res}chdbeta      {txt}{c |}
+{space 7}slope {c |}{col 14}{res}{space 2} .6173131{col 26}{space 2} .1034573{col 37}{space 1}    5.97{col 46}{space 3}0.000{col 54}{space 4} .4145405{col 67}{space 3} .8200858
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0087706{col 26}{space 2} .0054812{col 37}{space 1}   -1.60{col 46}{space 3}0.110{col 54}{space 4}-.0195136{col 67}{space 3} .0019723
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+Residual standard error:  1.548
+Heterogeneity/pleiotropy statistics:
+{hline 10}{c TT}{hline 43}
+Statistic {c |}       Estimate        [95% Conf. Interval]
+{hline 10}{c +}{hline 43}
+        H {c |}          {res}1.5               1.4    1.8     
+      {txt}I^2 {c |}          {res}58                 46    68      
+{txt}{hline 10}{c BT}{hline 43}
+Q-test = {res}170.11187{txt} d.f. = {res}71{txt} p-value = {res}0.0000
+{txt}I^2_GX statistic:  98.49%
+
+{com}. //_8
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
+
+{col 55}Number of genotypes = {res}73
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sign(ldlcb~a){txt}{c |}
+{res}chdbeta      {txt}{c |}
+{space 7}slope {c |}{col 14}{res}{space 2} .6173131{col 26}{space 2} .1034573{col 37}{space 1}    5.97{col 46}{space 3}0.000{col 54}{space 4} .4110251{col 67}{space 3} .8236012
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0087706{col 26}{space 2} .0054812{col 37}{space 1}   -1.60{col 46}{space 3}0.114{col 54}{space 4}-.0196998{col 67}{space 3} .0021585
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+Residual standard error:  1.548
+
+{com}. //_9
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+
+{col 55}Number of genotypes = {res}73
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}radialGD     {txt}{c |}
+{space 4}radialGP {c |}{col 14}{res}{space 2}  .642582{col 26}{space 2} .1157871{col 37}{space 1}    5.55{col 46}{space 3}0.000{col 54}{space 4} .4156434{col 67}{space 3} .8695205
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.5737301{col 26}{space 2} .3545658{col 37}{space 1}   -1.62{col 46}{space 3}0.106{col 54}{space 4}-1.268666{col 67}{space 3} .1212062
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+Residual standard error:  1.547
+
+{com}. //_10
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
+
+{col 55}Number of genotypes = {res}73
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}radialGD     {txt}{c |}
+{space 4}radialGP {c |}{col 14}{res}{space 2}  .642582{col 26}{space 2} .1157871{col 37}{space 1}    5.55{col 46}{space 3}0.000{col 54}{space 4} .4156434{col 67}{space 3} .8695205
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.5737301{col 26}{space 2} .3545658{col 37}{space 1}   -1.62{col 46}{space 3}0.106{col 54}{space 4}-1.268666{col 67}{space 3} .1212062
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+Residual standard error:  1.547
+Heterogeneity/pleiotropy statistics:
+{hline 10}{c TT}{hline 43}
+Statistic {c |}       Estimate        [95% Conf. Interval]
+{hline 10}{c +}{hline 43}
+        H {c |}          {res}1.5               1.4    1.8     
+      {txt}I^2 {c |}          {res}58                 46    68      
+{txt}{hline 10}{c BT}{hline 43}
+Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
+{txt}
+{com}. //_11
+. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
+>     seed(12345) noboot
+{res}
+{col 55}Number of genotypes = 73
+{col 53}Bootstrap replications = 0
+{col 51}Simulation replications = 50
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}slope {c |}{col 14}{res}{space 2} .6256194{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0089987{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. gr export mreggersimex-plot.png, width(500) replace
+{txt}(file mreggersimex-plot.png written in PNG format)
+
+{com}. //_12
+. mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+{res}{txt}
+{com}. gr export mreggerplot.png, width(500) replace
+{txt}(file mreggerplot.png written in PNG format)
+
+{com}. //_13
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+{res}
+{col 55}Number of genotypes = 73
+{col 60}Replications = 1000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}beta {c |}{col 14}{res}{space 2} .4582573{col 26}{space 2} .0624892{col 37}{space 1}    7.33{col 46}{space 3}0.000{col 54}{space 4} .3357807{col 67}{space 3} .5807339
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_14
+. mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+{res}
+{col 55}Number of genotypes = 73
+{col 60}Replications = 1000
+{col 70}Phi = .25
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}beta {c |}{col 14}{res}{space 2} .4198713{col 26}{space 2} .2237762{col 37}{space 1}    1.88{col 46}{space 3}0.061{col 54}{space 4}-.0187219{col 67}{space 3} .8584645
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{col 55}Number of genotypes = 73
+{col 60}Replications = 1000
+{col 71}Phi = .5
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}beta {c |}{col 14}{res}{space 2} .4218667{col 26}{space 2} .1950497{col 37}{space 1}    2.16{col 46}{space 3}0.031{col 54}{space 4} .0395764{col 67}{space 3} .8041571
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{col 55}Number of genotypes = 73
+{col 60}Replications = 1000
+{col 72}Phi = 1
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1331011{col 37}{space 1}    3.69{col 46}{space 3}0.000{col 54}{space 4} .2308619{col 67}{space 3} .7526086
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. gr export mrmodalplot.png, width(500) replace
+{txt}(file mrmodalplot.png written in PNG format)
+
+{com}. //_15
+. mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
+{res}
+{col 55}Number of genotypes = 73
+{col 60}Replications = 1000
+{col 72}Phi = 1
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1312092{col 37}{space 1}    3.75{col 46}{space 3}0.000{col 54}{space 4} .2345699{col 67}{space 3} .7489007
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_16
+. mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+{res}
+{col 55}Number of genotypes = 73
+{col 60}Replications = 1000
+{col 72}Phi = 1
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2} .0663424{col 37}{space 1}    7.22{col 46}{space 3}0.000{col 54}{space 4} .3489415{col 67}{space 3} .6089989
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_17
+. mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
+{res}
+{col 55}Number of genotypes = 73
+{col 60}Replications = 1000
+{col 72}Phi = 1
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1306138{col 37}{space 1}    3.76{col 46}{space 3}0.000{col 54}{space 4}  .235737{col 67}{space 3} .7477336
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. //_18
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+{res}{txt}
+{com}. gr export mrfunnel.png, width(500) replace
+{txt}(file mrfunnel.png written in PNG format)
+
+{com}. //_^
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}17 May 2018, 09:15:44
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
