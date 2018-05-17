@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}17 May 2018, 09:15:15
+ {txt}opened on:  {res}17 May 2018, 09:41:41
 {txt}
 {com}. //_1
 . * ssc install addplot
@@ -18,7 +18,8 @@
 >     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 {res}{txt}
 {com}. gr export mrforest.png, width(500) replace
-{txt}(file mrforest.png written in PNG format)
+{txt}(note: file mrforest.png not found)
+(file mrforest.png written in PNG format)
 
 {com}. //_3
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -137,13 +138,15 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. gr export mreggersimex-plot.png, width(500) replace
-{txt}(file mreggersimex-plot.png written in PNG format)
+{txt}(note: file mreggersimex-plot.png not found)
+(file mreggersimex-plot.png written in PNG format)
 
 {com}. //_12
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}{txt}
 {com}. gr export mreggerplot.png, width(500) replace
-{txt}(file mreggerplot.png written in PNG format)
+{txt}(note: file mreggerplot.png not found)
+(file mreggerplot.png written in PNG format)
 
 {com}. //_13
 . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
@@ -187,7 +190,8 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}{txt}
 {com}. gr export mrmodalplot.png, width(500) replace
-{txt}(file mrmodalplot.png written in PNG format)
+{txt}(note: file mrmodalplot.png not found)
+(file mrmodalplot.png written in PNG format)
 
 {com}. //_15
 . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
@@ -229,14 +233,15 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}{txt}
 {com}. gr export mrfunnel.png, width(500) replace
-{txt}(file mrfunnel.png written in PNG format)
+{txt}(note: file mrfunnel.png not found)
+(file mrfunnel.png written in PNG format)
 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}17 May 2018, 09:15:44
+ {txt}closed on:  {res}17 May 2018, 09:42:12
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

@@ -77,7 +77,7 @@ Weighted median estimator.
 ## `mrmodal` examples
 	mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 	gr export mrmodalplot.png, width(500) replace
-![Densities of the IV estimates using different values of psi](mrmodalplot.png)
+![Densities of the IV estimates using different values of phi](mrmodalplot.png)
 
 Simple mode estimator
 	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
