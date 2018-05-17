@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}17 May 2018, 09:41:41
+ {txt}opened on:  {res}17 May 2018, 10:03:06
 {txt}
 {com}. //_1
 . * ssc install addplot
@@ -241,7 +241,7 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}17 May 2018, 09:42:12
+ {txt}closed on:  {res}17 May 2018, 10:03:36
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
