@@ -94,7 +94,7 @@ To uninstall a manual installation simply delete the files you placed on your ad
 ## Authors
 Tom Palmer, Wesley Spiller, Neil Davies
 
-## Citation
+## How to cite the mrrobust package
 Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. bioRxiv, published online 25th May 2017. <https://doi.org/10.1101/142125>
 
 ## References
