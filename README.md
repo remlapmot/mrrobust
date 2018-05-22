@@ -7,7 +7,6 @@
 [Authors](#authors)<br>
 [How to cite the mrrobust package](#how-to-cite-the-mrrobust-package)<br>
 [References](#references)<br>
-
 [Acknowledgements](#acknowledgements)
 
 ## Short video introduction
