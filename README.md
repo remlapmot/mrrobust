@@ -30,47 +30,47 @@ The package contains the following commands:
 
 First install the dependencies. The package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins). Install those using the following commands:
 ```
-. ssc install addplot
-. ssc install kdens
-. ssc install moremata
-. ssc install heterogi
-. ssc install metan
-. net install grc1leg, from(http://www.stata.com/users/vwiggins)
+ssc install addplot
+ssc install kdens
+ssc install moremata
+ssc install heterogi
+ssc install metan
+net install grc1leg, from(http://www.stata.com/users/vwiggins)
 ```
 
 To install `mrrobust` issue in Stata (in versions 13 and above):
 ```
-. net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
 If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`. Also run `adoupdate` to check for updates. To update the package if you know an update is available run:
 ```
-. adoupdate mrrobust, update
+adoupdate mrrobust, update
 ```
 
 There is a summary helpfile:
 ```
-. help mrrobust
+help mrrobust
 ```
 
 The helpfile for each command has an example near the end:
 ```
-. help mrratio
-. help mrivests
-. help mregger
-. help mreggersimex
-. help mreggerplot
-. help mrmedian
-. help mrmedianobs
-. help mrmodal
-. help mrmodalplot
-. help mrforest
-. help mrfunnel
+help mrratio
+help mrivests
+help mregger
+help mreggersimex
+help mreggerplot
+help mrmedian
+help mrmedianobs
+help mrmodal
+help mrmodalplot
+help mrforest
+help mrfunnel
 ```
 
 To uninstall the package, issue in Stata:
 ```
-. ado uninstall mrrobust
+ado uninstall mrrobust
 ```
 If this fails with an error mentioning multiple citations/instances of the package being installed simply issue `adoupdate mrrobust` which will leave you with just one instance of the package (which can then be uninstalled).
 
