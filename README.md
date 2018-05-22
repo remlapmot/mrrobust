@@ -1,7 +1,7 @@
 # mrrobust: Stata package for two-sample Mendelian randomization analyses using summary data
 
 * [Short video introduction](#short-video-introduction)
-* [Helpfil examples](#helpfile-examples)
+* [Helpfile examples](#helpfile-examples)
 * [Overview](#overview)
 * [Installation](#installation)
 * [Authors](#authors)
