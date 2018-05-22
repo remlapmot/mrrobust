@@ -3,7 +3,7 @@
 ## Short video introduction
 [Click here for a short video demonstrating the use of the package.](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
-[<p align="center"><img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300"></p>](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
+[<img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300">](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
 ## Helpfile examples
 [Click here for some of the code and output for the examples in the helpfile.](./mrrobust-examples/mrrobust-examples.html)
