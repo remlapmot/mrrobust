@@ -79,7 +79,7 @@ If this fails with an error mentioning that you have multiple citations/instance
 ### Installation for Stata version 12 and earlier versions
 The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation commands for the other dependencies should work.
 
-To download `mrrobust` manually click the green "Clone or download" button above and then download as a zip archive. Extract the zip archive on your computer and move the extracted files to your `adopath`.
+To download `mrrobust` manually click the green "Clone or download" button at the top of the GitHub repository [here](https://github.com/remlapmot/mrrobust) and then download as a zip archive. On your computer, extract the zip archive and move the extracted files to your `adopath`.
 
 If you need to install the other commands manually: 
  * the `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
