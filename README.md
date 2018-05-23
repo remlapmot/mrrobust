@@ -1,5 +1,6 @@
 # mrrobust: Stata package for two-sample Mendelian randomization analyses using summary data
 
+* [Latest features](#latest-features)
 * [Short video introduction](#short-video-introduction)
 * [Helpfile examples](#helpfile-examples)
 * [Overview](#overview)
@@ -8,6 +9,9 @@
 * [How to cite the mrrobust package](#how-to-cite-the-mrrobust-package)
 * [References](#references)
 * [Acknowledgements](#acknowledgements)
+
+## Latest features
+* April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model (and of the IVW model when used with option `ivw`).
 
 ## Short video introduction
 [Click here for a short video demonstrating the use of the package.](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
