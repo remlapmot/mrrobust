@@ -11,7 +11,7 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Latest updates
-* April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model (and of the IVW model when used with option `ivw`).
+* April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`.
 
 ## Short video introduction
 [Click here for a short video demonstrating the use of the package.](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
@@ -28,7 +28,7 @@ help mrrobust
 This has links to the helpfile for each command. The helpfile for each command has an example near the end. In these examples you can click on the code to run them.
 
 ## Overview
-The `mrrobust` package is a collection of commands for performing two-sample Mendelian randomization analyses using summary data of genotype-phenotype and genotype-outcome associations. 
+The mrrobust package is a collection of commands for performing two-sample Mendelian randomization analyses using summary data of genotype-phenotype and genotype-outcome associations. 
 
 Such data can be obtained from repositories such as MR-Base <http://www.mrbase.org> (Hemani et al. 2016).
 
@@ -56,7 +56,7 @@ ssc install metan
 net install grc1leg, from(http://www.stata.com/users/vwiggins)
 ```
 
-To install `mrrobust` issue in Stata (in versions 13 and above):
+To install mrrobust issue in Stata (in versions 13 and above):
 ```
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
@@ -64,7 +64,7 @@ net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) re
 If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
 
 ### Updating mrrobust
-To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update `mrrobust` run:
+To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update mrrobust run:
 ```
 adoupdate mrrobust, update
 ```
@@ -77,11 +77,14 @@ ado uninstall mrrobust
 If this fails with an error mentioning that you have multiple citations/instances of the package installed simply issue `adoupdate mrrobust` which should leave you with just one instance of the package, which you can then uninstall.
 
 ### Installation for Stata version 12 and earlier versions
-The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation commands for the other dependencies should work.
+The `net install` syntax for installing `mrrobust` does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. Therefore you need to do a manual installation.
 
-To download `mrrobust` manually click the green "Clone or download" button at the top of the GitHub repository [here](https://github.com/remlapmot/mrrobust) and then download as a zip archive. On your computer, extract the zip archive and move the extracted files to your `adopath`.
+To download and install mrrobust manually:
+* click the green "Clone or download" button at the top of the GitHub repository [here](https://github.com/remlapmot/mrrobust) and download as a zip archive.
+* On your computer, extract the zip archive and move the extracted files to your `adopath` 
+* Typing `adopath` in Stata shows you the folders where the Stata programs, ado-files, are saved. You want to save the mrrobust files in the folder marked PERSONAL. If the folder Stata is pointing to does not exist simply make it, e.g. using Windows Explorer.
 
-If you need to install the other commands manually: 
+The installation commands for the other dependencies should work. However, if you want to install them manually: 
  * the `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
  * the `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
  * the `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
