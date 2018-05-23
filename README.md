@@ -4,7 +4,7 @@
 * [Short video introduction](#short-video-introduction)
 * [Helpfile examples](#helpfile-examples)
 * [Overview](#overview)
-* [Installation](#installation)
+* [Installation](#installing-and-updating-mrrobust)
 * [Authors](#authors)
 * [How to cite the mrrobust package](#how-to-cite-the-mrrobust-package)
 * [References](#references)
