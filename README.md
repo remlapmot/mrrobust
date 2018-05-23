@@ -1,10 +1,10 @@
-# `mrrobust`: Stata package for two-sample Mendelian randomization analyses using summary data
+# mrrobust: Stata package for two-sample Mendelian randomization analyses using summary data
 
 * [Latest features](#latest-features)
 * [Short video introduction](#short-video-introduction)
 * [Helpfile examples](#helpfile-examples)
 * [Overview](#overview)
-* [Installing and updating `mrrobust`](#installing-and-updating-mrrobust)
+* [Installing and updating mrrobust](#installing-and-updating-mrrobust)
 * [Authors](#authors)
 * [How to cite the mrrobust package](#how-to-cite-the-mrrobust-package)
 * [References](#references)
@@ -44,7 +44,7 @@ The package contains the following commands:
  - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger).
  - `mrfunnel` funnel plot of genotype specific IV estimates.
 
-## Installing and updating `mrrobust`
+## Installing and updating mrrobust
 ### Installation for Stata version 13 and later
 First install the dependencies. The package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins). Install these using the following commands:
 ```
@@ -63,13 +63,13 @@ net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) re
 
 If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
 
-### Updating `mrrobust`
+### Updating mrrobust
 To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update `mrrobust` run:
 ```
 adoupdate mrrobust, update
 ```
 
-### Uninstalling `mrrobust`
+### Uninstalling mrrobust
 To uninstall the package, issue in Stata:
 ```
 ado uninstall mrrobust
