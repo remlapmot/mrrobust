@@ -21,6 +21,12 @@
 ## Helpfile examples
 [Click here for some of the code and output for the examples in the helpfile.](./mrrobust-examples/mrrobust-examples.html)
 
+Once the package is installed, there is a summary helpfile which can be viewed in Stata with:
+```
+help mrrobust
+```
+This has links to the helpfile for each command. The helpfile for each command has an example near the end. In these examples you can click on the code to run them.
+
 ## Overview
 The `mrrobust` package is a collection of commands for performing two-sample Mendelian randomization analyses using summary data of genotype-phenotype and genotype-outcome associations. 
 
@@ -38,10 +44,9 @@ The package contains the following commands:
  - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger).
  - `mrfunnel` funnel plot of genotype specific IV estimates.
 
-## Installation
-### Stata version 13 and later
-
-First install the dependencies. The package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins). Install those using the following commands:
+## Installing and updating `mrrobust`
+### Installation for Stata version 13 and later
+First install the dependencies. The package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins). Install these using the following commands:
 ```
 ssc install addplot
 ssc install kdens
@@ -56,53 +61,37 @@ To install `mrrobust` issue in Stata (in versions 13 and above):
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
-If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`. Also run `adoupdate` to check for updates. To update the package if you know an update is available run:
+If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
+
+### Updating `mrrobust`
+To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update `mrrobust` run:
 ```
 adoupdate mrrobust, update
 ```
 
-There is a summary helpfile:
-```
-help mrrobust
-```
-
-The helpfile for each command has an example near the end:
-```
-help mrratio
-help mrivests
-help mregger
-help mreggersimex
-help mreggerplot
-help mrmedian
-help mrmedianobs
-help mrmodal
-help mrmodalplot
-help mrforest
-help mrfunnel
-```
-
+### Uninstalling `mrrobust`
 To uninstall the package, issue in Stata:
 ```
 ado uninstall mrrobust
 ```
-If this fails with an error mentioning multiple citations/instances of the package being installed simply issue `adoupdate mrrobust` which will leave you with just one instance of the package (which can then be uninstalled).
+If this fails with an error mentioning that you have multiple citations/instances of the package installed simply issue `adoupdate mrrobust` which should leave you with just one instance of the package, which you can then uninstall.
 
-### Stata version 12 and earlier
+### Installation for Stata version 12 and earlier versions
 The `net install` syntax for installing `mrrobust` above does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. However, the installation commands for the other dependencies should work.
 
-To download `mrrobust` manually click the green "Clone or download" button above and then download as a zip archive. Then extract the zip archive on your computer. Then move the extracted files to your `adopath`. 
+To download `mrrobust` manually click the green "Clone or download" button above and then download as a zip archive. Extract the zip archive on your computer and move the extracted files to your `adopath`.
 
 If you need to install the other commands manually: 
- * The `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
- * The `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
- * The `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
- * The `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
- * The `metan` command is available here <https://ideas.repec.org/c/boc/bocode/s456798.html>.
- * The `grc1leg` ado-file is here <http://www.stata.com/users/vwiggins/grc1leg/grc1leg.ado> and the helpfile is here <http://www.stata.com/users/vwiggins/grc1leg/grc1leg.hlp>
+ * the `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
+ * the `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
+ * the `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
+ * the `kdens` package is available here <http://fmwww.bc.edu/repec/bocode/k/kdens.zip>.
+ * the `metan` command is available here <https://ideas.repec.org/c/boc/bocode/s456798.html>.
+ * the `grc1leg` ado-file is here <http://www.stata.com/users/vwiggins/grc1leg/grc1leg.ado> and the helpfile is here <http://www.stata.com/users/vwiggins/grc1leg/grc1leg.hlp>
  
 Extract the zip archives and save all files on your `adopath`.
 
-To uninstall a manual installation simply delete the files you placed on your adopath.
+To uninstall a manual installation simply delete the files that you placed on your adopath.
 
 ## Authors
 Tom Palmer, Wesley Spiller, Neil Davies
