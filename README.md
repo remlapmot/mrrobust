@@ -21,13 +21,13 @@
 [<img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300">](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
 ## Helpfile examples
-[Click here for some of the code and output for the examples in the helpfile.](./mrrobust-examples/mrrobust-examples.html)
+[Click here for some of the code and output from the examples in the helpfiles.](./mrrobust-examples/mrrobust-examples.html)
 
 Once the package is installed, there is a summary helpfile which can be viewed in Stata with:
 ```
 help mrrobust
 ```
-This has links to the helpfile for each command. The helpfile for each command has an example near the end. In these examples you can click on the code to run them.
+This has links to the helpfile for each command, which has an example near the bottom. In these examples you can click on the code to run it.
 
 ## Overview
 The mrrobust package is a collection of commands for performing two-sample Mendelian randomization analyses using summary data of genotype-phenotype and genotype-outcome associations. 
