@@ -59,7 +59,7 @@ net install grc1leg, from(http://www.stata.com/users/vwiggins)
 ```
 
 To install mrrobust issue in Stata (in versions 13 and above):
-```{stata, size="small"}
+```
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
