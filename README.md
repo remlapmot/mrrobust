@@ -11,7 +11,7 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Latest updates
-* August 2018: Example code and output for the forthcoming IJE paper is here
+* August 2018: [Click here for the example code and output for our forthcoming IJE paper](./spiller-ije-2018-examples/spiller-ije-2018-examples.html)
 * April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`.
 
 ## Short video introduction
