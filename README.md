@@ -12,7 +12,7 @@
 
 ## Latest updates
 * August 2018: [Click here for the example code and output for our forthcoming IJE paper](./spiller-ije-2018-examples/spiller-ije-2018-examples.html).
-* May 2018: This page is now on GitHub Pages http://remlapmot.github.io/mrrobust/ (at this link the example HTML files render properly).
+* May 2018: This page is now on GitHub Pages <http://remlapmot.github.io/mrrobust/> (at this link the example HTML files render properly).
 * April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`.
 
 ## Short video introduction
@@ -59,7 +59,7 @@ net install grc1leg, from(http://www.stata.com/users/vwiggins)
 ```
 
 To install mrrobust issue in Stata (in versions 13 and above):
-```
+```{size="small"}
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
 
