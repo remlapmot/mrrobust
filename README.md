@@ -102,7 +102,7 @@ To uninstall a manual installation simply delete the files that you placed on yo
 Tom Palmer, Wesley Spiller, Neil Davies
 
 ## How to cite the mrrobust package
-Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. bioRxiv, published online 25th May 2017. <https://doi.org/10.1101/142125>
+Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, published online 12th September 2018. <https://doi.org/10.1093/ije/dyy195>
 
 ## References
  * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 2015, 44, 2, 512-525. <http://dx.doi.org/10.1093/ije/dyv080>
