@@ -11,10 +11,10 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Latest updates
-* September 2018: IJE paper published online <https://doi.org/10.1093/ije/dyy195>.
-* August 2018: [Click here for the example code and output from our IJE article](./spiller-ije-2018-examples/spiller-ije-2018-examples.html).
-* May 2018: [Click here for code and output from the examples in the helpfiles]<./mrrobust-examples/mrrobust-examples.html>
-* May 2018: This page is now on GitHub Pages <http://remlapmot.github.io/mrrobust/> .
+* September 2018: IJE paper published online <https://doi.org/10.1093/ije/dyy195>
+* August 2018: [Click here for the example code and output from our IJE article](./spiller-ije-2018-examples/spiller-ije-2018-examples.html)
+* May 2018: [Click here for code and output from the examples in the helpfiles](./mrrobust-examples/mrrobust-examples.html)
+* May 2018: This page is now on GitHub Pages <http://remlapmot.github.io/mrrobust/> 
 * April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`.
 
 ## Short video introduction
