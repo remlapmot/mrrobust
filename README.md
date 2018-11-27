@@ -5,6 +5,7 @@
 * [Helpfile examples](#helpfile-examples)
 * [Overview](#overview)
 * [Installing and updating mrrobust](#installing-and-updating-mrrobust)
+* [Code testing](#code-testing)
 * [Authors](#authors)
 * [How to cite the mrrobust package](#how-to-cite-the-mrrobust-package)
 * [References](#references)
@@ -100,6 +101,9 @@ The installation commands for the other dependencies should work. However, if yo
 Extract the zip archives and save all files on your `adopath`.
 
 To uninstall a manual installation simply delete the files that you placed on your adopath.
+
+## Code testing
+As far as I know, and unlike say R which has the `testthat`, package there is no recognised standard for writing unit tests for Stata commands. However, I do know that StataCorp refer to such do-files as cscripts (certification scripts). If you are interested I publish my cscripts (and their log files of output) for the package in the cscripts directory in the GitHub repository. 
 
 ## Authors
 Tom Palmer tom.palmer@lancaster.ac.uk, Wesley Spiller, Neil Davies
