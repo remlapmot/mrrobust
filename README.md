@@ -8,6 +8,7 @@
 * [Authors](#authors)
 * [How to cite the mrrobust package](#how-to-cite-the-mrrobust-package)
 * [References](#references)
+* [Collaboration](#collaboration)
 * [Acknowledgements](#acknowledgements)
 
 ## Latest updates
@@ -101,10 +102,13 @@ Extract the zip archives and save all files on your `adopath`.
 To uninstall a manual installation simply delete the files that you placed on your adopath.
 
 ## Authors
-Tom Palmer, Wesley Spiller, Neil Davies
+Tom Palmer tom.palmer@lancaster.ac.uk, Wesley Spiller, Neil Davies
 
 ## How to cite the mrrobust package
 Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, published online 12th September 2018. <https://doi.org/10.1093/ije/dyy195>
+
+## Collaboration
+If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or do just send me an email.
 
 ## References
  * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 2015, 44, 2, 512-525. <http://dx.doi.org/10.1093/ije/dyv080>
