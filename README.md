@@ -13,6 +13,7 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Latest updates
+* November 2018: An example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script is [here](./markstat-call-R-example/markstat-call-R-example.html)
 * September 2018: IJE paper published online <https://doi.org/10.1093/ije/dyy195>
 * August 2018: [Click here for the example code and output from our IJE article](./spiller-ije-2018-examples/spiller-ije-2018-examples.html)
 * May 2018: [Click here for code and output from the examples in the helpfiles](./mrrobust-examples/mrrobust-examples.html)
