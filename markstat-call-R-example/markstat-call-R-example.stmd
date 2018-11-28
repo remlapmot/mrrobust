@@ -1,4 +1,4 @@
-% Using `TwoSampleMR` and `mrrobust` in the same Stata Markdown script
+% Using `TwoSampleMR` and `mrrobust` code in the same Stata Markdown script
 % Tom Palmer
 % 28 November 2018
 
@@ -9,7 +9,7 @@ This example shows how to run R and Stata code within the same Stata Markdown (`
 
 This means that we can use the functions provided by the [`TwoSampleMR`](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](http://www.mrbase.org/).
 
-To see the `stmd` code see in the `markstat-call-R-example` directory on GitHub.
+To see the `stmd` code which generates this page see [here](./markstat-call-R-example.stmd). It consists of R code chunks and Stata code chunks.
 
 Before you start please install the following two Stata packages from the SSC archive.
 ```s

@@ -43,7 +43,7 @@ table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Tom Palmer" />
   <meta name="dcterms.date" content="2018-11-28" />
-  <title>Using TwoSampleMR and mrrobust in the same Stata Markdown script</title>
+  <title>Using TwoSampleMR and mrrobust code in the same Stata Markdown script</title>
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -56,14 +56,14 @@ table tbody:last-child tr:last-child td {border-bottom:1px solid black;}
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Using <code>TwoSampleMR</code> and <code>mrrobust</code> in the same Stata Markdown script</h1>
+<h1 class="title">Using <code>TwoSampleMR</code> and <code>mrrobust</code> code in the same Stata Markdown script</h1>
 <p class="author">Tom Palmer</p>
 <p class="date">28 November 2018</p>
 </header>
 <h2 id="introduction">Introduction</h2>
 <p>This example shows how to run R and Stata code within the same Stata Markdown (<code>.stmd</code>) script. The general approach is detailed on the Stata Markdown website <a href="https://data.princeton.edu/stata/markdown/quantiles">here</a> and <a href="https://data.princeton.edu/stata/markdown/gettingStarted#R">here</a>.</p>
 <p>This means that we can use the functions provided by the <a href="https://github.com/MRCIEU/TwoSampleMR"><code>TwoSampleMR</code></a> package to obtain data from <a href="http://www.mrbase.org/">MR-Base</a>.</p>
-<p>To see the <code>stmd</code> code see in the <code>markstat-call-R-example</code> directory on GitHub.</p>
+<p>To see the <code>stmd</code> code which generates this page see <a href="./markstat-call-R-example.stmd">here</a>. It consists of R code chunks and Stata code chunks.</p>
 <p>Before you start please install the following two Stata packages from the SSC archive.</p>
 <pre class='stata'>. ssc install whereis
 checking whereis consistency and verifying not already installed...
