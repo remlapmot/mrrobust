@@ -1,0 +1,91 @@
+
+R version 3.5.1 (2018-07-02) -- "Feather Spray"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #_1
+> #install.packages("devtools")
+> #devtools::install_github("MRCIEU/TwoSampleMR")
+> #devtools::install_github("MRCIEU/MRInstruments")
+> #_2
+> library(TwoSampleMR)
+> library(MRInstruments)
+> library(foreign)
+> #_3
+> source("mrplots.R")
+> #_4
+> data(gwas_catalog)
+> 
+> # Get published SNPs for LDL cholesterol
+> ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
+> 
+> # Extract from GLGC dataset
+> exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+> 
+> # Get outcome data from Cardiogram 2015
+> outcome <- extract_outcome_data(exposure$SNP, 7)
+> 
+> # Harmonise exposure and outcome datasets
+> # Assume alleles are on the forward strand
+> dat <- harmonise_data(exposure, outcome, action=1)
+> #_5
+> # Perform MR
+> mr(dat)
+  id.exposure id.outcome                        outcome
+1         300          7 Coronary heart disease || id:7
+2         300          7 Coronary heart disease || id:7
+3         300          7 Coronary heart disease || id:7
+4         300          7 Coronary heart disease || id:7
+5         300          7 Coronary heart disease || id:7
+                   exposure                    method nsnp         b         se
+1 LDL cholesterol || id:300                  MR Egger   62 0.5854136 0.06182590
+2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03813682
+3 LDL cholesterol || id:300 Inverse variance weighted   62 0.4686211 0.03919370
+4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06181025
+5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03307175
+          pval
+1 1.619410e-13
+2 1.347455e-37
+3 6.000986e-33
+4 2.421472e-10
+5 4.356044e-23
+> mr_heterogeneity(dat)
+  id.exposure id.outcome                        outcome
+1         300          7 Coronary heart disease || id:7
+2         300          7 Coronary heart disease || id:7
+                   exposure                    method        Q Q_df
+1 LDL cholesterol || id:300                  MR Egger 170.4804   60
+2 LDL cholesterol || id:300 Inverse variance weighted 186.6560   61
+        Q_pval
+1 1.583556e-12
+2 1.154072e-14
+> dat$exposure <- "LDL cholesterol"
+> dat$outcome <- "Coronary heart disease"
+> 
+> # Label outliers and create plots
+> dat$labels <- dat$SNP
+> dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
+> #_6
+> png("ldl-chd.png", width=1000, height=1000)
+> mr_plots(dat)
+> dev.off()
+null device 
+          1 
+> #_7
+> write.dta(dat, file = "dat.dta")
+> #_^
+> 

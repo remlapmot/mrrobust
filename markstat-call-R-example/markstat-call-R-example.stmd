@@ -1,0 +1,118 @@
+% Using `TwoSampleMR` and `mrrobust` in the same Stata Markdown script
+% Tom Palmer
+% 28 November 2018
+
+
+## Introduction
+
+This example shows how to run R and Stata code within the same Stata Markdown (`.stmd`) script. The general approach is detailed on the Stata Markdown website [here](https://data.princeton.edu/stata/markdown/quantiles) and [here](https://data.princeton.edu/stata/markdown/gettingStarted#R).
+
+This means that we can use the functions provided by the [`TwoSampleMR`](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](http://www.mrbase.org/).
+
+To see the `stmd` code see in the `markstat-call-R-example` directory on GitHub.
+
+Before you start please install the following two Stata packages from the SSC archive.
+```s
+ssc install whereis
+ssc install markstat
+```
+
+We first need to register the R executable with Stata.
+```s
+whereis R "C:\\Program Files\\R\\R-3.5.1\\bin\\R.exe"
+```
+
+Next we install the required packages in R. Note I have commented these lines out because I already have these packages installed.
+```r
+#install.packages("devtools")
+#devtools::install_github("MRCIEU/TwoSampleMR")
+#devtools::install_github("MRCIEU/MRInstruments")
+```
+
+We will be running the script from the MR-Base paper ([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is from [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
+
+We load the packages into our R session. Note that the `foreign` package provides the `write.dta()` function which we will use to save the data in Stata format.
+```r
+library(TwoSampleMR)
+library(MRInstruments)
+library(foreign)
+```
+
+Our version of the code starts by reading in some code to generate a set of plots in R.
+```r
+source("mrplots.R")
+```
+
+Now we can access the data using the `MRInstruments` package.
+```r
+data(gwas_catalog)
+
+# Get published SNPs for LDL cholesterol
+ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
+
+# Extract from GLGC dataset
+exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+
+# Get outcome data from Cardiogram 2015
+outcome <- extract_outcome_data(exposure$SNP, 7)
+
+# Harmonise exposure and outcome datasets
+# Assume alleles are on the forward strand
+dat <- harmonise_data(exposure, outcome, action=1)
+```
+At this point we have our harmonised genotype-exposure and genotype-outcome association data saved in an object in our R session called `dat`.
+
+The next two code chunks perform the analysis in R.
+```r
+# Perform MR
+mr(dat)
+mr_heterogeneity(dat)
+dat$exposure <- "LDL cholesterol"
+dat$outcome <- "Coronary heart disease"
+
+# Label outliers and create plots
+dat$labels <- dat$SNP
+dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
+```
+
+```r
+png("ldl-chd.png", width=1000, height=1000)
+mr_plots(dat)
+dev.off()
+```
+
+To proceed in Stata we can save our `dat` object as a Stata dataset
+```r
+write.dta(dat, file = "dat.dta")
+```
+
+We read the data into Stata and list the variable names (note any `.` in the colnames of `dat` have been replaced with `_`).
+```s
+use dat, clear
+ds, v(28)
+di _N
+```
+
+We can then run the IVW model using `mregger` with multiplicative standard errors.
+```s
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
+```
+
+We then fit the MR-Egger, median, and modal based estimators.
+```s
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
+```
+
+```s
+mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
+```
+
+```s
+mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+```
+
+And we could continue with additional Stata code (or indeed R code) as we liked.
+
+## References
+
+- Hemani et al. The MR-Base platform supports systematic causal inference across the human phenome. eLife, 2018;7:e34408 <https://doi.org/10.7554/eLife.34408>
