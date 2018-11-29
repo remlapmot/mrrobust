@@ -1,0 +1,136 @@
+---
+title: Using `TwoSampleMR` and `mrrobust` code in the same Rmarkdown script
+author: Tom Palmer
+date: 29th November 2018
+---
+
+## Introduction
+
+This example shows how to run R and Stata code within the same Rmarkdown (`.Rmd`) script using the `Statamarkdown` R package. More information about this package is available [here](https://github.com/Hemken/Statamarkdown) and [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataMarkdown.html). To install this package and load it into your current R session run the following in R.
+```{r}
+devtools::install_github("Hemken/Statamarkdown")
+library(Statamarkdown)
+```
+
+Next we need to tell `Statamarkdown` where Stata is installed.
+```{r}
+stataexe <- find_stata()
+knitr::opts_chunk$set(engine.path=stataexe)
+```
+
+Note when writing our Stata code chunks we need to be careful when we specify the `collectcode=TRUE` code chunk option, because each Stata code chunk is run as a separate batch job. See [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataProfile.html) for more information.
+
+Using R and Stata code in the same script means that we can use the functions provided by the [`TwoSampleMR`](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](http://www.mrbase.org/).
+
+To see the `Rmd` code which generates this page see [here](./rmarkdown-call-stata-example.Rmd). It consists of R code chunks and Stata code chunks.
+
+
+Next we install the other required packages in R. Note I don't run these lines of code in this script because I already have these packages installed.
+```{r, eval = FALSE}
+install.packages("devtools")
+devtools::install_github("MRCIEU/TwoSampleMR")
+devtools::install_github("MRCIEU/MRInstruments")
+```
+
+We will be running the script from the MR-Base paper ([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is from [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
+
+We load the packages into our R session. Note that the `foreign` package provides the `write.dta()` function which we will use to save the data in Stata format.
+```{r}
+library(TwoSampleMR)
+library(MRInstruments)
+library(foreign)
+```
+
+Our version of the code starts by reading in some code to generate a set of plots in R.
+```{r}
+source("mrplots.R")
+```
+
+Now we can access the data using the `MRInstruments` package.
+```{r}
+data(gwas_catalog)
+
+# Get published SNPs for LDL cholesterol
+ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
+
+# Extract from GLGC dataset
+exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+
+# Get outcome data from Cardiogram 2015
+outcome <- extract_outcome_data(exposure$SNP, 7)
+
+# Harmonise exposure and outcome datasets
+# Assume alleles are on the forward strand
+dat <- harmonise_data(exposure, outcome, action=1)
+```
+At this point we have our harmonised genotype-exposure and genotype-outcome association data saved in an object in our R session called `dat`.
+
+The next two code chunks perform the analysis in R.
+```{r}
+# Perform MR
+mr(dat)
+mr_heterogeneity(dat)
+dat$exposure <- "LDL cholesterol"
+dat$outcome <- "Coronary heart disease"
+
+# Label outliers and create plots
+dat$labels <- dat$SNP
+dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
+```
+
+```{r}
+png("ldl-chd.png", width=1000, height=1000)
+mr_plots(dat)
+dev.off()
+```
+
+To proceed in Stata we can save our `dat` object as a Stata dataset
+```{r}
+write.dta(dat, file = "dat.dta")
+```
+
+We read the data into Stata and list the variable names (note any `.` in the colnames of `dat` have been replaced with `_`). Note because I need to read this in for every Stata code chunk I specify the chunk option `collectcode=TRUE`.
+```{stata, collectcode=TRUE, cleanlog=FALSE}
+use dat, clear
+ds, v(28)
+di _N
+```
+
+At this point in Stata install the `mrrobust` package and its dependencies if you have not done so previously.
+```{stata, eval = FALSE}
+net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/)
+ssc install addplot
+ssc install kdens
+ssc install moremata
+ssc install heterogi
+ssc install metan
+net install grc1leg, from(http://www.stata.com/users/vwiggins)
+```
+
+Note at this point if you obtain an error saying that these packages are not installed when in fact you think you have them, this is probably because `Statamarkdown` does not appear to run a `profile.do` saved on a drive other than `C:`. Therefore make new `PERSONAL` and `PLUS` folders on your `C:` drive (in Stata see `help adopath`) and then run the code above.
+
+We can then run the IVW model using `mregger` with multiplicative standard errors.
+```{stata, cleanlog=FALSE}
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
+```
+
+We then fit the MR-Egger, median, and modal based estimators.
+```{stata, cleanlog=FALSE}
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
+```
+
+```{stata, cleanlog=FALSE}
+mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
+```
+
+```{stata, cleanlog=FALSE}
+mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+```
+
+And we could continue with additional Stata code (or indeed R code) as we liked.
+
+To run this `Rmd` file, open it in RStudio and click the `Knit` button in the toolbar of the Source code window.
+
+## References
+
+- Hemani et al. The MR-Base platform supports systematic causal inference across the human phenome. eLife, 2018;7:e34408 <https://doi.org/10.7554/eLife.34408>
