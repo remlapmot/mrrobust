@@ -1,53 +1,45 @@
 capture log close
-log using ".\mrrobust-examples\mrrobust-examples", smcl replace
+log using "mrrobust-examples", smcl replace
 //_1
-* ssc install addplot
-* ssc install kdens
-* ssc install moremata
-* ssc install heterogi
-* ssc install metan
-* net install grc1leg, from(http://www.stata.com/users/vwiggins)
-* net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 //_2
+gen byte sel1 = (ldlcp2 < 1e-8)
+//_3
 mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
-gr export mrforest.png, width(500) replace
-//_3
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+gr export mrforest.png, width(600) replace
 //_4
-gen byte sel1 = (ldlcp2 < 1e-8)
-//_5
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
-//_6
+//_5
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
-//_7
+//_6
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
-//_8
+//_7
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
-//_9
+//_8
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
-//_10
+//_9
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
-//_11
+//_10
 mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
     seed(12345) noboot
-gr export mreggersimex-plot.png, width(500) replace
-//_12
+gr export mreggersimex-plot.png, width(600) replace
+//_11
 mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
-gr export mreggerplot.png, width(500) replace
-//_13
+gr export mreggerplot.png, width(600) replace
+//_12
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
-//_14
+//_13
 mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
-gr export mrmodalplot.png, width(500) replace
-//_15
+gr export mrmodalplot.png, width(600) replace
+//_14
 mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
-//_16
+//_15
 mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
-//_17
+//_16
 mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
-//_18
+//_17
 mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
-gr export mrfunnel.png, width(500) replace
+gr export mrfunnel.png, width(600) replace
 //_^
 log close
