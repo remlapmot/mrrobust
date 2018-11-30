@@ -51,9 +51,9 @@ All the data was obtained from the MRBase GWAS catalogue available at <http://ww
 
 ## Plot of the MR-Egger model
 	mreggerplot betaoutcome seoutcome betaexposure seexposure
-	qui gr export mreggerplot-bmi.png, width(600) replace
+	qui gr export mreggerplot-bmi.svg, width(600) replace
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.png){.img-responsive .center-block}
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.svg){.img-responsive .center-block}
 
 	
 ## Weighted median
@@ -64,9 +64,9 @@ Using the mrmodalplot command, modal estimates are calculated using bandwidths o
 0.5, and 1 respectively. This command also produces three overlaid density plots for each
 value, as shown in the Figure.
 	mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
-	qui gr export mrmodalplot-bmi.png, width(600) replace
+	qui gr export mrmodalplot-bmi.svg, width(600) replace
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.png){.img-responsive .center-block}
+![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg){.img-responsive .center-block}
 
 	
 # Stata output for each estimation method using mrrobust: Height-Serum Glucose
@@ -81,9 +81,9 @@ value, as shown in the Figure.
 
 ## Plot of the MR-Egger model
 	mreggerplot betaoutcome seoutcome betaexposure seexposure
-	qui gr export mreggerplot-height.png, width(600) replace
+	qui gr export mreggerplot-height.svg, width(600) replace
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.png){.img-responsive .center-block}
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.svg){.img-responsive .center-block}
 
 	
 ## Weighted median
@@ -91,9 +91,9 @@ value, as shown in the Figure.
 
 ## Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose	
 	mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
-	qui gr export mrmodalplot-height.png, width(600) replace
+	qui gr export mrmodalplot-height.svg, width(600) replace
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-height.png){.img-responsive .center-block}
+![Densities of the IV estimates using different values of phi.](mrmodalplot-height.svg){.img-responsive .center-block}
 
 # References
 
