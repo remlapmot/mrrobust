@@ -1,18 +1,24 @@
-% Software Application Profile: `mrrobust` - a tool for performing two-sample summary Mendelian randomization analyses: examples
-% Wes Spiller, Neil Davies, Tom Palmer
-% 30 August 2018
+---
+title: "Software Application Profile: `mrrobust` - a tool for performing two-sample summary Mendelian randomization analyses: examples"
+author: "Wes Spiller, Neil Davies, Tom Palmer"
+date: "30 August 2018"
+---
+
+The paper is available [here](https://doi.org/10.1093/ije/dyy195).
 
 # `mrrobust` set-up
 Install dependencies and `mrrobust` package (commented out because I have them - but uncomment if needed).
 
 If you have Stata 12 or earlier you will need to install some of these manually.
-	* ssc install addplot
-	* ssc install kdens
-	* ssc install moremata
-	* ssc install heterogi
-	* ssc install metan
-	* net install grc1leg, from(http://www.stata.com/users/vwiggins)
-	* net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+```
+ssc install addplot
+ssc install kdens
+ssc install moremata
+ssc install heterogi
+ssc install metan
+net install grc1leg, from(http://www.stata.com/users/vwiggins)
+net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+```
 
 # Summary data description and overview
 Accompanying this paper are two sets of data `BMI.csv`, and `Height.csv`, containing the set of summary estimates required for performing the BMI-serum glucose and height-serum glucose analyses respectively. Each dataset is organised into 5 columns under the following headings:
@@ -45,7 +51,7 @@ All the data was obtained from the MRBase GWAS catalogue available at <http://ww
 
 ## Plot of the MR-Egger model
 	mreggerplot betaoutcome seoutcome betaexposure seexposure
-	qui gr export mreggerplot-bmi.png, width(500) replace
+	qui gr export mreggerplot-bmi.png, width(600) replace
 
 ![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.png){.img-responsive .center-block}
 
@@ -58,7 +64,7 @@ Using the mrmodalplot command, modal estimates are calculated using bandwidths o
 0.5, and 1 respectively. This command also produces three overlaid density plots for each
 value, as shown in the Figure.
 	mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
-	qui gr export mrmodalplot-bmi.png, width(500) replace
+	qui gr export mrmodalplot-bmi.png, width(600) replace
 
 ![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.png){.img-responsive .center-block}
 
@@ -75,7 +81,7 @@ value, as shown in the Figure.
 
 ## Plot of the MR-Egger model
 	mreggerplot betaoutcome seoutcome betaexposure seexposure
-	qui gr export mreggerplot-height.png, width(500) replace
+	qui gr export mreggerplot-height.png, width(600) replace
 
 ![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.png){.img-responsive .center-block}
 
@@ -85,7 +91,7 @@ value, as shown in the Figure.
 
 ## Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose	
 	mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
-	qui gr export mrmodalplot-height.png, width(500) replace
+	qui gr export mrmodalplot-height.png, width(600) replace
 
 ![Densities of the IV estimates using different values of phi.](mrmodalplot-height.png){.img-responsive .center-block}
 
