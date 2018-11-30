@@ -1,4 +1,4 @@
-# mrrobust: Stata package for two-sample Mendelian randomization analyses using summary data
+# [mrrobust](http://remlapmot.github.io/mrrobust/): Stata package for two-sample Mendelian randomization analyses using summary data
 
 * [Latest updates](#latest-updates)
 * [Short video introduction](#short-video-introduction)
