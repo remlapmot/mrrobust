@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}30 Nov 2018, 12:01:29
+ {txt}opened on:  {res}30 Nov 2018, 12:57:50
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -15,8 +15,8 @@
 . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
 >     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 {res}{txt}
-{com}. gr export mrforest.png, width(600) replace
-{txt}(file mrforest.png written in PNG format)
+{com}. gr export mrforest.svg, width(600) replace
+{txt}(file mrforest.svg written in SVG format)
 
 {com}. //_4
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
@@ -128,14 +128,15 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0089987{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
-{com}. gr export mreggersimex-plot.png, width(600) replace
-{txt}(file mreggersimex-plot.png written in PNG format)
+{com}. gr export mreggersimex-plot.svg, width(600) replace
+{txt}(note: file mreggersimex-plot.svg not found)
+(file mreggersimex-plot.svg written in SVG format)
 
 {com}. //_11
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}{txt}
-{com}. gr export mreggerplot.png, width(600) replace
-{txt}(file mreggerplot.png written in PNG format)
+{com}. gr export mreggerplot.svg, width(600) replace
+{txt}(file mreggerplot.svg written in SVG format)
 
 {com}. //_12
 . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
@@ -178,8 +179,8 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1331011{col 37}{space 1}    3.69{col 46}{space 3}0.000{col 54}{space 4} .2308619{col 67}{space 3} .7526086
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}{txt}
-{com}. gr export mrmodalplot.png, width(600) replace
-{txt}(file mrmodalplot.png written in PNG format)
+{com}. gr export mrmodalplot.svg, width(600) replace
+{txt}(file mrmodalplot.svg written in SVG format)
 
 {com}. //_14
 . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
@@ -220,15 +221,15 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {com}. //_17
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}{txt}
-{com}. gr export mrfunnel.png, width(600) replace
-{txt}(file mrfunnel.png written in PNG format)
+{com}. gr export mrfunnel.svg, width(600) replace
+{txt}(file mrfunnel.svg written in SVG format)
 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}30 Nov 2018, 12:02:01
+ {txt}closed on:  {res}30 Nov 2018, 12:58:18
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

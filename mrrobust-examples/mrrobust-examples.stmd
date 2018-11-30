@@ -29,8 +29,8 @@ Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates,
 labelling the genotypes with their RSID.
 	mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
 		xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
-	gr export mrforest.png, width(600) replace
-![Example forest plot of genotype specific IV estimates](mrforest.png){.img-responsive .center-block}
+	gr export mrforest.svg, width(600) replace
+![Example forest plot of genotype specific IV estimates](mrforest.svg){.img-responsive .center-block}
 
 
 ## `mregger` examples
@@ -63,14 +63,14 @@ SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain
 SEs).
 	mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
 		seed(12345) noboot
-	gr export mreggersimex-plot.png, width(600) replace
-![SIMEX applied to the MR-Egger model](mreggersimex-plot.png){.img-responsive .center-block}
+	gr export mreggersimex-plot.svg, width(600) replace
+![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg){.img-responsive .center-block}
 
 
 ## `mreggerplot` examples
 	mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
-	gr export mreggerplot.png, width(600) replace
-![Scatter plot of the MR-Egger model](mreggerplot.png){.img-responsive .center-block}
+	gr export mreggerplot.svg, width(600) replace
+![Scatter plot of the MR-Egger model](mreggerplot.svg){.img-responsive .center-block}
 
 
 ## `mrmedian` examples
@@ -80,8 +80,8 @@ Weighted median estimator.
 
 ## `mrmodal` examples
 	mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
-	gr export mrmodalplot.png, width(600) replace
-![Densities of the IV estimates using different values of phi](mrmodalplot.png){.img-responsive .center-block}
+	gr export mrmodalplot.svg, width(600) replace
+![Densities of the IV estimates using different values of phi](mrmodalplot.svg){.img-responsive .center-block}
 
 Simple mode estimator.
 	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
@@ -95,5 +95,5 @@ Simple mode estimator with NOME assumption.
 
 ## `mrfunnel` examples
 	mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
-	gr export mrfunnel.png, width(600) replace
-![Example funnel plot](mrfunnel.png){.img-responsive .center-block}
+	gr export mrfunnel.svg, width(600) replace
+![Example funnel plot](mrfunnel.svg){.img-responsive .center-block}
