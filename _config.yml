@@ -12,12 +12,12 @@ keywords: "Mendelian randomization, Stata, Two-sample"
 author: Tom Palmer
 repo: "https://github.com/remlapmot/mrrobust"
 # exclude: .stmd
-header_pages: 
-  - index.md
-  - ./docs/mrrobust-examples
-  - ./docs/spiller-ije-2018-examples
-  - ./docs/markstat-call-R-example
-  - ./docs/rmarkdown-call-stata-example
+#header_pages: 
+#  - index.md
+#  - ./docs/mrrobust-examples
+#  - ./docs/spiller-ije-2018-examples
+#  - ./docs/markstat-call-R-example
+#  - ./docs/rmarkdown-call-stata-example
 
 # Build settings
 markdown: kramdown
