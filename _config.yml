@@ -1,4 +1,3 @@
-# theme: jekyll-theme-slate
 permalink: pretty
 title: mrrobust - Two-sample Mendelian randomization in Stata
 email: tom.palmer@lancaster.ac.uk
@@ -12,7 +11,7 @@ keywords: "Mendelian randomization, Stata, Two-sample"
 author: Tom Palmer
 repo: "https://github.com/remlapmot/mrrobust"
 # exclude: .stmd
-#header_pages: 
+# header_pages: 
 #  - index.md
 #  - ./docs/mrrobust-examples
 #  - ./docs/spiller-ije-2018-examples
@@ -21,7 +20,8 @@ repo: "https://github.com/remlapmot/mrrobust"
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-slate 
+# theme: minima
 plugins:
   - jekyll-feed
 
