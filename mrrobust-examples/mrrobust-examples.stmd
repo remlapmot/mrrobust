@@ -1,5 +1,5 @@
 ---
-title: "Examples from the `mrrobust` helpfiles"
+title: "Examples from the mrrobust helpfiles"
 author: "Tom Palmer"
 date: "17 May 2018"
 ---
