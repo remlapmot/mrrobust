@@ -1,3 +1,6 @@
+---
+layout: page
+---
 * [Latest updates](#latest-updates)
 * [Short video introduction](#short-video-introduction)
 * [Helpfile examples](#helpfile-examples)
