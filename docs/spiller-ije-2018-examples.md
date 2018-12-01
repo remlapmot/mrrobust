@@ -111,7 +111,7 @@ Residual standard error:  1.046
 ```
 
 
-### Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose
+## Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose
 Using the `mrmodalplot` command, modal estimates are calculated using bandwidths of 0.25,
 0.5, and 1 respectively. This command also produces three overlaid density plots for each
 value, as shown in the Figure.
@@ -224,7 +224,7 @@ Residual standard error:  1.045
 ```
 
 
-### Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose    
+## Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose    
 
 ```stata
 . mrmodalplot betaoutcome seoutcome betaexposure seexposure, ///

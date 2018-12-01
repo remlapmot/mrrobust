@@ -70,7 +70,7 @@ All the data was obtained from the MRBase GWAS catalogue available at <http://ww
 {{5}}
 
 
-### Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose
+## Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose
 Using the `mrmodalplot` command, modal estimates are calculated using bandwidths of 0.25,
 0.5, and 1 respectively. This command also produces three overlaid density plots for each
 value, as shown in the Figure.
@@ -110,7 +110,7 @@ value, as shown in the Figure.
 {{11}}
 
 
-### Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose    
+## Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose    
 
 {{12}}
 
