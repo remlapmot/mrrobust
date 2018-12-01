@@ -10,7 +10,9 @@ ssc install moremata
 ssc install heterogi
 ssc install metan
 net install grc1leg, from(http://www.stata.com/users/vwiggins)
-net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+net install mrrobust, ///
+    from(https://raw.github.com/remlapmot/mrrobust/master/) ///
+    replace
 ```
     
 ## Examples
@@ -32,7 +34,7 @@ labelling the genotypes with their RSID.
 
 {{3}}
 
-![Example forest plot of genotype specific IV estimates](mrforest.svg){.img-responsive .center-block}
+![Example forest plot of genotype specific IV estimates](mrforest.svg)
 
 
 ## mregger examples
@@ -78,14 +80,14 @@ SEs).
 
 {{10}}
 
-![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg){.img-responsive .center-block}
+![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg)
 
 
 ## mreggerplot examples
 
 {{11}}
 
-![Scatter plot of the MR-Egger model](mreggerplot.svg){.img-responsive .center-block}
+![Scatter plot of the MR-Egger model](mreggerplot.svg)
 
 
 ## mrmedian examples
@@ -99,7 +101,7 @@ Weighted median estimator.
 
 {{13}}
 
-![Densities of the IV estimates using different values of phi](mrmodalplot.svg){.img-responsive .center-block}
+![Densities of the IV estimates using different values of phi](mrmodalplot.svg)
 
 Simple mode estimator.
 
@@ -120,4 +122,4 @@ Simple mode estimator with NOME assumption.
 
 {{17}}
 
-![Example funnel plot](mrfunnel.svg){.img-responsive .center-block}
+![Example funnel plot](mrfunnel.svg)

@@ -10,7 +10,9 @@ ssc install moremata
 ssc install heterogi
 ssc install metan
 net install grc1leg, from(http://www.stata.com/users/vwiggins)
-net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+net install mrrobust, ///
+    from(https://raw.github.com/remlapmot/mrrobust/master/) ///
+    replace
 ```
     
 ## Examples
@@ -35,14 +37,16 @@ Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates,
 labelling the genotypes with their RSID.
 
 ```stata
-. mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
+. mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
+>     ivid(rsid) ///
 >     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 
 . gr export mrforest.svg, width(600) replace
+(note: file mrforest.svg not found)
 (file mrforest.svg written in SVG format)
 ```
 
-![Example forest plot of genotype specific IV estimates](mrforest.svg){.img-responsive .center-block}
+![Example forest plot of genotype specific IV estimates](mrforest.svg)
 
 
 ## mregger examples
@@ -87,7 +91,8 @@ Residual standard error:  1.548
 MR-Egger reporting I^2_GX statistic and heterogeneity Q-test.
 
 ```stata
-. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>     gxse(ldlcse) heterogi
 
                                                       Number of genotypes = 73
 ─────────────┬────────────────────────────────────────────────────────────────
@@ -149,7 +154,8 @@ Residual standard error:  1.547
 MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-test.
 
 ```stata
-. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>     radial heterogi
 
                                                       Number of genotypes = 73
 ─────────────┬────────────────────────────────────────────────────────────────
@@ -177,8 +183,8 @@ SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain
 SEs).
 
 ```stata
-. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
->     seed(12345) noboot
+. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
+>     gxse(ldlcse) seed(12345) noboot
 
                                                       Number of genotypes = 73
                                                     Bootstrap replications = 0
@@ -191,10 +197,11 @@ SEs).
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . gr export mreggersimex-plot.svg, width(600) replace
+(note: file mreggersimex-plot.svg not found)
 (file mreggersimex-plot.svg written in SVG format)
 ```
 
-![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg){.img-responsive .center-block}
+![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg)
 
 
 ## mreggerplot examples
@@ -203,10 +210,11 @@ SEs).
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 
 . gr export mreggerplot.svg, width(600) replace
+(note: file mreggerplot.svg not found)
 (file mreggerplot.svg written in SVG format)
 ```
 
-![Scatter plot of the MR-Egger model](mreggerplot.svg){.img-responsive .center-block}
+![Scatter plot of the MR-Egger model](mreggerplot.svg)
 
 
 ## mrmedian examples
@@ -259,10 +267,11 @@ Weighted median estimator.
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . gr export mrmodalplot.svg, width(600) replace
+(note: file mrmodalplot.svg not found)
 (file mrmodalplot.svg written in SVG format)
 ```
 
-![Densities of the IV estimates using different values of phi](mrmodalplot.svg){.img-responsive .center-block}
+![Densities of the IV estimates using different values of phi](mrmodalplot.svg)
 
 Simple mode estimator.
 
@@ -318,7 +327,8 @@ Simple mode estimator with NOME assumption.
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
 
 . gr export mrfunnel.svg, width(600) replace
+(note: file mrfunnel.svg not found)
 (file mrfunnel.svg written in SVG format)
 ```
 
-![Example funnel plot](mrfunnel.svg){.img-responsive .center-block}
+![Example funnel plot](mrfunnel.svg)
