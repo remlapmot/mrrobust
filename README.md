@@ -103,16 +103,16 @@ Extract the zip archives and save all files on your `adopath`.
 To uninstall a manual installation simply delete the files that you placed on your adopath.
 
 ## Code testing
-As far as I know, and unlike say R which has the `testthat`, package there is no recognised standard for writing unit tests for Stata commands. However, I do know that StataCorp refer to such do-files as cscripts (certification scripts). If you are interested I publish my cscripts (and their log files of output) for the package in the cscripts directory in the GitHub repository. 
+As far as I know, and unlike R which has the `testthat` package, there is no recognised standard for writing unit tests for Stata commands. However, StataCorp refer to such do-files as cscripts (certification scripts). If you are interested I publish my cscripts (and their log files of output) in the cscripts directory in the GitHub repository. 
 
 ## Authors
-Tom Palmer tom.palmer@lancaster.ac.uk, Wesley Spiller, Neil Davies
+Tom Palmer <tom.palmer@lancaster.ac.uk>, Wesley Spiller, Neil Davies
 
 ## How to cite the mrrobust package
 Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, published online 12th September 2018. <https://doi.org/10.1093/ije/dyy195>
 
 ## Collaboration
-If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or do just send me an email.
+If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email.
 
 ## References
  * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 2015, 44, 2, 512-525. <http://dx.doi.org/10.1093/ije/dyv080>
