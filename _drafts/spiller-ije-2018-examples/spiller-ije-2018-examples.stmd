@@ -94,7 +94,7 @@ value, as shown in the Figure.
 	mrmedian betaoutcome seoutcome betaexposure seexposure, ///
 		weighted seed(300818)
 
-## Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose	
+## Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose	
 	mrmodalplot betaoutcome seoutcome betaexposure seexposure, ///
 		lc(gs10 gs5 gs0) seed(300818)
 	qui gr export mrmodalplot-height.svg, width(600) replace

@@ -224,7 +224,7 @@ Residual standard error:  1.045
 ```
 
 
-## Stata output using the mode-based estimator using `mrrobust`: Height-Serum Glucose    
+## Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose    
 
 ```stata
 . mrmodalplot betaoutcome seoutcome betaexposure seexposure, ///
