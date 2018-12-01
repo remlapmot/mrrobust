@@ -1,6 +1,5 @@
 ---
 title: "Helpfile examples"
-layout: page
 ---
 ## Install dependencies and mrrobust package
 ```
