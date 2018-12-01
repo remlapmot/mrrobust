@@ -14,10 +14,10 @@ repo: "https://github.com/remlapmot/mrrobust"
 # exclude: .stmd
 header_pages: 
   - index.md
-  - ./docs/mrrobust-examples.html
-  - ./docs/spiller-ije-2018-examples.html
-  - ./docs/markstat-call-R-example.html
-  - ./docs/rmarkdown-call-stata-example.html
+  - /docs/mrrobust-examples.html
+  - /docs/spiller-ije-2018-examples.html
+  - /docs/markstat-call-R-example.html
+  - /docs/rmarkdown-call-stata-example.html
 
 # Build settings
 markdown: kramdown
