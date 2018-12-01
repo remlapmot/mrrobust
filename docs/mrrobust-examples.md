@@ -2,7 +2,7 @@
 title: "Helpfile examples"
 layout: page
 ---
-## Install dependencies and `mrrobust` package
+## Install dependencies and mrrobust package
 ```
 ssc install addplot
 ssc install kdens
@@ -30,7 +30,7 @@ Select observations (*p*-value with exposure < 10^-8^).
 
 
 
-## `mrforest` examples
+## mrforest examples
 Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates, 
 labelling the genotypes with their RSID.
 
@@ -45,7 +45,7 @@ labelling the genotypes with their RSID.
 ![Example forest plot of genotype specific IV estimates](mrforest.svg){.img-responsive .center-block}
 
 
-## `mregger` examples
+## mregger examples
 Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et al., 
 Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.
 
@@ -172,7 +172,7 @@ Q-test = 169.97877 d.f. = 71 p-value = 0.0000
 
 
 
-## `mreggersimex` examples
+## mreggersimex examples
 SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain 
 SEs).
 
@@ -197,7 +197,7 @@ SEs).
 ![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg){.img-responsive .center-block}
 
 
-## `mreggerplot` examples
+## mreggerplot examples
 
 ```stata
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
@@ -209,7 +209,7 @@ SEs).
 ![Scatter plot of the MR-Egger model](mreggerplot.svg){.img-responsive .center-block}
 
 
-## `mrmedian` examples
+## mrmedian examples
 Weighted median estimator.
 
 ```stata
@@ -226,7 +226,7 @@ Weighted median estimator.
 
 
 
-## `mrmodal` examples
+## mrmodal examples
 
 ```stata
 . mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
@@ -312,7 +312,7 @@ Simple mode estimator with NOME assumption.
 ```
 
 
-## `mrfunnel` examples
+## mrfunnel examples
 
 ```stata
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1

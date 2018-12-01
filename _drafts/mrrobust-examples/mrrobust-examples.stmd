@@ -2,7 +2,7 @@
 title: "Helpfile examples"
 layout: page
 ---
-## Install dependencies and `mrrobust` package
+## Install dependencies and mrrobust package
 ```
 ssc install addplot
 ssc install kdens
@@ -22,7 +22,7 @@ Select observations (*p*-value with exposure < 10^-8^).
 	gen byte sel1 = (ldlcp2 < 1e-8)
 
 
-## `mrforest` examples
+## mrforest examples
 Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates, 
 labelling the genotypes with their RSID.
 	mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
@@ -31,7 +31,7 @@ labelling the genotypes with their RSID.
 ![Example forest plot of genotype specific IV estimates](mrforest.svg){.img-responsive .center-block}
 
 
-## `mregger` examples
+## mregger examples
 Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et al., 
 Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.
 
@@ -56,7 +56,7 @@ MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-t
 	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
 
 
-## `mreggersimex` examples
+## mreggersimex examples
 SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain 
 SEs).
 	mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
@@ -65,18 +65,18 @@ SEs).
 ![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg){.img-responsive .center-block}
 
 
-## `mreggerplot` examples
+## mreggerplot examples
 	mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 	gr export mreggerplot.svg, width(600) replace
 ![Scatter plot of the MR-Egger model](mreggerplot.svg){.img-responsive .center-block}
 
 
-## `mrmedian` examples
+## mrmedian examples
 Weighted median estimator.
 	mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 
 
-## `mrmodal` examples
+## mrmodal examples
 	mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 	gr export mrmodalplot.svg, width(600) replace
 ![Densities of the IV estimates using different values of phi](mrmodalplot.svg){.img-responsive .center-block}
@@ -90,7 +90,7 @@ Weighted mode estimator.
 Simple mode estimator with NOME assumption.
 	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
 
-## `mrfunnel` examples
+## mrfunnel examples
 	mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
 	gr export mrfunnel.svg, width(600) replace
 ![Example funnel plot](mrfunnel.svg){.img-responsive .center-block}
