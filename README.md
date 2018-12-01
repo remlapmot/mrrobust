@@ -1,4 +1,4 @@
-# [mrrobust](http://remlapmot.github.io/mrrobust/): Stata package for two-sample Mendelian randomization analyses using summary data
+# [mrrobust](https://remlapmot.github.io/mrrobust/): Stata package for two-sample Mendelian randomization analyses using summary data
 
 * [Latest updates](#latest-updates)
 * [Short video introduction](#short-video-introduction)
@@ -13,12 +13,12 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Latest updates
-* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](http://remlapmot.github.io/mrrobust/rmarkdown-call-stata-example/rmarkdown-call-stata-example.html)
-* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](http://remlapmot.github.io/mrrobust/markstat-call-R-example/markstat-call-R-example.html)
+* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/rmarkdown-call-stata-example/rmarkdown-call-stata-example.html)
+* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/markstat-call-R-example/markstat-call-R-example.html)
 * September 2018: IJE paper published online <https://doi.org/10.1093/ije/dyy195>
-* August 2018: [Click here for the example code and output from our IJE article](http://remlapmot.github.io/mrrobust/spiller-ije-2018-examples/spiller-ije-2018-examples.html)
-* May 2018: [Click here for code and output from the examples in the helpfiles](http://remlapmot.github.io/mrrobust/mrrobust-examples/mrrobust-examples.html)
-* May 2018: This page is now on GitHub Pages <http://remlapmot.github.io/mrrobust/> 
+* August 2018: [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/spiller-ije-2018-examples/spiller-ije-2018-examples.html)
+* May 2018: [Click here for code and output from the examples in the helpfiles](https://remlapmot.github.io/mrrobust/mrrobust-examples/mrrobust-examples.html)
+* May 2018: This page is now on GitHub Pages <https://remlapmot.github.io/mrrobust/> 
 * April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`.
 
 ## Short video introduction
