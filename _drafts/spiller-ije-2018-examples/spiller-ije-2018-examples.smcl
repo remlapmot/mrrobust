@@ -1,9 +1,9 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\spiller-ije-2018-examples\spiller-ije-2018-examples.smcl
+       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}30 Nov 2018, 13:01:59
+ {txt}opened on:  {res} 1 Dec 2018, 18:58:22
 {txt}
 {com}. //_1
 . import delimited using BMI.csv, clear
@@ -40,7 +40,8 @@ Residual standard error:  1.046
 {com}. qui gr export mreggerplot-bmi.svg, width(600) replace
 {txt}
 {com}. //_5
-. mrmedian betaoutcome seoutcome betaexposure seexposure, weighted seed(300818)
+. mrmedian betaoutcome seoutcome betaexposure seexposure, ///
+>     weighted seed(300818)
 {res}
 {col 55}Number of genotypes = 79
 {col 60}Replications = 1000
@@ -51,7 +52,8 @@ Residual standard error:  1.046
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_6
-. mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
+. mrmodalplot betaoutcome seoutcome betaexposure seexposure, ///
+>     lc(gs10 gs5 gs0) seed(300818)
 {res}
 {col 55}Number of genotypes = 79
 {col 60}Replications = 1000
@@ -117,7 +119,8 @@ Residual standard error:  1.045
 {com}. qui gr export mreggerplot-height.svg, width(600) replace
 {txt}
 {com}. //_11
-. mrmedian betaoutcome seoutcome betaexposure seexposure, weighted seed(300818)
+. mrmedian betaoutcome seoutcome betaexposure seexposure, ///
+>     weighted seed(300818)
 {res}
 {col 54}Number of genotypes = 367
 {col 60}Replications = 1000
@@ -128,7 +131,8 @@ Residual standard error:  1.045
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_12
-. mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
+. mrmodalplot betaoutcome seoutcome betaexposure seexposure, ///
+>     lc(gs10 gs5 gs0) seed(300818)
 {res}
 {col 54}Number of genotypes = 367
 {col 60}Replications = 1000
@@ -162,9 +166,9 @@ Residual standard error:  1.045
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\spiller-ije-2018-examples\spiller-ije-2018-examples.smcl
+       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}30 Nov 2018, 13:02:12
+ {txt}closed on:  {res} 1 Dec 2018, 18:58:37
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
