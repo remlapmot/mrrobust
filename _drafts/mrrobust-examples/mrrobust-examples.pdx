@@ -1,10 +1,8 @@
 ---
-title: "Examples from the mrrobust helpfiles"
-author: "Tom Palmer"
-date: "17 May 2018"
+title: "Helpfile examples"
+layout: page
 ---
-
-# Install dependencies and `mrrobust` package
+## Install dependencies and `mrrobust` package
 ```
 ssc install addplot
 ssc install kdens
@@ -15,7 +13,7 @@ net install grc1leg, from(http://www.stata.com/users/vwiggins)
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
     
-# Examples
+## Examples
 
 Read in example data.
 
@@ -116,7 +114,6 @@ Weighted mode estimator.
 Simple mode estimator with NOME assumption.
 
 {{16}}
-
 
 
 ## `mrfunnel` examples

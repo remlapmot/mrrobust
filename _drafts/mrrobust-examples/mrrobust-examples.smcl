@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/mrrobust-examples/mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 1 Dec 2018, 18:17:19
+ {txt}opened on:  {res} 1 Dec 2018, 18:40:04
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -228,7 +228,7 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/mrrobust-examples/mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 1 Dec 2018, 18:17:56
+ {txt}closed on:  {res} 1 Dec 2018, 18:40:38
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
