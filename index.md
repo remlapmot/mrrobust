@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: home
 # title: Home
 navigation_weight: 1
 ---
