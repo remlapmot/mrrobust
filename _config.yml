@@ -4,13 +4,23 @@ title: mrrobust - Stata package for two-sample Mendelian randomization analyses
 email: tom.palmer@lancaster.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   Stata package for two-sample Mendelian randomization analyses
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/mrrobust" # the subpath of your site, e.g. /blog
+url: "https://remlapmot.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username: remlapmot
+keywords: "Mendelian randomization, Stata"
+author: Tom Palmer
+repo: "https://github.com/remlapmot/mrrobust"
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+
+# defaults (to simplify front matter)
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
