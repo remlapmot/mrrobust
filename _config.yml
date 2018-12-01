@@ -11,6 +11,7 @@ github_username: remlapmot
 keywords: "Mendelian randomization, Stata"
 author: Tom Palmer
 repo: "https://github.com/remlapmot/mrrobust"
+exclude: .stmd
 
 # Build settings
 markdown: kramdown
