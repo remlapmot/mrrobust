@@ -1,9 +1,9 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
+       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/mrrobust-examples/mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}30 Nov 2018, 12:57:50
+ {txt}opened on:  {res} 1 Dec 2018, 12:42:08
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -129,8 +129,7 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. gr export mreggersimex-plot.svg, width(600) replace
-{txt}(note: file mreggersimex-plot.svg not found)
-(file mreggersimex-plot.svg written in SVG format)
+{txt}(file mreggersimex-plot.svg written in SVG format)
 
 {com}. //_11
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
@@ -227,9 +226,9 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\code\mrrobust-examples\mrrobust-examples.smcl
+       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/mrrobust-examples/mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}30 Nov 2018, 12:58:18
+ {txt}closed on:  {res} 1 Dec 2018, 12:42:45
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
