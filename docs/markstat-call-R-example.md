@@ -8,13 +8,15 @@ This example shows how to run R and Stata code within the same Stata Markdown (`
 
 This means that we can use the functions provided by the [`TwoSampleMR`](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](http://www.mrbase.org/).
 
-To see the `stmd` code which generates this page see [here](./markstat-call-R-example.stmd). It consists of R code chunks and Stata code chunks.
+To see the `stmd` code which generates this page see [here](https://raw.githubusercontent.com/remlapmot/mrrobust/master/_drafts/markstat-call-R-example/markstat-call-R-example.stmd). You will see that the file is written in markdown and includes R and Stata code chunks.
 
-Before you start please install the following two Stata packages from the SSC archive.
+Before you start please install the following two Stata packages from the SSC archive, so in Stata issue the following commands (I have commented them out because I have already installed them).
+
+```stata
+. * ssc install whereis
+. * ssc install markstat
 ```
-ssc install whereis
-ssc install markstat
-```
+
 
 We first need to register the R executable with Stata.
 
@@ -24,7 +26,7 @@ C:\\Program Files\\R\\R-3.5.1\\bin\\R.exe
 ```
 
 
-Next we install the required packages in R. Note I have commented these lines out because I already have these packages installed.
+Next we have an R code chunk in which we install the required packages in R (again I have commented these lines out because I already have them installed).
 
 ```r
 > #install.packages("devtools")
@@ -44,14 +46,14 @@ First, we load the packages into our R session. Note that the `foreign` package 
 ```
 
 
-Our version of the code starts by reading in some code to generate a set of plots in R.
+Our edited version of the code starts by reading in some code to generate a set of plots in R.
 
 ```r
 > source("mrplots.R")
 ```
 
 
-Now we can access the data using the `MRInstruments` package.
+We can access the data using the `MRInstruments` package.
 
 ```r
 > data(gwas_catalog)
@@ -124,6 +126,8 @@ null device
 ```
 
 
+![Plots generated `TwoSampleMR`.](ldl-chd.png)
+
 We now save our `dat` object as a Stata dataset.
 
 ```r
@@ -171,6 +175,32 @@ beta_exposure │   .4686211   .0391937    11.96   0.000     .3918029    .545439
 ```
 
 
+It is helpful to view the forest plot of genotype specific IV estimates.
+
+```stata
+. decode SNP, gen(rsid)
+
+. mrforest beta_outcome se_outcome beta_exposure se_exposure, ivid(rsid)
+
+. graph export ldl-chd-mrforest.svg, width(600) replace
+(file ldl-chd-mrforest.svg written in SVG format)
+```
+
+
+![Forest plot of genotype specific IV estimates.](ldl-chd-mrforest.svg)
+
+We can visualise this model with `mreggerplot`.
+
+```stata
+. mreggerplot beta_outcome se_outcome beta_exposure se_exposure
+
+. graph export ldl-chd-mreggerplot.svg, width(600) replace
+(file ldl-chd-mreggerplot.svg written in SVG format)
+```
+
+
+![Plot of the MR-Egger model.](ldl-chd-mreggerplot.svg)
+
 We then fit the MR-Egger, median, and modal based estimators.
 
 ```stata
@@ -198,7 +228,7 @@ Residual standard error:  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887683   .0387849    12.60   0.000     .4127512    .5647854
+        beta │   .4887683   .0386336    12.65   0.000     .4130479    .5644888
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -213,7 +243,7 @@ Residual standard error:  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0360917    14.38   0.000     .4482067    .5896834
+        beta │    .518945   .0345484    15.02   0.000     .4512313    .5866587
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
