@@ -1,25 +1,15 @@
 {smcl}
-{txt}{sf}{ul off}{.-}
+{com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\markstat-call-R-example\markstat-call-R-example.smcl
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}28 Nov 2018, 16:23:45
+ {txt}opened on:  {res} 3 Dec 2018, 10:30:42
 {txt}
 {com}. //_1
-. ssc install whereis
-{txt}checking {hilite:whereis} consistency and verifying not already installed...
-all files already exist and are up to date.
-
-{com}. ssc install markstat
-{txt}checking {hilite:markstat} consistency and verifying not already installed...
-installing into H:\ado\plus\...
-installation complete.
-
-{com}. //_2
 . whereis R "C:\\Program Files\\R\\R-3.5.1\\bin\\R.exe"
 {res}{txt}C:\\Program Files\\R\\R-3.5.1\\bin\\R.exe
 
-{com}. //_3
+{com}. //_2
 . use dat, clear
 {txt}(Written by R.              )
 
@@ -40,7 +30,7 @@ installation complete.
 {com}. di _N
 {res}62
 {txt}
-{com}. //_4
+{com}. //_3
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 
 {col 55}Number of genotypes = {res}62
@@ -51,7 +41,7 @@ installation complete.
 beta_exposure {c |}{col 15}{res}{space 2} .4686211{col 27}{space 2} .0391937{col 38}{space 1}   11.96{col 47}{space 3}0.000{col 55}{space 4} .3918029{col 68}{space 3} .5454394
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
-{com}. //_5
+{com}. //_4
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
 {col 55}Number of genotypes = {res}62
@@ -65,7 +55,7 @@ beta_exposure {c |}{col 15}{res}{space 2} .4686211{col 27}{space 2} .0391937{col
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 Residual standard error:  1.686
 
-{com}. //_6
+{com}. //_5
 . mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
 {res}
 {col 55}Number of genotypes = 62
@@ -76,7 +66,7 @@ Residual standard error:  1.686
 {space 8}beta {c |}{col 14}{res}{space 2} .4887683{col 26}{space 2} .0387849{col 37}{space 1}   12.60{col 46}{space 3}0.000{col 54}{space 4} .4127512{col 67}{space 3} .5647854
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
-{com}. //_7
+{com}. //_6
 . mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 {res}
 {col 55}Number of genotypes = 62
@@ -91,9 +81,9 @@ Residual standard error:  1.686
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\markstat-call-R-example\markstat-call-R-example.smcl
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}28 Nov 2018, 16:23:52
+ {txt}closed on:  {res} 3 Dec 2018, 10:30:43
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
