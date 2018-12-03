@@ -1,7 +1,5 @@
 ---
-title: Using `TwoSampleMR` and `mrrobust` code in the same Rmarkdown script
-author: Tom Palmer
-date: 29th November 2018
+title: Rmarkdown example
 ---
 
 ## Introduction
@@ -22,8 +20,7 @@ Note when writing our Stata code chunks we need to be careful when we specify th
 
 Using R and Stata code in the same script means that we can use the functions provided by the [`TwoSampleMR`](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](http://www.mrbase.org/).
 
-To see the `Rmd` code which generates this page see [here](./rmarkdown-call-stata-example.Rmd). It consists of R code chunks and Stata code chunks.
-
+To see the `Rmd` code which generates this page see [here](https://raw.githubusercontent.com/remlapmot/mrrobust/master/_drafts/rmarkdown-call-stata-example/rmarkdown-call-stata-example.Rmd). It consists of R code chunks and Stata code chunks.
 
 Next we install the other required packages in R. Note I don't run these lines of code in this script because I already have these packages installed.
 ```{r, eval = FALSE}
@@ -41,12 +38,7 @@ library(MRInstruments)
 library(foreign)
 ```
 
-Our version of the code starts by reading in some code to generate a set of plots in R.
-```{r}
-source("mrplots.R")
-```
-
-Now we can access the data using the `MRInstruments` package.
+We can access the data using the `MRInstruments` package.
 ```{r}
 data(gwas_catalog)
 
@@ -78,8 +70,8 @@ dat$labels <- dat$SNP
 dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
 ```
 
-```{r}
-png("ldl-chd.png", width=1000, height=1000)
+```{r, eval = FALSE}
+svg("ldl-chd.svg", width=3.33, height=3.33)
 mr_plots(dat)
 dev.off()
 ```
