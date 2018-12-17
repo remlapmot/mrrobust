@@ -19,6 +19,9 @@
 {phang}
 {bf:mrrobust} {hline 2} commands for two-sample Mendelian randomization (MR) analyses.
 
+{phang}
+{browse "https://remlapmot.github.io/mrrobust/"}{p_end}
+
 {title:Commands}{marker commands}
 
 {synoptset 14 tabbed}{...}
@@ -49,7 +52,7 @@
 {title:Description}
 
 {pstd}
-{cmd:mrrobust} is a suite of programs imlementing recently developed 
+{cmd:mrrobust} is a suite of programs implementing recently developed 
 estimators which are robust to certain proportions of invalid instrumental 
 variables. 
 
@@ -61,7 +64,19 @@ repositories such as {browse "http://www.mrbase.org":MR-Base}.
 The estimators were developed in the context of MR studies but 
 could be used for other applications of instrumental variables.
 
+{pstd}
+There is a website showing the examples from the helpfiles here: {browse "https://remlapmot.github.io/mrrobust/"}{p_end}
+
 {title:Author}{marker author}
 
 {pstd}
-Tom Palmer (tom.palmer@lancaster.ac.uk). Please report any bugs or issues you find.
+Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}. 
+
+{pstd}
+Development takes place on GitHub here {browse "https://github.com/remlapmot/mrrobust"}.
+
+{pstd}
+Please report any bugs or issues you find, either by email or by creating an issue on the GitHub repository here {browse "https://github.com/remlapmot/mrrobust/issues"}.
+
+{pstd}
+I welcome additions to the code, either by email or pull request on GitHub.

@@ -34,9 +34,6 @@ statistics{p_end}
 {synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
 {synopt :{opt penw:eighted}}Use penalized weights{p_end}
 {synopt :{opt rad:ial}}Use radial formulations of the models{p_end}
-{synopt :{opt re:}}random effects version of the estimators{p_end}
-{synopt :{opt recons:}}random intercept in an MR-Egger model{p_end}
-{synopt :{opt reslope:}}random slope in an MR-Egger model{p_end}
 {synopt:{opt tdist:}}Use t-distribution for Wald test and CI limits{p_end}
 {synopt :{opt *:}}extra options passed to {cmd:gsem} for random effects 
 estimation{p_end}
@@ -109,22 +106,6 @@ et al. (2016).
 (Bowden et al., 2017). Note there is only a difference for the MR-Egger model.
  
 {phang}
-{opt re} specifies random effects versions of the models. In the random 
-effects output the Ms are the random effects (hence we only estimate their 
-variance/covariance). If only {opt re} is specificed by default both the 
-slope and intercept are included as random effects. Requires Stata version 13
-or higher (as this uses {cmd:gsem}).
-
-{phang}
-{opt recons} specifies a random intercept in the model. Can be specified with 
-{opt reslope}. Not allowed with {opt ivw} (as there is no constant in the 
-model).
-
-{phang}
-{opt reslope} specifies a random slope in the model. Can be specified with 
-{opt recons}.
-
-{phang}
 {opt tdist} specifies using the t-distribution, instead of the normal 
 distribution, for calculating the Wald test and the confidence interval limits.
 
@@ -177,7 +158,6 @@ option){p_end}
 {synopt:{cmd:e(I2GX)}}I^2_GX (with {cmd:gxse()} option){p_end}
 
 {synoptset 20 tabbed}{...}
-    If {opt re} is not specified:
 {p2col 5 20 24 2: Macros}{p_end}
 {synopt:{cmd:e(cmd)}}{cmd:mregger}{p_end}
 {synopt:{cmd:e(cmdline)}}command as typed{p_end}
@@ -186,10 +166,6 @@ option){p_end}
 {p2col 5 20 24 2: Matrices}{p_end}
 {synopt:{cmd:e(b)}}coefficient vector{p_end}
 {synopt:{cmd:e(V)}}variance-covariance matrix of the estimates{p_end}
-
-{pstd}
-If {opt re} is specified {cmd:mregger} additionally returns the e-class 
-results from {cmd:gsem}.
 
 {pstd}
 If {opt heterogi} is specified {cmd:mregger} 
@@ -248,4 +224,6 @@ comparison of methods. Statistics in Medicine, 18, 20, 2693-2708.
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer
+{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
+ {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+
