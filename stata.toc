@@ -1,3 +1,3 @@
 v 3
 d Stata package for two-sample Mendelian randomization analyses using summary data
-p mrrobust
+p mrrobust package for two-sample Mendelian randomization analyses
