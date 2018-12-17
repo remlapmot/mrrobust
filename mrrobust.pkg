@@ -1,5 +1,5 @@
 v 3
-d mrrobust
+d 'mrrobust': Stata package for two-sample Mendelian randomization analyses
 d Author: Tom Palmer
 d Distribution-Date: 20181217
 f mrmedian.ado
