@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0 Tom Palmer 05jun2017}{...}
+{vieweralsosee "mrdeps" "mrdeps"}{...}
 {vieweralsosee "mregger" "mregger"}{...}
 {vieweralsosee "mreggersimex" "mreggersimex"}{...}
 {vieweralsosee "mreggerplot" "mreggerplot"}{...}
@@ -25,6 +26,8 @@
 {title:Commands}{marker commands}
 
 {synoptset 14 tabbed}{...}
+{synopt :{opt {help mrdeps}:}}Install dependencies for the package.
+
 {synopt :{opt {help mregger}:}}MR-Egger and inverse-variance weighted (IVW) estimators.
 
 {synopt :{opt {help mreggersimex}:}}Simulation extrapolation algorithm for the MR-Egger model.
