@@ -52,22 +52,19 @@ The package contains the following commands:
 
 ## Installing and updating mrrobust
 ### Installation for Stata version 13 and later
-First install the dependencies. The package uses Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins). Install these using the following commands:
-```
-ssc install addplot
-ssc install kdens
-ssc install moremata
-ssc install heterogi
-ssc install metan
-net install grc1leg, from(http://www.stata.com/users/vwiggins)
-```
 
 To install mrrobust issue in Stata (in versions 13 and above):
 ```
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 ```
-
 If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
+
+### Installing the dependencies
+To install the dependencies simply run
+```
+mrdeps
+```
+This installs Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins).
 
 ### Updating mrrobust
 To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update mrrobust run:
@@ -83,7 +80,7 @@ ado uninstall mrrobust
 If this fails with an error mentioning that you have multiple citations/instances of the package installed simply issue `adoupdate mrrobust` which should leave you with just one instance of the package, which you can then uninstall.
 
 ### Installation for Stata version 12 and earlier versions
-The `net install` syntax for installing `mrrobust` does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. Therefore you need to do a manual installation.
+The `net install` syntax for installing `mrrobust` does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. In such cases you need to do a manual installation.
 
 To download and install mrrobust manually:
 * click the green "Clone or download" button at the top of the GitHub repository [here](https://github.com/remlapmot/mrrobust) and download as a zip archive.
