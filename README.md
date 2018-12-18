@@ -11,12 +11,14 @@
 * [Acknowledgements](#acknowledgements)
 
 ## Latest updates
-* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example)
-* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
-* September 2018: IJE paper published online <https://doi.org/10.1093/ije/dyy195>
-* August 2018: [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples)
-* May 2018: [Click here for code and output from the examples in the helpfiles](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples)
-* May 2018: This page is now on GitHub Pages <https://remlapmot.github.io/mrrobust/> 
+
+* December 2018: `mrdeps` command added for conveniently installing dependencies.
+* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example).
+* November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example).
+* September 2018: IJE paper published online <https://doi.org/10.1093/ije/dyy195>.
+* August 2018: [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples).
+* May 2018: [Click here for code and output from the examples in the helpfiles](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples).
+* May 2018: This page is now on GitHub Pages <https://remlapmot.github.io/mrrobust/>.
 * April 2018: `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`.
 
 ## Short video introduction
@@ -39,6 +41,8 @@ The mrrobust package is a collection of commands for performing two-sample Mende
 Such data can be obtained from repositories such as MR-Base <http://www.mrbase.org> (Hemani et al. 2016).
 
 The package contains the following commands:
+
+ - `mrdeps` installs dependencies for the package.
  - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals.
  - `mrivests` automates calling `mrratio` on all the selected genotypes in your dataset.
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015.
@@ -83,11 +87,13 @@ If this fails with an error mentioning that you have multiple citations/instance
 The `net install` syntax for installing `mrrobust` does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. In such cases you need to do a manual installation.
 
 To download and install mrrobust manually:
+
 * click the green "Clone or download" button at the top of the GitHub repository [here](https://github.com/remlapmot/mrrobust) and download as a zip archive.
 * On your computer, extract the zip archive and move the extracted files to your `adopath` 
 * Typing `adopath` in Stata shows you the folders where the Stata programs, ado-files, are saved. You want to save the mrrobust files in the folder marked PERSONAL. If the folder Stata is pointing to does not exist simply make it, e.g. using Windows Explorer.
 
 The installation commands for the other dependencies should work. However, if you want to install them manually: 
+
  * the `moremata` package is available as a zip file here <http://fmwww.bc.edu/repec/bocode/m/moremata.zip>. 
  * the `addplot` package is available here <http://fmwww.bc.edu/repec/bocode/a/addplot.zip>. 
  * the `heterogi` command is available here <https://ideas.repec.org/c/boc/bocode/s449201.html>.
@@ -112,6 +118,7 @@ Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool
 If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email.
 
 ## References
+
  * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect estimation and bias detection through Egger regression. International Journal of Epidemiology, 2015, 44, 2, 512-525. <http://dx.doi.org/10.1093/ije/dyv080>
  * Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian randomization with some invalid instruments using a weighted median estimator. Genetic Epidemiology, published online 7 April 2016. <http://dx.doi.org/10.1002/gepi.21965>
  * Hartwig FP, Davey Smith G, Bowden J. Robust inference in two-sample Mendelian randomisation via the zero modal pleiotropy assumption. bioRxiv. <http://dx.doi.org/10.1101/126102>
