@@ -55,42 +55,55 @@ The package contains the following commands:
  - `mrfunnel` funnel plot of genotype specific IV estimates.
 
 ## Installing and updating mrrobust
-### Installation for Stata version 13 and later
+To install mrrobust in Stata versions 13 and later you have two choices.
 
-To install mrrobust issue in Stata (in versions 13 and above):
+### 1. Either use `net install` as follows
+
 ```
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
-```
-If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
-
-### Installing the dependencies
-To install the dependencies simply run
-```
 mrdeps
 ```
-This installs Ben Jann's `addplot`, `kdens`, and `moremata` packages, the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins).
+In this code `mrdeps` installs the dependencies. These are `addplot`, `kdens`, and `moremata` packages (all by Ben Jann), the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins).
 
-### Updating mrrobust
+If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
+
 To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update mrrobust run:
 ```
 adoupdate mrrobust, update
 ```
 
-### Uninstalling mrrobust
-To uninstall the package, issue in Stata:
+To uninstall mrrobust, issue in Stata:
 ```
 ado uninstall mrrobust
 ```
-If this fails with an error mentioning that you have multiple citations/instances of the package installed simply issue `adoupdate mrrobust` which should leave you with just one instance of the package, which you can then uninstall.
+If this fails with an error message mentioning that you have "multiple citations/instances of the package installed" simply issue `adoupdate mrrobust` which should leave you with the most recent version of the package you previously installed. You can then run `ado uninstall mrrobust`.
+
+### 2. Use the `github` package as follows
+
+```
+net install github, from("https://haghish.github.io/github/")
+gitget mrrobust
+```
+This automatically installs the dependencies.
+
+To update the package issue.
+```
+github update mrrobust
+```
+
+To uninstall mrrobust issue.
+```
+github uninstall mrrobust
+```
 
 ### Installation for Stata version 12 and earlier versions
-The `net install` syntax for installing `mrrobust` does not work under Stata version 12 (and earlier versions) because this webpage has an address starting with https rather than http. In such cases you need to do a manual installation.
+The `net install` syntax for installing `mrrobust` does not work under Stata version 12 and earlier because this webpage has an address starting with https rather than http. In such cases you need to do a manual installation.
 
 To download and install mrrobust manually:
 
 * click the green "Clone or download" button at the top of the GitHub repository [here](https://github.com/remlapmot/mrrobust) and download as a zip archive.
 * On your computer, extract the zip archive and move the extracted files to your `adopath` 
-* Typing `adopath` in Stata shows you the folders where the Stata programs, ado-files, are saved. You want to save the mrrobust files in the folder marked PERSONAL. If the folder Stata is pointing to does not exist simply make it, e.g. using Windows Explorer.
+* Typing `adopath` in Stata shows you the folders where the Stata programs, ado-files, are saved. Save the mrrobust files in the folder marked PERSONAL. If the folder Stata is pointing to does not exist simply make it, e.g. using Windows Explorer.
 
 The installation commands for the other dependencies should work. However, if you want to install them manually: 
 
