@@ -413,7 +413,7 @@ else {
 ** start of displaying output
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
+di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
 
 ** display coefficient table
 Display , `re' level(`level') `radial'
