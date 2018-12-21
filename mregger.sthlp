@@ -35,8 +35,6 @@ statistics{p_end}
 {synopt :{opt penw:eighted}}Use penalized weights{p_end}
 {synopt :{opt rad:ial}}Use radial formulations of the models{p_end}
 {synopt:{opt tdist:}}Use t-distribution for Wald test and CI limits{p_end}
-{synopt :{opt *:}}extra options passed to {cmd:gsem} for random effects 
-estimation{p_end}
 
 {marker description}{...}
 {title:Description}
@@ -109,12 +107,8 @@ et al. (2016).
 {opt tdist} specifies using the t-distribution, instead of the normal 
 distribution, for calculating the Wald test and the confidence interval limits.
 
-{phang}
-{opt *} extra options passed through to the {cmd:gsem} command, 
-see {help gsem_command:gsem}.
-
 {marker examples}{...}
-{title:Example 1}
+{title:Examples}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
 al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.{p_end}
