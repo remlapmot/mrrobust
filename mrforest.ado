@@ -6,7 +6,7 @@ local callersversion = _caller()
 syntax varlist(min=3 max=5) [if] [in] [, ///
         ivid(varname) ///
         models(integer 2) ///
-        mrivestsops(string asis) ///
+        mrivestsopts(string asis) ///
         effect(string asis) ///
         ivwopts(string asis) ///
         mreggeropts(string asis) ///
