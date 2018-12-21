@@ -57,7 +57,7 @@ The package contains the following commands:
 ## Installing and updating mrrobust
 To install mrrobust in Stata versions 13 and later you have two choices.
 
-### 1. Either use `net install` as follows
+### 1. Use `net install`
 
 ```
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
@@ -78,7 +78,7 @@ ado uninstall mrrobust
 ```
 If this fails with an error message mentioning that you have "multiple citations/instances of the package installed" simply issue `adoupdate mrrobust` which should leave you with the most recent version of the package you previously installed. You can then run `ado uninstall mrrobust`.
 
-### 2. Use the `github` package as follows
+### 2. Use the `github` package
 
 ```
 net install github, from("https://haghish.github.io/github/")
@@ -86,12 +86,12 @@ gitget mrrobust
 ```
 This automatically installs the dependencies.
 
-To update the package issue.
+To update the package issue:
 ```
 github update mrrobust
 ```
 
-To uninstall mrrobust issue.
+To uninstall mrrobust issue:
 ```
 github uninstall mrrobust
 ```
