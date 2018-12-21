@@ -14,7 +14,7 @@
 
 * December 2018: 
   - `mrdeps` command added for conveniently installing dependencies.
-  - Improved compatibility with the (`github` package)[https://haghish.github.io/github/], i.e. package and dependencies should be automatically installed using `gitget mrrobust`.
+  - Improved compatibility with the [`github` package](https://haghish.github.io/github/), i.e. package and dependencies should be automatically installed using `gitget mrrobust`.
 * November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example).
 * November 2018: Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example).
 * September 2018: IJE paper published online <https://doi.org/10.1093/ije/dyy195>.
