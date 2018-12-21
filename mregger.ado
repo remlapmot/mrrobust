@@ -21,7 +21,8 @@ local callersversion = _caller()
 qui count `if' `in'
 local k = r(N)
 if `k' < 3 {
-        di as txt "Warning: you have specified less than 3 genotypes"
+        di as err "mregger requires a minimum of 3 genotypes"
+        exit 2001
 }
 
 tokenize `"`varlist'"'
@@ -412,7 +413,7 @@ else {
 ** start of displaying output
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
 
 ** display coefficient table
 Display , `re' level(`level') `radial'
