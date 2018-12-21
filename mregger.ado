@@ -20,8 +20,9 @@ local callersversion = _caller()
 // number of genotypes (i.e. rows of data used in estimation)
 qui count `if' `in'
 local k = r(N)
-if `k' < 3 {
-        di as txt "Warning: you have specified less than 3 genotypes"
+if `k' < 2 {
+        di as err "Warning: you have specified less than 2 genotypes"
+		exit 2001
 }
 
 tokenize `"`varlist'"'
