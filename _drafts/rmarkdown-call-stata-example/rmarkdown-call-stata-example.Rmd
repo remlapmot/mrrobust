@@ -1,19 +1,21 @@
 ---
 title: Rmarkdown example
+output: md_document
 ---
 
 ## Introduction
 
 This example shows how to run R and Stata code within the same Rmarkdown (`.Rmd`) script using the `Statamarkdown` R package. More information about this package is available [here](https://github.com/Hemken/Statamarkdown) and [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataMarkdown.html). To install this package and load it into your current R session run the following in R.
 ```{r}
-devtools::install_github("Hemken/Statamarkdown")
+# install.packages("remotes") # uncomment on first run
+# remotes::install_github("Hemken/Statamarkdown") # uncomment on first run
 library(Statamarkdown)
 ```
 
 Next we need to tell `Statamarkdown` where Stata is installed.
 ```{r}
 stataexe <- find_stata()
-knitr::opts_chunk$set(engine.path=stataexe)
+knitr::opts_chunk$set(engine.path = stataexe, cleanlog = FALSE)
 ```
 
 Note when writing our Stata code chunks we need to be careful when we specify the `collectcode=TRUE` code chunk option, because each Stata code chunk is run as a separate batch job. See [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataProfile.html) for more information.
@@ -24,9 +26,8 @@ To see the `Rmd` code which generates this page see [here](https://raw.githubuse
 
 Next we install the other required packages in R. Note I don't run these lines of code in this script because I already have these packages installed.
 ```{r, eval = FALSE}
-install.packages("devtools")
-devtools::install_github("MRCIEU/TwoSampleMR")
-devtools::install_github("MRCIEU/MRInstruments")
+# remotes::install_github("MRCIEU/TwoSampleMR") # uncomment on first run
+# remotes::install_github("MRCIEU/MRInstruments") # uncomment on first run
 ```
 
 We will be running the script from the MR-Base paper ([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is from [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
@@ -70,52 +71,40 @@ dat$labels <- dat$SNP
 dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
 ```
 
-```{r, eval = FALSE}
-svg("ldl-chd.svg", width=3.33, height=3.33)
-mr_plots(dat)
-dev.off()
-```
-
 To proceed in Stata we can save our `dat` object as a Stata dataset
 ```{r}
 write.dta(dat, file = "dat.dta")
 ```
 
-We read the data into Stata and list the variable names (note any `.` in the colnames of `dat` have been replaced with `_`). Note because I need to read this in for every Stata code chunk I specify the chunk option `collectcode=TRUE`.
-```{stata, collectcode=TRUE, cleanlog=FALSE}
+At this point in Stata install the `mrrobust` package and its dependencies if you have not done so previously.
+```{stata, eval = FALSE}
+net install github, from("https://haghish.github.io/github/")
+gitget mrrobust
+```
+
+Note at this point if you obtain an error saying that these packages are not installed when in fact you think you have them, this is probably because `Statamarkdown` does not appear to run a profile do-file, `profile.do`, saved on a drive other than `C:`. Therefore make new `PERSONAL` and `PLUS` folders on your `C:` drive (in Stata see `help adopath`) and then run the code above.
+
+We read the data into Stata and list the variable names (note any `.` in the colnames of `dat` have been replaced with `_`). Note currently I cannot get the  `collectcode=TRUE` chunk option to work, so I read the dataset in at the start of every code chunk.
+
+```{stata}
 use dat, clear
 ds, v(28)
 di _N
 ```
 
-At this point in Stata install the `mrrobust` package and its dependencies if you have not done so previously.
-```{stata, eval = FALSE}
-net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/)
-ssc install addplot
-ssc install kdens
-ssc install moremata
-ssc install heterogi
-ssc install metan
-net install grc1leg, from(http://www.stata.com/users/vwiggins)
-```
-
-Note at this point if you obtain an error saying that these packages are not installed when in fact you think you have them, this is probably because `Statamarkdown` does not appear to run a `profile.do` saved on a drive other than `C:`. Therefore make new `PERSONAL` and `PLUS` folders on your `C:` drive (in Stata see `help adopath`) and then run the code above.
-
 We can then run the IVW model using `mregger` with multiplicative standard errors.
-```{stata, cleanlog=FALSE}
+```{stata}
+qui use dat, clear
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 ```
 
 We then fit the MR-Egger, median, and modal based estimators.
-```{stata, cleanlog=FALSE}
+```{stata}
+qui use dat, clear
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
-```
 
-```{stata, cleanlog=FALSE}
 mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
-```
 
-```{stata, cleanlog=FALSE}
 mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
 
