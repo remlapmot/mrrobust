@@ -1,17 +1,11 @@
 ---
 title: "Helpfile examples"
 ---
+
 ## Install dependencies and mrrobust package
 ```
-ssc install addplot
-ssc install kdens
-ssc install moremata
-ssc install heterogi
-ssc install metan
-net install grc1leg, from(http://www.stata.com/users/vwiggins)
-net install mrrobust, ///
-	from(https://raw.github.com/remlapmot/mrrobust/master/) ///
-	replace
+net install github, from("https://haghish.github.io/github/")
+gitget mrrobust
 ```
 	
 ## Examples

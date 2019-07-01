@@ -1,9 +1,9 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/mrrobust-examples/mrrobust-examples.smcl
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 1 Dec 2018, 18:49:38
+ {txt}opened on:  {res} 1 Jul 2019, 17:27:21
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -17,13 +17,12 @@
 >     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 {res}{txt}
 {com}. gr export mrforest.svg, width(600) replace
-{txt}(note: file mrforest.svg not found)
-(file mrforest.svg written in SVG format)
+{txt}(file mrforest.svg written in SVG format)
 
 {com}. //_4
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
-{col 55}Number of genotypes = {res}73
+{col 55}{txt}Number of genotypes = {res}73
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -34,7 +33,7 @@
 {com}. //_5
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
-{col 55}Number of genotypes = {res}73
+{col 55}{txt}Number of genotypes = {res}73
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -49,7 +48,7 @@ Residual standard error:  1.548
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
 >     gxse(ldlcse) heterogi
 
-{col 55}Number of genotypes = {res}73
+{col 55}{txt}Number of genotypes = {res}73
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -72,7 +71,7 @@ Q-test = {res}170.11187{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {com}. //_7
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
 
-{col 55}Number of genotypes = {res}73
+{col 55}{txt}Number of genotypes = {res}73
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -86,7 +85,7 @@ Residual standard error:  1.548
 {com}. //_8
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 
-{col 55}Number of genotypes = {res}73
+{col 55}{txt}Number of genotypes = {res}73
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -100,7 +99,7 @@ Residual standard error:  1.547
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
 >     radial heterogi
 
-{col 55}Number of genotypes = {res}73
+{col 55}{txt}Number of genotypes = {res}73
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -133,15 +132,13 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. gr export mreggersimex-plot.svg, width(600) replace
-{txt}(note: file mreggersimex-plot.svg not found)
-(file mreggersimex-plot.svg written in SVG format)
+{txt}(file mreggersimex-plot.svg written in SVG format)
 
 {com}. //_11
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}{txt}
 {com}. gr export mreggerplot.svg, width(600) replace
-{txt}(note: file mreggerplot.svg not found)
-(file mreggerplot.svg written in SVG format)
+{txt}(file mreggerplot.svg written in SVG format)
 
 {com}. //_12
 . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
@@ -185,8 +182,7 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}{txt}
 {com}. gr export mrmodalplot.svg, width(600) replace
-{txt}(note: file mrmodalplot.svg not found)
-(file mrmodalplot.svg written in SVG format)
+{txt}(file mrmodalplot.svg written in SVG format)
 
 {com}. //_14
 . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
@@ -228,15 +224,14 @@ Q-test = {res}169.97877{txt} d.f. = {res}71{txt} p-value = {res}0.0000
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}{txt}
 {com}. gr export mrfunnel.svg, width(600) replace
-{txt}(note: file mrfunnel.svg not found)
-(file mrfunnel.svg written in SVG format)
+{txt}(file mrfunnel.svg written in SVG format)
 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/mrrobust-examples/mrrobust-examples.smcl
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 1 Dec 2018, 18:50:11
+ {txt}closed on:  {res} 1 Jul 2019, 17:27:53
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

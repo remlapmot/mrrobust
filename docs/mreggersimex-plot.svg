@@ -434,22 +434,22 @@
 	<line x1="3773.39" y1="2148.00" x2="3773.39" y2="2178.07" style="stroke:#000000;stroke-width:4.32"/>
 	<text x="3773.39" y="2245.48" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">2</text>
 	<text x="3046.97" y="2328.02" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">λ</text>
-	<rect x="652.16" y="2475.70" width="2655.55" height="306.41" style="fill:#FFFFFF"/>
-	<rect x="655.04" y="2478.58" width="2649.79" height="300.65" style="fill:none;stroke:#000000;stroke-width:5.76"/>
-	<line x1="857.82" y1="2583.62" x2="907.35" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<line x1="907.35" y1="2583.62" x2="857.82" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<circle cx="1909.71" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<circle cx="2809.00" cy="2558.86" r="26.35" style="fill:#000000"/>
-	<circle cx="2809.00" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<line x1="695.48" y1="2688.92" x2="1069.82" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1722.48" y1="2688.92" x2="1780.02" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1808.85" y1="2688.92" x2="1866.40" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1895.23" y1="2688.92" x2="1952.78" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1981.61" y1="2688.92" x2="2039.28" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="2067.99" y1="2688.92" x2="2096.94" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<text x="1129.84" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">SIMEX</text>
-	<text x="2156.96" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Original</text>
-	<text x="2891.05" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Simulated</text>
-	<text x="1129.84" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Quadratic fit</text>
-	<text x="2156.96" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Extrapolation</text>
+	<rect x="664.29" y="2475.70" width="2631.30" height="306.41" style="fill:#FFFFFF"/>
+	<rect x="667.17" y="2478.58" width="2625.54" height="300.65" style="fill:none;stroke:#000000;stroke-width:5.76"/>
+	<line x1="869.82" y1="2583.62" x2="919.35" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<line x1="919.35" y1="2583.62" x2="869.82" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<circle cx="1914.54" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<circle cx="2801.95" cy="2558.86" r="26.35" style="fill:#000000"/>
+	<circle cx="2801.95" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<line x1="707.48" y1="2688.92" x2="1081.82" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1727.30" y1="2688.92" x2="1784.85" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1813.68" y1="2688.92" x2="1871.22" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1900.06" y1="2688.92" x2="1957.60" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1986.43" y1="2688.92" x2="2043.98" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="2072.81" y1="2688.92" x2="2101.77" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<text x="1141.84" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">SIMEX</text>
+	<text x="2161.66" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Original</text>
+	<text x="2883.87" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Simulated</text>
+	<text x="1141.84" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Quadratic fit</text>
+	<text x="2161.66" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Extrapolation</text>
 </svg>
