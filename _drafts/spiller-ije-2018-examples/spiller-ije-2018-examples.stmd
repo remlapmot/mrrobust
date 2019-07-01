@@ -7,20 +7,13 @@ title: "IJE examples"
 The paper is available [here](https://doi.org/10.1093/ije/dyy195).
 
 ## mrrobust set-up
-Install dependencies and the `mrrobust` package.
+Install the `mrrobust` package using the user-written `github` package.
 
-If you have Stata 12 or earlier you will need to install some of these manually.
 ```
-ssc install addplot
-ssc install kdens
-ssc install moremata
-ssc install heterogi
-ssc install metan
-net install grc1leg, from(http://www.stata.com/users/vwiggins)
-net install mrrobust, ///
-	from(https://raw.github.com/remlapmot/mrrobust/master/) ///
-	replace
+net install github, from("https://haghish.github.io/github/")
+gitget mrrobust
 ```
+If you have Stata 12 or earlier you will need to install some of these manually (see [here](https://remlapmot.github.io/mrrobust/#installing-and-updating-mrrobust) for instructions).
 
 ## Summary data description and overview
 Accompanying this paper are two sets of data `BMI.csv`, and `Height.csv`, containing the set of summary estimates required for performing the BMI-serum glucose and height-serum glucose analyses respectively. Each dataset is organised into 5 columns under the following headings:

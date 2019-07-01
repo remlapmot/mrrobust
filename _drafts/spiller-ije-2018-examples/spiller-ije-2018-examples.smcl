@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\spiller-ije-2018-examples\spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 1 Dec 2018, 18:58:22
+ {txt}opened on:  {res} 1 Jul 2019, 17:22:15
 {txt}
 {com}. //_1
 . import delimited using BMI.csv, clear
@@ -12,7 +12,7 @@
 {com}. //_2
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw
 
-{col 55}Number of genotypes = {res}79
+{col 55}{txt}Number of genotypes = {res}79
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -23,7 +23,7 @@ betaexposure {c |}{col 14}{res}{space 2} .0231866{col 26}{space 2} .0079957{col 
 {com}. //_3
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]
 
-{col 55}Number of genotypes = {res}79
+{col 55}{txt}Number of genotypes = {res}79
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -91,7 +91,7 @@ Residual standard error:  1.046
 {com}. //_8
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw
 
-{col 54}Number of genotypes = {res}367
+{col 54}{txt}Number of genotypes = {res}367
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -102,7 +102,7 @@ betaexposure {c |}{col 14}{res}{space 2} .0015412{col 26}{space 2} .0033017{col 
 {com}. //_9
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]
 
-{col 54}Number of genotypes = {res}367
+{col 54}{txt}Number of genotypes = {res}367
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -166,9 +166,9 @@ Residual standard error:  1.045
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}/Users/remlapmot/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
+       {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\spiller-ije-2018-examples\spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 1 Dec 2018, 18:58:37
+ {txt}closed on:  {res} 1 Jul 2019, 17:22:26
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
