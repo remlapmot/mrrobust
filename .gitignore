@@ -2,3 +2,5 @@
 **/.DS_Store
 **/mrbase.oauth
 mrbase.oauth
+.Rhistory
+**/.Rhistory
