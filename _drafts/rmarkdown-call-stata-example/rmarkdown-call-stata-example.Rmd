@@ -1,9 +1,10 @@
 ---
-#title: Rmarkdown example
-output: md_document
+title: Rmarkdown example
+output:
+  md_document:
+    variant: gfm
+    preserve_yaml: TRUE
 ---
-
-# Rmarkdown example
 
 ## Introduction
 

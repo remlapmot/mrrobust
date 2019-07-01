@@ -1,8 +1,12 @@
-Rmarkdown example
-=================
+---
+title: Rmarkdown example
+output:
+  md_document:
+    variant: gfm
+    preserve_yaml: TRUE
+---
 
-Introduction
-------------
+## Introduction
 
 This example shows how to run R and Stata code within the same Rmarkdown
 (`.Rmd`) script using the `Statamarkdown` R package. More information
@@ -12,17 +16,23 @@ about this package is available
 To install this package and load it into your current R session run the
 following in R.
 
-    # install.packages("remotes") # uncomment on first run
-    # remotes::install_github("Hemken/Statamarkdown") # uncomment on first run
-    library(Statamarkdown)
+``` r
+# install.packages("remotes") # uncomment on first run
+# remotes::install_github("Hemken/Statamarkdown") # uncomment on first run
+library(Statamarkdown)
+```
 
 Next we need to tell `Statamarkdown` where Stata is installed.
 
-    stataexe <- find_stata()
+``` r
+stataexe <- find_stata()
+```
 
     ## Stata found at C:/Program Files (x86)/Stata15/StataSE-64.exe
 
-    knitr::opts_chunk$set(engine.path = stataexe, cleanlog = FALSE)
+``` r
+knitr::opts_chunk$set(engine.path = stataexe, cleanlog = FALSE)
+```
 
 Note when writing our Stata code chunks we need to be careful when we
 specify the `collectcode=TRUE` code chunk option, because each Stata
@@ -43,31 +53,37 @@ Next we install the other required packages in R. Note I don’t run these
 lines of code in this script because I already have these packages
 installed.
 
-    # remotes::install_github("MRCIEU/TwoSampleMR") # uncomment on first run
-    # remotes::install_github("MRCIEU/MRInstruments") # uncomment on first run
+``` r
+# remotes::install_github("MRCIEU/TwoSampleMR") # uncomment on first run
+# remotes::install_github("MRCIEU/MRInstruments") # uncomment on first run
+```
 
-We will be running the script from the MR-Base paper ([Hemani et al.,
-2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is
-from
+We will be running the script from the MR-Base paper ([Hemani et
+al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use
+is from
 [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
 
 We load the packages into our R session. Note that the `foreign` package
 provides the `write.dta()` function which we will use to save the data
 in Stata format.
 
-    library(TwoSampleMR)
-    library(MRInstruments)
-    library(foreign)
+``` r
+library(TwoSampleMR)
+library(MRInstruments)
+library(foreign)
+```
 
 We can access the data using the `MRInstruments` package.
 
-    data(gwas_catalog)
+``` r
+data(gwas_catalog)
 
-    # Get published SNPs for LDL cholesterol
-    ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
+# Get published SNPs for LDL cholesterol
+ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
 
-    # Extract from GLGC dataset
-    exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+# Extract from GLGC dataset
+exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+```
 
     ## Extracting data for 62 SNP(s) from 1 GWAS(s)
 
@@ -75,8 +91,10 @@ We can access the data using the `MRInstruments` package.
     ## changed. You can find the deprecated version of the output name in
     ## outcome.deprecated
 
-    # Get outcome data from Cardiogram 2015
-    outcome <- extract_outcome_data(exposure$SNP, 7)
+``` r
+# Get outcome data from Cardiogram 2015
+outcome <- extract_outcome_data(exposure$SNP, 7)
+```
 
     ## Extracting data for 62 SNP(s) from 1 GWAS(s)
 
@@ -92,9 +110,11 @@ We can access the data using the `MRInstruments` package.
     ## changed. You can find the deprecated version of the output name in
     ## outcome.deprecated
 
-    # Harmonise exposure and outcome datasets
-    # Assume alleles are on the forward strand
-    dat <- harmonise_data(exposure, outcome, action=1)
+``` r
+# Harmonise exposure and outcome datasets
+# Assume alleles are on the forward strand
+dat <- harmonise_data(exposure, outcome, action=1)
+```
 
     ## Harmonising LDL cholesterol || id:300 (300) and Coronary heart disease || id:7 (7)
 
@@ -104,8 +124,10 @@ called `dat`.
 
 The next two code chunks perform the analysis in R.
 
-    # Perform MR
-    mr(dat)
+``` r
+# Perform MR
+mr(dat)
+```
 
     ## Analysing '300' on '7'
 
@@ -123,12 +145,14 @@ The next two code chunks perform the analysis in R.
     ## 5 LDL cholesterol || id:300             Weighted mode   62 0.5189450
     ##           se         pval
     ## 1 0.06182590 1.619410e-13
-    ## 2 0.03739658 4.958084e-39
+    ## 2 0.03900421 5.101237e-36
     ## 3 0.03919370 6.000986e-33
-    ## 4 0.06174671 2.347779e-10
-    ## 5 0.03203248 9.002406e-24
+    ## 4 0.06148168 2.062428e-10
+    ## 5 0.03282123 2.997639e-23
 
-    mr_heterogeneity(dat)
+``` r
+mr_heterogeneity(dat)
+```
 
     ## Warning in mr_heterogeneity(dat): Please check news(package='TwoSampleMR')
     ## for information on recent bug fixes
@@ -143,38 +167,46 @@ The next two code chunks perform the analysis in R.
     ## 1 1.583556e-12
     ## 2 1.154072e-14
 
-    dat$exposure <- "LDL cholesterol"
-    dat$outcome <- "Coronary heart disease"
+``` r
+dat$exposure <- "LDL cholesterol"
+dat$outcome <- "Coronary heart disease"
 
-    # Label outliers and create plots
-    dat$labels <- dat$SNP
-    dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
+# Label outliers and create plots
+dat$labels <- dat$SNP
+dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
+```
 
 To proceed in Stata we can save our `dat` object as a Stata dataset
 
-    write.dta(dat, file = "dat.dta")
+``` r
+write.dta(dat, file = "dat.dta")
+```
 
 At this point in Stata install the `mrrobust` package and its
 dependencies if you have not done so previously.
 
-    net install github, from("https://haghish.github.io/github/")
-    gitget mrrobust
+``` stata
+net install github, from("https://haghish.github.io/github/")
+gitget mrrobust
+```
 
 Note at this point if you obtain an error saying that these packages are
 not installed when in fact you think you have them, this is probably
 because `Statamarkdown` does not appear to run a profile do-file,
 `profile.do`, saved on a drive other than `C:`. Therefore make new
-`PERSONAL` and `PLUS` folders on your `C:` drive (in Stata see
-`help adopath`) and then run the code above.
+`PERSONAL` and `PLUS` folders on your `C:` drive (in Stata see `help
+adopath`) and then run the code above.
 
 We read the data into Stata and list the variable names (note any `.` in
 the colnames of `dat` have been replaced with `_`). Note currently I
 cannot get the `collectcode=TRUE` chunk option to work, so I read the
 dataset in at the start of every code chunk.
 
-    use dat, clear
-    ds, v(28)
-    di _N
+``` stata
+use dat, clear
+ds, v(28)
+di _N
+```
 
     ##  . use dat, clear
     ## (Written by R.              )
@@ -203,8 +235,10 @@ dataset in at the start of every code chunk.
 We can then run the IVW model using `mregger` with multiplicative
 standard errors.
 
-    qui use dat, clear
-    mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
+``` stata
+qui use dat, clear
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
+```
 
     ##  . qui use dat, clear
     ## 
@@ -220,12 +254,14 @@ standard errors.
 
 We then fit the MR-Egger, median, and modal based estimators.
 
-    qui use dat, clear
-    mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
+``` stata
+qui use dat, clear
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
-    mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
+mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
 
-    mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+```
 
     ##  . qui use dat, clear
     ## 
@@ -271,9 +307,8 @@ we liked.
 To run this `Rmd` file, open it in RStudio and click the `Knit` button
 in the toolbar of the Source code window.
 
-References
-----------
+## References
 
--   Hemani et al. The MR-Base platform supports systematic causal
+  - Hemani et al. The MR-Base platform supports systematic causal
     inference across the human phenome. eLife, 2018;7:e34408
-    <a href="https://doi.org/10.7554/eLife.34408" class="uri">https://doi.org/10.7554/eLife.34408</a>
+    <https://doi.org/10.7554/eLife.34408>
