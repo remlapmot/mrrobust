@@ -22,7 +22,8 @@
   - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example).
 * September 2018: 
   - IJE paper published online <https://doi.org/10.1093/ije/dyy195>.
-* August 2018: [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples).
+* August 2018:
+  - [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples).
 * May 2018: 
   - [Click here for code and output from the examples in the helpfiles](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples).
   - This page is now rendered on GitHub Pages <https://remlapmot.github.io/mrrobust/>.
