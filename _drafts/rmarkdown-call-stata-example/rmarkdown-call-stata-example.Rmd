@@ -1,7 +1,9 @@
 ---
-title: Rmarkdown example
+#title: Rmarkdown example
 output: md_document
 ---
+
+# Rmarkdown example
 
 ## Introduction
 

@@ -1,3 +1,6 @@
+Rmarkdown example
+=================
+
 Introduction
 ------------
 
@@ -120,10 +123,10 @@ The next two code chunks perform the analysis in R.
     ## 5 LDL cholesterol || id:300             Weighted mode   62 0.5189450
     ##           se         pval
     ## 1 0.06182590 1.619410e-13
-    ## 2 0.03809565 1.127051e-37
+    ## 2 0.03739658 4.958084e-39
     ## 3 0.03919370 6.000986e-33
-    ## 4 0.06279473 3.877433e-10
-    ## 5 0.03344920 7.593530e-23
+    ## 4 0.06174671 2.347779e-10
+    ## 5 0.03203248 9.002406e-24
 
     mr_heterogeneity(dat)
 
