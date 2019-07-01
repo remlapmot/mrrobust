@@ -53,16 +53,16 @@ Type 'q()' to quit R.
 5         300          7 Coronary heart disease || id:7
                    exposure                    method nsnp         b         se
 1 LDL cholesterol || id:300                  MR Egger   62 0.5854136 0.06182590
-2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03883143
+2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03863566
 3 LDL cholesterol || id:300 Inverse variance weighted   62 0.4686211 0.03919370
-4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06358290
-5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03371004
+4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06323817
+5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03531216
           pval
 1 1.619410e-13
-2 2.521675e-36
+2 1.122131e-36
 3 6.000986e-33
-4 5.593001e-10
-5 1.109245e-22
+4 4.770354e-10
+5 1.042160e-21
 > mr_heterogeneity(dat)
   id.exposure id.outcome                        outcome
 1         300          7 Coronary heart disease || id:7

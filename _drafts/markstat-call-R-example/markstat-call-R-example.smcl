@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 1 Jul 2019, 16:10:43
+ {txt}opened on:  {res} 1 Jul 2019, 16:25:42
 {txt}
 {com}. //_1
 . * ssc install whereis
@@ -75,7 +75,7 @@ Residual standard error:  1.686
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4887683{col 26}{space 2} .0363616{col 37}{space 1}   13.44{col 46}{space 3}0.000{col 54}{space 4} .4175009{col 67}{space 3} .5600357
+{space 8}beta {c |}{col 14}{res}{space 2} .4887683{col 26}{space 2} .0380503{col 37}{space 1}   12.85{col 46}{space 3}0.000{col 54}{space 4} .4141912{col 67}{space 3} .5633455
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_9
@@ -87,7 +87,7 @@ Residual standard error:  1.686
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0372002{col 37}{space 1}   13.95{col 46}{space 3}0.000{col 54}{space 4}  .446034{col 67}{space 3}  .591856
+{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0353177{col 37}{space 1}   14.69{col 46}{space 3}0.000{col 54}{space 4} .4497235{col 67}{space 3} .5881665
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_^
@@ -95,7 +95,7 @@ Residual standard error:  1.686
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 1 Jul 2019, 16:10:48
+ {txt}closed on:  {res} 1 Jul 2019, 16:25:47
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

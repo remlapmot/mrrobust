@@ -110,16 +110,16 @@ C:\\Program Files\\R\\R-3.6.0\\bin\\R.exe
 5         300          7 Coronary heart disease || id:7
                    exposure                    method nsnp         b         se
 1 LDL cholesterol || id:300                  MR Egger   62 0.5854136 0.06182590
-2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03883143
+2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03766082
 3 LDL cholesterol || id:300 Inverse variance weighted   62 0.4686211 0.03919370
-4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06358290
-5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03371004
+4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06421627
+5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03386404
           pval
 1 1.619410e-13
-2 2.521675e-36
+2 1.648003e-38
 3 6.000986e-33
-4 5.593001e-10
-5 1.109245e-22
+4 7.458171e-10
+5 1.384707e-22
 > mr_heterogeneity(dat)
   id.exposure id.outcome                        outcome
 1         300          7 Coronary heart disease || id:7
@@ -217,7 +217,7 @@ Residual standard error:  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887683   .0363616    13.44   0.000     .4175009    .5600357
+        beta │   .4887683   .0386786    12.64   0.000     .4129597     .564577
 ─────────────┴────────────────────────────────────────────────────────────────
 </pre>
 <pre class='stata'>. mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
@@ -228,7 +228,7 @@ Residual standard error:  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0372002    13.95   0.000      .446034     .591856
+        beta │    .518945    .035563    14.59   0.000     .4492428    .5886473
 ─────────────┴────────────────────────────────────────────────────────────────
 </pre>
 <p>And we could continue with additional Stata code (or indeed R code) as we liked.</p>
