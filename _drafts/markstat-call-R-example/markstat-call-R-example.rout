@@ -1,6 +1,6 @@
 
-R version 3.5.1 (2018-07-02) -- "Feather Spray"
-Copyright (C) 2018 The R Foundation for Statistical Computing
+R version 3.6.0 (2019-04-26) -- "Planting of a Tree"
+Copyright (C) 2019 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -18,9 +18,9 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > #_1
-> #install.packages("devtools")
-> #devtools::install_github("MRCIEU/TwoSampleMR")
-> #devtools::install_github("MRCIEU/MRInstruments")
+> # install.packages("devtools")
+> # devtools::install_github("MRCIEU/TwoSampleMR")
+> # devtools::install_github("MRCIEU/MRInstruments")
 > #_2
 > library(TwoSampleMR)
 > library(MRInstruments)
@@ -53,16 +53,16 @@ Type 'q()' to quit R.
 5         300          7 Coronary heart disease || id:7
                    exposure                    method nsnp         b         se
 1 LDL cholesterol || id:300                  MR Egger   62 0.5854136 0.06182590
-2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03913398
+2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03883143
 3 LDL cholesterol || id:300 Inverse variance weighted   62 0.4686211 0.03919370
-4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06294220
-5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03400655
+4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06358290
+5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03371004
           pval
 1 1.619410e-13
-2 8.606446e-36
+2 2.521675e-36
 3 6.000986e-33
-4 4.155456e-10
-5 1.698074e-22
+4 5.593001e-10
+5 1.109245e-22
 > mr_heterogeneity(dat)
   id.exposure id.outcome                        outcome
 1         300          7 Coronary heart disease || id:7

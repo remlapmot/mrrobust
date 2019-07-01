@@ -3,32 +3,27 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 3 Dec 2018, 11:05:44
+ {txt}opened on:  {res} 1 Jul 2019, 16:10:43
 {txt}
 {com}. //_1
 . * ssc install whereis
 . * ssc install markstat
 . //_2
-. whereis R "C:\\Program Files\\R\\R-3.5.1\\bin\\R.exe"
-{res}{txt}C:\\Program Files\\R\\R-3.5.1\\bin\\R.exe
+. whereis R "C:\\Program Files\\R\\R-3.6.0\\bin\\R.exe"
+{res}{txt}C:\\Program Files\\R\\R-3.6.0\\bin\\R.exe
 
 {com}. //_3
 . use dat, clear
 {txt}(Written by R.              )
 
 {com}. ds, v(28)
-{txt}{col 1}SNP{col 25}id_outcome{col 49}subcategory_outcome{col 73}exposure
-{col 1}effect_allele_exposure{col 25}se_outcome{col 49}originalname_outcome{col 73}se_exposure
-{col 1}other_allele_exposure{col 25}samplesize_outcome{col 49}outcome_deprecated{col 73}pval_exposure
-{col 1}effect_allele_outcome{col 25}ncase_outcome{col 49}mr_keep_outcome{col 73}units_exposure
-{col 1}other_allele_outcome{col 25}ncontrol_outcome{col 49}data_source_outcome{col 73}mr_keep_exposure
-{col 1}beta_exposure{col 25}pval_outcome{col 49}proxy_outcome{col 73}pval_origin_exposure
-{col 1}beta_outcome{col 25}units_outcome{col 49}target_snp_outcome{col 73}units_exposure_dat
-{col 1}eaf_exposure{col 25}outcome{col 49}proxy_snp_outcome{col 73}id_exposure
-{col 1}eaf_outcome{col 25}consortium_outcome{col 49}target_a1_outcome{col 73}action
-{col 1}remove{col 25}year_outcome{col 49}target_a2_outcome{col 73}mr_keep
-{col 1}palindromic{col 25}pmid_outcome{col 49}proxy_a1_outcome{col 73}labels
-{col 1}ambiguous{col 25}category_outcome{col 49}proxy_a2_outcome
+{txt}{col 1}SNP{col 25}eaf_exposure{col 49}samplesize_outcome{col 73}year_outcome{col 97}data_source_outcome{col 121}proxy_a2_outcome{col 145}units_exposure_dat
+{col 1}effect_allele_exposure{col 25}eaf_outcome{col 49}ncase_outcome{col 73}pmid_outcome{col 97}proxy_outcome{col 121}exposure{col 145}id_exposure
+{col 1}other_allele_exposure{col 25}remove{col 49}ncontrol_outcome{col 73}category_outcome{col 97}target_snp_outcome{col 121}se_exposure{col 145}action
+{col 1}effect_allele_outcome{col 25}palindromic{col 49}pval_outcome{col 73}subcategory_outcome{col 97}proxy_snp_outcome{col 121}pval_exposure{col 145}mr_keep
+{col 1}other_allele_outcome{col 25}ambiguous{col 49}units_outcome{col 73}originalname_outcome{col 97}target_a1_outcome{col 121}units_exposure{col 145}labels
+{col 1}beta_exposure{col 25}id_outcome{col 49}outcome{col 73}outcome_deprecated{col 97}target_a2_outcome{col 121}mr_keep_exposure
+{col 1}beta_outcome{col 25}se_outcome{col 49}consortium_outcome{col 73}mr_keep_outcome{col 97}proxy_a1_outcome{col 121}pval_origin_exposure
 
 {com}. di _N
 {res}62
@@ -36,7 +31,7 @@
 {com}. //_4
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 
-{col 55}Number of genotypes = {res}62
+{col 55}{txt}Number of genotypes = {res}62
 {txt}{hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |}      Coef.{col 27}   Std. Err.{col 39}      z{col 47}   P>|z|{col 55}     [95% Con{col 68}f. Interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -61,7 +56,7 @@ beta_exposure {c |}{col 15}{res}{space 2} .4686211{col 27}{space 2} .0391937{col
 {com}. //_7
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
-{col 55}Number of genotypes = {res}62
+{col 55}{txt}Number of genotypes = {res}62
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -80,7 +75,7 @@ Residual standard error:  1.686
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4887683{col 26}{space 2} .0386336{col 37}{space 1}   12.65{col 46}{space 3}0.000{col 54}{space 4} .4130479{col 67}{space 3} .5644888
+{space 8}beta {c |}{col 14}{res}{space 2} .4887683{col 26}{space 2} .0363616{col 37}{space 1}   13.44{col 46}{space 3}0.000{col 54}{space 4} .4175009{col 67}{space 3} .5600357
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_9
@@ -92,7 +87,7 @@ Residual standard error:  1.686
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0345484{col 37}{space 1}   15.02{col 46}{space 3}0.000{col 54}{space 4} .4512313{col 67}{space 3} .5866587
+{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0372002{col 37}{space 1}   13.95{col 46}{space 3}0.000{col 54}{space 4}  .446034{col 67}{space 3}  .591856
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_^
@@ -100,7 +95,7 @@ Residual standard error:  1.686
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 3 Dec 2018, 11:05:49
+ {txt}closed on:  {res} 1 Jul 2019, 16:10:48
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
