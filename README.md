@@ -121,7 +121,7 @@ Extract the zip archives and save all files on your `adopath`.
 To uninstall a manual installation simply delete the files that you placed on your adopath.
 
 ## Code testing
-As far as I know, and unlike R which has the `testthat` package, there is no recognised standard for writing unit tests for Stata commands. However, StataCorp refer to such do-files as cscripts (certification scripts). If you are interested I publish my cscripts (and their log files of output) in the cscripts directory in the GitHub repository. 
+As far as I know, and unlike R which has the `testthat` package, there is no recognised standard for writing unit tests for Stata commands. However, StataCorp refer to such do-files as cscripts (certification scripts). If you are interested I publish my cscripts (and their log files of output) in the [cscripts directory](https://github.com/remlapmot/mrrobust/tree/master/cscripts) in the GitHub repository. 
 
 ## Authors
 Tom Palmer <tom.palmer@lancaster.ac.uk>, Wesley Spiller, Neil Davies
