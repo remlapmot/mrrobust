@@ -8,7 +8,7 @@
 {title:Title}
 
 {p 5}
-{bf:mrratio} {hline 2} Generate genotype specific instrumental variable ratio (Wald) estimates in a dataset
+{bf:mrivests} {hline 2} Generate genotype specific instrumental variable ratio (Wald) estimates in a dataset
 {p_end}
 
 {marker syntax}{...}
