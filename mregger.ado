@@ -474,6 +474,7 @@ if "`gxse'" != "" & "`ivw'" == "" {
         scalar `I2GX' = (`QGX' - (`nobs' - 1))/`QGX'
         scalar `I2GX' = max(0, `I2GX')
         
+		di as txt "Q_GX statistic:", %6.2f `QGX'
         di as txt "I^2_GX statistic:", %6.2f 100*`I2GX' "%"
         ereturn scalar I2GX = `I2GX'
 		ereturn scalar QGX = `QGX'

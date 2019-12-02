@@ -12,6 +12,8 @@
 
 ## Latest updates
 
+* December 2019:
+  - Added Q_GX_ to ereturn and display output when `gxse()` specified.
 * July 2019:
   - Checked that examples on website still run.
 * December 2018: 
