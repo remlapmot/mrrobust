@@ -476,6 +476,7 @@ if "`gxse'" != "" & "`ivw'" == "" {
         
         di as txt "I^2_GX statistic:", %6.2f 100*`I2GX' "%"
         ereturn scalar I2GX = `I2GX'
+		ereturn scalar QGX = `QGX'
         // heterogi `QGX' `nobs', level(`level')
 }
 
