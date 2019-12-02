@@ -13,7 +13,7 @@ if replay() {
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
         reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
-        gxse(varname numeric) tdist RADial *]
+        gxse(varname numeric) tdist RADial unwi2gx *]
 
 local callersversion = _caller()
 
@@ -49,8 +49,9 @@ if "`re'" == "re" & `callersversion' < 13 {
         exit 9
 }
 
-tempvar invvar
+tempvar invvar gyse
 qui gen double `invvar' `exp' `if' `in'
+qui gen double `gyse' = 1/sqrt(`invvar') `if' `in'
 
 // sort out the re options
 if "`re'" == "" & ("`recons'" != "" | "`reslope'" != "") {
@@ -444,7 +445,7 @@ if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
 
 if "`gxse'" != "" & "`ivw'" == "" {
         ** I-squared GX
-        tempname gammabar nobs qgx QGX I2GX
+        tempname gammabar nobs qgx QGX I2GX gammabarw qgxw QGXw I2GXw gpw
         
         if "`penweighted'" == "" {
                 * weighted mean of genotype-exposure associations
@@ -454,6 +455,12 @@ if "`gxse'" != "" & "`ivw'" == "" {
         
                 * QGX
                 qui gen double `qgx' = (``2'2' - `gammabar')^2/(`gxse'^2) `if' `in'
+				
+				* weighted QGX
+				qui gen double `gpw' = ``2'2' / `gyse' `if' `in'
+				qui su `gpw' [aw=(`gyse'/`gxse')^2] `if' `in'
+                scalar `gammabarw' = r(mean)
+				qui gen double `qgxw' = (`gpw' - `gammabarw')^2/(`gxse' / `gyse')^2 `if' `in'
         }
         else {
                 tempvar gxscaled segxscaled
@@ -469,16 +476,30 @@ if "`gxse'" != "" & "`ivw'" == "" {
         }
         qui su `qgx' `if' `in'
         scalar `QGX' = r(sum)
+		
+		qui su `qgxw' `if' `in'
+		scalar `QGXw' = r(sum)
         
         * I2GX
         scalar `I2GX' = (`QGX' - (`nobs' - 1))/`QGX'
         scalar `I2GX' = max(0, `I2GX')
+		
+		scalar `I2GXw' = (`QGXw' - (`nobs' - 1))/`QGXw'
+        scalar `I2GXw' = max(0, `I2GXw')
         
-		di as txt "Q_GX statistic:", %6.2f `QGX'
-        di as txt "I^2_GX statistic:", %6.2f 100*`I2GX' "%"
-        ereturn scalar I2GX = `I2GX'
-		ereturn scalar QGX = `QGX'
-        // heterogi `QGX' `nobs', level(`level')
+		di as txt "Q_GX statistic (weighted):", %6.2f `QGXw'
+        di as txt "I^2_GX statistic (weighted):", %6.2f 100*`I2GXw' "%"
+        ereturn scalar I2GX = `I2GXw'
+		ereturn scalar QGX = `QGXw'
+		
+		if "`unwi2gx'" == "unwi2gx" {
+			di as txt "Q_GX statistic (unweighted):", %6.2f `QGX'
+			di as txt "I^2_GX statistic (unweighted):", %6.2f 100*`I2GX' "%"
+			ereturn scalar I2GXunw = `I2GX'
+			ereturn scalar QGXunw = `QGX'
+		}
+		
+        // heterogi `QGXw' `nobs', level(`level')
 }
 
 if "`re'" == "" {
