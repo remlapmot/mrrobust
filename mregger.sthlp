@@ -23,18 +23,19 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt :{opt fe:}}Fixed effect standard errors (default is multiplicative)
+{synopt:{opt fe:}}Fixed effect standard errors (default is multiplicative)
 {p_end}
-{synopt :{opt gxse(varname)}}variable of genotype-phenotype SEs{p_end}
+{synopt:{opt gxse(varname)}}variable of genotype-phenotype SEs{p_end}
 {synopt:{opt het:erogi}}Display heterogeneity/pleiotropy 
 statistics{p_end}
-{synopt :{opt ivw:}}Inverse-variance weighted estimator (default is MR-Egger)
+{synopt:{opt ivw:}}Inverse-variance weighted estimator (default is MR-Egger)
 {p_end}
-{synopt :{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
+{synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
-{synopt :{opt penw:eighted}}Use penalized weights{p_end}
-{synopt :{opt rad:ial}}Use radial formulations of the models{p_end}
+{synopt:{opt penw:eighted}}Use penalized weights{p_end}
+{synopt:{opt rad:ial}}Use radial formulations of the models{p_end}
 {synopt:{opt tdist:}}Use t-distribution for Wald test and CI limits{p_end}
+{synopt:{opt unwi2gx:}}Additionally report unweighted Q_GX and I^2_GX statistics{p_end}
 
 {marker description}{...}
 {title:Description}
@@ -107,6 +108,10 @@ et al. (2016).
 {opt tdist} specifies using the t-distribution, instead of the normal 
 distribution, for calculating the Wald test and the confidence interval limits.
 
+{phang}
+{opt unwi2gx} specifies the unweighted Q_GX and I^2_GX statistics to be additionally displayed in 
+the output and in the ereturn scalars.
+
 {marker examples}{...}
 {title:Examples}
 
@@ -165,6 +170,11 @@ option){p_end}
 If {opt heterogi} is specified {cmd:mregger} 
 additionally returns the r-class results of {cmd:heterogi} in the e-class 
 results.
+
+{pstd}
+If {opt unwi2gx} is specified {cmd:mregger} additionally returns{p_end}
+{synopt:{cmd:I2GXunw}}Unweighted I^2_GX statistic{p_end}
+{synopt:{cmd:QGXunw}}Unweighted Q_GX statistic{p_end}
 
 {marker references}{...}
 {title:References}
