@@ -14,6 +14,8 @@
 
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` specified.
+  - Changed `Q_GX` and `I^2_GX` output to use first order weights. This matches the output from the `mr_egger()` function in the 
+  `MendelianRandomization` R package. Use the `unwi2gx` option to report the unweighted statistics.
 * July 2019:
   - Checked that examples on website still run.
 * December 2018: 
