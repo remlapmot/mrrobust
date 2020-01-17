@@ -516,6 +516,7 @@ if "`re'" == "re" & "`radial'" == "" {
 }
 else {
 	ereturn display, level(`level') noomitted
+        return add // r(table)
 }
 end
 exit
