@@ -152,4 +152,4 @@ If you would like to extend the code or add new commands I am open to receiving 
  * Hemani G et al. MR-Base: a platform for systematic causal inference across the phenome using billions of genetic associations. bioRxiv, 2016. <https://doi.org/10.1101/078972>
 
 ## Acknowledgements
-Thanks for helpful feedback and suggestions to (in no particular order) Jasmine Khouja, Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, and Steve Burgess.
+Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, and Steve Burgess.
