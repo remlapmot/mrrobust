@@ -4,6 +4,8 @@
 cap noi log close
 log using master.log, text replace
 
+cscript master
+
 ado describe mrrobust
 
 local cscripts mregger ///
