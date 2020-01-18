@@ -74,7 +74,7 @@ To install mrrobust in Stata versions 13 and later you have two choices.
 
 ### 1. Use `net install`
 
-``` stata
+```
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 mrdeps
 ```
@@ -83,31 +83,31 @@ In this code `mrdeps` installs the dependencies. These are `addplot`, `kdens`, a
 If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
 
 To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update mrrobust run:
-``` stata
+```
 adoupdate mrrobust, update
 ```
 
 To uninstall mrrobust, issue in Stata:
-```stata
+```
 ado uninstall mrrobust
 ```
 If this fails with an error message mentioning that you have "multiple citations/instances of the package installed" simply issue `adoupdate mrrobust` which should leave you with the most recent version of the package you previously installed. You can then run `ado uninstall mrrobust`.
 
 ### 2. Use the `github` package
 
-```stata
+```
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
 This automatically installs the dependencies.
 
 To update the package issue:
-```stata
+```
 github update mrrobust
 ```
 
 To uninstall mrrobust issue:
-```stata
+```
 github uninstall mrrobust
 ```
 
