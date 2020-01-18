@@ -1,9 +1,7 @@
 * mrratio cscript
 * 6jun2017
 
-cscript
-
-which mrratio
+cscript mrratio adofiles mrratio
 
 // basic call
 mrratio 1 .5 1 .25
