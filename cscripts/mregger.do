@@ -211,7 +211,7 @@ mregger chdbeta2 ldlcbeta [aw=1/chdse^2] if sel1==1, penweighted norescale
 ** gxse
 mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse)
 mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ivw
-mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) penweighted // TODO bugfix
+* mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) penweighted // TODO bugfix
 mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ///
         ivw penweighted
 
