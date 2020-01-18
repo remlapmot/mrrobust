@@ -168,3 +168,5 @@ cap noi mata mrmodal_densityiv
 assert _rc == 3499
 cap noi mata mrmodal_g
 assert _rc == 3499
+
+mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel3==1, seed(12345)
