@@ -1,11 +1,7 @@
 * mrivests testcode
 * 10jun2017
 
-cscript
-
-which mrivests
-
-cd C:\Users\palmertm\Documents\all\work\mregger\code
+cscript mrivests adofiles mrivests
 
 use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear
 
