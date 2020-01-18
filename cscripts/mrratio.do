@@ -79,3 +79,5 @@ mrratio 1 .5 1, nome
 assert _b[beta] == 1
 
 rcof "noi mrratio 1 .5 1" == 198
+
+mrratio 1 .5 1 .25
