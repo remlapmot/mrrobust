@@ -1,0 +1,137 @@
+-------------------------------------------------------------------------------
+      name:  mreggersimex
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mreggersimex.log
+  log type:  text
+ opened on:  18 Jan 2020, 18:36:14
+
+. * cscript for mreggersimex
+. * 23jul2017
+. 
+. cscript mreggersimex adofiles mreggersimex mreggersimexonce
+-------------------------------------------------------------BEGIN mreggersimex
+
+-> which mreggersimex, usesysdir
+H:\ado\plus\m\mreggersimex.ado
+*! 0.1.0 20jul2017 Tom Palmer
+
+-> which mreggersimexonce, usesysdir
+H:\ado\plus\m\mreggersimexonce.ado
+*! 0.1.0 23jul2017 Tom Palmer
+
+. 
+. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+. 
+. gen byte sel1 = (ldlcp2 < 1e-8)
+
+. 
+. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
+>         gxse(ldlcse) seed(12345)
+(running mreggersimexonce on estimation sample)
+
+Bootstrap replications (25)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+.........................
+
+                                                      Number of genotypes = 73
+                                                   Bootstrap replications = 25
+                                                  Simulation replications = 50
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       slope |   .6256194   .1166245     5.36   0.000     .3970396    .8541991
+       _cons |  -.0089987   .0062257    -1.45   0.148    -.0212009    .0032035
+------------------------------------------------------------------------------
+
+. 
+. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
+>         gxse(ldlcse) seed(12345) simreps(20) reps(3)
+(running mreggersimexonce on estimation sample)
+
+Bootstrap replications (3)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+...
+
+                                                      Number of genotypes = 73
+                                                    Bootstrap replications = 3
+                                                  Simulation replications = 20
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       slope |   .6396257   .0485306    13.18   0.000     .5445074     .734744
+       _cons |   -.009941   .0061239    -1.62   0.105    -.0219436    .0020616
+------------------------------------------------------------------------------
+
+. 
+. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
+>         gxse(ldlcse) seed(12345) simreps(10)
+(running mreggersimexonce on estimation sample)
+
+Bootstrap replications (25)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+.........................
+
+                                                      Number of genotypes = 73
+                                                   Bootstrap replications = 25
+                                                  Simulation replications = 10
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       slope |   .6047862   .1314017     4.60   0.000     .3472436    .8623287
+       _cons |  -.0079552   .0053891    -1.48   0.140    -.0185177    .0026073
+------------------------------------------------------------------------------
+
+. 
+. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
+>         gxse(ldlcse) seed(12345) simreps(10) nodraw noboot
+
+                                                      Number of genotypes = 73
+                                                    Bootstrap replications = 0
+                                                  Simulation replications = 10
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       slope |   .6047862          .        .       .            .           .
+       _cons |  -.0079552          .        .       .            .           .
+------------------------------------------------------------------------------
+
+. mreggersimex
+
+                                                      Number of genotypes = 73
+                                                    Bootstrap replications = 0
+                                                  Simulation replications = 10
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       slope |   .6047862          .        .       .            .           .
+       _cons |  -.0079552          .        .       .            .           .
+------------------------------------------------------------------------------
+
+. 
+. mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
+>         gxse(ldlcse) seed(12345) simreps(10) nodraw
+(running mreggersimexonce on estimation sample)
+
+Bootstrap replications (25)
+----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
+.........................
+
+                                                      Number of genotypes = 73
+                                                   Bootstrap replications = 25
+                                                  Simulation replications = 10
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       slope |   .6047862   .1314017     4.60   0.000     .3472436    .8623287
+       _cons |  -.0079552   .0053891    -1.48   0.140    -.0185177    .0026073
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+      name:  mreggersimex
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mreggersimex.log
+  log type:  text
+ closed on:  18 Jan 2020, 18:42:39
+-------------------------------------------------------------------------------

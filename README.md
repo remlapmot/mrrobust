@@ -14,6 +14,7 @@
 
 * January 2020:
   - `mregger` now additionally returns `r(table)`.
+  - Certification scripts: added `master.do` and renamed and edited a few scripts.
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`.
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches the output from the `mr_egger()` function in the `MendelianRandomization` R package. Use the `unwi2gx` option to report the unweighted statistics.
@@ -44,7 +45,7 @@
 [Click here for some of the code and output from the examples in the helpfiles.](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples)
 
 Once the package is installed, there is a summary helpfile which can be viewed in Stata with:
-```
+```stata
 help mrrobust
 ```
 This has links to the helpfile for each command, which has an example near the bottom. In these examples you can click on the code to run it.
@@ -73,7 +74,7 @@ To install mrrobust in Stata versions 13 and later you have two choices.
 
 ### 1. Use `net install`
 
-```
+```stata
 net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 mrdeps
 ```
@@ -82,31 +83,31 @@ In this code `mrdeps` installs the dependencies. These are `addplot`, `kdens`, a
 If you have previously installed the package and the `net install` command above fails with an error message that there are two copies of the package installed simply run `adoupdate`.
 
 To check if there is an update available to any of your user-written Stata packages run `adoupdate`. To update mrrobust run:
-```
+```stata
 adoupdate mrrobust, update
 ```
 
 To uninstall mrrobust, issue in Stata:
-```
+```stata
 ado uninstall mrrobust
 ```
 If this fails with an error message mentioning that you have "multiple citations/instances of the package installed" simply issue `adoupdate mrrobust` which should leave you with the most recent version of the package you previously installed. You can then run `ado uninstall mrrobust`.
 
 ### 2. Use the `github` package
 
-```
+```stata
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
 This automatically installs the dependencies.
 
 To update the package issue:
-```
+```stata
 github update mrrobust
 ```
 
 To uninstall mrrobust issue:
-```
+```stata
 github uninstall mrrobust
 ```
 

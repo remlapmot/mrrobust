@@ -1,0 +1,340 @@
+-------------------------------------------------------------------------------
+      name:  mrmedian
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mrmedian.log
+  log type:  text
+ opened on:  18 Jan 2020, 18:43:41
+
+. * mrmedian test code
+. * 3jun2016
+. 
+. cscript mrmedian adofiles mrmedian
+-----------------------------------------------------------------BEGIN mrmedian
+
+-> which mrmedian, usesysdir
+H:\ado\plus\m\mrmedian.ado
+*! version 0.1.0 03jun2016 Tom Palmer
+
+. 
+. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+. 
+. *** test error messages
+. rcof "noi mrmedian chdbeta" == 102
+too few variables specified
+
+. rcof "noi mrmedian chdbeta chdse" == 102
+too few variables specified
+
+. rcof "noi mrmedian chdbeta chdse ldlcbeta" == 102
+too few variables specified
+
+. rcof "noi mrmedian chdbeta chdse ldlcbeta ldlcse hdlcbeta" == 103
+too many variables specified
+
+. 
+. rcof "noi mrmedian chdbeta chdse ldlcbeta ldlcse, weighted penweighted" == 19
+> 8
+Specify both weighted and penweighted options is not allowed.
+
+. 
+. *** ldlc - analysis 1
+. gen byte sel1 = (ldlcp2 < 1e-8)
+
+. 
+. ** unweighted median
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0700946     6.11   0.000     .2911886    .5659543
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - .429) < 1e-3
+
+. assert abs(_se[beta] - .07) < 1e-2
+
+. 
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0718147     5.97   0.000     .2878172    .5693257
+------------------------------------------------------------------------------
+
+. scalar b1 = _b[beta]
+
+. scalar s1 = _se[beta]
+
+. 
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0718147     5.97   0.000     .2878172    .5693257
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - scalar(b1)) < 1e-7
+
+. assert abs(_se[beta] - scalar(s1)) < 1e-7
+
+. 
+. ** weighted median
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, weighted
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4582573   .0663262     6.91   0.000     .3282604    .5882543
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - .458) < 1e-3
+
+. assert abs(_se[beta] - .06) < 1e-2
+
+. 
+. ** penalized weighted
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, penweighted
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |    .456997   .0630115     7.25   0.000     .3334967    .5804973
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - .457) < 1e-3
+
+. assert abs(_se[beta] - .06) < 1e-2
+
+. 
+. *** test ereturn results
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0717656     5.97   0.000     .2879134    .5692295
+------------------------------------------------------------------------------
+
+. assert e(cmd) == "mrmedian"
+
+. assert e(cmdline) == "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1"
+
+. assert e(k) == 73
+
+. assert e(properties) == "b V"
+
+. 
+. *** test in condition
+. gen int order = _n
+
+. gsort -sel1
+
+. 
+. mrmedian chdbeta chdse ldlcbeta ldlcse in 1/73, seed(12345)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714    .070601     6.07   0.000      .290196    .5669468
+------------------------------------------------------------------------------
+
+. scalar b2 = _b[beta]
+
+. scalar s2 = _se[beta]
+
+. 
+. mrmedian chdbeta chdse ldlcbeta ldlcse in 1/73, seed(12345)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714    .070601     6.07   0.000      .290196    .5669468
+------------------------------------------------------------------------------
+
+. assert e(k) == 73
+
+. assert abs(_b[beta] - scalar(b2)) < 1e-7
+
+. assert abs(_se[beta] - scalar(s2)) < 1e-7
+
+. 
+. *** test reps option
+. sort order
+
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345) reps(50)
+
+                                                      Number of genotypes = 73
+                                                             Replications = 50
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0825383     5.19   0.000     .2667993    .5903436
+------------------------------------------------------------------------------
+
+. scalar b3 = _b[beta]
+
+. scalar s3 = _se[beta]
+
+. 
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345) reps(50)
+
+                                                      Number of genotypes = 73
+                                                             Replications = 50
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0825383     5.19   0.000     .2667993    .5903436
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - scalar(b3)) < 1e-7
+
+. assert abs(_se[beta] - scalar(s3)) < 1e-7
+
+. 
+. *** test replay
+. discard
+
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0709576     6.04   0.000     .2894971    .5676458
+------------------------------------------------------------------------------
+
+. mrmedian
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0709576     6.04   0.000     .2894971    .5676458
+------------------------------------------------------------------------------
+
+. 
+. *** test by: fails with error
+. rcof "bysort a2: mrmedian chdbeta chdse ldlcbeta ldlcse if sel1" == 190
+
+. 
+. *** test if and in give same SE with same seed and same sort order of the dat
+> aset
+. keep if sel1
+(112 observations deleted)
+
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0691313     6.20   0.000     .2930766    .5640663
+------------------------------------------------------------------------------
+
+. scalar b4 = _b[beta]
+
+. scalar s4 = _se[beta]
+
+. 
+. mrmedian chdbeta chdse ldlcbeta ldlcse in 1/73, seed(12345)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0691313     6.20   0.000     .2930766    .5640663
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - scalar(b4)) < 1e-7
+
+. assert abs(_se[beta] - scalar(s4)) < 1e-7
+
+. 
+. ** disallow 2 and 1 genotypes - although median is defined for N=1 and N=2
+. rcof "mrmedian chdbeta chdse ldlcbeta ldlcse in 1/2" == 2001
+
+. rcof "mrmedian chdbeta chdse ldlcbeta ldlcse in 1" == 2001
+
+. 
+. ** test level option
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345) level(95)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0691313     6.20   0.000     .2930766    .5640663
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - .429) < 1e-3
+
+. assert abs(_se[beta] - .07) < 1e-2
+
+. mrmedian, level(90)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0691313     6.20   0.000     .3148606    .5422823
+------------------------------------------------------------------------------
+
+. 
+. mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345) level(90)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0691313     6.20   0.000     .3148606    .5422823
+------------------------------------------------------------------------------
+
+. assert abs(_b[beta] - .429) < 1e-3
+
+. assert abs(_se[beta] - .07) < 1e-2
+
+. mrmedian, level(80)
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0691313     6.20   0.000     .3399761    .5171667
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+      name:  mrmedian
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mrmedian.log
+  log type:  text
+ closed on:  18 Jan 2020, 18:43:45
+-------------------------------------------------------------------------------
