@@ -1,14 +1,9 @@
 * mrmedian test code
 * 3jun2016
 
-cscript
+cscript mrmedian adofiles mrmedian
 
-** view helpfile
-*view mrmedian.sthlp
-
-which mrmedian
-
-use dodata, clear
+use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 *** test error messages
 rcof "noi mrmedian chdbeta" == 102
@@ -33,7 +28,6 @@ scalar s1 = _se[beta]
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345)
 assert abs(_b[beta] - scalar(b1)) < 1e-7
 assert abs(_se[beta] - scalar(s1)) < 1e-7
-
 
 ** weighted median
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, weighted
@@ -64,7 +58,6 @@ mrmedian chdbeta chdse ldlcbeta ldlcse in 1/73, seed(12345)
 assert e(k) == 73
 assert abs(_b[beta] - scalar(b2)) < 1e-7
 assert abs(_se[beta] - scalar(s2)) < 1e-7
-
 
 *** test reps option
 sort order
