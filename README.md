@@ -14,6 +14,7 @@
 
 * January 2020:
   - `mregger` now additionally returns `r(table)`.
+  - Certification scripts: added `master.do` and renamed and edited a few scripts.
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`.
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches the output from the `mr_egger()` function in the `MendelianRandomization` R package. Use the `unwi2gx` option to report the unweighted statistics.
