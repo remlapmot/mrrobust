@@ -1,21 +1,22 @@
 * master do-file for running cscripts
 * 2020-01-17
 
+cap noi log close
+log using master.log, text replace
+
 ado describe mrrobust
 
-local cscripts mregger_cscript ///
-mreggerplot_testcode ///
-mreggersimex_cscript ///
-mrforest_cscript ///
-mrfunnel_cscript ///
-mrivests_cscript ///
-mrmedian_cscript ///
-mrmedianobs_cscript ///
-mrmodal_cscript ///
-mrmodalplot_cscript ///
-mrratio_cscript
-
-log close _all
+local cscripts mregger ///
+mreggerplot ///
+mreggersimex ///
+mrforest ///
+mrfunnel ///
+mrivests ///
+mrmedian ///
+mrmedianobs ///
+mrmodal ///
+mrmodalplot ///
+mrratio
 
 foreach dofile of local cscripts {
     log using `dofile'.log, text replace
@@ -23,3 +24,5 @@ foreach dofile of local cscripts {
 	if _rc != 0 di "`dofile' returned at least one error."
     log close
 }
+
+log close _all
