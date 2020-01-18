@@ -1,15 +1,9 @@
 * cscript for mreggersimex
 * 23jul2017
 
-cscript
+cscript mreggersimex adofiles mreggersimex mreggersimexonce
 
-which mreggersimex
-which mreggersimexonce
-
-clear all
-mata mata desc
-
-use dodata, clear
+use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 gen byte sel1 = (ldlcp2 < 1e-8)
 
