@@ -1,0 +1,233 @@
+-------------------------------------------------------------------------------
+      name:  mrivests
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mrivests.log
+  log type:  text
+ opened on:  18 Jan 2020, 18:43:39
+
+. * mrivests testcode
+. * 10jun2017
+. 
+. cscript mrivests adofiles mrivests
+-----------------------------------------------------------------BEGIN mrivests
+
+-> which mrivests, usesysdir
+H:\ado\plus\m\mrivests.ado
+*! 0.1.0 Tom Palmer 10jun2017
+
+. 
+. use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear
+
+. 
+. gen byte sel1 = (ldlcp2 < 1e-8)
+
+. 
+. cap noi drop ivest
+variable ivest not found
+
+. cap noi drop ivse
+variable ivse not found
+
+. cap noi drop ivcilow
+variable ivcilow not found
+
+. cap noi drop ivciupp
+variable ivciupp not found
+
+. mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivse)
+
+. list chdbeta ldlcbeta ivest ivse if sel1 == 1 
+
+     +---------------------------------------------+
+     | chdbeta   ldlcbeta        ivest        ivse |
+     |---------------------------------------------|
+  1. |   -.012      -.033    .36363636   .41620702 |
+  3. |    -.15       -.38    .39473684   .25490917 |
+  5. |    .017      -.049   -.34693878   .30920825 |
+  6. |    .012       .034    .35294118   .50182759 |
+  8. |    .094        .16        .5875   .10896331 |
+     |---------------------------------------------|
+  9. |   -.028      -.025         1.12    .7794674 |
+ 10. |   .0027       .033    .08181818    .6512335 |
+ 14. |    -.02      -.035    .57142857    .4708164 |
+ 15. |    .031      -.027   -1.1481481   .60441559 |
+ 18. | -.00064       .039   -.01641026   .32720366 |
+     |---------------------------------------------|
+ 19. |    .035        .12    .29166667   .12866374 |
+ 20. |   -.064       -.14    .45714286   .13857242 |
+ 23. |    .061       .081    .75308642   .20613461 |
+ 24. |   -.026      -.044    .59090909   .49622191 |
+ 25. |    .017       .024    .70833333   .63882799 |
+     |---------------------------------------------|
+ 26. |    .032       .049    .65306122   .52827715 |
+ 28. |   -.012       .038   -.31578947   .57251613 |
+ 31. |   .0073      -.022   -.33181818   .63534638 |
+ 33. |    .034      -.024   -1.4166667   .81148211 |
+ 36. |   -.018      -.027    .66666667   .53961236 |
+     |---------------------------------------------|
+ 42. |    .066       .036    1.8333333   .67478764 |
+ 56. |    .033       .073    .45205479   .19569175 |
+ 57. |  -.0075       .028   -.26785714   .49836395 |
+ 58. |   -.021      -.046    .45652174   .31941662 |
+ 59. |  -.0038       .033   -.11515152   .47912213 |
+     |---------------------------------------------|
+ 60. |   -.026      -.062    .41935484   .48081602 |
+ 61. |    -.03      -.025          1.2   .66578123 |
+ 65. |   -.019      -.026    .73076923   .54232303 |
+ 69. |   -.029      -.033    .87878788    .4746156 |
+ 70. |   -.061      -.048    1.2708333    .4163122 |
+     |---------------------------------------------|
+ 74. |   .0074      -.034   -.21764706   .49548445 |
+ 75. |   -.033      -.039    .84615385   .71267178 |
+ 76. |   -.021      -.049    .42857143   .54478034 |
+ 77. |   -.025      -.036    .69444444   .41216408 |
+ 84. |    .021       .067    .31343284   .37355838 |
+     |---------------------------------------------|
+ 90. |    .012       .032         .375    .5218211 |
+ 91. |   .0055      -.034   -.16176471   .43538977 |
+ 93. |   .0079      -.031   -.25483871   .50069586 |
+ 95. |   -.041      -.031    1.3225806   .58119538 |
+ 96. |   -.056      -.055    1.0181818   .26260861 |
+     |---------------------------------------------|
+ 98. |   -.011       .034   -.32352941   .42055764 |
+ 99. |    .035       .045    .77777778   .59390933 |
+102. |   -.014       -.03    .46666667   .57055045 |
+104. |    .027       .033    .81818182   .44522452 |
+105. |   -.098      -.067    1.4626866   .29194752 |
+     |---------------------------------------------|
+110. |  -.0076        .03   -.25333333   .52697317 |
+113. |    .044       .032        1.375    .5184742 |
+118. |   .0097       .035    .27714286   .65118302 |
+119. |   .0019       .053    .03584906   .28529487 |
+122. |     .13       .076    1.7105263   .39438127 |
+     |---------------------------------------------|
+125. |    .053       .059    .89830508   .38022375 |
+130. |   -.077       .023   -3.3478261   .89866233 |
+131. |   -.055       .028   -1.9642857   .71121562 |
+133. |    -.07      -.038    1.8421053   .44088432 |
+136. |       0       .024            0   .81812583 |
+     |---------------------------------------------|
+138. |   -.018        .03          -.6   .65987182 |
+149. |     .01       .028    .35714286   .70195318 |
+152. |   -.022      -.029    .75862069   .48524242 |
+153. |     .04       .065    .61538462   .28687071 |
+155. |     .01       .024    .41666667   .60713808 |
+     |---------------------------------------------|
+159. |   -.015       -.03           .5   .51730751 |
+166. |    -.13       -.22    .59090909   .15971814 |
+167. |    .056       .054     1.037037   .27040742 |
+168. |     .11        .12    .91666667   .25274108 |
+171. |    .019       .084    .22619048   .24225171 |
+     |---------------------------------------------|
+172. |    -.14       -.49    .28571429   .16869525 |
+173. |   -.001      -.029    .03448276   .54992355 |
+176. |  -.0072      -.025         .288   .56630601 |
+177. |   .0053       -.03   -.17666667   .93462326 |
+179. |    .016       .036    .44444444   .40555348 |
+     |---------------------------------------------|
+180. |   -.019      -.042    .45238095   .33204249 |
+181. |     .03      -.069   -.43478261   .63341594 |
+184. |  -.0097       .077   -.12597403   .66640612 |
+     +---------------------------------------------+
+
+. assert abs(ivest[1] - .36363636) < 1e-8
+
+. assert abs(ivse[1] - .41620702) < 1e-8
+
+. assert abs(ivest[184] - -.12597403) < 1e-8
+
+. assert abs(ivse[184] - .66640612) < 1e-8
+
+. gen double ivcilow = ivest - 1.96*ivse
+(112 missing values generated)
+
+. gen double ivciupp = ivest + 1.96*ivse
+(112 missing values generated)
+
+. di ivcilow[1], ivciupp[1]
+-.45212939 1.1794021
+
+. 
+. cap noi drop ivest
+
+. cap noi drop ivse
+
+. qui gen double ivest = 100
+
+. qui gen double ivse = 10
+
+. mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivse, repla
+> ce)
+
+. assert abs(ivest[1] - .36363636) < 1e-8
+
+. assert abs(ivse[1] - .41620702) < 1e-8
+
+. assert abs(ivest[184] - -.12597403) < 1e-8
+
+. assert abs(ivse[184] - .66640612) < 1e-8
+
+. 
+. cap noi drop ivest
+
+. cap noi drop ivse
+
+. cap noi drop ivcilow
+
+. cap noi drop ivciupp
+
+. rcof "noi mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest i
+> vse thr)" == 198
+Please specify 2 variable names, which are for the IV estimates and their SEs.
+
+. rcof "noi mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest)"
+>  == 198
+Please specify 2 variable names, which are for the IV estimates and their SEs.
+
+. rcof "noi mrivests chdbeta chdse ldlcbeta if sel1==1, generate(ivest ivcilow 
+> ivciupp) fieller" == 198
+With 3 inputs please specify the nome option.
+
+. 
+. cap noi drop ivest
+
+. cap noi drop ivse
+variable ivse not found
+
+. qui gen double ivest = 100
+
+. qui gen double ivse = 10
+
+. mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivse, repla
+> ce) nome
+
+. assert abs(ivest[1] - .36363636) < 1e-8
+
+. assert abs(ivse[1] - .41421333) < 1e-8
+
+. assert abs(ivest[184] - -.12597403) < 1e-8
+
+. assert abs(ivse[184] - .66611182) < 1e-8
+
+. 
+. cap noi drop ivest
+
+. cap noi drop ivcilow
+
+. cap noi drop ivciupp
+
+. mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivcilow ivc
+> iupp) fieller
+
+. assert abs(ivcilow[1] - -.45429758) < 1e-8
+
+. assert abs(ivciupp[1] - 1.2183172) < 1e-7
+
+. 
+end of do-file
+      name:  mrivests
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mrivests.log
+  log type:  text
+ closed on:  18 Jan 2020, 18:43:41
+-------------------------------------------------------------------------------
