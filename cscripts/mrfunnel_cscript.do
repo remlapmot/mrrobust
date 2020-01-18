@@ -1,13 +1,7 @@
 * mrfunnel testcode
 * 29aug2017
 
-cscript
-
-cd C:\Users\palmertm\Documents\all\work\mregger\code
-
-clear all
-
-which mrfunnel
+cscript mrfunnel adofiles mrfunnel
 
 use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
 
