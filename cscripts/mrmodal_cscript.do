@@ -1,17 +1,11 @@
 * mrmodal cscript
 * 2jun2017
 
-cscript
+cscript mrivests adofiles mrivests
 
-** view helpfile
-*view mrmedian.sthlp
-
-which mrmodal
-
-use dodata, clear
+use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 ** error messages
-
 
 ** estimation examples
 ** ldlc
@@ -114,7 +108,6 @@ assert abs(_b[beta] - -.002889325) < 1e-8
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel2==1, phi(.25) seed(12345) nome weighted 
 assert abs(_b[beta] - -.020577298) < 1e-8
 
-
 ** tg example
 
 gen byte sel3 = 1 if tgp2 < 1e-8
@@ -163,7 +156,6 @@ assert abs(_b[beta] - .5788325) < 1e-7
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel3==1, phi(.25) seed(12345) nome weighted 
 assert abs(_b[beta] - .5472065) < 1e-7
-
 
 ** nosave option
 mata mata clear
