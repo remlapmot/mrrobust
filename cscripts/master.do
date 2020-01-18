@@ -1,8 +1,8 @@
 * master do-file for running cscripts
 * 2020-01-17
 
-cap noi log close
-log using master.log, text replace
+cap noi log close _all
+log using master.log, text replace name(master)
 
 cscript master
 
@@ -21,10 +21,10 @@ mrmodalplot ///
 mrratio
 
 foreach dofile of local cscripts {
-    log using `dofile'.log, text replace
+    log using `dofile'.log, text replace name(`dofile')
     do `dofile', nostop
 	if _rc != 0 di "`dofile' returned at least one error."
-    log close
+    log close `dofile'
 }
 
 log close _all
