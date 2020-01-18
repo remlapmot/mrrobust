@@ -20,6 +20,6 @@ log close _all
 foreach dofile of local cscripts {
     log using `dofile'.log, text replace
     do `dofile', nostop
-	if _rc != 0 di "`dofile' returned an error."
+	if _rc != 0 di "`dofile' returned at least one error."
     log close
 }
