@@ -1,11 +1,9 @@
 * mrforest cscript
 * 16jun2017
 
-cscript
+cscript mrforest adofiles mrforest
 
-which mrforest
-
-use dodata, clear
+use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 gen byte sel1 = (ldlcp2 < 1e-8)
 
@@ -14,7 +12,6 @@ mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid)
 mrforest chdbeta chdse ldlcbeta ldlcse
 
 mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
-
 
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) nostats
 
@@ -34,7 +31,7 @@ mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
 
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         modelsonly modelslabel(" ") models(4) nostats
-        
+
 // change Genotypes Summary labels
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         ividlabel("Instruments") modelslabel("All instruments")
@@ -47,7 +44,7 @@ mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
 
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         ividlabel(Instruments) models(0)      
-        
+
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) nonote
 
 // check making horizontal bars grey (as per MR-Base) - metan has bugs
@@ -77,7 +74,7 @@ mrforest chdbeta chdse ldlcbeta ldlcse in 1/10
 
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         models(0)
-        
+
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         models(1)
 
@@ -91,7 +88,7 @@ mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         models(4)
 
 rcof "noi mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) models(5)" == 198
-        
+
 mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         xlabel(-3,-2,-1,0,1,2,3)
 
