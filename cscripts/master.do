@@ -20,11 +20,14 @@ mrmodal ///
 mrmodalplot ///
 mrratio
 
+local errorlist ""
 foreach dofile of local cscripts {
     log using `dofile'.log, text replace name(`dofile')
     do `dofile', nostop
-	if _rc != 0 di "`dofile' returned at least one error."
+	if _rc != 0 local errorlist `errorlist' `dofile'
     log close `dofile'
 }
+
+di "cscripts with errors:", `errorlist'
 
 log close _all
