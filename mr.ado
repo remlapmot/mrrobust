@@ -42,7 +42,7 @@ else if "`subcmd'" == "ratio" {
     mrratio `rest'
 }
 else {
-    di as err "Invalid subcommand."
+    di as err "`subcmd' is not a valid subcommand."
     exit 198
 }
 
