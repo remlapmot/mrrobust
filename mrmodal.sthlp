@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0  2jun2017 Tom Palmer}{...}
+{vieweralsosee "mrrobust" "help mrrobust"}{...}
 {viewerjumpto "Syntax" "mrmodal##syntax"}{...}
 {viewerjumpto "Description" "mrmodal##description"}{...}
 {viewerjumpto "Options" "mrmodal##options"}{...}
