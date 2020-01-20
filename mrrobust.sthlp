@@ -51,6 +51,8 @@
 
 {synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates.
 
+{synopt :{opt {help mr}:}}Primary command syntax, e.g. call programs as {cmd:mr egger ...} as well as {cmd:mregger ...}.
+
 
 {marker description}{...}
 {title:Description}
