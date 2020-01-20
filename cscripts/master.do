@@ -8,7 +8,10 @@ cscript master
 
 ado describe mrrobust
 
-local cscripts mregger ///
+local cscripts ///
+mr ///
+mrdeps ///
+mregger ///
 mreggerplot ///
 mreggersimex ///
 mrforest ///
