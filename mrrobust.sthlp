@@ -12,6 +12,7 @@
 {vieweralsosee "mrivests" "mrivests"}{...}
 {vieweralsosee "mrforest" "mrforest"}{...}
 {vieweralsosee "mrfunnel" "mrfunnel"}{...}
+{vieweralsosee "mr" "help mr"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
