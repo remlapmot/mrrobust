@@ -37,10 +37,11 @@ mr ivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivse)
 
 mr median chdbeta chdse ldlcbeta ldlcse if sel1==1
 
-mr medianobs y (x = z1-z20), weighted
-
 mr modal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 
 mr modalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 
 mr ratio 1 .5 1 .25, eform
+
+use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, clear
+mr medianobs y (x = z1-z20), weighted
