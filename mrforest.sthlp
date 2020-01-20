@@ -119,4 +119,7 @@ Do et al., 2013. Common variants associated with plasma triglycerides and risk
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer
+{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
+ {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+
+{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}
