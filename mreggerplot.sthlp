@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0  10jun2016 Tom Palmer}{...}
+{vieweralsosee "mrrobust" "help mrrobust"}{...}
 {viewerjumpto "Syntax" "mreggerplot##syntax"}{...}
 {viewerjumpto "Description" "mreggerplot##description"}{...}
 {viewerjumpto "Examples" "mreggerplot##examples"}{...}
@@ -76,7 +77,7 @@ estimate standard errors.
 al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
