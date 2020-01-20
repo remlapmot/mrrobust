@@ -1,0 +1,230 @@
+-------------------------------------------------------------------------------
+      name:  mr
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mr.log
+  log type:  text
+ opened on:  20 Jan 2020, 08:58:55
+
+. * mr cscript
+. * 20jan2020
+. 
+. cscript mr adofiles mr ///
+> mrdeps ///
+> mregger ///
+> mreggerplot ///
+> mreggersimex ///
+> mreggersimexonce ///
+> mrforest ///
+> mrfunnel ///
+> mrivests ///
+> mrmedian ///
+> mrmedianobs ///
+> mrmedianobs_work ///
+> mrmodal ///
+> mrmodalplot ///
+> mrratio
+-----------------------------------------------------------------------BEGIN mr
+
+-> which mr, usesysdir
+H:\ado\plus\m\mr.ado
+*! version 0.1.0 19jan2020 Tom Palmer
+
+-> which mrdeps, usesysdir
+H:\ado\plus\m\mrdeps.ado
+*! version 0.1.0 18dec2018 Tom Palmer
+
+-> which mregger, usesysdir
+H:\ado\plus\m\mregger.ado
+*! version 0.1.0 04jun2016 Tom Palmer
+
+-> which mreggerplot, usesysdir
+H:\ado\plus\m\mreggerplot.ado
+*! version 0.1.0 Tom Palmer 06jun2016
+
+-> which mreggersimex, usesysdir
+H:\ado\plus\m\mreggersimex.ado
+*! 0.1.0 20jul2017 Tom Palmer
+
+-> which mreggersimexonce, usesysdir
+H:\ado\plus\m\mreggersimexonce.ado
+*! 0.1.0 23jul2017 Tom Palmer
+
+-> which mrforest, usesysdir
+H:\ado\plus\m\mrforest.ado
+*! version 0.1.0 Tom Palmer 15jun2017
+
+-> which mrfunnel, usesysdir
+H:\ado\plus\m\mrfunnel.ado
+*! 0.1.0 Tom Palmer 29aug2017
+
+-> which mrivests, usesysdir
+H:\ado\plus\m\mrivests.ado
+*! 0.1.0 Tom Palmer 10jun2017
+
+-> which mrmedian, usesysdir
+H:\ado\plus\m\mrmedian.ado
+*! version 0.1.0 03jun2016 Tom Palmer
+
+-> which mrmedianobs, usesysdir
+H:\ado\plus\m\mrmedianobs.ado
+*! version 0.1.0 04jun2016 Tom Palmer
+
+-> which mrmedianobs_work, usesysdir
+H:\ado\plus\m\mrmedianobs_work.ado
+*! version 0.1.0 04jun2016 Tom Palmer
+
+-> which mrmodal, usesysdir
+H:\ado\plus\m\mrmodal.ado
+*! version 0.1.0 02jun2017 Tom Palmer
+
+-> which mrmodalplot, usesysdir
+H:\ado\plus\m\mrmodalplot.ado
+*! 0.1.0 2aug2017 Tom Palmer
+
+-> which mrratio, usesysdir
+H:\ado\plus\m\mrratio.ado
+*! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
+
+. 
+. 
+. mr deps
+checking addplot consistency and verifying not already installed...
+all files already exist and are up to date.
+checking kdens consistency and verifying not already installed...
+all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
+checking heterogi consistency and verifying not already installed...
+all files already exist and are up to date.
+checking metan consistency and verifying not already installed...
+all files already exist and are up to date.
+checking grc1leg consistency and verifying not already installed...
+all files already exist and are up to date.
+
+. 
+. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+. gen byte sel1 = (ldlcp2 < 1e-8)
+
+. 
+. mr egger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+
+. 
+. mr eggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+. 
+. mr eggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) seed(1
+> 2345) noboot
+
+                                                      Number of genotypes = 73
+                                                    Bootstrap replications = 0
+                                                  Simulation replications = 50
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+       slope |   .6256194          .        .       .            .           .
+       _cons |  -.0089987          .        .       .            .           .
+------------------------------------------------------------------------------
+
+. 
+. mr forest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
+
+. 
+. mr funnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+. 
+. mr ivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivse)
+
+. 
+. mr median chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4285714   .0715535     5.99   0.000     .2883292    .5688136
+------------------------------------------------------------------------------
+
+. 
+. mr modal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+                                                                       Phi = 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4789702   .0652193     7.34   0.000     .3511427    .6067977
+------------------------------------------------------------------------------
+
+. 
+. mr modalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+                                                                     Phi = .25
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4198713   .2332927     1.80   0.072     -.037374    .8771166
+------------------------------------------------------------------------------
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+                                                                      Phi = .5
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4218667   .1905195     2.21   0.027     .0484554    .7952781
+------------------------------------------------------------------------------
+
+                                                      Number of genotypes = 73
+                                                           Replications = 1000
+                                                                       Phi = 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .4917353   .1312092     3.75   0.000     .2345699    .7489007
+------------------------------------------------------------------------------
+
+. 
+. mr ratio 1 .5 1 .25, eform
+
+------------------------------------------------------------------------------
+             |      exp()   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   2.718282   1.519566     1.79   0.074     .9087791     8.13075
+------------------------------------------------------------------------------
+
+. 
+. use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, cl
+> ear
+
+. mr medianobs y (x = z1-z20), weighted
+
+                                                      Number of genotypes = 20
+                                                          Number of obs = 1000
+                                                             Replications = 50
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+        beta |   .9987268   .0633445    15.77   0.000     .8745738     1.12288
+------------------------------------------------------------------------------
+
+. 
+end of do-file
+      name:  mr
+       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
+> pts\mr.log
+  log type:  text
+ closed on:  20 Jan 2020, 09:00:00
+-------------------------------------------------------------------------------
