@@ -23,10 +23,10 @@
 {title:Description}
 
 {pstd}
-{cmd:mr} Is a simple wrapper to the commands in the {help mrrobust} package.
+{cmd:mr} is a simple wrapper to the commands in the {help mrrobust} package.
 
 {pstd}
-The {it:subcommand} is specified as the mrrobust program name without the mr prefix, i.e. {cmd:mregger ...} becomes {cmd:mr egger ...}.
+The {it:subcommand} is specified as the mrrobust program name without its mr prefix, i.e. {cmd:mregger ...} can alternatively be run using the syntax {cmd:mr egger ...}.
  
 {marker options}{...}
 {title:Options}
@@ -63,3 +63,5 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.{p_end}
 
 {phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
  {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+
+{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}
