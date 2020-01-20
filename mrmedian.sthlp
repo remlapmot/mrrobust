@@ -1,5 +1,7 @@
 {smcl}
 {* *! version 0.1.0  3jun2016 Tom Palmer}{...}
+{vieweralsosee "mrrobust" "help mrrobust"}{...}
+{vieweralsosee "mr" "help mr"}{...}
 {viewerjumpto "Syntax" "mrmedian##syntax"}{...}
 {viewerjumpto "Description" "mrmedian##description"}{...}
 {viewerjumpto "Options" "mrmedian##options"}{...}
@@ -88,7 +90,7 @@ see {helpb set_seed}.
 al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
