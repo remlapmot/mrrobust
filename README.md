@@ -15,6 +15,7 @@
 * January 2020:
   - `mregger` now additionally returns `r(table)`.
   - Certification scripts: added `master.do` and renamed and edited a few scripts.
+  - Added `mr` command. Commands may now be run as either `mr egger ...` or as previously `mregger ...`.
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`.
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches the output from the `mr_egger()` function in the `MendelianRandomization` R package. Use the `unwi2gx` option to report the unweighted statistics.
@@ -57,7 +58,7 @@ Such data can be obtained from repositories such as MR-Base <http://www.mrbase.o
 
 The package contains the following commands:
 
- - `mrdeps` installs dependencies for the package.
+  - `mrdeps` installs dependencies for the package.
  - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals.
  - `mrivests` automates calling `mrratio` on all the selected genotypes in your dataset.
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015.
@@ -68,6 +69,7 @@ The package contains the following commands:
  - `mrmodalplot` plot of density used in modal estimator.
  - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger).
  - `mrfunnel` funnel plot of genotype specific IV estimates.
+ - `mr` acts as a primary command, e.g. so the other commands can be run as `mr egger ...` as well as `mregger ...`.
 
 ## Installing and updating mrrobust
 To install mrrobust in Stata versions 13 and later you have two choices.
@@ -114,7 +116,7 @@ github uninstall mrrobust
 ### Installation for Stata version 12 and earlier versions
 The `net install` syntax for installing `mrrobust` does not work under Stata version 12 and earlier because this webpage has an address starting with https rather than http. In such cases you need to do a manual installation.
 
-To download and install mrrobust manually:
+#### To download and install mrrobust manually:
 
 * click the green "Clone or download" button at the top of the GitHub repository [here](https://github.com/remlapmot/mrrobust) and download as a zip archive.
 * On your computer, extract the zip archive and move the extracted files to your `adopath` 
