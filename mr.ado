@@ -1,3 +1,4 @@
+*! version 0.1.0 19jan2020 Tom Palmer
 program define mr
 version 9
 syntax anything(everything) [aweight] [if] [in] [, *]
