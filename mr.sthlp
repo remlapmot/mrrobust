@@ -17,7 +17,7 @@
 {title:Syntax}
 
 {p 8 16 2}
-{opt mr} {it:subcommand} [{it:aweight}] {ifin} [{cmd:,} {it:options}]
+{opt mr} {it:subcommand} ... [{it:aweight}] {ifin} [{cmd:,} {it:options}]
 
 {marker description}{...}
 {title:Description}
