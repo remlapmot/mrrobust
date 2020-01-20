@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0  6jun2017 Tom Palmer}{...}
+{vieweralsosee "mrrobust" "help mrrobust"}{...}
 {viewerjumpto "Syntax" "mrratio##syntax"}{...}
 {viewerjumpto "Description" "mrratio##description"}{...}
 {viewerjumpto "Options" "mrratio##options"}{...}
@@ -131,4 +132,7 @@ not specified; 1 closed CI; 2 union of two intervals;
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer
+{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
+ {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+
+{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}

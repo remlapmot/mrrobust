@@ -12,6 +12,7 @@
 {vieweralsosee "mrivests" "mrivests"}{...}
 {vieweralsosee "mrforest" "mrforest"}{...}
 {vieweralsosee "mrfunnel" "mrfunnel"}{...}
+{vieweralsosee "mr" "help mr"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
@@ -49,6 +50,8 @@
 {synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
 
 {synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates.
+
+{synopt :{opt {help mr}:}}Primary command syntax, e.g. call programs as {cmd:mr egger ...} as well as {cmd:mregger ...}.
 
 
 {marker description}{...}

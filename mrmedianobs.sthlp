@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0  4jun2016 Tom Palmer}{...}
+{vieweralsosee "mrrobust" "help mrrobust"}{...}
 {viewerjumpto "Syntax" "mrmedianobs##syntax"}{...}
 {viewerjumpto "Description" "mrmedianobs##description"}{...}
 {viewerjumpto "Options" "mrmedianobs##options"}{...}
@@ -83,7 +84,7 @@ see {helpb set_seed}.
 {pstd}Simulated test dataset.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/mrmedianobs_testdata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, clear"}{p_end}
 
 {pstd}Unweighted median estimator{p_end}
 {phang2}{cmd:.} {stata "mrmedianobs y (x = z1-z20)"}{p_end}
@@ -134,4 +135,7 @@ DOI: {browse "http://dx.doi.org/10.1002/gepi.21965"}
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer
+{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
+ {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+
+{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}

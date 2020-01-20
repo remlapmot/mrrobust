@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0  23jul2017 Tom Palmer}{...}
+{vieweralsosee "mrrobust" "help mrrobust"}{...}
 {viewerjumpto "Syntax" "mreggersimex##syntax"}{...}
 {viewerjumpto "Description" "mreggersimex##description"}{...}
 {viewerjumpto "Examples" "mreggersimex##examples"}{...}
@@ -53,7 +54,7 @@ genotype-disease SEs squared, i.e. aw=1/(gdse^2).
 al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
@@ -101,4 +102,7 @@ for fitting linear models with additive measurement error. Stata Journal.
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer
+{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
+ {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+
+{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}

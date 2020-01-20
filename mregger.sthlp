@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0  04jun2016 Tom Palmer}{...}
+{vieweralsosee "mrrobust" "help mrrobust"}{...}
 {viewerjumpto "Syntax" "mregger##syntax"}{...}
 {viewerjumpto "Description" "mregger##description"}{...}
 {viewerjumpto "Options" "mregger##options"}{...}
@@ -238,3 +239,4 @@ comparison of methods. Statistics in Medicine, 18, 20, 2693-2708.
 {phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
  {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
 
+{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}
