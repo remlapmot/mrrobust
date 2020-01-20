@@ -3,7 +3,9 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mr.log
   log type:  text
- opened on:  20 Jan 2020, 08:58:55
+ opened on:  20 Jan 2020, 09:19:20
+
+. do mr
 
 . * mr cscript
 . * 20jan2020
@@ -86,6 +88,10 @@ H:\ado\plus\m\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
+. rcof "noi mr incorrectsubcommandname" ///
+>         == 198
+incorrectsubcommandname is not a valid subcommand.
+
 . 
 . mr deps
 checking addplot consistency and verifying not already installed...
@@ -222,9 +228,11 @@ chdbeta      |
 
 . 
 end of do-file
+
+. log cl mr
       name:  mr
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mr.log
   log type:  text
- closed on:  20 Jan 2020, 09:00:00
+ closed on:  20 Jan 2020, 09:20:42
 -------------------------------------------------------------------------------
