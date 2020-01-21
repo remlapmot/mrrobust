@@ -16,6 +16,7 @@
   - `mregger` now additionally returns `r(table)`.
   - Certification scripts: added `master.do` and renamed and edited a few scripts.
   - Added `mr` command. Commands may now be run as either `mr egger ...` or as previously `mregger ...`.
+  - *Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`.
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches the output from the `mr_egger()` function in the `MendelianRandomization` R package. Use the `unwi2gx` option to report the unweighted statistics.
@@ -58,7 +59,7 @@ Such data can be obtained from repositories such as MR-Base <http://www.mrbase.o
 
 The package contains the following commands:
 
-  - `mrdeps` installs dependencies for the package.
+ - `mrdeps` installs dependencies for the package.
  - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals.
  - `mrivests` automates calling `mrratio` on all the selected genotypes in your dataset.
  - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015.
@@ -143,6 +144,8 @@ Tom Palmer <tom.palmer@lancaster.ac.uk>, Wesley Spiller, Neil Davies
 
 ## How to cite the mrrobust package
 Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, 2019, 48, 3, 684-690. <https://doi.org/10.1093/ije/dyy195>
+
+Thank you to all users who have cited mrrobust. We made *The Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
 
 ## Collaboration
 If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email.
