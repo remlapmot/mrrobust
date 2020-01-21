@@ -145,7 +145,7 @@ Tom Palmer <tom.palmer@lancaster.ac.uk>, Wesley Spiller, Neil Davies
 ## How to cite the mrrobust package
 Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, 2019, 48, 3, 684-690. <https://doi.org/10.1093/ije/dyy195>
 
-Thank you to all users who have cited mrrobust. We made *The Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
+Thank you to all our users who have cited mrrobust. We made *The Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
 
 ## Collaboration
 If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email.
