@@ -10,7 +10,7 @@ github_username: remlapmot
 keywords: "Mendelian randomization, Stata, Two-sample"
 author: Tom Palmer
 repo: "https://github.com/remlapmot/mrrobust"
-# exclude: .stmd
+exclude: cscripts/README.md
 # header_pages: 
 #  - index.md
 #  - ./docs/mrrobust-examples
