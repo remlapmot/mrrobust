@@ -456,11 +456,11 @@ if "`gxse'" != "" & "`ivw'" == "" {
                 * QGX
                 qui gen double `qgx' = (``2'2' - `gammabar')^2/(`gxse'^2) `if' `in'
 				
-				* weighted QGX
-				qui gen double `gpw' = ``2'2' / `gyse' `if' `in'
-				qui su `gpw' [aw=(`gyse'/`gxse')^2] `if' `in'
+		* weighted QGX
+		qui gen double `gpw' = ``2'2' / `gyse' `if' `in'
+		qui su `gpw' [aw=(`gyse'/`gxse')^2] `if' `in'
                 scalar `gammabarw' = r(mean)
-				qui gen double `qgxw' = (`gpw' - `gammabarw')^2/(`gxse' / `gyse')^2 `if' `in'
+		qui gen double `qgxw' = (`gpw' - `gammabarw')^2/(`gxse' / `gyse')^2 `if' `in'
         }
         else {
                 tempvar gxscaled segxscaled
