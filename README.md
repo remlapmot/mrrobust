@@ -17,6 +17,7 @@
   - Certification scripts: added `master.do` and renamed and edited a few scripts.
   - Added `mr` command. Commands may now be run as either `mr egger ...` or as previously `mregger ...`.
   - *Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
+  - `mrmedian`, `mrmedianobs`, `mreggersimex`, `mrmodal`, and `mrratio` now additionally return the `r(table)` matrix (the information from the coefficient table).
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`.
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches the output from the `mr_egger()` function in the `MendelianRandomization` R package. Use the `unwi2gx` option to report the unweighted statistics.
