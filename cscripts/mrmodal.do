@@ -19,8 +19,10 @@ gen double seBetaXG = ldlcse
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, seed(12345)
 assert abs(_b[beta] - .4917353) < 1e-7
+mat list r(table)
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, seed(12345) level(90)
+mat list r(table)
 
 mrmodal
 
@@ -28,12 +30,14 @@ mrmodal, level(90)
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.5)
 assert abs(_b[beta] - .4218667) < 1e-7
+mat list r(table)
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.25)
 assert abs(_b[beta] - .4198713) < 1e-7
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, weighted
 assert abs(_b[beta] - .4789702) < 1e-7
+mat list r(table)
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.5) weighted
 assert abs(_b[beta] -.4906313) < 1e-7
@@ -43,6 +47,7 @@ assert abs(_b[beta] - .5820001) < 1e-7
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, nome
 assert abs(_b[beta] - .4917353) < 1e-7
+mat list r(table)
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.5) nome
 assert abs(_b[beta] -.4218667) < 1e-7
@@ -52,6 +57,7 @@ assert abs(_b[beta] - .4198713) < 1e-7
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, weighted nome
 assert abs(_b[beta] - .4789702) < 1e-7
+mat list r(table)
 
 mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, weighted nome phi(.5)
 assert abs(_b[beta] - .4906313) < 1e-7

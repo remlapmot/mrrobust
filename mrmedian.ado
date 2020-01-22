@@ -104,7 +104,7 @@ ereturn scalar k = scalar(`k')
 ereturn scalar reps = `reps'
 end
 
-program Display
+program Display, rclass
 version 9
 syntax , [K(integer 0) reps(integer 0) Level(cilevel)] 
 if "`k'" == "0" {
@@ -120,6 +120,7 @@ local digits2 : length local reps
 local colstart2 = 79 - (15 + `digits2')
 di _col(`colstart2') "Replications = " as res %`digits2'.0fc `reps'
 ereturn display, level(`level')
+return add // r(table)
 end
 
 mata

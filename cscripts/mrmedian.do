@@ -20,6 +20,7 @@ gen byte sel1 = (ldlcp2 < 1e-8)
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1
 assert abs(_b[beta] - .429) < 1e-3
 assert abs(_se[beta] - .07) < 1e-2
+mat list r(table)
 
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345)
 scalar b1 = _b[beta]
@@ -33,11 +34,13 @@ assert abs(_se[beta] - scalar(s1)) < 1e-7
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, weighted
 assert abs(_b[beta] - .458) < 1e-3
 assert abs(_se[beta] - .06) < 1e-2
+mat list r(table)
 
 ** penalized weighted
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, penweighted
 assert abs(_b[beta] - .457) < 1e-3
 assert abs(_se[beta] - .06) < 1e-2
+mat list r(table)
 
 *** test ereturn results
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1

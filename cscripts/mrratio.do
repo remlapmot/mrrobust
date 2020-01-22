@@ -9,6 +9,7 @@ eret list
 assert _b[beta] == 1
 assert abs(_se[beta] - .559017) < 1e-6
 assert e(fiellerres) == .
+mat li r(table)
 
 // test replay
 mrratio
@@ -19,6 +20,7 @@ assert e(level) == 95
 mrratio, level(90)
 
 mrratio 1 .5 1 .25, eform
+mat li r(table)
 mrratio
 mrratio, eform
 
@@ -52,6 +54,7 @@ mrratio 1 .5 1 .25, nome
 assert e(fiellerres) == .
 assert _b[beta] == 1
 assert _se[beta] == .5
+mat li r(table)
 mrratio
 mrratio, level(90)
 mrratio 1 .5 1 .25, nome eform

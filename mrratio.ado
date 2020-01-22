@@ -143,6 +143,7 @@ if "`fieller'" == "" {
         if inlist(`fiellerres',.,0) {
                 if e(fiellerres) == . {
                         ereturn display, level(`level') `eformopt'
+                        return add // r(table)
                 }
                 else {
                         if `level' != e(level) {
