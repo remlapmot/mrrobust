@@ -17,6 +17,15 @@ assert abs(_se[ldlcbeta] - 0.060) < 1e-3
 * r(table)
 mat list r(table)
 
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+mat list r(table)
+
+// mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi // TODO bugfix
+// mat list r(table)
+
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+mat list r(table)
+
 version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
 assert abs(_b[ldlcbeta] - .482) < 1e-3
 assert abs(_se[ldlcbeta] - 0.060) < 1e-3
