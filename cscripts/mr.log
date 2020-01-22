@@ -3,9 +3,7 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mr.log
   log type:  text
- opened on:  20 Jan 2020, 09:19:20
-
-. do mr
+ opened on:  22 Jan 2020, 10:13:16
 
 . * mr cscript
 . * 20jan2020
@@ -228,11 +226,9 @@ chdbeta      |
 
 . 
 end of do-file
-
-. log cl mr
       name:  mr
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mr.log
   log type:  text
- closed on:  20 Jan 2020, 09:20:42
+ closed on:  22 Jan 2020, 10:14:18
 -------------------------------------------------------------------------------

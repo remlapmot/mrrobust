@@ -3,7 +3,7 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmedianobs.log
   log type:  text
- opened on:  20 Jan 2020, 09:11:37
+ opened on:  22 Jan 2020, 10:24:27
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -139,6 +139,20 @@ Bootstrap replications (10)
 
 . assert abs(_se[beta] - scalar(s2)) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .99864349
+    se  .01499286
+     z  66.607959
+pvalue          0
+    ll  .96925803
+    ul  1.0280289
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmedianobs
 
@@ -164,6 +178,20 @@ Bootstrap replications (10)
         beta |   .9987268   .0901623    11.08   0.000      .822012    1.175442
 ------------------------------------------------------------------------------
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .9987268
+    se  .09016228
+     z  11.076992
+pvalue  1.622e-28
+    ll  .82201199
+    ul  1.1754416
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmedianobs y (x = z*), reps(10) seed(12345) penweighted
 
@@ -175,6 +203,20 @@ Bootstrap replications (10)
 -------------+----------------------------------------------------------------
         beta |   .9987268   .0901623    11.08   0.000      .822012    1.175442
 ------------------------------------------------------------------------------
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .9987268
+    se  .09016228
+     z  11.076992
+pvalue  1.622e-28
+    ll  .82201199
+    ul  1.1754416
+    df          .
+  crit   1.959964
+ eform          0
 
 . 
 . *** test obsboot and weights
@@ -274,6 +316,20 @@ Bootstrap replications (10)
         beta |   .9986435   .0149929    66.61   0.000      .969258    1.028029
 ------------------------------------------------------------------------------
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .99864349
+    se  .01499286
+     z  66.607959
+pvalue          0
+    ll  .96925803
+    ul  1.0280289
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . rcof "mrmedianobs y (x = z*), reps(10) seed(12345) all" == 198
 
@@ -315,5 +371,5 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmedianobs.log
   log type:  text
- closed on:  20 Jan 2020, 09:12:21
+ closed on:  22 Jan 2020, 10:24:53
 -------------------------------------------------------------------------------

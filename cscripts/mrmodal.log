@@ -3,7 +3,7 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmodal.log
   log type:  text
- opened on:  20 Jan 2020, 09:12:21
+ opened on:  22 Jan 2020, 10:24:53
 
 . * mrmodal cscript
 . * 2jun2017
@@ -52,6 +52,20 @@ H:\ado\plus\m\mrivests.ado
 
 . assert abs(_b[beta] - .4917353) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .49173529
+    se  .13564316
+     z  3.6252126
+pvalue  .00028872
+    ll  .22587958
+    ul  .75759099
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, seed(12345) level(90)
 
@@ -63,6 +77,20 @@ H:\ado\plus\m\mrivests.ado
 -------------+----------------------------------------------------------------
         beta |   .4917353   .1356432     3.63   0.000     .2686221    .7148484
 ------------------------------------------------------------------------------
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .49173529
+    se  .13564316
+     z  3.6252126
+pvalue  .00028872
+    ll  .26862215
+    ul  .71484843
+    df          .
+  crit  1.6448536
+ eform          0
 
 . 
 . mrmodal
@@ -102,6 +130,20 @@ H:\ado\plus\m\mrivests.ado
 
 . assert abs(_b[beta] - .4218667) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .42186675
+    se  .18574827
+     z  2.2711745
+pvalue  .02313642
+    ll  .05780682
+    ul  .78592668
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.25)
 
@@ -129,6 +171,20 @@ H:\ado\plus\m\mrivests.ado
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .4789702) < 1e-7
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .4789702
+    se  .06748411
+     z  7.0975258
+pvalue  1.270e-12
+    ll  .34670378
+    ul  .61123663
+    df          .
+  crit   1.959964
+ eform          0
 
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.5) weighted
@@ -172,6 +228,20 @@ H:\ado\plus\m\mrivests.ado
 
 . assert abs(_b[beta] - .4917353) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .49173529
+    se   .1319598
+     z  3.7264023
+pvalue  .00019423
+    ll  .23309884
+    ul  .75037174
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.5) nome
 
@@ -213,6 +283,20 @@ H:\ado\plus\m\mrivests.ado
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .4789702) < 1e-7
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .4789702
+    se  .07027274
+     z  6.8158749
+pvalue  9.369e-12
+    ll  .34123817
+    ul  .61670224
+    df          .
+  crit   1.959964
+ eform          0
 
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, weighted nome phi(.5)
@@ -703,5 +787,5 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmodal.log
   log type:  text
- closed on:  20 Jan 2020, 09:12:44
+ closed on:  22 Jan 2020, 10:25:15
 -------------------------------------------------------------------------------

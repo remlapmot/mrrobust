@@ -3,7 +3,7 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\master.log
   log type:  text
- opened on:  20 Jan 2020, 08:58:55
+ opened on:  22 Jan 2020, 10:13:16
 
 . 
 . cscript master
@@ -13,8 +13,7 @@
 . ado describe mrrobust
 
 -------------------------------------------------------------------------------
-[92] package mrrobust from https://raw.githubusercontent.com/remlapmot/mrrobust
-> /master
+[93] package mrrobust from https://raw.github.com/remlapmot/mrrobust/master
 -------------------------------------------------------------------------------
 
 TITLE
@@ -22,7 +21,7 @@ TITLE
 
 DESCRIPTION/AUTHOR(S)
       Author: Tom Palmer
-      Distribution-Date: 20200120
+      Distribution-Date: 20200122
 
 INSTALLATION FILES
       m\mrmedian.ado
@@ -56,7 +55,7 @@ INSTALLATION FILES
       m\mr.sthlp
 
 INSTALLED ON
-      20 Jan 2020
+      22 Jan 2020
 -------------------------------------------------------------------------------
 
 . 
@@ -81,14 +80,12 @@ INSTALLED ON
   3.     do `dofile'
   4.     log close `dofile'
   5. }
-(note: file C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscrip
-> ts\mr.log not found)
 -------------------------------------------------------------------------------
       name:  mr
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mr.log
   log type:  text
- opened on:  20 Jan 2020, 08:58:55
+ opened on:  22 Jan 2020, 10:13:16
 
 . * mr cscript
 . * 20jan2020
@@ -171,6 +168,10 @@ H:\ado\plus\m\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
+. rcof "noi mr incorrectsubcommandname" ///
+>         == 198
+incorrectsubcommandname is not a valid subcommand.
+
 . 
 . mr deps
 checking addplot consistency and verifying not already installed...
@@ -311,16 +312,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mr.log
   log type:  text
- closed on:  20 Jan 2020, 09:00:00
+ closed on:  22 Jan 2020, 10:14:18
 -------------------------------------------------------------------------------
-(note: file C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscrip
-> ts\mrdeps.log not found)
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrdeps.log
   log type:  text
- opened on:  20 Jan 2020, 09:00:00
+ opened on:  22 Jan 2020, 10:14:18
 
 . * mrdeps cscript
 . * 20jan2020
@@ -353,14 +352,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrdeps.log
   log type:  text
- closed on:  20 Jan 2020, 09:00:35
+ closed on:  22 Jan 2020, 10:14:52
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mregger.log
   log type:  text
- opened on:  20 Jan 2020, 09:00:35
+ opened on:  22 Jan 2020, 10:14:52
 
 . * mregger cscript
 . * 04jun2016
@@ -412,6 +411,67 @@ pvalue  8.144e-16
     df          .
   crit   1.959964
  eform          0
+
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+sign(ldlcb~a)|
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+Residual standard error:  1.548
+
+. mat list r(table)
+
+r(table)[9,2]
+         sign(ldlc~a:  sign(ldlc~a:
+               slope         _cons
+     b     .61731315    -.00877065
+    se     .10345735     .00548118
+     z     5.9668371      -1.60014
+pvalue     2.419e-09     .10956752
+    ll     .41454047    -.01951356
+    ul     .82008582     .00197226
+    df             .             .
+  crit      1.959964      1.959964
+ eform             0             0
+
+. 
+. // mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterog
+> i // TODO bugfix
+. // mat list r(table)
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+radialGD     |
+    radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
+       _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
+------------------------------------------------------------------------------
+Residual standard error:  1.547
+
+. mat list r(table)
+
+r(table)[9,2]
+          radialGD:   radialGD:
+          radialGP       _cons
+     b   .64258196  -.57373006
+    se   .11578709   .35456584
+     z   5.5496858    -1.61812
+pvalue   2.862e-08   .10563675
+    ll   .41564344  -1.2686663
+    ul   .86952048   .12120621
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
 
 . 
 . version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
@@ -1907,14 +1967,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mregger.log
   log type:  text
- closed on:  20 Jan 2020, 09:00:42
+ closed on:  22 Jan 2020, 10:14:58
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mreggerplot.log
   log type:  text
- opened on:  20 Jan 2020, 09:00:42
+ opened on:  22 Jan 2020, 10:14:58
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2237,14 +2297,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mreggerplot.log
   log type:  text
- closed on:  20 Jan 2020, 09:02:52
+ closed on:  22 Jan 2020, 10:16:54
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mreggersimex.log
   log type:  text
- opened on:  20 Jan 2020, 09:02:52
+ opened on:  22 Jan 2020, 10:16:54
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2284,6 +2344,20 @@ Bootstrap replications (25)
        slope |   .6256194   .1166245     5.36   0.000     .3970396    .8541991
        _cons |  -.0089987   .0062257    -1.45   0.148    -.0212009    .0032035
 ------------------------------------------------------------------------------
+
+. mat li r(table)
+
+r(table)[9,2]
+             slope       _cons
+     b   .62561937  -.00899868
+    se   .11662446   .00622571
+     z   5.3643922  -1.4454055
+pvalue   8.122e-08   .14834403
+    ll   .39703962  -.02120085
+    ul   .85419912   .00320349
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
 
 . 
 . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
@@ -2349,6 +2423,20 @@ Bootstrap replications (25)
        _cons |  -.0079552          .        .       .            .           .
 ------------------------------------------------------------------------------
 
+. mat li r(table)
+
+r(table)[9,2]
+             slope       _cons
+     b   .60478616  -.00795516
+    se           .           .
+     z           .           .
+pvalue           .           .
+    ll           .           .
+    ul           .           .
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
 . 
 . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
 >         gxse(ldlcse) seed(12345) simreps(10) nodraw
@@ -2368,20 +2456,34 @@ Bootstrap replications (25)
        _cons |  -.0079552   .0053891    -1.48   0.140    -.0185177    .0026073
 ------------------------------------------------------------------------------
 
+. mat li r(table)
+
+r(table)[9,2]
+             slope       _cons
+     b   .60478616  -.00795516
+    se   .13140166   .00538913
+     z   4.6025762  -1.4761482
+pvalue   4.173e-06   .13990412
+    ll   .34724364  -.01851767
+    ul   .86232869   .00260735
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
 . 
 end of do-file
       name:  mreggersimex
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mreggersimex.log
   log type:  text
- closed on:  20 Jan 2020, 09:10:23
+ closed on:  22 Jan 2020, 10:23:16
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrforest.log
   log type:  text
- opened on:  20 Jan 2020, 09:10:23
+ opened on:  22 Jan 2020, 10:23:16
 
 . * mrforest cscript
 . * 16jun2017
@@ -2528,14 +2630,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrforest.log
   log type:  text
- closed on:  20 Jan 2020, 09:11:15
+ closed on:  22 Jan 2020, 10:24:06
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrfunnel.log
   log type:  text
- opened on:  20 Jan 2020, 09:11:15
+ opened on:  22 Jan 2020, 10:24:06
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -2590,14 +2692,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrfunnel.log
   log type:  text
- closed on:  20 Jan 2020, 09:11:30
+ closed on:  22 Jan 2020, 10:24:20
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrivests.log
   log type:  text
- opened on:  20 Jan 2020, 09:11:30
+ opened on:  22 Jan 2020, 10:24:20
 
 . * mrivests testcode
 . * 10jun2017
@@ -2823,14 +2925,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrivests.log
   log type:  text
- closed on:  20 Jan 2020, 09:11:32
+ closed on:  22 Jan 2020, 10:24:23
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmedian.log
   log type:  text
- opened on:  20 Jan 2020, 09:11:32
+ opened on:  22 Jan 2020, 10:24:23
 
 . * mrmedian test code
 . * 3jun2016
@@ -2884,6 +2986,20 @@ Specify both weighted and penweighted options is not allowed.
 
 . assert abs(_se[beta] - .07) < 1e-2
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .42857143
+    se  .07009459
+     z  6.1141868
+pvalue  9.705e-10
+    ll  .29118855
+    ul   .5659543
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, seed(12345)
 
@@ -2930,6 +3046,20 @@ Specify both weighted and penweighted options is not allowed.
 
 . assert abs(_se[beta] - .06) < 1e-2
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .45825733
+    se   .0663262
+     z  6.9091453
+pvalue  4.876e-12
+    ll  .32826037
+    ul  .58825428
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . ** penalized weighted
 . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1, penweighted
@@ -2945,6 +3075,20 @@ Specify both weighted and penweighted options is not allowed.
 . assert abs(_b[beta] - .457) < 1e-3
 
 . assert abs(_se[beta] - .06) < 1e-2
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .45699704
+    se  .06301151
+     z   7.252596
+pvalue  4.089e-13
+    ll  .33349674
+    ul  .58049733
+    df          .
+  crit   1.959964
+ eform          0
 
 . 
 . *** test ereturn results
@@ -2980,7 +3124,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0730754     5.86   0.000     .2853463    .5717966
+        beta |   .4285714   .0732992     5.85   0.000     .2849077    .5722352
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -2995,7 +3139,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0730754     5.86   0.000     .2853463    .5717966
+        beta |   .4285714   .0732992     5.85   0.000     .2849077    .5722352
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3078,7 +3222,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0705459     6.08   0.000      .290304    .5668389
+        beta |   .4285714   .0716946     5.98   0.000     .2880525    .5690903
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3093,7 +3237,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0705459     6.08   0.000      .290304    .5668389
+        beta |   .4285714   .0716946     5.98   0.000     .2880525    .5690903
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3115,7 +3259,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0705459     6.08   0.000      .290304    .5668389
+        beta |   .4285714   .0716946     5.98   0.000     .2880525    .5690903
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3129,7 +3273,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0705459     6.08   0.000     .3125337    .5446091
+        beta |   .4285714   .0716946     5.98   0.000     .3106443    .5464986
 ------------------------------------------------------------------------------
 
 . 
@@ -3140,7 +3284,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0705459     6.08   0.000     .3125337    .5446091
+        beta |   .4285714   .0716946     5.98   0.000     .3106443    .5464986
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3154,7 +3298,7 @@ Specify both weighted and penweighted options is not allowed.
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0705459     6.08   0.000     .3381632    .5189797
+        beta |   .4285714   .0716946     5.98   0.000     .3366911    .5204518
 ------------------------------------------------------------------------------
 
 . 
@@ -3163,14 +3307,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmedian.log
   log type:  text
- closed on:  20 Jan 2020, 09:11:37
+ closed on:  22 Jan 2020, 10:24:27
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmedianobs.log
   log type:  text
- opened on:  20 Jan 2020, 09:11:37
+ opened on:  22 Jan 2020, 10:24:27
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -3306,6 +3450,20 @@ Bootstrap replications (10)
 
 . assert abs(_se[beta] - scalar(s2)) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .99864349
+    se  .01499286
+     z  66.607959
+pvalue          0
+    ll  .96925803
+    ul  1.0280289
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmedianobs
 
@@ -3331,6 +3489,20 @@ Bootstrap replications (10)
         beta |   .9987268   .0901623    11.08   0.000      .822012    1.175442
 ------------------------------------------------------------------------------
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .9987268
+    se  .09016228
+     z  11.076992
+pvalue  1.622e-28
+    ll  .82201199
+    ul  1.1754416
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmedianobs y (x = z*), reps(10) seed(12345) penweighted
 
@@ -3342,6 +3514,20 @@ Bootstrap replications (10)
 -------------+----------------------------------------------------------------
         beta |   .9987268   .0901623    11.08   0.000      .822012    1.175442
 ------------------------------------------------------------------------------
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .9987268
+    se  .09016228
+     z  11.076992
+pvalue  1.622e-28
+    ll  .82201199
+    ul  1.1754416
+    df          .
+  crit   1.959964
+ eform          0
 
 . 
 . *** test obsboot and weights
@@ -3441,6 +3627,20 @@ Bootstrap replications (10)
         beta |   .9986435   .0149929    66.61   0.000      .969258    1.028029
 ------------------------------------------------------------------------------
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .99864349
+    se  .01499286
+     z  66.607959
+pvalue          0
+    ll  .96925803
+    ul  1.0280289
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . rcof "mrmedianobs y (x = z*), reps(10) seed(12345) all" == 198
 
@@ -3482,14 +3682,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmedianobs.log
   log type:  text
- closed on:  20 Jan 2020, 09:12:21
+ closed on:  22 Jan 2020, 10:24:53
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmodal.log
   log type:  text
- opened on:  20 Jan 2020, 09:12:21
+ opened on:  22 Jan 2020, 10:24:53
 
 . * mrmodal cscript
 . * 2jun2017
@@ -3538,6 +3738,20 @@ H:\ado\plus\m\mrivests.ado
 
 . assert abs(_b[beta] - .4917353) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .49173529
+    se  .13564316
+     z  3.6252126
+pvalue  .00028872
+    ll  .22587958
+    ul  .75759099
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, seed(12345) level(90)
 
@@ -3549,6 +3763,20 @@ H:\ado\plus\m\mrivests.ado
 -------------+----------------------------------------------------------------
         beta |   .4917353   .1356432     3.63   0.000     .2686221    .7148484
 ------------------------------------------------------------------------------
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .49173529
+    se  .13564316
+     z  3.6252126
+pvalue  .00028872
+    ll  .26862215
+    ul  .71484843
+    df          .
+  crit  1.6448536
+ eform          0
 
 . 
 . mrmodal
@@ -3588,6 +3816,20 @@ H:\ado\plus\m\mrivests.ado
 
 . assert abs(_b[beta] - .4218667) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .42186675
+    se  .18574827
+     z  2.2711745
+pvalue  .02313642
+    ll  .05780682
+    ul  .78592668
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.25)
 
@@ -3615,6 +3857,20 @@ H:\ado\plus\m\mrivests.ado
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .4789702) < 1e-7
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .4789702
+    se  .06748411
+     z  7.0975258
+pvalue  1.270e-12
+    ll  .34670378
+    ul  .61123663
+    df          .
+  crit   1.959964
+ eform          0
 
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.5) weighted
@@ -3658,6 +3914,20 @@ H:\ado\plus\m\mrivests.ado
 
 . assert abs(_b[beta] - .4917353) < 1e-7
 
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b  .49173529
+    se   .1319598
+     z  3.7264023
+pvalue  .00019423
+    ll  .23309884
+    ul  .75037174
+    df          .
+  crit   1.959964
+ eform          0
+
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, phi(.5) nome
 
@@ -3699,6 +3969,20 @@ H:\ado\plus\m\mrivests.ado
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .4789702) < 1e-7
+
+. mat list r(table)
+
+r(table)[9,1]
+             beta
+     b   .4789702
+    se  .07027274
+     z  6.8158749
+pvalue  9.369e-12
+    ll  .34123817
+    ul  .61670224
+    df          .
+  crit   1.959964
+ eform          0
 
 . 
 . mrmodal BetaYG seBetaYG BetaXG seBetaXG if sel1==1, weighted nome phi(.5)
@@ -4189,14 +4473,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmodal.log
   log type:  text
- closed on:  20 Jan 2020, 09:12:44
+ closed on:  22 Jan 2020, 10:25:15
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmodalplot.log
   log type:  text
- opened on:  20 Jan 2020, 09:12:44
+ opened on:  22 Jan 2020, 10:25:15
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5067,14 +5351,14 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrmodalplot.log
   log type:  text
- closed on:  20 Jan 2020, 09:13:52
+ closed on:  22 Jan 2020, 10:26:21
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrratio.log
   log type:  text
- opened on:  20 Jan 2020, 09:13:52
+ opened on:  22 Jan 2020, 10:26:21
 
 . * mrratio cscript
 . * 6jun2017
@@ -5117,6 +5401,20 @@ matrices:
 
 . assert e(fiellerres) == .
 
+. mat li r(table)
+
+r(table)[9,1]
+              beta
+     b           1
+    se   .55901699
+     z   1.7888544
+pvalue   .07363827
+    ll  -.09565318
+    ul   2.0956532
+    df           .
+  crit    1.959964
+ eform           0
+
 . 
 . // test replay
 . mrratio
@@ -5150,6 +5448,20 @@ matrices:
 -------------+----------------------------------------------------------------
         beta |   2.718282   1.519566     1.79   0.074     .9087791     8.13075
 ------------------------------------------------------------------------------
+
+. mat li r(table)
+
+r(table)[9,1]
+             beta
+     b  2.7182818
+    se  1.5195657
+     z  1.7888544
+pvalue  .07363827
+    ll  .90877915
+    ul    8.13075
+    df          .
+  crit   1.959964
+ eform          1
 
 . mrratio
 
@@ -5272,6 +5584,20 @@ Ratio estimate: 1
 
 . assert _se[beta] == .5
 
+. mat li r(table)
+
+r(table)[9,1]
+             beta
+     b          1
+    se         .5
+     z          2
+pvalue  .04550026
+    ll  .02001801
+    ul   1.979982
+    df          .
+  crit   1.959964
+ eform          0
+
 . mrratio
 
 ------------------------------------------------------------------------------
@@ -5378,7 +5704,7 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrratio.log
   log type:  text
- closed on:  20 Jan 2020, 09:13:54
+ closed on:  22 Jan 2020, 10:26:23
 -------------------------------------------------------------------------------
 
 . 
@@ -5387,5 +5713,5 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\master.log
   log type:  text
- closed on:  20 Jan 2020, 09:13:54
+ closed on:  22 Jan 2020, 10:26:23
 -------------------------------------------------------------------------------

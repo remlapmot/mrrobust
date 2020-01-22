@@ -3,7 +3,7 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mreggersimex.log
   log type:  text
- opened on:  20 Jan 2020, 09:02:52
+ opened on:  22 Jan 2020, 10:16:54
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -43,6 +43,20 @@ Bootstrap replications (25)
        slope |   .6256194   .1166245     5.36   0.000     .3970396    .8541991
        _cons |  -.0089987   .0062257    -1.45   0.148    -.0212009    .0032035
 ------------------------------------------------------------------------------
+
+. mat li r(table)
+
+r(table)[9,2]
+             slope       _cons
+     b   .62561937  -.00899868
+    se   .11662446   .00622571
+     z   5.3643922  -1.4454055
+pvalue   8.122e-08   .14834403
+    ll   .39703962  -.02120085
+    ul   .85419912   .00320349
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
 
 . 
 . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
@@ -108,6 +122,20 @@ Bootstrap replications (25)
        _cons |  -.0079552          .        .       .            .           .
 ------------------------------------------------------------------------------
 
+. mat li r(table)
+
+r(table)[9,2]
+             slope       _cons
+     b   .60478616  -.00795516
+    se           .           .
+     z           .           .
+pvalue           .           .
+    ll           .           .
+    ul           .           .
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
 . 
 . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
 >         gxse(ldlcse) seed(12345) simreps(10) nodraw
@@ -127,11 +155,25 @@ Bootstrap replications (25)
        _cons |  -.0079552   .0053891    -1.48   0.140    -.0185177    .0026073
 ------------------------------------------------------------------------------
 
+. mat li r(table)
+
+r(table)[9,2]
+             slope       _cons
+     b   .60478616  -.00795516
+    se   .13140166   .00538913
+     z   4.6025762  -1.4761482
+pvalue   4.173e-06   .13990412
+    ll   .34724364  -.01851767
+    ul   .86232869   .00260735
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
 . 
 end of do-file
       name:  mreggersimex
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mreggersimex.log
   log type:  text
- closed on:  20 Jan 2020, 09:10:23
+ closed on:  22 Jan 2020, 10:23:16
 -------------------------------------------------------------------------------

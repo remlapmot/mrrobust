@@ -3,7 +3,7 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrratio.log
   log type:  text
- opened on:  20 Jan 2020, 09:13:52
+ opened on:  22 Jan 2020, 10:26:21
 
 . * mrratio cscript
 . * 6jun2017
@@ -46,6 +46,20 @@ matrices:
 
 . assert e(fiellerres) == .
 
+. mat li r(table)
+
+r(table)[9,1]
+              beta
+     b           1
+    se   .55901699
+     z   1.7888544
+pvalue   .07363827
+    ll  -.09565318
+    ul   2.0956532
+    df           .
+  crit    1.959964
+ eform           0
+
 . 
 . // test replay
 . mrratio
@@ -79,6 +93,20 @@ matrices:
 -------------+----------------------------------------------------------------
         beta |   2.718282   1.519566     1.79   0.074     .9087791     8.13075
 ------------------------------------------------------------------------------
+
+. mat li r(table)
+
+r(table)[9,1]
+             beta
+     b  2.7182818
+    se  1.5195657
+     z  1.7888544
+pvalue  .07363827
+    ll  .90877915
+    ul    8.13075
+    df          .
+  crit   1.959964
+ eform          1
 
 . mrratio
 
@@ -201,6 +229,20 @@ Ratio estimate: 1
 
 . assert _se[beta] == .5
 
+. mat li r(table)
+
+r(table)[9,1]
+             beta
+     b          1
+    se         .5
+     z          2
+pvalue  .04550026
+    ll  .02001801
+    ul   1.979982
+    df          .
+  crit   1.959964
+ eform          0
+
 . mrratio
 
 ------------------------------------------------------------------------------
@@ -307,5 +349,5 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mrratio.log
   log type:  text
- closed on:  20 Jan 2020, 09:13:54
+ closed on:  22 Jan 2020, 10:26:23
 -------------------------------------------------------------------------------

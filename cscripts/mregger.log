@@ -3,7 +3,7 @@
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mregger.log
   log type:  text
- opened on:  20 Jan 2020, 09:00:35
+ opened on:  22 Jan 2020, 10:14:52
 
 . * mregger cscript
 . * 04jun2016
@@ -55,6 +55,67 @@ pvalue  8.144e-16
     df          .
   crit   1.959964
  eform          0
+
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+sign(ldlcb~a)|
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+Residual standard error:  1.548
+
+. mat list r(table)
+
+r(table)[9,2]
+         sign(ldlc~a:  sign(ldlc~a:
+               slope         _cons
+     b     .61731315    -.00877065
+    se     .10345735     .00548118
+     z     5.9668371      -1.60014
+pvalue     2.419e-09     .10956752
+    ll     .41454047    -.01951356
+    ul     .82008582     .00197226
+    df             .             .
+  crit      1.959964      1.959964
+ eform             0             0
+
+. 
+. // mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterog
+> i // TODO bugfix
+. // mat list r(table)
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+radialGD     |
+    radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
+       _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
+------------------------------------------------------------------------------
+Residual standard error:  1.547
+
+. mat list r(table)
+
+r(table)[9,2]
+          radialGD:   radialGD:
+          radialGP       _cons
+     b   .64258196  -.57373006
+    se   .11578709   .35456584
+     z   5.5496858    -1.61812
+pvalue   2.862e-08   .10563675
+    ll   .41564344  -1.2686663
+    ul   .86952048   .12120621
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
 
 . 
 . version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
@@ -1550,5 +1611,5 @@ end of do-file
        log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
 > pts\mregger.log
   log type:  text
- closed on:  20 Jan 2020, 09:00:42
+ closed on:  22 Jan 2020, 10:14:58
 -------------------------------------------------------------------------------
