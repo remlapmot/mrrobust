@@ -106,7 +106,7 @@ ereturn scalar reps = `reps'
 ereturn scalar phi = `phi'
 end
 
-program Display
+program Display, rclass
 syntax , [K(integer 0) reps(integer 0) Level(cilevel) PHI(real 0)]
 if "`k'" == "0" {
         local k = e(k)
@@ -127,6 +127,7 @@ local digits3 : length local phi // version 13 strlen bug was here
 local colstart3 = 79 - (6 + `digits3')
 di _col(`colstart3') "Phi = " as res `phi'
 ereturn display, level(`level')
+return add // r(table)
 end
 
 mata 
