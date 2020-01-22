@@ -35,13 +35,16 @@ scalar s2 = _se[beta]
 mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 assert abs(_b[beta] - scalar(b2)) < 1e-7
 assert abs(_se[beta] - scalar(s2)) < 1e-7
+mat list r(table)
 
 mrmedianobs
 
 *** test weights
 mrmedianobs y (x = z*), reps(10) seed(12345) weighted
+mat list r(table)
 
 mrmedianobs y (x = z*), reps(10) seed(12345) penweighted
+mat list r(table)
 
 *** test obsboot and weights
 mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
@@ -54,6 +57,7 @@ mrmedianobs y (x = z*), obsboot reps(10) seed(12345) penweighted
 
 *** test percentile ci limits
 mrmedianobs y (x = z*), obsboot reps(10) seed(12345) all
+mat list r(table)
 
 rcof "mrmedianobs y (x = z*), reps(10) seed(12345) all" == 198
 
