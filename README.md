@@ -12,6 +12,8 @@
 
 ## Latest updates
 
+To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
+
 * January 2020:
   - `mregger` now additionally returns `r(table)`.
   - Certification scripts: added `master.do` and renamed and edited a few scripts.
