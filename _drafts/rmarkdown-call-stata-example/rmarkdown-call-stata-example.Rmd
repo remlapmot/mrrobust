@@ -6,6 +6,8 @@ output:
     preserve_yaml: TRUE
 ---
 
+# Example showing how to run mrrobust Stata code in an R Markdown script
+
 ## Introduction
 
 This example shows how to run R and Stata code within the same Rmarkdown (`.Rmd`) script using the `Statamarkdown` R package. More information about this package is available [here](https://github.com/Hemken/Statamarkdown) and [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataMarkdown.html). To install this package and load it into your current R session run the following in R.

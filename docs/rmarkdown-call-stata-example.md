@@ -6,6 +6,8 @@ output:
     preserve_yaml: TRUE
 ---
 
+# Example showing how to run mrrobust Stata code in an R Markdown script
+
 ## Introduction
 
 This example shows how to run R and Stata code within the same Rmarkdown
