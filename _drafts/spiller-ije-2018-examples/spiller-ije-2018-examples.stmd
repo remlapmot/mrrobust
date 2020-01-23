@@ -4,6 +4,8 @@ title: "IJE examples"
 #date: "30 August 2018"
 ---
 
+# Examples from our IJE paper
+
 The paper is available [here](https://doi.org/10.1093/ije/dyy195).
 
 ## mrrobust set-up
