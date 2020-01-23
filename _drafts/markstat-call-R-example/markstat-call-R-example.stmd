@@ -2,6 +2,8 @@
 title: markstat example
 ---
 
+# Run MR-Base from a Stata do-file/Markdown script
+
 ## Introduction
 
 This example shows how to run R and Stata code within the same Stata Markdown (`.stmd`) script. The general approach is detailed on the Stata Markdown website [here](https://data.princeton.edu/stata/markdown/quantiles) and [here](https://data.princeton.edu/stata/markdown/gettingStarted#R).
