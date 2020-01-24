@@ -13,11 +13,11 @@ repo: "https://github.com/remlapmot/mrrobust"
 exclude: cscripts/README.md
 header_pages: 
  - index.md
- - mrrobust-examples.md
- - spiller-ije-2018-examples.md
- - markstat-call-R-example.md
- - rmarkdown-call-stata-example.md
- - save-estimates.md
+ - docs/mrrobust-examples.md
+ - docs/spiller-ije-2018-examples.md
+ - docs/markstat-call-R-example.md
+ - docs/rmarkdown-call-stata-example.md
+ - docs/save-estimates.md
 
 # Build settings
 markdown: kramdown
