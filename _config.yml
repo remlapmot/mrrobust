@@ -21,8 +21,8 @@ header_pages:
 
 # Build settings
 markdown: kramdown
-# theme: jekyll-theme-slate 
-theme: minima
+theme: jekyll-theme-primer 
+# theme: minima
 plugins:
   - jekyll-feed
 
