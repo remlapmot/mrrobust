@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}24 Jan 2020, 15:35:12
+ {txt}opened on:  {res}24 Jan 2020, 15:42:19
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -64,7 +64,7 @@ Residual standard error:  1.547
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2} .0693217{col 37}{space 1}    6.91{col 46}{space 3}0.000{col 54}{space 4} .3431022{col 67}{space 3} .6148382
+{space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2} .0666965{col 37}{space 1}    7.18{col 46}{space 3}0.000{col 54}{space 4} .3482474{col 67}{space 3}  .609693
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. mat mode = r(table)
@@ -77,7 +77,7 @@ Residual standard error:  1.547
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4582573{col 26}{space 2} .0634841{col 37}{space 1}    7.22{col 46}{space 3}0.000{col 54}{space 4} .3338308{col 67}{space 3} .5826838
+{space 8}beta {c |}{col 14}{res}{space 2} .4582573{col 26}{space 2} .0608744{col 37}{space 1}    7.53{col 46}{space 3}0.000{col 54}{space 4} .3389457{col 67}{space 3}  .577569
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. mat median = r(table)
@@ -141,11 +141,11 @@ Residual standard error:  1.547
 {txt}mode[9,1]
              beta
      b {res}  .4789702
-{txt}    se {res} .06932169
-{txt}     z {res} 6.9093843
-{txt}pvalue {res} 4.868e-12
-{txt}    ll {res} .34310219
-{txt}    ul {res} .61483822
+{txt}    se {res} .06669651
+{txt}     z {res} 7.1813381
+{txt}pvalue {res} 6.903e-13
+{txt}    ll {res} .34824744
+{txt}    ul {res} .60969297
 {txt}    df {res}         .
 {txt}  crit {res}  1.959964
 {txt} eform {res}         0
@@ -155,11 +155,11 @@ Residual standard error:  1.547
 {txt}median[9,1]
              beta
      b {res} .45825733
-{txt}    se {res} .06348407
-{txt}     z {res} 7.2184621
-{txt}pvalue {res} 5.258e-13
-{txt}    ll {res} .33383084
-{txt}    ul {res} .58268381
+{txt}    se {res} .06087441
+{txt}     z {res} 7.5279143
+{txt}pvalue {res} 5.156e-14
+{txt}    ll {res} .33894568
+{txt}    ul {res} .57756897
 {txt}    df {res}         .
 {txt}  crit {res}  1.959964
 {txt} eform {res}         0
@@ -174,26 +174,17 @@ Residual standard error:  1.547
 {txt}
 {com}. mat output = output'
 {txt}
-{com}. mat li output
+{com}. mat list output, format(%4.3f)
 {res}
 {txt}output[7,9]
-                       b          se           z      pvalue          ll          ul          df        crit
-    ivw_beta {res}  .48150551   .03822098   12.597937   2.167e-36   .40659377   .55641726           .    1.959964
-{txt}mregger_beta {res}  .61731315   .10345735   5.9668371   2.419e-09   .41454047   .82008582           .    1.959964
-{txt}mregger_cons {res} -.00877065   .00548118    -1.60014   .10956752  -.01951356   .00197226           .    1.959964
-{txt} radial_beta {res}  .64258196   .11578709   5.5496858   2.862e-08   .41564344   .86952048           .    1.959964
-{txt} radial_cons {res} -.57373006   .35456584    -1.61812   .10563675  -1.2686663   .12120621           .    1.959964
-{txt}   mode_beta {res}   .4789702   .06932169   6.9093843   4.868e-12   .34310219   .61483822           .    1.959964
-{txt} median_beta {res}  .45825733   .06348407   7.2184621   5.258e-13   .33383084   .58268381           .    1.959964
-
-{txt}                   eform
-    ivw_beta {res}          0
-{txt}mregger_beta {res}          0
-{txt}mregger_cons {res}          0
-{txt} radial_beta {res}          0
-{txt} radial_cons {res}          0
-{txt}   mode_beta {res}          0
-{txt} median_beta {res}          0
+                   b      se       z  pvalue      ll      ul      df    crit   eform
+    ivw_beta {res}  0.482   0.038  12.598   0.000   0.407   0.556       .   1.960   0.000
+{txt}mregger_beta {res}  0.617   0.103   5.967   0.000   0.415   0.820       .   1.960   0.000
+{txt}mregger_cons {res} -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960   0.000
+{txt} radial_beta {res}  0.643   0.116   5.550   0.000   0.416   0.870       .   1.960   0.000
+{txt} radial_cons {res} -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960   0.000
+{txt}   mode_beta {res}  0.479   0.067   7.181   0.000   0.348   0.610       .   1.960   0.000
+{txt} median_beta {res}  0.458   0.061   7.528   0.000   0.339   0.578       .   1.960   0.000
 {reset}
 {com}. //_10
 . drop _all
@@ -236,8 +227,8 @@ now 7
     {res}mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .0019723 {txt} 
     {res} radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .8695205 {txt} 
     {res} radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .1212062 {txt} 
-    {res}   mode_beta    .4789702   .0693217   6.909384   4.87e-12    .3431022   .6148382 {txt} 
-    {res} median_beta    .4582573   .0634841   7.218462   5.26e-13    .3338308   .5826838 {txt} 
+    {res}   mode_beta    .4789702   .0666965   7.181338   6.90e-13    .3482474    .609693 {txt} 
+    {res} median_beta    .4582573   .0608744   7.527914   5.16e-14    .3389457   .5775689 {txt} 
 
 {com}. //_12
 . save myestimates, replace
@@ -252,7 +243,7 @@ now 7
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}24 Jan 2020, 15:35:13
+ {txt}closed on:  {res}24 Jan 2020, 15:42:20
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

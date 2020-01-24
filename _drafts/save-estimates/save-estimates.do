@@ -32,7 +32,7 @@ mat colnames output = ivw_beta mregger_beta mregger_cons ///
 radial_beta radial_cons mode_beta median_beta
 mat coleq output = "" "" "" "" "" "" ""
 mat output = output'
-mat li output
+mat list output, format(%4.3f)
 //_10
 drop _all
 svmat output, names(col)
