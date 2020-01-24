@@ -23,7 +23,7 @@ header_pages:
 markdown: kramdown
 # theme: jekyll-theme-primer 
 theme: minima
-skin: solarized-dark
+
 plugins:
   - jekyll-feed
 
