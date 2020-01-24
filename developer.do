@@ -8,3 +8,10 @@ net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) re
 
 cd cscripts
 do master
+
+* Requirements to build md files of examples in _drafts
+* Setup markstat
+* as per https://data.princeton.edu/stata/markdown/gettingStarted
+ssc install markstat
+ssc install whereis
+whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // wherever your pandoc exe is
