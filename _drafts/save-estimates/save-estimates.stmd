@@ -87,7 +87,7 @@ forvalues i = 1/7 {
 
 Show dataset
 ```{stata}
-list, clean noobs
+list estimate b se z pvalue ll ul, clean noobs
 ```
 
 Save dataset
