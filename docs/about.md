@@ -1,0 +1,6 @@
+---
+title: About
+---
+
+- This is the website for the mrrobust Stata package
+- https://github.com/remlapmot/mrrobust

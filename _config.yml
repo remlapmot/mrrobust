@@ -18,6 +18,7 @@ header_pages:
  - docs/markstat-call-R-example.md
  - docs/rmarkdown-call-stata-example.md
  - docs/save-estimates.md
+ - docs/about.md
 
 # Build settings
 markdown: kramdown
