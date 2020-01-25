@@ -24,7 +24,7 @@ header_pages:
 markdown: kramdown
 # theme: jekyll-theme-primer 
 theme: minima
-
+google_analytics: UA-156933160-1
 plugins:
   - jekyll-feed
 
