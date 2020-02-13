@@ -76,7 +76,7 @@ There is a website showing the examples from the helpfiles here: {browse "https:
 {title:Author}{marker author}
 
 {pstd}
-Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}. 
+Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}. 
 
 {pstd}
 Development takes place on GitHub here {browse "https://github.com/remlapmot/mrrobust"}.
