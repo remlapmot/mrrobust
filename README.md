@@ -152,7 +152,7 @@ Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool
 Thank you to all our users who have cited mrrobust. We made *The Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
 
 ## Collaboration
-If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email.
+If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email to tom.palmer@bristol.ac.uk.
 
 ## References
 
