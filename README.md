@@ -144,7 +144,7 @@ To uninstall a manual installation simply delete the files that you placed on yo
 As far as I know, and unlike R which has the `testthat` package, there is no recognised standard for writing unit tests for Stata commands. However, StataCorp refer to such do-files as cscripts (certification scripts). If you are interested I publish my cscripts (and their log files of output) in the [cscripts directory](https://github.com/remlapmot/mrrobust/tree/master/cscripts) in the GitHub repository. 
 
 ## Authors
-Tom Palmer <tom.palmer@lancaster.ac.uk>, Wesley Spiller, Neil Davies
+Tom Palmer <tom.palmer@bristol.ac.uk>, Wesley Spiller, Neil Davies
 
 ## How to cite the mrrobust package
 Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, 2019, 48, 3, 684-690. <https://doi.org/10.1093/ije/dyy195>
