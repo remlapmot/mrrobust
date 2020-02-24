@@ -27,7 +27,7 @@
 {title:Commands}{marker commands}
 
 {synoptset 14 tabbed}{...}
-{synopt :{opt {help mr}:}}Primary command syntax, e.g. Use {cmd:mr egger ...} syntax in addition to original syntax.
+{synopt :{opt {help mr}:}}Primary command syntax, i.e. use {cmd:mr egger ...} syntax in addition to original syntax.
 
 {synopt :{opt {help mrdeps}:}}Install dependencies for the package.
 
