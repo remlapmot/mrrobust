@@ -4,7 +4,7 @@
 {viewerjumpto "Syntax" "mrivests##syntax"}{...}
 {viewerjumpto "Description" "mrivests##description"}{...}
 {viewerjumpto "Options" "mrivests##options"}{...}
-{viewerjumpto "Example" "mrivests##examples"}{...}
+{viewerjumpto "Examples" "mrivests##examples"}{...}
 {viewerjumpto "Author" "mrivests##author"}{...}
 {title:Title}
 
