@@ -85,7 +85,7 @@ Theorem.
 association) assumption.
 
 {marker examples}{...}
-{title:Example}
+{title:Examples}
 
 {pstd}Hypothetical example{p_end}
 {phang2}{cmd:.} {stata "mrratio 1 .5 1 .25"}{p_end}
