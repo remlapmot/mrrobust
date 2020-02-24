@@ -4,7 +4,7 @@
 {viewerjumpto "Syntax" "mrratio##syntax"}{...}
 {viewerjumpto "Description" "mrratio##description"}{...}
 {viewerjumpto "Options" "mrratio##options"}{...}
-{viewerjumpto "Example" "mrratio##examples"}{...}
+{viewerjumpto "Examples" "mrratio##examples"}{...}
 {viewerjumpto "Stored results" "mrratio##results"}{...}
 {viewerjumpto "Author" "mrratio##author"}{...}
 {title:Title}
