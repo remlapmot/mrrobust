@@ -98,7 +98,7 @@ see {helpb set_seed}.
 {opt weighted} weight the instrumental variable estimates.
 
 {marker examples}{...}
-{title:Example 1}
+{title:Examples}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013.{p_end}
 
