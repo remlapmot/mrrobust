@@ -27,6 +27,8 @@
 {title:Commands}{marker commands}
 
 {synoptset 14 tabbed}{...}
+{synopt :{opt {help mr}:}}Primary command syntax, e.g. Use {cmd:mr egger ...} syntax in addition to original syntax.
+
 {synopt :{opt {help mrdeps}:}}Install dependencies for the package.
 
 {synopt :{opt {help mregger}:}}MR-Egger and inverse-variance weighted (IVW) estimators.
@@ -50,9 +52,6 @@
 {synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
 
 {synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates.
-
-{synopt :{opt {help mr}:}}Primary command syntax, e.g. call programs as {cmd:mr egger ...} as well as {cmd:mregger ...}.
-
 
 {marker description}{...}
 {title:Description}
