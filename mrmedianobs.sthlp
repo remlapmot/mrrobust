@@ -44,7 +44,7 @@ observation level data.
 
 {col 10}{depvar}: {col 26}outcome variable
 {col 10}{varlist:1}: {col 26}covariates to adjust for
-{col 10}{var:_endog}: {col 26}treatment received or exposure variable (endogenous variable)
+{col 10}{var:_endog}: {col 26}exposure/treatment received/endogenous variable
 {col 10}{varlist:_ivs}: {col 26}instrumental variables
 
 {marker options}{...}
@@ -79,7 +79,7 @@ see {helpb set_seed}.
 
 
 {marker examples}{...}
-{title:Example 1}
+{title:Examples}
 
 {pstd}Simulated test dataset.{p_end}
 
