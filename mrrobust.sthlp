@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0 Tom Palmer 05jun2017}{...}
+{vieweralsosee "mr" "help mr"}{...}
 {vieweralsosee "mrdeps" "mrdeps"}{...}
 {vieweralsosee "mregger" "mregger"}{...}
 {vieweralsosee "mreggersimex" "mreggersimex"}{...}
@@ -12,7 +13,6 @@
 {vieweralsosee "mrivests" "mrivests"}{...}
 {vieweralsosee "mrforest" "mrforest"}{...}
 {vieweralsosee "mrfunnel" "mrfunnel"}{...}
-{vieweralsosee "mr" "help mr"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
