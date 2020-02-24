@@ -4,7 +4,7 @@
 {viewerjumpto "Syntax" "mrivests##syntax"}{...}
 {viewerjumpto "Description" "mrivests##description"}{...}
 {viewerjumpto "Options" "mrivests##options"}{...}
-{viewerjumpto "Example" "mrivests##examples"}{...}
+{viewerjumpto "Examples" "mrivests##examples"}{...}
 {viewerjumpto "Author" "mrivests##author"}{...}
 {title:Title}
 
@@ -64,7 +64,7 @@ in the dataset.
 {opt *} options passed through to {help mrratio}, e.g. {cmd:nome}.
 
 {marker examples}{...}
-{title:Example}
+{title:Examples}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013 generate genotype 
 specific estimates for the LDL-c phenotype.{p_end}

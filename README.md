@@ -14,6 +14,9 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* February 2020:
+  - Updated contact details
+  - Minor edits to helpfiles, to show examples setting `seed()` option where helpful
 * January 2020:
   - `mregger` now additionally returns `r(table)`.
   - Certification scripts: added `master.do` and renamed and edited a few scripts.

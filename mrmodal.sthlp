@@ -98,7 +98,7 @@ see {helpb set_seed}.
 {opt weighted} weight the instrumental variable estimates.
 
 {marker examples}{...}
-{title:Example 1}
+{title:Examples}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013.{p_end}
 
@@ -113,6 +113,9 @@ see {helpb set_seed}.
 
 {pstd}Simple mode estimator{p_end}
 {phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
+
+{pstd}Simple mode estimator with reproducible standard error{p_end}
+{phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)"}{p_end}
 
 {pstd}Weighted mode estimator{p_end}
 {phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted"}{p_end}

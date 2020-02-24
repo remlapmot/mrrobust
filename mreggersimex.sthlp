@@ -28,6 +28,7 @@
 {synopt :{opt noboot}}Do not perform bootstrapping for SEs{p_end}
 {synopt :{opt nodraw}}Do not draw SIMEX plot{p_end}
 {synopt :{opt reps(#)}}No. bootstrap replications{p_end}
+{synopt :{opt seed:(#)}}Seed for random number generator, specify for reproducible results{p_end}
 {synopt :{opt simreps(#)}}No. simulation replications{p_end}
 
 {marker description}{...}
