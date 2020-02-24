@@ -66,14 +66,14 @@ al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, colum
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
-{pstd}Densities with phi=.25, .5, 1{p_end}
-{phang2}{cmd:.} {stata "mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
+{pstd}Densities with phi=.25, .5, 1 and reproducible standard error{p_end}
+{phang2}{cmd:.} {stata "mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)"}{p_end}
 
-{pstd}Densities with phi=.4, .6, .8, 1{p_end}
-{phang2}{cmd:.} {stata "mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, phi(.4(.2)1)"}{p_end}
+{pstd}Densities with phi=.4, .6, .8, 1 and reproducible standard error{p_end}
+{phang2}{cmd:.} {stata "mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, phi(.4(.2)1) seed(12345)"}{p_end}
 
-{pstd}Lines in grayscale{p_end}
-{phang2}{cmd:.} {stata "mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, lc(gs10 gs5 gs0)"}{p_end}
+{pstd}Lines in grayscale and reproducible standard error{p_end}
+{phang2}{cmd:.} {stata "mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, lc(gs10 gs5 gs0) seed(12345)"}{p_end}
 
 
 {marker references}{...}
