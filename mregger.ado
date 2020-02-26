@@ -431,23 +431,6 @@ if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
         ereturn scalar Q = r(Q)
 }
 
-local digits : length local k
-local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
-
-** display coefficient table
-Display , `re' level(`level') `radial'
-if "`ivw'" == "" & "`re'" == "" {
-        if "`fe'" == "" {
-                di as txt "Residual standard error:", %6.3f sqrt(`phi')
-                ereturn scalar phi = sqrt(`phi')
-        }
-        else {
-                di as txt "Residual standard error:", 1
-                ereturn scalar phi = 1
-        }
-}
-
 if "`gxse'" != "" & "`ivw'" == "" {
         ** I-squared GX
         tempname gammabar nobs qgx QGX I2GX gammabarw qgxw QGXw I2GXw gpw
@@ -505,6 +488,23 @@ if "`gxse'" != "" & "`ivw'" == "" {
 		}
 		
         // heterogi `QGXw' `nobs', level(`level')
+}
+
+local digits : length local k
+local colstart = 79 - (22 + `digits') 
+di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+
+** display coefficient table
+Display , `re' level(`level') `radial'
+if "`ivw'" == "" & "`re'" == "" {
+        if "`fe'" == "" {
+                di as txt "Residual standard error:", %6.3f sqrt(`phi')
+                ereturn scalar phi = sqrt(`phi')
+        }
+        else {
+                di as txt "Residual standard error:", 1
+                ereturn scalar phi = 1
+        }
 }
 
 if "`re'" == "" {
