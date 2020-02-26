@@ -20,8 +20,14 @@ mat list r(table)
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 mat list r(table)
 
-// mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi // TODO bugfix
-// mat list r(table)
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
+mat list r(table)
+
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
+mat list r(table)
+
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)
+mat list r(table)
 
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 mat list r(table)
