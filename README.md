@@ -18,7 +18,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - Updated contact details
   - Minor edits to helpfiles, to show examples setting `seed()` option where helpful
   - Fixed `mregger` bug where `r(table)` was not returned with the `gxse` or `heterogi` options. The output for these options now appears before the coefficient table.
-  - Minor amendments to formatting of `gxse` output
+  - Minor amendments to formatting of `mregger` `gxse` output
   - `mregger` now ereturns `e(phi)`, the scale parameter, in some cases
 * January 2020:
   - `mregger` now additionally returns `r(table)`
