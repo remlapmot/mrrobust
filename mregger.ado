@@ -490,6 +490,7 @@ if "`gxse'" != "" & "`ivw'" == "" {
         // heterogi `QGXw' `nobs', level(`level')
 }
 
+** number of genotypes
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
