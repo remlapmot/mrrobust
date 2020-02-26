@@ -481,8 +481,8 @@ if "`gxse'" != "" & "`ivw'" == "" {
 		ereturn scalar QGX = `QGXw'
 		
 		if "`unwi2gx'" == "unwi2gx" {
-			di as txt "Q_GX statistic (unweighted):", %6.2f `QGX'
-			di as txt "I^2_GX statistic (unweighted):", %6.2f 100*`I2GX' "%"
+			di _col(43) as txt "Q_GX statistic (unweighted):", %6.2f `QGX'
+			di _col(41) as txt "I^2_GX statistic (unweighted):", %6.2f 100*`I2GX' "%"
 			ereturn scalar I2GXunw = `I2GX'
 			ereturn scalar QGXunw = `QGX'
 		}
