@@ -421,9 +421,11 @@ Display , `re' level(`level') `radial'
 if "`ivw'" == "" & "`re'" == "" {
         if "`fe'" == "" {
                 di as txt "Residual standard error:", %6.3f sqrt(`phi')
+                ereturn scalar rmse = sqrt(`phi')
         }
         else {
                 di as txt "Residual standard error:", 1
+                ereturn scalar rmse = 1
         }
 }
 
