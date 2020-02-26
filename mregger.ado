@@ -430,8 +430,6 @@ if "`ivw'" == "" & "`re'" == "" {
 if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
         di as txt "Heterogeneity/pleiotropy statistics:" _c
         heterogi `qstat' `df', level(`level')
-}
-if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
         ereturn scalar I2 = r(I2)
         ereturn scalar ub_I2_M1 = r(ub_I2_M1)
         ereturn scalar lb_I2_M1 = r(lb_I2_M1)
