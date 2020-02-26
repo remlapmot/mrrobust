@@ -176,7 +176,6 @@ if "`ivw'" == "ivw" {
 					qui glm `wrady' `wradx' `if'`in', scale(1) nocons
 					scalar `dfr' = e(df)
 				}
-                                eret list phi = 1
         }
         else if "`re'" == "re" {
                 tempvar genoDisease slope
@@ -410,6 +409,10 @@ if "`tdist'" != "" {
 else {
 	// if df_r == . then Stata uses Normal dist
     ereturn scalar df_r = .
+}
+
+if "`ivw'" == "ivw" & "`fe'" == "fe" {
+        ereturn scalar phi = 1
 }
 
 ** start of displaying output
