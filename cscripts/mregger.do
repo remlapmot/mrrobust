@@ -184,6 +184,11 @@ eret list
 mregger
 
 *** check the i^2 and q stats for this example
+cap noi which tsci
+if _rc != 0 {
+	net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+}
+
 gen double ivests = chdbeta/ldlcbeta if sel1==1
 gen double se = .
 local n = _N
