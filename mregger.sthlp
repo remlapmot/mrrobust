@@ -156,6 +156,7 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.{p_end}
 option){p_end}
 {synopt:{cmd:e(k)}}number of instruments{p_end}
 {synopt:{cmd:e(I2GX)}}I^2_GX (with {cmd:gxse()} option){p_end}
+{synopt:{cmd:e(QGX)}}Q_GX (with {cmd:gxse()} option){p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}
@@ -174,8 +175,8 @@ results.
 
 {pstd}
 If {opt unwi2gx} is specified {cmd:mregger} additionally returns{p_end}
-{synopt:{cmd:I2GXunw}}Unweighted I^2_GX statistic{p_end}
-{synopt:{cmd:QGXunw}}Unweighted Q_GX statistic{p_end}
+{synopt:{cmd:e(I2GXunw)}}Unweighted I^2_GX statistic{p_end}
+{synopt:{cmd:e(QGXunw)}}Unweighted Q_GX statistic{p_end}
 
 {pstd}
 {cmd:mregger} stores the following in {cmd:r()}:
