@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggerplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggerplot.l
+> og
   log type:  text
- opened on:  22 Jan 2020, 10:14:58
+ opened on:  26 Feb 2020, 12:25:27
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -12,11 +12,11 @@
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-H:\ado\plus\m\mreggerplot.ado
+c:\ado\plus\m\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-H:\ado\plus\m\mregger.ado
+c:\ado\plus\m\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -323,8 +323,8 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggerplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggerplot.l
+> og
   log type:  text
- closed on:  22 Jan 2020, 10:16:54
+ closed on:  26 Feb 2020, 12:27:19
 -------------------------------------------------------------------------------

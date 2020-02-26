@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mr
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mr.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  22 Jan 2020, 10:13:16
+ opened on:  26 Feb 2020, 12:23:38
 
 . * mr cscript
 . * 20jan2020
@@ -26,63 +25,63 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mr, usesysdir
-H:\ado\plus\m\mr.ado
+c:\ado\plus\m\mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-H:\ado\plus\m\mrdeps.ado
+c:\ado\plus\m\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-H:\ado\plus\m\mregger.ado
+c:\ado\plus\m\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-H:\ado\plus\m\mreggerplot.ado
+c:\ado\plus\m\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-H:\ado\plus\m\mreggersimex.ado
+c:\ado\plus\m\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-H:\ado\plus\m\mreggersimexonce.ado
+c:\ado\plus\m\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-H:\ado\plus\m\mrforest.ado
+c:\ado\plus\m\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-H:\ado\plus\m\mrfunnel.ado
+c:\ado\plus\m\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-H:\ado\plus\m\mrivests.ado
+c:\ado\plus\m\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-H:\ado\plus\m\mrmedian.ado
+c:\ado\plus\m\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-H:\ado\plus\m\mrmedianobs.ado
+c:\ado\plus\m\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-H:\ado\plus\m\mrmedianobs_work.ado
+c:\ado\plus\m\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-H:\ado\plus\m\mrmodal.ado
+c:\ado\plus\m\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-H:\ado\plus\m\mrmodalplot.ado
+c:\ado\plus\m\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-H:\ado\plus\m\mrratio.ado
+c:\ado\plus\m\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -227,8 +226,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mr.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  22 Jan 2020, 10:14:18
+ closed on:  26 Feb 2020, 12:24:44
 -------------------------------------------------------------------------------

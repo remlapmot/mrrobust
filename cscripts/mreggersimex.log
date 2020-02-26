@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggersimex.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggersimex.
+> log
   log type:  text
- opened on:  22 Jan 2020, 10:16:54
+ opened on:  26 Feb 2020, 12:27:19
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -12,11 +12,11 @@
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-H:\ado\plus\m\mreggersimex.ado
+c:\ado\plus\m\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-H:\ado\plus\m\mreggersimexonce.ado
+c:\ado\plus\m\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
@@ -172,8 +172,8 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggersimex.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggersimex.
+> log
   log type:  text
- closed on:  22 Jan 2020, 10:23:16
+ closed on:  26 Feb 2020, 12:33:31
 -------------------------------------------------------------------------------

@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
       name:  master
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\master.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- opened on:  22 Jan 2020, 10:13:16
+ opened on:  26 Feb 2020, 12:23:38
 
 . 
 . cscript master
@@ -13,7 +12,7 @@
 . ado describe mrrobust
 
 -------------------------------------------------------------------------------
-[93] package mrrobust from https://raw.github.com/remlapmot/mrrobust/master
+[13] package mrrobust from https://raw.github.com/remlapmot/mrrobust/master
 -------------------------------------------------------------------------------
 
 TITLE
@@ -21,7 +20,7 @@ TITLE
 
 DESCRIPTION/AUTHOR(S)
       Author: Tom Palmer
-      Distribution-Date: 20200122
+      Distribution-Date: 20200226
 
 INSTALLATION FILES
       m\mrmedian.ado
@@ -55,7 +54,7 @@ INSTALLATION FILES
       m\mr.sthlp
 
 INSTALLED ON
-      22 Jan 2020
+      26 Feb 2020
 -------------------------------------------------------------------------------
 
 . 
@@ -82,10 +81,9 @@ INSTALLED ON
   5. }
 -------------------------------------------------------------------------------
       name:  mr
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mr.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  22 Jan 2020, 10:13:16
+ opened on:  26 Feb 2020, 12:23:38
 
 . * mr cscript
 . * 20jan2020
@@ -108,63 +106,63 @@ INSTALLED ON
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mr, usesysdir
-H:\ado\plus\m\mr.ado
+c:\ado\plus\m\mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-H:\ado\plus\m\mrdeps.ado
+c:\ado\plus\m\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-H:\ado\plus\m\mregger.ado
+c:\ado\plus\m\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-H:\ado\plus\m\mreggerplot.ado
+c:\ado\plus\m\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-H:\ado\plus\m\mreggersimex.ado
+c:\ado\plus\m\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-H:\ado\plus\m\mreggersimexonce.ado
+c:\ado\plus\m\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-H:\ado\plus\m\mrforest.ado
+c:\ado\plus\m\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-H:\ado\plus\m\mrfunnel.ado
+c:\ado\plus\m\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-H:\ado\plus\m\mrivests.ado
+c:\ado\plus\m\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-H:\ado\plus\m\mrmedian.ado
+c:\ado\plus\m\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-H:\ado\plus\m\mrmedianobs.ado
+c:\ado\plus\m\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-H:\ado\plus\m\mrmedianobs_work.ado
+c:\ado\plus\m\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-H:\ado\plus\m\mrmodal.ado
+c:\ado\plus\m\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-H:\ado\plus\m\mrmodalplot.ado
+c:\ado\plus\m\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-H:\ado\plus\m\mrratio.ado
+c:\ado\plus\m\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -309,17 +307,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mr.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  22 Jan 2020, 10:14:18
+ closed on:  26 Feb 2020, 12:24:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrdeps.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:  22 Jan 2020, 10:14:18
+ opened on:  26 Feb 2020, 12:24:44
 
 . * mrdeps cscript
 . * 20jan2020
@@ -328,7 +324,7 @@ end of do-file
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-H:\ado\plus\m\mrdeps.ado
+c:\ado\plus\m\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
@@ -349,17 +345,15 @@ all files already exist and are up to date.
 . 
 end of do-file
       name:  mrdeps
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrdeps.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:  22 Jan 2020, 10:14:52
+ closed on:  26 Feb 2020, 12:25:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mregger.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  22 Jan 2020, 10:14:52
+ opened on:  26 Feb 2020, 12:25:22
 
 . * mregger cscript
 . * 04jun2016
@@ -368,7 +362,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-H:\ado\plus\m\mregger.ado
+c:\ado\plus\m\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -424,7 +418,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . mat list r(table)
 
@@ -442,9 +436,112 @@ pvalue     2.419e-09     .10956752
  eform             0             0
 
 . 
-. // mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterog
-> i // TODO bugfix
-. // mat list r(table)
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
+Heterogeneity/pleiotropy statistics:
+------------------------------------------------------
+Statistic |       Estimate        [95% Conf. Interval]
+----------+-------------------------------------------
+        H |          1.5               1.4    1.8     
+      I^2 |          58                 46    68      
+------------------------------------------------------
+Q-test = 170.11187 d.f. = 71 p-value = 0.0000
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+sign(ldlcb~a)|
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+                                               Residual standard error:  1.548
+
+. mat list r(table)
+
+r(table)[9,2]
+         sign(ldlc~a:  sign(ldlc~a:
+               slope         _cons
+     b     .61731315    -.00877065
+    se     .10345735     .00548118
+     z     5.9668371      -1.60014
+pvalue     2.419e-09     .10956752
+    ll     .41454047    -.01951356
+    ul     .82008582     .00197226
+    df             .             .
+  crit      1.959964      1.959964
+ eform             0             0
+
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
+Heterogeneity/pleiotropy statistics:
+------------------------------------------------------
+Statistic |       Estimate        [95% Conf. Interval]
+----------+-------------------------------------------
+        H |          1.5               1.4    1.8     
+      I^2 |          58                 46    68      
+------------------------------------------------------
+Q-test = 170.11187 d.f. = 71 p-value = 0.0000
+                                            Q_GX statistic (weighted): 3454.26
+                                          I^2_GX statistic (weighted):  97.92%
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+sign(ldlcb~a)|
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+                                               Residual standard error:  1.548
+
+. mat list r(table)
+
+r(table)[9,2]
+         sign(ldlc~a:  sign(ldlc~a:
+               slope         _cons
+     b     .61731315    -.00877065
+    se     .10345735     .00548118
+     z     5.9668371      -1.60014
+pvalue     2.419e-09     .10956752
+    ll     .41454047    -.01951356
+    ul     .82008582     .00197226
+    df             .             .
+  crit      1.959964      1.959964
+ eform             0             0
+
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)
+                                            Q_GX statistic (weighted): 3454.26
+                                          I^2_GX statistic (weighted):  97.92%
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+sign(ldlcb~a)|
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+                                               Residual standard error:  1.548
+
+. mat list r(table)
+
+r(table)[9,2]
+         sign(ldlc~a:  sign(ldlc~a:
+               slope         _cons
+     b     .61731315    -.00877065
+    se     .10345735     .00548118
+     z     5.9668371      -1.60014
+pvalue     2.419e-09     .10956752
+    ll     .41454047    -.01951356
+    ul     .82008582     .00197226
+    df             .             .
+  crit      1.959964      1.959964
+ eform             0             0
+
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 
@@ -456,7 +553,7 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ------------------------------------------------------------------------------
-Residual standard error:  1.547
+                                               Residual standard error:  1.547
 
 . mat list r(table)
 
@@ -527,7 +624,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . assert abs(_b[slope] - .617) < 1e-3
 
@@ -537,6 +634,7 @@ Residual standard error:  1.548
 
 scalars:
                e(df_r) =  .
+                e(phi) =  1.547885800541125
                   e(k) =  73
 
 macros:
@@ -562,6 +660,7 @@ chdbeta      |
 
 scalars:
                e(df_r) =  .
+                e(phi) =  1.547885800541125
                   e(k) =  73
 
 macros:
@@ -585,7 +684,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . assert abs(_b[slope] - .617) < 1e-3
 
@@ -616,7 +715,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000      .447141    .7874853
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0177864    .0002451
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . 
 . *** fe standard errors (default is multiplicative)
@@ -631,7 +730,7 @@ chdbeta      |
        slope |   .6173131   .0668378     9.24   0.000     .4863134    .7483129
        _cons |  -.0087706   .0035411    -2.48   0.013     -.015711   -.0018303
 ------------------------------------------------------------------------------
-Residual standard error: 1
+                                                    Residual standard error: 1
 
 . 
 . version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
@@ -645,7 +744,7 @@ chdbeta      |
        slope |   .6173131   .0668378     9.24   0.000     .4863134    .7483129
        _cons |  -.0087706   .0035411    -2.48   0.013     -.015711   -.0018303
 ------------------------------------------------------------------------------
-Residual standard error: 1
+                                                    Residual standard error: 1
 
 . 
 . *** re
@@ -757,7 +856,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000      .447141    .7874853
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0177864    .0002451
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -791,7 +890,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4448912    .7897351
        _cons |  -.0087706   .0054812    -1.60   0.114    -.0179056    .0003643
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . mregger, level(95)
 ------------------------------------------------------------------------------
@@ -896,6 +995,14 @@ chdbeta      |
 . 
 . *** heterogi option - changed from noheterogi
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
+Heterogeneity/pleiotropy statistics:
+------------------------------------------------------
+Statistic |       Estimate        [95% Conf. Interval]
+----------+-------------------------------------------
+        H |          1.5               1.4    1.8     
+      I^2 |          58                 46    68      
+------------------------------------------------------
+Q-test = 170.11187 d.f. = 71 p-value = 0.0000
 
                                                       Number of genotypes = 73
 ------------------------------------------------------------------------------
@@ -906,15 +1013,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.5               1.4    1.8     
-      I^2 |          58                 46    68      
-------------------------------------------------------
-Q-test = 170.11187 d.f. = 71 p-value = 0.0000
+                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -928,6 +1027,14 @@ chdbeta      |
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, het
+Heterogeneity/pleiotropy statistics:
+------------------------------------------------------
+Statistic |       Estimate        [95% Conf. Interval]
+----------+-------------------------------------------
+        H |          1.5               1.4    1.8     
+      I^2 |          58                 46    68      
+------------------------------------------------------
+Q-test = 170.11187 d.f. = 71 p-value = 0.0000
 
                                                       Number of genotypes = 73
 ------------------------------------------------------------------------------
@@ -938,15 +1045,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.5               1.4    1.8     
-      I^2 |          58                 46    68      
-------------------------------------------------------
-Q-test = 170.11187 d.f. = 71 p-value = 0.0000
+                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -960,14 +1059,6 @@ chdbeta      |
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw heterogi
-
-                                                      Number of genotypes = 73
-------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-chdbeta      |
-    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
-------------------------------------------------------------------------------
 Heterogeneity/pleiotropy statistics:
 ------------------------------------------------------
 Statistic |       Estimate        [95% Conf. Interval]
@@ -976,6 +1067,14 @@ Statistic |       Estimate        [95% Conf. Interval]
       I^2 |          59                 47    68      
 ------------------------------------------------------
 Q-test = 176.24718 d.f. = 72 p-value = 0.0000
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
 
 . mregger
 ------------------------------------------------------------------------------
@@ -987,14 +1086,6 @@ chdbeta      |
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw het
-
-                                                      Number of genotypes = 73
-------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-chdbeta      |
-    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
-------------------------------------------------------------------------------
 Heterogeneity/pleiotropy statistics:
 ------------------------------------------------------
 Statistic |       Estimate        [95% Conf. Interval]
@@ -1003,6 +1094,14 @@ Statistic |       Estimate        [95% Conf. Interval]
       I^2 |          59                 47    68      
 ------------------------------------------------------
 Q-test = 176.24718 d.f. = 72 p-value = 0.0000
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
 
 . mregger
 ------------------------------------------------------------------------------
@@ -1025,7 +1124,7 @@ chdbeta      |
        slope |   .5274159   .0681008     7.74   0.000     .3939408    .6608911
        _cons |  -.0050223   .0036849    -1.36   0.173    -.0122446    .0022001
 ------------------------------------------------------------------------------
-Residual standard error:  0.988
+                                               Residual standard error:  0.988
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw heterogi penweighte
@@ -1051,7 +1150,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -1590,7 +1689,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, norescale
 
@@ -1603,7 +1702,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
+                                               Residual standard error:  1.548
 
 . 
 . gen double chdbeta2 = chdbeta/100
@@ -1642,7 +1741,7 @@ chdbeta2     |
        slope |   .0061731   .0668378     0.09   0.926    -.1248266    .1371729
        _cons |  -.0000877   .0035411    -0.02   0.980    -.0070281    .0068527
 ------------------------------------------------------------------------------
-Residual standard error:  0.015
+                                               Residual standard error:  0.015
 
 . mregger chdbeta2 ldlcbeta [aw=1/chdse^2] if sel1==1, norescale
 Residual variance = .0002396; recommend refitting without norescale option
@@ -1656,7 +1755,7 @@ chdbeta2     |
        slope |   .0061731   .0010346     5.97   0.000     .0041454    .0082009
        _cons |  -.0000877   .0000548    -1.60   0.110    -.0001951    .0000197
 ------------------------------------------------------------------------------
-Residual standard error:  0.015
+                                               Residual standard error:  0.015
 
 . 
 . ** penweighted
@@ -1682,7 +1781,7 @@ chdbeta      |
        slope |   .5274159   .0681008     7.74   0.000     .3939408    .6608911
        _cons |  -.0050223   .0036849    -1.36   0.173    -.0122446    .0022001
 ------------------------------------------------------------------------------
-Residual standard error:  0.988
+                                               Residual standard error:  0.988
 
 . 
 . ** penweighted norescale
@@ -1721,7 +1820,7 @@ chdbeta2     |
        slope |   .0061731   .0668378     0.09   0.926    -.1248266    .1371729
        _cons |  -.0000877   .0035411    -0.02   0.980    -.0070281    .0068527
 ------------------------------------------------------------------------------
-Residual standard error:  0.015
+                                               Residual standard error:  0.015
 
 . mregger chdbeta2 ldlcbeta [aw=1/chdse^2] if sel1==1, penweighted norescale
 Residual variance = .0002396; recommend refitting without norescale option
@@ -1735,11 +1834,13 @@ chdbeta2     |
        slope |   .0061731   .0010346     5.97   0.000     .0041454    .0082009
        _cons |  -.0000877   .0000548    -1.60   0.110    -.0001951    .0000197
 ------------------------------------------------------------------------------
-Residual standard error:  0.015
+                                               Residual standard error:  0.015
 
 . 
 . ** gxse
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse)
+                                            Q_GX statistic (weighted): 3454.26
+                                          I^2_GX statistic (weighted):  97.92%
 
                                                       Number of genotypes = 73
 ------------------------------------------------------------------------------
@@ -1750,9 +1851,7 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-Residual standard error:  1.548
-Q_GX statistic (weighted): 3454.26
-I^2_GX statistic (weighted):  97.92%
+                                               Residual standard error:  1.548
 
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ivw
 
@@ -1819,6 +1918,7 @@ radialGD     |
 
 scalars:
                e(df_r) =  .
+                e(phi) =  1
                   e(k) =  73
 
 macros:
@@ -1850,7 +1950,7 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ------------------------------------------------------------------------------
-Residual standard error:  1.547
+                                               Residual standard error:  1.547
 
 . assert abs(_b[radialGP] - .642) < 1e-3
 
@@ -1872,7 +1972,7 @@ radialGD     |
     radialGP |    .642582   .0748328     8.59   0.000     .4959124    .7892515
        _cons |  -.5737301   .2291547    -2.50   0.012    -1.022865   -.1245952
 ------------------------------------------------------------------------------
-Residual standard error: 1
+                                                    Residual standard error: 1
 
 . assert abs(_b[radialGP] - .642) < 1e-3
 
@@ -1910,7 +2010,7 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4117091    .8734549
        _cons |  -.5737301   .3545658    -1.62   0.110    -1.280714    .1332541
 ------------------------------------------------------------------------------
-Residual standard error:  1.547
+                                               Residual standard error:  1.547
 
 . assert abs(_b[radialGP] - .642) < 1e-3
 
@@ -1923,16 +2023,6 @@ Residual standard error:  1.547
 . 
 . // radial and heterogi
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial heterogi
-
-                                                      Number of genotypes = 73
-------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-radialGD     |
-    radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
-       _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
-------------------------------------------------------------------------------
-Residual standard error:  1.547
 Heterogeneity/pleiotropy statistics:
 ------------------------------------------------------
 Statistic |       Estimate        [95% Conf. Interval]
@@ -1942,11 +2032,23 @@ Statistic |       Estimate        [95% Conf. Interval]
 ------------------------------------------------------
 Q-test = 169.97877 d.f. = 71 p-value = 0.0000
 
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+radialGD     |
+    radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
+       _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
+------------------------------------------------------------------------------
+                                               Residual standard error:  1.547
+
 . assert abs(e(Q) - 169.97) < 1e-2
 
 . 
 . // radial and i2gx
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial gxse(ldlcse)
+                                            Q_GX statistic (weighted): 3454.26
+                                          I^2_GX statistic (weighted):  97.92%
 
                                                       Number of genotypes = 73
 ------------------------------------------------------------------------------
@@ -1956,25 +2058,22 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ------------------------------------------------------------------------------
-Residual standard error:  1.547
-Q_GX statistic (weighted): 3454.26
-I^2_GX statistic (weighted):  97.92%
+                                               Residual standard error:  1.547
 
 . //assert abs(e(Q) - 169.97) < 1e-2
 . 
 end of do-file
       name:  mregger
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mregger.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  22 Jan 2020, 10:14:58
+ closed on:  26 Feb 2020, 12:25:27
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggerplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggerplot.l
+> og
   log type:  text
- opened on:  22 Jan 2020, 10:14:58
+ opened on:  26 Feb 2020, 12:25:27
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -1983,11 +2082,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-H:\ado\plus\m\mreggerplot.ado
+c:\ado\plus\m\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-H:\ado\plus\m\mregger.ado
+c:\ado\plus\m\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -2294,17 +2393,17 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggerplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggerplot.l
+> og
   log type:  text
- closed on:  22 Jan 2020, 10:16:54
+ closed on:  26 Feb 2020, 12:27:19
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggersimex.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggersimex.
+> log
   log type:  text
- opened on:  22 Jan 2020, 10:16:54
+ opened on:  26 Feb 2020, 12:27:19
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2313,11 +2412,11 @@ end of do-file
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-H:\ado\plus\m\mreggersimex.ado
+c:\ado\plus\m\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-H:\ado\plus\m\mreggersimexonce.ado
+c:\ado\plus\m\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
@@ -2473,17 +2572,16 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mreggersimex.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mreggersimex.
+> log
   log type:  text
- closed on:  22 Jan 2020, 10:23:16
+ closed on:  26 Feb 2020, 12:33:31
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrforest.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  22 Jan 2020, 10:23:16
+ opened on:  26 Feb 2020, 12:33:31
 
 . * mrforest cscript
 . * 16jun2017
@@ -2492,7 +2590,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-H:\ado\plus\m\mrforest.ado
+c:\ado\plus\m\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
@@ -2627,17 +2725,15 @@ models(#) should be between 0 and 4
 . 
 end of do-file
       name:  mrforest
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrforest.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  22 Jan 2020, 10:24:06
+ closed on:  26 Feb 2020, 12:34:17
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrfunnel.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:  22 Jan 2020, 10:24:06
+ opened on:  26 Feb 2020, 12:34:17
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -2646,7 +2742,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrfunnel
 
 -> which mrfunnel, usesysdir
-H:\ado\plus\m\mrfunnel.ado
+c:\ado\plus\m\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 . 
@@ -2689,17 +2785,15 @@ H:\ado\plus\m\mrfunnel.ado
 . 
 end of do-file
       name:  mrfunnel
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrfunnel.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:  22 Jan 2020, 10:24:20
+ closed on:  26 Feb 2020, 12:34:30
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrivests.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:  22 Jan 2020, 10:24:20
+ opened on:  26 Feb 2020, 12:34:30
 
 . * mrivests testcode
 . * 10jun2017
@@ -2708,7 +2802,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-H:\ado\plus\m\mrivests.ado
+c:\ado\plus\m\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
@@ -2922,17 +3016,15 @@ variable ivse not found
 . 
 end of do-file
       name:  mrivests
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrivests.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:  22 Jan 2020, 10:24:23
+ closed on:  26 Feb 2020, 12:34:32
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmedian.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- opened on:  22 Jan 2020, 10:24:23
+ opened on:  26 Feb 2020, 12:34:32
 
 . * mrmedian test code
 . * 3jun2016
@@ -2941,7 +3033,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrmedian
 
 -> which mrmedian, usesysdir
-H:\ado\plus\m\mrmedian.ado
+c:\ado\plus\m\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 . 
@@ -3124,7 +3216,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0732992     5.85   0.000     .2849077    .5722352
+        beta |   .4285714   .0712103     6.02   0.000     .2890018    .5681411
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3139,7 +3231,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0732992     5.85   0.000     .2849077    .5722352
+        beta |   .4285714   .0712103     6.02   0.000     .2890018    .5681411
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3222,7 +3314,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716946     5.98   0.000     .2880525    .5690903
+        beta |   .4285714    .072639     5.90   0.000     .2862015    .5709413
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3237,7 +3329,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716946     5.98   0.000     .2880525    .5690903
+        beta |   .4285714    .072639     5.90   0.000     .2862015    .5709413
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3259,7 +3351,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716946     5.98   0.000     .2880525    .5690903
+        beta |   .4285714    .072639     5.90   0.000     .2862015    .5709413
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3273,7 +3365,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716946     5.98   0.000     .3106443    .5464986
+        beta |   .4285714    .072639     5.90   0.000     .3090908     .548052
 ------------------------------------------------------------------------------
 
 . 
@@ -3284,7 +3376,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716946     5.98   0.000     .3106443    .5464986
+        beta |   .4285714    .072639     5.90   0.000     .3090908     .548052
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3298,23 +3390,22 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716946     5.98   0.000     .3366911    .5204518
+        beta |   .4285714    .072639     5.90   0.000     .3354807    .5216621
 ------------------------------------------------------------------------------
 
 . 
 end of do-file
       name:  mrmedian
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmedian.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- closed on:  22 Jan 2020, 10:24:27
+ closed on:  26 Feb 2020, 12:34:34
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmedianobs.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmedianobs.l
+> og
   log type:  text
- opened on:  22 Jan 2020, 10:24:27
+ opened on:  26 Feb 2020, 12:34:34
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -3323,11 +3414,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-H:\ado\plus\m\mrmedianobs.ado
+c:\ado\plus\m\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-H:\ado\plus\m\mrmedianobs_work.ado
+c:\ado\plus\m\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -3679,17 +3770,16 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmedianobs.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmedianobs.l
+> og
   log type:  text
- closed on:  22 Jan 2020, 10:24:53
+ closed on:  26 Feb 2020, 12:34:58
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodal.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  22 Jan 2020, 10:24:53
+ opened on:  26 Feb 2020, 12:34:58
 
 . * mrmodal cscript
 . * 2jun2017
@@ -3698,7 +3788,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-H:\ado\plus\m\mrivests.ado
+c:\ado\plus\m\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
@@ -4470,17 +4560,16 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodal.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  22 Jan 2020, 10:25:15
+ closed on:  26 Feb 2020, 12:35:17
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodalplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodalplot.l
+> og
   log type:  text
- opened on:  22 Jan 2020, 10:25:15
+ opened on:  26 Feb 2020, 12:35:17
 
 . * mrmodalplot example
 . * 2aug2017
@@ -4489,7 +4578,7 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmodalplot
 
 -> which mrmodalplot, usesysdir
-H:\ado\plus\m\mrmodalplot.ado
+c:\ado\plus\m\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 . 
@@ -5348,17 +5437,16 @@ H:\ado\plus\m\mrmodalplot.ado
 . 
 end of do-file
       name:  mrmodalplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodalplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodalplot.l
+> og
   log type:  text
- closed on:  22 Jan 2020, 10:26:21
+ closed on:  26 Feb 2020, 12:36:17
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrratio.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:  22 Jan 2020, 10:26:21
+ opened on:  26 Feb 2020, 12:36:17
 
 . * mrratio cscript
 . * 6jun2017
@@ -5367,7 +5455,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrratio
 
 -> which mrratio, usesysdir
-H:\ado\plus\m\mrratio.ado
+c:\ado\plus\m\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -5701,17 +5789,15 @@ With 3 inputs please specify the nome option.
 . 
 end of do-file
       name:  mrratio
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrratio.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:  22 Jan 2020, 10:26:23
+ closed on:  26 Feb 2020, 12:36:18
 -------------------------------------------------------------------------------
 
 . 
 . log close _all
       name:  master
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\master.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- closed on:  22 Jan 2020, 10:26:23
+ closed on:  26 Feb 2020, 12:36:18
 -------------------------------------------------------------------------------
