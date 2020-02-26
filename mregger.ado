@@ -416,6 +416,21 @@ if "`ivw'" == "ivw" & "`fe'" == "fe" {
 }
 
 ** start of displaying output
+** heterogi
+if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
+        di as txt "Heterogeneity/pleiotropy statistics:" _c
+        heterogi `qstat' `df', level(`level')
+        ereturn scalar I2 = r(I2)
+        ereturn scalar ub_I2_M1 = r(ub_I2_M1)
+        ereturn scalar lb_I2_M1 = r(lb_I2_M1)
+        ereturn scalar ub_H_M1 = r(ub_H_M1)
+        ereturn scalar lb_H_M1 = r(lb_H_M1)
+        ereturn scalar H = r(H)
+        ereturn scalar pval = r(pval)
+        ereturn scalar df = r(df)
+        ereturn scalar Q = r(Q)
+}
+
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
@@ -431,20 +446,6 @@ if "`ivw'" == "" & "`re'" == "" {
                 di as txt "Residual standard error:", 1
                 ereturn scalar phi = 1
         }
-}
-
-if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
-        di as txt "Heterogeneity/pleiotropy statistics:" _c
-        heterogi `qstat' `df', level(`level')
-        ereturn scalar I2 = r(I2)
-        ereturn scalar ub_I2_M1 = r(ub_I2_M1)
-        ereturn scalar lb_I2_M1 = r(lb_I2_M1)
-        ereturn scalar ub_H_M1 = r(ub_H_M1)
-        ereturn scalar lb_H_M1 = r(lb_H_M1)
-        ereturn scalar H = r(H)
-        ereturn scalar pval = r(pval)
-        ereturn scalar df = r(df)
-        ereturn scalar Q = r(Q)
 }
 
 if "`gxse'" != "" & "`ivw'" == "" {
