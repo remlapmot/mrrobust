@@ -176,6 +176,7 @@ if "`ivw'" == "ivw" {
 					qui glm `wrady' `wradx' `if'`in', scale(1) nocons
 					scalar `dfr' = e(df)
 				}
+                                eret list phi = 1
         }
         else if "`re'" == "re" {
                 tempvar genoDisease slope
