@@ -157,6 +157,7 @@ option){p_end}
 {synopt:{cmd:e(k)}}number of instruments{p_end}
 {synopt:{cmd:e(I2GX)}}I^2_GX (with {cmd:gxse()} option){p_end}
 {synopt:{cmd:e(QGX)}}Q_GX (with {cmd:gxse()} option){p_end}
+{synopt:{cmd:e(rmse)}}Root mean squared error{p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}
