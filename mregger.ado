@@ -499,11 +499,11 @@ di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `
 Display , `re' level(`level') `radial'
 if "`ivw'" == "" & "`re'" == "" {
         if "`fe'" == "" {
-                di as txt "Residual standard error:", %6.3f sqrt(`phi')
+                di _col(48) as txt "Residual standard error:", %6.3f sqrt(`phi')
                 ereturn scalar phi = sqrt(`phi')
         }
         else {
-                di as txt "Residual standard error:", 1
+                di _col(53) as txt "Residual standard error:", 1
                 ereturn scalar phi = 1
         }
 }
