@@ -1,4 +1,4 @@
-*! version 0.1.0 20jan2020 Tom Palmer
+*! version 0.1.0 22jun2020 Tom Palmer
 program mrmvivw, eclass
 version 9
 local version : di "version " string(_caller()) ", missing :"
