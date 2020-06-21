@@ -1,7 +1,7 @@
 * mrmodal cscript
 * 2jun2017
 
-cscript mrivests adofiles mrivests
+cscript mrmodal adofiles mrmodal
 
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
