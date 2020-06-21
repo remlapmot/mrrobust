@@ -13,6 +13,7 @@
 {vieweralsosee "mrforest" "mrforest"}{...}
 {vieweralsosee "mrfunnel" "mrfunnel"}{...}
 {vieweralsosee "mr" "help mr"}{...}
+{vieweralsosee "mrmvivw" "help mrmvivw"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
@@ -53,6 +54,7 @@
 
 {synopt :{opt {help mr}:}}Primary command syntax, e.g. call programs as {cmd:mr egger ...} as well as {cmd:mregger ...}.
 
+{synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator.
 
 {marker description}{...}
 {title:Description}
