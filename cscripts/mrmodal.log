@@ -1,18 +1,18 @@
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  26 Feb 2020, 12:34:58
+ opened on:  22 Jun 2020, 00:57:02
 
 . * mrmodal cscript
 . * 2jun2017
 . 
-. cscript mrivests adofiles mrivests
------------------------------------------------------------------BEGIN mrivests
+. cscript mrmodal adofiles mrmodal
+------------------------------------------------------------------BEGIN mrmodal
 
--> which mrivests, usesysdir
-c:\ado\plus\m\mrivests.ado
-*! 0.1.0 Tom Palmer 10jun2017
+-> which mrmodal, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mrmodal.ado
+*! version 0.1.0 02jun2017 Tom Palmer
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -783,7 +783,7 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  26 Feb 2020, 12:35:17
+ closed on:  22 Jun 2020, 00:57:21
 -------------------------------------------------------------------------------

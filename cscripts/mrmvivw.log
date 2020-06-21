@@ -1,0 +1,496 @@
+-------------------------------------------------------------------------------
+      name:  mrmvivw
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+  log type:  text
+ opened on:  22 Jun 2020, 00:45:15
+
+. * mregger cscript
+. * 04jun2016
+. 
+. cscript mrmvivw adofiles mrmvivw mvivw mvmr
+------------------------------------------------------------------BEGIN mrmvivw
+
+-> which mrmvivw, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
+*! version 0.1.0 22jun2020 Tom Palmer
+
+-> which mvivw, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mvivw.ado
+*! version 0.1.0 22jun2020 Tom Palmer
+
+-> which mvmr, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mvmr.ado
+*! version 0.1.0 22jun2020 Tom Palmer
+
+. 
+. * load in dataset
+. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+. 
+. * ldlc - analysis 1
+. gen byte sel1 = (ldlcp2 < 1e-8)
+
+. 
+. * check univariate estimate
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+Iteration 0:   log likelihood = -224196.43
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         72
+                                                  Scale parameter =          1
+Deviance         =  176.2471889                   (1/df) Deviance =   2.447878
+Pearson          =  176.2471889                   (1/df) Pearson  =   2.447878
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =   6142.395
+Log likelihood   = -224196.4255                   BIC             =  -132.6659
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+(Standard errors scaled using dispersion equal to square root of 1.)
+
+. assert abs(_b[ldlcbeta] - .482) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .038) < 1e-3
+
+. 
+. discard
+
+. mvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+Iteration 0:   log likelihood = -224196.43
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         72
+                                                  Scale parameter =          1
+Deviance         =  176.2471889                   (1/df) Deviance =   2.447878
+Pearson          =  176.2471889                   (1/df) Pearson  =   2.447878
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =   6142.395
+Log likelihood   = -224196.4255                   BIC             =  -132.6659
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+(Standard errors scaled using dispersion equal to square root of 1.)
+
+. assert abs(_b[ldlcbeta] - .482) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .038) < 1e-3
+
+. 
+. discard
+
+. mvmr chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+Iteration 0:   log likelihood = -224196.43
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         72
+                                                  Scale parameter =          1
+Deviance         =  176.2471889                   (1/df) Deviance =   2.447878
+Pearson          =  176.2471889                   (1/df) Pearson  =   2.447878
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =   6142.395
+Log likelihood   = -224196.4255                   BIC             =  -132.6659
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+(Standard errors scaled using dispersion equal to square root of 1.)
+
+. assert abs(_b[ldlcbeta] - .482) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .038) < 1e-3
+
+. 
+. * fit a multivariate estimate
+. 
+. ** without FE SEs
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+Iteration 0:   log likelihood = -316256.36
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =   2.219666
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =    8664.64
+Log likelihood   = -316256.3614                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. assert abs(_b[ldlcbeta] - .429) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .061) < 1e-3
+
+. assert abs(_b[hdlcbeta] - -.194) < 1e-3
+
+. assert abs(_se[hdlcbeta] - .131) < 1e-3
+
+. assert abs(_b[tgbeta] - .226) < 1e-3
+
+. assert abs(_se[tgbeta] - .123) < 1e-3
+
+. 
+. discard
+
+. mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+Iteration 0:   log likelihood = -316256.36
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =   2.219666
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =    8664.64
+Log likelihood   = -316256.3614                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. assert abs(_b[ldlcbeta] - .429) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .061) < 1e-3
+
+. assert abs(_b[hdlcbeta] - -.194) < 1e-3
+
+. assert abs(_se[hdlcbeta] - .131) < 1e-3
+
+. assert abs(_b[tgbeta] - .226) < 1e-3
+
+. assert abs(_se[tgbeta] - .123) < 1e-3
+
+. 
+. discard
+
+. mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+Iteration 0:   log likelihood = -316256.36
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =   2.219666
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =    8664.64
+Log likelihood   = -316256.3614                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. assert abs(_b[ldlcbeta] - .429) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .061) < 1e-3
+
+. assert abs(_b[hdlcbeta] - -.194) < 1e-3
+
+. assert abs(_se[hdlcbeta] - .131) < 1e-3
+
+. assert abs(_b[tgbeta] - .226) < 1e-3
+
+. assert abs(_se[tgbeta] - .123) < 1e-3
+
+. 
+. ** with FE SEs
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+Iteration 0:   log likelihood = -224185.99
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =          1
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =   6142.164
+Log likelihood   = -224185.9902                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
+    hdlcbeta |  -.1941989   .0878132    -2.21   0.027    -.3663097   -.0220881
+      tgbeta |   .2260456   .0827482     2.73   0.006     .0638621    .3882291
+------------------------------------------------------------------------------
+(Standard errors scaled using dispersion equal to square root of 1.)
+
+. assert abs(_b[ldlcbeta] - .429) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .041) < 1e-3
+
+. assert abs(_b[hdlcbeta] - -.194) < 1e-3
+
+. assert abs(_se[hdlcbeta] - .088) < 1e-3
+
+. assert abs(_b[tgbeta] - .226) < 1e-3
+
+. assert abs(_se[tgbeta] - .083) < 1e-3
+
+. 
+. discard
+
+. mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+Iteration 0:   log likelihood = -224185.99
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =          1
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =   6142.164
+Log likelihood   = -224185.9902                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
+    hdlcbeta |  -.1941989   .0878132    -2.21   0.027    -.3663097   -.0220881
+      tgbeta |   .2260456   .0827482     2.73   0.006     .0638621    .3882291
+------------------------------------------------------------------------------
+(Standard errors scaled using dispersion equal to square root of 1.)
+
+. assert abs(_b[ldlcbeta] - .429) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .041) < 1e-3
+
+. assert abs(_b[hdlcbeta] - -.194) < 1e-3
+
+. assert abs(_se[hdlcbeta] - .088) < 1e-3
+
+. assert abs(_b[tgbeta] - .226) < 1e-3
+
+. assert abs(_se[tgbeta] - .083) < 1e-3
+
+. 
+. discard
+
+. mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+Iteration 0:   log likelihood = -224185.99
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =          1
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =   6142.164
+Log likelihood   = -224185.9902                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
+    hdlcbeta |  -.1941989   .0878132    -2.21   0.027    -.3663097   -.0220881
+      tgbeta |   .2260456   .0827482     2.73   0.006     .0638621    .3882291
+------------------------------------------------------------------------------
+(Standard errors scaled using dispersion equal to square root of 1.)
+
+. assert abs(_b[ldlcbeta] - .429) < 1e-3
+
+. assert abs(_se[ldlcbeta] - .041) < 1e-3
+
+. assert abs(_b[hdlcbeta] - -.194) < 1e-3
+
+. assert abs(_se[hdlcbeta] - .088) < 1e-3
+
+. assert abs(_b[tgbeta] - .226) < 1e-3
+
+. assert abs(_se[tgbeta] - .083) < 1e-3
+
+. 
+. ** 90% CI
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(9
+> 0)
+
+Iteration 0:   log likelihood = -316256.36
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =   2.219666
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =    8664.64
+Log likelihood   = -316256.3614                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
+      tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
+------------------------------------------------------------------------------
+
+. mat table = r(table)
+
+. assert abs(_b[ldlcbeta] - invnorm(.95)*_se[ldlcbeta] - .328) < 1e-3
+
+. assert abs(_b[ldlcbeta] + invnorm(.95)*_se[ldlcbeta] - .529) < 1e-3
+
+. 
+. discard
+
+. mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
+
+Iteration 0:   log likelihood = -316256.36
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =   2.219666
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =    8664.64
+Log likelihood   = -316256.3614                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
+      tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
+------------------------------------------------------------------------------
+
+. mat table = r(table)
+
+. assert abs(_b[ldlcbeta] - invnorm(.95)*_se[ldlcbeta] - .328) < 1e-3
+
+. assert abs(_b[ldlcbeta] + invnorm(.95)*_se[ldlcbeta] - .529) < 1e-3
+
+. 
+. discard
+
+. mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
+
+Iteration 0:   log likelihood = -316256.36
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =   2.219666
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =    8664.64
+Log likelihood   = -316256.3614                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
+      tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
+------------------------------------------------------------------------------
+
+. mat table = r(table)
+
+. assert abs(_b[ldlcbeta] - invnorm(.95)*_se[ldlcbeta] - .328) < 1e-3
+
+. assert abs(_b[ldlcbeta] + invnorm(.95)*_se[ldlcbeta] - .529) < 1e-3
+
+. 
+end of do-file
+      name:  mrmvivw
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+  log type:  text
+ closed on:  22 Jun 2020, 00:45:38
+-------------------------------------------------------------------------------

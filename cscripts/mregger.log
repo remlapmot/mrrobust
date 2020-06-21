@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  26 Feb 2020, 12:25:22
+ opened on:  22 Jun 2020, 00:47:23
 
 . * mregger cscript
 . * 04jun2016
@@ -11,7 +11,7 @@
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-c:\ado\plus\m\mregger.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -847,6 +847,15 @@ chdbeta      |
 
 . 
 . *** check the i^2 and q stats for this example
+. cap noi which tsci
+c:\ado\plus\t\tsci.ado
+*! 1.0.0 Tom Palmer 8jan2010
+
+. if _rc != 0 {
+.         net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+. }
+
+. 
 . gen double ivests = chdbeta/ldlcbeta if sel1==1
 (112 missing values generated)
 
@@ -1713,7 +1722,7 @@ radialGD     |
 . 
 end of do-file
       name:  mregger
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  26 Feb 2020, 12:25:27
+ closed on:  22 Jun 2020, 00:47:28
 -------------------------------------------------------------------------------

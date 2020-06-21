@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  26 Feb 2020, 12:33:31
+ opened on:  22 Jun 2020, 00:55:44
 
 . * mrforest cscript
 . * 16jun2017
@@ -11,7 +11,7 @@
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-c:\ado\plus\m\mrforest.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
@@ -146,7 +146,7 @@ models(#) should be between 0 and 4
 . 
 end of do-file
       name:  mrforest
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  26 Feb 2020, 12:34:17
+ closed on:  22 Jun 2020, 00:56:23
 -------------------------------------------------------------------------------

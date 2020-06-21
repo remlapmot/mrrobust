@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:  26 Feb 2020, 12:24:44
+ opened on:  22 Jun 2020, 00:46:41
 
 . * mrdeps cscript
 . * 20jan2020
@@ -11,7 +11,7 @@
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-c:\ado\plus\m\mrdeps.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
@@ -32,7 +32,7 @@ all files already exist and are up to date.
 . 
 end of do-file
       name:  mrdeps
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:  26 Feb 2020, 12:25:22
+ closed on:  22 Jun 2020, 00:47:23
 -------------------------------------------------------------------------------

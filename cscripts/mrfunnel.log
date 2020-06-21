@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrfunnel
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:  26 Feb 2020, 12:34:17
+ opened on:  22 Jun 2020, 00:56:23
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -11,7 +11,7 @@
 -----------------------------------------------------------------BEGIN mrfunnel
 
 -> which mrfunnel, usesysdir
-c:\ado\plus\m\mrfunnel.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 . 
@@ -54,7 +54,7 @@ c:\ado\plus\m\mrfunnel.ado
 . 
 end of do-file
       name:  mrfunnel
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:  26 Feb 2020, 12:34:30
+ closed on:  22 Jun 2020, 00:56:35
 -------------------------------------------------------------------------------

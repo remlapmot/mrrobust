@@ -1,13 +1,15 @@
 -------------------------------------------------------------------------------
       name:  mr
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  26 Feb 2020, 12:23:38
+ opened on:  22 Jun 2020, 00:45:38
 
 . * mr cscript
 . * 20jan2020
 . 
-. cscript mr adofiles mr ///
+. cscript mr adofiles ///
+> mrmvivw ///
+> mr ///
 > mrdeps ///
 > mregger ///
 > mreggerplot ///
@@ -24,64 +26,68 @@
 > mrratio
 -----------------------------------------------------------------------BEGIN mr
 
+-> which mrmvivw, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
+*! version 0.1.0 22jun2020 Tom Palmer
+
 -> which mr, usesysdir
-c:\ado\plus\m\mr.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-c:\ado\plus\m\mrdeps.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-c:\ado\plus\m\mregger.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-c:\ado\plus\m\mreggerplot.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-c:\ado\plus\m\mreggersimex.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-c:\ado\plus\m\mreggersimexonce.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-c:\ado\plus\m\mrforest.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-c:\ado\plus\m\mrfunnel.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-c:\ado\plus\m\mrivests.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-c:\ado\plus\m\mrmedian.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-c:\ado\plus\m\mrmedianobs.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-c:\ado\plus\m\mrmedianobs_work.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-c:\ado\plus\m\mrmodal.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-c:\ado\plus\m\mrmodalplot.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-c:\ado\plus\m\mrratio.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -104,6 +110,8 @@ all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
 all files already exist and are up to date.
 
+. 
+. ** Do et al. dataset
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
@@ -209,6 +217,36 @@ chdbeta      |
 ------------------------------------------------------------------------------
 
 . 
+. ** mv estimators
+. 
+. mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+Iteration 0:   log likelihood = -316256.36
+
+Generalized linear models                         No. of obs      =         73
+Optimization     : ML                             Residual df     =         70
+                                                  Scale parameter =   2.219666
+Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
+Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
+
+Variance function: V(u) = 1                       [Gaussian]
+Link function    : g(u) = u                       [Identity]
+
+                                                  AIC             =    8664.64
+Log likelihood   = -316256.3614                   BIC             =  -144.9556
+
+------------------------------------------------------------------------------
+             |                 OIM
+     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. 
+. ** mrmedianobs test dataset
+. 
 . use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, cl
 > ear
 
@@ -226,7 +264,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  26 Feb 2020, 12:24:44
+ closed on:  22 Jun 2020, 00:46:41
 -------------------------------------------------------------------------------
