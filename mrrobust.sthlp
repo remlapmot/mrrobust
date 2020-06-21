@@ -13,6 +13,7 @@
 {vieweralsosee "mrivests" "mrivests"}{...}
 {vieweralsosee "mrforest" "mrforest"}{...}
 {vieweralsosee "mrfunnel" "mrfunnel"}{...}
+{vieweralsosee "mrmvivw" "help mrmvivw"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
@@ -52,6 +53,8 @@
 {synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
 
 {synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates.
+
+{synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator.
 
 {marker description}{...}
 {title:Description}

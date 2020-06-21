@@ -9,6 +9,7 @@ cscript master
 ado describe mrrobust
 
 local cscripts ///
+mrmvivw ///
 mr ///
 mrdeps ///
 mregger ///

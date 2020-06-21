@@ -1,7 +1,9 @@
 * mr cscript
 * 20jan2020
 
-cscript mr adofiles mr ///
+cscript mr adofiles ///
+mrmvivw ///
+mr ///
 mrdeps ///
 mregger ///
 mreggerplot ///
@@ -21,6 +23,8 @@ rcof "noi mr incorrectsubcommandname" ///
         == 198
 
 mr deps
+
+** Do et al. dataset
 
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 gen byte sel1 = (ldlcp2 < 1e-8)
@@ -44,6 +48,12 @@ mr modal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 mr modalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 
 mr ratio 1 .5 1 .25, eform
+
+** mv estimators
+
+mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+** mrmedianobs test dataset
 
 use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, clear
 mr medianobs y (x = z1-z20), weighted
