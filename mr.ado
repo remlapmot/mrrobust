@@ -42,6 +42,9 @@ else if "`subcmd'" == "modalplot" {
 else if "`subcmd'" == "ratio" {
     mrratio `rest'
 }
+else if "`subcmd'" == "mvivw" {
+	mrmvivw `rest'
+}
 else {
     di as err "`subcmd' is not a valid subcommand."
     exit 198
