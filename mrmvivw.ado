@@ -11,9 +11,10 @@ if replay() {
         exit
 }
 
-syntax varlist(min=3) [aweight] [if] [in] [, nofe ///
-        Level(cilevel) ///
-        gxse(varlist numeric) tdist RADial *]
+syntax varlist(min=2) [aweight] [if] [in] [, ///
+	fe ///
+    Level(cilevel) ///
+	*]
 
 local callersversion = _caller()
 
@@ -21,8 +22,8 @@ local callersversion = _caller()
 qui count `if' `in'
 local k = r(N)
 
-tokenize `"`varlist'"'
 /*
+tokenize `"`varlist'"'
 varlist should be specified as:
 1: gd beta
 2: gp beta1
@@ -31,10 +32,25 @@ varlist should be specified as:
 aw: =1/gdSE^2
 */
 local npheno = wordcount("`varlist'") - 1
-di `npheno'
+
+tempvar invvar // gyse
+qui gen double `invvar' `exp' `if' `in'
+// qui gen double `gyse' = 1/sqrt(`invvar') `if' `in'
+
+* Fixed effect SEs
+local scale ""
+if "`fe'" == "fe" {
+	local scale "scale(1)"
+}
 
 * mvivw
-sem (`gdtr' <- `gpvars', nocons) `if'`in'
+glm `varlist' [iw=`invvar'] `if' `in', nocons ///
+	`scale' level(`level') `options'
+
+/*
+regress `varlist' [aw=`invvar'] `if' `in', nocons ///
+	level(`level') `options'
+*/
 
 end
 exit
