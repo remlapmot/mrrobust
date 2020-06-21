@@ -9,7 +9,7 @@ log using master.log, text replace name(master)
 
 cscript master
 
-ado describe mrrobust
+cap noi ado describe mrrobust
 
 local cscripts ///
 mrmvivw ///
