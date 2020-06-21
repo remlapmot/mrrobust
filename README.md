@@ -71,6 +71,18 @@ Such data can be obtained from repositories such as MR-Base <http://www.mrbase.o
 
 The package contains the following commands:
 
+ - `mrdeps` installs dependencies for the package
+ - `mrratio` implements the standard instrumental variable ratio (Wald) estimate with a choice of standard errors/confidence intervals
+ - `mrivests` automates calling `mrratio` on all the selected genotypes in your dataset
+ - `mregger` implements the IVW and MR-Egger regression approaches introduced in Bowden et al. 2015
+ - `mreggersimex` implements the simulation extrapolation algorithm for the MR-Egger model
+ - `mreggerplot` implements a scatter plot with fitted line (either from IVW, MR-Egger, or weighted median estimators) and confidence interval
+ - `mrmedian` and `mrmedianobs` implement the unweighted, weighted, and penalized weighted median IV estimators robust to 50% invalid instruments in Bowden et al. 2016
+ - `mrmodal` implements the zero modal estimator of Hartwig et al. 2017
+ - `mrmodalplot` plot of density used in modal estimator
+ - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger)
+ - `mrfunnel` funnel plot of genotype specific IV estimates
+ - `mr` acts as a primary command, e.g. so the other commands can be run as `mr egger ...` as well as `mregger ...`
  - `mrmvivw` implements multivariable IVW
 
 ## Installing and updating mrrobust
