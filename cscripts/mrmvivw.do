@@ -1,7 +1,7 @@
 * mregger cscript
 * 04jun2016
 
-cscript mrmvivw
+cscript mrmvivw adofiles mrmvivw mvivw mvmr
 
 * load in dataset
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
