@@ -2,6 +2,8 @@
 title: "Helpfile examples"
 ---
 
+# Examples from helpfiles in the mrrobust package
+
 ## Install dependencies and mrrobust package
 ```
 net install github, from("https://haghish.github.io/github/")

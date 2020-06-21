@@ -65,10 +65,11 @@ mat list median
 Combined into single matrix
 ```{stata}
 mat output = (ivw, mregger, radial, mode, median)
-mat colnames output = ivw_beta mregger_beta mregger_cons radial_beta radial_cons mode_beta median_beta
+mat colnames output = ivw_beta mregger_beta mregger_cons ///
+	radial_beta radial_cons mode_beta median_beta
 mat coleq output = "" "" "" "" "" "" ""
 mat output = output'
-mat li output
+mat list output, format(%4.3f)
 ```
 
 Export matrix to dataset
@@ -86,7 +87,7 @@ forvalues i = 1/7 {
 
 Show dataset
 ```{stata}
-list, clean
+list estimate b se z pvalue ll ul, clean noobs
 ```
 
 Save dataset

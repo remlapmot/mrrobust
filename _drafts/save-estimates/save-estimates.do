@@ -28,10 +28,11 @@ mat list mode
 mat list median
 //_9
 mat output = (ivw, mregger, radial, mode, median)
-mat colnames output = ivw_beta mregger_beta mregger_cons radial_beta radial_cons mode_beta median_beta
+mat colnames output = ivw_beta mregger_beta mregger_cons ///
+radial_beta radial_cons mode_beta median_beta
 mat coleq output = "" "" "" "" "" "" ""
 mat output = output'
-mat li output
+mat list output, format(%4.3f)
 //_10
 drop _all
 svmat output, names(col)
@@ -43,7 +44,7 @@ forvalues i = 1/7 {
 replace estimate = "``i''" in `i'
 }
 //_11
-list, clean
+list estimate b se z pvalue ll ul, clean noobs
 //_12
 save myestimates, replace
 //_13

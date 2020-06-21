@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}23 Jan 2020, 14:16:34
+ {txt}opened on:  {res}24 Jan 2020, 15:42:19
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -64,7 +64,7 @@ Residual standard error:  1.547
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2} .0651573{col 37}{space 1}    7.35{col 46}{space 3}0.000{col 54}{space 4} .3512642{col 67}{space 3} .6066762
+{space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2} .0666965{col 37}{space 1}    7.18{col 46}{space 3}0.000{col 54}{space 4} .3482474{col 67}{space 3}  .609693
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. mat mode = r(table)
@@ -77,7 +77,7 @@ Residual standard error:  1.547
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4582573{col 26}{space 2} .0632152{col 37}{space 1}    7.25{col 46}{space 3}0.000{col 54}{space 4} .3343579{col 67}{space 3} .5821568
+{space 8}beta {c |}{col 14}{res}{space 2} .4582573{col 26}{space 2} .0608744{col 37}{space 1}    7.53{col 46}{space 3}0.000{col 54}{space 4} .3389457{col 67}{space 3}  .577569
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. mat median = r(table)
@@ -141,11 +141,11 @@ Residual standard error:  1.547
 {txt}mode[9,1]
              beta
      b {res}  .4789702
-{txt}    se {res}  .0651573
-{txt}     z {res} 7.3509825
-{txt}pvalue {res} 1.968e-13
-{txt}    ll {res} .35126423
-{txt}    ul {res} .60667618
+{txt}    se {res} .06669651
+{txt}     z {res} 7.1813381
+{txt}pvalue {res} 6.903e-13
+{txt}    ll {res} .34824744
+{txt}    ul {res} .60969297
 {txt}    df {res}         .
 {txt}  crit {res}  1.959964
 {txt} eform {res}         0
@@ -155,11 +155,11 @@ Residual standard error:  1.547
 {txt}median[9,1]
              beta
      b {res} .45825733
-{txt}    se {res} .06321518
-{txt}     z {res} 7.2491664
-{txt}pvalue {res} 4.193e-13
-{txt}    ll {res} .33435786
-{txt}    ul {res} .58215679
+{txt}    se {res} .06087441
+{txt}     z {res} 7.5279143
+{txt}pvalue {res} 5.156e-14
+{txt}    ll {res} .33894568
+{txt}    ul {res} .57756897
 {txt}    df {res}         .
 {txt}  crit {res}  1.959964
 {txt} eform {res}         0
@@ -167,32 +167,24 @@ Residual standard error:  1.547
 {com}. //_9
 . mat output = (ivw, mregger, radial, mode, median)
 {txt}
-{com}. mat colnames output = ivw_beta mregger_beta mregger_cons radial_beta radial_cons mode_beta median_beta
+{com}. mat colnames output = ivw_beta mregger_beta mregger_cons ///
+> radial_beta radial_cons mode_beta median_beta
 {txt}
 {com}. mat coleq output = "" "" "" "" "" "" ""
 {txt}
 {com}. mat output = output'
 {txt}
-{com}. mat li output
+{com}. mat list output, format(%4.3f)
 {res}
 {txt}output[7,9]
-                       b          se           z      pvalue          ll          ul          df        crit
-    ivw_beta {res}  .48150551   .03822098   12.597937   2.167e-36   .40659377   .55641726           .    1.959964
-{txt}mregger_beta {res}  .61731315   .10345735   5.9668371   2.419e-09   .41454047   .82008582           .    1.959964
-{txt}mregger_cons {res} -.00877065   .00548118    -1.60014   .10956752  -.01951356   .00197226           .    1.959964
-{txt} radial_beta {res}  .64258196   .11578709   5.5496858   2.862e-08   .41564344   .86952048           .    1.959964
-{txt} radial_cons {res} -.57373006   .35456584    -1.61812   .10563675  -1.2686663   .12120621           .    1.959964
-{txt}   mode_beta {res}   .4789702    .0651573   7.3509825   1.968e-13   .35126423   .60667618           .    1.959964
-{txt} median_beta {res}  .45825733   .06321518   7.2491664   4.193e-13   .33435786   .58215679           .    1.959964
-
-{txt}                   eform
-    ivw_beta {res}          0
-{txt}mregger_beta {res}          0
-{txt}mregger_cons {res}          0
-{txt} radial_beta {res}          0
-{txt} radial_cons {res}          0
-{txt}   mode_beta {res}          0
-{txt} median_beta {res}          0
+                   b      se       z  pvalue      ll      ul      df    crit   eform
+    ivw_beta {res}  0.482   0.038  12.598   0.000   0.407   0.556       .   1.960   0.000
+{txt}mregger_beta {res}  0.617   0.103   5.967   0.000   0.415   0.820       .   1.960   0.000
+{txt}mregger_cons {res} -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960   0.000
+{txt} radial_beta {res}  0.643   0.116   5.550   0.000   0.416   0.870       .   1.960   0.000
+{txt} radial_cons {res} -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960   0.000
+{txt}   mode_beta {res}  0.479   0.067   7.181   0.000   0.348   0.610       .   1.960   0.000
+{txt} median_beta {res}  0.458   0.061   7.528   0.000   0.339   0.578       .   1.960   0.000
 {reset}
 {com}. //_10
 . drop _all
@@ -227,16 +219,16 @@ now 7
 (1 real change made)
 
 {com}. //_11
-. list, clean
+. list estimate b se z pvalue ll ul, clean noobs
 {txt}
-       {res}        b         se          z     pvalue          ll         ul   df       crit   eform       estimate {txt} 
-  1.   {res} .4815055    .038221   12.59794   2.17e-36    .4065938   .5564172    .   1.959964       0       ivw_beta {txt} 
-  2.   {res} .6173131   .1034573   5.966837   2.42e-09    .4145405   .8200858    .   1.959964       0   mregger_beta {txt} 
-  3.   {res}-.0087707   .0054812   -1.60014   .1095675   -.0195136   .0019723    .   1.959964       0   mregger_cons {txt} 
-  4.   {res} .6425819   .1157871   5.549686   2.86e-08    .4156434   .8695205    .   1.959964       0    radial_beta {txt} 
-  5.   {res}-.5737301   .3545658   -1.61812   .1056367   -1.268666   .1212062    .   1.959964       0    radial_cons {txt} 
-  6.   {res} .4789702   .0651573   7.350983   1.97e-13    .3512642   .6066762    .   1.959964       0      mode_beta {txt} 
-  7.   {res} .4582573   .0632152   7.249166   4.19e-13    .3343579   .5821568    .   1.959964       0    median_beta {txt} 
+    {res}    estimate           b         se          z     pvalue          ll         ul {txt} 
+    {res}    ivw_beta    .4815055    .038221   12.59794   2.17e-36    .4065938   .5564172 {txt} 
+    {res}mregger_beta    .6173131   .1034573   5.966837   2.42e-09    .4145405   .8200858 {txt} 
+    {res}mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .0019723 {txt} 
+    {res} radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .8695205 {txt} 
+    {res} radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .1212062 {txt} 
+    {res}   mode_beta    .4789702   .0666965   7.181338   6.90e-13    .3482474    .609693 {txt} 
+    {res} median_beta    .4582573   .0608744   7.527914   5.16e-14    .3389457   .5775689 {txt} 
 
 {com}. //_12
 . save myestimates, replace
@@ -251,7 +243,7 @@ now 7
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}23 Jan 2020, 14:16:36
+ {txt}closed on:  {res}24 Jan 2020, 15:42:20
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

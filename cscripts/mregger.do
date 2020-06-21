@@ -20,8 +20,14 @@ mat list r(table)
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 mat list r(table)
 
-// mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi // TODO bugfix
-// mat list r(table)
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
+mat list r(table)
+
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
+mat list r(table)
+
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)
+mat list r(table)
 
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 mat list r(table)
@@ -178,6 +184,11 @@ eret list
 mregger
 
 *** check the i^2 and q stats for this example
+cap noi which tsci
+if _rc != 0 {
+	net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+}
+
 gen double ivests = chdbeta/ldlcbeta if sel1==1
 gen double se = .
 local n = _N

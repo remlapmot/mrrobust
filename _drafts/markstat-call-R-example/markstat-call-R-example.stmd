@@ -2,6 +2,8 @@
 title: markstat example
 ---
 
+# Run MR-Base from a Stata do-file/Markdown script
+
 ## Introduction
 
 This example shows how to run R and Stata code within the same Stata Markdown (`.stmd`) script. The general approach is detailed on the Stata Markdown website [here](https://data.princeton.edu/stata/markdown/quantiles) and [here](https://data.princeton.edu/stata/markdown/gettingStarted#R).
@@ -18,7 +20,7 @@ Before you start please install the following two Stata packages from the SSC ar
 
 We first need to register the R executable with Stata.
 ```s
-whereis R "C:\\Program Files\\R\\R-3.6.0\\bin\\R.exe"
+whereis R "C:\\Program Files\\R\\R-3.6.2\\bin\\R.exe"
 ```
 
 Next we have an R code chunk in which we install the required packages in R (again I have commented these lines out because I already have them installed).

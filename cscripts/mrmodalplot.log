@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
       name:  mrmodalplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodalplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodalplot.l
+> og
   log type:  text
- opened on:  22 Jan 2020, 10:25:15
+ opened on:  26 Feb 2020, 12:35:17
 
 . * mrmodalplot example
 . * 2aug2017
@@ -12,7 +12,7 @@
 --------------------------------------------------------------BEGIN mrmodalplot
 
 -> which mrmodalplot, usesysdir
-H:\ado\plus\m\mrmodalplot.ado
+c:\ado\plus\m\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 . 
@@ -871,8 +871,8 @@ H:\ado\plus\m\mrmodalplot.ado
 . 
 end of do-file
       name:  mrmodalplot
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodalplot.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodalplot.l
+> og
   log type:  text
- closed on:  22 Jan 2020, 10:26:21
+ closed on:  26 Feb 2020, 12:36:17
 -------------------------------------------------------------------------------

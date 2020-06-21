@@ -28,6 +28,7 @@
 {synopt :{opt noboot}}Do not perform bootstrapping for SEs{p_end}
 {synopt :{opt nodraw}}Do not draw SIMEX plot{p_end}
 {synopt :{opt reps(#)}}No. bootstrap replications{p_end}
+{synopt :{opt seed:(#)}}Seed for random number generator, specify for reproducible results{p_end}
 {synopt :{opt simreps(#)}}No. simulation replications{p_end}
 
 {marker description}{...}
@@ -102,7 +103,6 @@ for fitting linear models with additive measurement error. Stata Journal.
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
- {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+{phang}Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
 
 {phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}

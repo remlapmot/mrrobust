@@ -98,7 +98,7 @@ see {helpb set_seed}.
 {opt weighted} weight the instrumental variable estimates.
 
 {marker examples}{...}
-{title:Example 1}
+{title:Examples}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013.{p_end}
 
@@ -113,6 +113,9 @@ see {helpb set_seed}.
 
 {pstd}Simple mode estimator{p_end}
 {phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
+
+{pstd}Simple mode estimator with reproducible standard error{p_end}
+{phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)"}{p_end}
 
 {pstd}Weighted mode estimator{p_end}
 {phang2}{cmd:.} {stata "mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted"}{p_end}
@@ -158,7 +161,6 @@ DOI: {browse "http://dx.doi.org/10.1101/126102"}
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
- {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+{phang}Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
 
 {phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}

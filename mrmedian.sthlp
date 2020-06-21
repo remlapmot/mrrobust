@@ -84,7 +84,7 @@ see {helpb set_seed}.
 
 
 {marker examples}{...}
-{title:Example 1}
+{title:Examples}
 
 {pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
 al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
@@ -97,6 +97,9 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_en
 
 {pstd}Unweighted median estimator{p_end}
 {phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
+
+{pstd}Unweighted median estimator with reproducible standard error{p_end}
+{phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)"}{p_end}
 
 {pstd}Weighted median estimator{p_end}
 {phang2}{cmd:.} {stata "mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted"}{p_end}
@@ -145,7 +148,6 @@ Do et al., 2013. Common variants associated with plasma triglycerides and risk
 {marker author}
 {title:Author}
 
-{phang}Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. 
- {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}.{p_end}
+{phang}Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
 
 {phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}

@@ -12,33 +12,41 @@
 
 ## Latest updates
 
+To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
+
+* February 2020:
+  - Updated contact details
+  - Minor edits to helpfiles, to show examples setting `seed()` option where helpful
+  - Fixed `mregger` bug where `r(table)` was not returned with the `gxse` or `heterogi` options. The output for these options now appears before the coefficient table.
+  - Minor amendments to formatting of `mregger` `gxse` output
+  - `mregger` now ereturns `e(phi)`, the scale parameter, in some cases
 * January 2020:
-  - `mregger` now additionally returns `r(table)`.
-  - Certification scripts: added `master.do` and renamed and edited a few scripts.
+  - `mregger` now additionally returns `r(table)`
+  - Certification scripts: added `master.do` and renamed and edited a few scripts
   - Added `mr` command. Commands may now be run as either `mr egger ...` or as previously `mregger ...`.
-  - *Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
-  - `mrmedian`, `mrmedianobs`, `mreggersimex`, `mrmodal`, and `mrratio` now additionally return the `r(table)` matrix (the information from the coefficient table).
-  - Added an example showing how you can save and export your estimates using `r(table)`, [see here](https://remlapmot.github.io/mrrobust/docs/save-estimates).
+  - [*Best of IJE 2019*!](https://academic.oup.com/ije/pages/the_best_of_ije)
+  - `mrmedian`, `mrmedianobs`, `mreggersimex`, `mrmodal`, and `mrratio` now additionally return the `r(table)` matrix (the information from the coefficient table)
+  - Added an example showing how you can save and export your estimates using `r(table)`, [see here](https://remlapmot.github.io/mrrobust/docs/save-estimates)
 * December 2019:
-  - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`.
+  - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches the output from the `mr_egger()` function in the `MendelianRandomization` R package. Use the `unwi2gx` option to report the unweighted statistics.
 * July 2019:
-  - Checked that examples on website still run.
+  - Checked that examples on website still run
 * December 2018: 
   - Improved compatibility with the [`github` package](https://haghish.github.io/github/), i.e. mrrobust and its dependencies can be installed simply by issuing: `gitget mrrobust` , assuming that you have the `github` package installed. [See below for instructions](#2-use-the-github-package).
-  - `mrdeps` command added for conveniently installing dependencies.
+  - `mrdeps` command added for conveniently installing dependencies
 * November 2018:
-  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example).
-  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example).
+  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example)
+  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
 * September 2018: 
-  - IJE paper published online <https://doi.org/10.1093/ije/dyy195>.
+  - IJE paper published online [here](https://doi.org/10.1093/ije/dyy195)
 * August 2018:
-  - [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples).
+  - [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples)
 * May 2018: 
-  - [Click here for code and output from the examples in the helpfiles](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples).
-  - This page is now rendered on GitHub Pages <https://remlapmot.github.io/mrrobust/>.
+  - [Click here for code and output from the examples in the helpfiles](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples)
+  - This page is now rendered on GitHub Pages [here](https://remlapmot.github.io/mrrobust/)
 * April 2018: 
-  - `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`.
+  - `mregger` now has option `radial` which implements the radial formulation of the MR-Egger model, and of the IVW model when used with option `ivw`
 
 ## Short video introduction
 [Click here for a short video demonstrating the use of the package.](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
@@ -142,7 +150,7 @@ To uninstall a manual installation simply delete the files that you placed on yo
 As far as I know, and unlike R which has the `testthat` package, there is no recognised standard for writing unit tests for Stata commands. However, StataCorp refer to such do-files as cscripts (certification scripts). If you are interested I publish my cscripts (and their log files of output) in the [cscripts directory](https://github.com/remlapmot/mrrobust/tree/master/cscripts) in the GitHub repository. 
 
 ## Authors
-Tom Palmer <tom.palmer@lancaster.ac.uk>, Wesley Spiller, Neil Davies
+Tom Palmer <tom.palmer@bristol.ac.uk>, Wesley Spiller, Neil Davies
 
 ## How to cite the mrrobust package
 Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, 2019, 48, 3, 684-690. <https://doi.org/10.1093/ije/dyy195>
@@ -150,7 +158,7 @@ Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool
 Thank you to all our users who have cited mrrobust. We made *The Best of IJE 2019*! <https://academic.oup.com/ije/pages/the_best_of_ije>
 
 ## Collaboration
-If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email.
+If you would like to extend the code or add new commands I am open to receiving pull requests on GitHub or send me an email to tom.palmer@bristol.ac.uk.
 
 ## References
 

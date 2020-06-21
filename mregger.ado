@@ -411,27 +411,15 @@ else {
     ereturn scalar df_r = .
 }
 
-** start of displaying output
-local digits : length local k
-local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
-
-** display coefficient table
-Display , `re' level(`level') `radial'
-if "`ivw'" == "" & "`re'" == "" {
-        if "`fe'" == "" {
-                di as txt "Residual standard error:", %6.3f sqrt(`phi')
-        }
-        else {
-                di as txt "Residual standard error:", 1
-        }
+if "`ivw'" == "ivw" & "`fe'" == "fe" {
+        ereturn scalar phi = 1
 }
 
+** start of displaying output
+** heterogi
 if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
         di as txt "Heterogeneity/pleiotropy statistics:" _c
         heterogi `qstat' `df', level(`level')
-}
-if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
         ereturn scalar I2 = r(I2)
         ereturn scalar ub_I2_M1 = r(ub_I2_M1)
         ereturn scalar lb_I2_M1 = r(lb_I2_M1)
@@ -487,19 +475,37 @@ if "`gxse'" != "" & "`ivw'" == "" {
 		scalar `I2GXw' = (`QGXw' - (`nobs' - 1))/`QGXw'
         scalar `I2GXw' = max(0, `I2GXw')
         
-		di as txt "Q_GX statistic (weighted):", %6.2f `QGXw'
-        di as txt "I^2_GX statistic (weighted):", %6.2f 100*`I2GXw' "%"
+		di _col(45) as txt "Q_GX statistic (weighted):", %6.2f `QGXw'
+        di _col(43) as txt "I^2_GX statistic (weighted):", %6.2f 100*`I2GXw' "%"
         ereturn scalar I2GX = `I2GXw'
 		ereturn scalar QGX = `QGXw'
 		
 		if "`unwi2gx'" == "unwi2gx" {
-			di as txt "Q_GX statistic (unweighted):", %6.2f `QGX'
-			di as txt "I^2_GX statistic (unweighted):", %6.2f 100*`I2GX' "%"
+			di _col(43) as txt "Q_GX statistic (unweighted):", %6.2f `QGX'
+			di _col(41) as txt "I^2_GX statistic (unweighted):", %6.2f 100*`I2GX' "%"
 			ereturn scalar I2GXunw = `I2GX'
 			ereturn scalar QGXunw = `QGX'
 		}
 		
         // heterogi `QGXw' `nobs', level(`level')
+}
+
+** number of genotypes
+local digits : length local k
+local colstart = 79 - (22 + `digits') 
+di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+
+** display coefficient table
+Display , `re' level(`level') `radial'
+if "`ivw'" == "" & "`re'" == "" {
+        if "`fe'" == "" {
+                di _col(48) as txt "Residual standard error:", %6.3f sqrt(`phi')
+                ereturn scalar phi = sqrt(`phi')
+        }
+        else {
+                di _col(53) as txt "Residual standard error:", 1
+                ereturn scalar phi = 1
+        }
 }
 
 if "`re'" == "" {

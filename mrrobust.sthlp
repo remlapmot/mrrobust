@@ -1,5 +1,6 @@
 {smcl}
 {* *! version 0.1.0 Tom Palmer 05jun2017}{...}
+{vieweralsosee "mr" "help mr"}{...}
 {vieweralsosee "mrdeps" "mrdeps"}{...}
 {vieweralsosee "mregger" "mregger"}{...}
 {vieweralsosee "mreggersimex" "mreggersimex"}{...}
@@ -12,7 +13,6 @@
 {vieweralsosee "mrivests" "mrivests"}{...}
 {vieweralsosee "mrforest" "mrforest"}{...}
 {vieweralsosee "mrfunnel" "mrfunnel"}{...}
-{vieweralsosee "mr" "help mr"}{...}
 {vieweralsosee "mrmvivw" "help mrmvivw"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
@@ -28,6 +28,8 @@
 {title:Commands}{marker commands}
 
 {synoptset 14 tabbed}{...}
+{synopt :{opt {help mr}:}}Primary command syntax, i.e. use {cmd:mr egger ...} syntax in addition to original syntax.
+
 {synopt :{opt {help mrdeps}:}}Install dependencies for the package.
 
 {synopt :{opt {help mregger}:}}MR-Egger and inverse-variance weighted (IVW) estimators.
@@ -51,8 +53,6 @@
 {synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
 
 {synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates.
-
-{synopt :{opt {help mr}:}}Primary command syntax, e.g. call programs as {cmd:mr egger ...} as well as {cmd:mregger ...}.
 
 {synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator.
 
@@ -78,7 +78,7 @@ There is a website showing the examples from the helpfiles here: {browse "https:
 {title:Author}{marker author}
 
 {pstd}
-Tom Palmer, Department of Mathematics and Statistics, Lancaster University, UK. {browse "mailto:tom.palmer@lancaster.ac.uk":tom.palmer@lancaster.ac.uk}. 
+Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}. 
 
 {pstd}
 Development takes place on GitHub here {browse "https://github.com/remlapmot/mrrobust"}.

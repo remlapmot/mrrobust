@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodal.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  22 Jan 2020, 10:24:53
+ opened on:  26 Feb 2020, 12:34:58
 
 . * mrmodal cscript
 . * 2jun2017
@@ -12,7 +11,7 @@
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-H:\ado\plus\m\mrivests.ado
+c:\ado\plus\m\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
@@ -784,8 +783,7 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  C:\Users\palmertm\Documents\all\work\mregger\GitHub\mrrobust\cscri
-> pts\mrmodal.log
+       log:  C:\Users\palmertm\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  22 Jan 2020, 10:25:15
+ closed on:  26 Feb 2020, 12:35:17
 -------------------------------------------------------------------------------
