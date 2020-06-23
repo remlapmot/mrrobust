@@ -12,9 +12,15 @@ if replay() {
 }
 
 syntax varlist(min=2) [aweight] [if] [in] [, ///
+	orient(integer 1) ///
 	Level(cilevel) ///
     gxse(varlist numeric) ///
 	*]
+
+if `orient' < 1 {
+	di as error "The orient() option cannot be negative"
+	exit 198
+}
 
 local callersversion = _caller()
 
@@ -33,15 +39,41 @@ aw: =1/gdSE^2
 */
 local npheno = wordcount("`varlist'") - 1
 
-tempvar invvar // gyse
+if `orient' > `npheno' {
+	di as error "The orient() option must be in the range of the number of phenotypes"
+	exit 198
+}
+
+local orienttext : strlen local 2
+local colstart = 79 - 66 - `orienttext'
+di _n(1) _col(`colstart') as txt "Orienting MVMR-Egger genotype-disease estimates w.r.t. phenotype:", as res "`2'"
+
+tempvar invvar gyse
 qui gen double `invvar' `exp' `if' `in'
-// qui gen double `gyse' = 1/sqrt(`invvar') `if' `in'
+qui gen double `gyse' = 1/sqrt(`invvar') `if' `in'
+
+tempvar gdtr eggercons
+
+qui gen double `gdtr' = `1'*sign(``=`orient'+1'') / `gyse' `if'`in'
+qui gen double `eggercons' = sqrt(`invvar') `if'`in'
+
+local phenovarlist 
+forvalues i = 1/`npheno' {
+	tempvar pheno`i'
+	if `i' == `orient' {
+		qui gen double `pheno`i'' = abs(``=`i'+1'') / `gyse' `if'`in'
+	}
+	else {
+		qui gen double `pheno`i'' = `=`i'+1' / `gyse' `if'`in'
+	} 
+	local phenovarlist "`phenovarlist' `pheno`i''"
+}
 
 * mvegger
-tempvar eggercons
-qui gen double `eggercons' `exp' `if'`in'
-// sem (`gdtr' <- `gpvarstr' `eggercons', nocons) `if'`in'
-regress `varlist' [aw = `invvar'] `if'`in', ///
+ 
+regress `gdtr' `phenovarlist' `eggercons' `if'`in', ///
+	nocons ///
 	level(`level') `options'
+
 end
 exit
