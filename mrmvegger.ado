@@ -68,7 +68,7 @@ forvalues i = 1/`npheno' {
 }
 local names `names' `outcome':_cons
 
-* mvegger
+* fit model
  
 regress `gdtr' `phenovarlist' `eggercons' `if'`in', ///
 	nocons ///
