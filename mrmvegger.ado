@@ -11,7 +11,7 @@ if replay() {
         exit
 }
 
-syntax varlist(min=3) [aweight] [if] [in] [, ///
+syntax varlist(min=2) [aweight] [if] [in] [, ///
 	Level(cilevel) ///
     gxse(varlist numeric) ///
 	*]
