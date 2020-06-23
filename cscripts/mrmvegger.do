@@ -37,6 +37,8 @@ assert _se[ldlcbeta] - .103 < 1e-3
 assert _se[hdlcbeta] - .123 < 1e-3
 assert _se[_cons] - .005 < 1e-3
 
+mat list r(table)
+
 discard
 mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
 
