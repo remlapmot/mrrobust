@@ -11,7 +11,7 @@
 {title:Title}
 
 {p 5}
-{bf:mrmvivw} {hline 2} Multivariable MR-Egger regression (MVIVW)
+{bf:mrmvegger} {hline 2} Multivariable MR-Egger regression (MVMR-Egger)
 {p_end}
 
 {marker syntax}{...}
