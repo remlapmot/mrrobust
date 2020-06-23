@@ -59,11 +59,14 @@ qui gen double `gdtr' = `1'*sign(``=`orient'+1'') / `gyse' `if'`in'
 qui gen double `eggercons' = sqrt(`invvar') `if'`in'
 
 local phenovarlist 
+local names
 forvalues i = 1/`npheno' {
 	tempvar pheno`i'
 	qui gen double `pheno`i'' = ``=`i'+1'' * sign(``=`orient'+1'') / `gyse' `if'`in'
 	local phenovarlist "`phenovarlist' `pheno`i''"
+	local names `names' `outcome':``=`i'+1''
 }
+local names `names' `outcome':_cons
 
 * mvegger
  
