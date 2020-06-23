@@ -73,6 +73,13 @@ local names `names' `outcome':_cons
 qui regress `gdtr' `phenovarlist' `eggercons' `if'`in', ///
 	nocons ///
 	level(`level') `options'
+	
+mat b = e(b)
+mat V = e(V)
+mat colnames b = `names'
+mat rownames V = `names'
+mat colnames V = `names'
+ereturn post b V
 
 end
 exit
