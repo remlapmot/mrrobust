@@ -32,7 +32,6 @@ varlist should be specified as:
 aw: =1/gdSE^2
 */
 local npheno = wordcount("`varlist'") - 1
-di `npheno'
 
 tempvar invvar // gyse
 qui gen double `invvar' `exp' `if' `in'
