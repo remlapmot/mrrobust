@@ -52,5 +52,19 @@ regress `varlist' [aw=`invvar'] `if' `in', nocons ///
 	level(`level') `options'
 */
 
+mat b = e(b)
+mat V = e(V)
+ereturn post b V
+
+* display estimates
+di ""
+Display , level(`level')
+
 end
+
+program Display, rclass
+ereturn display, level(`level') noomitted
+return add // r(table)
+end
+
 exit
