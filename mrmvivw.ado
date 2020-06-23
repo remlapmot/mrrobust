@@ -44,7 +44,7 @@ if "`fe'" == "fe" {
 }
 
 * mvivw
-glm `varlist' [iw=`invvar'] `if' `in', nocons ///
+qui glm `varlist' [iw=`invvar'] `if' `in', nocons ///
 	`scale' level(`level') `options'
 
 /*
