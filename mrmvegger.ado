@@ -45,8 +45,8 @@ if `orient' > `npheno' {
 }
 
 local orienttext : strlen local 2
-local colstart = 79 - 66 - `orienttext'
-di _n(1) _col(`colstart') as txt "Orienting MVMR-Egger genotype-disease estimates w.r.t. phenotype:", as res "`2'"
+local colstart = 79 - 41 - `orienttext'
+di _n(1) _col(`colstart') as txt "MVMR-Egger model oriented wrt phenotype:", as res "`2'"
 
 tempvar invvar gyse
 qui gen double `invvar' `exp' `if' `in'
