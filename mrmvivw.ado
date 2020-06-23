@@ -44,7 +44,7 @@ if "`fe'" == "fe" {
 }
 
 * mvivw
-glm `varlist' [iw=`invvar'] `if' `in', nocons ///
+qui glm `varlist' [iw=`invvar'] `if' `in', nocons ///
 	`scale' level(`level') `options'
 
 /*
@@ -52,5 +52,20 @@ regress `varlist' [aw=`invvar'] `if' `in', nocons ///
 	level(`level') `options'
 */
 
+mat b = e(b)
+mat V = e(V)
+ereturn post b V
+
+* display estimates
+di ""
+Display , level(`level')
+
 end
+
+program Display, rclass
+syntax [, Level(cilevel)]
+ereturn display, level(`level') noomitted
+return add // r(table)
+end
+
 exit

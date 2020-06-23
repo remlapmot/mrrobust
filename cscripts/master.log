@@ -2,17 +2,18 @@
       name:  master
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- opened on:  22 Jun 2020, 00:45:15
+ opened on:  24 Jun 2020, 00:43:00
 
 . 
 . cscript master
 -------------------------------------------------------------------BEGIN master
 
 . 
-. ado describe mrrobust
+. cap noi ado describe mrrobust
 
 . 
 . local cscripts ///
+> mrmvegger ///
 > mrmvivw ///
 > mr ///
 > mrdeps ///
@@ -34,14 +35,268 @@
   3.     do `dofile'
   4.     log close `dofile'
   5. }
+(note: file C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log not f
+> ound)
+-------------------------------------------------------------------------------
+      name:  mrmvegger
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+  log type:  text
+ opened on:  24 Jun 2020, 00:43:01
+
+. * mrmvegger cscript
+. * 22un2020
+. 
+. cscript mrmvegger adofiles mrmvegger
+----------------------------------------------------------------BEGIN mrmvegger
+
+-> which mrmvegger, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+*! version 0.1.0 23jun2020 Tom Palmer
+
+. 
+. * load in dataset
+. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+. 
+. * ldlc - analysis 1
+. gen byte sel1 = (ldlcp2 < 1e-8)
+
+. 
+. * check univariate estimate
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+sign(ldlcb~a)|
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+                                               Residual standard error:  1.548
+
+. 
+. * check univariate
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. 
+. mat b = e(b)
+
+. mat V = e(V)
+
+. assert b[1,1] - .617 < 1e-3
+
+. assert b[1,2] - -.008 < 1e-3
+
+. assert sqrt(V[1,1]) - .103 < 1e-3
+
+. assert sqrt(V[2,2]) - .0054 < 1e-3
+
+. 
+. * check bivariate
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5723867   .1029385     5.56   0.000     .3706308    .7741425
+    hdlcbeta |  -.2665853   .1226013    -2.17   0.030    -.5068793   -.0262912
+       _cons |  -.0067173   .0054255    -1.24   0.216    -.0173511    .0039165
+------------------------------------------------------------------------------
+
+. 
+. assert _b[ldlcbeta] - .572 < 1e-3
+
+. assert _b[hdlcbeta] - -.267 < 1e-3
+
+. assert _b[_cons] - -.007 < 1e-3
+
+. assert _se[ldlcbeta] - .103 < 1e-3
+
+. assert _se[hdlcbeta] - .123 < 1e-3
+
+. assert _se[_cons] - .005 < 1e-3
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+
+                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4669652   .0585997     7.97   0.000     .3521119    .5818185
+    hdlcbeta |  -.3045624   .1451187    -2.10   0.036    -.5889898    -.020135
+       _cons |   .0005409   .0036762     0.15   0.883    -.0066642    .0077461
+------------------------------------------------------------------------------
+
+. 
+. assert _b[ldlcbeta] - .467 < 1e-3
+
+. assert _b[hdlcbeta] - -.305 < 1e-3
+
+. assert _b[_cons] - .001 < 1e-3
+
+. assert _se[ldlcbeta] - .059 < 1e-3
+
+. assert _se[hdlcbeta] - .145 < 1e-3
+
+. assert _se[_cons] - .004 < 1e-3
+
+. 
+. * check trivariate
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.306    -.3976209    .1247983
+      tgbeta |   .2739803   .1246927     2.20   0.028     .0295871    .5183735
+       _cons |  -.0093655   .0054187    -1.73   0.084     -.019986     .001255
+------------------------------------------------------------------------------
+
+. 
+. assert _b[ldlcbeta] - .567 < 1e-3
+
+. assert _b[hdlcbeta] - -.136 < 1e-3
+
+. assert _b[tgbeta] - .273 < 1e-3
+
+. assert _b[_cons] - -.009 < 1e-3
+
+. assert _se[ldlcbeta] - .100 < 1e-3
+
+. assert _se[hdlcbeta] - .133 < 1e-3
+
+. assert _se[tgbeta] - .124 < 1e-3
+
+. assert _se[_cons] - .005 < 1e-3
+
+. 
+. * check orient option
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
+> t(2)
+
+                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4286398   .0614056     6.98   0.000      .308287    .5489926
+    hdlcbeta |  -.1989637   .1541909    -1.29   0.197    -.5011723    .1032449
+      tgbeta |   .2256794   .1243221     1.82   0.069    -.0179875    .4693463
+       _cons |   .0002155   .0036218     0.06   0.953     -.006883    .0073141
+------------------------------------------------------------------------------
+
+. 
+. assert _b[ldlcbeta] - .428 < 1e-3
+
+. assert _b[hdlcbeta] - -.198 < 1e-3
+
+. assert _b[tgbeta] - .225 < 1e-3
+
+. assert _b[_cons] - -.0002 < 1e-3
+
+. assert _se[ldlcbeta] - .061 < 1e-3
+
+. assert _se[hdlcbeta] - .154 < 1e-3
+
+. assert _se[tgbeta] - .124 < 1e-3
+
+. assert _se[_cons] - .0036 < 1e-3
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
+> t(3)
+
+                             MVMR-Egger model oriented wrt phenotype: tgbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4203073   .0660026     6.37   0.000     .2909447      .54967
+    hdlcbeta |  -.1903089   .1321536    -1.44   0.150    -.4493252    .0687075
+      tgbeta |   .2065651   .1365427     1.51   0.130    -.0610537     .474184
+       _cons |   .0013499    .003951     0.34   0.733    -.0063939    .0090936
+------------------------------------------------------------------------------
+
+. 
+. assert _b[ldlcbeta] - .420 < 1e-3
+
+. assert _b[hdlcbeta] - -.190 < 1e-3
+
+. assert _b[tgbeta] - .206 < 1e-3
+
+. assert _b[_cons] - .0013 < 1e-3
+
+. assert _se[ldlcbeta] - .066 < 1e-3
+
+. assert _se[hdlcbeta] - .132 < 1e-3
+
+. assert _se[tgbeta] - .136 < 1e-3
+
+. assert _se[_cons] - .0039 < 1e-3
+
+. 
+. * check orient not greater than no. phenotypes
+. rcof "noi mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)" 
+> == 198
+The orient() option must be in the range of the number of phenotypes
+
+. 
+. * check orient not negative
+. discard
+
+. rcof "noi mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, orient(-1)"
+>  == 198
+The orient() option cannot be negative
+
+. 
+end of do-file
+      name:  mrmvegger
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+  log type:  text
+ closed on:  24 Jun 2020, 00:43:05
+-------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  22 Jun 2020, 00:45:15
+ opened on:  24 Jun 2020, 00:43:05
 
-. * mregger cscript
-. * 04jun2016
+. * mrmvivw cscript
+. * 22un2020
 . 
 . cscript mrmvivw adofiles mrmvivw mvivw mvmr
 ------------------------------------------------------------------BEGIN mrmvivw
@@ -84,27 +339,12 @@ chdbeta      |
 
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
-Iteration 0:   log likelihood = -224196.43
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         72
-                                                  Scale parameter =          1
-Deviance         =  176.2471889                   (1/df) Deviance =   2.447878
-Pearson          =  176.2471889                   (1/df) Pearson  =   2.447878
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =   6142.395
-Log likelihood   = -224196.4255                   BIC             =  -132.6659
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
 ------------------------------------------------------------------------------
-(Standard errors scaled using dispersion equal to square root of 1.)
 
 . assert abs(_b[ldlcbeta] - .482) < 1e-3
 
@@ -115,27 +355,12 @@ Log likelihood   = -224196.4255                   BIC             =  -132.6659
 
 . mvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
-Iteration 0:   log likelihood = -224196.43
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         72
-                                                  Scale parameter =          1
-Deviance         =  176.2471889                   (1/df) Deviance =   2.447878
-Pearson          =  176.2471889                   (1/df) Pearson  =   2.447878
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =   6142.395
-Log likelihood   = -224196.4255                   BIC             =  -132.6659
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
 ------------------------------------------------------------------------------
-(Standard errors scaled using dispersion equal to square root of 1.)
 
 . assert abs(_b[ldlcbeta] - .482) < 1e-3
 
@@ -146,27 +371,12 @@ Log likelihood   = -224196.4255                   BIC             =  -132.6659
 
 . mvmr chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
-Iteration 0:   log likelihood = -224196.43
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         72
-                                                  Scale parameter =          1
-Deviance         =  176.2471889                   (1/df) Deviance =   2.447878
-Pearson          =  176.2471889                   (1/df) Pearson  =   2.447878
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =   6142.395
-Log likelihood   = -224196.4255                   BIC             =  -132.6659
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
 ------------------------------------------------------------------------------
-(Standard errors scaled using dispersion equal to square root of 1.)
 
 . assert abs(_b[ldlcbeta] - .482) < 1e-3
 
@@ -180,24 +390,10 @@ Log likelihood   = -224196.4255                   BIC             =  -132.6659
 
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -220,24 +416,10 @@ Log likelihood   = -316256.3614                   BIC             =  -144.9556
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -260,24 +442,10 @@ Log likelihood   = -316256.3614                   BIC             =  -144.9556
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -301,29 +469,14 @@ Log likelihood   = -316256.3614                   BIC             =  -144.9556
 
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
-Iteration 0:   log likelihood = -224185.99
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =          1
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =   6142.164
-Log likelihood   = -224185.9902                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
     hdlcbeta |  -.1941989   .0878132    -2.21   0.027    -.3663097   -.0220881
       tgbeta |   .2260456   .0827482     2.73   0.006     .0638621    .3882291
 ------------------------------------------------------------------------------
-(Standard errors scaled using dispersion equal to square root of 1.)
 
 . assert abs(_b[ldlcbeta] - .429) < 1e-3
 
@@ -342,29 +495,14 @@ Log likelihood   = -224185.9902                   BIC             =  -144.9556
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
-Iteration 0:   log likelihood = -224185.99
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =          1
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =   6142.164
-Log likelihood   = -224185.9902                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
     hdlcbeta |  -.1941989   .0878132    -2.21   0.027    -.3663097   -.0220881
       tgbeta |   .2260456   .0827482     2.73   0.006     .0638621    .3882291
 ------------------------------------------------------------------------------
-(Standard errors scaled using dispersion equal to square root of 1.)
 
 . assert abs(_b[ldlcbeta] - .429) < 1e-3
 
@@ -383,29 +521,14 @@ Log likelihood   = -224185.9902                   BIC             =  -144.9556
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
-Iteration 0:   log likelihood = -224185.99
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =          1
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =   6142.164
-Log likelihood   = -224185.9902                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
     hdlcbeta |  -.1941989   .0878132    -2.21   0.027    -.3663097   -.0220881
       tgbeta |   .2260456   .0827482     2.73   0.006     .0638621    .3882291
 ------------------------------------------------------------------------------
-(Standard errors scaled using dispersion equal to square root of 1.)
 
 . assert abs(_b[ldlcbeta] - .429) < 1e-3
 
@@ -426,24 +549,10 @@ Log likelihood   = -224185.9902                   BIC             =  -144.9556
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(9
 > 0)
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -460,24 +569,10 @@ Log likelihood   = -316256.3614                   BIC             =  -144.9556
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -494,24 +589,10 @@ Log likelihood   = -316256.3614                   BIC             =  -144.9556
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -528,18 +609,19 @@ end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  22 Jun 2020, 00:45:38
+ closed on:  24 Jun 2020, 00:43:12
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  22 Jun 2020, 00:45:38
+ opened on:  24 Jun 2020, 00:43:12
 
 . * mr cscript
 . * 20jan2020
 . 
 . cscript mr adofiles ///
+> mrmvegger ///
 > mrmvivw ///
 > mr ///
 > mrdeps ///
@@ -557,6 +639,10 @@ end of do-file
 > mrmodalplot ///
 > mrratio
 -----------------------------------------------------------------------BEGIN mr
+
+-> which mrmvegger, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+*! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
 C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
@@ -753,27 +839,42 @@ chdbeta      |
 . 
 . mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. 
+. mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.306    -.3976209    .1247983
+      tgbeta |   .2739803   .1246927     2.20   0.028     .0295871    .5183735
+       _cons |  -.0093655   .0054187    -1.73   0.084     -.019986     .001255
+------------------------------------------------------------------------------
+
+. 
+. mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orie
+> nt(2)
+
+                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4286398   .0614056     6.98   0.000      .308287    .5489926
+    hdlcbeta |  -.1989637   .1541909    -1.29   0.197    -.5011723    .1032449
+      tgbeta |   .2256794   .1243221     1.82   0.069    -.0179875    .4693463
+       _cons |   .0002155   .0036218     0.06   0.953     -.006883    .0073141
 ------------------------------------------------------------------------------
 
 . 
@@ -798,13 +899,13 @@ end of do-file
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  22 Jun 2020, 00:46:41
+ closed on:  24 Jun 2020, 00:44:14
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:  22 Jun 2020, 00:46:41
+ opened on:  24 Jun 2020, 00:44:14
 
 . * mrdeps cscript
 . * 20jan2020
@@ -836,13 +937,13 @@ end of do-file
       name:  mrdeps
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:  22 Jun 2020, 00:47:23
+ closed on:  24 Jun 2020, 00:44:53
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  22 Jun 2020, 00:47:23
+ opened on:  24 Jun 2020, 00:44:53
 
 . * mregger cscript
 . * 04jun2016
@@ -2564,13 +2665,13 @@ end of do-file
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  22 Jun 2020, 00:47:28
+ closed on:  24 Jun 2020, 00:44:58
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:  22 Jun 2020, 00:47:28
+ opened on:  24 Jun 2020, 00:44:58
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2892,13 +2993,13 @@ end of do-file
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:  22 Jun 2020, 00:49:12
+ closed on:  24 Jun 2020, 00:46:42
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- opened on:  22 Jun 2020, 00:49:12
+ opened on:  24 Jun 2020, 00:46:42
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -3069,13 +3170,13 @@ end of do-file
       name:  mreggersimex
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- closed on:  22 Jun 2020, 00:55:44
+ closed on:  24 Jun 2020, 00:52:25
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  22 Jun 2020, 00:55:44
+ opened on:  24 Jun 2020, 00:52:25
 
 . * mrforest cscript
 . * 16jun2017
@@ -3221,13 +3322,13 @@ end of do-file
       name:  mrforest
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  22 Jun 2020, 00:56:23
+ closed on:  24 Jun 2020, 00:53:05
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:  22 Jun 2020, 00:56:23
+ opened on:  24 Jun 2020, 00:53:05
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3281,13 +3382,13 @@ end of do-file
       name:  mrfunnel
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:  22 Jun 2020, 00:56:35
+ closed on:  24 Jun 2020, 00:53:17
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:  22 Jun 2020, 00:56:35
+ opened on:  24 Jun 2020, 00:53:17
 
 . * mrivests testcode
 . * 10jun2017
@@ -3512,13 +3613,13 @@ end of do-file
       name:  mrivests
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:  22 Jun 2020, 00:56:37
+ closed on:  24 Jun 2020, 00:53:19
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- opened on:  22 Jun 2020, 00:56:37
+ opened on:  24 Jun 2020, 00:53:19
 
 . * mrmedian test code
 . * 3jun2016
@@ -3710,7 +3811,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .072924     5.88   0.000     .2856431    .5714998
+        beta |   .4285714   .0725629     5.91   0.000     .2863508    .5707921
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3725,7 +3826,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .072924     5.88   0.000     .2856431    .5714998
+        beta |   .4285714   .0725629     5.91   0.000     .2863508    .5707921
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3808,7 +3909,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727424     5.89   0.000      .285999    .5711438
+        beta |   .4285714   .0699503     6.13   0.000     .2914714    .5656714
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3823,7 +3924,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727424     5.89   0.000      .285999    .5711438
+        beta |   .4285714   .0699503     6.13   0.000     .2914714    .5656714
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3845,7 +3946,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727424     5.89   0.000      .285999    .5711438
+        beta |   .4285714   .0699503     6.13   0.000     .2914714    .5656714
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3859,7 +3960,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727424     5.89   0.000     .3089209     .548222
+        beta |   .4285714   .0699503     6.13   0.000     .3135135    .5436294
 ------------------------------------------------------------------------------
 
 . 
@@ -3870,7 +3971,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727424     5.89   0.000     .3089209     .548222
+        beta |   .4285714   .0699503     6.13   0.000     .3135135    .5436294
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3884,7 +3985,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727424     5.89   0.000     .3353483    .5217945
+        beta |   .4285714   .0699503     6.13   0.000     .3389266    .5182163
 ------------------------------------------------------------------------------
 
 . 
@@ -3892,13 +3993,13 @@ end of do-file
       name:  mrmedian
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- closed on:  22 Jun 2020, 00:56:40
+ closed on:  24 Jun 2020, 00:53:21
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- opened on:  22 Jun 2020, 00:56:40
+ opened on:  24 Jun 2020, 00:53:21
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -4265,13 +4366,13 @@ end of do-file
       name:  mrmedianobs
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- closed on:  22 Jun 2020, 00:57:02
+ closed on:  24 Jun 2020, 00:53:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  22 Jun 2020, 00:57:02
+ opened on:  24 Jun 2020, 00:53:44
 
 . * mrmodal cscript
 . * 2jun2017
@@ -5054,13 +5155,13 @@ end of do-file
       name:  mrmodal
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  22 Jun 2020, 00:57:21
+ closed on:  24 Jun 2020, 00:54:02
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- opened on:  22 Jun 2020, 00:57:21
+ opened on:  24 Jun 2020, 00:54:02
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5930,13 +6031,13 @@ end of do-file
       name:  mrmodalplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- closed on:  22 Jun 2020, 00:58:18
+ closed on:  24 Jun 2020, 00:54:59
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:  22 Jun 2020, 00:58:18
+ opened on:  24 Jun 2020, 00:54:59
 
 . * mrratio cscript
 . * 6jun2017
@@ -6281,7 +6382,7 @@ end of do-file
       name:  mrratio
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:  22 Jun 2020, 00:58:19
+ closed on:  24 Jun 2020, 00:55:00
 -------------------------------------------------------------------------------
 
 . 
@@ -6289,5 +6390,5 @@ end of do-file
       name:  master
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- closed on:  22 Jun 2020, 00:58:19
+ closed on:  24 Jun 2020, 00:55:00
 -------------------------------------------------------------------------------

@@ -12,6 +12,7 @@ cscript master
 cap noi ado describe mrrobust
 
 local cscripts ///
+mrmvegger ///
 mrmvivw ///
 mr ///
 mrdeps ///

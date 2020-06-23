@@ -15,6 +15,7 @@
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
 * June 2020:
+  - Added basic multivariable MR-Egger command, `mrmvegger`
   - Added basic multivariable IVW command, `mrmvivw` (currently command names `mvmr` and `mvivw` also work)
 * February 2020:
   - Updated contact details

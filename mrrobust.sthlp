@@ -56,6 +56,8 @@
 
 {synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator.
 
+{synopt :{opt {help mrmvegger}:}}Multivariable MR-Egger regression.
+
 {marker description}{...}
 {title:Description}
 

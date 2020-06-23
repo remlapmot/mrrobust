@@ -1,5 +1,5 @@
-* mregger cscript
-* 04jun2016
+* mrmvivw cscript
+* 22un2020
 
 cscript mrmvivw adofiles mrmvivw mvivw mvmr
 
@@ -17,6 +17,8 @@ discard
 mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 assert abs(_b[ldlcbeta] - .482) < 1e-3
 assert abs(_se[ldlcbeta] - .038) < 1e-3
+
+mat list r(table)
 
 discard
 mvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe

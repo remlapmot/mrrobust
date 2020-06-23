@@ -2,6 +2,7 @@
 * 20jan2020
 
 cscript mr adofiles ///
+mrmvegger ///
 mrmvivw ///
 mr ///
 mrdeps ///
@@ -52,6 +53,10 @@ mr ratio 1 .5 1 .25, eform
 ** mv estimators
 
 mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
 
 ** mrmedianobs test dataset
 
