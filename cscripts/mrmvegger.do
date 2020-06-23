@@ -25,6 +25,14 @@ assert b[1,2] - -.008 < 1e-3
 assert sqrt(V[1,1]) - .103 < 1e-3
 assert sqrt(V[2,2]) - .0054 < 1e-3
 
+* check bivariate
+
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+
 * check trivariate
 
 discard
@@ -32,7 +40,10 @@ mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
 * check orient option
 discard
-mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(3)
 
 * check orient not greater than no phenotypes
 rcof "noi mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)" == 198
