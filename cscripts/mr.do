@@ -2,6 +2,7 @@
 * 20jan2020
 
 cscript mr adofiles ///
+mrmvegger ///
 mrmvivw ///
 mr ///
 mrdeps ///
