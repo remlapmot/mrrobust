@@ -89,8 +89,8 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 
 {marker burgess}{...}
 {phang}
-Burgess S, Dudbridge F, Thompson SG. Re: "Multivariable
-Mendelian randomization: the use of pleiotropic genetic variants to estimate causal effects". American Journal of Epidemiology, 2015, 181, 4, 251–260.
+Burgess S, Dudbridge F, Thompson SG. Multivariable
+Mendelian randomization: the use of pleiotropic genetic variants to estimate causal effects. American Journal of Epidemiology, 2015, 181, 4, 251–260.
 {browse "http://dx.doi.org/10.1093/aje/kwu283":DOI}
 {p_end}
 
