@@ -1,4 +1,4 @@
-*! version 0.1.0 20jan2020 Tom Palmer
+*! version 0.1.0 23jun2020 Tom Palmer
 program mrmvegger, eclass
 version 9
 local version : di "version " string(_caller()) ", missing :"
@@ -11,9 +11,10 @@ if replay() {
         exit
 }
 
-syntax varlist(min=3) [aweight] [if] [in] [, fe ///
-        Level(cilevel) ///
-        gxse(varlist numeric) tdist RADial *]
+syntax varlist(min=3) [aweight] [if] [in] [, ///
+	Level(cilevel) ///
+    gxse(varlist numeric) ///
+	*]
 
 local callersversion = _caller()
 
@@ -33,10 +34,15 @@ aw: =1/gdSE^2
 local npheno = wordcount("`varlist'") - 1
 di `npheno'
 
+tempvar invvar // gyse
+qui gen double `invvar' `exp' `if' `in'
+// qui gen double `gyse' = 1/sqrt(`invvar') `if' `in'
+
 * mvegger
 tempvar eggercons
 qui gen double `eggercons' `exp' `if'`in'
-sem (`gdtr' <- `gpvarstr' `eggercons', nocons) `if'`in'
-
+// sem (`gdtr' <- `gpvarstr' `eggercons', nocons) `if'`in'
+regress `varlist' [aw = `invvar'] `if'`in', ///
+	level(`level') `options'
 end
 exit
