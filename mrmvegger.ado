@@ -81,5 +81,15 @@ mat rownames V = `names'
 mat colnames V = `names'
 ereturn post b V
 
+* display estimates
+Display , level(`level')
+
 end
+
+program Display, rclass
+syntax [, Level(cilevel)]
+ereturn display, level(`level') noomitted
+return add // r(table)
+end
+
 exit
