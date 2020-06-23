@@ -37,6 +37,7 @@ varlist should be specified as:
 ...
 aw: =1/gdSE^2
 */
+local outcome `1'
 local npheno = wordcount("`varlist'") - 1
 
 if `orient' > `npheno' {
