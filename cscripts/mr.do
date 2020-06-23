@@ -54,6 +54,10 @@ mr ratio 1 .5 1 .25, eform
 
 mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+
 ** mrmedianobs test dataset
 
 use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, clear
