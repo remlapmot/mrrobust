@@ -70,7 +70,6 @@ local names `names' `outcome':_cons
 
 * fit model
  
-regress `gdtr' `phenovarlist' `eggercons' `if'`in', ///
 qui regress `gdtr' `phenovarlist' `eggercons' `if'`in', ///
 	nocons ///
 	level(`level') `options'
