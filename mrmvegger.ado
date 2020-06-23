@@ -60,12 +60,7 @@ qui gen double `eggercons' = sqrt(`invvar') `if'`in'
 local phenovarlist 
 forvalues i = 1/`npheno' {
 	tempvar pheno`i'
-	if `i' == `orient' {
-		qui gen double `pheno`i'' = abs(``=`i'+1'') / `gyse' `if'`in'
-	}
-	else {
-		qui gen double `pheno`i'' = `=`i'+1' / `gyse' `if'`in'
-	} 
+	qui gen double `pheno`i'' = ``=`i'+1'' * sign(``=`orient'+1'') / `gyse' `if'`in'
 	local phenovarlist "`phenovarlist' `pheno`i''"
 }
 
