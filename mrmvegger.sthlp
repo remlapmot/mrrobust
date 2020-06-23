@@ -24,7 +24,7 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt:{opt orient:(#)}}Orient the data wrt to the phenotype which corresponds with the #th genotype-phenotype association variable in the varlist (default is 1){p_end}
+{synopt:{opt orient:(#)}}orient the data wrt to the phenotype which corresponds with the #th genotype-phenotype association variable in the varlist (default is 1){p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 
 {marker description}{...}
