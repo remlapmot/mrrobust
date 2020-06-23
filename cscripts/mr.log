@@ -2,12 +2,13 @@
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  22 Jun 2020, 00:45:38
+ opened on:  24 Jun 2020, 00:43:12
 
 . * mr cscript
 . * 20jan2020
 . 
 . cscript mr adofiles ///
+> mrmvegger ///
 > mrmvivw ///
 > mr ///
 > mrdeps ///
@@ -25,6 +26,10 @@
 > mrmodalplot ///
 > mrratio
 -----------------------------------------------------------------------BEGIN mr
+
+-> which mrmvegger, usesysdir
+C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+*! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
 C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
@@ -221,27 +226,42 @@ chdbeta      |
 . 
 . mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-Iteration 0:   log likelihood = -316256.36
-
-Generalized linear models                         No. of obs      =         73
-Optimization     : ML                             Residual df     =         70
-                                                  Scale parameter =   2.219666
-Deviance         =  155.3766093                   (1/df) Deviance =   2.219666
-Pearson          =  155.3766093                   (1/df) Pearson  =   2.219666
-
-Variance function: V(u) = 1                       [Gaussian]
-Link function    : g(u) = u                       [Identity]
-
-                                                  AIC             =    8664.64
-Log likelihood   = -316256.3614                   BIC             =  -144.9556
-
 ------------------------------------------------------------------------------
-             |                 OIM
-     chdbeta |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. 
+. mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.306    -.3976209    .1247983
+      tgbeta |   .2739803   .1246927     2.20   0.028     .0295871    .5183735
+       _cons |  -.0093655   .0054187    -1.73   0.084     -.019986     .001255
+------------------------------------------------------------------------------
+
+. 
+. mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orie
+> nt(2)
+
+                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4286398   .0614056     6.98   0.000      .308287    .5489926
+    hdlcbeta |  -.1989637   .1541909    -1.29   0.197    -.5011723    .1032449
+      tgbeta |   .2256794   .1243221     1.82   0.069    -.0179875    .4693463
+       _cons |   .0002155   .0036218     0.06   0.953     -.006883    .0073141
 ------------------------------------------------------------------------------
 
 . 
@@ -266,5 +286,5 @@ end of do-file
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  22 Jun 2020, 00:46:41
+ closed on:  24 Jun 2020, 00:44:14
 -------------------------------------------------------------------------------
