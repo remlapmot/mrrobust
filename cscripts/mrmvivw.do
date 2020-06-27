@@ -1,5 +1,5 @@
 * mrmvivw cscript
-* 22un2020
+* 22jun2020
 
 cscript mrmvivw adofiles mrmvivw mvivw mvmr
 
