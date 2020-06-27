@@ -2,10 +2,10 @@
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  24 Jun 2020, 00:43:05
+ opened on:  27 Jun 2020, 22:57:03
 
 . * mrmvivw cscript
-. * 22un2020
+. * 22jun2020
 . 
 . cscript mrmvivw adofiles mrmvivw mvivw mvmr
 ------------------------------------------------------------------BEGIN mrmvivw
@@ -48,6 +48,8 @@ chdbeta      |
 
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -60,10 +62,29 @@ chdbeta      |
 . assert abs(_se[ldlcbeta] - .038) < 1e-3
 
 . 
+. * r(table)
+. mat list r(table)
+
+r(table)[9,1]
+          chdbeta:
+         ldlcbeta
+     b  .48150551
+    se  .03822098
+     z  12.597937
+pvalue  2.167e-36
+    ll  .40659377
+    ul  .55641726
+    df          .
+  crit   1.959964
+ eform          0
+
+. 
 . discard
 
 . mvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -80,6 +101,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -99,6 +122,8 @@ chdbeta      |
 
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -125,6 +150,8 @@ chdbeta      |
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -151,6 +178,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -178,6 +207,8 @@ chdbeta      |
 
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -204,6 +235,8 @@ chdbeta      |
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -230,6 +263,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -258,6 +293,8 @@ chdbeta      |
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(9
 > 0)
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -278,6 +315,8 @@ chdbeta      |
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -298,6 +337,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -314,9 +355,123 @@ chdbeta      |
 . assert abs(_b[ldlcbeta] + invnorm(.95)*_se[ldlcbeta] - .529) < 1e-3
 
 . 
+. * eret list
+. eret list
+
+scalars:
+                  e(N) =  73
+
+macros:
+            e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(c.."
+                e(cmd) : "mrmvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 3
+                  e(V) :  3 x 3
+
+. 
+. * ret list
+. ret list
+
+scalars:
+              r(level) =  90
+
+macros:
+           r(mcmethod) : "noadjust"
+
+matrices:
+              r(table) :  9 x 3
+
+. 
+. * Display
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+
+. mrmvivw
+
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+
+. 
+. assert `e(N)' == 73
+
+. assert "`e(setype)'" == "fe"
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. mrmvivw
+
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. assert "`e(setype)'" == "re"
+
+. 
+. * e(cmd), e(cmdline)
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. di e(cmd)
+mrmvivw
+
+. assert "`e(cmd)'" == "mrmvivw"
+
+. di e(cmdline)
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+. assert "`e(cmdline)'" == "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==
+> 1"
+
+. 
 end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  24 Jun 2020, 00:43:12
+ closed on:  27 Jun 2020, 22:57:13
 -------------------------------------------------------------------------------

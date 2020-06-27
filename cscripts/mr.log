@@ -2,7 +2,7 @@
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  24 Jun 2020, 00:43:12
+ opened on:  27 Jun 2020, 22:57:13
 
 . * mr cscript
 . * 20jan2020
@@ -103,17 +103,23 @@ incorrectsubcommandname is not a valid subcommand.
 . 
 . mr deps
 checking addplot consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking kdens consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking moremata consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking heterogi consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking metan consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking grc1leg consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 
 . 
 . ** Do et al. dataset
@@ -226,6 +232,8 @@ chdbeta      |
 . 
 . mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -238,7 +246,8 @@ chdbeta      |
 . 
 . mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -253,7 +262,8 @@ chdbeta      |
 . mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orie
 > nt(2)
 
-                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -286,5 +296,5 @@ end of do-file
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  24 Jun 2020, 00:44:14
+ closed on:  27 Jun 2020, 22:58:49
 -------------------------------------------------------------------------------

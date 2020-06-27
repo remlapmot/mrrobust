@@ -2,7 +2,7 @@
       name:  master
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- opened on:  24 Jun 2020, 00:43:00
+ opened on:  27 Jun 2020, 22:56:57
 
 . 
 . cscript master
@@ -35,13 +35,11 @@
   3.     do `dofile'
   4.     log close `dofile'
   5. }
-(note: file C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log not f
-> ound)
 -------------------------------------------------------------------------------
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:  24 Jun 2020, 00:43:01
+ opened on:  27 Jun 2020, 22:56:57
 
 . * mrmvegger cscript
 . * 22un2020
@@ -84,7 +82,8 @@ chdbeta      |
 
 . mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -113,7 +112,8 @@ chdbeta      |
 
 . mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -137,11 +137,29 @@ chdbeta      |
 . assert _se[_cons] - .005 < 1e-3
 
 . 
+. * check r(table)
+. mat list r(table)
+
+r(table)[9,3]
+           chdbeta:    chdbeta:    chdbeta:
+          ldlcbeta    hdlcbeta       _cons
+     b   .57238665  -.26658525  -.00671733
+    se   .10293855   .12260126   .00542552
+     z   5.5604696  -2.1744087  -1.2380993
+pvalue   2.690e-08   .02967445   .21567925
+    ll   .37063081   -.5068793  -.01735114
+    ul    .7741425   -.0262912   .00391649
+    df           .           .           .
+  crit    1.959964    1.959964    1.959964
+ eform           0           0           0
+
+. 
 . discard
 
 . mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
 
-                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -171,7 +189,8 @@ chdbeta      |
 
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -206,7 +225,8 @@ chdbeta      |
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
 > t(2)
 
-                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -240,7 +260,8 @@ chdbeta      |
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
 > t(3)
 
-                             MVMR-Egger model oriented wrt phenotype: tgbeta
+                                         MVMR-Egger model oriented wrt: tgbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -283,20 +304,127 @@ The orient() option must be in the range of the number of phenotypes
 The orient() option cannot be negative
 
 . 
+. * test replay
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. 
+. * eret list
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. eret list
+
+scalars:
+                  e(N) =  73
+
+macros:
+            e(cmdline) : "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if se.."
+                e(cmd) : "mrmvegger"
+          e(orientvar) : "ldlcbeta"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 2
+                  e(V) :  2 x 2
+
+. 
+. * ret list
+. ret list
+
+scalars:
+              r(level) =  95
+
+macros:
+           r(mcmethod) : "noadjust"
+
+matrices:
+              r(table) :  9 x 2
+
+. 
+. * e(N)
+. assert `e(N)' == 73
+
+. 
+. * e(orientvar)
+. assert "`e(orientvar)'" == "ldlcbeta"
+
+. 
+. * e(cmd), e(cmdline)
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. di e(cmd)
+mrmvegger
+
+. assert "`e(cmd)'" == "mrmvegger"
+
+. di e(cmdline)
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+. assert "`e(cmdline)'" == "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1
+> ==1"
+
+. 
 end of do-file
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:  24 Jun 2020, 00:43:05
+ closed on:  27 Jun 2020, 22:57:03
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  24 Jun 2020, 00:43:05
+ opened on:  27 Jun 2020, 22:57:03
 
 . * mrmvivw cscript
-. * 22un2020
+. * 22jun2020
 . 
 . cscript mrmvivw adofiles mrmvivw mvivw mvmr
 ------------------------------------------------------------------BEGIN mrmvivw
@@ -339,6 +467,8 @@ chdbeta      |
 
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -351,10 +481,29 @@ chdbeta      |
 . assert abs(_se[ldlcbeta] - .038) < 1e-3
 
 . 
+. * r(table)
+. mat list r(table)
+
+r(table)[9,1]
+          chdbeta:
+         ldlcbeta
+     b  .48150551
+    se  .03822098
+     z  12.597937
+pvalue  2.167e-36
+    ll  .40659377
+    ul  .55641726
+    df          .
+  crit   1.959964
+ eform          0
+
+. 
 . discard
 
 . mvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -371,6 +520,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -390,6 +541,8 @@ chdbeta      |
 
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -416,6 +569,8 @@ chdbeta      |
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -442,6 +597,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -469,6 +626,8 @@ chdbeta      |
 
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -495,6 +654,8 @@ chdbeta      |
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -521,6 +682,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -549,6 +712,8 @@ chdbeta      |
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(9
 > 0)
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -569,6 +734,8 @@ chdbeta      |
 
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -589,6 +756,8 @@ chdbeta      |
 
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -605,17 +774,131 @@ chdbeta      |
 . assert abs(_b[ldlcbeta] + invnorm(.95)*_se[ldlcbeta] - .529) < 1e-3
 
 . 
+. * eret list
+. eret list
+
+scalars:
+                  e(N) =  73
+
+macros:
+            e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(c.."
+                e(cmd) : "mrmvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 3
+                  e(V) :  3 x 3
+
+. 
+. * ret list
+. ret list
+
+scalars:
+              r(level) =  90
+
+macros:
+           r(mcmethod) : "noadjust"
+
+matrices:
+              r(table) :  9 x 3
+
+. 
+. * Display
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+
+. mrmvivw
+
+                                                       Number of genotypes: 73
+                                                 Standard errors: Fixed effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+
+. 
+. assert `e(N)' == 73
+
+. assert "`e(setype)'" == "fe"
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. mrmvivw
+
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. assert "`e(setype)'" == "re"
+
+. 
+. * e(cmd), e(cmdline)
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. di e(cmd)
+mrmvivw
+
+. assert "`e(cmd)'" == "mrmvivw"
+
+. di e(cmdline)
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+. assert "`e(cmdline)'" == "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==
+> 1"
+
+. 
 end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  24 Jun 2020, 00:43:12
+ closed on:  27 Jun 2020, 22:57:13
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  24 Jun 2020, 00:43:12
+ opened on:  27 Jun 2020, 22:57:13
 
 . * mr cscript
 . * 20jan2020
@@ -716,17 +999,23 @@ incorrectsubcommandname is not a valid subcommand.
 . 
 . mr deps
 checking addplot consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking kdens consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking moremata consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking heterogi consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking metan consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 checking grc1leg consistency and verifying not already installed...
-all files already exist and are up to date.
+installing into c:\ado\plus\...
+installation complete.
 
 . 
 . ** Do et al. dataset
@@ -839,6 +1128,8 @@ chdbeta      |
 . 
 . mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
+                                                       Number of genotypes: 73
+                                                Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -851,7 +1142,8 @@ chdbeta      |
 . 
 . mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -866,7 +1158,8 @@ chdbeta      |
 . mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orie
 > nt(2)
 
-                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -899,13 +1192,13 @@ end of do-file
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  24 Jun 2020, 00:44:14
+ closed on:  27 Jun 2020, 22:58:49
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:  24 Jun 2020, 00:44:14
+ opened on:  27 Jun 2020, 22:58:49
 
 . * mrdeps cscript
 . * 20jan2020
@@ -937,13 +1230,13 @@ end of do-file
       name:  mrdeps
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:  24 Jun 2020, 00:44:53
+ closed on:  27 Jun 2020, 23:00:32
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  24 Jun 2020, 00:44:53
+ opened on:  27 Jun 2020, 23:00:32
 
 . * mregger cscript
 . * 04jun2016
@@ -1789,11 +2082,13 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-c:\ado\plus\t\tsci.ado
-*! 1.0.0 Tom Palmer 8jan2010
+command tsci not found as either built-in or ado-file
 
 . if _rc != 0 {
 .         net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+checking tsci consistency and verifying not already installed...
+installing into c:\ado\plus\...
+installation complete.
 . }
 
 . 
@@ -2665,13 +2960,13 @@ end of do-file
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  24 Jun 2020, 00:44:58
+ closed on:  27 Jun 2020, 23:00:40
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:  24 Jun 2020, 00:44:58
+ opened on:  27 Jun 2020, 23:00:40
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2993,13 +3288,13 @@ end of do-file
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:  24 Jun 2020, 00:46:42
+ closed on:  27 Jun 2020, 23:02:02
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- opened on:  24 Jun 2020, 00:46:42
+ opened on:  27 Jun 2020, 23:02:02
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -3170,13 +3465,13 @@ end of do-file
       name:  mreggersimex
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- closed on:  24 Jun 2020, 00:52:25
+ closed on:  27 Jun 2020, 23:07:04
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  24 Jun 2020, 00:52:25
+ opened on:  27 Jun 2020, 23:07:04
 
 . * mrforest cscript
 . * 16jun2017
@@ -3322,13 +3617,13 @@ end of do-file
       name:  mrforest
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  24 Jun 2020, 00:53:05
+ closed on:  27 Jun 2020, 23:07:48
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:  24 Jun 2020, 00:53:05
+ opened on:  27 Jun 2020, 23:07:48
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3382,13 +3677,13 @@ end of do-file
       name:  mrfunnel
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:  24 Jun 2020, 00:53:17
+ closed on:  27 Jun 2020, 23:07:58
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:  24 Jun 2020, 00:53:17
+ opened on:  27 Jun 2020, 23:07:58
 
 . * mrivests testcode
 . * 10jun2017
@@ -3613,13 +3908,13 @@ end of do-file
       name:  mrivests
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:  24 Jun 2020, 00:53:19
+ closed on:  27 Jun 2020, 23:08:01
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- opened on:  24 Jun 2020, 00:53:19
+ opened on:  27 Jun 2020, 23:08:01
 
 . * mrmedian test code
 . * 3jun2016
@@ -3811,7 +4106,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0725629     5.91   0.000     .2863508    .5707921
+        beta |   .4285714   .0717832     5.97   0.000      .287879    .5692639
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3826,7 +4121,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0725629     5.91   0.000     .2863508    .5707921
+        beta |   .4285714   .0717832     5.97   0.000      .287879    .5692639
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3909,7 +4204,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0699503     6.13   0.000     .2914714    .5656714
+        beta |   .4285714   .0698985     6.13   0.000     .2915729    .5655699
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3924,7 +4219,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0699503     6.13   0.000     .2914714    .5656714
+        beta |   .4285714   .0698985     6.13   0.000     .2915729    .5655699
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3946,7 +4241,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0699503     6.13   0.000     .2914714    .5656714
+        beta |   .4285714   .0698985     6.13   0.000     .2915729    .5655699
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3960,7 +4255,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0699503     6.13   0.000     .3135135    .5436294
+        beta |   .4285714   .0698985     6.13   0.000     .3135987    .5435442
 ------------------------------------------------------------------------------
 
 . 
@@ -3971,7 +4266,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0699503     6.13   0.000     .3135135    .5436294
+        beta |   .4285714   .0698985     6.13   0.000     .3135987    .5435442
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3985,7 +4280,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0699503     6.13   0.000     .3389266    .5182163
+        beta |   .4285714   .0698985     6.13   0.000     .3389929    .5181499
 ------------------------------------------------------------------------------
 
 . 
@@ -3993,13 +4288,13 @@ end of do-file
       name:  mrmedian
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- closed on:  24 Jun 2020, 00:53:21
+ closed on:  27 Jun 2020, 23:08:04
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- opened on:  24 Jun 2020, 00:53:21
+ opened on:  27 Jun 2020, 23:08:04
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -4366,13 +4661,13 @@ end of do-file
       name:  mrmedianobs
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- closed on:  24 Jun 2020, 00:53:44
+ closed on:  27 Jun 2020, 23:08:26
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  24 Jun 2020, 00:53:44
+ opened on:  27 Jun 2020, 23:08:26
 
 . * mrmodal cscript
 . * 2jun2017
@@ -5155,13 +5450,13 @@ end of do-file
       name:  mrmodal
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  24 Jun 2020, 00:54:02
+ closed on:  27 Jun 2020, 23:08:45
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- opened on:  24 Jun 2020, 00:54:02
+ opened on:  27 Jun 2020, 23:08:45
 
 . * mrmodalplot example
 . * 2aug2017
@@ -6031,13 +6326,13 @@ end of do-file
       name:  mrmodalplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- closed on:  24 Jun 2020, 00:54:59
+ closed on:  27 Jun 2020, 23:09:41
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:  24 Jun 2020, 00:54:59
+ opened on:  27 Jun 2020, 23:09:41
 
 . * mrratio cscript
 . * 6jun2017
@@ -6382,7 +6677,7 @@ end of do-file
       name:  mrratio
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:  24 Jun 2020, 00:55:00
+ closed on:  27 Jun 2020, 23:09:42
 -------------------------------------------------------------------------------
 
 . 
@@ -6390,5 +6685,5 @@ end of do-file
       name:  master
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- closed on:  24 Jun 2020, 00:55:00
+ closed on:  27 Jun 2020, 23:09:42
 -------------------------------------------------------------------------------

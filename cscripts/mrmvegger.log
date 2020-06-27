@@ -2,7 +2,7 @@
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:  24 Jun 2020, 00:43:01
+ opened on:  27 Jun 2020, 22:56:57
 
 . * mrmvegger cscript
 . * 22un2020
@@ -45,7 +45,8 @@ chdbeta      |
 
 . mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -74,7 +75,8 @@ chdbeta      |
 
 . mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -98,11 +100,29 @@ chdbeta      |
 . assert _se[_cons] - .005 < 1e-3
 
 . 
+. * check r(table)
+. mat list r(table)
+
+r(table)[9,3]
+           chdbeta:    chdbeta:    chdbeta:
+          ldlcbeta    hdlcbeta       _cons
+     b   .57238665  -.26658525  -.00671733
+    se   .10293855   .12260126   .00542552
+     z   5.5604696  -2.1744087  -1.2380993
+pvalue   2.690e-08   .02967445   .21567925
+    ll   .37063081   -.5068793  -.01735114
+    ul    .7741425   -.0262912   .00391649
+    df           .           .           .
+  crit    1.959964    1.959964    1.959964
+ eform           0           0           0
+
+. 
 . discard
 
 . mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
 
-                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -132,7 +152,8 @@ chdbeta      |
 
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-                             MVMR-Egger model oriented wrt phenotype: ldlcbeta
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -167,7 +188,8 @@ chdbeta      |
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
 > t(2)
 
-                             MVMR-Egger model oriented wrt phenotype: hdlcbeta
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -201,7 +223,8 @@ chdbeta      |
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
 > t(3)
 
-                             MVMR-Egger model oriented wrt phenotype: tgbeta
+                                         MVMR-Egger model oriented wrt: tgbeta
+                                                       Number of genotypes: 73
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -244,9 +267,116 @@ The orient() option must be in the range of the number of phenotypes
 The orient() option cannot be negative
 
 . 
+. * test replay
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. 
+. * eret list
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. eret list
+
+scalars:
+                  e(N) =  73
+
+macros:
+            e(cmdline) : "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if se.."
+                e(cmd) : "mrmvegger"
+          e(orientvar) : "ldlcbeta"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 2
+                  e(V) :  2 x 2
+
+. 
+. * ret list
+. ret list
+
+scalars:
+              r(level) =  95
+
+macros:
+           r(mcmethod) : "noadjust"
+
+matrices:
+              r(table) :  9 x 2
+
+. 
+. * e(N)
+. assert `e(N)' == 73
+
+. 
+. * e(orientvar)
+. assert "`e(orientvar)'" == "ldlcbeta"
+
+. 
+. * e(cmd), e(cmdline)
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                       Number of genotypes: 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. di e(cmd)
+mrmvegger
+
+. assert "`e(cmd)'" == "mrmvegger"
+
+. di e(cmdline)
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+. assert "`e(cmdline)'" == "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1
+> ==1"
+
+. 
 end of do-file
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:  24 Jun 2020, 00:43:05
+ closed on:  27 Jun 2020, 22:57:03
 -------------------------------------------------------------------------------
