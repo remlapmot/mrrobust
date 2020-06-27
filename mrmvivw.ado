@@ -7,7 +7,7 @@ if replay() {
         if _by() {
                 error 190
         }
-        `version' Display `0'
+        `version' Display `0', n(`e(N)') setype(`e(setype)')
         exit
 }
 
@@ -41,6 +41,10 @@ qui gen double `invvar' `exp' `if' `in'
 local scale ""
 if "`fe'" == "fe" {
 	local scale "scale(1)"
+	local setype "fe"
+}
+else {
+	local setype "re"
 }
 
 * mvivw
@@ -55,15 +59,32 @@ regress `varlist' [aw=`invvar'] `if' `in', nocons ///
 mat b = e(b)
 mat V = e(V)
 ereturn post b V
+eret scalar N = `k'
+eret local setype = "`setype'"
 
 * display estimates
-di ""
-Display , level(`level')
+Display , level(`level') n(`k') setype(`setype')
 
 end
 
 program Display, rclass
-syntax [, Level(cilevel)]
+syntax , [Level(cilevel)] n(integer) setype(string)
+
+local nlength : strlen local n
+local colstart = 79 - 21 - `nlength'
+di _n(1) _col(`colstart') as txt "Number of genotypes:", as res `n'
+
+if "`setype'" == "fe" {
+	local semessage "Fixed effect"
+}
+else {
+	local semessage "Random effect"
+}
+
+local setypelength : strlen local semessage
+local colstart = 79 - 17 - `setypelength'
+di _col(`colstart') as txt "Standard errors:", as res "`semessage'"
+
 ereturn display, level(`level') noomitted
 return add // r(table)
 end
