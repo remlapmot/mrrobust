@@ -2,7 +2,7 @@
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  24 Jun 2020, 00:44:53
+ opened on:  27 Jun 2020, 23:00:32
 
 . * mregger cscript
 . * 04jun2016
@@ -848,11 +848,13 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-c:\ado\plus\t\tsci.ado
-*! 1.0.0 Tom Palmer 8jan2010
+command tsci not found as either built-in or ado-file
 
 . if _rc != 0 {
 .         net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+checking tsci consistency and verifying not already installed...
+installing into c:\ado\plus\...
+installation complete.
 . }
 
 . 
@@ -1724,5 +1726,5 @@ end of do-file
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  24 Jun 2020, 00:44:58
+ closed on:  27 Jun 2020, 23:00:40
 -------------------------------------------------------------------------------

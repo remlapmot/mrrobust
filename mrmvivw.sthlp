@@ -73,6 +73,16 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {cmd:mrmvivw} stores the following in {cmd:e()}:
 
 {synoptset 20 tabbed}{...}
+{p2col 5 20 24 2: Scalars}{p_end}
+{synopt:{cmd:e(N)}}Number of genotypes{p_end}
+
+{synoptset 20 tabbed}{...}
+{p2col 5 20 24 2: Macros}{p_end}
+{synopt:{cmd:e(cmd)}}Command name{p_end}
+{synopt:{cmd:e(cmdline)}}Command issued{p_end}
+{synopt:{cmd:e(setype)}}Standard error type{p_end}
+
+{synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Matrices}{p_end}
 {synopt:{cmd:e(b)}}coefficient vector{p_end}
 {synopt:{cmd:e(V)}}variance-covariance matrix of the estimates{p_end}

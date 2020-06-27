@@ -1,5 +1,5 @@
 * mrmvivw cscript
-* 22un2020
+* 22jun2020
 
 cscript mrmvivw adofiles mrmvivw mvivw mvmr
 
@@ -18,6 +18,7 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 assert abs(_b[ldlcbeta] - .482) < 1e-3
 assert abs(_se[ldlcbeta] - .038) < 1e-3
 
+* r(table)
 mat list r(table)
 
 discard
@@ -106,3 +107,30 @@ mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 mat table = r(table)
 assert abs(_b[ldlcbeta] - invnorm(.95)*_se[ldlcbeta] - .328) < 1e-3
 assert abs(_b[ldlcbeta] + invnorm(.95)*_se[ldlcbeta] - .529) < 1e-3
+
+* eret list
+eret list
+
+* ret list
+ret list
+
+* Display
+discard
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+mrmvivw
+
+assert `e(N)' == 73
+assert "`e(setype)'" == "fe"
+
+discard
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+mrmvivw
+assert "`e(setype)'" == "re"
+
+* e(cmd), e(cmdline)
+discard
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+di e(cmd)
+assert "`e(cmd)'" == "mrmvivw"
+di e(cmdline)
+assert "`e(cmdline)'" == "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"

@@ -37,6 +37,7 @@ assert _se[ldlcbeta] - .103 < 1e-3
 assert _se[hdlcbeta] - .123 < 1e-3
 assert _se[_cons] - .005 < 1e-3
 
+* check r(table)
 mat list r(table)
 
 discard
@@ -94,3 +95,30 @@ rcof "noi mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)" == 
 * check orient not negative
 discard
 rcof "noi mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, orient(-1)" == 198
+
+* test replay
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+mrmvegger
+
+* eret list
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+eret list
+
+* ret list
+ret list
+
+* e(N)
+assert `e(N)' == 73
+
+* e(orientvar)
+assert "`e(orientvar)'" == "ldlcbeta"
+
+* e(cmd), e(cmdline)
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+di e(cmd)
+assert "`e(cmd)'" == "mrmvegger"
+di e(cmdline)
+assert "`e(cmdline)'" == "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"
