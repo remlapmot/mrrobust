@@ -65,6 +65,9 @@ eret local setype = "`setype'"
 * display estimates
 Display , level(`level') n(`k') setype(`setype')
 
+ereturn local cmd "mrmvivw"
+ereturn local cmdline `"mrmvivw `0'"'
+
 end
 
 program Display, rclass

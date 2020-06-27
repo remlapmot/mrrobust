@@ -126,3 +126,11 @@ discard
 mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 mrmvivw
 assert "`e(setype)'" == "re"
+
+* e(cmd), e(cmdline)
+discard
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+di e(cmd)
+assert "`e(cmd)'" == "mrmvivw"
+di e(cmdline)
+assert "`e(cmdline)'" == "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"

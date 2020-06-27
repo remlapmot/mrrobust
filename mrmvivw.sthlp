@@ -78,6 +78,8 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}
+{synopt:{cmd:e(cmd)}}Command name{p_end}
+{synopt:{cmd:e(cmdline)}}Command issued{p_end}
 {synopt:{cmd:e(setype)}}Standard error type{p_end}
 
 {synoptset 20 tabbed}{...}
