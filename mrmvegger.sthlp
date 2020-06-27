@@ -75,6 +75,14 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {cmd:mrmvegger} stores the following in {cmd:e()}:
 
 {synoptset 20 tabbed}{...}
+{p2col 5 20 24 2: Scalars}{p_end}
+{synopt:{cmd:e(N)}}Number of genotypes{p_end}
+
+{synoptset 20 tabbed}{...}
+{p2col 5 20 24 2: Macros}{p_end}
+{synopt:{cmd:e(orientvar)}}Genotype-phenotype association variable model oriented to{p_end}
+
+{synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Matrices}{p_end}
 {synopt:{cmd:e(b)}}coefficient vector{p_end}
 {synopt:{cmd:e(V)}}variance-covariance matrix of the estimates{p_end}
