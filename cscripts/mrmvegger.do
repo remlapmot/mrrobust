@@ -114,3 +114,11 @@ assert `e(N)' == 73
 
 * e(orientvar)
 assert "`e(orientvar)'" == "ldlcbeta"
+
+* e(cmd), e(cmdline)
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+di e(cmd)
+assert "`e(cmd)'" == "mrmvegger"
+di e(cmdline)
+assert "`e(cmdline)'" == "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"

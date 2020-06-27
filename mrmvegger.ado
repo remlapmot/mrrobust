@@ -84,6 +84,9 @@ ereturn scalar N = `k'
 * display estimates
 Display , level(`level') orientvar(`orientvar') n(`k')
 
+ereturn local cmd "mrmvegger"
+ereturn local cmdline `"mrmvegger `0'"'
+
 end
 
 program Display, rclass
