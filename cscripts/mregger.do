@@ -299,3 +299,13 @@ assert abs(e(Q) - 169.97) < 1e-2
 // radial and i2gx
 mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial gxse(ldlcse)
 //assert abs(e(Q) - 169.97) < 1e-2
+
+// oldnames
+discard
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, oldnames
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw
+mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw oldnames
+
+qui mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial heterogi gxse(ldlcse)
+mregger

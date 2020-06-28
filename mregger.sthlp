@@ -33,6 +33,7 @@ statistics{p_end}
 {p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
+{synopt:{opt oldnames}}Revert to using longer outcome name in b and V ereturned matrices{p_end}
 {synopt:{opt penw:eighted}}Use penalized weights{p_end}
 {synopt:{opt rad:ial}}Use radial formulations of the models{p_end}
 {synopt:{opt tdist:}}Use t-distribution for Wald test and CI limits{p_end}
@@ -96,6 +97,9 @@ residuals by the degrees of freedom (Del Greco et al., 2015).
 {opt noresc:ale} specifies that the residual variance is not set to 1 (if 
 it is found to be less than 1). Bowden et al. (2016) rescale the residual 
 variance to be 1 if it is found to be less than 1.
+
+{phang}
+{opt oldnames} revert to using the longer outcome variable name in the b and V ereturned matrices.
 
 {phang}
 {opt penw:eighted} specifies using penalized weights as described in Burgess 

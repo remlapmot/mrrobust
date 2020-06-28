@@ -13,7 +13,7 @@ if replay() {
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
         reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
-        gxse(varname numeric) tdist RADial unwi2gx *]
+        gxse(varname numeric) tdist RADial unwi2gx oldnames *]
 
 local callersversion = _caller()
 
@@ -357,7 +357,12 @@ mat V = e(V)
 if "`re'" == "" {
 	if "`radial'" == "" {
 		if "`ivw'" == "" {
-			local names `1'*sign(`2'):slope `1'*sign(`2'):_cons
+			if "`oldnames'" == "" {
+				local names `1':slope `1':_cons
+			}
+			else {
+				local names `1'*sign(`2'):slope `1'*sign(`2'):_cons
+			}
 		}
 		else {
 			local names `1':`2'
@@ -499,11 +504,11 @@ di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `
 Display , `re' level(`level') `radial'
 if "`ivw'" == "" & "`re'" == "" {
         if "`fe'" == "" {
-                di _col(48) as txt "Residual standard error:", %6.3f sqrt(`phi')
+                di _col(48) as txt "Residual standard error:", as res %6.3f sqrt(`phi')
                 ereturn scalar phi = sqrt(`phi')
         }
         else {
-                di _col(53) as txt "Residual standard error:", 1
+                di _col(53) as txt "Residual standard error:", as res 1
                 ereturn scalar phi = 1
         }
 }
@@ -522,7 +527,7 @@ if "`re'" == "re" & "`radial'" == "" {
 }
 else {
 	ereturn display, level(`level') noomitted
-        return add // r(table)
+    return add // r(table)
 }
 end
 exit
