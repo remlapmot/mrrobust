@@ -13,7 +13,7 @@ if replay() {
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
         reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
-        gxse(varname numeric) tdist RADial unwi2gx *]
+        gxse(varname numeric) tdist RADial unwi2gx oldnames *]
 
 local callersversion = _caller()
 
@@ -357,7 +357,12 @@ mat V = e(V)
 if "`re'" == "" {
 	if "`radial'" == "" {
 		if "`ivw'" == "" {
-			local names `1'*sign(`2'):slope `1'*sign(`2'):_cons
+			if "`oldnames'" == "" {
+				local names `1':slope `1':_cons
+			}
+			else {
+				local names `1'*sign(`2'):slope `1'*sign(`2'):_cons
+			}
 		}
 		else {
 			local names `1':`2'
