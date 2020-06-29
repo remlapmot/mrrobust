@@ -86,6 +86,7 @@ The package contains the following commands:
  - `mrfunnel` funnel plot of genotype specific IV estimates
  - `mr` acts as a primary command, e.g. so the other commands can be run as `mr egger ...` as well as `mregger ...`
  - `mrmvivw` (`mvmr`, `mvivw`) implements the multivariable IVW model
+ - `mrmvegger` implements the multivariable MR-Egger model
 
 ## Installing and updating mrrobust
 To install mrrobust in Stata versions 13 and later you have two choices.
