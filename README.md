@@ -85,7 +85,7 @@ The package contains the following commands:
  - `mrforest` implements a forest plot of genotype specific IV estimates and estimates from models (e.g. IVW and MR-Egger)
  - `mrfunnel` funnel plot of genotype specific IV estimates
  - `mr` acts as a primary command, e.g. so the other commands can be run as `mr egger ...` as well as `mregger ...`
- - `mrmvivw` implements multivariable IVW
+ - `mrmvivw` (`mvmr`, `mvivw`) implements the multivariable IVW model
 
 ## Installing and updating mrrobust
 To install mrrobust in Stata versions 13 and later you have two choices.
