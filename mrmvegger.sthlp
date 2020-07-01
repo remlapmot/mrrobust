@@ -85,7 +85,7 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {p2col 5 20 24 2: Macros}{p_end}
 {synopt:{cmd:e(cmd)}}Command name{p_end}
 {synopt:{cmd:e(cmdline)}}Command issued{p_end}
-{synopt:{cmd:e(orientvar)}}Genotype-phenotype association variable model oriented to{p_end}
+{synopt:{cmd:e(orientvar)}}Genotype-phenotype association variable the model is oriented wrt{p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Matrices}{p_end}
