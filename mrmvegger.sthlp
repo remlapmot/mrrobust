@@ -68,6 +68,9 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {pstd}Orient wrt HDL-C instead of LDL-C{p_end}
 {phang2}{cmd:.} {stata "mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)"}{p_end}
 
+{pstd}Orient wrt triglycerides instead of LDL-C{p_end}
+{phang2}{cmd:.} {stata "mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(3)"}{p_end}
+
 {marker results}{...}
 {title:Stored results}
 
