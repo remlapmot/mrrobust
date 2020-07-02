@@ -1,0 +1,1664 @@
+-------------------------------------------------------------------------------
+      name:  helpfiles
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+  log type:  text
+ opened on:   2 Jul 2020, 16:30:46
+
+. * render the helpfiles in the Results window, to check they are approx ok
+. * 2020-07-02
+. 
+. local helpfiles ///
+> mrrobust ///
+> mr ///
+> mrdeps ///
+> mregger ///
+> mreggersimex ///
+> mreggerplot ///
+> mrmedian ///
+> mrmedianobs ///
+> mrmodal ///
+> mrmodalplot ///
+> mrratio ///
+> mrivests ///
+> mrforest ///
+> mrfunnel ///
+> mrmvivw ///
+> mrmvegger
+
+. 
+. foreach helpfile of local helpfiles {
+  2.         type ../`helpfile'.sthlp
+  3. }
+Title
+
+    mrrobust -- commands for two-sample Mendelian randomization (MR)
+        analyses.
+
+    https://remlapmot.github.io/mrrobust/
+
+Commands
+
+      mr            Primary command syntax, i.e. use mr egger ... syntax
+                      instead of mregger ...
+
+      mrdeps        Install dependencies for the package
+
+      mregger       MR-Egger and inverse-variance weighted (IVW) estimators
+
+      mreggersimex  Simulation extrapolation algorithm for the MR-Egger model
+
+      mreggerplot   Scatter plot showing instrument specific estimates with
+                      IVW, MR-Egger, or median fitted line and confidence
+                      interval
+
+      mrmedian      Unweighted, weighted, and penalized weighted median
+                      estimators for summary level data
+
+      mrmedianobs   Unweighted, weighted, and penalized weighted median
+                      estimators for individual level data
+
+      mrmodal       Modal estimator for summary level data
+
+      mrmodalplot   Plot of density used in the modal estimator
+
+      mrratio       Ratio (Wald) estimator for summary level data for a
+                      single genotype
+
+      mrivests      Generate ratio (Wald) estimates for summary level data in
+                      dataset
+
+      mrforest      Forest plot of genotype specific and model (IVW,
+                      MR-Egger, Median, Modal) IV estimates
+
+      mrfunnel      Funnel plot of the genotype specific IV estimates
+
+      mrmvivw       Multivariable inverse variance weighted estimator
+
+      mrmvegger     Multivariable MR-Egger regression
+
+Description
+
+    mrrobust is a suite of programs implementing recently developed
+    estimators which are robust to certain proportions of invalid
+    instrumental variables.
+
+    Most of the commands are designed to use summary level data as provided
+    by repositories such as MR-Base.
+
+    The estimators were developed in the context of MR studies but could be
+    used for other applications of instrumental variables.
+
+    There is a website showing the examples from the helpfiles here: 
+    https://remlapmot.github.io/mrrobust/
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+    Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    Development takes place on GitHub here 
+    https://github.com/remlapmot/mrrobust.
+
+    Please report any bugs or issues you find, either by email or by creating
+    an issue on the GitHub repository here 
+    https://github.com/remlapmot/mrrobust/issues.
+
+    I welcome additions to the code, either by email or pull request on
+    GitHub.
+
+Title
+
+     mr -- Mendelian randomization programs
+
+Syntax
+
+        mr subcommand ... [aweight] [if] [in] [, options]
+
+Description
+
+    mr is a simple wrapper to the commands in the mrrobust package.
+
+    The subcommand is specified as the mrrobust program name without its mr
+    prefix, i.e. mregger ... can alternatively be run using the syntax mr
+    egger ....
+
+Options
+
+    mr takes the options for the specified subcommand.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    IVW (with fixed effect standard errors)
+        . mr egger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+
+    Scatter plot of MR-Egger model
+        . mr eggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+Stored results
+
+    mr returns the results from the specified subcommand.
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrdeps -- Install dependencies for mrrobust package
+
+Syntax
+
+        mrdeps
+
+Description
+
+    mrdeps simply installs the dependencies for the mrrobust package. It has
+    no options.
+
+Examples
+
+    Install dependencies
+        . mrdeps
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mregger -- Mendelian randomization Egger regression
+
+Syntax
+
+        mregger varname_gd varname_gp [aweight] [if] [in] [, options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      fe                  Fixed effect standard errors (default is
+                            multiplicative)
+      gxse(varname)       variable of genotype-phenotype SEs
+      heterogi            Display heterogeneity/pleiotropy statistics
+      ivw                 Inverse-variance weighted estimator (default is
+                            MR-Egger)
+      level(#)            set confidence level; default is level(95)
+      norescale           Do not rescale residual variance to be 1 (if less
+                            than 1)
+      oldnames            Revert to using longer outcome name in b and V
+                            ereturned matrices
+      penweighted         Use penalized weights
+      radial              Use radial formulations of the models
+      tdist               Use t-distribution for Wald test and CI limits
+      unwi2gx             Additionally report unweighted Q_GX and I^2_GX
+                            statistics
+
+Description
+
+    mregger performs inverse-variance weighted (IVW) and Mendelian
+    randomization Egger (MR-Egger) regression using summary level data (i.e.
+    reported genotype-disease and phenotype-disease association estimates and
+    their standard errors for individual genotypes).
+
+    See Bowden et al., Int J Epi, 2015 , for more information.
+
+    varname_gd variable containing the genotype-disease association
+    estimates.
+
+    varname_gp variable containing the genotype-phenotype association
+    estimates.
+
+    For the analytic weights you need to specify the inverse of the
+    genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+
+Options
+
+    fe specifies fixed effect standard errors (i.e. variance of residuals
+        constrained to 1 as in fixed effect meta-analysis models). The
+        default is to use multiplicative standard errors (i.e. variance of
+        residuals unconstrained as in standard linear regression), see
+        Thompson and Sharp (1999) for further details. We recommend
+        specifying this option when using an allelic score as the
+        instrumental variable.
+
+    gxse(varname) specifies the variable containing the genotype-phenotype
+        association standard errors. These are required for calculating the
+        I^2_GX statistic (Bowden et al., 2016). An I^2_GX statistic of 90%
+        means that the likely bias due measurement error in the MR-Egger
+        slope estimate is around 10%. If I^2_GX values are less than 90%
+        estimates should be treated with caution.
+
+    heterogi suppresses display of heterogeneity/pleiotropy statistics. In
+        the heterogeneity output the model based Q-statistic is reported by
+        multiplying the variance of the residuals by the degrees of freedom
+        (Del Greco et al., 2015).
+
+    ivw specifies IVW model, the default is MR-Egger.
+
+    level(#); see [R] estimation options.
+
+    norescale specifies that the residual variance is not set to 1 (if it is
+        found to be less than 1). Bowden et al. (2016) rescale the residual
+        variance to be 1 if it is found to be less than 1.
+
+    oldnames revert to using the longer outcome variable name in the b and V
+        ereturned matrices.
+
+    penweighted specifies using penalized weights as described in Burgess et
+        al. (2016).
+
+    radial specifies the radial formulation of the IVW and MR-Egger models
+        (Bowden et al., 2017). Note there is only a difference for the
+        MR-Egger model.
+
+    tdist specifies using the t-distribution, instead of the normal
+        distribution, for calculating the Wald test and the confidence
+        interval limits.
+
+    unwi2gx specifies the unweighted Q_GX and I^2_GX statistics to be
+        additionally displayed in the output and in the ereturn scalars.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    IVW (with fixed effect standard errors)
+        . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+
+    MR-Egger (with SEs using an unconstrained residual variance)
+        . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+    MR-Egger reporting I^2_GX statistic and heterogeneity Q-test
+        . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)
+            heterogi
+
+    MR-Egger using a t-distribution for inference & CI limits
+        . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
+
+    MR-Egger using the radial formulation
+        . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+
+    MR-Egger using the radial formulation and reporting heterogeneity Q-test
+        . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+            heterogi
+
+
+Stored results
+
+    mregger stores the following in e():
+
+    Scalars        
+      e(df_r)             residual degrees of freedom (with tdist option)
+      e(k)                number of instruments
+      e(I2GX)             I^2_GX (with gxse() option)
+      e(QGX)              Q_GX (with gxse() option)
+      e(phi)              Scale parameter (root mean squared error)
+
+    Macros         
+      e(cmd)              mregger
+      e(cmdline)          command as typed
+
+    Matrices       
+      e(b)                coefficient vector
+      e(V)                variance-covariance matrix of the estimates
+
+    If heterogi is specified mregger additionally returns the r-class results
+    of heterogi in the e-class results.
+
+    If unwi2gx is specified mregger additionally returns
+      e(I2GXunw)          Unweighted I^2_GX statistic
+      e(QGXunw)           Unweighted Q_GX statistic
+
+    mregger stores the following in r():
+
+    Matrices       
+      r(table)            Coefficient table with rownames: b, se, z, pvalue,
+                            ll, ul, df, crit, eform
+
+References
+
+    Bowden J, Davey Smith G, Burgess S.  Mendelian randomization with invalid
+        instruments: effect estimation and bias detection through Egger
+        regression. International Journal of Epidemiology, 2015, 44, 2,
+        512-525.  DOI
+
+    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
+        Mendelian randomization with some invalid instruments using a
+        weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
+        304-314.  DOI
+
+    Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR.
+        Assessing the suitability of summary data for two-sample Mendelian
+        randomization analyses using MR-Egger regression: the role of the
+        I-squared statistic. International Journal of Epidemiology, 2016, 45,
+        6, 1961-1974.  DOI
+
+    Bowden J, Spiller W, Del-Greco F, Sheehan NA, Thompson JR, Minelli C,
+        Davey Smith G.  Improving the visualisation, interpretation and
+        analysis of two-sample summary data Mendelian randomization via the
+        radial plot and radial regression.  International Journal of
+        Epidemiology, 2018, 47, 4, 1264-1278. DOI
+
+    Burgess S, Bowden J, Dudbridge F, Thompson SG. Robust instrumental
+        variable methods using candidate instruments with application to
+        Mendelian randomization. arXiv:1606.03729v1, 2016.  Link
+
+    Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy
+        in Mendelian randomization studies with summary data and a continuous
+        outcome.  Statistics in Medicine, 2015, 34, 21, 2926-2940.  DOI
+
+    Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: a
+        comparison of methods. Statistics in Medicine, 1999, 18, 20,
+        2693-2708.  DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mreggersimex -- SIMEX for the MR-Egger estimator
+
+Syntax
+
+        mreggersimex varname_gd varname_gp [aweight] [if] [in] [, options]
+
+    options                 Description
+    -------------------------------------------------------------------------
+      mreggeropts           Options for mregger
+      bsopts                Options for bootstrap
+      gxse(varname)         Variable containg genotype-phenotype SEs
+      noboot                Do not perform bootstrapping for SEs
+      nodraw                Do not draw SIMEX plot
+      reps(#)               No. bootstrap replications
+      seed(#)               Seed for random number generator, specify for
+                              reproducible results
+      simreps(#)            No. simulation replications
+
+Description
+
+    mreggersimex performs the simulation extrapolation (SIMEX) algorithm on
+    mregger using the commonly applied quadratic extrapolation.
+
+    varname_gd variable containing the genotype-disease association
+    estimates.
+
+    varname_gp variable containing the genotype-phenotype association
+    estimates.
+
+    For the analytic weights you need to specify the inverse of the
+    genotype-disease SEs squared, i.e. aw=1/(gdse^2).
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row
+    2, column 1).
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    SIMEX using default settings
+        . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1,
+            gxse(ldlcse) seed(12345)
+
+    Suppressing the bootstrap SEs
+        . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1,
+            gxse(ldlcse) seed(12345) noboot
+
+    Suppressing the bootstrap SEs and the plot
+        . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1,
+            gxse(ldlcse) seed(12345) noboot nodraw
+
+References
+
+    Bowden J, Del Greco FM, Minelli C, Davey Smith G, Sheehan NA, Thompson
+        JR.  Assessing the suitability of summary data for two-sample
+        Mendelian randomization analyses using MR-Egger regression: the role
+        of the I2 statistic.  International Journal of Epidemiology, 2016,
+        45, 6, 1961-1974.  DOI
+
+    Cook J and Stefanski LA. A simulation extrapolation method for parametric
+        measurement error models. Journal of the American Statistical
+        Association, 1995, 85, 652-663.  Link
+
+    Do R et al. Common variants associated with plasma triglycerides and risk
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        DOI:  DOI
+
+    Hardin JW, Schmiediche H, Carroll RJ. The simulation extrapolation method
+        for fitting linear models with additive measurement error. Stata
+        Journal.  2003, 3, 4, 373-385.  DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mreggerplot -- Scatter plot for MR-Egger type models
+
+Syntax
+
+        mreggerplot varname_gd varname_gdse varname_gp varname_gpse [if] [in]
+              [, options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      egger               MR-Egger estimator for fitted line
+      ellipses            marker confidence intervals as ellipses
+      errorbars           marker confidence intervals as capped lines
+      fe                  fixed effect standard errors for fitted line
+      gpci                CIs around G-P associations
+      ivw                 IVW line (default is MR-Egger)
+      legend(string)      legend options
+      level(#)            set confidence level; default is level(95)
+      linetop             draw fitted line (and CI) on top of points
+      mleglabel(string)   Label for data points in legend; default is
+                            Instruments
+      median              median estimator for fitted line
+      mlabel(string)      variable containing marker labels
+      nolci               do not plot confidence interval around fitted line
+      noline              do not plot fitted line
+      nomcis              do not plot confidence intervals around markers
+      penweighted         penalized weighted estimator
+      re                  random effect estimator for fitted line
+      recons              random intercept for fitted line
+      reslope             random slope for fitted line
+      reps(#)             number of bootstrap replications to obtain standard
+                            error
+      seed(#)             seed for random number generator for bootstrapping
+                            to obtain standard error
+      weighted            weighted median estimator
+      wmarkers            weighted markers
+      *                   Other options passed to the twoway plot
+
+Description
+
+    mreggerplot plots a scatter plot for MR-Egger type models
+
+    varname_gd is a variable containing the genotype-disease association
+    estimates.
+
+    varname_gdse is a variable containing the genotype-disease association
+    estimate standard errors.
+
+    varname_gp is a variable containing the genotype-phenotype association
+    estimates.
+
+    varname_gpse is a variable containing the genotype-phenotype association
+    estimate standard errors.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row
+    2, column 1).
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    Scatter plot of MR-Egger model
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+    Scatter plot of MR-Egger model labelling outlying genotypes
+        . gen mlabvar = rsid if abs(ldlcbeta) > .3
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, mlab(mlabvar)
+            mlabsize(vsmall) mlabp(7) mlabc(gs0)
+
+    Scatter plot of MR-Egger model with genotype-phenotype CIs
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, gpci
+
+    Scatter plot of MR-Egger model specifying own titles and legend label
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1,
+            title(Investigating pleiotropy: MR-Egger model fit)
+            xtitle(Genotype-LDLC associations) ytitle(Genotype-CHD
+            associations) mleglabel(Genotypes)
+
+    Scatter plot of IVW model
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ivw
+
+    Scatter plot of unweighted median model
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, median
+
+    Scatter plot of MR-Egger model using ellipses around points
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ellipses
+
+    Scatter plot of MR-Egger model adding an IVW line (with legend entry) for
+    comparison
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+        . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
+        . addplot : function _b[ldlcbeta]*x if sel1==1, range(0 0.5) lc(gs0)
+            lp(longdash) lw(vthin) legend(order(5 "Instruments" 4 "95% CIs" 3
+            "MR-Egger" 2 "MR-Egger 95% CI" 6 "IVW") rows(1) size(vsmall))
+
+    Scatter plot of MR-Egger model adding weighted median and modal lines
+    (with legend entries) for comparison
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+        . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+        . addplot : function _b[beta]*x if sel1==1, range(0 0.5) lc(gs0)
+            lp(shortdash) lw(vthin)
+        . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, phi(.25)
+        . addplot : function _b[beta]*x if sel1==1, range(0 0.5) lc(gs0)
+            lp(longdash) legend(order(5 "Instruments" 4 "95% CIs" 3
+            "MR-Egger" 2 "MR-Egger 95% CI" 6 "Weighted median" 7 "Modal")
+            rows(1) si(vsmall) symx(*.5))
+
+    Scatter plot without any fitted lines
+        . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, ivw noline
+            nolci gpci legend(order(4 "Instruments" 3 "95% CI") size(vsmall)
+            rows(1))
+
+References
+
+    Bowden J, Davey Smith G, Haycock PC, Burgess S.  Consistent estimation in
+        Mendelian randomization with some invalid instruments using a
+        weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
+        304-314.  DOI
+
+    Do et al.Common variants associated with plasma triglycerides and risk
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrmedian -- Weighted median of instrumental variable estimates
+
+Syntax
+
+        mrmedian varname_gd varname_gdse varname_gp varname_gpse [if] [in] [,
+                options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      level(#)            set confidence level; default is level(95)
+      penweighted         penalized weighted estimator
+      reps(#)             number of bootstrap replications to obtain standard
+                            error
+      seed(#)             seed for random number generator for bootstrapping
+                            to obtain standard error
+      weighted            weighted estimator
+
+Description
+
+    mrmedian performs unweighted, weighted, and penalized median IV estimator
+    on summary level data (i.e. reported genotype-disease and phenotype
+    -disease association estimates and their standard errors for individual
+    genotypes).
+
+    See Bowden et al. (2016) for more information.
+
+    varname_gd is a variable containing the genotype-disease association
+    estimates.
+
+    varname_gdse is a variable containing the genotype-disease association
+    estimate standard errors.
+
+    varname_gp is a variable containing the genotype-phenotype association
+    estimates.
+
+    varname_gpse is a variable containing the genotype-phenotype association
+    estimate standard errors.
+
+Options
+
+    level(#); see [R] estimation options.
+
+    reps(#) specifies the number of bootstrap replications for obtaining the
+        standard error. The default is 1000 replications.
+
+    seed(#) specifies the initial value of the random-number seed.  The
+        default is the current random-number seed. Specifying seed(#) is the
+        same as typing set seed # before issuing the command; see set_seed.
+
+    weighted use weights.
+
+    penweighted use penalized weights.
+
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median
+    estimates.
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    Unweighted median estimator
+        . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+    Unweighted median estimator with reproducible standard error
+        . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
+
+    Weighted median estimator
+        . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+
+    Penalized weighted median estimator
+        . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, penweighted
+
+Stored results
+
+    mrmedian stores the following in e():
+
+    Scalars        
+      e(k)                number of instruments
+      e(reps)             number of (bootstrap) replications
+
+    Macros         
+      e(cmd)              mrmedian
+      e(cmdline)          command as typed
+
+    Matrices       
+      e(b)                coefficient vector
+      e(V)                variance-covariance matrix of the estimates
+
+References
+
+    Bowden J, Davey Smith G, Haycock PC, Burgess S.  Consistent estimation in
+        Mendelian randomization with some invalid instruments using a
+        weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
+        304-314.  DOI
+
+    Do et al. Common variants associated with plasma triglycerides and risk
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrmedianobs -- Weighted median of instrumental variable estimates
+
+Syntax
+
+        mrmedianobs depvar [varlist1] (varname_endog = varlist_ivs) [if] [in]
+              [, options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      all                 report percentile and bias corrected confidence
+                            intervals
+      level(#)            set confidence level; default is level(95)
+      obsboot             obtain standard error by bootstrapping at
+                            observation level
+      penweighted         penalized weighted estimator
+      reps(#)             number of bootstrap replications to obtain standard
+                            error
+      seed(#)             seed for random number generator for bootstrapping
+                            to obtain standard error
+      weighted            weighted estimator
+
+Description
+
+    mrmedian performs unweighted, weighted, and penalized IV estimator on
+    observation level data.
+
+         depvar          outcome variable
+         varlist1        covariates to adjust for
+         varname_endog   exposure/treatment received/endogenous variable
+         varlist_ivs     instrumental variables
+
+Options
+
+    all report percentile and bias corrected bootstrap confidence interval
+        limits (only applies to observation level bootstrapping with
+        obsboot).
+
+    level(#); see [R] estimation options.
+
+    obsboot obtain bootstrap standard error by bootstrapping at the
+        observation level.
+
+    reps(#) specifies the number of bootstrap replications for obtaining the
+        standard error. The default is 50 replications.
+
+    seed(#) specifies the initial value of the random-number seed.  The
+        default is the current random-number seed. Specifying seed(#) is the
+        same as typing set seed # before issuing the command; see set_seed.
+
+    weighted use weights.
+
+    penweighted use penalized weights.
+
+
+Examples
+
+    Simulated test dataset.
+
+    Setup
+        . use
+            https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_test
+            > data, clear
+
+    Unweighted median estimator
+        . mrmedianobs y (x = z1-z20)
+
+    Weighted median estimator
+        . mrmedianobs y (x = z1-z20), weighted
+
+    Penalized weighted median estimator
+        . mrmedianobs y (x = z1-z20), penweighted
+
+    Unweighted median estimator with percentile CI limits of observation
+    level bootstrapping
+        . mrmedianobs y (x = z1-z20), obsboot all
+
+
+Stored results
+
+    mrmedian stores the following in e():
+
+    Scalars        
+      e(k)                number of instruments
+      e(N)                number of observations
+      e(reps)             number of (bootstrap) replications
+
+    Macros         
+      e(cmd)              mrmedianobs
+      e(cmdline)          command as typed
+
+    Matrices       
+      e(b)                coefficient vector
+      e(V)                variance-covariance matrix of the estimates
+
+References
+
+    Bowden J, Davey Smith G, Haycock PC, Burgess S.  Consistent estimation in
+        Mendelian randomization with some invalid instruments using a
+        weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
+        304-314.  DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrmodal -- Modal estimator for summary data
+
+Syntax
+
+        mrmodal varname_gd varname_gdse varname_gp varname_gpse [if] [in] [,
+                options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      level(#)            set confidence level; default is level(95)
+      nome                NOME assumption
+      nosave              Do not save density and vector of IV estimates in
+                            Mata
+      phi(#)              value of phi (for bandwidth)
+      reps(#)             number of bootstrap replications to obtain standard
+                            error
+      seed(#)             seed for random number generator for bootstrapping
+                            to obtain standard error
+      weighted            weighted IV estimates
+
+Description
+
+    mrmodal implements the zero modal estimator of Hartwig et al. (2017) for
+    use with summary level data (i.e. reported genotype-disease and
+    phenotype-disease association estimates and their standard errors for
+    individual genotypes).
+
+    Standard errors are obtained by parametric bootstrapping.
+
+    varname_gd is a variable containing the genotype-disease association
+    estimates.
+
+    varname_gdse is a variable containing the genotype-disease association
+    estimate standard errors.
+
+    varname_gp is a variable containing the genotype-phenotype association
+    estimates.
+
+    varname_gpse is a variable containing the genotype-phenotype association
+    estimate standard errors.
+
+Options
+
+    level(#); see [R] estimation options.
+
+    nome specifies the NOME (no measurement error in the genotype-phenotype
+        associations) assumption.
+
+    nosave specifies that the density of the IV estimates and column vector
+        of IV estimates should not be saved in Mata. If not specified these
+        are saved in Mata as mrmodal_densityiv and mrmodal_g respectively.
+
+    phi(#) specifies the parameter phi which is used in the calculation of
+        the bandwidth for the density estimation. Default is phi = 1, other
+        values commonly chosen are 0.25 and 0.5.
+
+    reps(#) specifies the number of bootstrap replications for obtaining the
+        standard error. The default is 1000 replications.
+
+    seed(#) specifies the initial value of the random-number seed.  The
+        default is the current random-number seed. Specifying seed(#) is the
+        same as typing set seed # before issuing the command; see set_seed.
+
+    weighted weight the instrumental variable estimates.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013.
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    Investigate what is a good value of phi to use (we want a smooth density
+    plot)
+        . mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+    Simple mode estimator
+        . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+    Simple mode estimator with reproducible standard error
+        . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
+
+    Weighted mode estimator
+        . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+
+    Simple mode estimator with NOME assumption
+        . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
+
+    Weighted mode estimator with NOME assumption
+        . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted nome
+
+Stored results
+
+    mrmodal stores the following in e():
+
+    Scalars        
+      e(k)                number of instruments
+      e(phi)              value of phi
+      e(reps)             number of (bootstrap) replications
+
+    Macros         
+      e(cmd)              mrmodal
+      e(cmdline)          command as typed
+
+    Matrices       
+      e(b)                coefficient vector
+      e(V)                variance-covariance matrix of the estimates
+
+References
+
+    Hartwig FP, Davey Smith G, Bowden J.  Robust inference in two-sample
+        Mendelian randomisation via the zero modal pleiotropy assumption.
+        International Journal of Epidemiology, 2017, 46, 6, 1985-1998.  DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrmodalplot -- Density plot to investigate values of phi in mrmodal
+
+Syntax
+
+        mrmodalplot varname_gd varname_gdse varname_gp varname_gpse [if] [in]
+                [, options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      lc(optlist)         list of line colors
+      lp(optlist)         list of line patterns
+      lw(optlist)         list of line widths
+      nome                NOME assumption
+      phi(numlist)        value/s of phi (for bandwidth), default is .25 .5 1
+      reps(#)             number of bootstrap replications to obtain standard
+                            error
+      seed(#)             seed for random number generator for bootstrapping
+                            to obtain standard error
+      weighted            weighted IV estimates
+      *                   Other options passed to the twoway plot
+
+Description
+
+    mrmodalplot plots the density of the IV estimates used in the mrmodal
+    estimator.
+
+    varname_gd is a variable containing the genotype-disease association
+    estimates.
+
+    varname_gdse is a variable containing the genotype-disease association
+    estimate standard errors.
+
+    varname_gp is a variable containing the genotype-phenotype association
+    estimates.
+
+    varname_gpse is a variable containing the genotype-phenotype association
+    estimate standard errors.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row
+    2, column 1).
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    Densities with phi=.25, .5, 1 and reproducible standard error
+        . mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
+
+    Densities with phi=.4, .6, .8, 1 and reproducible standard error
+        . mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, phi(.4(.2)1)
+            seed(12345)
+
+    Lines in grayscale and reproducible standard error
+        . mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, lc(gs10 gs5
+            gs0) seed(12345)
+
+
+References
+
+    Do et al. Common variants associated with plasma triglycerides and risk
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrratio -- Instrumental variable ratio (Wald) estimator
+
+Syntax
+
+        mrratio #gd #gdse #gp [#gpse #cov] [, options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      eform               exp() estimate and CI limits
+      fieller             CI using Fieller's Theorem
+      level(#)            set confidence level; default is level(95)
+      nome                NOME assumption
+
+Description
+
+    mrratio implements the standard instrumental variable ratio (Wald)
+    estimator.
+
+    mrratio can generate confidence interval limits using either a standard
+    error from a Taylor series expansion (the default), a standard error
+    using the NOME (no measurement error) in the genotype-phenotype
+    association assumption, or using Fieller's Theorem.
+
+    The user needs to have summary level genotype-disease and
+    genotype-phenotype association estimates and their standard errors. If
+    assuming NOME the standard error of the genotype-phenotype association is
+    not required.
+
+    It is also optional to provide the covariance between the
+    genotype-disease and genotype-phenotype estimates. If these are from
+    independent samples then this covariance is zero.
+
+    #gd genotype-disease association estimate.
+
+    #gdse standard error of the genotype-disease association estimate.
+
+    #gp genotype-phenotype association estimate.
+
+    #gpse standard error of the genotype-phenotype association estimate.
+
+    #cov covariance between the genotype-disease and the genotype-phenotype
+    estimates.
+
+Options
+
+    eform specifies reporting the exponentiated ratio estimate and confidence
+        interval limits.
+
+    fieller specifies deriving the confidence interval using Fieller's
+        Theorem.
+
+    level(#); see [R] estimation options.
+
+    nome specifies the NOME (no measurement error in the genotype-phenotype
+        association) assumption.
+
+Examples
+
+    Hypothetical example
+        . mrratio 1 .5 1 .25
+
+    With NOME assumption
+        . mrratio 1 .5 1 .25, nome
+
+    With NOME assumption
+        . mrratio 1 .5 1, nome
+
+    Exponentiate estimate and CI limits
+        . mrratio 1 .5 1 .25, eform
+
+    CI using Fieller's Theorem
+        . mrratio 1 .5 1 .25, fieller
+
+Stored results
+
+    mrratio stores the following in e():
+
+    Scalars        
+      e(fiellerres)       Result code from the Fieller CI: . fieller not
+                            specified; 1 closed CI; 2 union of two intervals;
+                            3 CI is whole real line
+      e(level)            level specified in first call to mrratio.
+
+    When fieller specified additional scalars:
+      e(lowerci)          lower CI limit
+      e(upperci)          upper CI limit
+
+    Macros         
+      e(cmd)              mrratio
+      e(cmdline)          command as typed
+
+    Matrices       
+      e(b)                coefficient vector
+      e(V)                variance-covariance matrix of the estimate
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrivests -- Generate genotype specific instrumental variable ratio (Wald)
+estimates in a dataset
+
+Syntax
+
+        mrivests varname_gd varname_gdse varname_gp [varname_gpse 
+                varname_cov] [if] [in] [, options]
+
+    options                      Description
+    -------------------------------------------------------------------------
+      generate(varlist, replace) Variables to contain IV ests and SEs or CI
+                                   limits
+      *                          options passed to mrratio
+
+Description
+
+    mrivests calls mrratio to put the instrumental variable ratio (Wald)
+    estimate and its standard error in the variables specified.
+
+    varname_gd is a variable containing genotype-disease association
+    estimates.
+
+    varname_gdse is a variable containing the standard errors of the
+    genotype-disease association estimates.
+
+    varname_gp is a variable containing genotype-phenotype association
+    estimates.
+
+    varname_gpse is a variable containing the standard errors of the
+    genotype-phenotype association estimates.
+
+    varname_cov is a variable containing the covariance between the
+    genotype-disease and the genotype-phenotype estimates.
+
+Options
+
+    generate(varlist, replace) specifies the variables (2 or 3) to contain
+        the IV estimates and their standard errors or confidence interval
+        limits. Specifying replace replaces the values in these variables if
+        they already exist in the dataset.
+
+    * options passed through to mrratio, e.g. nome.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 generate genotype
+    specific estimates for the LDL-c phenotype.
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    Generate IV estimates in dataset
+        . mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest
+            ivse)
+
+    Generate IV estimates with SEs assuming NOME
+        . mrivests chdbeta chdse ldlcbeta if sel1==1, generate(ivest ivse,
+            replace) nome
+
+    Generate IV estimates with CI limits using Fieller's Theorem
+        . drop ivest
+        . mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest
+            ivcilow ivciupp) fieller
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrforest -- Forest plot for MR-Egger type models
+
+Syntax
+
+        mrforest varname_gd varname_gdse varname_gp varname_gpse [
+              varname_cov] [if] [in] [, options]
+
+    options                 Description
+    -------------------------------------------------------------------------
+      astext(#)             Percentage of plot taken up by areas for text -
+                              some trial and error may be required
+      effect(string)        Label for statistics column; default is Estimate
+      ivid(varname)         Variable to label genotypes, usually containing
+                              RSIDs
+      ividlabel(string)     Label for genotypes; default is Genotypes
+      ivwlabel(string)      Label for IVW model; default is IVW
+      gsort(string)         how to sort the estimates, if specified must be
+                              one of; ascending, descending, or unsorted;
+                              default is ascending
+      level(#)              set confidence level; default is level(95)
+      mreggerlabel(string)  Label for MR-Egger model; default is MR-Egger
+      mrmedianlabel(string) Label for median model; default is Median
+      mrmodallabel(string)  Label for modal model; default is Modal
+      models(#)             number of models to show (1 IVW, 2 & MR-Egger, 3
+                              & Median, 4 & Modal); default is 2
+      modelslabel(string)   Label for models; default is Summary
+      modelsonly            Only show model estimates on plot
+      nonote                Suppress note reporting I^2_GX
+      nostats               Suppress the statistics column
+      textsize(#)           Scaling factor for text on plot. I have tried to
+                              use sensible numbers here but some trial and
+                              error may be required
+      zcis                  Use normal distribution CI limits (for IVW and
+                              MR-Egger)
+
+      Options passed to other commands:
+      ivwopts(string)       options for IVW estimate from mregger, ivw
+      mreggeropts(string)   options for MR-Egger estimate from mregger
+      mrivestopts(string)   options for mrivests used to generate genotype
+                              specific ratio estimates and SEs
+      mrmedianopts(string)  options for median estimate from mrmedian
+      mrmodal(string)       options for modal estimate from mrmodal
+
+      *                     Other options passed to the metan
+
+Description
+
+    mrforest plots a forest plot for MR-Egger type models. It is really a
+    wrapper program for a call to metan which must be installed.
+
+    If you do not already have metan, it can be installed by running: ssc
+    install metan.
+
+    varname_gd is a variable containing the genotype-disease association
+    estimates.
+
+    varname_gdse is a variable containing the genotype-disease association
+    estimate standard errors.
+
+    varname_gp is a variable containing the genotype-phenotype association
+    estimates.
+
+    varname_gpse is a variable containing the genotype-phenotype association
+    estimate standard errors.
+
+    varname_cov is a variable containing the covariances between the
+    genotype-disease and genotype-phenotype associations.
+
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row
+    2, column 1).
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    Forest plot of genotype specific IV estimates and IVW and MR-Egger
+    estimates, labelling the genotypes with their RSID.
+        . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
+
+    Having seen the first plot we can now define nicer x-axis labels.
+        . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
+            xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+
+    Removing the column of estimates from the plot, and sorting in descending
+    order of the IV estimates.
+        . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
+            nostats gsort(descending)
+
+    Showing all 4 models and modifying some labels.
+        . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
+            models(4) modelslabel(All genotypes)
+
+References
+
+    Harris RJ, Bradburn MJ, Deeks JJ, Harbord RM, Altman DG, Sterne JAC.
+        metan: fixed- and random-effects meta-analysis.  Stata Journal, 2008,
+        8, 1, 3-28. Link
+
+    Do et al. Common variants associated with plasma triglycerides and risk
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrmodalplot -- Funnel plot for two-sample MR analysis
+
+Syntax
+
+        mrfunnel varname_gd varname_gdse varname_gp varname_gpse [if] [in] [,
+                options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      metric(metric)      scale of y-axis
+      noivw               do not plot IVW line
+      nomregger           do not plot MR-Egger line
+      mrivestsopts(opts)  options passed to mrivests
+      *                   Other options passed to the plot
+
+Description
+
+    mrfunnel provides a funnel plot for a two-sample Mendelian randomization
+    analysis.
+
+    There are 3 choices of measures of instrument strength to plot on the
+    y-axis, which are described below.
+ 
+    On the plot the MR-Egger estimate is the line with the longer dashes, the
+    IVW estimate is shown with the shorter dashes.
+
+    varname_gd is a variable containing the genotype-disease association
+    estimates.
+
+    varname_gdse is a variable containing the genotype-disease association
+    estimate standard errors.
+
+    varname_gp is a variable containing the genotype-phenotype association
+    estimates.
+
+    varname_gpse is a variable containing the genotype-phenotype association
+    estimate standard errors.
+
+Options
+
+    metric(gpbeta|gpbetastd|invse) specifies the metric for the y-axis. Can
+        be one of:
+    - gpbeta: the absolute value of the genotype-phenotype estimates,
+    - gpbetastd: gpbeta standardised by the genotype-disease standard errors
+    (the default),
+    - invse: the inverse of the standard errors on the genotype specific IV
+    ratio estimates.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et
+    al., Gen Epi, 2016, Web Figure A2 (top-right plot, LDL-C with 73
+    genotypes).
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with exposure < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    Funnel plot
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+    Without adding the IVW and MR-Egger estimates
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, noivw nomregger
+
+    Using an unstandardised y-axis
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(gpbeta)
+
+    Using inverse IV SEs on the y-axis
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(invse)
+
+
+References
+
+    Do et al., 2013. Common variants associated with plasma triglycerides and
+        risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
+        DOI:  http://dx.doi.org/10.1038/ng.2795
+
+    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
+        Mendelian randomization with some invalid instruments using a
+        weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
+        304-314. DOI:  http:dx.doi.org/10.1002/gepi.21965
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrmvivw -- Multivariable inverse variance weighted regression (MVIVW)
+
+Syntax
+
+        mrmvivw varname_gd varname_gp1 [varname_gp2 ...] [aweight] [if] [in]
+                [, options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      fe                  Fixed effect standard errors (default is
+                            multiplicative)
+      gxse(varlist)       varlist of genotype-phenotype standard errors
+      level(#)            set confidence level; default is level(95)
+
+Description
+
+    mrmvivw performs multivariable inverse-variance weighted (IVW) regression
+    using summary level data.  See  Burgess et al. (2015) for more
+    information.
+
+    varname_gd variable containing the genotype-disease association
+    estimates.
+
+    varname_gp# variable containing the #th genotype-phenotype association
+    estimates.
+
+    For the analytic weights you need to specify the inverse of the
+    genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+
+Options
+
+    fe specifies fixed effect standard errors (i.e. variance of residuals
+        constrained to 1 as in fixed effect meta-analysis models). The
+        default is to use multiplicative standard errors (i.e. variance of
+        residuals unconstrained as in standard linear regression).
+
+    gxse(varlist) specifies a varlist of genotype-phenotype standard errors.
+        These should be in the same order as the genotype-phenotype variables
+        in the main varlist.  When this option is specified various Q and F
+        statistics are calculated, see Sanderson et al. (2019) for more
+        information.
+
+    level(#); see [R] estimation options.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013.
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with LDL-C < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    MVIVW
+        . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
+            sel1==1
+
+    Report Q_A statistic
+        . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
+            sel1==1, gxse(ldlcse hdlcse tgse)
+
+Stored results
+
+    mrmvivw stores the following in e():
+
+    Scalars        
+      e(N)                Number of genotypes
+      e(Np)               Number of phenotypes
+    If gxse() specified
+      e(Qa)               Q_A statistic
+      e(Qadf)             Degrees of freedom of Q_A statistic
+      e(Qap)              P-value for Q_A chi-squared test
+
+    Macros         
+      e(cmd)              Command name
+      e(cmdline)          Command issued
+      e(setype)           Standard error type
+
+    Matrices       
+      e(b)                coefficient vector
+      e(V)                variance-covariance matrix of the estimates
+
+    mrmvivw stores the following in r():
+
+    Matrices       
+      r(table)            Coefficient table with rownames: b, se, z, pvalue,
+                            ll, ul, df, crit, eform
+
+References
+
+    Burgess S, Dudbridge F, Thompson SG. Multivariable Mendelian
+        randomization:  the use of pleiotropic genetic variants to estimate
+        causal effects.  American Journal of Epidemiology, 2015, 181, 4,
+        251–260.  DOI
+    Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of
+        multivariable Mendelian randomization in the single-sample and
+        two-sample summary data settings. International Journal of
+        Epidemiology, 2019, 48, 3, 713-727.  DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+Title
+
+     mrmvegger -- Multivariable MR-Egger regression (MVMR-Egger)
+
+Syntax
+
+        mrmvegger varname_gd varname_gp1 [varname_gp2 ...] [aweight] [if] [
+                in] [, options]
+
+    options               Description
+    -------------------------------------------------------------------------
+      orient(#)           orient the data wrt to the phenotype which
+                            corresponds with the #th genotype-phenotype
+                            association variable in the varlist (default is
+                            1)
+      level(#)            set confidence level; default is level(95)
+
+Description
+
+    mrmvegger performs multivariable MR-Egger regression. For further
+    information see Rees et al. (2017).
+
+    varname_gd variable containing the genotype-disease association
+    estimates.
+
+    varname_gp# variable containing the #th genotype-phenotype association
+    estimates.
+
+    For the analytic weights you need to specify the inverse of the
+    genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+
+Options
+
+    orient(#) specifies which phenotype to orient the data to. The default is
+        1, i.e. the phenotype in the first genotype-phenotype variable in the
+        varlist.
+
+    level(#); see [R] estimation options.
+
+Examples
+
+    Using the data provided by Do et al., Nat Gen, 2013.
+
+    Setup
+        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+
+    Select observations (p-value with LDL-C < 10^-8)
+        . gen byte sel1 = (ldlcp2 < 1e-8)
+
+    MVMR-Egger regression
+        . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
+            sel1==1
+
+    Orient wrt HDL-C instead of LDL-C
+        . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
+            sel1==1, orient(2)
+
+    Orient wrt triglycerides instead of LDL-C
+        . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
+            sel1==1, orient(3)
+
+Stored results
+
+    mrmvegger stores the following in e():
+
+    Scalars        
+      e(N)                Number of genotypes
+      e(Np)               Number of phenotypes
+
+    Macros         
+      e(cmd)              Command name
+      e(cmdline)          Command issued
+      e(orientvar)        Genotype-phenotype association variable the model
+                            is oriented wrt
+
+    Matrices       
+      e(b)                coefficient vector
+      e(V)                variance-covariance matrix of the estimates
+
+    mrmvegger stores the following in r():
+
+    Matrices       
+      r(table)            Coefficient table with rownames: b, se, z, pvalue,
+                            ll, ul, df, crit, eform
+
+References
+
+    Rees J, Wood A, Burgess S. Extending the MR-Egger method for
+        multivariable Mendelian randomization to correct for both measured
+        and unmeasured pleiotropy.  Statistics in Medicine, 2017, 20, 36, 29,
+        4705-4718.  DOI
+
+
+Author
+
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
+
+. 
+end of do-file
+      name:  helpfiles
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+  log type:  text
+ closed on:   2 Jul 2020, 16:30:46
+-------------------------------------------------------------------------------
