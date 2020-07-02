@@ -52,6 +52,9 @@ al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.{p_end}
 {pstd}Scatter plot of MR-Egger model{p_end}
 {phang2}{cmd:.} {stata "mr eggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1"}{p_end}
 
+{pstd}Multivariable IVW{p_end}
+{phang2}{cmd:.} {stata "mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
+
 {marker results}{...}
 {title:Stored results}
 
