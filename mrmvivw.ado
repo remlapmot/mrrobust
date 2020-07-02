@@ -19,12 +19,7 @@ syntax varlist(min=2) [aweight] [if] [in] [, ///
 
 local callersversion = _caller()
 
-// number of genotypes (i.e. rows of data used in estimation)
-qui count `if' `in'
-local k = r(N)
-
 /*
-tokenize `"`varlist'"'
 varlist should be specified as:
 1: gd beta
 2: gp beta1
@@ -32,7 +27,21 @@ varlist should be specified as:
 ...
 aw: =1/gdSE^2
 */
+
+// number of genotypes (i.e. rows of data used in estimation)
+qui count `if' `in'
+local k = r(N)
+
+// number of phenotypes
 local npheno = wordcount("`varlist'") - 1
+tokenize `"`varlist'"'
+tempvar outcome
+qui gen double `outcome' = `1' `if'`in'
+forvalues i = 1/`npheno' {
+	tempvar pheno`i'
+	local phenoname`i' ``=`i' + 1''
+	qui gen double `pheno`i'' = `=`i' + 1' `if'`in'
+}
 
 tempvar invvar // gyse
 qui gen double `invvar' `exp' `if' `in'
