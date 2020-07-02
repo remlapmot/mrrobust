@@ -10,7 +10,7 @@ cscript master
 
 cap noi ado describe mrrobust
 
-local cscripts mregger
+local cscripts mrmvivw
 
 foreach dofile of local cscripts {
     log using `dofile'.log, text replace name(`dofile')
