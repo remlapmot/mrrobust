@@ -26,13 +26,15 @@
 {synoptline}
 {synopt:{opt fe:}}Fixed effect standard errors (default is multiplicative)
 {p_end}
+{synopt:{opt gxse(varlist)}}varlist of genotype-phenotype standard errors{p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 
 {marker description}{...}
 {title:Description}
 
 {pstd}
-{cmd:mrmvivw} performs multivariable inverse-variance weighted (IVW) regression using summary level data.
+{cmd:mrmvivw} performs multivariable inverse-variance weighted (IVW) regression using summary level data. 
+See {help mrmvivw##burgess: Burgess et al. (2015)} for more information.
 
 {pstd}
 {var:_gd} variable containing the genotype-disease association estimates.
@@ -48,6 +50,12 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 
 {phang}
 {opt fe} specifies fixed effect standard errors (i.e. variance of residuals constrained to 1 as in fixed effect meta-analysis models). The default is to use multiplicative standard errors (i.e. variance of residuals unconstrained as in standard linear regression).
+
+{phang}
+{opt gxse(varlist)} specifies a varlist of genotype-phenotype standard errors. 
+These should be in the same order as the genotype-phenotype variables in the main varlist. 
+When this option is specified various Q and F statistics are printed. 
+See {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
@@ -66,6 +74,9 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {pstd}MVIVW{p_end}
 {phang2}{cmd:.} {stata "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
 
+{pstd}Report Q_A statistic{p_end}
+{phang2}{cmd:.} {stata "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)"}{p_end}
+
 {marker results}{...}
 {title:Stored results}
 
@@ -75,6 +86,10 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Scalars}{p_end}
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
+{p2col 5 20 24 2: If {cmd:gxse()} specified}{p_end}
+{synopt:{cmd:e(Qa)}}Q_A statistic{p_end}
+{synopt:{cmd:e(Qadf)}}Degrees of freedom of Q_A statistic{p_end}
+{synopt:{cmd:e(Qap)}}P-value for Q_A chi-squared test{p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}
@@ -99,9 +114,17 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 
 {marker burgess}{...}
 {phang}
-Burgess S, Dudbridge F, Thompson SG. Multivariable
-Mendelian randomization: the use of pleiotropic genetic variants to estimate causal effects. American Journal of Epidemiology, 2015, 181, 4, 251–260.
+Burgess S, Dudbridge F, Thompson SG. Multivariable Mendelian randomization: 
+the use of pleiotropic genetic variants to estimate causal effects. 
+American Journal of Epidemiology, 2015, 181, 4, 251–260.
 {browse "http://dx.doi.org/10.1093/aje/kwu283":DOI}
+{p_end}
+{marker sanderson}{...}
+{phang}
+Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of multivariable Mendelian 
+randomization in the single-sample and two-sample summary data settings. International 
+Journal of Epidemiology, 2019, 48, 3, 713-727. 
+{browse "http://dx.doi.org/10.1093/ije/dyy262":DOI}
 {p_end}
 
 {marker author}
