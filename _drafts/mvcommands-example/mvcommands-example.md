@@ -1,10 +1,10 @@
 ---
-title: "MVMR: MV-IVW and MVMR-Egger"
-author: Tom Palmer
-date: 2020-07-02
+title: "mv commands"
+author: "Tom Palmer"
+date: "2020-07-02"
 ---
 
-# Example demonstrating multivariate commands
+# mv commands
 
 Read in the Do et al. example dataset.
 

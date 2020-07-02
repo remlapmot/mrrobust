@@ -1,4 +1,4 @@
-# Example demonstrating multivariate commands
+# mv commands
 
 Read in the Do et al. example dataset.
 
@@ -116,34 +116,18 @@ chdbeta      │
 
 ## References
 
-<div id="refs" class="references">
-
-<div id="ref-burgess-aje-2015">
-
 Burgess, S, F Dudbridge, and SG Thompson. 2015. “Multivariable Mendelian
 randomization: the use of pleiotropic genetic variants to estimate
 causal effects.” *American Journal of Epidemiology* 181 (4): 251–60.
 <https://doi.org/10.1093/aje/kwu283>.
-
-</div>
-
-<div id="ref-rees-statsmed-2017">
 
 Rees, J, A Wood, and S Burgess. 2017. “Extending the MR-Egger method for
 multivariable Mendelian randomization to correct for both measured and
 unmeasured pleiotropy.” *Statistics in Medicine* 36 (29): 4705–18.
 <https://doi.org/10.1002/sim.7492>.
 
-</div>
-
-<div id="ref-sanderson-ije-2019">
-
 Sanderson, E, G Davey Smith, F Windmeijer, and J Bowden. 2019. “An
 examination of multivariable Mendelian randomization in the
 single-sample and two-sample summary data settings.” *International
 Journal of Epidemiology* 48 (3): 713–27.
 <https://doi.org/10.1093/ije/dyy262>.
-
-</div>
-
-</div>
