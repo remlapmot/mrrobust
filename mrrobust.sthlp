@@ -54,7 +54,7 @@
 
 {synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates
 
-{synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator
+{synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator (also {help mrmvivw} and {help mvmr})
 
 {synopt :{opt {help mrmvegger}:}}Multivariable MR-Egger regression
 
