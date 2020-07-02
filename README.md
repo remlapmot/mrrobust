@@ -43,7 +43,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - `mrdeps` command added for conveniently installing dependencies
 * November 2018:
   - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example)
-  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
+  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same [Stata Markdown](https://data.princeton.edu/stata/markdown) script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
 * September 2018: 
   - IJE paper published online [here](https://doi.org/10.1093/ije/dyy195)
 * August 2018:
