@@ -8,7 +8,9 @@ cap noi ado uninstall mrrobust
 * For myprog.ado there should be a cscript myprog.do
 
 * run after having merged the new branch into master on GitHub
-net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+* net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+net install github, from("https://haghish.github.io/github/")
+gitget mrrobust
 
 cd cscripts
 do master
@@ -19,3 +21,5 @@ do master
 ssc install markstat
 ssc install whereis
 whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // wherever your pandoc exe is
+
+* ado uninstall mrrobust
