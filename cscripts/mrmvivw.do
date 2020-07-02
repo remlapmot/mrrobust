@@ -178,3 +178,23 @@ discard
 rcof "noi mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse)" == 198
 discard
 rcof "noi mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)" == 198
+
+// eret Np - No. phenotypes
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+eret list
+assert e(Np) == 3
+mrmvivw
+
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+eret list
+assert e(Np) == 2
+
+discard
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+eret list
+assert e(Np) == 1
+mrmvivw
+mat list r(table)
+
