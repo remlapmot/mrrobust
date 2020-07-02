@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* July 2020:
+  - Added `gxse()` option to `mrmvivw` to return instrument strength Q<sub>A</sub> statistic (Sanderson et al. 2019)
 * June 2020:
   - Simplified the outcome variable name in `mregger` b and V e-returned matrices. Turn this off with new `oldnames` option
   - Added basic multivariable MR-Egger command, `mrmvegger`
@@ -41,7 +43,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - `mrdeps` command added for conveniently installing dependencies
 * November 2018:
   - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Rmarkdown script (`.Rmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example)
-  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same Stata Markdown script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
+  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same [Stata Markdown](https://data.princeton.edu/stata/markdown) script (`.stmd` file) is [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
 * September 2018: 
   - IJE paper published online [here](https://doi.org/10.1093/ije/dyy195)
 * August 2018:

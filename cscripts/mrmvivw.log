@@ -2,7 +2,7 @@
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  27 Jun 2020, 22:57:03
+ opened on:   2 Jul 2020, 12:30:51
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -49,6 +49,7 @@ chdbeta      |
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -84,6 +85,7 @@ pvalue  2.167e-36
 . mvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -102,6 +104,7 @@ chdbeta      |
 . mvmr chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -123,11 +126,11 @@ chdbeta      |
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -151,11 +154,11 @@ chdbeta      |
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -179,11 +182,11 @@ chdbeta      |
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -208,6 +211,7 @@ chdbeta      |
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -236,6 +240,7 @@ chdbeta      |
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -264,6 +269,7 @@ chdbeta      |
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -294,11 +300,11 @@ chdbeta      |
 > 0)
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -316,11 +322,11 @@ chdbeta      |
 . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -338,11 +344,11 @@ chdbeta      |
 . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 3
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -360,10 +366,11 @@ chdbeta      |
 
 scalars:
                   e(N) =  73
+                 e(Np) =  3
 
 macros:
-            e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(c.."
-                e(cmd) : "mrmvivw"
+            e(cmdline) : "mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chds.."
+                e(cmd) : "mvmr"
              e(setype) : "re"
          e(properties) : "b V"
 
@@ -391,6 +398,7 @@ matrices:
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -402,6 +410,7 @@ chdbeta      |
 . mrmvivw
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                  Standard errors: Fixed effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -421,22 +430,22 @@ chdbeta      |
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
 . mrmvivw
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
@@ -449,11 +458,11 @@ chdbeta      |
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                        Number of genotypes: 73
+                                                       Number of phenotypes: 1
                                                 Standard errors: Random effect
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
@@ -469,9 +478,378 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 > 1"
 
 . 
+. * gxse() for Q-statistics
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse)
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 2
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
+    hdlcbeta |  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(71) = 159.89 (p =  0.0000)
+
+. assert e(Qa) - 159.888 < 1e-3
+
+. assert e(Qadf) == 71
+
+. assert e(Qap) - 8.41e-9 < 1e-6
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse tgse)
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 2
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4237414   .0613912     6.90   0.000     .3034169    .5440659
+      tgbeta |   .3014213   .1132872     2.66   0.008     .0793824    .5234601
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(71) = 157.71 (p =  0.0000)
+
+.         
+. discard
+
+. mrmvivw chdbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(hdlcse tgse)
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 2
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    hdlcbeta |  -.1446141   .1694317    -0.85   0.393    -.4766941    .1874659
+      tgbeta |   .5241872   .1501343     3.49   0.000     .2299294     .818445
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(71) = 261.15 (p =  0.0000)
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse tgse)
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+
+. eret list
+
+scalars:
+                  e(N) =  73
+                 e(Np) =  3
+                 e(Qa) =  152.8771057128906
+               e(Qadf) =  70
+                e(Qap) =  4.10807666471e-08
+
+macros:
+            e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(c.."
+                e(cmd) : "mrmvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 3
+                  e(V) :  3 x 3
+
+. di e(Qa), e(Qadf), e(Qap)
+152.87711 70 4.108e-08
+
+. mrmvivw
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+
+. eret list
+
+scalars:
+                  e(N) =  73
+                 e(Np) =  3
+                 e(Qa) =  152.8771057128906
+               e(Qadf) =  70
+                e(Qap) =  4.10807666471e-08
+
+macros:
+            e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(c.."
+                e(cmd) : "mrmvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 3
+                  e(V) :  3 x 3
+
+. di e(Qa), e(Qadf), e(Qap)
+152.87711 70 4.108e-08
+
+. assert e(Qa) - 152.877 < 1e-3
+
+. assert e(Qadf) == 70
+
+. assert e(Qap) - 4.108e-8 < 1e-6
+
+. 
+. discard
+
+. mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse tgse)
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+
+. eret list
+
+scalars:
+                  e(N) =  73
+                 e(Np) =  3
+                 e(Qa) =  152.8771057128906
+               e(Qadf) =  70
+                e(Qap) =  4.10807666471e-08
+
+macros:
+            e(cmdline) : "mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chds.."
+                e(cmd) : "mvmr"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 3
+                  e(V) :  3 x 3
+
+. 
+. discard
+
+. mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse tgse)
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+
+. eret list
+
+scalars:
+                  e(N) =  73
+                 e(Np) =  3
+                 e(Qa) =  152.8771057128906
+               e(Qadf) =  70
+                e(Qap) =  4.10807666471e-08
+
+macros:
+            e(cmdline) : "mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chd.."
+                e(cmd) : "mvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 3
+                  e(V) :  3 x 3
+
+. 
+. // check for too few SEs specified in gxse()
+. discard
+
+. rcof "noi mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==
+> 1, gxse(ldlcse hdlcse)" == 198
+The number of variables in gxse() does not match the number of genotype-phenoty
+> pe variables
+
+. discard
+
+. rcof "noi mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, gxse
+> (ldlcse hdlcse tgse)" == 198
+The number of variables in gxse() does not match the number of genotype-phenoty
+> pe variables
+
+. 
+. // eret Np - No. phenotypes
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. eret list
+
+scalars:
+                  e(N) =  73
+                 e(Np) =  3
+
+macros:
+            e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(c.."
+                e(cmd) : "mrmvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 3
+                  e(V) :  3 x 3
+
+. assert e(Np) == 3
+
+. mrmvivw
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 2
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
+    hdlcbeta |  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
+------------------------------------------------------------------------------
+
+. eret list
+
+scalars:
+                  e(N) =  73
+                 e(Np) =  2
+
+macros:
+            e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2).."
+                e(cmd) : "mrmvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 2
+                  e(V) :  2 x 2
+
+. assert e(Np) == 2
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 1
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. eret list
+
+scalars:
+                  e(N) =  73
+                 e(Np) =  1
+
+macros:
+            e(cmdline) : "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1.."
+                e(cmd) : "mrmvivw"
+             e(setype) : "re"
+         e(properties) : "b V"
+
+matrices:
+                  e(b) :  1 x 1
+                  e(V) :  1 x 1
+
+. assert e(Np) == 1
+
+. mrmvivw
+
+                                                       Number of genotypes: 73
+                                                       Number of phenotypes: 1
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. mat list r(table)
+
+r(table)[9,1]
+         ldlcbeta
+     b  .48150551
+    se  .05979938
+     z  8.0520154
+pvalue  8.144e-16
+    ll  .36430088
+    ul  .59871014
+    df          .
+  crit   1.959964
+ eform          0
+
+. 
+. 
 end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  27 Jun 2020, 22:57:13
+ closed on:   2 Jul 2020, 12:31:02
 -------------------------------------------------------------------------------
