@@ -37,17 +37,12 @@ obtain standard error{p_end}
 {title:Description}
 
 {pstd}
-{cmd:mrmodal} implements the zero modal estimator of Hartwig et al. (2017) 
-for use with summary level 
-data (i.e. reported genotype-disease and phenotype-disease 
+{cmd:mrmodal} implements the zero modal estimator of {help mrmodal##hartwig:Hartwig et al. (2017)} 
+for use with summary level data (i.e. reported genotype-disease and phenotype-disease 
 association estimates and their standard errors for individual genotypes).
 
 {pstd}
-As per the working paper, standard errors are obtained by parametric 
-bootstrap.
-
-{pstd}
-See {browse "http://dx.doi.org/10.1101/126102":Hartwig et al., bioRxiv, 2017}, for more information.
+Standard errors are obtained by parametric bootstrapping.
 
 {pstd}
 {var:_gd} is a variable containing the genotype-disease association estimates.
@@ -153,10 +148,10 @@ see {helpb set_seed}.
 
 {marker hartwig}{...}
 {phang}
-Hartwig FP, Davey Smith G, Bowden J. 2017. 
+Hartwig FP, Davey Smith G, Bowden J. 
 Robust inference in two-sample Mendelian randomisation via the zero modal 
-pleiotropy assumption. bioRxiv. 
-DOI: {browse "http://dx.doi.org/10.1101/126102"}
+pleiotropy assumption. International Journal of Epidemiology, 2017, 46, 6, 1985-1998. 
+{browse "https://doi.org/10.1093/ije/dyx102":DOI}
 
 {marker author}
 {title:Author}
