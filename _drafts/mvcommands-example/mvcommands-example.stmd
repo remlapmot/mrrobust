@@ -1,0 +1,48 @@
+---
+title: "MVMR: MV-IVW and MVMR-Egger"
+author: Tom Palmer
+date: 2020-07-02
+---
+
+# Example demonstrating multivariate commands
+
+Read in the Do et al. example dataset.
+```{stata}
+use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+```
+
+Select observations (p-value with LDL-C < 10<sup>-8</sup>)
+```{stata}
+gen byte sel1 = (ldlcp2 < 1e-8)
+```
+
+## MV-IVW (MVMR)
+
+Fit the multivariable inverse-variance weighted (MV-IVW) estimator with LDL-c and HDL-c.
+```{stata}
+mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+```
+
+Additionally include triglycerides and report Q<sub>A</sub> statistic.
+```{stata}
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)
+```
+
+## MVMR-Egger
+
+Fit MVMR-Egger regression, by default orienting the model to the phenotype associated with the genotype-phenotype associations.
+```{stata}
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+```
+
+We can also orient the model wrt HDL-C instead of LDL-C.
+```{stata}
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+```
+
+Or we can orient wrt triglycerides instead of LDL-C.
+```{stata}
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(3)
+```
+
+## References
