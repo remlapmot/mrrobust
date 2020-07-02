@@ -58,14 +58,15 @@ else {
 	local setype "re"
 }
 
-* mvivw
-qui glm `varlist' [iw=`invvar'] `if' `in', nocons ///
-	`scale' level(`level') `options'
-
-/*
-regress `varlist' [aw=`invvar'] `if' `in', nocons ///
-	level(`level') `options'
-*/
+** fit mvivw model
+if "`fe'" == "fe" {
+	qui glm `varlist' [iw=`invvar'] `if' `in', nocons ///
+		`scale' level(`level') `options'
+}
+else {
+	qui regress `varlist' [aw=`invvar'] `if' `in', nocons ///
+		level(`level') `options'
+}
 
 mat b = e(b)
 mat V = e(V)
