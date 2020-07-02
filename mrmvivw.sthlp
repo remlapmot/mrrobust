@@ -86,6 +86,7 @@ See {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Scalars}{p_end}
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
+{synopt:{cmd:e(Np)}}Number of phenotypes{p_end}
 {p2col 5 20 24 2: If {cmd:gxse()} specified}{p_end}
 {synopt:{cmd:e(Qa)}}Q_A statistic{p_end}
 {synopt:{cmd:e(Qadf)}}Degrees of freedom of Q_A statistic{p_end}
