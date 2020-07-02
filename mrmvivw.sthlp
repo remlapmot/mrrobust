@@ -11,14 +11,14 @@
 {title:Title}
 
 {p 5}
-{bf:mrmvivw} {hline 2} Multivariable inverse variance weighted regression (MVIVW)
+{bf:mrmvivw}/{bf:mvivw}/{bf:mvmr} {hline 2} Multivariable inverse variance weighted regression (MVIVW)
 {p_end}
 
 {marker syntax}{...}
 {title:Syntax}
 
 {p 8 16 2}
-{opt mrmvivw} {var:_gd} {var:_gp1} [{var:_gp2} ...] [{it:aweight}] {ifin} 
+{opt mrmvivw}/{opt mvivw}/{opt mvmr} {var:_gd} {var:_gp1} [{var:_gp2} ...] [{it:aweight}] {ifin} 
 [{cmd:,} {it:options}]
 
 {synoptset 20 tabbed}{...}
@@ -33,7 +33,7 @@
 {title:Description}
 
 {pstd}
-{cmd:mrmvivw} performs multivariable inverse-variance weighted (IVW) regression using summary level data. 
+{cmd:mrmvivw}/{cmd:mvivw}/{cmd:mvmr} performs multivariable inverse-variance weighted (IVW) regression using summary level data. 
 See {help mrmvivw##burgess: Burgess et al. (2015)} for more information.
 
 {pstd}
@@ -74,6 +74,10 @@ see {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 {pstd}MVIVW{p_end}
 {phang2}{cmd:.} {stata "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
 
+{phang2}{cmd:.} {stata "mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
+
+{phang2}{cmd:.} {stata "mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
+
 {pstd}Report Q_A statistic{p_end}
 {phang2}{cmd:.} {stata "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)"}{p_end}
 
@@ -81,7 +85,7 @@ see {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 {title:Stored results}
 
 {pstd}
-{cmd:mrmvivw} stores the following in {cmd:e()}:
+{cmd:mrmvivw}/{cmd:mvivw}/{cmd:mvmr} stores the following in {cmd:e()}:
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Scalars}{p_end}
@@ -104,7 +108,7 @@ see {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 {synopt:{cmd:e(V)}}variance-covariance matrix of the estimates{p_end}
 
 {pstd}
-{cmd:mrmvivw} stores the following in {cmd:r()}:
+{cmd:mrmvivw}/{cmd:mvivw}/{cmd:mvmr} stores the following in {cmd:r()}:
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Matrices}{p_end}
