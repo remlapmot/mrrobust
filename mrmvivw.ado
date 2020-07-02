@@ -14,6 +14,7 @@ if replay() {
 syntax varlist(min=2) [aweight] [if] [in] [, ///
 	fe ///
     Level(cilevel) ///
+	gxse(varlist) ///
 	*]
 
 local callersversion = _caller()
