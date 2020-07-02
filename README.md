@@ -96,7 +96,7 @@ To install mrrobust in Stata versions 13 and later you have two choices.
 ### 1. Use `net install`
 
 ``` stata
-net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+net install mrrobust, from("https://raw.github.com/remlapmot/mrrobust/master/") replace
 mrdeps
 ```
 In this code `mrdeps` installs the dependencies. These are `addplot`, `kdens`, and `moremata` packages (all by Ben Jann), the `heterogi` command (Orsini et al.), the `metan` command (Harris et al.), and the `grc1leg` command (Wiggins).
