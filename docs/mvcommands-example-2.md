@@ -2,14 +2,13 @@
 
 Read in the Do et al. example dataset.
 
-``` {.stata}
+``` stata
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 ```
 
-Select observations (p-value with LDL-C \<
-10`<sup>`{=html}-8`</sup>`{=html})
+Select observations (p-value with LDL-C \< 10<sup>-8</sup>)
 
-``` {.stata}
+``` stata
 . gen byte sel1 = (ldlcp2 < 1e-8)
 ```
 
@@ -18,7 +17,7 @@ Select observations (p-value with LDL-C \<
 Fit the multivariable inverse-variance weighted (MV-IVW) estimator with
 LDL-c and HDL-c (Burgess, Dudbridge, and Thompson 2015).
 
-``` {.stata}
+``` stata
 . mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                        Number of genotypes: 73
@@ -32,10 +31,10 @@ LDL-c and HDL-c (Burgess, Dudbridge, and Thompson 2015).
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
-Additionally include triglycerides and report
-Q`<sub>`{=html}A`</sub>`{=html} statistic (Sanderson et al. 2019).
+Additionally include triglycerides and report Q<sub>A</sub> statistic
+(Sanderson et al. 2019).
 
-``` {.stata}
+``` stata
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ld
 > lcse hdlcse tgse)
 
@@ -58,7 +57,7 @@ Fit MVMR-Egger regression (Rees, Wood, and Burgess 2017), by default
 orienting the model to the phenotype associated with the
 genotype-phenotype associations.
 
-``` {.stata}
+``` stata
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
                                        MVMR-Egger model oriented wrt: ldlcbeta
@@ -77,7 +76,7 @@ chdbeta      │
 
 We can also orient the model wrt HDL-C instead of LDL-C.
 
-``` {.stata}
+``` stata
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
 > t(2)
 
@@ -97,7 +96,7 @@ chdbeta      │
 
 Or we can orient wrt triglycerides instead of LDL-C.
 
-``` {.stata}
+``` stata
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
 > t(3)
 
@@ -115,28 +114,36 @@ chdbeta      │
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
-## References {#references .unnumbered}
+## References
 
-::: {#refs .references}
-::: {#ref-burgess-aje-2015}
-Burgess, S, F Dudbridge, and SG Thompson. 2015. "Multivariable Mendelian
+<div id="refs" class="references">
+
+<div id="ref-burgess-aje-2015">
+
+Burgess, S, F Dudbridge, and SG Thompson. 2015. “Multivariable Mendelian
 randomization: the use of pleiotropic genetic variants to estimate
-causal effects." *American Journal of Epidemiology* 181 (4): 251--60.
+causal effects.” *American Journal of Epidemiology* 181 (4): 251–60.
 <https://doi.org/10.1093/aje/kwu283>.
-:::
 
-::: {#ref-rees-statsmed-2017}
-Rees, J, A Wood, and S Burgess. 2017. "Extending the MR-Egger method for
+</div>
+
+<div id="ref-rees-statsmed-2017">
+
+Rees, J, A Wood, and S Burgess. 2017. “Extending the MR-Egger method for
 multivariable Mendelian randomization to correct for both measured and
-unmeasured pleiotropy." *Statistics in Medicine* 36 (29): 4705--18.
+unmeasured pleiotropy.” *Statistics in Medicine* 36 (29): 4705–18.
 <https://doi.org/10.1002/sim.7492>.
-:::
 
-::: {#ref-sanderson-ije-2019}
-Sanderson, E, G Davey Smith, F Windmeijer, and J Bowden. 2019. "An
+</div>
+
+<div id="ref-sanderson-ije-2019">
+
+Sanderson, E, G Davey Smith, F Windmeijer, and J Bowden. 2019. “An
 examination of multivariable Mendelian randomization in the
-single-sample and two-sample summary data settings." *International
-Journal of Epidemiology* 48 (3): 713--27.
+single-sample and two-sample summary data settings.” *International
+Journal of Epidemiology* 48 (3): 713–27.
 <https://doi.org/10.1093/ije/dyy262>.
-:::
-:::
+
+</div>
+
+</div>
