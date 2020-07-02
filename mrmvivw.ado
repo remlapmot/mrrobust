@@ -77,6 +77,41 @@ eret local setype = "`setype'"
 
 * display estimates
 Display , level(`level') n(`k') setype(`setype')
+if "`gxse'" != "" {
+	** error check length of gxse
+	local gxselength : word count `gxse'
+	if `gxselength' != `npheno' {
+		di as err "The number of variables in gxse() does not match the number of genotype-phenotype variables"
+		exit 198
+	}
+
+	** Sanderson Q-statistics
+	tempvar weight
+	qui gen double `weight' = 0 `if'`in'
+	tokenize `gxse'
+	forvalues i=1/`npheno' {
+		tempvar sepheno`i'
+		qui gen double `sepheno`i'' = ``i'' `if'`in'
+		qui replace `weight' = `weight' + _b[`phenoname`i'']^2 * `sepheno`i''^2 `if'`in'
+	}
+	qui replace `weight' = `weight' + `gyse'^2 `if'`in'
+	
+	** QA, equation 13
+	*** weights
+	tempvar fitted qa
+	qui predict double `fitted', xb
+	*** test statistic
+	qui egen `qa' = sum(((`outcome' - `fitted')^2) / `weight') `if'`in'
+	tempname qares
+	qui tab `qa', matrow(`qares')
+	eret scalar Qa = `qares'[1,1]
+	tempname qap qadf
+	scalar `qadf' = `k' - `npheno'
+	scalar `qap' = chi2tail(`qadf', `qares'[1,1])
+	eret scalar Qadf = scalar(`qadf')
+	eret scalar Qap = scalar(`qap')
+	local qopts qa(`=`qares'[1,1]') qadf(`=`qadf'') qap(`=`qap'')
+}
 
 ereturn local cmd "mrmvivw"
 ereturn local cmdline `"mrmvivw `0'"'
