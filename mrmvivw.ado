@@ -7,7 +7,11 @@ if replay() {
         if _by() {
                 error 190
         }
-        `version' Display `0', n(`e(N)') setype(`e(setype)')
+		if "`e(Qa)'" != "" {
+			local qopts "qa(`e(Qa)') qadf(`e(Qadf)') qap(`e(Qap)')"
+		}
+        `version' Display `0', n(`e(N)') setype(`e(setype)') ///
+			`qopts'
         exit
 }
 
