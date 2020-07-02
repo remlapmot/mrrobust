@@ -134,3 +134,41 @@ di e(cmd)
 assert "`e(cmd)'" == "mrmvivw"
 di e(cmdline)
 assert "`e(cmdline)'" == "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"
+
+* gxse() for Q-statistics
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse)
+
+discard
+mrmvivw chdbeta ldlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse tgse)
+	
+discard
+mrmvivw chdbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(hdlcse tgse)
+
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse)
+eret list
+di e(Qa), e(Qadf), e(Qap)
+mrmvivw
+eret list
+di e(Qa), e(Qadf), e(Qap)
+
+discard
+mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse)
+eret list
+
+discard
+mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse)
+eret list
+
+// check for too few SEs specified in gxse()
+discard
+rcof "noi mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse)" == 198
+discard
+rcof "noi mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)" == 198
