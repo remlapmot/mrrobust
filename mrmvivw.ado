@@ -43,9 +43,10 @@ forvalues i = 1/`npheno' {
 	qui gen double `pheno`i'' = `=`i' + 1' `if'`in'
 }
 
-tempvar invvar // gyse
+// genotype-disease standard errors
+tempvar invvar gyse
 qui gen double `invvar' `exp' `if' `in'
-// qui gen double `gyse' = 1/sqrt(`invvar') `if' `in'
+qui gen double `gyse' = sqrt(1/`invvar') `if' `in'
 
 * Fixed effect SEs
 local scale ""
