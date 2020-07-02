@@ -122,3 +122,18 @@ di e(cmd)
 assert "`e(cmd)'" == "mrmvegger"
 di e(cmdline)
 assert "`e(cmdline)'" == "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"
+
+// e(Np)
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+assert e(Np) == 1
+mrmvegger
+assert e(Np) == 1
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+assert e(Np) == 2
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+assert e(Np) == 3

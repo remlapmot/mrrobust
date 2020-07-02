@@ -7,7 +7,7 @@ if replay() {
         if _by() {
                 error 190
         }
-        `version' Display `0', orientvar(`e(orientvar)') n(`e(N)')
+        `version' Display `0', orientvar(`e(orientvar)') n(`e(N)') np(`e(Np)')
         exit
 }
 
@@ -80,9 +80,10 @@ mat colnames V = `names'
 ereturn post b V
 ereturn local orientvar = "`orientvar'"
 ereturn scalar N = `k'
+ereturn scalar Np = `npheno'
 
 * display estimates
-Display , level(`level') orientvar(`orientvar') n(`k')
+Display , level(`level') orientvar(`orientvar') n(`k') np(`npheno')
 
 ereturn local cmd "mrmvegger"
 ereturn local cmdline `"mrmvegger `0'"'
@@ -90,7 +91,7 @@ ereturn local cmdline `"mrmvegger `0'"'
 end
 
 program Display, rclass
-syntax , [Level(cilevel)] orientvar(varname) N(integer)
+syntax , [Level(cilevel)] orientvar(varname) N(integer) np(integer)
 
 local orienttext : strlen local orientvar
 local colstart = 79 - 31 - `orienttext'
@@ -99,6 +100,10 @@ di _n(1) _col(`colstart') as txt "MVMR-Egger model oriented wrt:", as res "`orie
 local nlength : strlen local n
 local colstart = 79 - 21 - `nlength'
 di _col(`colstart') as txt "Number of genotypes:", as res `n'
+
+local nplength : strlen local np
+local colstart = 79 - 22 - `nplength'
+di _col(`colstart') as txt "Number of phenotypes:", as res `np'
 
 ereturn display, level(`level') noomitted
 return add // r(table)
