@@ -10,7 +10,7 @@ if replay() {
 		if "`e(Qa)'" != "" {
 			local qopts "qa(`e(Qa)') qadf(`e(Qadf)') qap(`e(Qap)')"
 		}
-        `version' Display `0', n(`e(N)') setype(`e(setype)') ///
+        `version' Display `0', n(`e(N)') setype(`e(setype)') np(`e(Np)') ///
 			`qopts'
         exit
 }
@@ -77,6 +77,7 @@ mat b = e(b)
 mat V = e(V)
 ereturn post b V
 eret scalar N = `k'
+eret scalar Np = `npheno'
 eret local setype = "`setype'"
 
 if "`gxse'" != "" {
@@ -116,7 +117,7 @@ if "`gxse'" != "" {
 }
 
 ** display estimates
-Display , level(`level') n(`k') setype(`setype') `qopts'
+Display , level(`level') n(`k') setype(`setype') np(`npheno') `qopts'
 ereturn local cmd "mrmvivw"
 ereturn local cmdline `"mrmvivw `0'"'
 
@@ -124,11 +125,15 @@ end
 
 program Display, rclass
 syntax , [Level(cilevel) qa(real 0) qadf(integer 0) qap(real 0)] ///
-	n(integer) setype(string)
+	n(integer) setype(string) np(integer)
 
 local nlength : strlen local n
 local colstart = 79 - 21 - `nlength'
 di _n(1) _col(`colstart') as txt "Number of genotypes:", as res `n'
+
+local nplength : strlen local np
+local colstart = 79 - 22 - `nplength'
+di _col(`colstart') as txt "Number of phenotypes:", as res `np'
 
 if "`setype'" == "fe" {
 	local semessage "Fixed effect"
