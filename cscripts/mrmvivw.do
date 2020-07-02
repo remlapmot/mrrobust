@@ -139,6 +139,9 @@ assert "`e(cmdline)'" == "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1"
 discard
 mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
 	gxse(ldlcse hdlcse)
+assert e(Qa) - 159.888 < 1e-3
+assert e(Qadf) == 71
+assert e(Qap) - 8.41e-9 < 1e-6
 
 discard
 mrmvivw chdbeta ldlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
@@ -156,6 +159,9 @@ di e(Qa), e(Qadf), e(Qap)
 mrmvivw
 eret list
 di e(Qa), e(Qadf), e(Qap)
+assert e(Qa) - 152.877 < 1e-3
+assert e(Qadf) == 70
+assert e(Qap) - 4.108e-8 < 1e-6
 
 discard
 mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
