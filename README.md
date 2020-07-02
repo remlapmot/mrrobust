@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* July 2020:
+  - Added `gxse()` option to `mrmvivw` to return instrument strength Q<sub>A</sub> statistic (Sanderson et al. 2019)
 * June 2020:
   - Simplified the outcome variable name in `mregger` b and V e-returned matrices. Turn this off with new `oldnames` option
   - Added basic multivariable MR-Egger command, `mrmvegger`
