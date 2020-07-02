@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:   2 Jul 2020, 16:30:46
+ opened on:   2 Jul 2020, 19:22:23
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -23,6 +23,8 @@
 > mrforest ///
 > mrfunnel ///
 > mrmvivw ///
+> mvivw ///
+> mvmr ///
 > mrmvegger
 
 . 
@@ -72,7 +74,8 @@ Commands
 
       mrfunnel      Funnel plot of the genotype specific IV estimates
 
-      mrmvivw       Multivariable inverse variance weighted estimator
+      mrmvivw       Multivariable inverse variance weighted estimator (also 
+                      mrmvivw and mvmr)
 
       mrmvegger     Multivariable MR-Egger regression
 
@@ -142,6 +145,10 @@ Examples
 
     Scatter plot of MR-Egger model
         . mr eggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+
+    Multivariable IVW
+        . mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
+            sel1==1
 
 Stored results
 
@@ -1444,12 +1451,13 @@ Author
         https://github.com/remlapmot/mrrobust/issues
 Title
 
-     mrmvivw -- Multivariable inverse variance weighted regression (MVIVW)
+     mrmvivw/mvivw/mvmr -- Multivariable inverse variance weighted regression
+(MVIVW)
 
 Syntax
 
-        mrmvivw varname_gd varname_gp1 [varname_gp2 ...] [aweight] [if] [in]
-                [, options]
+        mrmvivw/mvivw/mvmr varname_gd varname_gp1 [varname_gp2 ...] [aweight]
+                [if] [in] [, options]
 
     options               Description
     -------------------------------------------------------------------------
@@ -1460,8 +1468,8 @@ Syntax
 
 Description
 
-    mrmvivw performs multivariable inverse-variance weighted (IVW) regression
-    using summary level data.  See  Burgess et al. (2015) for more
+    mrmvivw/mvivw/mvmr performs multivariable inverse-variance weighted (IVW)
+    regression using summary level data.  See  Burgess et al. (2015) for more
     information.
 
     varname_gd variable containing the genotype-disease association
@@ -1502,13 +1510,17 @@ Examples
         . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
             sel1==1
 
+        . mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+        . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
     Report Q_A statistic
         . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
             sel1==1, gxse(ldlcse hdlcse tgse)
 
 Stored results
 
-    mrmvivw stores the following in e():
+    mrmvivw/mvivw/mvmr stores the following in e():
 
     Scalars        
       e(N)                Number of genotypes
@@ -1527,7 +1539,7 @@ Stored results
       e(b)                coefficient vector
       e(V)                variance-covariance matrix of the estimates
 
-    mrmvivw stores the following in r():
+    mrmvivw/mvivw/mvmr stores the following in r():
 
     Matrices       
       r(table)            Coefficient table with rownames: b, se, z, pvalue,
@@ -1553,6 +1565,10 @@ Author
     If you find any bugs or have questions please send me an email or create
         an issue on the GitHub repo: 
         https://github.com/remlapmot/mrrobust/issues
+.h mrmvivw
+{s6hlp}
+.h mrmvivw
+{s6hlp}
 Title
 
      mrmvegger -- Multivariable MR-Egger regression (MVMR-Egger)
@@ -1660,5 +1676,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:   2 Jul 2020, 16:30:46
+ closed on:   2 Jul 2020, 19:22:23
 -------------------------------------------------------------------------------
