@@ -28,35 +28,35 @@
 {title:Commands}{marker commands}
 
 {synoptset 14 tabbed}{...}
-{synopt :{opt {help mr}:}}Primary command syntax, i.e. use {cmd:mr egger ...} syntax in addition to original syntax.
+{synopt :{opt {help mr}:}}Primary command syntax, i.e. use {cmd:mr egger ...} syntax instead of {cmd:mregger ...}
 
-{synopt :{opt {help mrdeps}:}}Install dependencies for the package.
+{synopt :{opt {help mrdeps}:}}Install dependencies for the package
 
-{synopt :{opt {help mregger}:}}MR-Egger and inverse-variance weighted (IVW) estimators.
+{synopt :{opt {help mregger}:}}MR-Egger and inverse-variance weighted (IVW) estimators
 
-{synopt :{opt {help mreggersimex}:}}Simulation extrapolation algorithm for the MR-Egger model.
+{synopt :{opt {help mreggersimex}:}}Simulation extrapolation algorithm for the MR-Egger model
 
-{synopt :{opt {help mreggerplot}:}}Scatter plot showing instrument specific estimates with IVW, MR-Egger, or median fitted line and confidence interval.
+{synopt :{opt {help mreggerplot}:}}Scatter plot showing instrument specific estimates with IVW, MR-Egger, or median fitted line and confidence interval
 
-{synopt :{opt {help mrmedian}:}}Unweighted, weighted, and penalized weighted median estimators for summary level data.
+{synopt :{opt {help mrmedian}:}}Unweighted, weighted, and penalized weighted median estimators for summary level data
 
-{synopt :{opt {help mrmedianobs}:}}Unweighted, weighted, and penalized weighted median estimators for individual level data.
+{synopt :{opt {help mrmedianobs}:}}Unweighted, weighted, and penalized weighted median estimators for individual level data
 
-{synopt :{opt {help mrmodal}:}}Modal estimator for summary level data.
+{synopt :{opt {help mrmodal}:}}Modal estimator for summary level data
 
-{synopt :{opt {help mrmodalplot}:}}Plot of density used in Modal estimator.
+{synopt :{opt {help mrmodalplot}:}}Plot of density used in the modal estimator
 
-{synopt :{opt {help mrratio}:}}Ratio (Wald) estimator for summary level data for a single genotype.
+{synopt :{opt {help mrratio}:}}Ratio (Wald) estimator for summary level data for a single genotype
 
-{synopt :{opt {help mrivests}:}}Generate ratio (Wald) estimates for summary level data in dataset.
+{synopt :{opt {help mrivests}:}}Generate ratio (Wald) estimates for summary level data in dataset
 
-{synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates.
+{synopt :{opt {help mrforest}:}}Forest plot of genotype specific and model (IVW, MR-Egger, Median, Modal) IV estimates
 
-{synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates.
+{synopt :{opt {help mrfunnel}:}}Funnel plot of the genotype specific IV estimates
 
-{synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator.
+{synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator
 
-{synopt :{opt {help mrmvegger}:}}Multivariable MR-Egger regression.
+{synopt :{opt {help mrmvegger}:}}Multivariable MR-Egger regression
 
 {marker description}{...}
 {title:Description}

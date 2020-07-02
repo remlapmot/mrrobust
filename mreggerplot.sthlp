@@ -124,16 +124,16 @@ al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, colum
 
 {marker bowden}{...}
 {phang}
-Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. 
-Consistent estimation in Mendelian randomization with some invalid instruments
- using a weighted median estimator. Genetic Epidemiology. 
-DOI: {browse "http://dx.doi.org/10.1002/gepi.21965"}
+Bowden J, Davey Smith G, Haycock PC, Burgess S. 
+Consistent estimation in Mendelian randomization with some invalid instruments 
+using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
+{browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 {p_end}
 
 {phang}
-Do et al., 2013. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
-{browse "http://dx.doi.org/10.1038/ng.2795"}
+Do et al.Common variants associated with plasma triglycerides and risk 
+for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.  
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker author}

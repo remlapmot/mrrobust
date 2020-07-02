@@ -74,30 +74,31 @@ al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, colum
 
 {marker bowden}{...}
 {phang}
-Bowden J, Del Greco FM, Minelli C, Davey Smith G, Sheehan NA, Thompson JR. 2016. 
+Bowden J, Del Greco FM, Minelli C, Davey Smith G, Sheehan NA, Thompson JR. 
 Assessing the suitability of summary data for two-sample Mendelian 
 randomization analyses using MR-Egger regression: the role of the I2 statistic. 
-45, 6, 1961-1974.
-{browse "http://dx.doi.org/10.1093/ije/dyw220"}
+International Journal of Epidemiology, 2016, 45, 6, 1961-1974.
+{browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
 {p_end}
 
 {phang}
-Cook J and Stefanski LA. 1995. A simulation extrapolation method for parametric 
-measurement error models. Journal of the American Statistical Association. 85, 
-652-663.
+Cook J and Stefanski LA. A simulation extrapolation method for parametric 
+measurement error models. Journal of the American Statistical Association, 1995, 85, 
+652-663. 
+{browse "https://www.jstor.org/stable/2290994":Link}
 {p_end}
 
 {phang}
-Do R et al., 2013. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
-{browse "http://dx.doi.org/10.1038/ng.2795"}
+Do R et al. Common variants associated with plasma triglycerides and risk
+ for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. DOI: 
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {phang}
-Hardin JW, Schmiediche H, Carroll RJ. 2003. The simulation extrapolation method 
+Hardin JW, Schmiediche H, Carroll RJ. The simulation extrapolation method 
 for fitting linear models with additive measurement error. Stata Journal. 
-3, 4, 373-385.
-{browse "http://www.stata-journal.com/article.html?article=st0051"}
+2003, 3, 4, 373-385. 
+{browse "http://www.stata-journal.com/article.html?article=st0051":DOI}
 {p_end}
 
 {marker author}

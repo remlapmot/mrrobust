@@ -195,47 +195,48 @@ If {opt unwi2gx} is specified {cmd:mregger} additionally returns{p_end}
 
 {marker bowden}{...}
 {phang}
-Bowden J, Davey Smith G, Burgess S. 2015. 
+Bowden J, Davey Smith G, Burgess S. 
 Mendelian randomization with invalid instruments: effect estimation and bias 
-detection through Egger regression. International Journal of Epidemiology. 
+detection through Egger regression. International Journal of Epidemiology, 
+2015, 44, 2, 512-525. 
 {browse "http://dx.doi.org/10.1093/ije/dyv080":DOI}
 {p_end}
 
 {phang}
-Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. Consistent estimation 
+Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation 
 in Mendelian randomization with some invalid instruments using a weighted 
-median estimator. Genetic Epidemiology, published online 7 April.
+median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
 {browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 
 {phang}
-Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR. 2016. 
+Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR. 
 Assessing the suitability of summary data for two-sample Mendelian 
 randomization analyses using MR-Egger regression: the role of the I-squared 
-statistic. 
-International Journal of Epidemiology. {browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
+statistic. International Journal of Epidemiology, 2016, 45, 6, 1961-1974. 
+{browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
 
 {phang}
 Bowden J, Spiller W, Del-Greco F, Sheehan NA, Thompson JR, Minelli C, Davey Smith G. 
 Improving the visualisation, interpretation and analysis of two-sample summary 
 data Mendelian randomization via the radial plot and radial regression. 
-bioRxiv 200378; {browse "https://doi.org/10.1101/200378":DOI}
+International Journal of Epidemiology, 2018, 47, 4, 1264-1278. {browse "https://doi.org/10.1093/ije/dyy101":DOI}
 
 {phang}
-Burgess S, Bowden J, Dudbridge F, Thompson SG. 2016. Robust instrumental 
+Burgess S, Bowden J, Dudbridge F, Thompson SG. Robust instrumental 
 variable methods using candidate instruments with application to Mendelian 
-randomization. arXiv:1606.03729v1. 
+randomization. arXiv:1606.03729v1, 2016. 
 {browse "https://arxiv.org/abs/1606.03729":Link}
 
 {phang}
-Del Greco F M, Minelli C, Sheehan NA, Thompson JR. 2015. Detecting pleiotropy in 
+Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in 
 Mendelian randomization studies with summary data and a continuous outcome. 
-Statistics in Medicine, 34, 21, 2926-2940. 
+Statistics in Medicine, 2015, 34, 21, 2926-2940. 
 {browse "http://dx.doi.org/10.1002/sim.6522":DOI}
 {p_end}
 
 {phang}
-Thompson SG, Sharp SJ. 1999. Explaining heterogeneity in meta-analysis: a 
-comparison of methods. Statistics in Medicine, 18, 20, 2693-2708. 
+Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: a 
+comparison of methods. Statistics in Medicine, 1999, 18, 20, 2693-2708. 
 {browse "http://dx.doi.org/10.1002/(SICI)1097-0258(19991030)18:20<2693::AID-SIM235>3.0.CO;2-V":DOI}
 {p_end}
 

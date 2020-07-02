@@ -54,8 +54,8 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {phang}
 {opt gxse(varlist)} specifies a varlist of genotype-phenotype standard errors. 
 These should be in the same order as the genotype-phenotype variables in the main varlist. 
-When this option is specified various Q and F statistics are printed. 
-See {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
+When this option is specified various Q and F statistics are calculated, 
+see {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.

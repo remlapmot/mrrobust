@@ -42,10 +42,10 @@ obtain standard error{p_end}
 {cmd:mrmedian} performs unweighted, weighted, and penalized IV estimator on 
 observation level data.
 
-{col 10}{depvar}: {col 26}outcome variable
-{col 10}{varlist:1}: {col 26}covariates to adjust for
-{col 10}{var:_endog}: {col 26}exposure/treatment received/endogenous variable
-{col 10}{varlist:_ivs}: {col 26}instrumental variables
+{col 10}{depvar} {col 26}outcome variable
+{col 10}{varlist:1} {col 26}covariates to adjust for
+{col 10}{var:_endog} {col 26}exposure/treatment received/endogenous variable
+{col 10}{varlist:_ivs} {col 26}instrumental variables
 
 {marker options}{...}
 {title:Options}
@@ -126,10 +126,10 @@ see {helpb set_seed}.
 
 {marker bowden}{...}
 {phang}
-Bowden J, Davey Smith G, Haycock PC, Burgess S. 2016. 
+Bowden J, Davey Smith G, Haycock PC, Burgess S. 
 Consistent estimation in Mendelian randomization with some invalid instruments
- using a weighted median estimator. Genetic Epidemiology. 
-DOI: {browse "http://dx.doi.org/10.1002/gepi.21965"}
+ using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
+{browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 {p_end}
 
 {marker author}

@@ -31,7 +31,7 @@
 {title:Description}
 
 {pstd}
-{cmd:mrmvegger} performs multivariable MR-Egger regression. For further information see Rees et al. (2017).
+{cmd:mrmvegger} performs multivariable MR-Egger regression. For further information see {help mrmvegger##rees:Rees et al. (2017)}.
 
 {pstd}
 {var:_gd} variable containing the genotype-disease association estimates.
@@ -105,7 +105,9 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 
 {marker rees}{...}
 {phang}
-Rees J, Wood A, Burgess S. Extending the MR-Egger method for multivariable Mendelian randomization to correct for both measured and unmeasured pleiotropy. Statistics in Medicine, 2017, 20, 36, 29, 4705-4718.
+Rees J, Wood A, Burgess S. Extending the MR-Egger method for multivariable Mendelian 
+randomization to correct for both measured and unmeasured pleiotropy. 
+Statistics in Medicine, 2017, 20, 36, 29, 4705-4718.
 {browse "http://dx.doi.org/10.1002/sim.7492":DOI}
 {p_end}
 
