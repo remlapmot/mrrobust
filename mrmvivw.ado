@@ -115,13 +115,16 @@ if "`gxse'" != "" {
 	local qopts qa(`=`qares'[1,1]') qadf(`=`qadf'') qap(`=`qap'')
 }
 
+** display estimates
+Display , level(`level') n(`k') setype(`setype') `qopts'
 ereturn local cmd "mrmvivw"
 ereturn local cmdline `"mrmvivw `0'"'
 
 end
 
 program Display, rclass
-syntax , [Level(cilevel)] n(integer) setype(string)
+syntax , [Level(cilevel) qa(real 0) qadf(integer 0) qap(real 0)] ///
+	n(integer) setype(string)
 
 local nlength : strlen local n
 local colstart = 79 - 21 - `nlength'
@@ -140,6 +143,12 @@ di _col(`colstart') as txt "Standard errors:", as res "`semessage'"
 
 ereturn display, level(`level') noomitted
 return add // r(table)
+
+if `qa' != 0 {
+	di _col(2) "Q_A statistic for instrument validity; chi2(" `qadf' ") =", ///
+		%5.2f `qa', "(p = ", %5.4f `qap' ")"
+}
+
 end
 
 exit
