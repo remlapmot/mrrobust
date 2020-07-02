@@ -6,11 +6,11 @@ cap noi adopath ++ "`path'"
 
 cap noi log close _all
 
-cscript master
+cscript single
 
 cap noi ado describe mrrobust
 
-local cscripts mrmvegger
+local cscripts helpfiles
 
 foreach dofile of local cscripts {
     log using `dofile'.log, text replace name(`dofile')
