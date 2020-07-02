@@ -37,7 +37,7 @@ obtain standard error{p_end}
 {title:Description}
 
 {pstd}
-{cmd:mrmodalplot} plots the density of the IV estimates used in the mrmodal estimator
+{cmd:mrmodalplot} plots the density of the IV estimates used in the {help mrmodal} estimator.
 
 {pstd}
 {var:_gd} is a variable containing the genotype-disease association estimates.
@@ -80,9 +80,9 @@ al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, colum
 {title:References}
 
 {phang}
-Do et al., 2013. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
-{browse "http://dx.doi.org/10.1038/ng.2795"}
+Do et al. Common variants associated with plasma triglycerides and risk
+ for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. 
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker author}
