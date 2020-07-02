@@ -79,8 +79,6 @@ ereturn post b V
 eret scalar N = `k'
 eret local setype = "`setype'"
 
-* display estimates
-Display , level(`level') n(`k') setype(`setype')
 if "`gxse'" != "" {
 	** error check length of gxse
 	local gxselength : word count `gxse'
