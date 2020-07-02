@@ -108,12 +108,13 @@ al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, colum
 
 {marker bowden}{...}
 {phang}
-Harris RJ, Bradburn MJ, Deeks JJ, Harbord RM, Altman DG, Sterne JAC. metan: fixed- and random-effects meta-analysis. 2008. Stata Journal, 8, 1, 3-28. {browse "http://www.stata-journal.com/article.html?article=sbe24_2": Link}
+Harris RJ, Bradburn MJ, Deeks JJ, Harbord RM, Altman DG, Sterne JAC. metan: fixed- and random-effects meta-analysis. 
+Stata Journal, 2008, 8, 1, 3-28. {browse "http://www.stata-journal.com/article.html?article=sbe24_2":Link}
 
 {phang}
-Do et al., 2013. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
-{browse "http://dx.doi.org/10.1038/ng.2795"}
+Do et al. Common variants associated with plasma triglycerides and risk
+ for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. 
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker author}
