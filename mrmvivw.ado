@@ -68,6 +68,7 @@ else {
 		level(`level') `options'
 }
 
+** ereturn some items
 mat b = e(b)
 mat V = e(V)
 ereturn post b V
