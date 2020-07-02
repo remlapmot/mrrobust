@@ -17,6 +17,8 @@ mrivests ///
 mrforest ///
 mrfunnel ///
 mrmvivw ///
+mvivw ///
+mvmr ///
 mrmvegger
 
 foreach helpfile of local helpfiles {
