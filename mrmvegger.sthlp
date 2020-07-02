@@ -80,6 +80,7 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Scalars}{p_end}
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
+{synopt:{cmd:e(Np)}}Number of phenotypes{p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}
