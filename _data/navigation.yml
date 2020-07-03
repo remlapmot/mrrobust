@@ -1,7 +1,9 @@
-- index.md
+- title: Home
+  url: /
   
 - title: Examples
   sublinks:
+  url: /
     - title: mrrobust helpfile examples
       url: docs/mrrobust-examples
     - title: IJE article examples
@@ -15,4 +17,5 @@
     - title: mvcommands example
       url: docs/mvcommands-example-2
  
-- docs/about.md
+- title: About
+  url: docs/about
