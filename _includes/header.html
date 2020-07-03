@@ -6,17 +6,6 @@
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
 
-	<!-- This finds the current page so it can be highlighted. -->
-	{% for entry in site.data.navigation %}
-	{% capture fullurl %}{{ site.baseurl }}{{ entry.url }}{% endcapture %}
-		{% if fullurl == page.url %}
-			{% assign current_page = fullurl %}
-			{% break %}
-		{% elsif page.url contains fullurl %}
-			{% assign current_page = fullurl %}
-		{% endif %}
-	{% endfor %}
-
 	<!-- navbar from https://mycyberuniverse.com/en-gb/jekyll-bootstrap-dynamic-navigation-highlighting-active-element.html -->
 	<nav id="navbar" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
