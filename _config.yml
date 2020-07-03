@@ -12,14 +12,15 @@ author: Tom Palmer
 repo: "https://github.com/remlapmot/mrrobust"
 exclude: cscripts/README.md
 # header_pages: 
-#  - index.md
+  - index.md
+  - docs/examples.md
 #  - docs/mrrobust-examples.md
 #  - docs/spiller-ije-2018-examples.md
 #  - docs/markstat-call-R-example.md
 #  - docs/rmarkdown-call-stata-example.md
 #  - docs/save-estimates.md
 #  - docs/mvcommands-example-2.md
-#  - docs/about.md
+  - docs/about.md
 
 # Build settings
 markdown: kramdown
