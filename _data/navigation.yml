@@ -2,8 +2,8 @@
   url: /
   
 - title: Examples
-  sublinks:
   url: /
+  sublinks:
     - title: mrrobust helpfile examples
       url: docs/mrrobust-examples
     - title: IJE article examples
