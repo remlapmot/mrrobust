@@ -1,6 +1,6 @@
 <header class="site-header">
 
-  <div class="wrapper">
+<div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
@@ -17,32 +17,38 @@
 		{% endif %}
 	{% endfor %}
 
-	<!-- Then we build the nav bar. -->
-	<nav>
-		<ul>
-		{% for entry in site.data.navigation %}
-			{% if entry.url == current_page %}
-				<!-- uses yellow, you can change to any other hexadecimal colour code. -->
-				{% assign current = ' style="background-color: #add8e6"' %}
-			{% else %}
-				<!-- We have to declare it 'null' to ensure it doesn't propagate. -->
-				{% assign current = null %}
-			{% endif %}
-			{% assign sublinks = entry.sublinks %}
-			{% if sublinks %}
-			<li{{ current }}>
-				<a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a>
-				<ul>
-					{% for sublink in sublinks %}
-					<li><a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a></li>
-					{% endfor %}
-				</ul>
-			</li>
-			{% else %}
-			<li{{ current }}><a href="{{ site.baseurl }}{{ entry.url }}">{{ entry.title }}</a></li>
-			{% endif %}
-		{% endfor %}
+	<!-- navbar from https://mycyberuniverse.com/en-gb/jekyll-bootstrap-dynamic-navigation-highlighting-active-element.html -->
+	<nav id="navbar" class="collapse navbar-collapse">
+		<ul class="nav navbar-nav">
+			{% assign links = site.data.navigation %}
+			{% for link in links %}
+				{% assign class = nil %}
+				{% if page.url contains link.url %}
+					{% assign class = 'active' %}
+				{% endif %}
+				{% if link.sublinks %}
+					<li class="dropdown {{ class }}">
+						<a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							{% for sublink in link.sublinks %}
+								{% if sublink.title == 'separator' %}
+									<li role="separator" class="divider"></li>
+								{% else %}
+									<li>
+										<a href="{{ site.url }}{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</li>
+				{% else %}
+					<li class="{{ class }}">
+						<a href="{{ site.url }}{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
 		</ul>
 	</nav>
+
 </div>
 </header>
