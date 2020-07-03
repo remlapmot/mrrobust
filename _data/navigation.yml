@@ -1,7 +1,7 @@
 - index.md
   
 - title: Examples
-    sublinks:
+  sublinks:
     - title: mrrobust helpfile examples
       url: docs/mrrobust-examples
     - title: IJE article examples
