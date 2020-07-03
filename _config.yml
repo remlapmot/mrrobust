@@ -14,7 +14,7 @@ exclude: cscripts/README.md
 header_pages: 
   - index.md
   - docs/examples.md
-#  - docs/mrrobust-examples.md
+    - docs/mrrobust-examples.md
 #  - docs/spiller-ije-2018-examples.md
 #  - docs/markstat-call-R-example.md
 #  - docs/rmarkdown-call-stata-example.md
