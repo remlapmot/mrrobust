@@ -1,21 +1,21 @@
 - title: Home
-  url: /
+  url: /index.html
   
 - title: Examples
   url: /
   sublinks:
     - title: mrrobust helpfile examples
-      url: /docs/mrrobust-examples
+      url: /docs/mrrobust-examples.html
     - title: IJE article examples
-      url: /docs/spiller-ije-2018-examples
+      url: /docs/spiller-ije-2018-examples.html
     - title: markstat document example
-      url: /docs/markstat-call-R-example
+      url: /docs/markstat-call-R-example.html
     - title: R Markdown document example
-      url: /docs/rmarkdown-call-stata-example
+      url: /docs/rmarkdown-call-stata-example.html
     - title: Collect and export results example
-      url: /docs/save-estimates
+      url: /docs/save-estimates.html
     - title: mvcommands example
-      url: /docs/mvcommands-example-2
+      url: /docs/mvcommands-example-2.html
  
 - title: About
-  url: /docs/about
+  url: /docs/about.html
