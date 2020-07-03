@@ -1,8 +1,8 @@
 - title: Home
-  url: /
+  url: /index
   
 - title: Examples
-  url: /
+  url: /index
   sublinks:
     - title: mrrobust helpfile examples
       url: /docs/mrrobust-examples
