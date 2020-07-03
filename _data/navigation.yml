@@ -1,12 +1,18 @@
 - index.md
   
 - title: Examples
-  sublinks:
-    - docs/mrrobust-examples.md
-    - docs/spiller-ije-2018-examples.md
-    - docs/markstat-call-R-example.md
-    - docs/rmarkdown-call-stata-example.md
-    - docs/save-estimates.md
-    - docs/mvcommands-example-2.md
+    sublinks:
+    - title: mrrobust helpfile examples
+      url: docs/mrrobust-examples
+    - title: IJE article examples
+      url: docs/spiller-ije-2018-examples
+    - title: markstat document example
+      url: docs/markstat-call-R-example
+    - title: R Markdown document example
+      url: docs/rmarkdown-call-stata-example
+    - title: Collect and export results example
+      url: docs/save-estimates
+    - title: mvcommands example
+      url: docs/mvcommands-example-2
  
 - docs/about.md
