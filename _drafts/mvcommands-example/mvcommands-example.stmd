@@ -38,7 +38,8 @@ mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
 
 ## MVMR-Egger
 
-Fit MVMR-Egger regression [@rees-statsmed-2017], by default orienting the model to the phenotype associated with the genotype-phenotype associations.
+Fit MVMR-Egger regression [@rees-statsmed-2017], by default orienting the model 
+to the first phenotype in the main varlist.
 ```{stata}
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 ```
