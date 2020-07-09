@@ -1,5 +1,5 @@
 * master do-file for running a single cscript
-* 2020-01-17
+* 2020-07-09
 
 local path = subinstr("`c(pwd)'", "cscripts", "", 1)
 cap noi adopath ++ "`path'"
