@@ -15,8 +15,8 @@
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
 * July 2020:
-  - The `gxse()` option additionally returns the Q<sub>x</sub> conditional F-statistics for each phenotype in `e(Qx)` and `e(Fx)` ([Sanderson et al. 2020](#references))
   - Added `gxse()` option to `mrmvivw` to return instrument strength Q<sub>A</sub> statistic for instrument validity in `e(Qa)` ([Sanderson et al. 2019](#references))
+  - The `gxse()` option additionally returns the Q<sub>x</sub> and conditional F-statistics for each phenotype for instrument strength in `e(Qx)` and `e(Fx)` ([Sanderson et al. 2020](#references))
 * June 2020:
   - Simplified the outcome variable name in `mregger` b and V e-returned matrices. Turn this off with new `oldnames` option
   - Added basic multivariable MR-Egger command, `mrmvegger`
