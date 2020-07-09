@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mvcommands-example\mvcommands-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 9 Jul 2020, 21:17:34
+ {txt}opened on:  {res} 9 Jul 2020, 21:21:52
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -114,7 +114,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mvcommands-example\mvcommands-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 9 Jul 2020, 21:17:34
+ {txt}closed on:  {res} 9 Jul 2020, 21:21:53
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

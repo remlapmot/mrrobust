@@ -78,8 +78,7 @@ conditional F-statistics for instrument strength for each phenotype
 ## MVMR-Egger
 
 Fit MVMR-Egger regression (Rees, Wood, and Burgess 2017), by default
-orienting the model to the phenotype associated with the
-genotype-phenotype associations.
+orienting the model to the first phenotype in the main varlist.
 
 ``` stata
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
@@ -118,7 +117,7 @@ chdbeta      │
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
-Or we can orient wrt triglycerides instead of LDL-C.
+Or we can orient the model wrt triglycerides instead of LDL-C.
 
 ``` stata
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
