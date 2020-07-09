@@ -50,7 +50,7 @@ mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
 	orient(2)
 ```
 
-Or we can orient wrt triglycerides instead of LDL-C.
+Or we can orient the model wrt triglycerides instead of LDL-C.
 ```{stata}
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
 	orient(3)
