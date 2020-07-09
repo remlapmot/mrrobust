@@ -27,8 +27,8 @@ Fit the multivariable inverse-variance weighted (MV-IVW) estimator with LDL-c an
 ```stata
 . mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 2
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
                                                 Standard errors: Random effect
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -39,14 +39,15 @@ Fit the multivariable inverse-variance weighted (MV-IVW) estimator with LDL-c an
 ```
 
 
-Additionally include triglycerides and report Q<sub>A</sub> statistic [@sanderson-ije-2019].
+Additionally include triglycerides and report Q<sub>A</sub> statistic for instrument validity 
+and conditional F-statistics for each phenotype [@sanderson-ije-2019; @sanderson-biorxiv-2020].
 
 ```stata
-. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ld
-> lcse hdlcse tgse)
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> gxse(ldlcse hdlcse tgse)
 
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
                                                 Standard errors: Random effect
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -56,6 +57,11 @@ Additionally include triglycerides and report Q<sub>A</sub> statistic [@sanderso
       tgbeta │   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
 ─────────────┴────────────────────────────────────────────────────────────────
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+ Conditional F-statistics for instrument strength:
+ F_x1 = 130.31
+ F_x2 = 36.29
+ F_x3 = 40.44
+ (numbers correspond to phenotype ordering in varlist)
 ```
 
 
@@ -67,8 +73,8 @@ Fit MVMR-Egger regression [@rees-statsmed-2017], by default orienting the model 
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
                                        MVMR-Egger model oriented wrt: ldlcbeta
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -84,12 +90,12 @@ chdbeta      │
 We can also orient the model wrt HDL-C instead of LDL-C.
 
 ```stata
-. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
-> t(2)
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> orient(2)
 
                                        MVMR-Egger model oriented wrt: hdlcbeta
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -105,12 +111,12 @@ chdbeta      │
 Or we can orient wrt triglycerides instead of LDL-C.
 
 ```stata
-. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
-> t(3)
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> orient(3)
 
                                          MVMR-Egger model oriented wrt: tgbeta
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
