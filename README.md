@@ -15,7 +15,8 @@
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
 * July 2020:
-  - Added `gxse()` option to `mrmvivw` to return instrument strength Q<sub>A</sub> statistic ([Sanderson et al. 2019](#references))
+  - Added `gxse()` option to `mrmvivw` to return instrument strength Q<sub>A</sub> statistic in `e(Qa)` ([Sanderson et al. 2019](#references))
+  - The `gxse()` option additionally returns the Q<sub>x</sub> conditional F-statistics for each phenotype in `e(Qx)` and `e(Fx)` ([Sanderson et al. 2020](#references))
 * June 2020:
   - Simplified the outcome variable name in `mregger` b and V e-returned matrices. Turn this off with new `oldnames` option
   - Added basic multivariable MR-Egger command, `mrmvegger`
@@ -178,7 +179,7 @@ If you would like to extend the code or add new commands I am open to receiving 
  * Hartwig FP, Davey Smith G, Bowden J. Robust inference in two-sample Mendelian randomisation via the zero modal pleiotropy assumption. International Journal of Epidemiology, 2017, 46, 6, 1985-1998. [doi](https://doi.org/10.1093/ije/dyx102)
  * Hemani G et al. The MR-Base platform supports systematic causal inference across the human phenome. eLife, 2018, 7:e34408. [doi](https://doi.org/10.7554/eLife.34408.001)
  * Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of multivariable Mendelian randomization in the single-sample and two-sample summary data settings. International Journal of Epidemiology, 2019, 48, 3, 713-727. [doi](https://doi.org/10.1093/ije/dyy262)
-
+ * Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and pleiotropic instruments in two-sample multivariable Mendelian randomisation. bioRxiv, 2020, 2020.04.02.021980. [doi](https://doi.org/10.1101/2020.04.02.021980)
 
 ## Acknowledgements
 Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, and Steve Burgess.

@@ -54,8 +54,10 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {phang}
 {opt gxse(varlist)} specifies a varlist of genotype-phenotype standard errors. 
 These should be in the same order as the genotype-phenotype variables in the main varlist. 
-When this option is specified various Q and F statistics are calculated, 
-see {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
+When this option is specified the Q_A statistic for instrument validity and 
+conditional F statistics for instrument strength are calculated. 
+See {help mrmvivw##sanderson:Sanderson et al. (2019)} and 
+{help mrmvivw##sanderson2:Sanderson et al. (2020)} for more information.
 
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
@@ -71,14 +73,14 @@ see {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 {pstd}Select observations ({it:p}-value with LDL-C < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}
 
-{pstd}MVIVW{p_end}
+{pstd}Fit MVMR/MVIVW{p_end}
 {phang2}{cmd:.} {stata "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
 
 {phang2}{cmd:.} {stata "mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
 
 {phang2}{cmd:.} {stata "mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1"}{p_end}
 
-{pstd}Report Q_A statistic{p_end}
+{pstd}Report Q_A statistic and conditional F-statistics{p_end}
 {phang2}{cmd:.} {stata "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)"}{p_end}
 
 {marker results}{...}
@@ -106,6 +108,9 @@ see {help mrmvivw##sanderson:Sanderson et al. (2019)} for more information.
 {p2col 5 20 24 2: Matrices}{p_end}
 {synopt:{cmd:e(b)}}coefficient vector{p_end}
 {synopt:{cmd:e(V)}}variance-covariance matrix of the estimates{p_end}
+{p2col 5 20 24 2: If {cmd:gxse()} specified}{p_end}
+{synopt:{cmd:e(Fx)}}vector of conditional F-statistics{p_end}
+{synopt:{cmd:e(Qx)}}vector of Q_x statistics{p_end}
 
 {pstd}
 {cmd:mrmvivw}/{cmd:mvivw}/{cmd:mvmr} stores the following in {cmd:r()}:
@@ -130,6 +135,13 @@ Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of multivaria
 randomization in the single-sample and two-sample summary data settings. International 
 Journal of Epidemiology, 2019, 48, 3, 713-727. 
 {browse "http://dx.doi.org/10.1093/ije/dyy262":DOI}
+{p_end}
+{marker sanderson2}{...}
+{phang}
+Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and 
+pleiotropic instruments in two-sample multivariable Mendelian randomisation. 
+bioRxiv preprint, 2020, 2020.04.02.021980
+{browse "https://doi.org/10.1101/2020.04.02.021980":DOI}
 {p_end}
 
 {marker author}

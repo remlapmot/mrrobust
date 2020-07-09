@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mvcommands-example\mvcommands-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 2 Jul 2020, 23:32:03
+ {txt}opened on:  {res} 9 Jul 2020, 20:44:14
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -14,8 +14,8 @@
 {com}. //_3
 . mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 
-{col 56}{txt}Number of genotypes: {res}73
-{col 56}{txt}Number of phenotypes: {res}2
+{col 55}{txt}Number of genotypes = {res}73
+{col 55}{txt}Number of phenotypes = {res}2
 {col 49}{txt}Standard errors: {res}Random effect
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
@@ -25,10 +25,11 @@
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_4
-. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> gxse(ldlcse hdlcse tgse)
 
-{col 56}{txt}Number of genotypes: {res}73
-{col 56}{txt}Number of phenotypes: {res}3
+{col 55}{txt}Number of genotypes = {res}73
+{col 55}{txt}Number of phenotypes = {res}3
 {col 49}{txt}Standard errors: {res}Random effect
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
@@ -37,14 +38,19 @@
 {txt}{space 4}hdlcbeta {c |}{col 14}{res}{space 2}-.1941989{col 26}{space 2} .1308289{col 37}{space 1}   -1.48{col 46}{space 3}0.138{col 54}{space 4}-.4506189{col 67}{space 3} .0622211
 {txt}{space 6}tgbeta {c |}{col 14}{res}{space 2} .2260456{col 26}{space 2} .1232828{col 37}{space 1}    1.83{col 46}{space 3}0.067{col 54}{space 4}-.0155842{col 67}{space 3} .4676755
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 2}Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+{col 2}Q_A statistic for instrument validity; chi2({res}70{txt}) = {res}152.88 {txt}(p =  {res}0.0000{txt})
+{col 2}Conditional F-statistics for instrument strength:
+{col 2}F_x1 = {res}130.31
+{col 2}{txt}F_x2 = {res}36.29
+{col 2}{txt}F_x3 = {res}40.44
+{col 2}{txt}(numbers correspond to phenotype ordering in varlist)
 
 {com}. //_5
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
 {col 40}{txt}MVMR-Egger model oriented wrt: {res}ldlcbeta
-{col 56}{txt}Number of genotypes: {res}73
-{col 56}{txt}Number of phenotypes: {res}3
+{col 55}{txt}Number of genotypes = {res}73
+{col 55}{txt}Number of phenotypes = {res}3
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -56,11 +62,12 @@
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_6
-. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> orient(2)
 
 {col 40}{txt}MVMR-Egger model oriented wrt: {res}hdlcbeta
-{col 56}{txt}Number of genotypes: {res}73
-{col 56}{txt}Number of phenotypes: {res}3
+{col 55}{txt}Number of genotypes = {res}73
+{col 55}{txt}Number of phenotypes = {res}3
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -72,11 +79,12 @@
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_7
-. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(3)
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> orient(3)
 
 {col 42}{txt}MVMR-Egger model oriented wrt: {res}tgbeta
-{col 56}{txt}Number of genotypes: {res}73
-{col 56}{txt}Number of phenotypes: {res}3
+{col 55}{txt}Number of genotypes = {res}73
+{col 55}{txt}Number of phenotypes = {res}3
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -92,7 +100,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mvcommands-example\mvcommands-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 2 Jul 2020, 23:32:04
+ {txt}closed on:  {res} 9 Jul 2020, 20:44:15
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

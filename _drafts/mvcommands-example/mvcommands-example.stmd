@@ -23,9 +23,11 @@ Fit the multivariable inverse-variance weighted (MV-IVW) estimator with LDL-c an
 mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 ```
 
-Additionally include triglycerides and report Q<sub>A</sub> statistic [@sanderson-ije-2019].
+Additionally include triglycerides and report Q<sub>A</sub> statistic for instrument validity 
+and conditional F-statistics for each phenotype [@sanderson-ije-2019; @sanderson-biorxiv-2020].
 ```{stata}
-mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse)
 ```
 
 ## MVMR-Egger
@@ -37,12 +39,14 @@ mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
 We can also orient the model wrt HDL-C instead of LDL-C.
 ```{stata}
-mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	orient(2)
 ```
 
 Or we can orient wrt triglycerides instead of LDL-C.
 ```{stata}
-mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(3)
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	orient(3)
 ```
 
 ## References

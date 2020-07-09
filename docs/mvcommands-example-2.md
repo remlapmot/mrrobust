@@ -20,8 +20,8 @@ LDL-c and HDL-c (Burgess, Dudbridge, and Thompson 2015).
 ``` stata
 . mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 2
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
                                                 Standard errors: Random effect
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -32,14 +32,15 @@ LDL-c and HDL-c (Burgess, Dudbridge, and Thompson 2015).
 ```
 
 Additionally include triglycerides and report Q<sub>A</sub> statistic
-(Sanderson et al. 2019).
+for instrument validity and conditional F-statistics for each phenotype
+(Sanderson et al. 2019; Sanderson, Spiller, and Bowden 2020).
 
 ``` stata
-. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ld
-> lcse hdlcse tgse)
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> gxse(ldlcse hdlcse tgse)
 
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
                                                 Standard errors: Random effect
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
@@ -49,6 +50,11 @@ Additionally include triglycerides and report Q<sub>A</sub> statistic
       tgbeta │   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
 ─────────────┴────────────────────────────────────────────────────────────────
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+ Conditional F-statistics for instrument strength:
+ F_x1 = 130.31
+ F_x2 = 36.29
+ F_x3 = 40.44
+ (numbers correspond to phenotype ordering in varlist)
 ```
 
 ## MVMR-Egger
@@ -61,8 +67,8 @@ genotype-phenotype associations.
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
                                        MVMR-Egger model oriented wrt: ldlcbeta
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -77,12 +83,12 @@ chdbeta      │
 We can also orient the model wrt HDL-C instead of LDL-C.
 
 ``` stata
-. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
-> t(2)
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> orient(2)
 
                                        MVMR-Egger model oriented wrt: hdlcbeta
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -97,12 +103,12 @@ chdbeta      │
 Or we can orient wrt triglycerides instead of LDL-C.
 
 ``` stata
-. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
-> t(3)
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+> orient(3)
 
                                          MVMR-Egger model oriented wrt: tgbeta
-                                                       Number of genotypes: 73
-                                                       Number of phenotypes: 3
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -131,3 +137,7 @@ examination of multivariable Mendelian randomization in the
 single-sample and two-sample summary data settings.” *International
 Journal of Epidemiology* 48 (3): 713–27.
 <https://doi.org/10.1093/ije/dyy262>.
+
+Sanderson, E, W Spiller, and J Bowden. 2020. “Testing and Correcting for
+Weak and Pleiotropic Instruments in Two-Sample Multivariable Mendelian
+Randomisation.” *bioRxiv*. <https://doi.org/10.1101/2020.04.02.021980>.

@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:   2 Jul 2020, 19:22:23
+ opened on:   9 Jul 2020, 20:39:05
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -75,7 +75,7 @@ Commands
       mrfunnel      Funnel plot of the genotype specific IV estimates
 
       mrmvivw       Multivariable inverse variance weighted estimator (also 
-                      mrmvivw and mvmr)
+                      mvivw and mvmr)
 
       mrmvegger     Multivariable MR-Egger regression
 
@@ -1490,9 +1490,10 @@ Options
 
     gxse(varlist) specifies a varlist of genotype-phenotype standard errors.
         These should be in the same order as the genotype-phenotype variables
-        in the main varlist.  When this option is specified various Q and F
-        statistics are calculated, see Sanderson et al. (2019) for more
-        information.
+        in the main varlist.  When this option is specified the Q_A statistic
+        for instrument validity and conditional F statistics for instrument
+        strength are calculated.  See Sanderson et al. (2019) and Sanderson
+        et al. (2020) for more information.
 
     level(#); see [R] estimation options.
 
@@ -1506,7 +1507,7 @@ Examples
     Select observations (p-value with LDL-C < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
 
-    MVIVW
+    Fit MVMR/MVIVW
         . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
             sel1==1
 
@@ -1514,7 +1515,7 @@ Examples
 
         . mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-    Report Q_A statistic
+    Report Q_A statistic and conditional F-statistics
         . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if
             sel1==1, gxse(ldlcse hdlcse tgse)
 
@@ -1538,6 +1539,9 @@ Stored results
     Matrices       
       e(b)                coefficient vector
       e(V)                variance-covariance matrix of the estimates
+    If gxse() specified
+      e(Fx)               vector of conditional F-statistics
+      e(Qx)               vector of Q_x statistics
 
     mrmvivw/mvivw/mvmr stores the following in r():
 
@@ -1555,6 +1559,9 @@ References
         multivariable Mendelian randomization in the single-sample and
         two-sample summary data settings. International Journal of
         Epidemiology, 2019, 48, 3, 713-727.  DOI
+    Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and
+        pleiotropic instruments in two-sample multivariable Mendelian
+        randomisation.  bioRxiv preprint, 2020, 2020.04.02.021980 DOI
 
 
 Author
@@ -1658,7 +1665,7 @@ References
 
     Rees J, Wood A, Burgess S. Extending the MR-Egger method for
         multivariable Mendelian randomization to correct for both measured
-        and unmeasured pleiotropy.  Statistics in Medicine, 2017, 20, 36, 29,
+        and unmeasured pleiotropy.  Statistics in Medicine, 2017, 36, 29,
         4705-4718.  DOI
 
 
@@ -1676,5 +1683,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:   2 Jul 2020, 19:22:23
+ closed on:   9 Jul 2020, 20:39:05
 -------------------------------------------------------------------------------
