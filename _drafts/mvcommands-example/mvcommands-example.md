@@ -22,7 +22,8 @@ Select observations (p-value with LDL-C < 10<sup>-8</sup>)
 
 ## MV-IVW (MVMR)
 
-Fit the multivariable inverse-variance weighted (MV-IVW) estimator with LDL-c and HDL-c [@burgess-aje-2015].
+Fit the multivariable inverse-variance weighted (MV-IVW a.k.a. multivariable 
+Mendelian randomization, MVMR) estimator with phenotypes LDL-c and HDL-c [@burgess-aje-2015].
 
 ```stata
 . mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
