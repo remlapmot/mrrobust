@@ -198,3 +198,48 @@ assert e(Np) == 1
 mrmvivw
 mat list r(table)
 
+// qxi ereturned items
+discard
+mvmr chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse)
+mat qx = e(Qx)
+mat list qx
+assert qx[1,1] - 9672.67 < 1e-2
+assert qx[2,1] - 3151.87 < 1e-2
+mat fx = e(Fx)
+mat list fx
+assert fx[1,1] - 134.34 < 1e-2
+assert fx[2,1] - 43.78 < 1e-2
+
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse)
+eret list
+mat qx = e(Qx)
+mat list qx
+mat fx = e(Fx)
+mat list fx
+assert qx[1,1] - 9252.3618 < 1e-2
+assert qx[2,1] - 2576.8537 < 1e-2
+assert qx[3,1] - 2870.8934 < 1e-2
+assert fx[1,1] - 130.31495 < 1e-2
+assert fx[2,1] - 36.2937 < 1e-2
+assert fx[3,1] - 40.435 < 1e-2
+
+mrmvivw
+eret list
+assert e(N) == 73
+assert e(Np) == 3
+assert e(Qa) - 152.877 < 1e-3
+assert e(Qadf) == 70
+mat qx = e(Qx)
+mat list qx
+mat fx = e(Fx)
+mat list fx
+assert qx[1,1] - 9252.3618 < 1e-2
+assert qx[2,1] - 2576.8537 < 1e-2
+assert qx[3,1] - 2870.8934 < 1e-2
+assert fx[1,1] - 130.31495 < 1e-2
+assert fx[2,1] - 36.2937 < 1e-2
+assert fx[3,1] - 40.435 < 1e-2
+
