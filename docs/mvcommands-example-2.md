@@ -31,8 +31,25 @@ LDL-c and HDL-c (Burgess, Dudbridge, and Thompson 2015).
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
-Additionally include triglycerides and report Q<sub>A</sub> statistic
-for instrument validity and conditional F-statistics for each phenotype
+Additionally include a third phenotype – triglycerides.
+
+``` stata
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                                Standard errors: Random effect
+─────────────┬────────────────────────────────────────────────────────────────
+             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+─────────────┼────────────────────────────────────────────────────────────────
+    ldlcbeta │     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta │  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta │   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+─────────────┴────────────────────────────────────────────────────────────────
+```
+
+Report the Q<sub>A</sub> statistic for instrument validity and the
+conditional F-statistics for instrument strength for each phenotype
 (Sanderson et al. 2019; Sanderson, Spiller, and Bowden 2020).
 
 ``` stata
