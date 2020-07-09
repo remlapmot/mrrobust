@@ -98,12 +98,12 @@ local colstart = 79 - 31 - `orienttext'
 di _n(1) _col(`colstart') as txt "MVMR-Egger model oriented wrt:", as res "`orientvar'"
 
 local nlength : strlen local n
-local colstart = 79 - 21 - `nlength'
-di _col(`colstart') as txt "Number of genotypes:", as res `n'
+local colstart = 79 - 22 - `nlength'
+di _col(`colstart') as txt "Number of genotypes =", as res `n'
 
 local nplength : strlen local np
-local colstart = 79 - 22 - `nplength'
-di _col(`colstart') as txt "Number of phenotypes:", as res `np'
+local colstart = 79 - 23 - `nplength'
+di _col(`colstart') as txt "Number of phenotypes =", as res `np'
 
 ereturn display, level(`level') noomitted
 return add // r(table)
