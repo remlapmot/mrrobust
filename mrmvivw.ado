@@ -153,6 +153,10 @@ if "`gxse'" != "" {
 		mat `qxmat'[`i',1] = scalar(`qxsc`i'')
 		mat `fxmat'[`i',1] = scalar(`qxsc`i'') / (`k' - (`npheno' - 1))
 	}
+	mat colnames `qxmat' = Qx
+	mat colnames `fxmat' = Fx
+	mat rownames `qxmat' = `phenovarlist'
+	mat rownames `fxmat' = `phenovarlist'
 	local qxopts "qx(`qxmat')"
 	local fxopts "fx(`fxmat')"
 }
