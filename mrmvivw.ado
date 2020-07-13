@@ -218,11 +218,13 @@ if `qa' != 0 {
 if "`fx'" != "" {
 	tempname fxmatname
 	mat `fxmatname' = `fx'
+	local fxrownames : rownames `fx'
+	tokenize `fxrownames'
 	di _col(2) as txt "Conditional F-statistics for instrument strength:"
 	forvalues i = 1/`np' {
-		di _col(2) as txt "F_x`i' =", as res %5.2f `fxmatname'[`i',1]
+		di _col(2) as txt "F_x`i' =", as res %5.2f `fxmatname'[`i',1], ///
+			_col(18) as txt "(" as res "``i''" as txt ")"
 	}
-	di _col(2) as txt "(numbers correspond to phenotype ordering in varlist)"
 }
 
 end
