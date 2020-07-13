@@ -69,10 +69,9 @@ conditional F-statistics for instrument strength for each phenotype
 ─────────────┴────────────────────────────────────────────────────────────────
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 130.31
- F_x2 = 36.29
- F_x3 = 40.44
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
 ```
 
 ## MVMR-Egger

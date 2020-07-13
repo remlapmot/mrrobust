@@ -2,7 +2,7 @@
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:   9 Jul 2020, 20:39:05
+ opened on:  13 Jul 2020, 08:07:34
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -495,9 +495,8 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(71) = 159.89 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 134.34
- F_x2 = 43.78
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 134.34   (ldlcbeta)
+ F_x2 = 43.78    (hdlcbeta)
 
 . assert e(Qa) - 159.888 < 1e-3
 
@@ -522,9 +521,8 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(71) = 157.71 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 175.51
- F_x2 = 53.82
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 175.51   (ldlcbeta)
+ F_x2 = 53.82    (tgbeta)
 
 .         
 . discard
@@ -543,9 +541,8 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(71) = 261.15 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 35.70
- F_x2 = 38.76
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 35.70    (hdlcbeta)
+ F_x2 = 38.76    (tgbeta)
 
 . 
 . discard
@@ -565,10 +562,9 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 130.31
- F_x2 = 36.29
- F_x3 = 40.44
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
 
 . eret list
 
@@ -608,10 +604,9 @@ matrices:
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 130.31
- F_x2 = 36.29
- F_x3 = 40.44
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
 
 . eret list
 
@@ -661,10 +656,9 @@ matrices:
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 130.31
- F_x2 = 36.29
- F_x3 = 40.44
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
 
 . eret list
 
@@ -705,10 +699,9 @@ matrices:
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 130.31
- F_x2 = 36.29
- F_x3 = 40.44
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
 
 . eret list
 
@@ -903,18 +896,17 @@ pvalue  8.144e-16
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(71) = 159.89 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 134.34
- F_x2 = 43.78
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 134.34   (ldlcbeta)
+ F_x2 = 43.78    (hdlcbeta)
 
 . mat qx = e(Qx)
 
 . mat list qx
 
 qx[2,1]
-           c1
-r1  9672.6742
-r2  3151.8795
+                 Qx
+ldlcbeta  9672.6742
+hdlcbeta  3151.8795
 
 . assert qx[1,1] - 9672.67 < 1e-2
 
@@ -925,9 +917,9 @@ r2  3151.8795
 . mat list fx
 
 fx[2,1]
-           c1
-r1   134.3427
-r2  43.776104
+                 Fx
+ldlcbeta   134.3427
+hdlcbeta  43.776104
 
 . assert fx[1,1] - 134.34 < 1e-2
 
@@ -951,10 +943,9 @@ r2  43.776104
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 130.31
- F_x2 = 36.29
- F_x3 = 40.44
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
 
 . eret list
 
@@ -982,20 +973,20 @@ matrices:
 . mat list qx
 
 qx[3,1]
-           c1
-r1  9252.3618
-r2  2576.8537
-r3  2870.8934
+                 Qx
+ldlcbeta  9252.3618
+hdlcbeta  2576.8537
+  tgbeta  2870.8934
 
 . mat fx = e(Fx)
 
 . mat list fx
 
 fx[3,1]
-           c1
-r1  130.31495
-r2  36.293714
-r3  40.435119
+                 Fx
+ldlcbeta  130.31495
+hdlcbeta  36.293714
+  tgbeta  40.435119
 
 . assert qx[1,1] - 9252.3618 < 1e-2
 
@@ -1024,10 +1015,9 @@ r3  40.435119
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
  Conditional F-statistics for instrument strength:
- F_x1 = 130.31
- F_x2 = 36.29
- F_x3 = 40.44
- (numbers correspond to phenotype ordering in varlist)
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
 
 . eret list
 
@@ -1063,20 +1053,20 @@ matrices:
 . mat list qx
 
 qx[3,1]
-           c1
-r1  9252.3618
-r2  2576.8537
-r3  2870.8934
+                 Qx
+ldlcbeta  9252.3618
+hdlcbeta  2576.8537
+  tgbeta  2870.8934
 
 . mat fx = e(Fx)
 
 . mat list fx
 
 fx[3,1]
-           c1
-r1  130.31495
-r2  36.293714
-r3  40.435119
+                 Fx
+ldlcbeta  130.31495
+hdlcbeta  36.293714
+  tgbeta  40.435119
 
 . assert qx[1,1] - 9252.3618 < 1e-2
 
@@ -1096,5 +1086,5 @@ end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:   9 Jul 2020, 20:39:15
+ closed on:  13 Jul 2020, 08:07:45
 -------------------------------------------------------------------------------
