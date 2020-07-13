@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mvcommands-example\mvcommands-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 9 Jul 2020, 21:21:52
+ {txt}opened on:  {res}13 Jul 2020, 08:08:40
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -54,10 +54,9 @@
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 2}Q_A statistic for instrument validity; chi2({res}70{txt}) = {res}152.88 {txt}(p =  {res}0.0000{txt})
 {col 2}Conditional F-statistics for instrument strength:
-{col 2}F_x1 = {res}130.31
-{col 2}{txt}F_x2 = {res}36.29
-{col 2}{txt}F_x3 = {res}40.44
-{col 2}{txt}(numbers correspond to phenotype ordering in varlist)
+{col 2}F_x1 = {res}130.31 {col 18}{txt}({res}ldlcbeta{txt})
+{col 2}F_x2 = {res}36.29 {col 18}{txt}({res}hdlcbeta{txt})
+{col 2}F_x3 = {res}40.44 {col 18}{txt}({res}tgbeta{txt})
 
 {com}. //_6
 . mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
@@ -114,7 +113,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mvcommands-example\mvcommands-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 9 Jul 2020, 21:21:53
+ {txt}closed on:  {res}13 Jul 2020, 08:08:41
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
