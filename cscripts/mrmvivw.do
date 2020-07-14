@@ -243,3 +243,9 @@ assert fx[1,1] - 130.31495 < 1e-2
 assert fx[2,1] - 36.2937 < 1e-2
 assert fx[3,1] - 40.435 < 1e-2
 
+discard
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse)
+assert e(Qa) - 173.66 < 1e-2
+assert e(Np) == 1
+assert e(Qadf) == 72
