@@ -15,6 +15,7 @@ syntax varlist(min=2) [aweight] [if] [in] [, ///
 	orient(integer 1) ///
 	Level(cilevel) ///
     gxse(varlist numeric) ///
+	tdist ///
 	*]
 
 if `orient' < 1 {
@@ -81,6 +82,15 @@ ereturn post b V
 ereturn local orientvar = "`orientvar'"
 ereturn scalar N = `k'
 ereturn scalar Np = `npheno'
+
+if "`tdist'" != "" {
+    // use t-dist for ereturn display Wald test and CI limits
+    ereturn scalar df_r  = `k' - `npheno' - 1
+}
+else {
+	// if df_r == . then Stata uses Normal dist
+    ereturn scalar df_r = .
+}
 
 * display estimates
 Display , level(`level') orientvar(`orientvar') n(`k') np(`npheno')
