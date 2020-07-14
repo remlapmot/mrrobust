@@ -28,6 +28,7 @@
 {p_end}
 {synopt:{opt gxse(varlist)}}varlist of genotype-phenotype standard errors{p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
+{synopt:{opt tdist:}}use t-distribution for Wald test and CI limits{p_end}
 
 {marker description}{...}
 {title:Description}
@@ -63,6 +64,10 @@ See {help mrmvivw##sanderson:Sanderson et al. (2019)} and
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
 
+{phang}
+{opt tdist} specifies using the t-distribution, instead of the normal 
+distribution, for calculating the Wald test and the confidence interval limits.
+
 {marker examples}{...}
 {title:Examples}
 
@@ -94,6 +99,7 @@ See {help mrmvivw##sanderson:Sanderson et al. (2019)} and
 {p2col 5 20 24 2: Scalars}{p_end}
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
 {synopt:{cmd:e(Np)}}Number of phenotypes{p_end}
+{synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} option){p_end}
 {p2col 5 20 24 2: If {cmd:gxse()} specified}{p_end}
 {synopt:{cmd:e(Qa)}}Q_A statistic{p_end}
 {synopt:{cmd:e(Qadf)}}Degrees of freedom of Q_A statistic{p_end}
