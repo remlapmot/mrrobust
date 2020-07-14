@@ -249,3 +249,37 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
 assert e(Qa) - 173.66 < 1e-2
 assert e(Np) == 1
 assert e(Qadf) == 72
+
+// tdist
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse) tdist
+di e(df_r)
+assert e(df_r) == 70
+mat rtable = r(table)
+assert rtable[7,1] == 70
+mrmvivw
+
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse)
+mat rtable = r(table)
+assert rtable[7,1] == .
+
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse) tdist
+di e(df_r)
+assert e(df_r) == 71
+mat rtable = r(table)
+assert rtable[7,1] == 71
+mrmvivw
+
+discard
+mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse) tdist
+di e(df_r)
+assert e(df_r) == 72
+mat rtable = r(table)
+assert rtable[7,1] == 72
+mrmvivw
