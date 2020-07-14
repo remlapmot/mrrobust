@@ -2,7 +2,7 @@
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:   9 Jul 2020, 20:39:15
+ opened on:  14 Jul 2020, 11:15:26
 
 . * mrmvegger cscript
 . * 22un2020
@@ -323,6 +323,7 @@ chdbeta      |
 scalars:
                   e(N) =  73
                  e(Np) =  1
+               e(df_r) =  .
 
 macros:
             e(cmdline) : "mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if se.."
@@ -457,9 +458,171 @@ chdbeta      |
 . assert e(Np) == 3
 
 . 
+. // tdist
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse tgse) tdist
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000     .3672837    .7673148
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.310     -.402283    .1294604
+      tgbeta |   .2739803   .1246927     2.20   0.031     .0252252    .5227354
+       _cons |  -.0093655   .0054187    -1.73   0.088    -.0201756    .0014445
+------------------------------------------------------------------------------
+
+. di e(df_r)
+69
+
+. assert e(df_r) == 69
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == 69
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000     .3672837    .7673148
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.310     -.402283    .1294604
+      tgbeta |   .2739803   .1246927     2.20   0.031     .0252252    .5227354
+       _cons |  -.0093655   .0054187    -1.73   0.088    -.0201756    .0014445
+------------------------------------------------------------------------------
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse tgse)
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.306    -.3976209    .1247983
+      tgbeta |   .2739803   .1246927     2.20   0.028     .0295871    .5183735
+       _cons |  -.0093655   .0054187    -1.73   0.084     -.019986     .001255
+------------------------------------------------------------------------------
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == .
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.306    -.3976209    .1247983
+      tgbeta |   .2739803   .1246927     2.20   0.028     .0295871    .5183735
+       _cons |  -.0093655   .0054187    -1.73   0.084     -.019986     .001255
+------------------------------------------------------------------------------
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse) tdist
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5723867   .1029385     5.56   0.000     .3670822    .7776911
+    hdlcbeta |  -.2665853   .1226013    -2.17   0.033    -.5111058   -.0220647
+       _cons |  -.0067173   .0054255    -1.24   0.220    -.0175382    .0041035
+------------------------------------------------------------------------------
+
+. di e(df_r)
+70
+
+. assert e(df_r) == 70
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == 70
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5723867   .1029385     5.56   0.000     .3670822    .7776911
+    hdlcbeta |  -.2665853   .1226013    -2.17   0.033    -.5111058   -.0220647
+       _cons |  -.0067173   .0054255    -1.24   0.220    -.0175382    .0041035
+------------------------------------------------------------------------------
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse) tdist
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4110251    .8236012
+       _cons |  -.0087706   .0054812    -1.60   0.114    -.0196998    .0021585
+------------------------------------------------------------------------------
+
+. di e(df_r)
+71
+
+. assert e(df_r) == 71
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == 71
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .6173131   .1034573     5.97   0.000     .4110251    .8236012
+       _cons |  -.0087706   .0054812    -1.60   0.114    -.0196998    .0021585
+------------------------------------------------------------------------------
+
+. 
 end of do-file
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:   9 Jul 2020, 20:39:20
+ closed on:  14 Jul 2020, 11:15:33
 -------------------------------------------------------------------------------
