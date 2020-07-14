@@ -24,7 +24,7 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt:{opt fe:}}Fixed effect standard errors (default is multiplicative)
+{synopt:{opt fe:}}fixed effect standard errors (default is multiplicative)
 {p_end}
 {synopt:{opt gxse(varlist)}}varlist of genotype-phenotype standard errors{p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
