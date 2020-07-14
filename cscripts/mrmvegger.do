@@ -137,3 +137,38 @@ assert e(Np) == 2
 discard
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 assert e(Np) == 3
+
+// tdist
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse) tdist
+di e(df_r)
+assert e(df_r) == 69
+mat rtable = r(table)
+assert rtable[7,1] == 69
+mrmvegger
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse tgse)
+mat rtable = r(table)
+assert rtable[7,1] == .
+mrmvegger
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse hdlcse) tdist
+di e(df_r)
+assert e(df_r) == 70
+mat rtable = r(table)
+assert rtable[7,1] == 70
+mrmvegger
+
+discard
+mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse) tdist
+di e(df_r)
+assert e(df_r) == 71
+mat rtable = r(table)
+assert rtable[7,1] == 71
+mrmvegger

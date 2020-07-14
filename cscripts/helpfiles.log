@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  13 Jul 2020, 08:07:34
+ opened on:  14 Jul 2020, 11:15:14
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -1461,10 +1461,11 @@ Syntax
 
     options               Description
     -------------------------------------------------------------------------
-      fe                  Fixed effect standard errors (default is
+      fe                  fixed effect standard errors (default is
                             multiplicative)
       gxse(varlist)       varlist of genotype-phenotype standard errors
       level(#)            set confidence level; default is level(95)
+      tdist               use t-distribution for Wald test and CI limits
 
 Description
 
@@ -1491,11 +1492,16 @@ Options
     gxse(varlist) specifies a varlist of genotype-phenotype standard errors.
         These should be in the same order as the genotype-phenotype variables
         in the main varlist.  When this option is specified the Q_A statistic
-        for instrument validity and conditional F statistics for instrument
-        strength are calculated.  See Sanderson et al. (2019) and Sanderson
-        et al. (2020) for more information.
+        for instrument validity is calculated.  When this is specified and
+        there are two or more phenotypes conditional F statistics for
+        instrument strength are calculated.  See Sanderson et al. (2019) and
+        Sanderson et al. (2020) for more information.
 
     level(#); see [R] estimation options.
+
+    tdist specifies using the t-distribution, instead of the normal
+        distribution, for calculating the Wald test and the confidence
+        interval limits.
 
 Examples
 
@@ -1526,6 +1532,7 @@ Stored results
     Scalars        
       e(N)                Number of genotypes
       e(Np)               Number of phenotypes
+      e(df_r)             residual degrees of freedom (with tdist option)
     If gxse() specified
       e(Qa)               Q_A statistic
       e(Qadf)             Degrees of freedom of Q_A statistic
@@ -1592,6 +1599,7 @@ Syntax
                             association variable in the varlist (default is
                             1)
       level(#)            set confidence level; default is level(95)
+      tdist               use t-distribution for Wald test and CI limits
 
 Description
 
@@ -1614,6 +1622,10 @@ Options
         varlist.
 
     level(#); see [R] estimation options.
+
+    tdist specifies using the t-distribution, instead of the normal
+        distribution, for calculating the Wald test and the confidence
+        interval limits.
 
 Examples
 
@@ -1644,6 +1656,7 @@ Stored results
     Scalars        
       e(N)                Number of genotypes
       e(Np)               Number of phenotypes
+      e(df_r)             residual degrees of freedom (with tdist option)
 
     Macros         
       e(cmd)              Command name
@@ -1683,5 +1696,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  13 Jul 2020, 08:07:34
+ closed on:  14 Jul 2020, 11:15:14
 -------------------------------------------------------------------------------

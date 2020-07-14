@@ -26,6 +26,7 @@
 {synoptline}
 {synopt:{opt orient:(#)}}orient the data wrt to the phenotype which corresponds with the #th genotype-phenotype association variable in the varlist (default is 1){p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
+{synopt:{opt tdist:}}use t-distribution for Wald test and CI limits{p_end}
 
 {marker description}{...}
 {title:Description}
@@ -50,6 +51,10 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
+
+{phang}
+{opt tdist} specifies using the t-distribution, instead of the normal 
+distribution, for calculating the Wald test and the confidence interval limits.
 
 {marker examples}{...}
 {title:Examples}
@@ -81,6 +86,7 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {p2col 5 20 24 2: Scalars}{p_end}
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
 {synopt:{cmd:e(Np)}}Number of phenotypes{p_end}
+{synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} option){p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}

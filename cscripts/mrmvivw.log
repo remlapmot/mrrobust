@@ -2,7 +2,7 @@
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  13 Jul 2020, 08:07:34
+ opened on:  14 Jul 2020, 11:15:14
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -365,6 +365,7 @@ chdbeta      |
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
 
@@ -569,6 +570,7 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
                  e(Qa) =  152.8771057128906
@@ -611,6 +613,7 @@ matrices:
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
                  e(Qa) =  152.8771057128906
@@ -663,6 +666,7 @@ matrices:
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
                  e(Qa) =  152.8771057128906
@@ -706,6 +710,7 @@ matrices:
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
                  e(Qa) =  152.8771057128906
@@ -760,6 +765,7 @@ The number of variables in gxse() does not match the number of genotype-phenoty
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
 
@@ -806,6 +812,7 @@ matrices:
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  2
 
@@ -838,6 +845,7 @@ matrices:
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  1
 
@@ -950,6 +958,7 @@ hdlcbeta  43.776104
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
                  e(Qa) =  152.8771057128906
@@ -1022,6 +1031,7 @@ hdlcbeta  36.293714
 . eret list
 
 scalars:
+               e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
                  e(Qa) =  152.8771057128906
@@ -1081,10 +1091,189 @@ hdlcbeta  36.293714
 . assert fx[3,1] - 40.435 < 1e-2
 
 . 
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse)
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 1
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(72) = 173.66 (p =  0.0000)
+
+. assert e(Qa) - 173.66 < 1e-2
+
+. assert e(Np) == 1
+
+. assert e(Qadf) == 72
+
+. 
+. // tdist
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse tgse) tdist
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3070269     .550213
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.142    -.4551289    .0667312
+      tgbeta |   .2260456   .1232828     1.83   0.071    -.0198342    .4719254
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+ Conditional F-statistics for instrument strength:
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
+
+. di e(df_r)
+70
+
+. assert e(df_r) == 70
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == 70
+
+. mrmvivw
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3070269     .550213
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.142    -.4551289    .0667312
+      tgbeta |   .2260456   .1232828     1.83   0.071    -.0198342    .4719254
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+ Conditional F-statistics for instrument strength:
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse tgse)
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(70) = 152.88 (p =  0.0000)
+ Conditional F-statistics for instrument strength:
+ F_x1 = 130.31   (ldlcbeta)
+ F_x2 = 36.29    (hdlcbeta)
+ F_x3 = 40.44    (tgbeta)
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == .
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse hdlcse) tdist
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4670719   .0581901     8.03   0.000     .3510441    .5830997
+    hdlcbeta |  -.2930048   .1211822    -2.42   0.018    -.5346352   -.0513744
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(71) = 159.89 (p =  0.0000)
+ Conditional F-statistics for instrument strength:
+ F_x1 = 134.34   (ldlcbeta)
+ F_x2 = 43.78    (hdlcbeta)
+
+. di e(df_r)
+71
+
+. assert e(df_r) == 71
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == 71
+
+. mrmvivw
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4670719   .0581901     8.03   0.000     .3510441    .5830997
+    hdlcbeta |  -.2930048   .1211822    -2.42   0.018    -.5346352   -.0513744
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(71) = 159.89 (p =  0.0000)
+ Conditional F-statistics for instrument strength:
+ F_x1 = 134.34   (ldlcbeta)
+ F_x2 = 43.78    (hdlcbeta)
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+>         gxse(ldlcse) tdist
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 1
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3622976    .6007134
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(72) = 173.66 (p =  0.0000)
+
+. di e(df_r)
+72
+
+. assert e(df_r) == 72
+
+. mat rtable = r(table)
+
+. assert rtable[7,1] == 72
+
+. mrmvivw
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 1
+                                                Standard errors: Random effect
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3622976    .6007134
+------------------------------------------------------------------------------
+ Q_A statistic for instrument validity; chi2(72) = 173.66 (p =  0.0000)
+
 . 
 end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  13 Jul 2020, 08:07:45
+ closed on:  14 Jul 2020, 11:15:26
 -------------------------------------------------------------------------------
