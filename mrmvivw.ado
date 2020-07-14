@@ -23,6 +23,7 @@ syntax varlist(min=2) [aweight] [if] [in] [, ///
 	fe ///
     Level(cilevel) ///
 	gxse(varlist) ///
+	tdist ///
 	*]
 
 local callersversion = _caller()
@@ -165,6 +166,16 @@ if "`gxse'" != "" {
 
 ** display estimates
 ereturn post b V // from the mvivw fit way above (otherwise e(b) and e(V) taken from subsequent fits)
+
+if "`tdist'" != "" {
+    // use t-dist for ereturn display Wald test and CI limits
+    ereturn scalar df_r  = `k' - `npheno'
+}
+else {
+	// if df_r == . then Stata uses Normal dist
+    ereturn scalar df_r = .
+}
+
 Display , level(`level') n(`k') setype(`setype') np(`npheno') ///
 	`qopts' `qxopts' `fxopts'
 
