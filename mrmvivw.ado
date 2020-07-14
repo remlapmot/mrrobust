@@ -118,47 +118,49 @@ if "`gxse'" != "" {
 	local qopts qa(`=`qares'[1,1]') qadf(`=`qadf'') qap(`=`qap'')
 	
 	** Equation 12 - test of instrument strength
-	tempname qxmat fxmat
-	matrix `qxmat' = J(`npheno',1,.)
-	matrix `fxmat' = J(`npheno',1,.)
-	
-	** Estimate delta for each phenotype
-	** Regress each genotype-phenotype association on the other exposure effects
-	forvalues i = 1/`npheno' {
-		tempname delta`i'
+	if `npheno' > 1 {
+		tempname qxmat fxmat
+		matrix `qxmat' = J(`npheno',1,.)
+		matrix `fxmat' = J(`npheno',1,.)
 		
-		// other phenos without i
-		local phenoswithouti : subinstr local phenovarlist "`phenoname`i''" ""
-		local phenoswithouti = stritrim(strtrim("`phenoswithouti'"))
-		
-		// sephenos without i
-		local sephenoswithouti : subinstr local gxse "`sephenoname`i''" ""
-		local sephenoswithouti = stritrim(strtrim("`sephenoswithouti'"))
-		
-		qui regress `phenoname`i'' `phenoswithouti' `if'`in', noc // TODO: does this need weighting??
-		tempvar res`i'
-		qui predict double `res`i'' `if'`in', residual
-		tempvar vx`i' qx`i'
-		qui gen double `vx`i'' = `sephenoname`i''^2 `if'`in'
-		tokenize "`sephenoswithouti'"
-		local j = 1
-		foreach phenovar of varlist `phenoswithouti' {
-			qui replace `vx`i'' = `vx`i'' + (``j''*_b[`phenovar'])^2 `if'`in'
-			local j = `j' + 1
+		** Estimate delta for each phenotype
+		** Regress each genotype-phenotype association on the other exposure effects
+		forvalues i = 1/`npheno' {
+			tempname delta`i'
+			
+			// other phenos without i
+			local phenoswithouti : subinstr local phenovarlist "`phenoname`i''" ""
+			local phenoswithouti = stritrim(strtrim("`phenoswithouti'"))
+			
+			// sephenos without i
+			local sephenoswithouti : subinstr local gxse "`sephenoname`i''" ""
+			local sephenoswithouti = stritrim(strtrim("`sephenoswithouti'"))
+			
+			qui regress `phenoname`i'' `phenoswithouti' `if'`in', noc // TODO: does this need weighting??
+			tempvar res`i'
+			qui predict double `res`i'' `if'`in', residual
+			tempvar vx`i' qx`i'
+			qui gen double `vx`i'' = `sephenoname`i''^2 `if'`in'
+			tokenize "`sephenoswithouti'"
+			local j = 1
+			foreach phenovar of varlist `phenoswithouti' {
+				qui replace `vx`i'' = `vx`i'' + (``j''*_b[`phenovar'])^2 `if'`in'
+				local j = `j' + 1
+			}
+			qui gen double `qx`i'' = `res`i''^2 / `vx`i'' `if'`in'
+			qui su `qx`i''
+			tempname qxsc`i'
+			scalar `qxsc`i'' = r(sum)
+			mat `qxmat'[`i',1] = scalar(`qxsc`i'')
+			mat `fxmat'[`i',1] = scalar(`qxsc`i'') / (`k' - (`npheno' - 1))
 		}
-		qui gen double `qx`i'' = `res`i''^2 / `vx`i'' `if'`in'
-		qui su `qx`i''
-		tempname qxsc`i'
-		scalar `qxsc`i'' = r(sum)
-		mat `qxmat'[`i',1] = scalar(`qxsc`i'')
-		mat `fxmat'[`i',1] = scalar(`qxsc`i'') / (`k' - (`npheno' - 1))
+		mat colnames `qxmat' = Qx
+		mat colnames `fxmat' = Fx
+		mat rownames `qxmat' = `phenovarlist'
+		mat rownames `fxmat' = `phenovarlist'
+		local qxopts "qx(`qxmat')"
+		local fxopts "fx(`fxmat')"
 	}
-	mat colnames `qxmat' = Qx
-	mat colnames `fxmat' = Fx
-	mat rownames `qxmat' = `phenovarlist'
-	mat rownames `fxmat' = `phenovarlist'
-	local qxopts "qx(`qxmat')"
-	local fxopts "fx(`fxmat')"
 }
 
 ** display estimates
@@ -173,9 +175,11 @@ eret local setype = "`setype'"
 if "`gxse'" != "" {
 	eret scalar Qa = `qares'[1,1]
 	eret scalar Qadf = scalar(`qadf')
-	eret scalar Qap = scalar(`qap')	
-	eret matrix Qx = `qxmat'
-	eret matrix Fx = `fxmat'
+	eret scalar Qap = scalar(`qap')
+	if `npheno' > 1 {
+		eret matrix Qx = `qxmat'
+		eret matrix Fx = `fxmat'
+	}
 }
 ereturn local cmd "mrmvivw"
 ereturn local cmdline `"mrmvivw `0'"'
