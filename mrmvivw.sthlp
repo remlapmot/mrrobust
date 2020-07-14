@@ -54,8 +54,9 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {phang}
 {opt gxse(varlist)} specifies a varlist of genotype-phenotype standard errors. 
 These should be in the same order as the genotype-phenotype variables in the main varlist. 
-When this option is specified the Q_A statistic for instrument validity and 
-conditional F statistics for instrument strength are calculated. 
+When this option is specified the Q_A statistic for instrument validity is calculated. 
+When this is specified and there are two or more phenotypes conditional F statistics 
+for instrument strength are calculated. 
 See {help mrmvivw##sanderson:Sanderson et al. (2019)} and 
 {help mrmvivw##sanderson2:Sanderson et al. (2020)} for more information.
 
