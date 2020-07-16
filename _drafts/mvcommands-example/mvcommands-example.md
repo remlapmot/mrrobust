@@ -31,9 +31,11 @@ Mendelian randomization, MVMR) estimator with phenotypes LDL-c and HDL-c [@burge
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.514
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
+chdbeta      │
     ldlcbeta │   .4670719   .0581901     8.03   0.000     .3530214    .5811224
     hdlcbeta │  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -48,9 +50,11 @@ Additionally include a third phenotype -- triglycerides.
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
+chdbeta      │
     ldlcbeta │     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta │  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta │   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -68,9 +72,11 @@ F-statistics for instrument strength for each phenotype [@sanderson-ije-2019; @s
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
+chdbeta      │
     ldlcbeta │     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta │  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta │   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -94,6 +100,7 @@ to the first phenotype in the main varlist.
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -115,6 +122,7 @@ We can also orient the model wrt HDL-C instead of LDL-C.
                                        MVMR-Egger model oriented wrt: hdlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.501
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -136,6 +144,7 @@ Or we can orient the model wrt triglycerides instead of LDL-C.
                                          MVMR-Egger model oriented wrt: tgbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.499
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
