@@ -283,3 +283,14 @@ assert e(df_r) == 72
 mat rtable = r(table)
 assert rtable[7,1] == 72
 mrmvivw
+
+// e(phi)
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+assert e(phi) - 1.490 < 1e-3
+
+discard
+mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+assert e(phi) - 1.514 < 1e-3
+mrmvivw
+assert e(phi) - 1.514 < 1e-3
