@@ -13,6 +13,8 @@ gen byte sel1 = (ldlcp2 < 1e-8)
 
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw 
+
 discard
 mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 assert abs(_b[ldlcbeta] - .482) < 1e-3
