@@ -2,7 +2,7 @@
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  14 Jul 2020, 11:15:14
+ opened on:  16 Jul 2020, 13:55:16
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -44,6 +44,17 @@ chdbeta      |
 ------------------------------------------------------------------------------
 
 . 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw 
+
+                                                      Number of genotypes = 73
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. 
 . discard
 
 . mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
@@ -51,6 +62,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -87,6 +99,7 @@ pvalue  2.167e-36
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -106,6 +119,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -128,9 +142,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -156,9 +172,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -184,9 +202,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -213,6 +233,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -242,6 +263,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -271,6 +293,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -302,9 +325,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -324,9 +349,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -346,9 +373,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4093933    .0209956
       tgbeta |   .2260456   .1232828     1.83   0.067     .0232635    .4288278
@@ -368,6 +397,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
 
 macros:
             e(cmdline) : "mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chds.."
@@ -401,6 +431,7 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -413,6 +444,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                  Standard errors: Fixed effect
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -433,9 +465,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
@@ -444,9 +478,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
@@ -461,9 +497,11 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
@@ -488,9 +526,11 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.514
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
     hdlcbeta |  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
 ------------------------------------------------------------------------------
@@ -514,9 +554,11 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.502
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4237414   .0613912     6.90   0.000     .3034169    .5440659
       tgbeta |   .3014213   .1132872     2.66   0.008     .0793824    .5234601
 ------------------------------------------------------------------------------
@@ -534,9 +576,11 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.932
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     hdlcbeta |  -.1446141   .1694317    -0.85   0.393    -.4766941    .1874659
       tgbeta |   .5241872   .1501343     3.49   0.000     .2299294     .818445
 ------------------------------------------------------------------------------
@@ -554,9 +598,11 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -573,6 +619,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
                  e(Qa) =  152.8771057128906
                e(Qadf) =  70
                 e(Qap) =  4.10807666471e-08
@@ -597,9 +644,11 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -616,6 +665,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
                  e(Qa) =  152.8771057128906
                e(Qadf) =  70
                 e(Qap) =  4.10807666471e-08
@@ -650,9 +700,11 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -669,6 +721,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
                  e(Qa) =  152.8771057128906
                e(Qadf) =  70
                 e(Qap) =  4.10807666471e-08
@@ -694,9 +747,11 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -713,6 +768,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
                  e(Qa) =  152.8771057128906
                e(Qadf) =  70
                 e(Qap) =  4.10807666471e-08
@@ -754,9 +810,11 @@ The number of variables in gxse() does not match the number of genotype-phenoty
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -768,6 +826,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
 
 macros:
             e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(c.."
@@ -786,9 +845,11 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -802,9 +863,11 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.514
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
     hdlcbeta |  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
 ------------------------------------------------------------------------------
@@ -815,6 +878,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  2
+                e(phi) =  1.51443265923026
 
 macros:
             e(cmdline) : "mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2).."
@@ -836,9 +900,11 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
@@ -848,6 +914,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  1
+                e(phi) =  1.564569469111872
 
 macros:
             e(cmdline) : "mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1.."
@@ -866,15 +933,18 @@ matrices:
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
 
 . mat list r(table)
 
 r(table)[9,1]
+          chdbeta:
          ldlcbeta
      b  .48150551
     se  .05979938
@@ -896,9 +966,11 @@ pvalue  8.144e-16
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.514
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
     hdlcbeta |  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
 ------------------------------------------------------------------------------
@@ -942,9 +1014,11 @@ hdlcbeta  43.776104
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -961,6 +1035,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
                  e(Qa) =  152.8771057128906
                e(Qadf) =  70
                 e(Qap) =  4.10807666471e-08
@@ -1015,9 +1090,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -1034,6 +1111,7 @@ scalars:
                e(df_r) =  .
                   e(N) =  73
                  e(Np) =  3
+                e(phi) =  1.489854303825199
                  e(Qa) =  152.8771057128906
                e(Qadf) =  70
                 e(Qap) =  4.10807666471e-08
@@ -1099,9 +1177,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(72) = 173.66 (p =  0.0000)
@@ -1122,9 +1202,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3070269     .550213
     hdlcbeta |  -.1941989   .1308289    -1.48   0.142    -.4551289    .0667312
       tgbeta |   .2260456   .1232828     1.83   0.071    -.0198342    .4719254
@@ -1149,9 +1231,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3070269     .550213
     hdlcbeta |  -.1941989   .1308289    -1.48   0.142    -.4551289    .0667312
       tgbeta |   .2260456   .1232828     1.83   0.071    -.0198342    .4719254
@@ -1171,9 +1255,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
     hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
       tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
@@ -1197,9 +1283,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.514
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3510441    .5830997
     hdlcbeta |  -.2930048   .1211822    -2.42   0.018    -.5346352   -.0513744
 ------------------------------------------------------------------------------
@@ -1222,9 +1310,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.514
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3510441    .5830997
     hdlcbeta |  -.2930048   .1211822    -2.42   0.018    -.5346352   -.0513744
 ------------------------------------------------------------------------------
@@ -1242,9 +1332,11 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3622976    .6007134
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(72) = 173.66 (p =  0.0000)
@@ -1263,17 +1355,75 @@ hdlcbeta  36.293714
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3622976    .6007134
 ------------------------------------------------------------------------------
  Q_A statistic for instrument validity; chi2(72) = 173.66 (p =  0.0000)
+
+. 
+. // e(phi)
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                                Standard errors: Random effect
+                                              Residual standard error =  1.490
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
+    hdlcbeta |  -.1941989   .1308289    -1.48   0.138    -.4506189    .0622211
+      tgbeta |   .2260456   .1232828     1.83   0.067    -.0155842    .4676755
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.490 < 1e-3
+
+. 
+. discard
+
+. mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                                Standard errors: Random effect
+                                              Residual standard error =  1.514
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
+    hdlcbeta |  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.514 < 1e-3
+
+. mrmvivw
+
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                                Standard errors: Random effect
+                                              Residual standard error =  1.514
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
+    hdlcbeta |  -.2930048   .1211822    -2.42   0.016    -.5305175   -.0554921
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.514 < 1e-3
 
 . 
 end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  14 Jul 2020, 11:15:26
+ closed on:  16 Jul 2020, 13:55:30
 -------------------------------------------------------------------------------

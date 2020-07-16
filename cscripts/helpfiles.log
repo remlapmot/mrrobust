@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  14 Jul 2020, 11:15:14
+ opened on:  16 Jul 2020, 13:55:16
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -1462,7 +1462,7 @@ Syntax
     options               Description
     -------------------------------------------------------------------------
       fe                  fixed effect standard errors (default is
-                            multiplicative)
+                            multiplicative random effect)
       gxse(varlist)       varlist of genotype-phenotype standard errors
       level(#)            set confidence level; default is level(95)
       tdist               use t-distribution for Wald test and CI limits
@@ -1486,8 +1486,11 @@ Options
 
     fe specifies fixed effect standard errors (i.e. variance of residuals
         constrained to 1 as in fixed effect meta-analysis models). The
-        default is to use multiplicative standard errors (i.e. variance of
-        residuals unconstrained as in standard linear regression).
+        default is multiplicative random effect standard errors in which case
+        the variance of the residuals is unconstrained and the square root of
+        the estimated residual variance is displayed (Residual standard
+        error). If the residual variance is found to be less than 1 an error
+        message is shown and the model is refitted with it constrained to 1.
 
     gxse(varlist) specifies a varlist of genotype-phenotype standard errors.
         These should be in the same order as the genotype-phenotype variables
@@ -1530,9 +1533,10 @@ Stored results
     mrmvivw/mvivw/mvmr stores the following in e():
 
     Scalars        
+      e(df_r)             residual degrees of freedom (with tdist option)
       e(N)                Number of genotypes
       e(Np)               Number of phenotypes
-      e(df_r)             residual degrees of freedom (with tdist option)
+      e(phi)              Scale parameter (root mean squared error)
     If gxse() specified
       e(Qa)               Q_A statistic
       e(Qadf)             Degrees of freedom of Q_A statistic
@@ -1603,8 +1607,12 @@ Syntax
 
 Description
 
-    mrmvegger performs multivariable MR-Egger regression. For further
+    mrmvegger performs multivariable MR-Egger regression.  For further
     information see Rees et al. (2017).
+
+    By default multiplicative random effect standard errors are reported.
+    However, if the residual variance is found to be less than 1 the model is
+    refitted with this constrained to 1.
 
     varname_gd variable containing the genotype-disease association
     estimates.
@@ -1654,9 +1662,10 @@ Stored results
     mrmvegger stores the following in e():
 
     Scalars        
+      e(df_r)             residual degrees of freedom (with tdist option)
       e(N)                Number of genotypes
       e(Np)               Number of phenotypes
-      e(df_r)             residual degrees of freedom (with tdist option)
+      e(phi)              Scale parameter (root mean squared error)
 
     Macros         
       e(cmd)              Command name
@@ -1696,5 +1705,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  14 Jul 2020, 11:15:14
+ closed on:  16 Jul 2020, 13:55:16
 -------------------------------------------------------------------------------
