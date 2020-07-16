@@ -24,7 +24,7 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt:{opt fe:}}fixed effect standard errors (default is multiplicative)
+{synopt:{opt fe:}}fixed effect standard errors (default is multiplicative random effect)
 {p_end}
 {synopt:{opt gxse(varlist)}}varlist of genotype-phenotype standard errors{p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
@@ -50,7 +50,12 @@ For the analytic weights you need to specify the inverse of the genotype-disease
 {title:Options}
 
 {phang}
-{opt fe} specifies fixed effect standard errors (i.e. variance of residuals constrained to 1 as in fixed effect meta-analysis models). The default is to use multiplicative standard errors (i.e. variance of residuals unconstrained as in standard linear regression).
+{opt fe} specifies fixed effect standard errors (i.e. variance of residuals constrained to 
+1 as in fixed effect meta-analysis models). The default is multiplicative 
+random effect standard errors in which case the variance of the residuals 
+is unconstrained and the square root of the 
+estimated residual variance is displayed (Residual standard error). If the residual 
+variance is found to be less than 1 an error message is shown and the model is refitted with it constrained to 1.
 
 {phang}
 {opt gxse(varlist)} specifies a varlist of genotype-phenotype standard errors. 
@@ -100,6 +105,7 @@ distribution, for calculating the Wald test and the confidence interval limits.
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
 {synopt:{cmd:e(Np)}}Number of phenotypes{p_end}
 {synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} option){p_end}
+{synopt:{cmd:e(phi)}}Scale parameter (root mean squared error){p_end}
 {p2col 5 20 24 2: If {cmd:gxse()} specified}{p_end}
 {synopt:{cmd:e(Qa)}}Q_A statistic{p_end}
 {synopt:{cmd:e(Qadf)}}Degrees of freedom of Q_A statistic{p_end}
