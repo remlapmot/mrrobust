@@ -15,7 +15,8 @@ if replay() {
 		cap confirm matrix e(Fx)
 		if _rc == 0 local fxopts fx(e(Fx))
         `version' Display `0', n(`e(N)') setype(`e(setype)') np(`e(Np)') ///
-			`qopts' `qxopts' `fxopts'
+			`qopts' `qxopts' `fxopts' ///
+			rmse(`e(phi)')
         exit
 }
 
@@ -70,20 +71,26 @@ else {
 }
 
 ** fit mvivw model
-if "`fe'" == "fe" {
+tempname rmse
+qui glm `varlist' [iw=`invvar'] `if' `in', nocons ///
+	`scale' level(`level') `options'
+
+if "`fe'" == "fe" scalar `rmse' = 1
+else scalar `rmse' = sqrt(e(phi))
+
+if `rmse' < 1 {
+	di as error "Residual standard error found to be:" as res scalar(`rmse'),
+	_n "This is less than 1.", ///
+	_n "Refitting model with residual variance constrained to 1."
+	local scale "scale(1)"
 	qui glm `varlist' [iw=`invvar'] `if' `in', nocons ///
 		`scale' level(`level') `options'
-}
-else {
-	qui regress `varlist' [aw=`invvar'] `if' `in', nocons ///
-		level(`level') `options'
+	scalar `rmse' = sqrt(e(phi))
 }
 
-** ereturn
 ** collect b and V
 mat b = e(b)
 mat V = e(V)
-
 
 if "`gxse'" != "" {
 	** error check length of gxse
@@ -165,7 +172,9 @@ if "`gxse'" != "" {
 }
 
 ** display estimates
-ereturn post b V // from the mvivw fit way above (otherwise e(b) and e(V) taken from subsequent fits)
+// b and V taken from the mvivw fit way above 
+// (otherwise e(b) and e(V) taken from subsequent fits)
+ereturn post b V 
 
 if "`tdist'" != "" {
     // use t-dist for ereturn display Wald test and CI limits
@@ -177,12 +186,13 @@ else {
 }
 
 Display , level(`level') n(`k') setype(`setype') np(`npheno') ///
-	`qopts' `qxopts' `fxopts'
+	`qopts' `qxopts' `fxopts' rmse(`: di `rmse'')
 
 ** ereturn additional items
 eret scalar N = `k'
 eret scalar Np = `npheno'
 eret local setype = "`setype'"
+eret scalar phi = scalar(`rmse')
 if "`gxse'" != "" {
 	eret scalar Qa = `qares'[1,1]
 	eret scalar Qadf = scalar(`qadf')
@@ -200,7 +210,8 @@ end
 program Display, rclass
 syntax , [Level(cilevel) qa(real 0) qadf(integer 0) qap(real 0) ///
 	qx(string asis) fx(string asis) ] ///
-	n(integer) setype(string) np(integer)
+	n(integer) setype(string) np(integer) ///
+	rmse(real)
 
 local nlength : strlen local n
 local colstart = 79 - 22 - `nlength'
@@ -220,6 +231,13 @@ else {
 local setypelength : strlen local semessage
 local colstart = 79 - 17 - `setypelength'
 di _col(`colstart') as txt "Standard errors:", as res "`semessage'"
+
+if "`setype'" == "fe" {
+	di _col(39) as txt "Residual standard error constrained at 1"
+}
+else {
+	di _col(47) as txt "Residual standard error =", as res %6.3f `rmse'
+}
 
 ereturn display, level(`level') noomitted
 return add // r(table)

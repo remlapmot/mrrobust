@@ -172,3 +172,28 @@ assert e(df_r) == 71
 mat rtable = r(table)
 assert rtable[7,1] == 71
 mrmvegger
+
+// e(phi)
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+assert e(phi) - 1.469 < 1e-3
+mrmvegger
+assert e(phi) - 1.469 < 1e-3
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+assert e(phi) - 1.501 < 1e-3
+mrmvegger
+assert e(phi) - 1.501 < 1e-3
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+assert e(phi) - 1.509 < 1e-3
+mrmvegger
+assert e(phi) - 1.509 < 1e-3
+
+discard
+mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+assert e(phi) - 1.525 < 1e-3
+mrmvegger
+assert e(phi) - 1.525 < 1e-3

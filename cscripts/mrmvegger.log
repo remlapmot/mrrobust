@@ -2,7 +2,7 @@
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:  14 Jul 2020, 11:15:26
+ opened on:  16 Jul 2020, 13:55:30
 
 . * mrmvegger cscript
 . * 22un2020
@@ -47,6 +47,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -78,6 +79,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
+                                              Residual standard error =  1.509
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -125,6 +127,7 @@ pvalue   2.690e-08   .02967445   .21567925
                                        MVMR-Egger model oriented wrt: hdlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
+                                              Residual standard error =  1.525
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -157,6 +160,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -194,6 +198,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: hdlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.501
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -230,6 +235,7 @@ chdbeta      |
                                          MVMR-Egger model oriented wrt: tgbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.499
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -280,6 +286,7 @@ The orient() option cannot be negative
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -293,6 +300,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -310,6 +318,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -323,6 +332,7 @@ chdbeta      |
 scalars:
                   e(N) =  73
                  e(Np) =  1
+                e(phi) =  1.547885800541125
                e(df_r) =  .
 
 macros:
@@ -365,6 +375,7 @@ matrices:
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -393,6 +404,7 @@ mrmvegger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -408,6 +420,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -426,6 +439,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
+                                              Residual standard error =  1.509
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -445,6 +459,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -467,6 +482,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -491,6 +507,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -510,6 +527,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -529,6 +547,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -548,6 +567,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
+                                              Residual standard error =  1.509
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -571,6 +591,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 2
+                                              Residual standard error =  1.509
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -589,6 +610,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -611,6 +633,7 @@ chdbeta      |
                                        MVMR-Egger model oriented wrt: ldlcbeta
                                                       Number of genotypes = 73
                                                       Number of phenotypes = 1
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -620,9 +643,163 @@ chdbeta      |
 ------------------------------------------------------------------------------
 
 . 
+. // e(phi)
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                              Residual standard error =  1.469
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.306    -.3976209    .1247983
+      tgbeta |   .2739803   .1246927     2.20   0.028     .0295871    .5183735
+       _cons |  -.0093655   .0054187    -1.73   0.084     -.019986     .001255
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.469 < 1e-3
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                              Residual standard error =  1.469
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
+    hdlcbeta |  -.1364113   .1332727    -1.02   0.306    -.3976209    .1247983
+      tgbeta |   .2739803   .1246927     2.20   0.028     .0295871    .5183735
+       _cons |  -.0093655   .0054187    -1.73   0.084     -.019986     .001255
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.469 < 1e-3
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orien
+> t(2)
+
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                              Residual standard error =  1.501
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4286398   .0614056     6.98   0.000      .308287    .5489926
+    hdlcbeta |  -.1989637   .1541909    -1.29   0.197    -.5011723    .1032449
+      tgbeta |   .2256794   .1243221     1.82   0.069    -.0179875    .4693463
+       _cons |   .0002155   .0036218     0.06   0.953     -.006883    .0073141
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.501 < 1e-3
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                              Residual standard error =  1.501
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4286398   .0614056     6.98   0.000      .308287    .5489926
+    hdlcbeta |  -.1989637   .1541909    -1.29   0.197    -.5011723    .1032449
+      tgbeta |   .2256794   .1243221     1.82   0.069    -.0179875    .4693463
+       _cons |   .0002155   .0036218     0.06   0.953     -.006883    .0073141
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.501 < 1e-3
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                              Residual standard error =  1.509
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5723867   .1029385     5.56   0.000     .3706308    .7741425
+    hdlcbeta |  -.2665853   .1226013    -2.17   0.030    -.5068793   -.0262912
+       _cons |  -.0067173   .0054255    -1.24   0.216    -.0173511    .0039165
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.509 < 1e-3
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: ldlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                              Residual standard error =  1.509
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5723867   .1029385     5.56   0.000     .3706308    .7741425
+    hdlcbeta |  -.2665853   .1226013    -2.17   0.030    -.5068793   -.0262912
+       _cons |  -.0067173   .0054255    -1.24   0.216    -.0173511    .0039165
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.509 < 1e-3
+
+. 
+. discard
+
+. mrmvegger chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                              Residual standard error =  1.525
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4669652   .0585997     7.97   0.000     .3521119    .5818185
+    hdlcbeta |  -.3045624   .1451187    -2.10   0.036    -.5889898    -.020135
+       _cons |   .0005409   .0036762     0.15   0.883    -.0066642    .0077461
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.525 < 1e-3
+
+. mrmvegger
+
+                                       MVMR-Egger model oriented wrt: hdlcbeta
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 2
+                                              Residual standard error =  1.525
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4669652   .0585997     7.97   0.000     .3521119    .5818185
+    hdlcbeta |  -.3045624   .1451187    -2.10   0.036    -.5889898    -.020135
+       _cons |   .0005409   .0036762     0.15   0.883    -.0066642    .0077461
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.525 < 1e-3
+
+. 
 end of do-file
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:  14 Jul 2020, 11:15:33
+ closed on:  16 Jul 2020, 13:55:39
 -------------------------------------------------------------------------------

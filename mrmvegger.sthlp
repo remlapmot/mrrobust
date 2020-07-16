@@ -32,7 +32,13 @@
 {title:Description}
 
 {pstd}
-{cmd:mrmvegger} performs multivariable MR-Egger regression. For further information see {help mrmvegger##rees:Rees et al. (2017)}.
+{cmd:mrmvegger} performs multivariable MR-Egger regression. 
+For further information see {help mrmvegger##rees:Rees et al. (2017)}.
+
+{pstd}
+By default multiplicative random effect standard errors are reported. 
+However, if the residual variance is found to be less than 1 the model 
+is refitted with this constrained to 1.
 
 {pstd}
 {var:_gd} variable containing the genotype-disease association estimates.
@@ -84,9 +90,10 @@ distribution, for calculating the Wald test and the confidence interval limits.
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Scalars}{p_end}
+{synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} option){p_end}
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
 {synopt:{cmd:e(Np)}}Number of phenotypes{p_end}
-{synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} option){p_end}
+{synopt:{cmd:e(phi)}}Scale parameter (root mean squared error){p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Macros}{p_end}
