@@ -90,9 +90,9 @@ distribution, for calculating the Wald test and the confidence interval limits.
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Scalars}{p_end}
+{synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} option){p_end}
 {synopt:{cmd:e(N)}}Number of genotypes{p_end}
 {synopt:{cmd:e(Np)}}Number of phenotypes{p_end}
-{synopt:{cmd:e(df_r)}}residual degrees of freedom (with {cmd:tdist} option){p_end}
 {synopt:{cmd:e(phi)}}Scale parameter (root mean squared error){p_end}
 
 {synoptset 20 tabbed}{...}
