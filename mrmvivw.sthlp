@@ -76,7 +76,7 @@ distribution, for calculating the Wald test and the confidence interval limits.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013.{p_end}
+{pstd}Using the data provided by {help mrmvivw##do:Do et al. (2013)}.{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
@@ -142,6 +142,14 @@ the use of pleiotropic genetic variants to estimate causal effects.
 American Journal of Epidemiology, 2015, 181, 4, 251–260.
 {browse "http://dx.doi.org/10.1093/aje/kwu283":DOI}
 {p_end}
+
+{marker do}{...}
+{phang}
+Do et al., 2013. Common variants associated with plasma triglycerides and risk
+ for coronary artery disease. Nature Genetics. 45, 1345–1352. 
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
+{p_end}
+
 {marker sanderson}{...}
 {phang}
 Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of multivariable Mendelian 
@@ -149,6 +157,7 @@ randomization in the single-sample and two-sample summary data settings. Interna
 Journal of Epidemiology, 2019, 48, 3, 713-727. 
 {browse "http://dx.doi.org/10.1093/ije/dyy262":DOI}
 {p_end}
+
 {marker sanderson2}{...}
 {phang}
 Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and 

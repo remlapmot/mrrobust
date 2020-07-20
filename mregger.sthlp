@@ -85,7 +85,8 @@ the model based Q-statistic is reported by multiplying the variance of the
 residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}).
  
 {phang}
-{opt ivw} specifies IVW model, the default is MR-Egger.
+{opt ivw} specifies inverse-variance weighted (IVW) model ({help mregger##ivw:Burgess et al., 2013}), 
+the default is MR-Egger.
 
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
@@ -118,8 +119,9 @@ the output and in the ereturn scalars.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.{p_end}
+{pstd}Using the data provided by {help mregger##do:Do et al. (2013)} recreate 
+{help mregger##mrmedian:Bowden et al. (2016)}, Table 4, 
+LDL-c "All genetic variants" estimates.{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
@@ -241,6 +243,13 @@ Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in
 Mendelian randomization studies with summary data and a continuous outcome. 
 Statistics in Medicine, 2015, 34, 21, 2926-2940. 
 {browse "http://dx.doi.org/10.1002/sim.6522":DOI}
+{p_end}
+
+{marker do}{...}
+{phang}
+Do R et al. Common variants associated with plasma triglycerides and risk
+ for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. DOI: 
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker thompson}{...}

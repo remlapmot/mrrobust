@@ -36,7 +36,9 @@
 
 {pstd}
 {cmd:mreggersimex} performs the simulation extrapolation (SIMEX) algorithm 
-on {cmd:mregger} using the commonly applied quadratic extrapolation.
+({help mreggersimex##cook:Cook et al., 1995}, {help mreggersimex##hardin:Hardin et al., 2003})
+on {cmd:mregger} using the commonly applied quadratic extrapolation 
+({help mreggersimex##bowden:Bowden et al., 2016}).
 
 {pstd}
 {var:_gd} variable containing the genotype-disease association estimates.
@@ -51,8 +53,9 @@ genotype-disease SEs squared, i.e. aw=1/(gdse^2).
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
+{pstd}Using the data provided by {help mreggersimex##do:Do et al. (2013)} recreate 
+{help mreggersimex##mrmedian:Bowden et el. (2016)}, Figure 4, 
+LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
@@ -81,6 +84,15 @@ International Journal of Epidemiology, 2016, 45, 6, 1961-1974.
 {browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
 {p_end}
 
+{marker mrmedian}{...}
+{phang}
+Bowden J, Davey Smith G, Haycock PC, Burgess S. 
+Consistent estimation in Mendelian randomization with some invalid instruments
+ using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
+{browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
+{p_end}
+
+{marker cook}{...}
 {phang}
 Cook J and Stefanski LA. A simulation extrapolation method for parametric 
 measurement error models. Journal of the American Statistical Association, 1995, 85, 
@@ -88,12 +100,14 @@ measurement error models. Journal of the American Statistical Association, 1995,
 {browse "https://www.jstor.org/stable/2290994":Link}
 {p_end}
 
+{marker do}{...}
 {phang}
 Do R et al. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. DOI: 
 {browse "http://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
+{marker hardin}{...}
 {phang}
 Hardin JW, Schmiediche H, Carroll RJ. The simulation extrapolation method 
 for fitting linear models with additive measurement error. Stata Journal. 
