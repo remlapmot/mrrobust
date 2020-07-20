@@ -51,6 +51,7 @@ All the data was obtained from the MRBase GWAS catalogue available at <http://ww
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw
 
                                                       Number of genotypes = 79
+                                              Residual standard error =  1.039
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -66,15 +67,14 @@ betaexposure │   .0231866   .0079957     2.90   0.004     .0075154    .0388578
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]
 
                                                       Number of genotypes = 79
+                                              Residual standard error =  1.046
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-sign(betae~e)│
 betaoutcome  │
        slope │   .0218507   .0221852     0.98   0.325    -.0216315    .0653329
        _cons │    .000038   .0005877     0.06   0.948    -.0011138    .0011897
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.046
 ```
 
 
@@ -164,6 +164,7 @@ value, as shown in the Figure.
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw
 
                                                      Number of genotypes = 367
+                                              Residual standard error =  1.044
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -179,15 +180,14 @@ betaexposure │   .0015412   .0033017     0.47   0.641      -.00493    .0080124
 . mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]
 
                                                      Number of genotypes = 367
+                                              Residual standard error =  1.045
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-sign(betae~e)│
 betaoutcome  │
        slope │  -.0025878   .0091178    -0.28   0.777    -.0204584    .0152828
        _cons │   .0001338   .0002754     0.49   0.627     -.000406    .0006736
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.045
 ```
 
 
