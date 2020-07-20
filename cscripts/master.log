@@ -2,7 +2,7 @@
       name:  master
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- opened on:  20 Jul 2020, 16:37:12
+ opened on:  20 Jul 2020, 17:04:11
 
 . 
 . cscript master
@@ -10,61 +10,6 @@
 
 . 
 . cap noi ado describe mrrobust
-
--------------------------------------------------------------------------------
-[23] package mrrobust from https://raw.githubusercontent.com/remlapmot/mrrobust
-> /master
--------------------------------------------------------------------------------
-
-TITLE
-      'mrrobust': Stata package for two-sample Mendelian randomization analyses
-
-DESCRIPTION/AUTHOR(S)
-      Author: Tom Palmer
-      Distribution-Date: 20200715
-
-INSTALLATION FILES
-      m\mrmedian.ado
-      m\mrmedian.sthlp
-      m\mrmedianobs.ado
-      m\mrmedianobs_work.ado
-      m\mrmedianobs.sthlp
-      m\mregger.ado
-      m\mregger.sthlp
-      m\mrrobust.sthlp
-      m\mreggerplot.ado
-      m\mreggerplot.sthlp
-      m\mrmodal.ado
-      m\mrmodal.sthlp
-      m\mrratio.ado
-      m\mrratio.sthlp
-      m\mrivests.ado
-      m\mrivests.sthlp
-      m\mrforest.ado
-      m\mrforest.sthlp
-      m\mreggersimex.ado
-      m\mreggersimex.sthlp
-      m\mreggersimexonce.ado
-      m\mrmodalplot.ado
-      m\mrmodalplot.sthlp
-      m\mrfunnel.ado
-      m\mrfunnel.sthlp
-      m\mrdeps.ado
-      m\mrdeps.sthlp
-      m\mr.ado
-      m\mr.sthlp
-      m\mrmvivw.ado
-      m\mrmvivw.sthlp
-      m\mvivw.ado
-      m\mvivw.sthlp
-      m\mvmr.ado
-      m\mvmr.sthlp
-      m\mrmvegger.ado
-      m\mrmvegger.sthlp
-
-INSTALLED ON
-      16 Jul 2020
--------------------------------------------------------------------------------
 
 . 
 . local cscripts ///
@@ -95,7 +40,7 @@ INSTALLED ON
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  20 Jul 2020, 16:37:12
+ opened on:  20 Jul 2020, 17:04:11
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -1848,13 +1793,13 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  20 Jul 2020, 16:37:12
+ closed on:  20 Jul 2020, 17:04:11
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:  20 Jul 2020, 16:37:12
+ opened on:  20 Jul 2020, 17:04:11
 
 . * mrmvegger cscript
 . * 22un2020
@@ -2653,13 +2598,13 @@ end of do-file
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:  20 Jul 2020, 16:37:21
+ closed on:  20 Jul 2020, 17:04:20
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  20 Jul 2020, 16:37:21
+ opened on:  20 Jul 2020, 17:04:20
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -4084,13 +4029,13 @@ end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  20 Jul 2020, 16:37:35
+ closed on:  20 Jul 2020, 17:04:33
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  20 Jul 2020, 16:37:35
+ opened on:  20 Jul 2020, 17:04:33
 
 . * mr cscript
 . * 20jan2020
@@ -4385,13 +4330,13 @@ end of do-file
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  20 Jul 2020, 16:38:34
+ closed on:  20 Jul 2020, 17:05:29
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:  20 Jul 2020, 16:38:34
+ opened on:  20 Jul 2020, 17:05:29
 
 . * mrdeps cscript
 . * 20jan2020
@@ -4423,13 +4368,13 @@ end of do-file
       name:  mrdeps
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:  20 Jul 2020, 16:39:11
+ closed on:  20 Jul 2020, 17:06:08
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  20 Jul 2020, 16:39:11
+ opened on:  20 Jul 2020, 17:06:08
 
 . * mregger cscript
 . * 04jun2016
@@ -6224,13 +6169,13 @@ end of do-file
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  20 Jul 2020, 16:39:16
+ closed on:  20 Jul 2020, 17:06:13
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:  20 Jul 2020, 16:39:16
+ opened on:  20 Jul 2020, 17:06:13
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -6553,13 +6498,13 @@ end of do-file
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:  20 Jul 2020, 16:40:28
+ closed on:  20 Jul 2020, 17:07:25
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- opened on:  20 Jul 2020, 16:40:28
+ opened on:  20 Jul 2020, 17:07:25
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -6730,13 +6675,13 @@ end of do-file
       name:  mreggersimex
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- closed on:  20 Jul 2020, 16:45:17
+ closed on:  20 Jul 2020, 17:12:03
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  20 Jul 2020, 16:45:17
+ opened on:  20 Jul 2020, 17:12:03
 
 . * mrforest cscript
 . * 16jun2017
@@ -6882,13 +6827,13 @@ end of do-file
       name:  mrforest
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  20 Jul 2020, 16:45:48
+ closed on:  20 Jul 2020, 17:12:35
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:  20 Jul 2020, 16:45:48
+ opened on:  20 Jul 2020, 17:12:35
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -6942,13 +6887,13 @@ end of do-file
       name:  mrfunnel
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:  20 Jul 2020, 16:45:56
+ closed on:  20 Jul 2020, 17:12:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:  20 Jul 2020, 16:45:56
+ opened on:  20 Jul 2020, 17:12:44
 
 . * mrivests testcode
 . * 10jun2017
@@ -7173,13 +7118,13 @@ end of do-file
       name:  mrivests
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:  20 Jul 2020, 16:45:58
+ closed on:  20 Jul 2020, 17:12:46
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- opened on:  20 Jul 2020, 16:45:58
+ opened on:  20 Jul 2020, 17:12:46
 
 . * mrmedian test code
 . * 3jun2016
@@ -7371,7 +7316,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0730247     5.87   0.000     .2854456    .5716972
+        beta |   .4285714   .0723313     5.93   0.000     .2868047    .5703382
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -7386,7 +7331,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0730247     5.87   0.000     .2854456    .5716972
+        beta |   .4285714   .0723313     5.93   0.000     .2868047    .5703382
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -7469,7 +7414,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0728369     5.88   0.000     .2858138    .5713291
+        beta |   .4285714   .0722835     5.93   0.000     .2868984    .5702444
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -7484,7 +7429,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0728369     5.88   0.000     .2858138    .5713291
+        beta |   .4285714   .0722835     5.93   0.000     .2868984    .5702444
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -7506,7 +7451,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0728369     5.88   0.000     .2858138    .5713291
+        beta |   .4285714   .0722835     5.93   0.000     .2868984    .5702444
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -7520,7 +7465,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0728369     5.88   0.000     .3087655    .5483774
+        beta |   .4285714   .0722835     5.93   0.000     .3096757    .5474672
 ------------------------------------------------------------------------------
 
 . 
@@ -7531,7 +7476,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0728369     5.88   0.000     .3087655    .5483774
+        beta |   .4285714   .0722835     5.93   0.000     .3096757    .5474672
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -7545,7 +7490,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0728369     5.88   0.000     .3352272    .5219156
+        beta |   .4285714   .0722835     5.93   0.000     .3359364    .5212064
 ------------------------------------------------------------------------------
 
 . 
@@ -7553,13 +7498,13 @@ end of do-file
       name:  mrmedian
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- closed on:  20 Jul 2020, 16:45:59
+ closed on:  20 Jul 2020, 17:12:47
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- opened on:  20 Jul 2020, 16:45:59
+ opened on:  20 Jul 2020, 17:12:47
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -7926,13 +7871,13 @@ end of do-file
       name:  mrmedianobs
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- closed on:  20 Jul 2020, 16:46:18
+ closed on:  20 Jul 2020, 17:13:07
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  20 Jul 2020, 16:46:18
+ opened on:  20 Jul 2020, 17:13:07
 
 . * mrmodal cscript
 . * 2jun2017
@@ -8715,13 +8660,13 @@ end of do-file
       name:  mrmodal
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  20 Jul 2020, 16:46:33
+ closed on:  20 Jul 2020, 17:13:21
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- opened on:  20 Jul 2020, 16:46:33
+ opened on:  20 Jul 2020, 17:13:21
 
 . * mrmodalplot example
 . * 2aug2017
@@ -9591,13 +9536,13 @@ end of do-file
       name:  mrmodalplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- closed on:  20 Jul 2020, 16:47:17
+ closed on:  20 Jul 2020, 17:14:06
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:  20 Jul 2020, 16:47:17
+ opened on:  20 Jul 2020, 17:14:06
 
 . * mrratio cscript
 . * 6jun2017
@@ -9942,7 +9887,7 @@ end of do-file
       name:  mrratio
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:  20 Jul 2020, 16:47:17
+ closed on:  20 Jul 2020, 17:14:07
 -------------------------------------------------------------------------------
 
 . 
@@ -9950,5 +9895,5 @@ end of do-file
       name:  master
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- closed on:  20 Jul 2020, 16:47:17
+ closed on:  20 Jul 2020, 17:14:07
 -------------------------------------------------------------------------------
