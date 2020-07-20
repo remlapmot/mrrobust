@@ -73,8 +73,9 @@ estimate standard errors.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
+{pstd}Using the data provided by {help mreggerplot##do:Do et al. (2013)} recreate 
+{help mreggerplot##bowden:Bowden et al. (2016)}, Figure 4, 
+LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
@@ -130,7 +131,7 @@ using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314.
 {browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 {p_end}
 
-{phang}
+{marker do}{...}{phang}
 Do et al.Common variants associated with plasma triglycerides and risk 
 for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.  
 {browse "http://dx.doi.org/10.1038/ng.2795":DOI}
