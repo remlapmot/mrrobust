@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  16 Jul 2020, 13:55:16
+ opened on:  20 Jul 2020, 12:42:28
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -219,12 +219,10 @@ Syntax
 
 Description
 
-    mregger performs inverse-variance weighted (IVW) and Mendelian
-    randomization Egger (MR-Egger) regression using summary level data (i.e.
-    reported genotype-disease and phenotype-disease association estimates and
-    their standard errors for individual genotypes).
-
-    See Bowden et al., Int J Epi, 2015 , for more information.
+    mregger performs inverse-variance weighted (IVW; Burgess et al., 2013)
+    and Mendelian randomization Egger (MR-Egger) regression (Bowden et al.,
+    2015) using summary level data (i.e. using genotype-disease and
+    phenotype-disease association estimates and their standard errors).
 
     varname_gd variable containing the genotype-disease association
     estimates.
@@ -241,7 +239,7 @@ Options
         constrained to 1 as in fixed effect meta-analysis models). The
         default is to use multiplicative standard errors (i.e. variance of
         residuals unconstrained as in standard linear regression), see
-        Thompson and Sharp (1999) for further details. We recommend
+        Thompson and Sharp (1999) for further details.  We recommend
         specifying this option when using an allelic score as the
         instrumental variable.
 
@@ -272,7 +270,7 @@ Options
         al. (2016).
 
     radial specifies the radial formulation of the IVW and MR-Egger models
-        (Bowden et al., 2017). Note there is only a difference for the
+        (Bowden et al., 2017).  Note there is only a difference for the
         MR-Egger model.
 
     tdist specifies using the t-distribution, instead of the normal
@@ -373,6 +371,10 @@ References
     Burgess S, Bowden J, Dudbridge F, Thompson SG. Robust instrumental
         variable methods using candidate instruments with application to
         Mendelian randomization. arXiv:1606.03729v1, 2016.  Link
+
+    Burgess S, Butterworth A, Thompson S. Mendelian randomization analysis
+        with multiple genetic variants using summarized data. Genetic
+        Epidemiology, 2013, 37, 7, 658–665.   DOI
 
     Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy
         in Mendelian randomization studies with summary data and a continuous
@@ -1705,5 +1707,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  16 Jul 2020, 13:55:16
+ closed on:  20 Jul 2020, 12:42:28
 -------------------------------------------------------------------------------

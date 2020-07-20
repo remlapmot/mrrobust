@@ -2,7 +2,7 @@
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  28 Jun 2020, 20:27:13
+ opened on:  20 Jul 2020, 12:42:28
 
 . * mregger cscript
 . * 04jun2016
@@ -27,6 +27,7 @@ C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -59,6 +60,7 @@ pvalue  8.144e-16
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -66,7 +68,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mat list r(table)
 
@@ -85,16 +86,10 @@ pvalue   2.419e-09   .10956752
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.5               1.4    1.8     
-      I^2 |          58                 46    68      
-------------------------------------------------------
-Q-test = 170.11187 d.f. = 71 p-value = 0.0000
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
+                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -102,7 +97,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mat list r(table)
 
@@ -121,18 +115,12 @@ pvalue   2.419e-09   .10956752
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.5               1.4    1.8     
-      I^2 |          58                 46    68      
-------------------------------------------------------
-Q-test = 170.11187 d.f. = 71 p-value = 0.0000
-                                            Q_GX statistic (weighted): 3454.26
-                                          I^2_GX statistic (weighted):  97.92%
 
+                                           Q_GX statistic (weighted) = 3454.26
+                                         I^2_GX statistic (weighted) =  97.92%
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
+                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -140,7 +128,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mat list r(table)
 
@@ -159,10 +146,11 @@ pvalue   2.419e-09   .10956752
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)
-                                            Q_GX statistic (weighted): 3454.26
-                                          I^2_GX statistic (weighted):  97.92%
 
+                                           Q_GX statistic (weighted) = 3454.26
+                                         I^2_GX statistic (weighted) =  97.92%
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -170,7 +158,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mat list r(table)
 
@@ -191,6 +178,7 @@ pvalue   2.419e-09   .10956752
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -198,7 +186,6 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.547
 
 . mat list r(table)
 
@@ -219,6 +206,7 @@ pvalue   2.862e-08   .10563675
 . version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -261,6 +249,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -268,7 +257,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . assert abs(_b[slope] - .617) < 1e-3
 
@@ -319,6 +307,7 @@ matrices:
 . version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -326,7 +315,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . assert abs(_b[slope] - .617) < 1e-3
 
@@ -348,6 +336,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -355,13 +344,13 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000      .447141    .7874853
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0177864    .0002451
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . 
 . *** fe standard errors (default is multiplicative)
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -369,12 +358,12 @@ chdbeta      |
        slope |   .6173131   .0668378     9.24   0.000     .4863134    .7483129
        _cons |  -.0087706   .0035411    -2.48   0.013     -.015711   -.0018303
 ------------------------------------------------------------------------------
-                                                    Residual standard error: 1
 
 . 
 . version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -382,7 +371,6 @@ chdbeta      |
        slope |   .6173131   .0668378     9.24   0.000     .4863134    .7483129
        _cons |  -.0087706   .0035411    -2.48   0.013     -.015711   -.0018303
 ------------------------------------------------------------------------------
-                                                    Residual standard error: 1
 
 . 
 . *** re
@@ -402,6 +390,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -413,6 +402,7 @@ chdbeta      |
 . version 12: mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -486,6 +476,7 @@ For IVW estimator option recons not allowed for re estimation (as there is no c
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, level(90)
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -493,7 +484,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000      .447141    .7874853
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0177864    .0002451
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -517,6 +507,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist level(90) 
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -524,7 +515,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4448912    .7897351
        _cons |  -.0087706   .0054812    -1.60   0.114    -.0179056    .0003643
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger, level(95)
 ------------------------------------------------------------------------------
@@ -539,6 +529,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist ivw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -558,6 +549,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist ivw level(90)
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -577,6 +569,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -596,6 +589,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist ivw penw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.000
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -618,6 +612,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -628,16 +623,10 @@ chdbeta      |
 . 
 . *** heterogi option - changed from noheterogi
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.5               1.4    1.8     
-      I^2 |          58                 46    68      
-------------------------------------------------------
-Q-test = 170.11187 d.f. = 71 p-value = 0.0000
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
+                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -645,7 +634,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -657,17 +645,13 @@ chdbeta      |
 ------------------------------------------------------------------------------
 
 . 
+. discard
+
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, het
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.5               1.4    1.8     
-      I^2 |          58                 46    68      
-------------------------------------------------------
-Q-test = 170.11187 d.f. = 71 p-value = 0.0000
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
+                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -675,7 +659,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -688,16 +671,10 @@ chdbeta      |
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw heterogi
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.6               1.4    1.8     
-      I^2 |          59                 47    68      
-------------------------------------------------------
-Q-test = 176.24718 d.f. = 72 p-value = 0.0000
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
+                                Heterogeneity; chi2(72) = 176.25 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -715,16 +692,10 @@ chdbeta      |
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw het
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.6               1.4    1.8     
-      I^2 |          59                 47    68      
-------------------------------------------------------
-Q-test = 176.24718 d.f. = 72 p-value = 0.0000
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
+                                Heterogeneity; chi2(72) = 176.25 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -745,6 +716,7 @@ chdbeta      |
 Residual variance = .97685468; rerunning with residual variance set to 1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.988
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -752,13 +724,13 @@ chdbeta      |
        slope |   .5274159   .0681008     7.74   0.000     .3939408    .6608911
        _cons |  -.0050223   .0036849    -1.36   0.173    -.0122446    .0022001
 ------------------------------------------------------------------------------
-                                               Residual standard error:  0.988
 
 . 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw heterogi penweighte
 > d
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.000
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -770,6 +742,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -777,7 +750,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger
 ------------------------------------------------------------------------------
@@ -792,6 +764,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -803,6 +776,7 @@ chdbeta      |
 
 scalars:
                e(df_r) =  .
+                e(phi) =  1.564569469111872
                   e(k) =  73
 
 macros:
@@ -1295,6 +1269,7 @@ D+L pooled ES        |  0.438       0.310     0.566        100.00
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1305,6 +1280,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw norescale
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1316,6 +1292,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1323,11 +1300,11 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, norescale
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1335,7 +1312,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . 
 . gen double chdbeta2 = chdbeta/100
@@ -1344,6 +1320,7 @@ chdbeta      |
 Residual variance = .00024479; rerunning with residual variance set to 1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.000
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1355,6 +1332,7 @@ chdbeta2     |
 Residual variance = .00024479; recommend refitting without norescale option
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.016
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1366,6 +1344,7 @@ chdbeta2     |
 Residual variance = .0002396; rerunning with residual variance set to 1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.015
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1373,12 +1352,12 @@ chdbeta2     |
        slope |   .0061731   .0668378     0.09   0.926    -.1248266    .1371729
        _cons |  -.0000877   .0035411    -0.02   0.980    -.0070281    .0068527
 ------------------------------------------------------------------------------
-                                               Residual standard error:  0.015
 
 . mregger chdbeta2 ldlcbeta [aw=1/chdse^2] if sel1==1, norescale
 Residual variance = .0002396; recommend refitting without norescale option
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.015
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1386,13 +1365,13 @@ chdbeta2     |
        slope |   .0061731   .0010346     5.97   0.000     .0041454    .0082009
        _cons |  -.0000877   .0000548    -1.60   0.110    -.0001951    .0000197
 ------------------------------------------------------------------------------
-                                               Residual standard error:  0.015
 
 . 
 . ** penweighted
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw penweighted
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.000
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1404,6 +1383,7 @@ chdbeta      |
 Residual variance = .97685468; rerunning with residual variance set to 1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.988
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1411,7 +1391,6 @@ chdbeta      |
        slope |   .5274159   .0681008     7.74   0.000     .3939408    .6608911
        _cons |  -.0050223   .0036849    -1.36   0.173    -.0122446    .0022001
 ------------------------------------------------------------------------------
-                                               Residual standard error:  0.988
 
 . 
 . ** penweighted norescale
@@ -1419,6 +1398,7 @@ chdbeta      |
 Residual variance = .00024479; rerunning with residual variance set to 1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.000
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1431,6 +1411,7 @@ chdbeta2     |
 Residual variance = .00024479; recommend refitting without norescale option
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.016
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1442,6 +1423,7 @@ chdbeta2     |
 Residual variance = .0002396; rerunning with residual variance set to 1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.015
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1449,12 +1431,12 @@ chdbeta2     |
        slope |   .0061731   .0668378     0.09   0.926    -.1248266    .1371729
        _cons |  -.0000877   .0035411    -0.02   0.980    -.0070281    .0068527
 ------------------------------------------------------------------------------
-                                               Residual standard error:  0.015
 
 . mregger chdbeta2 ldlcbeta [aw=1/chdse^2] if sel1==1, penweighted norescale
 Residual variance = .0002396; recommend refitting without norescale option
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  0.015
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1462,15 +1444,15 @@ chdbeta2     |
        slope |   .0061731   .0010346     5.97   0.000     .0041454    .0082009
        _cons |  -.0000877   .0000548    -1.60   0.110    -.0001951    .0000197
 ------------------------------------------------------------------------------
-                                               Residual standard error:  0.015
 
 . 
 . ** gxse
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse)
-                                            Q_GX statistic (weighted): 3454.26
-                                          I^2_GX statistic (weighted):  97.92%
 
+                                           Q_GX statistic (weighted) = 3454.26
+                                         I^2_GX statistic (weighted) =  97.92%
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1478,11 +1460,11 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) ivw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1496,6 +1478,7 @@ chdbeta      |
 >         ivw penweighted
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.000
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1514,6 +1497,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw radial
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1530,6 +1514,7 @@ radialGD     |
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw radial fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1570,6 +1555,7 @@ matrices:
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1577,7 +1563,6 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.547
 
 . assert abs(_b[radialGP] - .642) < 1e-3
 
@@ -1592,6 +1577,7 @@ radialGD     |
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1599,7 +1585,6 @@ radialGD     |
     radialGP |    .642582   .0748328     8.59   0.000     .4959124    .7892515
        _cons |  -.5737301   .2291547    -2.50   0.012    -1.022865   -.1245952
 ------------------------------------------------------------------------------
-                                                    Residual standard error: 1
 
 . assert abs(_b[radialGP] - .642) < 1e-3
 
@@ -1630,6 +1615,7 @@ Options radial and penweighted currently not supported.
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial tdist
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1637,7 +1623,6 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4117091    .8734549
        _cons |  -.5737301   .3545658    -1.62   0.110    -1.280714    .1332541
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.547
 
 . assert abs(_b[radialGP] - .642) < 1e-3
 
@@ -1650,16 +1635,10 @@ radialGD     |
 . 
 . // radial and heterogi
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial heterogi
-Heterogeneity/pleiotropy statistics:
-------------------------------------------------------
-Statistic |       Estimate        [95% Conf. Interval]
-----------+-------------------------------------------
-        H |          1.5               1.4    1.8     
-      I^2 |          58                 46    68      
-------------------------------------------------------
-Q-test = 169.97877 d.f. = 71 p-value = 0.0000
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
+                                Heterogeneity; chi2(71) = 169.98 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1667,17 +1646,17 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.547
 
 . assert abs(e(Q) - 169.97) < 1e-2
 
 . 
 . // radial and i2gx
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial gxse(ldlcse)
-                                            Q_GX statistic (weighted): 3454.26
-                                          I^2_GX statistic (weighted):  97.92%
 
+                                           Q_GX statistic (weighted) = 3454.26
+                                         I^2_GX statistic (weighted) =  97.92%
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1685,7 +1664,6 @@ radialGD     |
     radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.547
 
 . //assert abs(e(Q) - 169.97) < 1e-2
 . 
@@ -1695,6 +1673,7 @@ radialGD     |
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1702,11 +1681,11 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, oldnames
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1715,11 +1694,11 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1730,6 +1709,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw oldnames
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1751,9 +1731,71 @@ radialGD     |
 ------------------------------------------------------------------------------
 
 . 
+. // ivw e(phi)
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
+
+                                                      Number of genotypes = 73
+                                              Residual standard error =  1.565
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
+------------------------------------------------------------------------------
+
+. assert e(k) == 73
+
+. assert e(phi) - 1.565 < 1e-3
+
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+
+                                                      Number of genotypes = 73
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------
+
+. assert e(phi) == 1
+
+. 
+. // mregger e(phi)
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+
+                                                      Number of genotypes = 73
+                                              Residual standard error =  1.548
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------
+
+. assert e(phi) - 1.548 < 1e-3
+
+. 
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+
+                                                      Number of genotypes = 73
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+       slope |   .6173131   .0668378     9.24   0.000     .4863134    .7483129
+       _cons |  -.0087706   .0035411    -2.48   0.013     -.015711   -.0018303
+------------------------------------------------------------------------------
+
+. assert e(phi) == 1
+
+. 
 end of do-file
       name:  mregger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  28 Jun 2020, 20:27:18
+ closed on:  20 Jul 2020, 12:42:34
 -------------------------------------------------------------------------------
