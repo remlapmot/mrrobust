@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  20 Jul 2020, 16:12:25
+ opened on:  20 Jul 2020, 16:37:12
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -1755,5 +1755,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  20 Jul 2020, 16:12:25
+ closed on:  20 Jul 2020, 16:37:12
 -------------------------------------------------------------------------------

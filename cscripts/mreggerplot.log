@@ -2,7 +2,7 @@
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:  27 Jun 2020, 23:00:40
+ opened on:  20 Jul 2020, 16:39:16
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -256,6 +256,7 @@ only one of options ivw or egger allowed
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)], ivw
 
                                                      Number of genotypes = 185
+                                              Residual standard error =  1.576
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -324,5 +325,5 @@ end of do-file
       name:  mreggerplot
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:  27 Jun 2020, 23:02:02
+ closed on:  20 Jul 2020, 16:40:28
 -------------------------------------------------------------------------------

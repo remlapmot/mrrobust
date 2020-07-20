@@ -2,7 +2,7 @@
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:  16 Jul 2020, 13:55:30
+ opened on:  20 Jul 2020, 16:37:12
 
 . * mrmvegger cscript
 . * 22un2020
@@ -28,6 +28,7 @@ C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -35,7 +36,6 @@ chdbeta      |
        slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ------------------------------------------------------------------------------
-                                               Residual standard error:  1.548
 
 . 
 . * check univariate
@@ -801,5 +801,5 @@ end of do-file
       name:  mrmvegger
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:  16 Jul 2020, 13:55:39
+ closed on:  20 Jul 2020, 16:37:21
 -------------------------------------------------------------------------------

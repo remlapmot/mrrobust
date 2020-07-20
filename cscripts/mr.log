@@ -2,7 +2,7 @@
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  27 Jun 2020, 22:57:13
+ opened on:  20 Jul 2020, 16:37:35
 
 . * mr cscript
 . * 20jan2020
@@ -103,23 +103,17 @@ incorrectsubcommandname is not a valid subcommand.
 . 
 . mr deps
 checking addplot consistency and verifying not already installed...
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking moremata consistency and verifying not already installed...
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 
 . 
 . ** Do et al. dataset
@@ -132,6 +126,7 @@ installation complete.
 . mr egger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -232,8 +227,10 @@ chdbeta      |
 . 
 . mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
-                                                       Number of genotypes: 73
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
                                                 Standard errors: Random effect
+                                              Residual standard error =  1.490
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -247,7 +244,9 @@ chdbeta      |
 . mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
                                        MVMR-Egger model oriented wrt: ldlcbeta
-                                                       Number of genotypes: 73
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                              Residual standard error =  1.469
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -263,7 +262,9 @@ chdbeta      |
 > nt(2)
 
                                        MVMR-Egger model oriented wrt: hdlcbeta
-                                                       Number of genotypes: 73
+                                                      Number of genotypes = 73
+                                                      Number of phenotypes = 3
+                                              Residual standard error =  1.501
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -296,5 +297,5 @@ end of do-file
       name:  mr
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  27 Jun 2020, 22:58:49
+ closed on:  20 Jul 2020, 16:38:34
 -------------------------------------------------------------------------------
