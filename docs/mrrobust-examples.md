@@ -54,6 +54,7 @@ IVW (with fixed effect standard errors, i.e. variance of residuals
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -70,15 +71,14 @@ MR-Egger (with SEs using an unconstrained residual variance
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-sign(ldlcb~a)│
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons │  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.548
 ```
 
 
@@ -88,25 +88,18 @@ MR-Egger reporting I^2_GX statistic and heterogeneity Q-test.
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
 >     gxse(ldlcse) heterogi
 
+                                           Q_GX statistic (weighted) = 3454.26
+                                         I^2_GX statistic (weighted) =  97.92%
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
+                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-sign(ldlcb~a)│
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons │  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.548
-Heterogeneity/pleiotropy statistics:
-──────────┬───────────────────────────────────────────
-Statistic │       Estimate        [95% Conf. Interval]
-──────────┼───────────────────────────────────────────
-        H │          1.5               1.4    1.8     
-      I^2 │          58                 46    68      
-──────────┴───────────────────────────────────────────
-Q-test = 170.11187 d.f. = 71 p-value = 0.0000
-I^2_GX statistic:  98.49%
 ```
 
 
@@ -116,15 +109,14 @@ MR-Egger using a t-distribution for inference (p-values) & CI limits.
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-sign(ldlcb~a)│
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4110251    .8236012
        _cons │  -.0087706   .0054812    -1.60   0.114    -.0196998    .0021585
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.548
 ```
 
 
@@ -134,6 +126,7 @@ MR-Egger using the radial formulation.
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -141,7 +134,6 @@ radialGD     │
     radialGP │    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons │  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.547
 ```
 
 
@@ -152,6 +144,8 @@ MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-t
 >     radial heterogi
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
+                                Heterogeneity; chi2(71) = 169.98 (p =  0.0000)
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -159,15 +153,6 @@ radialGD     │
     radialGP │    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons │  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.547
-Heterogeneity/pleiotropy statistics:
-──────────┬───────────────────────────────────────────
-Statistic │       Estimate        [95% Conf. Interval]
-──────────┼───────────────────────────────────────────
-        H │          1.5               1.4    1.8     
-      I^2 │          58                 46    68      
-──────────┴───────────────────────────────────────────
-Q-test = 169.97877 d.f. = 71 p-value = 0.0000
 ```
 
 

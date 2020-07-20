@@ -31,9 +31,11 @@ To see the `Rmd` code which generates this page see [here](https://raw.githubuse
 
 Next we install the other required packages in R. Note I don't run these lines of code in this script because I already have these packages installed.
 ```{r, eval = FALSE}
-# remotes::install_github("MRCIEU/TwoSampleMR") # uncomment on first run
-# remotes::install_github("MRCIEU/MRInstruments") # uncomment on first run
+remotes::install_github("MRCIEU/TwoSampleMR") # uncomment on first run
+remotes::install_github("MRCIEU/MRInstruments") # uncomment on first run
 ```
+
+## Extracting data from MR-Base
 
 We will be running the script from the MR-Base paper ([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is from [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
 
@@ -81,8 +83,10 @@ To proceed in Stata we can save our `dat` object as a Stata dataset
 write.dta(dat, file = "dat.dta")
 ```
 
+## Analysis in Stata using the mrrobust package
+
 At this point in Stata install the `mrrobust` package and its dependencies if you have not done so previously.
-```{stata, eval = FALSE}
+```{stata}
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```

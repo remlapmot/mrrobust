@@ -30,6 +30,7 @@ IVW (with fixed effect standard errors)
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -47,15 +48,14 @@ MR-Egger (with SEs using an unconstrained residual variance)
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.548
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-sign(ldlcb~a)│
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4145405    .8200858
        _cons │  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.548
 
 . mat mregger = r(table)
 ```
@@ -67,6 +67,7 @@ MR-Egger using the radial formulation
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.547
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -74,7 +75,6 @@ radialGD     │
     radialGP │    .642582   .1157871     5.55   0.000     .4156434    .8695205
        _cons │  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.547
 
 . mat radial = r(table)
 ```
@@ -91,7 +91,7 @@ Weighted mode estimator
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4789702   .0666965     7.18   0.000     .3482474     .609693
+        beta │   .4789702   .0676757     7.08   0.000     .3463282    .6116122
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . mat mode = r(table)
@@ -108,7 +108,7 @@ Weighted median estimator
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4582573   .0608744     7.53   0.000     .3389457     .577569
+        beta │   .4582573   .0624496     7.34   0.000     .3358585    .5806562
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . mat median = r(table)
@@ -126,7 +126,6 @@ Check our matrices
        radial[9,2]
       mregger[9,2]
           ivw[9,1]
-       output[7,9]
 
 . mat list ivw
 
@@ -146,17 +145,17 @@ pvalue  2.167e-36
 . mat list mregger
 
 mregger[9,2]
-         sign(ldlc~a:  sign(ldlc~a:
-               slope         _cons
-     b     .61731315    -.00877065
-    se     .10345735     .00548118
-     z     5.9668371      -1.60014
-pvalue     2.419e-09     .10956752
-    ll     .41454047    -.01951356
-    ul     .82008582     .00197226
-    df             .             .
-  crit      1.959964      1.959964
- eform             0             0
+           chdbeta:    chdbeta:
+             slope       _cons
+     b   .61731315  -.00877065
+    se   .10345735   .00548118
+     z   5.9668371    -1.60014
+pvalue   2.419e-09   .10956752
+    ll   .41454047  -.01951356
+    ul   .82008582   .00197226
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
 
 . mat list radial
 
@@ -178,11 +177,11 @@ pvalue   2.862e-08   .10563675
 mode[9,1]
              beta
      b   .4789702
-    se  .06669651
-     z  7.1813381
-pvalue  6.903e-13
-    ll  .34824744
-    ul  .60969297
+    se  .06767571
+     z  7.0774315
+pvalue  1.469e-12
+    ll  .34632825
+    ul  .61161216
     df          .
   crit   1.959964
  eform          0
@@ -192,11 +191,11 @@ pvalue  6.903e-13
 median[9,1]
              beta
      b  .45825733
-    se  .06087441
-     z  7.5279143
-pvalue  5.156e-14
-    ll  .33894568
-    ul  .57756897
+    se  .06244955
+     z  7.3380403
+pvalue  2.167e-13
+    ll  .33585845
+    ul   .5806562
     df          .
   crit   1.959964
  eform          0
@@ -218,14 +217,23 @@ Combined into single matrix
 . mat list output, format(%4.3f)
 
 output[7,9]
-                   b      se       z  pvalue      ll      ul      df    crit   eform
-    ivw_beta   0.482   0.038  12.598   0.000   0.407   0.556       .   1.960   0.000
-mregger_beta   0.617   0.103   5.967   0.000   0.415   0.820       .   1.960   0.000
-mregger_cons  -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960   0.000
- radial_beta   0.643   0.116   5.550   0.000   0.416   0.870       .   1.960   0.000
- radial_cons  -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960   0.000
-   mode_beta   0.479   0.067   7.181   0.000   0.348   0.610       .   1.960   0.000
- median_beta   0.458   0.061   7.528   0.000   0.339   0.578       .   1.960   0.000
+                   b      se       z  pvalue      ll      ul      df    crit
+    ivw_beta   0.482   0.038  12.598   0.000   0.407   0.556       .   1.960
+mregger_beta   0.617   0.103   5.967   0.000   0.415   0.820       .   1.960
+mregger_cons  -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960
+ radial_beta   0.643   0.116   5.550   0.000   0.416   0.870       .   1.960
+ radial_cons  -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960
+   mode_beta   0.479   0.068   7.077   0.000   0.346   0.612       .   1.960
+ median_beta   0.458   0.062   7.338   0.000   0.336   0.581       .   1.960
+
+               eform
+    ivw_beta   0.000
+mregger_beta   0.000
+mregger_cons   0.000
+ radial_beta   0.000
+ radial_cons   0.000
+   mode_beta   0.000
+ median_beta   0.000
 ```
 
 
@@ -242,7 +250,8 @@ number of observations (_N) was 0, now 7
 . local rownames : rownames output
 
 . di "`rownames'"
-ivw_beta mregger_beta mregger_cons radial_beta radial_cons mode_beta median_beta
+ivw_beta mregger_beta mregger_cons radial_beta radial_cons mode_beta median_bet
+> a
 
 . tokenize `rownames'
 
@@ -267,14 +276,22 @@ Show dataset
 ```stata
 . list estimate b se z pvalue ll ul, clean noobs
 
-        estimate           b         se          z     pvalue          ll         ul  
-        ivw_beta    .4815055    .038221   12.59794   2.17e-36    .4065938   .5564172  
-    mregger_beta    .6173131   .1034573   5.966837   2.42e-09    .4145405   .8200858  
-    mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .0019723  
-     radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .8695205  
-     radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .1212062  
-       mode_beta    .4789702   .0666965   7.181338   6.90e-13    .3482474    .609693  
-     median_beta    .4582573   .0608744   7.527914   5.16e-14    .3389457   .5775689  
+        estimate           b         se          z     pvalue          ll      
+>    ul  
+        ivw_beta    .4815055    .038221   12.59794   2.17e-36    .4065938   .55
+> 64172  
+    mregger_beta    .6173131   .1034573   5.966837   2.42e-09    .4145405   .82
+> 00858  
+    mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .00
+> 19723  
+     radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .86
+> 95205  
+     radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .12
+> 12062  
+       mode_beta    .4789702   .0676757   7.077432   1.47e-12    .3463283   .61
+> 16121  
+     median_beta    .4582573   .0624496    7.33804   2.17e-13    .3358585   .58
+> 06562  
 ```
 
 
