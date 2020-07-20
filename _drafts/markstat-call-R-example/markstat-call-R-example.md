@@ -23,8 +23,8 @@ Before you start please install the following two Stata packages from the SSC ar
 We first need to register the R executable with Stata.
 
 ```stata
-. whereis R "C:\\Program Files\\R\\R-3.6.0\\bin\\R.exe"
-C:\\Program Files\\R\\R-3.6.0\\bin\\R.exe
+. whereis R "C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe"
+C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe
 ```
 
 
@@ -81,34 +81,34 @@ The next two code chunks perform the analysis in R.
 ```r
 > # Perform MR
 > mr(dat)
-  id.exposure id.outcome                        outcome
-1         300          7 Coronary heart disease || id:7
-2         300          7 Coronary heart disease || id:7
-3         300          7 Coronary heart disease || id:7
-4         300          7 Coronary heart disease || id:7
-5         300          7 Coronary heart disease || id:7
-                   exposure                    method nsnp         b         se
-1 LDL cholesterol || id:300                  MR Egger   62 0.5854136 0.06182590
-2 LDL cholesterol || id:300           Weighted median   62 0.4887319 0.03863566
-3 LDL cholesterol || id:300 Inverse variance weighted   62 0.4686211 0.03919370
-4 LDL cholesterol || id:300               Simple mode   62 0.4678942 0.06323817
-5 LDL cholesterol || id:300             Weighted mode   62 0.5189450 0.03531216
-          pval
-1 1.619410e-13
-2 1.122131e-36
-3 6.000986e-33
-4 4.770354e-10
-5 1.042160e-21
+  id.exposure id.outcome                              outcome
+1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+3   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+4   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+                         exposure                    method nsnp         b
+1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5853125
+2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887311
+3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4689295
+4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942
+5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
+          se         pval
+1 0.06191076 1.712795e-13
+2 0.03895722 4.216716e-36
+3 0.03923672 6.392333e-33
+4 0.06216638 2.876028e-10
+5 0.03194083 7.807418e-24
 > mr_heterogeneity(dat)
-  id.exposure id.outcome                        outcome
-1         300          7 Coronary heart disease || id:7
-2         300          7 Coronary heart disease || id:7
-                   exposure                    method        Q Q_df
-1 LDL cholesterol || id:300                  MR Egger 170.4804   60
-2 LDL cholesterol || id:300 Inverse variance weighted 186.6560   61
+  id.exposure id.outcome                              outcome
+1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+                         exposure                    method        Q Q_df
+1 LDL cholesterol || id:ieu-a-300                  MR Egger 170.9462   60
+2 LDL cholesterol || id:ieu-a-300 Inverse variance weighted 187.0110   61
         Q_pval
-1 1.583556e-12
-2 1.154072e-14
+1 1.356009e-12
+2 1.021208e-14
 > dat$exposure <- "LDL cholesterol"
 > dat$outcome <- "Coronary heart disease"
 > 
@@ -144,13 +144,22 @@ We now switch from using R code chunks to Stata code chunks. We read the data in
 (Written by R.              )
 
 . ds, v(28)
-SNP                     eaf_exposure            samplesize_outcome      year_outcome            data_source_outcome     proxy_a2_outcome        units_exposure_dat
-effect_allele_exposure  eaf_outcome             ncase_outcome           pmid_outcome            proxy_outcome           exposure                id_exposure
-other_allele_exposure   remove                  ncontrol_outcome        category_outcome        target_snp_outcome      se_exposure             action
-effect_allele_outcome   palindromic             pval_outcome            subcategory_outcome     proxy_snp_outcome       pval_exposure           mr_keep
-other_allele_outcome    ambiguous               units_outcome           originalname_outcome    target_a1_outcome       units_exposure          labels
-beta_exposure           id_outcome              outcome                 outcome_deprecated      target_a2_outcome       mr_keep_exposure
-beta_outcome            se_outcome              consortium_outcome      mr_keep_outcome         proxy_a1_outcome        pval_origin_exposure
+SNP                     ncontrol_outcome        target_a1_outcome
+effect_allele_exposure  pval_outcome            target_a2_outcome
+other_allele_exposure   units_outcome           proxy_a1_outcome
+effect_allele_outcome   outcome                 proxy_a2_outcome
+other_allele_outcome    consortium_outcome      exposure
+beta_exposure           year_outcome            se_exposure
+beta_outcome            pmid_outcome            pval_exposure
+eaf_exposure            category_outcome        units_exposure
+eaf_outcome             subcategory_outcome     mr_keep_exposure
+remove                  originalname_outcome    pval_origin_exposure
+palindromic             outcome_deprecated      units_exposure_dat
+ambiguous               mr_keep_outcome         id_exposure
+id_outcome              data_source_outcome     action
+se_outcome              proxy_outcome           mr_keep
+samplesize_outcome      target_snp_outcome      labels
+ncase_outcome           proxy_snp_outcome
 
 . di _N
 62
@@ -163,12 +172,13 @@ We can then run the IVW model using `mregger` with multiplicative standard error
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 
                                                       Number of genotypes = 62
-──────────────┬────────────────────────────────────────────────────────────────
-              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
-──────────────┼────────────────────────────────────────────────────────────────
-beta_outcome  │
-beta_exposure │   .4686211   .0391937    11.96   0.000     .3918029    .5454394
-──────────────┴────────────────────────────────────────────────────────────────
+                                              Residual standard error =  1.749
+─────────────┬────────────────────────────────────────────────────────────────
+             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+─────────────┼────────────────────────────────────────────────────────────────
+beta_outcome │
+beta_expos~e │   .4686211   .0391937    11.96   0.000     .3918029    .5454394
+─────────────┴────────────────────────────────────────────────────────────────
 ```
 
 
@@ -204,15 +214,14 @@ We then fit the MR-Egger, median, and modal based estimators.
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
                                                       Number of genotypes = 62
+                                              Residual standard error =  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-sign(beta~re)│
 beta_outcome │
        slope │   .5854136   .0618259     9.47   0.000     .4642371    .7065902
        _cons │  -.0095539   .0040042    -2.39   0.017    -.0174019   -.0017059
 ─────────────┴────────────────────────────────────────────────────────────────
-Residual standard error:  1.686
 ```
 
 
@@ -225,7 +234,7 @@ Residual standard error:  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887683   .0380503    12.85   0.000     .4141912    .5633455
+        beta │   .4887683   .0376206    12.99   0.000     .4150334    .5625033
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -240,7 +249,7 @@ Residual standard error:  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0353177    14.69   0.000     .4497235    .5881665
+        beta │    .518945   .0363605    14.27   0.000     .4476798    .5902102
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 

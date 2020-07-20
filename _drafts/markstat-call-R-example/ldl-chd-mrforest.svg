@@ -3,7 +3,7 @@
 
 <svg version="1.1" width="600px" height="770px" viewBox="0 0 6729 8640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Stata Graph - Graph</desc>
-	<rect x="0" y="0" width="6729" height="8640" style="fill:#EAF2F3;stroke:none"/>
+	<rect x="0" y="0" width="6729" height="8640" style="fill:#E1E6F0;stroke:none"/>
 	<rect x="0.00" y="0.27" width="6729.00" height="8639.73" style="fill:#FFFFFF"/>
 	<rect x="6.73" y="7.00" width="6715.54" height="8626.27" style="fill:none;stroke:#FFFFFF;stroke-width:13.46"/>
 	<rect x="411.47" y="235.71" width="5975.99" height="7630.47" style="fill:#FFFFFF"/>
@@ -414,6 +414,6 @@
 		<tspan style="font-family:'Helvetica';font-style:italic;font-size:140.13px">I</tspan>
 		<tspan dy="20.02px" style="font-family:'Helvetica';font-style:italic;font-size:81.69px">GX</tspan>
 		<tspan dy="-93.42px" style="font-family:'Helvetica';font-style:italic;font-size:81.69px">2</tspan>
-		<tspan dy="93.42px" style="font-family:'Helvetica';font-size:140.13px">=98.5%</tspan>
+		<tspan dy="93.42px" style="font-family:'Helvetica';font-size:140.13px">=98.4%</tspan>
 	</text>
 </svg>
