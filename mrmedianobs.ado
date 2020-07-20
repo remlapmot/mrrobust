@@ -89,9 +89,9 @@ local digits3 : length local reps
 local colstart1 = 79 - (22 + `digits1')
 local colstart2 = 79 - (16 + `digits2')
 local colstart3 = 79 - (15 + `digits3')
-di _n(1) _col(`colstart1') "Number of genotypes = " as res %`digits1'.0fc `k'
-di _col(`colstart2') "Number of obs = " as res %`digits2'.0fc `n'
-di _col(`colstart3') "Replications = " as res %`digits3'.0fc `reps'
+di _n(1) _col(`colstart1') as txt "Number of genotypes = " as res %`digits1'.0fc `k'
+di _col(`colstart2') as txt "Number of obs = " as res %`digits2'.0fc `n'
+di _col(`colstart3') as txt "Replications = " as res %`digits3'.0fc `reps'
 ereturn display, level(`level')
 end
 exit
