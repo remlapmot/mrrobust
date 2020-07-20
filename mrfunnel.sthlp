@@ -80,9 +80,9 @@ estimate standard errors.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Web Figure A2 (top-right plot, LDL-C with 73 
-genotypes).{p_end}
+{pstd}Using the data provided by {help mrfunnel##do:Do et al. (2013)} recreate 
+{help mrfunnel##bowden:Bowden et al. (2016)} Web Figure A2 
+(top-right plot, LDL-C with 73 genotypes).{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
@@ -106,17 +106,19 @@ genotypes).{p_end}
 {marker references}{...}
 {title:References}
 
+{marker do}{...}
 {phang}
 Do et al., 2013. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics. 45, 1345–1352. DOI: 
-{browse "http://dx.doi.org/10.1038/ng.2795"}
+ for coronary artery disease. Nature Genetics. 45, 1345–1352. 
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
+{marker bowden}{...}
 {phang}
 Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in 
 Mendelian randomization with some invalid instruments using a weighted median 
-estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. DOI: 
-{browse "http:dx.doi.org/10.1002/gepi.21965"}
+estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
+{browse "http:dx.doi.org/10.1002/gepi.21965":DOI}
 {p_end}
 
 {marker author}
