@@ -39,8 +39,7 @@ obtain standard error{p_end}
 {title:Description}
 
 {pstd}
-{cmd:mrmedian} performs unweighted, weighted, and penalized IV estimator on 
-observation level data.
+{cmd:mrmedianobs} performs unweighted, weighted, and penalized IV estimator on 
 observation level data ({help mrmedianobs##bowden:Bowden et al., 2016}).
 
 {col 10}{depvar} {col 26}outcome variable
