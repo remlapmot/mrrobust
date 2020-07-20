@@ -421,6 +421,7 @@ if "`ivw'" == "ivw" & "`fe'" == "fe" {
 }
 
 ** start of displaying output
+di ""
 
 if "`gxse'" != "" & "`ivw'" == "" {
         ** I-squared GX
@@ -484,7 +485,7 @@ if "`gxse'" != "" & "`ivw'" == "" {
 ** number of genotypes
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+di _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
 ** heterogi
 if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
     qui heterogi `qstat' `df', level(`level')
