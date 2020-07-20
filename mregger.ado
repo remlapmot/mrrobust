@@ -133,6 +133,7 @@ if "`ivw'" == "ivw" {
                 qui glm `1' `2' [iw=`invvar'] `if' `in', nocons
                 scalar `betaivw' = _b[`2']
                 scalar `dfr' = e(df)
+				scalar `phi' = e(phi)
                 if "`penweighted'" != "" {
                         qui gen double `pweights' = chi2tail(1, ///
                                 (`2'^2*`invvar')* ///
@@ -142,6 +143,7 @@ if "`ivw'" == "ivw" {
                         qui replace `rweights' = `invvar'*`rweights' `if' `in'
                         qui glm `1' `2' [iw=`rweights'] `if' `in', nocons
                         scalar `dfr' = e(df)
+						scalar `phi' = e(phi)
                 }
                 if e(phi) < 1 & "`rescale'" == "" {
                         di as txt _c "Residual variance =", e(phi) "; "
@@ -158,6 +160,7 @@ if "`ivw'" == "ivw" {
                                 nocons scale(1)                        
                                 scalar `dfr' = e(df)
                         }
+						scalar `phi' = 1
                 }
                 else if e(phi) < 1 & "`rescale'" != "" {
                         di as txt _c "Residual variance =", e(phi)
@@ -169,12 +172,14 @@ if "`ivw'" == "ivw" {
 				if "`radial'" == "" {
 					qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
 					scalar `dfr' = e(df)
+					scalar `phi' = e(phi)
 					// alt:
 					// sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
 				}
 				else {
 					qui glm `wrady' `wradx' `if'`in', scale(1) nocons
 					scalar `dfr' = e(df)
+					scalar `phi' = e(phi)
 				}
         }
         else if "`re'" == "re" {
@@ -486,6 +491,17 @@ if "`gxse'" != "" & "`ivw'" == "" {
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+
+** residual standard error
+if "`fe'" == "" {
+    di _col(47) as txt "Residual standard error =", as res %6.3f sqrt(`phi')
+    ereturn scalar phi = sqrt(`phi')
+}
+else {
+    di _col(39) as txt "Residual standard error constrained at 1"
+    ereturn scalar phi = 1
+}
+
 ** heterogi
 if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
     qui heterogi `qstat' `df', level(`level')
@@ -506,16 +522,6 @@ if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
 
 ** display coefficient table
 Display , `re' level(`level') `radial'
-if "`ivw'" == "" & "`re'" == "" {
-        if "`fe'" == "" {
-                di _col(48) as txt "Residual standard error:", as res %6.3f sqrt(`phi')
-                ereturn scalar phi = sqrt(`phi')
-        }
-        else {
-                di _col(53) as txt "Residual standard error:", as res 1
-                ereturn scalar phi = 1
-        }
-}
 
 ** additional e-returned items
 if "`re'" == "" {
