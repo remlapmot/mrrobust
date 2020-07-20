@@ -133,6 +133,7 @@ if "`ivw'" == "ivw" {
                 qui glm `1' `2' [iw=`invvar'] `if' `in', nocons
                 scalar `betaivw' = _b[`2']
                 scalar `dfr' = e(df)
+				scalar `phi' = e(phi)
                 if "`penweighted'" != "" {
                         qui gen double `pweights' = chi2tail(1, ///
                                 (`2'^2*`invvar')* ///
@@ -142,6 +143,7 @@ if "`ivw'" == "ivw" {
                         qui replace `rweights' = `invvar'*`rweights' `if' `in'
                         qui glm `1' `2' [iw=`rweights'] `if' `in', nocons
                         scalar `dfr' = e(df)
+						scalar `phi' = e(phi)
                 }
                 if e(phi) < 1 & "`rescale'" == "" {
                         di as txt _c "Residual variance =", e(phi) "; "
@@ -158,6 +160,7 @@ if "`ivw'" == "ivw" {
                                 nocons scale(1)                        
                                 scalar `dfr' = e(df)
                         }
+						scalar `phi' = 1
                 }
                 else if e(phi) < 1 & "`rescale'" != "" {
                         di as txt _c "Residual variance =", e(phi)
@@ -169,12 +172,14 @@ if "`ivw'" == "ivw" {
 				if "`radial'" == "" {
 					qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
 					scalar `dfr' = e(df)
+					scalar `phi' = e(phi)
 					// alt:
 					// sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
 				}
 				else {
 					qui glm `wrady' `wradx' `if'`in', scale(1) nocons
 					scalar `dfr' = e(df)
+					scalar `phi' = e(phi)
 				}
         }
         else if "`re'" == "re" {
@@ -421,20 +426,7 @@ if "`ivw'" == "ivw" & "`fe'" == "fe" {
 }
 
 ** start of displaying output
-** heterogi
-if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
-        di as txt "Heterogeneity/pleiotropy statistics:" _c
-        heterogi `qstat' `df', level(`level')
-        ereturn scalar I2 = r(I2)
-        ereturn scalar ub_I2_M1 = r(ub_I2_M1)
-        ereturn scalar lb_I2_M1 = r(lb_I2_M1)
-        ereturn scalar ub_H_M1 = r(ub_H_M1)
-        ereturn scalar lb_H_M1 = r(lb_H_M1)
-        ereturn scalar H = r(H)
-        ereturn scalar pval = r(pval)
-        ereturn scalar df = r(df)
-        ereturn scalar Q = r(Q)
-}
+di ""
 
 if "`gxse'" != "" & "`ivw'" == "" {
         ** I-squared GX
@@ -480,8 +472,8 @@ if "`gxse'" != "" & "`ivw'" == "" {
 		scalar `I2GXw' = (`QGXw' - (`nobs' - 1))/`QGXw'
         scalar `I2GXw' = max(0, `I2GXw')
         
-		di _col(45) as txt "Q_GX statistic (weighted):", %6.2f `QGXw'
-        di _col(43) as txt "I^2_GX statistic (weighted):", %6.2f 100*`I2GXw' "%"
+		di _col(44) as txt "Q_GX statistic (weighted) =", %6.2f as res `QGXw'
+        di _col(42) as txt "I^2_GX statistic (weighted) =", %6.2f as res 100*`I2GXw' as res "%"
         ereturn scalar I2GX = `I2GXw'
 		ereturn scalar QGX = `QGXw'
 		
@@ -498,21 +490,40 @@ if "`gxse'" != "" & "`ivw'" == "" {
 ** number of genotypes
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+di _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+
+** residual standard error
+if "`fe'" == "" {
+    di _col(47) as txt "Residual standard error =", as res %6.3f sqrt(`phi')
+    ereturn scalar phi = sqrt(`phi')
+}
+else {
+    di _col(39) as txt "Residual standard error constrained at 1"
+    ereturn scalar phi = 1
+}
+
+** heterogi
+if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
+    qui heterogi `qstat' `df', level(`level')
+	local colstart = 79 - (44 + `=length("`r(df)'")')
+	di _col(`colstart') as txt "Heterogeneity; chi2(" ///
+		as res r(df) as txt ") =", ///
+		as res %5.2f r(Q), as txt "(p = ", as res %5.4f r(pval) as txt ")"
+    ereturn scalar I2 = r(I2)
+    ereturn scalar ub_I2_M1 = r(ub_I2_M1)
+    ereturn scalar lb_I2_M1 = r(lb_I2_M1)
+    ereturn scalar ub_H_M1 = r(ub_H_M1)
+    ereturn scalar lb_H_M1 = r(lb_H_M1)
+    ereturn scalar H = r(H)
+    ereturn scalar pval = r(pval)
+    ereturn scalar df = r(df)
+    ereturn scalar Q = r(Q)
+}
 
 ** display coefficient table
 Display , `re' level(`level') `radial'
-if "`ivw'" == "" & "`re'" == "" {
-        if "`fe'" == "" {
-                di _col(48) as txt "Residual standard error:", as res %6.3f sqrt(`phi')
-                ereturn scalar phi = sqrt(`phi')
-        }
-        else {
-                di _col(53) as txt "Residual standard error:", as res 1
-                ereturn scalar phi = 1
-        }
-}
 
+** additional e-returned items
 if "`re'" == "" {
         ereturn local cmd "mregger"
         ereturn local cmdline `"mregger `0'"'

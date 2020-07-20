@@ -163,6 +163,7 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
 mregger
 
+discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, het
 mregger
 
@@ -309,3 +310,18 @@ mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ivw oldnames
 
 qui mregger chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, radial heterogi gxse(ldlcse)
 mregger
+
+// ivw e(phi)
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw
+assert e(k) == 73
+assert e(phi) - 1.565 < 1e-3
+
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+assert e(phi) == 1
+
+// mregger e(phi)
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+assert e(phi) - 1.548 < 1e-3
+
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, fe
+assert e(phi) == 1
