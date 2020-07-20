@@ -43,14 +43,10 @@ statistics{p_end}
 {title:Description}
 
 {pstd}
-{cmd:mregger} performs inverse-variance weighted (IVW) and Mendelian 
-randomization Egger (MR-Egger) regression using summary level data 
-(i.e. reported genotype-disease and phenotype-disease association estimates 
-and their standard errors for individual genotypes).
-
-{pstd}
-See {browse "http://dx.doi.org/10.1093/ije/dyv080":Bowden et al., Int J Epi, 2015}
-, for more information.
+{cmd:mregger} performs inverse-variance weighted (IVW; {help mregger##ivw:Burgess et al., 2013}) and Mendelian 
+randomization Egger (MR-Egger) regression ({help mregger##bowden:Bowden et al., 2015}) using summary level data 
+(i.e. using genotype-disease and phenotype-disease association estimates 
+and their standard errors).
 
 {pstd}
 {var:_gd} variable containing the genotype-disease association estimates.
@@ -69,14 +65,15 @@ genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
 {opt fe} specifies fixed effect standard errors (i.e. variance of residuals 
 constrained to 1 as in fixed effect meta-analysis models). The default is 
 to use multiplicative standard errors (i.e. variance of residuals 
-unconstrained as in standard linear regression), see Thompson and Sharp 
-(1999) for further details. We recommend specifying this option when using an 
+unconstrained as in standard linear regression), see 
+{help mregger##thompson:Thompson and Sharp (1999)} for further details. 
+We recommend specifying this option when using an 
 allelic score as the instrumental variable.
 
 {phang}
 {opt gxse(varname)} specifies the variable containing the genotype-phenotype 
 association standard errors. These are required for calculating the I^2_GX
-statistic (Bowden et al., 2016). An I^2_GX statistic of 90% means that the 
+statistic ({help mregger##i2gx:Bowden et al., 2016}). An I^2_GX statistic of 90% means that the 
 likely bias due measurement error in the MR-Egger slope estimate is around 
 10%. If I^2_GX values are less than 90% estimates should be treated with 
 caution.
@@ -85,7 +82,7 @@ caution.
 {opt het:erogi} suppresses display of heterogeneity/pleiotropy 
 statistics. In the heterogeneity output 
 the model based Q-statistic is reported by multiplying the variance of the 
-residuals by the degrees of freedom (Del Greco et al., 2015).
+residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}).
  
 {phang}
 {opt ivw} specifies IVW model, the default is MR-Egger.
@@ -95,19 +92,20 @@ residuals by the degrees of freedom (Del Greco et al., 2015).
 
 {phang}
 {opt noresc:ale} specifies that the residual variance is not set to 1 (if 
-it is found to be less than 1). Bowden et al. (2016) rescale the residual 
-variance to be 1 if it is found to be less than 1.
+it is found to be less than 1). {help mregger##mrmedian:Bowden et al. (2016)} 
+rescale the residual variance to be 1 if it is found to be less than 1.
 
 {phang}
 {opt oldnames} revert to using the longer outcome variable name in the b and V ereturned matrices.
 
 {phang}
-{opt penw:eighted} specifies using penalized weights as described in Burgess 
-et al. (2016).
+{opt penw:eighted} specifies using penalized weights as described in 
+{help mregger##robust:Burgess et al. (2016)}.
 
 {phang}
 {opt rad:ial} specifies the radial formulation of the IVW and MR-Egger models 
-(Bowden et al., 2017). Note there is only a difference for the MR-Egger model.
+({help mregger##radial:Bowden et al., 2017)}. 
+Note there is only a difference for the MR-Egger model.
  
 {phang}
 {opt tdist} specifies using the t-distribution, instead of the normal 
@@ -202,12 +200,14 @@ detection through Egger regression. International Journal of Epidemiology,
 {browse "http://dx.doi.org/10.1093/ije/dyv080":DOI}
 {p_end}
 
+{marker mrmedian}{...}
 {phang}
 Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation 
 in Mendelian randomization with some invalid instruments using a weighted 
 median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
 {browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 
+{marker i2gx}{...}
 {phang}
 Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR. 
 Assessing the suitability of summary data for two-sample Mendelian 
@@ -215,18 +215,27 @@ randomization analyses using MR-Egger regression: the role of the I-squared
 statistic. International Journal of Epidemiology, 2016, 45, 6, 1961-1974. 
 {browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
 
+{marker radial}{...}
 {phang}
 Bowden J, Spiller W, Del-Greco F, Sheehan NA, Thompson JR, Minelli C, Davey Smith G. 
 Improving the visualisation, interpretation and analysis of two-sample summary 
 data Mendelian randomization via the radial plot and radial regression. 
 International Journal of Epidemiology, 2018, 47, 4, 1264-1278. {browse "https://doi.org/10.1093/ije/dyy101":DOI}
 
+{marker robust}{...}
 {phang}
 Burgess S, Bowden J, Dudbridge F, Thompson SG. Robust instrumental 
 variable methods using candidate instruments with application to Mendelian 
 randomization. arXiv:1606.03729v1, 2016. 
 {browse "https://arxiv.org/abs/1606.03729":Link}
 
+{marker ivw}{...}
+{phang}
+Burgess S, Butterworth A, Thompson S. Mendelian randomization analysis with 
+multiple genetic variants using summarized data. Genetic Epidemiology, 2013, 37, 7, 658–665. 
+{browse "https://dx.doi.org/10.1002%2Fgepi.21758": DOI}
+
+{marker delgreco}{...}
 {phang}
 Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in 
 Mendelian randomization studies with summary data and a continuous outcome. 
@@ -234,6 +243,7 @@ Statistics in Medicine, 2015, 34, 21, 2926-2940.
 {browse "http://dx.doi.org/10.1002/sim.6522":DOI}
 {p_end}
 
+{marker thompson}{...}
 {phang}
 Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: a 
 comparison of methods. Statistics in Medicine, 1999, 18, 20, 2693-2708. 
