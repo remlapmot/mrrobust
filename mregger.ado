@@ -516,6 +516,7 @@ if "`ivw'" == "" & "`re'" == "" {
         }
 }
 
+** additional e-returned items
 if "`re'" == "" {
         ereturn local cmd "mregger"
         ereturn local cmdline `"mregger `0'"'
