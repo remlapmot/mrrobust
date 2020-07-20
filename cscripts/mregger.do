@@ -163,6 +163,7 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
 mregger
 
+discard
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, het
 mregger
 
