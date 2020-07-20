@@ -115,10 +115,10 @@ if "`reps'" == "0" {
 }
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
+di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
 local digits2 : length local reps
 local colstart2 = 79 - (15 + `digits2')
-di _col(`colstart2') "Replications = " as res %`digits2'.0fc `reps'
+di _col(`colstart2') as txt "Replications = " as res %`digits2'.0fc `reps'
 ereturn display, level(`level')
 return add // r(table)
 end

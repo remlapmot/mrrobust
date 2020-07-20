@@ -132,12 +132,12 @@ if "`simreps'" == "0" {
 
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
-di _n(1) _col(`colstart') "Number of genotypes = " as res %`digits'.0fc `k'
+di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
 local digits2 : length local reps
 local colstart2 = 79 - (25 + `digits2')
-di _col(`colstart2') "Bootstrap replications = " as res %`digits2'.0fc `reps'
+di _col(`colstart2') as txt "Bootstrap replications = " as res %`digits2'.0fc `reps'
 local digits3 : length local simreps
 local colstart3 = 79 - (26 + `digits3')
-di _col(`colstart3') "Simulation replications = " as res %`digits3'.0fc `simreps'
+di _col(`colstart3') as txt "Simulation replications = " as res %`digits3'.0fc `simreps'
 ereturn display, level(`level')
 end

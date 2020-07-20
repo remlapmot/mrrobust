@@ -2,7 +2,7 @@
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  16 Jul 2020, 13:55:16
+ opened on:  20 Jul 2020, 17:04:20
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -36,6 +36,7 @@ C:\Users\tom\Documents\GitHub\mrrobust\mvmr.ado
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
                                                       Number of genotypes = 73
+                                      Residual standard error constrained at 1
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -47,6 +48,7 @@ chdbeta      |
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw 
 
                                                       Number of genotypes = 73
+                                              Residual standard error =  1.565
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1425,5 +1427,5 @@ end of do-file
       name:  mrmvivw
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  16 Jul 2020, 13:55:30
+ closed on:  20 Jul 2020, 17:04:33
 -------------------------------------------------------------------------------
