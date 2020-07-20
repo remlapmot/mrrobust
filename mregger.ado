@@ -421,20 +421,6 @@ if "`ivw'" == "ivw" & "`fe'" == "fe" {
 }
 
 ** start of displaying output
-** heterogi
-if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
-        di as txt "Heterogeneity/pleiotropy statistics:" _c
-        heterogi `qstat' `df', level(`level')
-        ereturn scalar I2 = r(I2)
-        ereturn scalar ub_I2_M1 = r(ub_I2_M1)
-        ereturn scalar lb_I2_M1 = r(lb_I2_M1)
-        ereturn scalar ub_H_M1 = r(ub_H_M1)
-        ereturn scalar lb_H_M1 = r(lb_H_M1)
-        ereturn scalar H = r(H)
-        ereturn scalar pval = r(pval)
-        ereturn scalar df = r(df)
-        ereturn scalar Q = r(Q)
-}
 
 if "`gxse'" != "" & "`ivw'" == "" {
         ** I-squared GX
@@ -499,6 +485,23 @@ if "`gxse'" != "" & "`ivw'" == "" {
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
 di _n(1) _col(`colstart') as txt "Number of genotypes = " as res %`digits'.0fc `k'
+** heterogi
+if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
+    qui heterogi `qstat' `df', level(`level')
+	local colstart = 79 - (44 + `=length("`r(df)'")')
+	di _col(`colstart') as txt "Heterogeneity; chi2(" ///
+		as res r(df) as txt ") =", ///
+		as res %5.2f r(Q), as txt "(p = ", as res %5.4f r(pval) as txt ")"
+    ereturn scalar I2 = r(I2)
+    ereturn scalar ub_I2_M1 = r(ub_I2_M1)
+    ereturn scalar lb_I2_M1 = r(lb_I2_M1)
+    ereturn scalar ub_H_M1 = r(ub_H_M1)
+    ereturn scalar lb_H_M1 = r(lb_H_M1)
+    ereturn scalar H = r(H)
+    ereturn scalar pval = r(pval)
+    ereturn scalar df = r(df)
+    ereturn scalar Q = r(Q)
+}
 
 ** display coefficient table
 Display , `re' level(`level') `radial'
