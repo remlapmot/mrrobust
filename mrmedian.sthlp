@@ -84,8 +84,9 @@ see {helpb set_seed}.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et 
-al., Gen Epi, 2016, Table 4, LDL-c "All genetic variants" median estimates.{p_end}
+{pstd}Using the data provided by {help mrmedian##do:Do et al. (2013)} recreate 
+{help mrmedian##bowden:Bowden et al. (2016)}, Table 4, 
+LDL-c "All genetic variants" median estimates.{p_end}
 
 {pstd}Setup{p_end}
 {phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
@@ -137,6 +138,7 @@ Consistent estimation in Mendelian randomization with some invalid instruments
 {browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
 {p_end}
 
+{marker do}{...}
 {phang}
 Do et al. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. 
