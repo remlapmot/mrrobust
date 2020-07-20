@@ -10,7 +10,7 @@
 {title:Title}
 
 {p 5}
-{bf:mrmodalplot} {hline 2} Funnel plot for two-sample MR analysis
+{bf:mrfunnel} {hline 2} Funnel plot for two-sample MR analysis
 {p_end}
 
 {marker syntax}{...}
