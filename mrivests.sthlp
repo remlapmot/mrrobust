@@ -5,6 +5,7 @@
 {viewerjumpto "Description" "mrivests##description"}{...}
 {viewerjumpto "Options" "mrivests##options"}{...}
 {viewerjumpto "Examples" "mrivests##examples"}{...}
+{viewerjumpto "References" "mrivests##references"}{...}
 {viewerjumpto "Author" "mrivests##author"}{...}
 {title:Title}
 
@@ -66,7 +67,7 @@ in the dataset.
 {marker examples}{...}
 {title:Examples}
 
-{pstd}Using the data provided by Do et al., Nat Gen, 2013 generate genotype 
+{pstd}Using the data provided by {help mrivests##do:Do et al. (2013)} generate genotype 
 specific estimates for the LDL-c phenotype.{p_end}
 
 {pstd}Setup{p_end}
@@ -84,6 +85,16 @@ specific estimates for the LDL-c phenotype.{p_end}
 {pstd}Generate IV estimates with CI limits using Fieller's Theorem{p_end}
 {phang2}{cmd:.} {stata "drop ivest"}{p_end}
 {phang2}{cmd:.} {stata "mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivcilow ivciupp) fieller"}{p_end}
+
+{marker references}{...}
+{title:References}
+
+{marker do}{...}
+{phang}
+Do et al., 2013. Common variants associated with plasma triglycerides and risk
+ for coronary artery disease. Nature Genetics. 45, 1345–1352. 
+{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
+{p_end}
 
 {marker author}
 {title:Author}
