@@ -21,7 +21,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - `mrmvivw` and `mrmvegger` now ereturn the RMSE in `e(phi)`
   - `mregger, ivw` now displays the square root of the residual variance (residual standard error) and ereturns this is `e(phi)`
   - Checked that examples on website still run
-  - Added `mrleaveonout` command to perform leave one out analysis
+  - Added `mrleaveoneout` command to perform leave one out analysis
 * June 2020:
   - Simplified the outcome variable name in `mregger` b and V e-returned matrices. Turn this off with new `oldnames` option
   - Added basic multivariable MR-Egger command, `mrmvegger`
