@@ -21,6 +21,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - `mrmvivw` and `mrmvegger` now ereturn the RMSE in `e(phi)`
   - `mregger, ivw` now displays the square root of the residual variance (residual standard error) and ereturns this is `e(phi)`
   - Checked that examples on website still run
+  - Added `mrleaveonout` command to perform leave one out analysis
 * June 2020:
   - Simplified the outcome variable name in `mregger` b and V e-returned matrices. Turn this off with new `oldnames` option
   - Added basic multivariable MR-Egger command, `mrmvegger`
@@ -94,6 +95,7 @@ The package contains the following commands:
  - `mr` acts as a primary command, e.g. so the other commands can be run as `mr egger ...` as well as `mregger ...`
  - `mrmvivw` (`mvmr`, `mvivw`) implements the multivariable IVW model
  - `mrmvegger` implements the multivariable MR-Egger model
+ - `mrleaveoneout` implements leave one (genotype) out analysis
 
 ## Installing and updating mrrobust
 To install mrrobust in Stata versions 13 and later you have two choices.

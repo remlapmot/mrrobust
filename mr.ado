@@ -48,6 +48,9 @@ else if "`subcmd'" == "mvivw" {
 else if "`subcmd'" == "mvegger" {
 	mrmvegger `rest'
 }
+else if "`subcmd'" == "leaveoneout" {
+	mrleaveoneout `rest'
+}
 else {
     di as err "`subcmd' is not a valid subcommand."
     exit 198

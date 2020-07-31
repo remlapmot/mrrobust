@@ -19,7 +19,8 @@ mrfunnel ///
 mrmvivw ///
 mvivw ///
 mvmr ///
-mrmvegger
+mrmvegger ///
+mrleaveoneout
 
 foreach helpfile of local helpfiles {
 	type ../`helpfile'.sthlp

@@ -14,6 +14,8 @@
 {vieweralsosee "mrforest" "mrforest"}{...}
 {vieweralsosee "mrfunnel" "mrfunnel"}{...}
 {vieweralsosee "mrmvivw" "help mrmvivw"}{...}
+{vieweralsosee "mrmvegger" "help mrmvegger"}{...}
+{vieweralsosee "mrleaveoneout" "help mrleaveoneout"}{...}
 {viewerjumpto "Commands" "mrrobust##commands"}{...}
 {viewerjumpto "Description" "mrrobust##description"}{...}
 {viewerjumpto "Author" "mrrobust##author"}{...}
@@ -57,6 +59,8 @@
 {synopt :{opt {help mrmvivw}:}}Multivariable inverse variance weighted estimator (also {help mvivw} and {help mvmr})
 
 {synopt :{opt {help mrmvegger}:}}Multivariable MR-Egger regression
+
+{synopt :{opt {help mrleaveoneout}:}}Leave one out analysis
 
 {marker description}{...}
 {title:Description}
