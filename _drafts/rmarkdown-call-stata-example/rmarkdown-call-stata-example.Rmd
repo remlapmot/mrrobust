@@ -4,9 +4,10 @@ output:
   md_document:
     variant: gfm
     preserve_yaml: TRUE
+    toc: true
 ---
 
-# Example showing how to run mrrobust Stata code in an R Markdown script
+# Example showing mrrobust Stata code in an R Markdown file
 
 ## Introduction
 
@@ -54,14 +55,14 @@ data(gwas_catalog)
 ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
 
 # Extract from GLGC dataset
-exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 
 # Get outcome data from Cardiogram 2015
 outcome <- extract_outcome_data(exposure$SNP, 7)
 
 # Harmonise exposure and outcome datasets
 # Assume alleles are on the forward strand
-dat <- harmonise_data(exposure, outcome, action=1)
+dat <- harmonise_data(exposure, outcome, action = 1)
 ```
 At this point we have our harmonised genotype-exposure and genotype-outcome association data saved in an object in our R session called `dat`.
 
@@ -86,7 +87,7 @@ write.dta(dat, file = "dat.dta")
 ## Analysis in Stata using the mrrobust package
 
 At this point in Stata install the `mrrobust` package and its dependencies if you have not done so previously.
-```{stata}
+```{stata eval=FALSE}
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
