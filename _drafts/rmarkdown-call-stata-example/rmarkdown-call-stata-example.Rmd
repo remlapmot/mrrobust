@@ -61,7 +61,7 @@ outcome <- extract_outcome_data(exposure$SNP, 7)
 
 # Harmonise exposure and outcome datasets
 # Assume alleles are on the forward strand
-dat <- harmonise_data(exposure, outcome, action=1)
+dat <- harmonise_data(exposure, outcome, action = 1)
 ```
 At this point we have our harmonised genotype-exposure and genotype-outcome association data saved in an object in our R session called `dat`.
 
