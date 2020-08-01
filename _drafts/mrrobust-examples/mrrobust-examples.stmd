@@ -34,8 +34,9 @@ gr export mrforest.svg, width(600) replace
 ![Example forest plot of genotype specific IV estimates](mrforest.svg)
 
 ## mregger examples
-Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et al., 
-Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.
+Using the data provided by [Do et al. (2013)](https://doi.org/10.1038/ng.2795) 
+recreate [Bowden et al. (2016)](https://doi.org/10.1002/gepi.21965), 
+Table 4, LDL-c "All genetic variants" estimates.
 
 IVW (with fixed effect standard errors, i.e. variance of residuals 
 [residual variance] constrained to 1).
