@@ -3,7 +3,9 @@ di "`path'"
 cap noi adopath ++ "`path'"
 
 markstat using mrrobust-examples, markdown keep(do)
-foreach file in mrrobust-examples.md mrforest.svg mreggersimex-plot.svg mreggerplot.svg mrmodalplot.svg mrfunnel.svg {
+local filelist mrrobust-examples.md mrforest.svg mreggersimex-plot.svg mreggerplot.svg ///
+	mrmodalplot.svg mrfunnel.svg mrleaveoneout-plot-01.svg mrleaveoneout-plot-02.svg
+foreach file in `filelist' {
 	copy ./`file' ../../docs/`file', replace
 }
 
