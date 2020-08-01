@@ -11,6 +11,7 @@ gitget mrrobust
 ```
     
 ## Examples
+## Read in example data
 
 Read in example data.
 
