@@ -13,21 +13,25 @@ gitget mrrobust
 ## Examples
 
 Read in example data.
-	use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+```{stata}
+use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+```
 
 Select observations (*p*-value with exposure < 10^-8^).
-	gen byte sel1 = (ldlcp2 < 1e-8)
-
+```{stata}
+gen byte sel1 = (ldlcp2 < 1e-8)
+```
 
 ## mrforest examples
 Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates, 
 labelling the genotypes with their RSID.
-	mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
-		ivid(rsid) ///
-		xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
-	gr export mrforest.svg, width(600) replace
+```{stata}
+mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
+	ivid(rsid) ///
+	xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+gr export mrforest.svg, width(600) replace
+```
 ![Example forest plot of genotype specific IV estimates](mrforest.svg)
-
 
 ## mregger examples
 Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et al., 
