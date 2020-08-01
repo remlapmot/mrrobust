@@ -10,7 +10,6 @@ net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
     
-## Examples
 ## Read in example data
 
 Read in example data.
