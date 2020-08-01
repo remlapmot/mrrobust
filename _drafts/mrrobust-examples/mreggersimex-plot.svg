@@ -3,18 +3,18 @@
 
 <svg version="1.1" width="600px" height="436px" viewBox="0 0 3960 2880" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Stata Graph - mreggersimex</desc>
-	<rect x="0" y="0" width="3960" height="2880" style="fill:#E1E6F0;stroke:none"/>
-	<rect x="0.00" y="0.00" width="3959.88" height="2880.00" style="fill:#E1E6F0"/>
-	<rect x="2.88" y="2.88" width="3954.12" height="2874.24" style="fill:none;stroke:#E1E6F0;stroke-width:5.76"/>
-	<rect x="63.36" y="63.36" width="1916.64" height="2377.81" style="fill:#E1E6F0"/>
-	<rect x="65.52" y="65.52" width="1912.32" height="2373.49" style="fill:none;stroke:#E1E6F0;stroke-width:4.32"/>
+	<rect x="0" y="0" width="3960" height="2880" style="fill:#EAF2F3;stroke:none"/>
+	<rect x="0.00" y="0.00" width="3959.88" height="2880.00" style="fill:#EAF2F3"/>
+	<rect x="2.88" y="2.88" width="3954.12" height="2874.24" style="fill:none;stroke:#EAF2F3;stroke-width:5.76"/>
+	<rect x="63.36" y="63.36" width="1916.64" height="2377.81" style="fill:#EAF2F3"/>
+	<rect x="65.52" y="65.52" width="1912.32" height="2373.49" style="fill:none;stroke:#EAF2F3;stroke-width:4.32"/>
 	<rect x="356.40" y="138.98" width="1547.99" height="2009.02" style="fill:#FFFFFF"/>
 	<rect x="358.56" y="141.14" width="1543.67" height="2004.70" style="fill:none;stroke:#FFFFFF;stroke-width:4.32"/>
-	<line x1="356.40" y1="2100.47" x2="1904.39" y2="2100.47" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="1622.04" x2="1904.39" y2="1622.04" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="1143.49" x2="1904.39" y2="1143.49" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="665.05" x2="1904.39" y2="665.05" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="186.50" x2="1904.39" y2="186.50" style="stroke:#E1E6F0;stroke-width:6.48"/>
+	<line x1="356.40" y1="2100.47" x2="1904.39" y2="2100.47" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="1622.04" x2="1904.39" y2="1622.04" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="1143.49" x2="1904.39" y2="1143.49" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="665.05" x2="1904.39" y2="665.05" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="186.50" x2="1904.39" y2="186.50" style="stroke:#EAF2F3;stroke-width:6.48"/>
 	<circle cx="1856.74" cy="1861.26" r="19.70" style="fill:#000000"/>
 	<circle cx="1856.74" cy="1861.26" r="16.46" style="fill:none;stroke:#000000;stroke-width:6.48"/>
 	<circle cx="1614.57" cy="1490.24" r="19.70" style="fill:#000000"/>
@@ -125,13 +125,13 @@
 	<line x1="1856.87" y1="2148.00" x2="1856.87" y2="2178.07" style="stroke:#000000;stroke-width:4.32"/>
 	<text x="1856.87" y="2245.48" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">2</text>
 	<text x="1130.33" y="2328.02" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">λ</text>
-	<rect x="1980.00" y="63.36" width="1916.52" height="2377.81" style="fill:#E1E6F0"/>
-	<rect x="1982.16" y="65.52" width="1912.20" height="2373.49" style="fill:none;stroke:#E1E6F0;stroke-width:4.32"/>
+	<rect x="1980.00" y="63.36" width="1916.52" height="2377.81" style="fill:#EAF2F3"/>
+	<rect x="1982.16" y="65.52" width="1912.20" height="2373.49" style="fill:none;stroke:#EAF2F3;stroke-width:4.32"/>
 	<rect x="2273.04" y="138.98" width="1547.87" height="2009.02" style="fill:#FFFFFF"/>
 	<rect x="2275.20" y="141.14" width="1543.55" height="2004.70" style="fill:none;stroke:#FFFFFF;stroke-width:4.32"/>
-	<line x1="2273.04" y1="2100.47" x2="3820.91" y2="2100.47" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="2273.04" y1="1462.52" x2="3820.91" y2="1462.52" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="2273.04" y1="824.45" x2="3820.91" y2="824.45" style="stroke:#E1E6F0;stroke-width:6.48"/>
+	<line x1="2273.04" y1="2100.47" x2="3820.91" y2="2100.47" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="2273.04" y1="1462.52" x2="3820.91" y2="1462.52" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="2273.04" y1="824.45" x2="3820.91" y2="824.45" style="stroke:#EAF2F3;stroke-width:6.48"/>
 	<circle cx="3773.39" cy="578.43" r="19.70" style="fill:#000000"/>
 	<circle cx="3773.39" cy="578.43" r="16.46" style="fill:none;stroke:#000000;stroke-width:6.48"/>
 	<circle cx="3531.21" cy="1080.25" r="19.70" style="fill:#000000"/>

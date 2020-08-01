@@ -4,7 +4,7 @@ title: "Helpfile examples"
 
 # Examples from helpfiles in the mrrobust package
 
-## Install dependencies and mrrobust package
+## Install the mrrobust package
 ```
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
@@ -26,15 +26,14 @@ Select observations (*p*-value with exposure < 10^-8^).
 ```
 
 
-
 ## mrforest examples
 Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates, 
 labelling the genotypes with their RSID.
 
 ```stata
 . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
->     ivid(rsid) ///
->     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+> ivid(rsid) ///
+> xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 
 . gr export mrforest.svg, width(600) replace
 (file mrforest.svg written in SVG format)
@@ -42,10 +41,10 @@ labelling the genotypes with their RSID.
 
 ![Example forest plot of genotype specific IV estimates](mrforest.svg)
 
-
 ## mregger examples
-Using the data provided by Do et al., Nat Gen, 2013 recreate Bowden et al., 
-Gen Epi, 2016, Table 4, LDL-c "All genetic variants" estimates.
+Using the data provided by [Do et al. (2013)](https://doi.org/10.1038/ng.2795) 
+recreate [Bowden et al. (2016)](https://doi.org/10.1002/gepi.21965), 
+Table 4, LDL-c "All genetic variants" estimates.
 
 IVW (with fixed effect standard errors, i.e. variance of residuals 
 [residual variance] constrained to 1).
@@ -86,7 +85,7 @@ MR-Egger reporting I^2_GX statistic and heterogeneity Q-test.
 
 ```stata
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
->     gxse(ldlcse) heterogi
+> gxse(ldlcse) heterogi
 
                                            Q_GX statistic (weighted) = 3454.26
                                          I^2_GX statistic (weighted) =  97.92%
@@ -141,7 +140,7 @@ MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-t
 
 ```stata
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
->     radial heterogi
+> radial heterogi
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
@@ -156,14 +155,13 @@ radialGD     │
 ```
 
 
-
 ## mreggersimex examples
 SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain 
 SEs).
 
 ```stata
 . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
->     gxse(ldlcse) seed(12345) noboot
+> gxse(ldlcse) seed(12345) noboot
 
                                                       Number of genotypes = 73
                                                     Bootstrap replications = 0
@@ -181,7 +179,6 @@ SEs).
 
 ![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg)
 
-
 ## mreggerplot examples
 
 ```stata
@@ -192,7 +189,6 @@ SEs).
 ```
 
 ![Scatter plot of the MR-Egger model](mreggerplot.svg)
-
 
 ## mrmedian examples
 Weighted median estimator.
@@ -210,11 +206,10 @@ Weighted median estimator.
 ```
 
 
-
 ## mrmodal examples
 
 ```stata
-. mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+. mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
 
                                                       Number of genotypes = 73
                                                            Replications = 1000
@@ -222,7 +217,7 @@ Weighted median estimator.
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4198713   .2237762     1.88   0.061    -.0187219    .8584645
+        beta │   .4198713   .2267297     1.85   0.064    -.0245107    .8642533
 ─────────────┴────────────────────────────────────────────────────────────────
 
                                                       Number of genotypes = 73
@@ -231,7 +226,7 @@ Weighted median estimator.
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4218667   .1950497     2.16   0.031     .0395764    .8041571
+        beta │   .4218667   .1981169     2.13   0.033     .0335647    .8101688
 ─────────────┴────────────────────────────────────────────────────────────────
 
                                                       Number of genotypes = 73
@@ -240,7 +235,7 @@ Weighted median estimator.
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4917353   .1331011     3.69   0.000     .2308619    .7526086
+        beta │   .4917353   .1356432     3.63   0.000     .2258796     .757591
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . gr export mrmodalplot.svg, width(600) replace
@@ -260,7 +255,7 @@ Simple mode estimator.
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4917353   .1312092     3.75   0.000     .2345699    .7489007
+        beta │   .4917353   .1314983     3.74   0.000     .2340034    .7494672
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -276,7 +271,7 @@ Weighted mode estimator.
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4789702   .0663424     7.22   0.000     .3489415    .6089989
+        beta │   .4789702    .067441     7.10   0.000     .3467882    .6111522
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -292,7 +287,7 @@ Simple mode estimator with NOME assumption.
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4917353   .1306138     3.76   0.000      .235737    .7477336
+        beta │   .4917353   .1341723     3.66   0.000     .2287624    .7547081
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -307,3 +302,34 @@ Simple mode estimator with NOME assumption.
 ```
 
 ![Example funnel plot](mrfunnel.svg)
+
+## Leave one out analysis
+Create a smaller subset of data.
+
+```stata
+. gen byte sel2 = (ldlcp2 < 1e-25)
+```
+
+
+Perform leave one out analysis using the IVW estimator
+
+```stata
+. mrleaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid) noprint
+
+. gr export mrleaveoneout-plot-01.svg, width(600) replace
+(file mrleaveoneout-plot-01.svg written in SVG format)
+```
+
+![Leave one out analysis for the IVW estimate](mrleaveoneout-plot-01.svg)
+
+Perform leave one out analysis using MVMR collecting the estimate for LDL-c.
+
+```stata
+. mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, ///
+> method(mvmr) gyse(chdse) genotype(rsid) noprint
+
+. gr export mrleaveoneout-plot-02.svg, width(600) replace
+(file mrleaveoneout-plot-02.svg written in SVG format)
+```
+
+![Leave one out analysis for the MVMR estimate](mrleaveoneout-plot-02.svg)
