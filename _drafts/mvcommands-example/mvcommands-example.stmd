@@ -4,7 +4,7 @@ author: "Tom Palmer"
 date: "2020-07-02"
 ---
 
-# mv commands
+# Example demonstrating MVMR commands
 
 Read in the Do et al. example dataset.
 ```{stata}
