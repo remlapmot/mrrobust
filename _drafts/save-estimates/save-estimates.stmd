@@ -6,7 +6,12 @@ date: 2020-01-23
 
 # Example demonstrating how to collect and export results
 
-This example shows how to conveniently save and export your estimates using the `r(table)` matrix that is now returned by each command.
+* [Setup example data](#setup-example-data)
+* [Fit estimators - collecting results using `r(table)` matrix](#fit)
+* [Combine and export results](#combine-and-export-results)
+
+This example shows how to conveniently save and export your estimates using the `r(table)` matrix 
+that is now returned by each command.
 
 ## Setup example data
 ```{stata}
@@ -18,7 +23,7 @@ Select observations (p-value with exposure < 10^-8)
 gen byte sel1 = (ldlcp2 < 1e-8)
 ```
 
-## Fit estimators - collecting results using `r(table)` matrix
+## Fit estimators - collecting results using `r(table)` matrix {#fit}
 
 IVW (with fixed effect standard errors)
 ```{stata}

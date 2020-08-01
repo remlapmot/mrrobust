@@ -1,4 +1,8 @@
-# mv commands
+# Example demonstrating MVMR commands
+
+-   [MV-IVW (MVMR)](#mvmr)
+-   [MVMR-Egger](#mvmr-egger)
+-   [References](#references)
 
 Read in the Do et al. example dataset.
 
