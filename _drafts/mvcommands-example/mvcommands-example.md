@@ -4,7 +4,11 @@ author: "Tom Palmer"
 date: "2020-07-02"
 ---
 
-# mv commands
+# Example demonstrating MVMR commands
+
+* [MV-IVW (MVMR)](#mvmr)
+* [MVMR-Egger](#mvmr-egger)
+* [References](#references)
 
 Read in the Do et al. example dataset.
 
@@ -20,7 +24,7 @@ Select observations (p-value with LDL-C < 10<sup>-8</sup>)
 ```
 
 
-## MV-IVW (MVMR)
+## MV-IVW (MVMR) {#mvmr}
 
 Fit the multivariable inverse-variance weighted (MV-IVW a.k.a. multivariable 
 Mendelian randomization, MVMR) estimator with phenotypes LDL-c and HDL-c [@burgess-aje-2015].
@@ -63,7 +67,8 @@ chdbeta      │
 
 
 Report the Q<sub>A</sub> statistic for instrument validity and the conditional 
-F-statistics for instrument strength for each phenotype [@sanderson-ije-2019; @sanderson-biorxiv-2020].
+F-statistics for instrument strength for each phenotype [@sanderson-ije-2019; 
+@sanderson-biorxiv-2020].
 
 ```stata
 . mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, ///
