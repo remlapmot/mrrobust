@@ -123,3 +123,24 @@ mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
 gr export mrfunnel.svg, width(600) replace
 ```
 ![Example funnel plot](mrfunnel.svg)
+
+## Leave one out analysis
+Create a smaller subset of data.
+```{stata}
+gen byte sel2 = (ldlcp2 < 1e-25)
+```
+
+Perform leave one out analysis using the IVW estimator
+```{stata}
+mrleaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid) noprint
+gr export mrleaveoneout-plot-01.svg, width(600) replace
+```
+![Leave one out analysis for the IVW estimate](mrleaveoneout-plot-01.svg)
+
+Perform leave one out analysis using MVMR collecting the estimate for LDL-c.
+```{stata}
+mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, ///
+	method(mvmr) gyse(chdse) genotype(rsid) noprint
+gr export mrleaveoneout-plot-02.svg, width(600) replace
+```
+![Leave one out analysis for the MVMR estimate](mrleaveoneout-plot-02.svg)
