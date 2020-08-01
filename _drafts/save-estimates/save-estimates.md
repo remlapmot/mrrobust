@@ -6,7 +6,12 @@ date: 2020-01-23
 
 # Example demonstrating how to collect and export results
 
-This example shows how to conveniently save and export your estimates using the `r(table)` matrix that is now returned by each command.
+* [Setup example data](#setup-example-data)
+* [Fit estimators - collecting results using `r(table)` matrix](#fit)
+* [Combine and export results](#combine-and-export-results)
+
+This example shows how to conveniently save and export your estimates using the `r(table)` matrix 
+that is now returned by each command.
 
 ## Setup example data
 
@@ -22,7 +27,7 @@ Select observations (p-value with exposure < 10^-8)
 ```
 
 
-## Fit estimators - collecting results using `r(table)` matrix
+## Fit estimators - collecting results using `r(table)` matrix {#fit}
 
 IVW (with fixed effect standard errors)
 
@@ -91,7 +96,7 @@ Weighted mode estimator
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4789702   .0676757     7.08   0.000     .3463282    .6116122
+        beta │   .4789702   .0672551     7.12   0.000     .3471526    .6107879
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . mat mode = r(table)
@@ -108,7 +113,7 @@ Weighted median estimator
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4582573   .0624496     7.34   0.000     .3358585    .5806562
+        beta │   .4582573   .0657043     6.97   0.000     .3294793    .5870354
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . mat median = r(table)
@@ -177,11 +182,11 @@ pvalue   2.862e-08   .10563675
 mode[9,1]
              beta
      b   .4789702
-    se  .06767571
-     z  7.0774315
-pvalue  1.469e-12
-    ll  .34632825
-    ul  .61161216
+    se  .06725514
+     z  7.1216895
+pvalue  1.066e-12
+    ll  .34715256
+    ul  .61078785
     df          .
   crit   1.959964
  eform          0
@@ -191,11 +196,11 @@ pvalue  1.469e-12
 median[9,1]
              beta
      b  .45825733
-    se  .06244955
-     z  7.3380403
-pvalue  2.167e-13
-    ll  .33585845
-    ul   .5806562
+    se  .06570429
+     z  6.9745418
+pvalue  3.069e-12
+    ll  .32947928
+    ul  .58703537
     df          .
   crit   1.959964
  eform          0
@@ -217,23 +222,14 @@ Combined into single matrix
 . mat list output, format(%4.3f)
 
 output[7,9]
-                   b      se       z  pvalue      ll      ul      df    crit
-    ivw_beta   0.482   0.038  12.598   0.000   0.407   0.556       .   1.960
-mregger_beta   0.617   0.103   5.967   0.000   0.415   0.820       .   1.960
-mregger_cons  -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960
- radial_beta   0.643   0.116   5.550   0.000   0.416   0.870       .   1.960
- radial_cons  -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960
-   mode_beta   0.479   0.068   7.077   0.000   0.346   0.612       .   1.960
- median_beta   0.458   0.062   7.338   0.000   0.336   0.581       .   1.960
-
-               eform
-    ivw_beta   0.000
-mregger_beta   0.000
-mregger_cons   0.000
- radial_beta   0.000
- radial_cons   0.000
-   mode_beta   0.000
- median_beta   0.000
+                   b      se       z  pvalue      ll      ul      df    crit   eform
+    ivw_beta   0.482   0.038  12.598   0.000   0.407   0.556       .   1.960   0.000
+mregger_beta   0.617   0.103   5.967   0.000   0.415   0.820       .   1.960   0.000
+mregger_cons  -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960   0.000
+ radial_beta   0.643   0.116   5.550   0.000   0.416   0.870       .   1.960   0.000
+ radial_cons  -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960   0.000
+   mode_beta   0.479   0.067   7.122   0.000   0.347   0.611       .   1.960   0.000
+ median_beta   0.458   0.066   6.975   0.000   0.329   0.587       .   1.960   0.000
 ```
 
 
@@ -250,8 +246,7 @@ number of observations (_N) was 0, now 7
 . local rownames : rownames output
 
 . di "`rownames'"
-ivw_beta mregger_beta mregger_cons radial_beta radial_cons mode_beta median_bet
-> a
+ivw_beta mregger_beta mregger_cons radial_beta radial_cons mode_beta median_beta
 
 . tokenize `rownames'
 
@@ -276,22 +271,14 @@ Show dataset
 ```stata
 . list estimate b se z pvalue ll ul, clean noobs
 
-        estimate           b         se          z     pvalue          ll      
->    ul  
-        ivw_beta    .4815055    .038221   12.59794   2.17e-36    .4065938   .55
-> 64172  
-    mregger_beta    .6173131   .1034573   5.966837   2.42e-09    .4145405   .82
-> 00858  
-    mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .00
-> 19723  
-     radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .86
-> 95205  
-     radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .12
-> 12062  
-       mode_beta    .4789702   .0676757   7.077432   1.47e-12    .3463283   .61
-> 16121  
-     median_beta    .4582573   .0624496    7.33804   2.17e-13    .3358585   .58
-> 06562  
+        estimate           b         se          z     pvalue          ll         ul  
+        ivw_beta    .4815055    .038221   12.59794   2.17e-36    .4065938   .5564172  
+    mregger_beta    .6173131   .1034573   5.966837   2.42e-09    .4145405   .8200858  
+    mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .0019723  
+     radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .8695205  
+     radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .1212062  
+       mode_beta    .4789702   .0672551   7.121689   1.07e-12    .3471526   .6107879  
+     median_beta    .4582573   .0657043   6.974542   3.07e-12    .3294793   .5870354  
 ```
 
 
