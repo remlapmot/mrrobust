@@ -1,6 +1,6 @@
 # Example demonstrating MVMR commands
 
--   [MV-IVW (MVMR)](#mvmr)
+-   [MV-IVW](#mv-ivw)
 -   [MVMR-Egger](#mvmr-egger)
 -   [References](#references)
 
@@ -16,7 +16,7 @@ Select observations (p-value with LDL-C \< 10<sup>-8</sup>)
 . gen byte sel1 = (ldlcp2 < 1e-8)
 ```
 
-## MV-IVW (MVMR)
+## MV-IVW
 
 Fit the multivariable inverse-variance weighted (MV-IVW a.k.a.
 multivariable Mendelian randomization, MVMR) estimator with phenotypes
