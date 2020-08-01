@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}20 Jul 2020, 17:19:50
+ {txt}opened on:  {res} 1 Aug 2020, 16:44:52
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -13,8 +13,8 @@
 {txt}
 {com}. //_3
 . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
->     ivid(rsid) ///
->     xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+> ivid(rsid) ///
+> xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 {res}{txt}
 {com}. gr export mrforest.svg, width(600) replace
 {txt}(file mrforest.svg written in SVG format)
@@ -46,7 +46,7 @@
 
 {com}. //_6
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
->     gxse(ldlcse) heterogi
+> gxse(ldlcse) heterogi
 
 {col 44}{txt}Q_GX statistic (weighted) = {res}3454.26
 {col 42}{txt}I^2_GX statistic (weighted) = {res} 97.92%
@@ -89,7 +89,7 @@
 
 {com}. //_9
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
->     radial heterogi
+> radial heterogi
 
 {col 55}{txt}Number of genotypes = {res}73
 {col 47}{txt}Residual standard error = {res} 1.547
@@ -104,7 +104,7 @@
 
 {com}. //_10
 . mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
->     gxse(ldlcse) seed(12345) noboot
+> gxse(ldlcse) seed(12345) noboot
 {res}
 {col 55}{txt}Number of genotypes = {res}73
 {col 53}{txt}Bootstrap replications = {res}0
@@ -137,7 +137,7 @@
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_13
-. mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+. mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
 {res}
 {col 55}{txt}Number of genotypes = {res}73
 {col 60}{txt}Replications = {res}1000
@@ -145,7 +145,7 @@
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4198713{col 26}{space 2} .2237762{col 37}{space 1}    1.88{col 46}{space 3}0.061{col 54}{space 4}-.0187219{col 67}{space 3} .8584645
+{space 8}beta {c |}{col 14}{res}{space 2} .4198713{col 26}{space 2} .2267297{col 37}{space 1}    1.85{col 46}{space 3}0.064{col 54}{space 4}-.0245107{col 67}{space 3} .8642533
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}
 {col 55}{txt}Number of genotypes = {res}73
@@ -154,7 +154,7 @@
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4218667{col 26}{space 2} .1950497{col 37}{space 1}    2.16{col 46}{space 3}0.031{col 54}{space 4} .0395764{col 67}{space 3} .8041571
+{space 8}beta {c |}{col 14}{res}{space 2} .4218667{col 26}{space 2} .1981169{col 37}{space 1}    2.13{col 46}{space 3}0.033{col 54}{space 4} .0335647{col 67}{space 3} .8101688
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}
 {col 55}{txt}Number of genotypes = {res}73
@@ -163,7 +163,7 @@
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1331011{col 37}{space 1}    3.69{col 46}{space 3}0.000{col 54}{space 4} .2308619{col 67}{space 3} .7526086
+{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1356432{col 37}{space 1}    3.63{col 46}{space 3}0.000{col 54}{space 4} .2258796{col 67}{space 3}  .757591
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}{txt}
 {com}. gr export mrmodalplot.svg, width(600) replace
@@ -178,7 +178,7 @@
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1312092{col 37}{space 1}    3.75{col 46}{space 3}0.000{col 54}{space 4} .2345699{col 67}{space 3} .7489007
+{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1314983{col 37}{space 1}    3.74{col 46}{space 3}0.000{col 54}{space 4} .2340034{col 67}{space 3} .7494672
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_15
@@ -190,7 +190,7 @@
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2} .0663424{col 37}{space 1}    7.22{col 46}{space 3}0.000{col 54}{space 4} .3489415{col 67}{space 3} .6089989
+{space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2}  .067441{col 37}{space 1}    7.10{col 46}{space 3}0.000{col 54}{space 4} .3467882{col 67}{space 3} .6111522
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_16
@@ -202,7 +202,7 @@
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1306138{col 37}{space 1}    3.76{col 46}{space 3}0.000{col 54}{space 4}  .235737{col 67}{space 3} .7477336
+{space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1341723{col 37}{space 1}    3.66{col 46}{space 3}0.000{col 54}{space 4} .2287624{col 67}{space 3} .7547081
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_17
@@ -211,12 +211,28 @@
 {com}. gr export mrfunnel.svg, width(600) replace
 {txt}(file mrfunnel.svg written in SVG format)
 
+{com}. //_18
+. gen byte sel2 = (ldlcp2 < 1e-25)
+{txt}
+{com}. //_19
+. mrleaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid) noprint
+{res}{txt}
+{com}. gr export mrleaveoneout-plot-01.svg, width(600) replace
+{txt}(file mrleaveoneout-plot-01.svg written in SVG format)
+
+{com}. //_20
+. mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, ///
+> method(mvmr) gyse(chdse) genotype(rsid) noprint
+{res}{txt}
+{com}. gr export mrleaveoneout-plot-02.svg, width(600) replace
+{txt}(file mrleaveoneout-plot-02.svg written in SVG format)
+
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}20 Jul 2020, 17:20:08
+ {txt}closed on:  {res} 1 Aug 2020, 16:45:14
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
