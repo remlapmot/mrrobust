@@ -40,62 +40,86 @@ Table 4, LDL-c "All genetic variants" estimates.
 
 IVW (with fixed effect standard errors, i.e. variance of residuals 
 [residual variance] constrained to 1).
-	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+```{stata}
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+```
 
 MR-Egger (with SEs using an unconstrained residual variance 
 [multiplicative random effects]).
-	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+```{stata}
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
+```
 
 MR-Egger reporting I^2_GX statistic and heterogeneity Q-test.
-	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
-		gxse(ldlcse) heterogi
+```{stata}
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	gxse(ldlcse) heterogi
+```
 
 MR-Egger using a t-distribution for inference (p-values) & CI limits.
-	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
+```{stata}
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
+```
 
 MR-Egger using the radial formulation.
-	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+```{stata}
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+```
 
 MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-test.
-	mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
-		radial heterogi
-
+```{stata}
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
+	radial heterogi
+```
 
 ## mreggersimex examples
 SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain 
 SEs).
-	mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
-		gxse(ldlcse) seed(12345) noboot
-	gr export mreggersimex-plot.svg, width(600) replace
+```{stata}
+mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
+	gxse(ldlcse) seed(12345) noboot
+gr export mreggersimex-plot.svg, width(600) replace
+```
 ![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg)
 
-
 ## mreggerplot examples
-	mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
-	gr export mreggerplot.svg, width(600) replace
+```{stata}
+mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+gr export mreggerplot.svg, width(600) replace
+```
 ![Scatter plot of the MR-Egger model](mreggerplot.svg)
-
 
 ## mrmedian examples
 Weighted median estimator.
-	mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
-
+```{stata}
+mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+```
 
 ## mrmodal examples
-	mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1
-	gr export mrmodalplot.svg, width(600) replace
+```{stata}
+mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
+gr export mrmodalplot.svg, width(600) replace
+```
 ![Densities of the IV estimates using different values of phi](mrmodalplot.svg)
 
 Simple mode estimator.
-	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
+```{stata}
+mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
+```
 
 Weighted mode estimator.
-	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+```{stata}
+mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
+```
 
 Simple mode estimator with NOME assumption.
-	mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
+```{stata}
+mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
+```
 
 ## mrfunnel examples
-	mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
-	gr export mrfunnel.svg, width(600) replace
+```{stata}
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+gr export mrfunnel.svg, width(600) replace
+```
 ![Example funnel plot](mrfunnel.svg)
