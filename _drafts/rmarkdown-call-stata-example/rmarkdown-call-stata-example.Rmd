@@ -4,6 +4,7 @@ output:
   md_document:
     variant: gfm
     preserve_yaml: TRUE
+    toc: true
 ---
 
 # Example showing mrrobust Stata code in an R Markdown file
