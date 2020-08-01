@@ -55,7 +55,7 @@ Genetic variants were pruned so as to be independent ($R^2$ = 0.0001), and the e
 aligned between the exposure and outcome datasets using the MRBase web application, prior to 
 implementing `mrrobust`.
 
-## Stata output for each estimation method using mrrobust: BMI-Serum Glucose{#estimation}
+## Stata output for each estimation method using mrrobust: BMI-Serum Glucose {#estimation}
 ### Read in data
 
 ```stata
@@ -125,7 +125,7 @@ betaoutcome  │
 ```
 
 
-## Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose{#mode}
+## Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose {#mode}
 Using the `mrmodalplot` command, modal estimates are calculated using bandwidths of 0.25,
 0.5, and 1 respectively. This command also produces three overlaid density plots for each
 value, as shown in the Figure.
@@ -168,7 +168,7 @@ value, as shown in the Figure.
 ![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg)
 
     
-## Stata output for each estimation method using mrrobust: Height-Serum Glucose{#height}
+## Stata output for each estimation method using mrrobust: Height-Serum Glucose {#height}
 ### Read in data
 
 ```stata
@@ -238,7 +238,7 @@ betaoutcome  │
 ```
 
 
-## Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose{#height-mode}
+## Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose {#height-mode}
 
 ```stata
 . mrmodalplot betaoutcome seoutcome betaexposure seexposure, ///
