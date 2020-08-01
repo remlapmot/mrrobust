@@ -4,13 +4,24 @@ title: "Helpfile examples"
 
 # Examples from helpfiles in the mrrobust package
 
+* [Install the mrrobust package](#install-the-mrrobust-package)
+* [Read in example data](#read-in-example-data)
+* [mrforest examples](#mrforest-examples)
+* [mregger examples](#mregger-examples)
+* [mreggersimex examples](#mreggersimex-examples)
+* [mreggerplot examples](#mreggerplot-examples)
+* [mrmedian examples](#mrmedian-examples)
+* [mrmodal examples](#mrmodal-examples)
+* [mrfunnel examples](#mrfunnel-examples)
+* [Leave one out analysis](#leave-one-out-analysis)
+
 ## Install the mrrobust package
 ```
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
     
-## Examples
+## Read in example data
 
 Read in example data.
 
