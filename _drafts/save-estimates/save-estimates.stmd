@@ -7,6 +7,8 @@ date: 2020-01-23
 # Example demonstrating how to collect and export results
 
 This example shows how to conveniently save and export your estimates using the `r(table)` matrix that is now returned by each command.
+This example shows how to conveniently save and export your estimates using the `r(table)` matrix 
+that is now returned by each command.
 
 ## Setup example data
 ```{stata}
