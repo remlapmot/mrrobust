@@ -1,4 +1,4 @@
-* ssc install markdoc
+* ssc install log2html
 
 local helpfiles mrrobust mr mrdeps mregger mreggerplot mreggersimex ///
 	mrmedian mrmedianobs mrmodal mrmodalplot ///
