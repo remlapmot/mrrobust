@@ -34,7 +34,7 @@ Type 'q()' to quit R.
 > ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
 > 
 > # Extract from GLGC dataset
-> exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+> exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 > 
 > # Get outcome data from Cardiogram 2015
 > outcome <- extract_outcome_data(exposure$SNP, 7)
@@ -59,10 +59,10 @@ Type 'q()' to quit R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06191076 1.712795e-13
-2 0.03895722 4.216716e-36
+2 0.03788048 4.389972e-38
 3 0.03923672 6.392333e-33
-4 0.06216638 2.876028e-10
-5 0.03194083 7.807418e-24
+4 0.06952032 6.722220e-09
+5 0.03554062 1.417609e-21
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
