@@ -2,6 +2,12 @@
 title: markstat example
 ---
 
+* [Run MR-Base from a Stata do-file or Stata Markdown script](#title)
+  * [Introduction](#introduction)
+  * [Extracting data from MR-Base](#extracting-data-from-mr-base)
+  * [Performing the analysis using mrrobust in Stata](#performing-the-analysis-using-mrrobust-in-stata)
+  * [References](#references)
+
 # Run MR-Base from a Stata do-file or Stata Markdown script {#title}
 
 ## Introduction
