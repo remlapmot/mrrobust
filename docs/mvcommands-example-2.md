@@ -1,8 +1,10 @@
-# Example demonstrating MVMR commands
+-   [Example demonstrating MVMR
+    commands](#example-demonstrating-mvmr-commands)
+    -   [MV-IVW](#mv-ivw)
+    -   [MVMR-Egger](#mvmr-egger)
+    -   [References](#references)
 
--   [MV-IVW](#mv-ivw)
--   [MVMR-Egger](#mvmr-egger)
--   [References](#references)
+# Example demonstrating MVMR commands
 
 Read in the Do et al. example dataset.
 
