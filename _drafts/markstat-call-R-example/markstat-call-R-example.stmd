@@ -103,7 +103,6 @@ mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 
 It is helpful to view the forest plot of genotype specific IV estimates.
 ```s
-decode SNP, gen(rsid)
 mrforest beta_outcome se_outcome beta_exposure se_exposure, ivid(rsid)
 graph export ldl-chd-mrforest.svg, width(600) replace
 ```
