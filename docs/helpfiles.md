@@ -7,6 +7,7 @@ mrrobust helpfiles
 - [mr](../helpfiles/mr)
 - [mrdeps](../helpfiles/mrdeps)
 - [mregger](../helpfiles/mregger)
+- [mreggerplot](../helpfiles/mreggerplot)
 - [mreggersimex](../helpfiles/mreggersimex)
 - [mrmedian](../helpfiles/mrmedian)
 - [mrmedianobs](../helpfiles/mrmedianobs)

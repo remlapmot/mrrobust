@@ -1,0 +1,81 @@
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+BODY{background-color: ffffff;
+    font-family: monaco, "courier new", monospace;
+     color: #000000}
+.input, .result, .error{font-weight: bold}
+.input {color: #CC6600}
+.result{color: #000099}
+.error{color: #dd0000}
+</style>
+</head>
+<body>
+<pre>
+<span class=result><u>Title</u></span>
+<br><br>
+     <span class=result>mr</span> -- Mendelian randomization programs
+<br><br>
+<a name="syntax"></a><span class=result><u>Syntax</u></span>
+<br><br>
+        <span class=result>mr</span> <i>subcommand</i> ... [<i>aweight</i>] [<i>if</i>] [<i>in</i>] [<span class=result>,</span> <i>options</i>]
+<br><br>
+<a name="description"></a><span class=result><u>Description</u></span>
+<br><br>
+    <span class=result>mr</span> is a simple wrapper to the commands in the mrrobust package.
+<br><br>
+    The <i>subcommand</i> is specified as the mrrobust program name without its mr prefix, i.e. <span class=result>mregger</span>
+    <span class=result>...</span> can alternatively be run using the syntax <span class=result>mr egger ...</span>.
+<br><br>
+<a name="options"></a><span class=result><u>Options</u></span>
+<br><br>
+    <span class=result>mr</span> takes the options for the specified subcommand.
+<br><br>
+<a name="examples"></a><span class=result><u>Examples</u></span>
+<br><br>
+    Using the data provided by Do et al. (2013) recreate Bowden et al. (2016), Table 4, LDL-c "All
+    genetic variants" estimates.
+<br><br>
+    Setup
+        <span class=result>.</span> use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+<br><br>
+    Select observations (<i>p</i>-value with exposure &lt; 10^-8)
+        <span class=result>.</span> gen byte sel1 = (ldlcp2 &lt; 1e-8)
+<br><br>
+    IVW (with fixed effect standard errors)
+        <span class=result>.</span> mr egger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
+<br><br>
+    Scatter plot of MR-Egger model
+        <span class=result>.</span> mr eggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
+<br><br>
+    Multivariable IVW
+        <span class=result>.</span> mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+<br><br>
+<a name="results"></a><span class=result><u>Stored results</u></span>
+<br><br>
+    <span class=result>mr</span> returns the results from the specified subcommand.
+<br><br>
+<a name="references"></a><br><br>
+<span class=result><u>References</u></span>
+<br><br>
+<a name="bowden"></a>    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian
+        randomization with some invalid instruments using a weighted median estimator. Genetic
+        Epidemiology, 2016, 40, 4, 304-314.  DOI
+<br><br>
+<a name="do"></a>    Do et al., 2013. Common variants associated with plasma triglycerides and risk for coronary
+        artery disease. Nature Genetics. 45, 1345–1352.  DOI
+<br><br>
+<a name="author"></a><br><br>
+<span class=result><u>Author</u></span>
+<br><br>
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of
+        Bristol, UK. tom.palmer@bristol.ac.uk.
+<br><br>
+    If you find any bugs or have questions please send me an email or create an issue on the
+        GitHub repo: https://github.com/remlapmot/mrrobust/issues
+</pre>
+</body>
+</html>
