@@ -4,11 +4,12 @@ author: Tom Palmer
 date: 2020-01-23
 ---
 
-# Example demonstrating how to collect and export results
+* [Example demonstrating how to collect and export results](#example-demonstrating-how-to-collect-and-export-results)
+  * [Setup example data](#setup-example-data)
+  * [Fit estimators - collecting results using `r(table)` matrix](#fit)
+  * [Combine and export results](#combine-and-export-results)
 
-* [Setup example data](#setup-example-data)
-* [Fit estimators - collecting results using `r(table)` matrix](#fit)
-* [Combine and export results](#combine-and-export-results)
+# Example demonstrating how to collect and export results
 
 This example shows how to conveniently save and export your estimates using the `r(table)` matrix 
 that is now returned by each command.
@@ -96,7 +97,7 @@ Weighted mode estimator
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4789702   .0672551     7.12   0.000     .3471526    .6107879
+        beta │   .4789702   .0684667     7.00   0.000      .344778    .6131624
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . mat mode = r(table)
@@ -113,7 +114,7 @@ Weighted median estimator
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4582573   .0657043     6.97   0.000     .3294793    .5870354
+        beta │   .4582573   .0631822     7.25   0.000     .3344224    .5820923
 ─────────────┴────────────────────────────────────────────────────────────────
 
 . mat median = r(table)
@@ -182,11 +183,11 @@ pvalue   2.862e-08   .10563675
 mode[9,1]
              beta
      b   .4789702
-    se  .06725514
-     z  7.1216895
-pvalue  1.066e-12
-    ll  .34715256
-    ul  .61078785
+    se  .06846666
+     z  6.9956707
+pvalue  2.640e-12
+    ll  .34477802
+    ul  .61316239
     df          .
   crit   1.959964
  eform          0
@@ -196,11 +197,11 @@ pvalue  1.066e-12
 median[9,1]
              beta
      b  .45825733
-    se  .06570429
-     z  6.9745418
-pvalue  3.069e-12
-    ll  .32947928
-    ul  .58703537
+    se  .06318225
+     z  7.2529445
+pvalue  4.078e-13
+    ll   .3344224
+    ul  .58209225
     df          .
   crit   1.959964
  eform          0
@@ -228,8 +229,8 @@ mregger_beta   0.617   0.103   5.967   0.000   0.415   0.820       .   1.960   0
 mregger_cons  -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960   0.000
  radial_beta   0.643   0.116   5.550   0.000   0.416   0.870       .   1.960   0.000
  radial_cons  -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960   0.000
-   mode_beta   0.479   0.067   7.122   0.000   0.347   0.611       .   1.960   0.000
- median_beta   0.458   0.066   6.975   0.000   0.329   0.587       .   1.960   0.000
+   mode_beta   0.479   0.068   6.996   0.000   0.345   0.613       .   1.960   0.000
+ median_beta   0.458   0.063   7.253   0.000   0.334   0.582       .   1.960   0.000
 ```
 
 
@@ -277,8 +278,8 @@ Show dataset
     mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .0019723  
      radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .8695205  
      radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .1212062  
-       mode_beta    .4789702   .0672551   7.121689   1.07e-12    .3471526   .6107879  
-     median_beta    .4582573   .0657043   6.974542   3.07e-12    .3294793   .5870354  
+       mode_beta    .4789702   .0684667   6.995671   2.64e-12     .344778   .6131624  
+     median_beta    .4582573   .0631822   7.252944   4.08e-13    .3344224   .5820922  
 ```
 
 

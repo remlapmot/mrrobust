@@ -4,15 +4,16 @@ title: "IJE examples"
 #date: "30 August 2018"
 ---
 
-# Examples from our IJE paper
+* [Examples from our IJE paper](#examples-from-our-ije-paper)
+  * [mrrobust set-up](#mrrobust-set-up)
+  * [Summary data description and overview](#summary-data-description-and-overview)
+  * [Stata output for each estimation method using mrrobust: BMI-Serum Glucose](#estimation)
+  * [Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose](#mode)
+  * [Stata output for each estimation method using mrrobust: Height-Serum Glucose](#height)
+  * [Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose](#height-mode)
+  * [References](#references)
 
-* [mrrobust set-up](#mrrobust-set-up)
-* [Summary data description and overview](#summary-data-description-and-overview)
-* [Stata output for each estimation method using mrrobust: BMI-Serum Glucose](#estimation)
-* [Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose](#mode)
-* [Stata output for each estimation method using mrrobust: Height-Serum Glucose](#height)
-* [Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose](#height-mode)
-* [References](#references)
+# Examples from our IJE paper
 
 The paper is available [here](https://doi.org/10.1093/ije/dyy195).
 
