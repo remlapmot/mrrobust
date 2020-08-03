@@ -89,8 +89,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
 Click [here](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs) for a short video 
 demonstrating the use of the package.
 
-[<img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300">]
-(https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
+[<img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300">](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
 
 ## Helpfile examples
 Click [here](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples) for some of the code and 
