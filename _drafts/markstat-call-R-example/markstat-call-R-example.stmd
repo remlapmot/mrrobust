@@ -52,7 +52,7 @@ data(gwas_catalog)
 ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
 
 # Extract from GLGC dataset
-exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, 300))
+exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 
 # Get outcome data from Cardiogram 2015
 outcome <- extract_outcome_data(exposure$SNP, 7)
