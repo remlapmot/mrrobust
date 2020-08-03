@@ -24,5 +24,5 @@ whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // wherever your
 
 * ado uninstall mrrobust
 
-* Requirement to build helpfiles as md
-ssc install markdoc
+* Requirement to build helpfiles as html
+ssc install log2html
