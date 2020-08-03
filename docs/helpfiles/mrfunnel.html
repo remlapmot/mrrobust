@@ -1,0 +1,104 @@
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+BODY{background-color: ffffff;
+    font-family: monaco, "courier new", monospace;
+     color: #000000}
+.input, .result, .error{font-weight: bold}
+.input {color: #CC6600}
+.result{color: #000099}
+.error{color: #dd0000}
+</style>
+</head>
+<body>
+<pre>
+<span class=result><u>Title</u></span>
+<br><br>
+     <span class=result>mrfunnel</span> -- Funnel plot for two-sample MR analysis
+<br><br>
+<a name="syntax"></a><span class=result><u>Syntax</u></span>
+<br><br>
+        <span class=result>mrfunnel</span> <i>varname_gd</i> <i>varname_gdse</i> <i>varname_gp</i> <i>varname_gpse</i> [<i>if</i>] [<i>in</i>] [<span class=result>,</span> <i>options</i>]
+<br><br>
+    <i>options</i>               Description
+    ----------------------------------------------------------------------------------------------
+      <span class=result><u>m</u></span><span class=result>etric(</span><i>metric</i><span class=result>)</span>      scale of <i>y</i>-axis
+      <span class=result>noivw</span>               do not plot IVW line
+      <span class=result>nomregger</span>           do not plot MR-Egger line
+      <span class=result><u>mrivests</u></span><span class=result>opts(</span><i>opts</i><span class=result>)</span>  options passed to mrivests
+      <span class=result>*</span>                   Other options passed to the plot
+<br><br>
+<a name="description"></a><span class=result><u>Description</u></span>
+<br><br>
+    <span class=result>mrfunnel</span> provides a funnel plot for a two-sample Mendelian randomization analysis.
+<br><br>
+    There are 3 choices of measures of instrument strength to plot on the <i>y</i>-axis, which are
+    described below.
+ 
+    On the plot the MR-Egger estimate is the line with the longer dashes, the IVW estimate is
+    shown with the shorter dashes.
+<br><br>
+    <i>varname_gd</i> is a variable containing the genotype-disease association estimates.
+<br><br>
+    <i>varname_gdse</i> is a variable containing the genotype-disease association estimate standard
+    errors.
+<br><br>
+    <i>varname_gp</i> is a variable containing the genotype-phenotype association estimates.
+<br><br>
+    <i>varname_gpse</i> is a variable containing the genotype-phenotype association estimate standard
+    errors.
+<br><br>
+<a name="options"></a><span class=result><u>Options</u></span>
+<br><br>
+    <span class=result><u>m</u></span><span class=result>etric(</span><i>gpbeta</i>|<i>gpbetastd</i>|<i>invse</i><span class=result>)</span> specifies the metric for the <i>y</i>-axis. Can be one of:
+    - <span class=result>gpbeta</span>: the absolute value of the genotype-phenotype estimates,
+    - <span class=result>gpbetastd</span>: gpbeta standardised by the genotype-disease standard errors (the default),
+    - <span class=result>invse</span>: the inverse of the standard errors on the genotype specific IV ratio estimates.
+<br><br>
+<a name="examples"></a><span class=result><u>Examples</u></span>
+<br><br>
+    Using the data provided by Do et al. (2013) recreate Bowden et al. (2016) Web Figure A2
+    (top-right plot, LDL-C with 73 genotypes).
+<br><br>
+    Setup
+        <span class=result>.</span> use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+<br><br>
+    Select observations (<i>p</i>-value with exposure &lt; 10^-8)
+        <span class=result>.</span> gen byte sel1 = (ldlcp2 &lt; 1e-8)
+<br><br>
+    Funnel plot
+        <span class=result>.</span> mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+<br><br>
+    Without adding the IVW and MR-Egger estimates
+        <span class=result>.</span> mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, noivw nomregger
+<br><br>
+    Using an unstandardised <i>y</i>-axis
+        <span class=result>.</span> mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(gpbeta)
+<br><br>
+    Using inverse IV SEs on the <i>y</i>-axis
+        <span class=result>.</span> mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(invse)
+<br><br>
+<br><br>
+<a name="references"></a><span class=result><u>References</u></span>
+<br><br>
+<a name="do"></a>    Do et al., 2013. Common variants associated with plasma triglycerides and risk for coronary
+        artery disease. Nature Genetics. 45, 1345–1352.  DOI
+<br><br>
+<a name="bowden"></a>    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian
+        randomization with some invalid instruments using a weighted median estimator. Genetic
+        Epidemiology, 2016, 40, 4, 304-314.  DOI
+<br><br>
+<a name="author"></a><br><br>
+<span class=result><u>Author</u></span>
+<br><br>
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of
+        Bristol, UK. tom.palmer@bristol.ac.uk.
+<br><br>
+    If you find any bugs or have questions please send me an email or create an issue on the
+        GitHub repo: https://github.com/remlapmot/mrrobust/issues
+</pre>
+</body>
+</html>
