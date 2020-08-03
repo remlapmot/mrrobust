@@ -12,8 +12,8 @@ di _N
 //_4
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 //_5
-decode SNP, gen(rsid)
-mrforest beta_outcome se_outcome beta_exposure se_exposure, ivid(rsid)
+mrforest beta_outcome se_outcome beta_exposure se_exposure, ivid(SNP) ///
+xlabel(-3,-2,-1,0,1,2,3)
 graph export ldl-chd-mrforest.svg, width(600) replace
 //_6
 mreggerplot beta_outcome se_outcome beta_exposure se_exposure
