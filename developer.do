@@ -3,7 +3,7 @@ cap noi ado uninstall mrrobust
 
 * And then probably make a new git branch
 
-* When testing code remember to `discard` (reload program into memory) before rerunning test code
+* When testing code remember to `discard` (remove program from memory) before rerunning test code
 
 * For myprog.ado there should be a cscript myprog.do
 
