@@ -75,16 +75,19 @@ To obtain the latest update please see instructions [below](#installing-and-upda
 * September 2018: 
   - IJE paper published online [here](https://doi.org/10.1093/ije/dyy195)
 * August 2018:
-  - [Click here for the example code and output from our IJE article](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples)
+  - Click [here](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples) for the 
+  example code and output from our IJE article
 * May 2018: 
-  - [Click here for code and output from the examples in the helpfiles](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples)
+  - Click [here](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples) for code and output 
+  from the examples in the helpfiles
   - This page is now rendered on GitHub Pages [here](https://remlapmot.github.io/mrrobust/)
 * April 2018: 
   - `mregger` now has option `radial` which implements the radial formulation of the MR-Egger 
   model, and of the IVW model when used with option `ivw`
 
 ## Short video introduction
-[Click here for a short video demonstrating the use of the package.](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
+Click [here](https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs) for a short video 
+demonstrating the use of the package.
 
 [<img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300">]
 (https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs)
