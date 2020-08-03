@@ -104,6 +104,8 @@ We now save our `dat` object as a Stata dataset.
 write.dta(dat, file = "dat.dta")
 ```
 
+## Performing the analysis using mrrobust in Stata
+
 We now switch from using R code chunks to Stata code chunks. We read the data into Stata and list 
 the variable names (note any `.` in the colnames of `dat` have been replaced with `_`).
 ```s
