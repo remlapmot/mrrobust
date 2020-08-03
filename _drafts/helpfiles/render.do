@@ -12,6 +12,6 @@ foreach file in `helpfiles' {
 	copy ../../`file'.sthlp `file'.smcl, replace
 	cap noi log2html `file', bold replace
 	if _rc != 0 di as err "Conversersion of `file'.smcl failed"
-	cap noi copy ./`file'.html ../../docs/helpfiles/`file'.html, replace
+	cap noi copy ./`file'.html ../../docs/helpfiles/`file'-html, replace
 }
 
