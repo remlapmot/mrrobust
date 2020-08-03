@@ -23,3 +23,6 @@ ssc install whereis
 whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // wherever your pandoc exe is
 
 * ado uninstall mrrobust
+
+* Requirement to build helpfiles as md
+ssc install markdoc
