@@ -2,7 +2,7 @@
 title: markstat example
 ---
 
-# Run MR-Base from a Stata do-file/Markdown script
+# Run MR-Base from a Stata do-file or Stata Markdown script {#title}
 
 ## Introduction
 
