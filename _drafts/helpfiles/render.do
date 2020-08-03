@@ -4,7 +4,7 @@ local helpfiles mrrobust mr mrdeps mregger mreggerplot mreggersimex ///
 	mrmedian mrmedianobs mrmodal mrmodalplot ///
 	mrratio mrivests mrforest ///
 	mrfunnel ///
-	mrmvivw mvivw mvmr mrmvegger ///
+	mrmvivw mrmvegger ///
 	mrleaveoneout
 	
 foreach file in `helpfiles' {
