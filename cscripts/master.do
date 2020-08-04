@@ -12,10 +12,6 @@ cscript master
 cap noi ado describe mrrobust
 
 local cscripts ///
-mrleaveoneout ///
-helpfiles ///
-mrmvegger ///
-mrmvivw ///
 mr ///
 mrdeps ///
 mregger ///
@@ -28,7 +24,11 @@ mrmedian ///
 mrmedianobs ///
 mrmodal ///
 mrmodalplot ///
-mrratio
+mrratio ///
+mrmvivw ///
+mrmvegger ///
+helpfiles ///
+mrleaveoneout
 
 foreach dofile of local cscripts {
     log using `dofile'.log, text replace name(`dofile')
