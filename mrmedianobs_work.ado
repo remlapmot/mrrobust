@@ -11,12 +11,12 @@ tokenize `inst'
 syntax [anything] [if] [in] [, PENWeighted Weighted reps(integer 50)]
 mata gd = gdse = gp = gpse = J(`k', 1, .)
 forvalues i=1/`k' {
-        qui regress `lhs' ``i'' `exog' `if' `in'
-        mata gd[`i'] = st_matrix("e(b)")[1]
-        mata gdse[`i'] = sqrt(st_matrix("e(V)")[1,1])
-        qui regress `endog' ``i'' `exog' `if' `in'
-        mata gp[`i'] = st_matrix("e(b)")[1]
-        mata gpse[`i'] = sqrt(st_matrix("e(V)")[1,1])
+	qui regress `lhs' ``i'' `exog' `if' `in'
+	mata gd[`i'] = st_matrix("e(b)")[1]
+	mata gdse[`i'] = sqrt(st_matrix("e(V)")[1,1])
+	qui regress `endog' ``i'' `exog' `if' `in'
+	mata gp[`i'] = st_matrix("e(b)")[1]
+	mata gpse[`i'] = sqrt(st_matrix("e(V)")[1,1])
 }
 ereturn scalar k = `k'
 preserve
