@@ -1,10 +1,10 @@
 *! 0.1.0 23jul2017 Tom Palmer
 program mreggersimexonce, rclass
 syntax varlist(min=2 max=2) [aweight] [if] [in] , gxse(varname numeric) ///
-        [ivw fe re ///
-        reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
-        tdist lambda(numlist) seed(string) simreps(int 100) *]
-        
+	[ivw fe re ///
+	reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
+	tdist lambda(numlist) seed(string) simreps(int 100) *]
+
 tokenize `"`varlist'"'
 /*
 2 variables:
@@ -18,7 +18,7 @@ qui gen double `mreggerx' = abs(`2') `if' `in'
 
 ** values of lambda to loop through
 if "`lambda'" == "" {
-        local lambda ".5 1 1.5 2"
+	local lambda ".5 1 1.5 2"
 }
 
 ** number of genotypes
@@ -28,7 +28,7 @@ local n = r(N)
 ** id variable
 tempvar id
 qui gen `id' = _n
-        
+    
 tempvar xunknown
 qui putmata `mreggerx' `gxse' `id' `if' `in', replace
 tempvar res
@@ -40,29 +40,29 @@ mata `res' = J(`nres', 3, .)
 ** lambda = 0: implies original data
 tempname slopelambda0 conslambda0
 qui mregger `mreggery' `mreggerx' [aw `exp'] `if' `in', ///
-        `ivw' `fe' `re' ///
-        `reslope' `recons' `heterogi' `rescale' ///
-        `penweighted' level(`level') ///
-        `tdist' `options'
+	`ivw' `fe' `re' ///
+	`reslope' `recons' `heterogi' `rescale' ///
+	`penweighted' level(`level') ///
+	`tdist' `options'
 scalar `slopelambda0' = _b[slope]
 scalar `conslambda0' = _b[_cons]
 local j = 0
 foreach lam of numlist `lambda' {
-        local j = `j' + 1
-        forvalues i=1/`simreps' {
-                ** the new variable with measurement error
-                mata `xunknown' = `mreggerx' + sqrt(`lam'):*`gxse':*rnormal(`n', 1, 0, 1)
-                qui getmata `xunknown', double replace id(`id')
-                qui mregger `mreggery' `xunknown' [aw `exp'] `if' `in', ///
-                        `ivw' `fe' `re' ///
-                        `reslope' `recons' `heterogi' `rescale' ///
-                        `penweighted' level(`level') ///
-                        `tdist' `options'
-                scalar `slope' = _b[slope]
-                scalar `cons' = _b[_cons]
-                local resrow = `i' + (`j' - 1)*`simreps'
-                mata `res'[`resrow',] = (`lam', st_numscalar("`slope'"), st_numscalar("`cons'"))
-        }
+	local j = `j' + 1
+	forvalues i=1/`simreps' {
+		** the new variable with measurement error
+		mata `xunknown' = `mreggerx' + sqrt(`lam'):*`gxse':*rnormal(`n', 1, 0, 1)
+		qui getmata `xunknown', double replace id(`id')
+		qui mregger `mreggery' `xunknown' [aw `exp'] `if' `in', ///
+			`ivw' `fe' `re' ///
+			`reslope' `recons' `heterogi' `rescale' ///
+			`penweighted' level(`level') ///
+			`tdist' `options'
+		scalar `slope' = _b[slope]
+		scalar `cons' = _b[_cons]
+		local resrow = `i' + (`j' - 1)*`simreps'
+		mata `res'[`resrow',] = (`lam', st_numscalar("`slope'"), st_numscalar("`cons'"))
+	}
 }
 
 preserve
