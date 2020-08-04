@@ -4,16 +4,16 @@ version 9
 local version : di "version " string(_caller()) ", missing :"
 local replay = replay()
 if replay() {
-        if _by() {
-                error 190
-        }
-        `version' Display `0'
-        exit
+	if _by() {
+		error 190
+	}
+	`version' Display `0'
+	exit
 }
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
-        reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
-        gxse(varname numeric) tdist RADial unwi2gx oldnames *]
+	reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
+	gxse(varname numeric) tdist RADial unwi2gx oldnames *]
 
 local callersversion = _caller()
 
@@ -21,8 +21,8 @@ local callersversion = _caller()
 qui count `if' `in'
 local k = r(N)
 if `k' < 3 {
-        di as err "mregger requires a minimum of 3 genotypes"
-        exit 2001
+	di as err "mregger requires a minimum of 3 genotypes"
+	exit 2001
 }
 
 tokenize `"`varlist'"'
@@ -34,19 +34,19 @@ aw: gd SE
 */
 
 if "`exp'" == "" {
-        di as err "you must specify aweights"
-        exit 198
+	di as err "you must specify aweights"
+	exit 198
 }
 
 if "`fe'" == "fe" & "`re'" == "re" {
-        di as err "both fe and re not allowed"
-        exit 198
+	di as err "both fe and re not allowed"
+	exit 198
 }
 
 // re option only under version 13 and above
 if "`re'" == "re" & `callersversion' < 13 {
-        di as err "option re requires Stata version 13 or higher"
-        exit 9
+	di as err "option re requires Stata version 13 or higher"
+	exit 9
 }
 
 tempvar invvar gyse
@@ -55,32 +55,32 @@ qui gen double `gyse' = 1/sqrt(`invvar') `if' `in'
 
 // sort out the re options
 if "`re'" == "" & ("`recons'" != "" | "`reslope'" != "") {
-        di as err "option `reslope' `recons' must be specified with option re"
-        exit 198
+	di as err "option `reslope' `recons' must be specified with option re"
+	exit 198
 }
 if "`ivw'" == "ivw" & "`re'" == "re" & "`recons'" == "recons" {
-        di as err _c "For IVW estimator option recons not allowed "
-        di as err "for re estimation (as there is no constant)"
-        exit 198
+	di as err _c "For IVW estimator option recons not allowed "
+	di as err "for re estimation (as there is no constant)"
+	exit 198
 }
 if "`ivw'" == "" & "`re'" == "re" & "`reslope'" == "" & "`recons'" == "" {
-        // by default include both random _cons and slope
-        local reslope reslope
-        local recons recons
+	// by default include both random _cons and slope
+	local reslope reslope
+	local recons recons
 }
 
 if "`heterogi'" != "" {
-        // check if heterogi is installed
-        capture which heterogi
-        if _rc {
-                di as error "-heterogi- from SSC is required; install using"
-                di "{stata ssc install heterogi}"
-                exit 499
-        }
+	// check if heterogi is installed
+	capture which heterogi
+	if _rc {
+		di as error "-heterogi- from SSC is required; install using"
+		di "{stata ssc install heterogi}"
+		exit 499
+	}
 }
 
 if "`penweighted'" == "penweighted" {
-        tempvar pweights rweights
+	tempvar pweights rweights
 }
 
 tempname phi // residual variance
@@ -102,258 +102,258 @@ if "`radial'" != "" & "`penweighted'" != "" {
 
 ** estimation
 if "`ivw'" == "ivw" {
-        if "`heterogi'" != "" & "`penweighted'" == "" {
-                tempname gdtr gptr invse 
-                qui gen double `invse' = sqrt(`invvar') `if' `in'
-                qui gen double `gdtr' = `1'*`invse' `if' `in'
-                qui gen double `gptr' = `2'*`invse' `if' `in'
-				if "`radial'" == "" {
-					qui sem (`gdtr' <- `gptr', nocons) `if' `in'
-					// alternative: glm `gdtr' `gptr' `if' `in', nocons
-					if e(converged) == 1 {
-                        local df = e(N) - 1
-                        local qstat = _b[var(e.`gdtr'):_cons]*e(N)
-                        // if using glm: local qstat = e(phi)*(e(N) - 1)
-                        scalar `dfr' = e(df)
-					}
-				}
-                else {
-					qui sem (`wrady' <- `wradx', nocons) `if'`in'
-					if e(converged) == 1 {
-                        local df = e(N) - 1
-                        local qstat = _b[var(e.`wrad'):_cons]*e(N)
-                        // if using glm: local qstat = e(phi)*(e(N) - 1)
-                        scalar `dfr' = e(df)
-					}
-				}
-        }
-        if "`fe'" == "" & "`re'" == "" {
-                tempname betaivw
-                // qui reg `1' `2' [aw=`invvar'] `if' `in', nocons
-                qui glm `1' `2' [iw=`invvar'] `if' `in', nocons
-                scalar `betaivw' = _b[`2']
-                scalar `dfr' = e(df)
-				scalar `phi' = e(phi)
-                if "`penweighted'" != "" {
-                        qui gen double `pweights' = chi2tail(1, ///
-                                (`2'^2*`invvar')* ///
-                                (`1'/`2' - scalar(`betaivw'))^2) `if' `in'
-                        qui gen double `rweights' = `pweights'*20 `if' `in'
-                        qui replace `rweights' = 1 if `rweights' > 1
-                        qui replace `rweights' = `invvar'*`rweights' `if' `in'
-                        qui glm `1' `2' [iw=`rweights'] `if' `in', nocons
-                        scalar `dfr' = e(df)
-						scalar `phi' = e(phi)
-                }
-                if e(phi) < 1 & "`rescale'" == "" {
-                        di as txt _c "Residual variance =", e(phi) "; "
-                        di as txt _c "rerunning with residual "
-                        di as txt "variance set to 1"
-                        if "`penweighted'" == "" {
-                                qui glm `1' `2' [iw=`invvar'] `if' `in', ///
-                                        nocons scale(1)
-                                scalar `dfr' = e(df)
-                        }
-                        else {
-                                qui glm `1' `2' [iw=`rweights'] ///
-                                `if' `in', ///
-                                nocons scale(1)                        
-                                scalar `dfr' = e(df)
-                        }
-						scalar `phi' = 1
-                }
-                else if e(phi) < 1 & "`rescale'" != "" {
-                        di as txt _c "Residual variance =", e(phi)
-                        di as txt _c "; recommend refitting without "
-                        di as txt "norescale option"
-                }
-        }
-        else if "`fe'" == "fe" {
-				if "`radial'" == "" {
-					qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
-					scalar `dfr' = e(df)
-					scalar `phi' = e(phi)
-					// alt:
-					// sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
-				}
-				else {
-					qui glm `wrady' `wradx' `if'`in', scale(1) nocons
-					scalar `dfr' = e(df)
-					scalar `phi' = e(phi)
-				}
-        }
-        else if "`re'" == "re" {
-                tempvar genoDisease slope
-                cap gen double `genoDisease' = `1'*sqrt(`invvar') `if' `in'
-                if _rc != 0 {
-					qui replace `genoDisease' = `1'*sqrt(`invvar') `if' `in'
-				}
-                cap gen double `slope' = `2'*sqrt(`invvar') `if' `in'
-                if _rc != 0 {
-					qui replace `slope' = `2'*sqrt(`invvar') `if' `in'
-				}
-				if "`radial'" == "" {
-					cap `version' gsem (`genoDisease' <- `slope' c.M#c.`slope', nocons) ///
-                        `if' `in', ///
-                        var(e.`genoDisease'@1)
-				}
-				else {
-					cap `version' gsem (`wrady' <- `wradx' c.M#c.`wradx', nocons) ///
-                        `if' `in', ///
-                        var(e.`wrady'@1)
-				}
-        }
+	if "`heterogi'" != "" & "`penweighted'" == "" {
+		tempname gdtr gptr invse 
+		qui gen double `invse' = sqrt(`invvar') `if' `in'
+		qui gen double `gdtr' = `1'*`invse' `if' `in'
+		qui gen double `gptr' = `2'*`invse' `if' `in'
+		if "`radial'" == "" {
+			qui sem (`gdtr' <- `gptr', nocons) `if' `in'
+			// alternative: glm `gdtr' `gptr' `if' `in', nocons
+			if e(converged) == 1 {
+				local df = e(N) - 1
+				local qstat = _b[var(e.`gdtr'):_cons]*e(N)
+				// if using glm: local qstat = e(phi)*(e(N) - 1)
+				scalar `dfr' = e(df)
+			}
+		}
+		else {
+			qui sem (`wrady' <- `wradx', nocons) `if'`in'
+			if e(converged) == 1 {
+				local df = e(N) - 1
+				local qstat = _b[var(e.`wrad'):_cons]*e(N)
+				// if using glm: local qstat = e(phi)*(e(N) - 1)
+				scalar `dfr' = e(df)
+			}
+		}
+	}
+	if "`fe'" == "" & "`re'" == "" {
+		tempname betaivw
+		// qui reg `1' `2' [aw=`invvar'] `if' `in', nocons
+		qui glm `1' `2' [iw=`invvar'] `if' `in', nocons
+		scalar `betaivw' = _b[`2']
+		scalar `dfr' = e(df)
+		scalar `phi' = e(phi)
+		if "`penweighted'" != "" {
+			qui gen double `pweights' = chi2tail(1, ///
+				(`2'^2*`invvar')* ///
+				(`1'/`2' - scalar(`betaivw'))^2) `if' `in'
+			qui gen double `rweights' = `pweights'*20 `if' `in'
+			qui replace `rweights' = 1 if `rweights' > 1
+			qui replace `rweights' = `invvar'*`rweights' `if' `in'
+			qui glm `1' `2' [iw=`rweights'] `if' `in', nocons
+			scalar `dfr' = e(df)
+			scalar `phi' = e(phi)
+		}
+		if e(phi) < 1 & "`rescale'" == "" {
+			di as txt _c "Residual variance =", e(phi) "; "
+			di as txt _c "rerunning with residual "
+			di as txt "variance set to 1"
+			if "`penweighted'" == "" {
+				qui glm `1' `2' [iw=`invvar'] `if' `in', ///
+					nocons scale(1)
+				scalar `dfr' = e(df)
+			}
+			else {
+				qui glm `1' `2' [iw=`rweights'] ///
+				`if' `in', ///
+				nocons scale(1)                        
+				scalar `dfr' = e(df)
+			}
+			scalar `phi' = 1
+		}
+		else if e(phi) < 1 & "`rescale'" != "" {
+			di as txt _c "Residual variance =", e(phi)
+			di as txt _c "; recommend refitting without "
+			di as txt "norescale option"
+		}
+	}
+	else if "`fe'" == "fe" {
+		if "`radial'" == "" {
+			qui glm `1' `2' [iw=`invvar'] `if' `in', scale(1) nocons
+			scalar `dfr' = e(df)
+			scalar `phi' = e(phi)
+			// alt:
+			// sem (`gdtr' <- `gptr', nocons) `if' `in', var(e.`gdtr'@1)
+		}
+		else {
+			qui glm `wrady' `wradx' `if'`in', scale(1) nocons
+			scalar `dfr' = e(df)
+			scalar `phi' = e(phi)
+		}
+	}
+	else if "`re'" == "re" {
+		tempvar genoDisease slope
+		cap gen double `genoDisease' = `1'*sqrt(`invvar') `if' `in'
+		if _rc != 0 {
+			qui replace `genoDisease' = `1'*sqrt(`invvar') `if' `in'
+		}
+		cap gen double `slope' = `2'*sqrt(`invvar') `if' `in'
+		if _rc != 0 {
+			qui replace `slope' = `2'*sqrt(`invvar') `if' `in'
+		}
+		if "`radial'" == "" {
+			cap `version' gsem (`genoDisease' <- `slope' c.M#c.`slope', nocons) ///
+				`if' `in', ///
+				var(e.`genoDisease'@1)
+		}
+		else {
+			cap `version' gsem (`wrady' <- `wradx' c.M#c.`wradx', nocons) ///
+				`if' `in', ///
+				var(e.`wrady'@1)
+		}
+	}
 }
 else { // MR-Egger
-        tempvar `1'2 `2'2
-        qui gen double ``1'2' = `1'*sign(`2') `if' `in'
-        qui gen double ``2'2' = abs(`2') `if' `in'
-        if "`heterogi'" != "" & "`penweighted'" == "" {
-                tempname gdtr gptr invse
-                qui gen double `invse' = sqrt(`invvar') `if' `in'
-                qui gen double `gdtr' = ``1'2'*`invse' `if' `in'
-                qui gen double `gptr' = ``2'2'*`invse' `if' `in'
-				
-				if "`radial'" == "" {
-                qui sem (`gdtr' <- `gptr' `invse', nocons) `if' `in'
-                // alternative: glm `gdtr' `gptr' `invse' `if' `in', nocons 
-					if e(converged) == 1 {
-							local df = e(N) - 2
-							local qstat = _b[var(e.`gdtr'):_cons]*e(N)
-							// if using glm: local qstat di e(phi)*(e(N) - 2)
-							scalar `dfr' = e(N) - (e(df_m) - 1)
-					}
+	tempvar `1'2 `2'2
+	qui gen double ``1'2' = `1'*sign(`2') `if' `in'
+	qui gen double ``2'2' = abs(`2') `if' `in'
+	if "`heterogi'" != "" & "`penweighted'" == "" {
+		tempname gdtr gptr invse
+		qui gen double `invse' = sqrt(`invvar') `if' `in'
+		qui gen double `gdtr' = ``1'2'*`invse' `if' `in'
+		qui gen double `gptr' = ``2'2'*`invse' `if' `in'
+		
+		if "`radial'" == "" {
+		qui sem (`gdtr' <- `gptr' `invse', nocons) `if' `in'
+		// alternative: glm `gdtr' `gptr' `invse' `if' `in', nocons 
+			if e(converged) == 1 {
+				local df = e(N) - 2
+				local qstat = _b[var(e.`gdtr'):_cons]*e(N)
+				// if using glm: local qstat di e(phi)*(e(N) - 2)
+				scalar `dfr' = e(N) - (e(df_m) - 1)
+			}
+		}
+		else {
+			qui sem (`wrady' <- `wradx') `if' `in'
+			if e(converged) == 1 {
+				local df = e(N) - 2
+				local qstat = _b[var(e.`wrady'):_cons]*e(N)
+				// if using glm: local qstat di e(phi)*(e(N) - 2)
+				scalar `dfr' = e(N) - (e(df_m) - 1)
+			}
+		}
+		
+	}
+	if "`fe'" == "" & "`re'" == "" {
+		tempname betaegger interegger
+		if "`radial'" == "" {
+			// qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
+			qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in'
+			scalar `betaegger' = _b[``2'2']
+		}
+		else {
+			qui glm `wrady' `wradx' `if' `in'
+			scalar `betaegger' = _b[`wradx']
+		}
+		scalar `interegger'= _b[_cons]
+		scalar `phi' = e(phi)
+		scalar `dfr' = e(df)
+		if "`penweighted'" != "" {
+			qui gen double `pweights' = chi2tail(1, ///
+				`invvar'*(``1'2' - scalar(`interegger') - ///
+				scalar(`betaegger')*``2'2')^2) `if' `in'
+			qui gen double `rweights' = `pweights'*20 `if' `in'
+			qui replace `rweights' = 1 if `rweights' > 1
+			qui replace `rweights' = `invvar'*`rweights' `if' `in' 
+			qui glm ``1'2' ``2'2' [iw=`rweights'] `if' `in'
+			scalar `phi' = e(phi)
+			scalar `dfr' = e(df)
+		}
+		if e(phi) < 1 & "`rescale'" == "" {
+			di as txt _c "Residual variance =", e(phi) "; "
+			di as txt _c "rerunning with residual "
+			di as txt "variance set to 1"
+			if "`radial'" == "" {
+				if "`penweighted'" == "" {
+					qui glm ``1'2' ``2'2' [iw=`invvar'] ///
+						`if' `in', scale(1)
+					scalar `dfr' = e(df)
 				}
 				else {
-					qui sem (`wrady' <- `wradx') `if' `in'
-					if e(converged) == 1 {
-							local df = e(N) - 2
-							local qstat = _b[var(e.`wrady'):_cons]*e(N)
-							// if using glm: local qstat di e(phi)*(e(N) - 2)
-							scalar `dfr' = e(N) - (e(df_m) - 1)
-					}
+					qui glm ``1'2' ``2'2' [iw=`rweights'] ///
+						`if' `in', scale(1)
+					scalar `dfr' = e(df)
 				}
-				
-        }
-        if "`fe'" == "" & "`re'" == "" {
-                tempname betaegger interegger
-				if "`radial'" == "" {
-					// qui reg ``1'2' ``2'2' [aw=`invvar'] `if' `in'
-					qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in'
-					scalar `betaegger' = _b[``2'2']
+			}
+			else {
+				qui glm `wrady' `wradx' `if'`in', scale(1)
+				scalar `dfr' = e(df)
+			}
+		}
+		else if e(phi) < 1 & "`rescale'" != "" {
+			di as txt _c "Residual variance =", e(phi)
+			di as txt _c "; recommend refitting without "
+			di as txt "norescale option"
+		}
+	}
+	else if "`fe'" == "fe" {
+		// alternative syntax:
+		// sem (``1'2' <- ``2'2') [iw=`invvar'] `if' `in', ///
+		//       var(e.``1'2'@1)
+		if "`radial'" == "" {
+			qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', scale(1)
+		}
+		else {
+			qui glm `wrady' `wradx' `if' `in', scale(1)
+		}
+		scalar `dfr' = e(df)
+	}
+	else if "`re'" == "re" {
+		tempvar genoDisease slope cons
+		cap gen double `genoDisease' = ``1'2'*sqrt(`invvar') `if' `in' 
+		if _rc != 0 qui replace `genoDisease' = ``1'2'*sqrt(`invvar') ///
+			`if' `in'
+		cap gen double `slope' = ``2'2'*sqrt(`invvar') `if' `in'
+		if _rc != 0 qui replace `slope' = ``2'2'*sqrt(`invvar') `if' `in'
+		if "`radial'" == "" {
+			cap gen double `cons' = sqrt(`invvar') `if' `in'
+		}
+		else {
+			cap gen byte `cons' = 1 `if' `in'
+		}
+		if _rc != 0 qui replace `cons' = sqrt(`invvar') `if' `in'
+		if "`reslope'" == "" & "`recons'" == "recons" {
+			if "`radial'" == "" {
+				cap `version' gsem (`genoDisease' <- `slope' ///
+					`cons' c.`cons'#M@1) ///
+					`if' `in', nocons ///
+					var(e.`genoDisease'@1) `options'
+			}
+			else {
+				cap `version' gsem (`wrady' <- `wradx' ///
+					`cons' c.`cons'#M@1) ///
+					`if' `in', nocons ///
+					var(e.`wrady'@1) `options'					
+			}
+		}
+		else if "`reslope'" == "reslope" & "`recons'" == "" {
+			if "`radial'" == "" {
+				cap `version' gsem ///
+					(`genoDisease' <- `slope' `cons' c.`slope'#c.M@1) ///
+					`if' `in', nocons var(e.`genoDisease'@1) ///
+					`options'
 				}
-				else {
-					qui glm `wrady' `wradx' `if' `in'
-					scalar `betaegger' = _b[`wradx']
-				}
-                scalar `interegger'= _b[_cons]
-                scalar `phi' = e(phi)
-                scalar `dfr' = e(df)
-                if "`penweighted'" != "" {
-                        qui gen double `pweights' = chi2tail(1, ///
-                                `invvar'*(``1'2' - scalar(`interegger') - ///
-                                scalar(`betaegger')*``2'2')^2) `if' `in'
-                        qui gen double `rweights' = `pweights'*20 `if' `in'
-                        qui replace `rweights' = 1 if `rweights' > 1
-                        qui replace `rweights' = `invvar'*`rweights' `if' `in' 
-                        qui glm ``1'2' ``2'2' [iw=`rweights'] `if' `in'
-                        scalar `phi' = e(phi)
-                        scalar `dfr' = e(df)
-                }
-                if e(phi) < 1 & "`rescale'" == "" {
-                        di as txt _c "Residual variance =", e(phi) "; "
-                        di as txt _c "rerunning with residual "
-                        di as txt "variance set to 1"
-						if "`radial'" == "" {
-							if "`penweighted'" == "" {
-								qui glm ``1'2' ``2'2' [iw=`invvar'] ///
-									`if' `in', scale(1)
-								scalar `dfr' = e(df)
-							}
-							else {
-								qui glm ``1'2' ``2'2' [iw=`rweights'] ///
-									`if' `in', scale(1)
-								scalar `dfr' = e(df)
-							}
-						}
-						else {
-							qui glm `wrady' `wradx' `if'`in', scale(1)
-							scalar `dfr' = e(df)
-						}
-                }
-                else if e(phi) < 1 & "`rescale'" != "" {
-                        di as txt _c "Residual variance =", e(phi)
-                        di as txt _c "; recommend refitting without "
-                        di as txt "norescale option"
-                }
-        }
-        else if "`fe'" == "fe" {
-                // alternative syntax:
-                // sem (``1'2' <- ``2'2') [iw=`invvar'] `if' `in', ///
-                //       var(e.``1'2'@1)
-				if "`radial'" == "" {
-					qui glm ``1'2' ``2'2' [iw=`invvar'] `if' `in', scale(1)
-				}
-				else {
-					qui glm `wrady' `wradx' `if' `in', scale(1)
-				}
-                scalar `dfr' = e(df)
-        }
-        else if "`re'" == "re" {
-				tempvar genoDisease slope cons
-                cap gen double `genoDisease' = ``1'2'*sqrt(`invvar') `if' `in' 
-                if _rc != 0 qui replace `genoDisease' = ``1'2'*sqrt(`invvar') ///
-                        `if' `in'
-                cap gen double `slope' = ``2'2'*sqrt(`invvar') `if' `in'
-                if _rc != 0 qui replace `slope' = ``2'2'*sqrt(`invvar') `if' `in'
-				if "`radial'" == "" {
-					cap gen double `cons' = sqrt(`invvar') `if' `in'
-				}
-				else {
-					cap gen byte `cons' = 1 `if' `in'
-				}
-                if _rc != 0 qui replace `cons' = sqrt(`invvar') `if' `in'
-                if "`reslope'" == "" & "`recons'" == "recons" {
-					if "`radial'" == "" {
-						cap `version' gsem (`genoDisease' <- `slope' ///
-                            `cons' c.`cons'#M@1) ///
-                            `if' `in', nocons ///
-                            var(e.`genoDisease'@1) `options'
-					}
-					else {
-						cap `version' gsem (`wrady' <- `wradx' ///
-                            `cons' c.`cons'#M@1) ///
-                            `if' `in', nocons ///
-                            var(e.`wrady'@1) `options'					
-					}
-                }
-                else if "`reslope'" == "reslope" & "`recons'" == "" {
-					if "`radial'" == "" {
-                        cap `version' gsem ///
-                            (`genoDisease' <- `slope' `cons' c.`slope'#c.M@1) ///
-                            `if' `in', nocons var(e.`genoDisease'@1) ///
-                            `options'
-						}
-					else {
-                        cap `version' gsem ///
-                            (`wrady' <- `wradx' `cons' c.`wradx'#c.M@1) ///
-                            `if' `in', nocons var(e.`wrady'@1) ///
-                            `options'					
-					}
-                }  
-                else if "`reslope'" == "reslope" & "`recons'" == "recons" {
-					if "`radial'" == "" {
-                        cap `version' gsem (`genoDisease' <- `slope' `cons' ///
-                            c.`cons'#M1@1 c.`slope'#c.M2@1) `if' `in', ///
-                            nocons var(e.`genoDisease'@1) `options'
-					}
-					else {
-                        cap `version' gsem (`wrady' <- `wradx' `cons' ///
-                            c.`cons'#M1@1 c.`wradx'#c.M2@1) `if' `in', ///
-                            nocons var(e.`wrady'@1) `options'					
-					}
-                }
-        }
+			else {
+				cap `version' gsem ///
+					(`wrady' <- `wradx' `cons' c.`wradx'#c.M@1) ///
+					`if' `in', nocons var(e.`wrady'@1) ///
+					`options'					
+			}
+		}  
+		else if "`reslope'" == "reslope" & "`recons'" == "recons" {
+			if "`radial'" == "" {
+				cap `version' gsem (`genoDisease' <- `slope' `cons' ///
+					c.`cons'#M1@1 c.`slope'#c.M2@1) `if' `in', ///
+					nocons var(e.`genoDisease'@1) `options'
+			}
+			else {
+				cap `version' gsem (`wrady' <- `wradx' `cons' ///
+					c.`cons'#M1@1 c.`wradx'#c.M2@1) `if' `in', ///
+					nocons var(e.`wrady'@1) `options'					
+			}
+		}
+	}
 }
 
 // column and rownames for e(b) and e(V)
@@ -408,8 +408,8 @@ if !("`re'" == "re" & "`radial'" == "") {
 }
 		
 if "`penweighted'" != "" | "`heterogi'" == "" {
-        local qstat 0
-        local df 1
+	local qstat 0
+	local df 1
 }
 
 if "`tdist'" != "" {
@@ -422,7 +422,7 @@ else {
 }
 
 if "`ivw'" == "ivw" & "`fe'" == "fe" {
-        ereturn scalar phi = 1
+	ereturn scalar phi = 1
 }
 
 ** start of displaying output
@@ -433,31 +433,31 @@ if "`gxse'" != "" & "`ivw'" == "" {
         tempname gammabar nobs qgx QGX I2GX gammabarw qgxw QGXw I2GXw gpw
         
         if "`penweighted'" == "" {
-                * weighted mean of genotype-exposure associations
-                qui su ``2'2' [aw=1/(`gxse'^2)] `if' `in'
-                scalar `nobs' = r(N)
-                scalar `gammabar' = r(mean)
-        
-                * QGX
-                qui gen double `qgx' = (``2'2' - `gammabar')^2/(`gxse'^2) `if' `in'
-				
+			* weighted mean of genotype-exposure associations
+			qui su ``2'2' [aw=1/(`gxse'^2)] `if' `in'
+			scalar `nobs' = r(N)
+			scalar `gammabar' = r(mean)
+			
+			* QGX
+			qui gen double `qgx' = (``2'2' - `gammabar')^2/(`gxse'^2) `if' `in'
+			
 		* weighted QGX
 		qui gen double `gpw' = ``2'2' / `gyse' `if' `in'
 		qui su `gpw' [aw=(`gyse'/`gxse')^2] `if' `in'
-                scalar `gammabarw' = r(mean)
+			scalar `gammabarw' = r(mean)
 		qui gen double `qgxw' = (`gpw' - `gammabarw')^2/(`gxse' / `gyse')^2 `if' `in'
         }
         else {
-                tempvar gxscaled segxscaled
-                qui gen double `gxscaled' = ``2'2'*sqrt(`invvar') `if' `in'
-                qui gen double `segxscaled' = `gxse'*sqrt(`invvar') `if' `in'
-                qui su `gxscaled' [aw=1/(`segxscaled'^2)] `if' `in'
-                scalar `nobs' = r(N)
-                scalar `gammabar' = r(mean)
-                
-                * QGX
-                qui gen double `qgx' = ///
-                        (`gxscaled' - `gammabar')^2/(`segxscaled'^2) `if' `in'
+			tempvar gxscaled segxscaled
+			qui gen double `gxscaled' = ``2'2'*sqrt(`invvar') `if' `in'
+			qui gen double `segxscaled' = `gxse'*sqrt(`invvar') `if' `in'
+			qui su `gxscaled' [aw=1/(`segxscaled'^2)] `if' `in'
+			scalar `nobs' = r(N)
+			scalar `gammabar' = r(mean)
+			
+			* QGX
+			qui gen double `qgx' = ///
+				(`gxscaled' - `gammabar')^2/(`segxscaled'^2) `if' `in'
         }
         qui su `qgx' `if' `in'
         scalar `QGX' = r(sum)
@@ -525,8 +525,8 @@ Display , `re' level(`level') `radial'
 
 ** additional e-returned items
 if "`re'" == "" {
-        ereturn local cmd "mregger"
-        ereturn local cmdline `"mregger `0'"'
+	ereturn local cmd "mregger"
+	ereturn local cmdline `"mregger `0'"'
 }
 ereturn scalar k = `k'
 end
