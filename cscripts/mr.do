@@ -20,8 +20,7 @@ mrmodal ///
 mrmodalplot ///
 mrratio
 
-rcof "noi mr incorrectsubcommandname" ///
-        == 198
+rcof "noi mr incorrectsubcommandname" == 198
 
 mr deps
 
@@ -57,6 +56,9 @@ mr mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 
 mr mvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
+
+gen byte sel2 = (ldlcp2 < 1e-25)
+mr leaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid)
 
 ** mrmedianobs test dataset
 
