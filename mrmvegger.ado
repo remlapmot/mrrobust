@@ -4,12 +4,12 @@ version 9
 local version : di "version " string(_caller()) ", missing :"
 local replay = replay()
 if replay() {
-        if _by() {
-                error 190
-        }
-        `version' Display `0', orientvar(`e(orientvar)') ///
-			n(`e(N)') np(`e(Np)') rmse(`e(phi)')
-        exit
+	if _by() {
+		error 190
+	}
+	`version' Display `0', orientvar(`e(orientvar)') ///
+		n(`e(N)') np(`e(Np)') rmse(`e(phi)')
+	exit
 }
 
 syntax varlist(min=2) [aweight] [if] [in] [, ///
