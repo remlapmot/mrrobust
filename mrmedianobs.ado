@@ -3,19 +3,19 @@ program mrmedianobs, eclass
 version 9
 local version : di "version " string(_caller()) ", missing :"
 if replay() {
-        if _by() {
-                error 190
-        }
-        `version' Display `0'
-        exit
+	if _by() {
+		error 190
+	}
+	`version' Display `0'
+	exit
 }
 
 tokenize `"`0'"', parse(",")
 local beforeopts `1'
 
 syntax [anything] [if] [in] [, obsboot seed(string) reps(integer 50) ///
-        PENWeighted Weighted all Level(cilevel)]
-        
+	PENWeighted Weighted all Level(cilevel)]
+    
 ** weighted options
 if "`weighted'" == "weighted" & "`penweighted'" == "penweighted" {
 	di as err "Specify both weighted and penweighted options " ///
@@ -25,8 +25,8 @@ if "`weighted'" == "weighted" & "`penweighted'" == "penweighted" {
 
 ** all requires obsboot
 if "`all'" == "all" & "`obsboot'" == "" {
-        di as err "all requires obsboot is specified"
-        exit 198
+	di as err "all requires obsboot is specified"
+	exit 198
 }
 
 local callersversion = _caller()
@@ -38,8 +38,8 @@ if "`seed'" != "" {
 qui count `if' `in' // !missing(`lhs',`endog',) // and all instruments
 local nobs = r(N)
 if `nobs' < 3 {
-        di as err "mrmedianobs needs a minimum of 3 observations"
-        exit 2001
+	di as err "mrmedianobs needs a minimum of 3 observations"
+	exit 2001
 }
 
 mrmedianobs_work `beforeopts', `weighted' `penweighted' reps(`reps')
@@ -49,17 +49,17 @@ scalar `k' = e(k)
 local nreps = e(reps)
 
 if "`obsboot'" == "" {
-        mat V = e(V)
+	mat V = e(V)
 }
 else {
-        bootstrap beta=_b[beta], reps(`reps') notable noheader nolegend: ///
-                mrmedianobs_work `1' `if', `weighted' `penweighted'
-        if "`all'" == "all" {
-                estat bootstrap, all noheader
-        }
-        mat b = e(b)
-        mat V = e(V)
-        local nreps = e(N_reps)
+	bootstrap beta=_b[beta], reps(`reps') notable noheader nolegend: ///
+		mrmedianobs_work `1' `if', `weighted' `penweighted'
+	if "`all'" == "all" {
+		estat bootstrap, all noheader
+	}
+	mat b = e(b)
+	mat V = e(V)
+	local nreps = e(N_reps)
 }
 ereturn post b V
 local ngeno = scalar(`k')
@@ -75,13 +75,13 @@ program Display
 version 9
 syntax [, K(integer 0) N(integer 0) reps(integer 0) Level(cilevel)]
 if "`k'" == "0" {
-        local k = e(k)
+	local k = e(k)
 }
 if "`n'" == "0" {
-        local n = e(N)
+	local n = e(N)
 }
 if "`reps'" == "0" {
-        local reps = e(reps)
+	local reps = e(reps)
 }
 local digits1 : length local k
 local digits2 : length local n
