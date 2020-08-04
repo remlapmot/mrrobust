@@ -3,15 +3,15 @@ program mrmedian, eclass
 version 9
 local version : di "version " string(_caller()) ", missing :"
 if replay() {
-        if _by() {
-                error 190
-        }
-        `version' Display `0'
-        exit
+	if _by() {
+		error 190
+	}
+	`version' Display `0'
+	exit
 }
 
 syntax varlist(min=4 max=4) [if] [in] [, Weighted PENWeighted seed(string) ///
-        reps(integer 1000) Level(cilevel)]
+	reps(integer 1000) Level(cilevel)]
 
 local callersversion = _caller()
 tokenize `"`varlist'"'
@@ -32,8 +32,8 @@ tempname k
 qui count `if' `in' // TODO: missing data patterns??
 scalar `k' = r(N)
 if scalar(`k') < 3 {
-        di as err "mrmedian requires a minimum of 3 genotypes"
-        exit 2001
+	di as err "mrmedian requires a minimum of 3 genotypes"
+	exit 2001
 }
 
 ** put variables into Mata
@@ -108,10 +108,10 @@ program Display, rclass
 version 9
 syntax , [K(integer 0) reps(integer 0) Level(cilevel)] 
 if "`k'" == "0" {
-        local k = e(k)
+	local k = e(k)
 }
 if "`reps'" == "0" {
-        local reps = e(reps)
+	local reps = e(reps)
 }
 local digits : length local k
 local colstart = 79 - (22 + `digits') 
