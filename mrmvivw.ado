@@ -4,20 +4,20 @@ version 9
 local version : di "version " string(_caller()) ", missing :"
 local replay = replay()
 if replay() {
-        if _by() {
-                error 190
-        }
-		if "`e(Qa)'" != "" {
-			local qopts "qa(`e(Qa)') qadf(`e(Qadf)') qap(`e(Qap)')"
-		}
-		cap confirm matrix e(Qx)
-		if _rc == 0 local qxopts qx(e(Qx))
-		cap confirm matrix e(Fx)
-		if _rc == 0 local fxopts fx(e(Fx))
-        `version' Display `0', n(`e(N)') setype(`e(setype)') np(`e(Np)') ///
-			`qopts' `qxopts' `fxopts' ///
-			rmse(`e(phi)')
-        exit
+	if _by() {
+		error 190
+	}
+	if "`e(Qa)'" != "" {
+		local qopts "qa(`e(Qa)') qadf(`e(Qadf)') qap(`e(Qap)')"
+	}
+	cap confirm matrix e(Qx)
+	if _rc == 0 local qxopts qx(e(Qx))
+	cap confirm matrix e(Fx)
+	if _rc == 0 local fxopts fx(e(Fx))
+	`version' Display `0', n(`e(N)') setype(`e(setype)') np(`e(Np)') ///
+		`qopts' `qxopts' `fxopts' ///
+		rmse(`e(phi)')
+	exit
 }
 
 syntax varlist(min=2) [aweight] [if] [in] [, ///
