@@ -17,6 +17,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
 * August 2020:
   - Added html versions of the helpfiles to the website. These are available from the website 
   menu bar or [here](https://remlapmot.github.io/mrrobust/docs/helpfiles/)
+  - Added extra decimal places examples to helpfiles of `mrforest` and `mrleaveoneout`
 * July 2020:
   - Added `gxse()` option to `mrmvivw` to return instrument strength Q<sub>A</sub> statistic for 
   instrument validity in `e(Qa)` ([Sanderson et al. 2019](#references))
@@ -258,4 +259,4 @@ GitHub or send me an email to tom.palmer@bristol.ac.uk.
 ## Acknowledgements
 Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, 
 Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, 
-Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, and Steve Burgess.
+Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, Lai-Te Chen, and Steve Burgess.
