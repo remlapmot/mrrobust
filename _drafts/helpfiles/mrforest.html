@@ -106,6 +106,12 @@ BODY{background-color: ffffff;
         <span class=result>.</span> mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) models(4) modelslabel(All
             genotypes)
 <br><br>
+    If you have data which require more than 2 decimal places, use <span class=result>metan</span>'s undocumented <span class=result>dp</span> option,
+    e.g. for 4 decimal places specify <span class=result>dp(4)</span>
+        <span class=result>.</span> gen chdbeta2 = chdbeta / 100
+        <span class=result>.</span> gen chdse2 = chdse / 100
+        <span class=result>.</span> mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) dp(4)
+<br><br>
 <a name="references"></a><span class=result><u>References</u></span>
 <br><br>
 <a name="bowden"></a>    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian

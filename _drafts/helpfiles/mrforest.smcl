@@ -106,6 +106,12 @@ LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 {pstd}Showing all 4 models and modifying some labels.{p_end}
 {phang2}{cmd:.} {stata "mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) models(4) modelslabel(All genotypes)"}{p_end}
 
+{pstd}If you have data which require more than 2 decimal places, use {cmd:metan}'s undocumented 
+{cmd:dp} option, e.g. for 4 decimal places specify {cmd:dp(4)}{p_end}
+{phang2}{cmd:.} {stata "gen chdbeta2 = chdbeta / 100"}{p_end}
+{phang2}{cmd:.} {stata "gen chdse2 = chdse / 100"}{p_end}
+{phang2}{cmd:.} {stata "mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) dp(4)"}{p_end}
+
 {marker references}{...}
 {title:References}
 
