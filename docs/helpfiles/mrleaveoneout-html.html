@@ -73,6 +73,12 @@ BODY{background-color: ffffff;
         <span class=result>.</span> mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, method(mvmr) gyse(chdse)
             genotype(rsid)
 <br><br>
+    If you have data which require more than 2 decimal places, use <span class=result>metan</span>'s undocumented <span class=result>dp</span> option,
+    e.g. for 4 decimal places specify <span class=result>dp(4)</span>
+        <span class=result>.</span> gen chdbeta2 = chdbeta / 100
+        <span class=result>.</span> gen chdse2 = chdse / 100
+        <span class=result>.</span> mrleaveoneout chdbeta2 ldlcbeta if sel2==1, gyse(chdse2) genotype(rsid) metanopts(dp(4))
+<br><br>
 <a name="references"></a><span class=result><u>References</u></span>
 <br><br>
 <a name="do"></a>    Do et al. Common variants associated with plasma triglycerides and risk for coronary artery

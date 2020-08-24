@@ -75,6 +75,12 @@ modal, mode, mvmr, mvivw, mvegger.
 {pstd}Leave one out analysis using MVMR (collecting the estimate for LDL-c){p_end}
 {phang2}{cmd:.} {stata "mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, method(mvmr) gyse(chdse) genotype(rsid)"}{p_end}
 
+{pstd}If you have data which require more than 2 decimal places, use {cmd:metan}'s undocumented 
+{cmd:dp} option, e.g. for 4 decimal places specify {cmd:dp(4)}{p_end}
+{phang2}{cmd:.} {stata "gen chdbeta2 = chdbeta / 100"}{p_end}
+{phang2}{cmd:.} {stata "gen chdse2 = chdse / 100"}{p_end}
+{phang2}{cmd:.} {stata "mrleaveoneout chdbeta2 ldlcbeta if sel2==1, gyse(chdse2) genotype(rsid) metanopts(dp(4))"}{p_end}
+
 {marker references}{...}
 {title:References}
 
