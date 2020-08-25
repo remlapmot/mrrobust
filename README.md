@@ -18,6 +18,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - Added html versions of the helpfiles to the website. These are available from the website 
   menu bar or [here](https://remlapmot.github.io/mrrobust/docs/helpfiles/)
   - Added extra decimal places examples to helpfiles of `mrforest` and `mrleaveoneout`
+  - `mrfunnel` now includes a legend on its plot
 * July 2020:
   - Added `gxse()` option to `mrmvivw` to return instrument strength Q<sub>A</sub> statistic for 
   instrument validity in `e(Qa)` ([Sanderson et al. 2019](#references))
