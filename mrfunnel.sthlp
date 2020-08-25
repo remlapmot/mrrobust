@@ -42,7 +42,7 @@
 
 {pstd} 
 There are 3 choices of measures of instrument strength to plot on 
-the {it:y}-axis, which are described below.
+the {it:y}-axis, which are specified using the {cmd:metric} option and are described below.
 {p_end}
  
 {pstd}
