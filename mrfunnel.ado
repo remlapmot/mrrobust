@@ -4,6 +4,9 @@ version 9
 syntax varlist [if] [in] [, Metric(string) ///
 	noivw nomregger ///
 	MRIVESTSopts(string) ///
+	EXTRAPlots(string asis) ///
+	XLRange(numlist min=2 max=2) ///
+	scatteropts(string asis) ///
 	*]
 
 if !inlist("`metric'","gpbeta","gpbetastd","invse","") {
@@ -44,16 +47,25 @@ else if "`metric'" == "invse" {
 	local ytitle "Instrument strength (1/{it:{&sigma}}{sub:IV})"
 }
 
+local legend legend(on order(1 "Genotypes") rows(1))
+
 if "`ivw'" == "" {
 	qui mregger `gdbeta' `gpbeta' [aw=1/`segdbeta'^2] `if'`in', ivw fe
-	local ivw = _b[`gdbeta':`gpbeta']
-	local ivwaddplot addplot: , xline(`ivw', lp(dash) lc(gs0)) norescaling
+	local ivwest = _b[`gdbeta':`gpbeta']
+	if "`xlrange'" == "" local range range(`yvar')
+	else local range range(`xlrange')
+	local ivwaddplot function `ivwest', lp(dash) lc(gs0) hor `range' || 
+	local legend legend(on order(1 "Genotypes" 2 "IVW") rows(1))
 }
 
 if "`mregger'" == "" {
 	qui mregger `gdbeta' `gpbeta' [aw=1/`segdbeta'^2] `if'`in'
-	local mregger = _b[slope]
-	local mreggeraddplot addplot: , xline(`mregger', lp(longdash) lc(gs0)) norescaling
+	local mreggerest = _b[slope]
+	if "`xlrange'" == "" local range range(`yvar')
+	else local range range(`xlrange')
+	local mreggeraddplot function `mreggerest', lp(longdash) lc(gs0) hor `range' || 
+	if "`ivw'" == "" local legend legend(on order(1 "Genotypes" 2 "IVW" 3 "MR-Egger") rows(1))
+	else local legend legend(on order(1 "Genotypes" 2 "MR-Egger") rows(1))	
 }
 
 // plot
@@ -61,8 +73,11 @@ twoway scatter `yvar' `iv' `if'`in', ///
 	mc(gs0) ///
 	xtitle("{&beta}{sub:IV}") ///
 	ytitle(`ytitle') ///
+	`scatteropts' || ///
+	`ivwaddplot' ///
+	`mreggeraddplot' ///
+	`extraplots', ///
+	`legend' ///
 	`options'
-`ivwaddplot'
-`mreggeraddplot'
 
 end
