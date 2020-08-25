@@ -24,6 +24,27 @@ mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, noivw nomregger
 
 mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xscale(range(-4 4))
 
-mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, yscale(range(0 .6))
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, yscale(range(0 12))
 
-mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, mc(red)
+discard
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, scatteropts(mc(red))
+
+* legend off
+discard
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)
+
+* lines going down to zero
+discard
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
+	noivw nomregger ///
+	extraplots(function .481, lp(dash) lc(gs0) hor range(0 10) || ///
+		function .617, lp(longdash) lc(gs0) hor range(0 10) || ) ///
+	legend(on order(1 "Genotypes" 2 "IVW" 3 "MR-Egger") rows(1))
+
+* set the range for the lines using xlrange option
+discard
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
+
+* original mrfunnel plot
+discard
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10) legend(off)
