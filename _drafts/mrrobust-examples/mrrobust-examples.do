@@ -42,7 +42,7 @@ mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 //_16
 mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
 //_17
-mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 gr export mrfunnel.svg, width(600) replace
 //_18
 gen byte sel2 = (ldlcp2 < 1e-25)
