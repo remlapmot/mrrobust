@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:   4 Aug 2020, 11:39:56
+ opened on:  25 Aug 2020, 14:43:21
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -1374,6 +1374,12 @@ Examples
         . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
             models(4) modelslabel(All genotypes)
 
+    If you have data which require more than 2 decimal places, use metan's
+    undocumented dp option, e.g. for 4 decimal places specify dp(4)
+        . gen chdbeta2 = chdbeta / 100
+        . gen chdse2 = chdse / 100
+        . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) dp(4)
+
 References
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
@@ -1409,11 +1415,15 @@ Syntax
 
     options               Description
     -------------------------------------------------------------------------
+      extraplots(string)  extra plots to add to the overall plot
       metric(metric)      scale of y-axis
       noivw               do not plot IVW line
       nomregger           do not plot MR-Egger line
       mrivestsopts(opts)  options passed to mrivests
-      *                   Other options passed to the plot
+      scatteropts(opts)   options passed to the scatter command
+      xlrange(# #)        the range for the IVW and MR-Egger lines, see 
+                            twoway_function range() option
+      *                   other options passed to twoway
 
 Description
 
@@ -1421,7 +1431,8 @@ Description
     analysis.
 
     There are 3 choices of measures of instrument strength to plot on the
-    y-axis, which are described below.
+    y-axis, which are specified using the metric option and are described
+    below.
  
     On the plot the MR-Egger estimate is the line with the longer dashes, the
     IVW estimate is shown with the shorter dashes.
@@ -1471,6 +1482,12 @@ Examples
     Using inverse IV SEs on the y-axis
         . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(invse)
 
+    Remove the legend
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)
+
+    Extend the IVW and MR-Egger lines to the y-axis limits (as per the
+    original version of this command)
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 
 References
 
@@ -1820,6 +1837,13 @@ Examples
         . mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1,
             method(mvmr) gyse(chdse) genotype(rsid)
 
+    If you have data which require more than 2 decimal places, use metan's
+    undocumented dp option, e.g. for 4 decimal places specify dp(4)
+        . gen chdbeta2 = chdbeta / 100
+        . gen chdse2 = chdse / 100
+        . mrleaveoneout chdbeta2 ldlcbeta if sel2==1, gyse(chdse2)
+            genotype(rsid) metanopts(dp(4))
+
 References
 
     Do et al. Common variants associated with plasma triglycerides and risk
@@ -1841,5 +1865,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:   4 Aug 2020, 11:39:57
+ closed on:  25 Aug 2020, 14:43:21
 -------------------------------------------------------------------------------
