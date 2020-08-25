@@ -3,7 +3,7 @@
 
 <svg version="1.1" width="600px" height="630px" viewBox="0 0 8235 8640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Stata Graph - Graph</desc>
-	<rect x="0" y="0" width="8235" height="8640" style="fill:#EAF2F3;stroke:none"/>
+	<rect x="0" y="0" width="8235" height="8640" style="fill:#E1E6F0;stroke:none"/>
 	<rect x="0.00" y="0.27" width="8235.00" height="8639.73" style="fill:#FFFFFF"/>
 	<rect x="8.24" y="8.51" width="8218.53" height="8623.26" style="fill:none;stroke:#FFFFFF;stroke-width:16.47"/>
 	<rect x="389.35" y="288.36" width="7542.16" height="7591.86" style="fill:#FFFFFF"/>

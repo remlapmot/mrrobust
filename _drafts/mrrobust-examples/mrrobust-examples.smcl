@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 3 Aug 2020, 11:39:31
+ {txt}opened on:  {res}25 Aug 2020, 15:01:57
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -206,7 +206,7 @@
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_17
-. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 {res}{txt}
 {com}. gr export mrfunnel.svg, width(600) replace
 {txt}(file mrfunnel.svg written in SVG format)
@@ -232,7 +232,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 3 Aug 2020, 11:39:54
+ {txt}closed on:  {res}25 Aug 2020, 15:02:20
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

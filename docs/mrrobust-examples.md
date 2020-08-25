@@ -307,7 +307,7 @@ Simple mode estimator with NOME assumption.
 ## mrfunnel examples
 
 ```stata
-. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 
 . gr export mrfunnel.svg, width(600) replace
 (file mrfunnel.svg written in SVG format)
