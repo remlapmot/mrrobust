@@ -23,11 +23,15 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
+{synopt :{opt extrap:lots(string)}}extra plots to add to the overall plot{p_end}
 {synopt :{opt m:etric(metric)}}scale of {it:y}-axis{p_end}
 {synopt :{opt noivw:}}do not plot IVW line{p_end}
 {synopt :{opt nomregger:}}do not plot MR-Egger line{p_end}
 {synopt :{opt mrivests:opts(opts)}}options passed to {help mrivests}{p_end}
-{p2col:{cmd:*}}Other {help twoway_options:options} passed to the plot{p_end}
+{synopt :{opt scatteropts(opts)}}options passed to the {help scatter} command{p_end}
+{synopt :{opt xlr:ange(# #)}}the range for the IVW and MR-Egger lines, see {help twoway_function} 
+{cmd:range()} option{p_end}
+{p2col:{cmd:*}}other {help twoway_options:options} passed to {help twoway}{p_end}
 
 {marker description}{...}
 {title:Description}
@@ -102,6 +106,12 @@ estimate standard errors.
 {pstd}Using inverse IV SEs on the {it:y}-axis{p_end}
 {phang2}{cmd:.} {stata "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(invse)"}{p_end}
 
+{pstd}Remove the legend{p_end}
+{phang2}{cmd:.} {stata "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)"}{p_end}
+
+{pstd}Extend the IVW and MR-Egger lines to the y-axis limits (as per the original version of this 
+command){p_end}
+{phang2}{cmd:.} {stata "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)"}{p_end}
 
 {marker references}{...}
 {title:References}
