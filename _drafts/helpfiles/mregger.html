@@ -24,76 +24,92 @@ BODY{background-color: ffffff;
         <span class=result>mregger</span> <i>varname_gd</i> <i>varname_gp</i> [<i>aweight</i>] [<i>if</i>] [<i>in</i>] [<span class=result>,</span> <i>options</i>]
 <br><br>
     <i>options</i>               Description
-    ----------------------------------------------------------------------------------------------
-      <span class=result>fe</span>                  Fixed effect standard errors (default is multiplicative)
+    -------------------------------------------------------------------------
+      <span class=result>fe</span>                  Fixed effect standard errors (default is
+                            multiplicative)
       <span class=result>gxse(</span><i>varname</i><span class=result>)</span>       variable of genotype-phenotype SEs
       <span class=result><u>het</u></span><span class=result>erogi</span>            Display heterogeneity/pleiotropy statistics
-      <span class=result>ivw</span>                 Inverse-variance weighted estimator (default is MR-Egger)
+      <span class=result>ivw</span>                 Inverse-variance weighted estimator (default is
+                            MR-Egger)
       <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
-      <span class=result><u>noresc</u></span><span class=result>ale</span>           Do not rescale residual variance to be 1 (if less than 1)
-      <span class=result>oldnames</span>            Revert to using longer outcome name in b and V ereturned matrices
+      <span class=result><u>noresc</u></span><span class=result>ale</span>           Do not rescale residual variance to be 1 (if less
+                            than 1)
+      <span class=result>oldnames</span>            Revert to using longer outcome name in b and V
+                            ereturned matrices
       <span class=result><u>penw</u></span><span class=result>eighted</span>         Use penalized weights
       <span class=result><u>rad</u></span><span class=result>ial</span>              Use radial formulations of the models
       <span class=result>tdist</span>               Use t-distribution for Wald test and CI limits
-      <span class=result>unwi2gx</span>             Additionally report unweighted Q_GX and I^2_GX statistics
+      <span class=result>unwi2gx</span>             Additionally report unweighted Q_GX and I^2_GX
+                            statistics
 <br><br>
 <a name="description"></a><span class=result><u>Description</u></span>
 <br><br>
-    <span class=result>mregger</span> performs inverse-variance weighted (IVW; Burgess et al., 2013) and Mendelian
-    randomization Egger (MR-Egger) regression (Bowden et al., 2015) using summary level data (i.e.
-    using genotype-disease and phenotype-disease association estimates and their standard errors).
+    <span class=result>mregger</span> performs inverse-variance weighted (IVW; Burgess et al., 2013)
+    and Mendelian randomization Egger (MR-Egger) regression (Bowden et al.,
+    2015) using summary level data (i.e. using genotype-disease and
+    phenotype-disease association estimates and their standard errors).
 <br><br>
-    <i>varname_gd</i> variable containing the genotype-disease association estimates.
+    <i>varname_gd</i> variable containing the genotype-disease association
+    estimates.
 <br><br>
-    <i>varname_gp</i> variable containing the genotype-phenotype association estimates.
+    <i>varname_gp</i> variable containing the genotype-phenotype association
+    estimates.
 <br><br>
-    For the analytic weights you need to specify the inverse of the genotype-disease standard
-    errors squared, i.e. aw=1/(gdse^2).
+    For the analytic weights you need to specify the inverse of the
+    genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
-    <span class=result>fe</span> specifies fixed effect standard errors (i.e. variance of residuals constrained to 1 as in
-        fixed effect meta-analysis models). The default is to use multiplicative standard errors
-        (i.e. variance of residuals unconstrained as in standard linear regression), see Thompson
-        and Sharp (1999) for further details.  We recommend specifying this option when using an
-        allelic score as the instrumental variable.
+    <span class=result>fe</span> specifies fixed effect standard errors (i.e. variance of residuals
+        constrained to 1 as in fixed effect meta-analysis models). The
+        default is to use multiplicative standard errors (i.e. variance of
+        residuals unconstrained as in standard linear regression), see
+        Thompson and Sharp (1999) for further details.  We recommend
+        specifying this option when using an allelic score as the
+        instrumental variable.
 <br><br>
-    <span class=result>gxse(</span><i>varname</i><span class=result>)</span> specifies the variable containing the genotype-phenotype association standard
-        errors. These are required for calculating the I^2_GX statistic (Bowden et al., 2016). An
-        I^2_GX statistic of 90% means that the likely bias due measurement error in the MR-Egger
-        slope estimate is around 10%. If I^2_GX values are less than 90% estimates should be
-        treated with caution.
+    <span class=result>gxse(</span><i>varname</i><span class=result>)</span> specifies the variable containing the genotype-phenotype
+        association standard errors. These are required for calculating the
+        I^2_GX statistic (Bowden et al., 2016). An I^2_GX statistic of 90%
+        means that the likely bias due measurement error in the MR-Egger
+        slope estimate is around 10%. If I^2_GX values are less than 90%
+        estimates should be treated with caution.
 <br><br>
-    <span class=result><u>het</u></span><span class=result>erogi</span> suppresses display of heterogeneity/pleiotropy statistics. In the heterogeneity
-        output the model based Q-statistic is reported by multiplying the variance of the
-        residuals by the degrees of freedom (Del Greco et al., 2015).
+    <span class=result><u>het</u></span><span class=result>erogi</span> suppresses display of heterogeneity/pleiotropy statistics. In
+        the heterogeneity output the model based Q-statistic is reported by
+        multiplying the variance of the residuals by the degrees of freedom
+        (Del Greco et al., 2015).
 <br><br>
-    <span class=result>ivw</span> specifies inverse-variance weighted (IVW) model (Burgess et al., 2013), the default is
-        MR-Egger.
+    <span class=result>ivw</span> specifies inverse-variance weighted (IVW) model (Burgess et al.,
+        2013), the default is MR-Egger.
 <br><br>
     <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
 <br><br>
-    <span class=result><u>noresc</u></span><span class=result>ale</span> specifies that the residual variance is not set to 1 (if it is found to be less than
-        1). Bowden et al. (2016) rescale the residual variance to be 1 if it is found to be less
-        than 1.
+    <span class=result><u>noresc</u></span><span class=result>ale</span> specifies that the residual variance is not set to 1 (if it is
+        found to be less than 1). Bowden et al. (2016) rescale the residual
+        variance to be 1 if it is found to be less than 1.
 <br><br>
-    <span class=result>oldnames</span> revert to using the longer outcome variable name in the b and V ereturned matrices.
+    <span class=result>oldnames</span> revert to using the longer outcome variable name in the b and V
+        ereturned matrices.
 <br><br>
-    <span class=result><u>penw</u></span><span class=result>eighted</span> specifies using penalized weights as described in Burgess et al. (2016).
+    <span class=result><u>penw</u></span><span class=result>eighted</span> specifies using penalized weights as described in Burgess et
+        al. (2016).
 <br><br>
-    <span class=result><u>rad</u></span><span class=result>ial</span> specifies the radial formulation of the IVW and MR-Egger models (Bowden et al., 2017).
-        Note there is only a difference for the MR-Egger model.
+    <span class=result><u>rad</u></span><span class=result>ial</span> specifies the radial formulation of the IVW and MR-Egger models
+        (Bowden et al., 2017).  Note there is only a difference for the
+        MR-Egger model.
 <br><br>
-    <span class=result>tdist</span> specifies using the t-distribution, instead of the normal distribution, for calculating
-        the Wald test and the confidence interval limits.
+    <span class=result>tdist</span> specifies using the t-distribution, instead of the normal
+        distribution, for calculating the Wald test and the confidence
+        interval limits.
 <br><br>
-    <span class=result>unwi2gx</span> specifies the unweighted Q_GX and I^2_GX statistics to be additionally displayed in
-        the output and in the ereturn scalars.
+    <span class=result>unwi2gx</span> specifies the unweighted Q_GX and I^2_GX statistics to be
+        additionally displayed in the output and in the ereturn scalars.
 <br><br>
 <a name="examples"></a><span class=result><u>Examples</u></span>
 <br><br>
-    Using the data provided by Do et al. (2013) recreate Bowden et al. (2016), Table 4, LDL-c "All
-    genetic variants" estimates.
+    Using the data provided by Do et al. (2013) recreate Bowden et al.
+    (2016), Table 4, LDL-c "All genetic variants" estimates.
 <br><br>
     Setup
         <span class=result>.</span> use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -108,7 +124,8 @@ BODY{background-color: ffffff;
         <span class=result>.</span> mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 <br><br>
     MR-Egger reporting <i>I^2_GX</i> statistic and heterogeneity Q-test
-        <span class=result>.</span> mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
+        <span class=result>.</span> mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse)
+            heterogi
 <br><br>
     MR-Egger using a t-distribution for inference &amp; CI limits
         <span class=result>.</span> mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, tdist
@@ -117,7 +134,8 @@ BODY{background-color: ffffff;
         <span class=result>.</span> mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 <br><br>
     MR-Egger using the radial formulation and reporting heterogeneity Q-test
-        <span class=result>.</span> mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
+        <span class=result>.</span> mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
+            heterogi
 <br><br>
 <br><br>
 <a name="results"></a><span class=result><u>Stored results</u></span>
@@ -139,8 +157,8 @@ BODY{background-color: ffffff;
       <span class=result>e(b)</span>                coefficient vector
       <span class=result>e(V)</span>                variance-covariance matrix of the estimates
 <br><br>
-    If <span class=result>heterogi</span> is specified <span class=result>mregger</span> additionally returns the r-class results of <span class=result>heterogi</span> in the
-    e-class results.
+    If <span class=result>heterogi</span> is specified <span class=result>mregger</span> additionally returns the r-class results
+    of <span class=result>heterogi</span> in the e-class results.
 <br><br>
     If <span class=result>unwi2gx</span> is specified <span class=result>mregger</span> additionally returns
       <span class=result>e(I2GXunw)</span>          Unweighted I^2_GX statistic
@@ -149,54 +167,62 @@ BODY{background-color: ffffff;
     <span class=result>mregger</span> stores the following in <span class=result>r()</span>:
 <br><br>
     Matrices       
-      <span class=result>r(table)</span>            Coefficient table with rownames: b, se, z, pvalue, ll, ul, df, crit,
-                            eform
+      <span class=result>r(table)</span>            Coefficient table with rownames: b, se, z, pvalue,
+                            ll, ul, df, crit, eform
 <br><br>
 <a name="references"></a><span class=result><u>References</u></span>
 <br><br>
-<a name="bowden"></a>    Bowden J, Davey Smith G, Burgess S.  Mendelian randomization with invalid instruments: effect
-        estimation and bias detection through Egger regression. International Journal of
-        Epidemiology, 2015, 44, 2, 512-525.  DOI
+<a name="bowden"></a>    Bowden J, Davey Smith G, Burgess S.  Mendelian randomization with invalid
+        instruments: effect estimation and bias detection through Egger
+        regression. International Journal of Epidemiology, 2015, 44, 2,
+        512-525.  DOI
 <br><br>
-<a name="mrmedian"></a>    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian
-        randomization with some invalid instruments using a weighted median estimator. Genetic
-        Epidemiology, 2016, 40, 4, 304-314.  DOI
+<a name="mrmedian"></a>    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
+        Mendelian randomization with some invalid instruments using a
+        weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
+        304-314.  DOI
 <br><br>
-<a name="i2gx"></a>    Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR.  Assessing the
-        suitability of summary data for two-sample Mendelian randomization analyses using MR-Egger
-        regression: the role of the I-squared statistic. International Journal of Epidemiology,
-        2016, 45, 6, 1961-1974.  DOI
+<a name="i2gx"></a>    Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR.
+        Assessing the suitability of summary data for two-sample Mendelian
+        randomization analyses using MR-Egger regression: the role of the
+        I-squared statistic. International Journal of Epidemiology, 2016, 45,
+        6, 1961-1974.  DOI
 <br><br>
-<a name="radial"></a>    Bowden J, Spiller W, Del-Greco F, Sheehan NA, Thompson JR, Minelli C, Davey Smith G.
-        Improving the visualisation, interpretation and analysis of two-sample summary data
-        Mendelian randomization via the radial plot and radial regression.  International Journal
-        of Epidemiology, 2018, 47, 4, 1264-1278. DOI
+<a name="radial"></a>    Bowden J, Spiller W, Del-Greco F, Sheehan NA, Thompson JR, Minelli C,
+        Davey Smith G.  Improving the visualisation, interpretation and
+        analysis of two-sample summary data Mendelian randomization via the
+        radial plot and radial regression.  International Journal of
+        Epidemiology, 2018, 47, 4, 1264-1278. DOI
 <br><br>
-<a name="robust"></a>    Burgess S, Bowden J, Dudbridge F, Thompson SG. Robust instrumental variable methods using
-        candidate instruments with application to Mendelian randomization. arXiv:1606.03729v1,
-        2016.  Link
+<a name="robust"></a>    Burgess S, Bowden J, Dudbridge F, Thompson SG. Robust instrumental
+        variable methods using candidate instruments with application to
+        Mendelian randomization. arXiv:1606.03729v1, 2016.  Link
 <br><br>
-<a name="ivw"></a>    Burgess S, Butterworth A, Thompson S. Mendelian randomization analysis with multiple genetic
-        variants using summarized data. Genetic Epidemiology, 2013, 37, 7, 658–665.   DOI
+<a name="ivw"></a>    Burgess S, Butterworth A, Thompson S. Mendelian randomization analysis
+        with multiple genetic variants using summarized data. Genetic
+        Epidemiology, 2013, 37, 7, 658–665.   DOI
 <br><br>
-<a name="delgreco"></a>    Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in Mendelian
-        randomization studies with summary data and a continuous outcome.  Statistics in Medicine,
-        2015, 34, 21, 2926-2940.  DOI
+<a name="delgreco"></a>    Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy
+        in Mendelian randomization studies with summary data and a continuous
+        outcome.  Statistics in Medicine, 2015, 34, 21, 2926-2940.  DOI
 <br><br>
-<a name="do"></a>    Do R et al. Common variants associated with plasma triglycerides and risk for coronary artery
-        disease. Nature Genetics, 2013, 45, 1345–1352. DOI:  DOI
+<a name="do"></a>    Do R et al. Common variants associated with plasma triglycerides and risk
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        DOI:  DOI
 <br><br>
-<a name="thompson"></a>    Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: a comparison of methods.
-        Statistics in Medicine, 1999, 18, 20, 2693-2708.  DOI
+<a name="thompson"></a>    Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: a
+        comparison of methods. Statistics in Medicine, 1999, 18, 20,
+        2693-2708.  DOI
 <br><br>
 <a name="author"></a><br><br>
 <span class=result><u>Author</u></span>
 <br><br>
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of
-        Bristol, UK. tom.palmer@bristol.ac.uk.
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
+        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
 <br><br>
-    If you find any bugs or have questions please send me an email or create an issue on the
-        GitHub repo: https://github.com/remlapmot/mrrobust/issues
+    If you find any bugs or have questions please send me an email or create
+        an issue on the GitHub repo: 
+        https://github.com/remlapmot/mrrobust/issues
 </pre>
 </body>
 </html>
