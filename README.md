@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* October 2020:
+  - `dependency.do` and `mrdeps` now install the updated version of the `moremata` package
 * August 2020:
   - Added html versions of the helpfiles to the website. These are available from the website 
   menu bar or [here](https://remlapmot.github.io/mrrobust/docs/helpfiles/)
