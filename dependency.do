@@ -5,7 +5,7 @@ ssc install addplot
 ssc install kdens
 cap noi ssc install moremata
 if _rc == 602 {
-    di "Installing the latest version of moremata"
+    di as txt "Installing the latest version of moremata"
     ssc install moremata, replace
 }
 ssc install heterogi
