@@ -79,9 +79,9 @@ if "`fe'" == "fe" scalar `rmse' = 1
 else scalar `rmse' = sqrt(e(phi))
 
 if `rmse' < 1 {
-	di as error "Residual standard error found to be:" as res scalar(`rmse'),
-	_n "This is less than 1.", ///
-	_n "Refitting model with residual variance constrained to 1."
+	di as error "Residual standard error found to be:" as res scalar(`rmse'), ///
+		_n "This is less than 1.", ///
+		_n "Refitting model with residual variance constrained to 1."
 	local scale "scale(1)"
 	qui glm `varlist' [iw=`invvar'] `if' `in', nocons ///
 		`scale' level(`level') `options'
