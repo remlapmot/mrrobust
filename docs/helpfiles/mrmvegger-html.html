@@ -24,30 +24,36 @@ BODY{background-color: ffffff;
         <span class=result>mrmvegger</span> <i>varname_gd</i> <i>varname_gp1</i> [<i>varname_gp2</i> ...] [<i>aweight</i>] [<i>if</i>] [<i>in</i>] [<span class=result>,</span> <i>options</i>]
 <br><br>
     <i>options</i>               Description
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      <span class=result>orient(</span><i>#</i><span class=result>)</span>           orient the data wrt to the phenotype which corresponds with the #th genotype-phenotype association variable in the varlist (default is 1)
+    ----------------------------------------------------------------------------------------------
+      <span class=result>orient(</span><i>#</i><span class=result>)</span>           orient the data wrt to the phenotype which corresponds with the #th
+                            genotype-phenotype association variable in the varlist (default is 1)
       <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
       <span class=result>tdist</span>               use t-distribution for Wald test and CI limits
 <br><br>
 <a name="description"></a><span class=result><u>Description</u></span>
 <br><br>
-    <span class=result>mrmvegger</span> performs multivariable MR-Egger regression.  For further information see Rees et al. (2017).
+    <span class=result>mrmvegger</span> performs multivariable MR-Egger regression.  For further information see Rees et al.
+    (2017).
 <br><br>
-    By default multiplicative random effect standard errors are reported.  However, if the residual variance is found to be less than 1 the model is refitted with this constrained to 1.
+    By default multiplicative random effect standard errors are reported.  However, if the
+    residual variance is found to be less than 1 the model is refitted with this constrained to 1.
 <br><br>
     <i>varname_gd</i> variable containing the genotype-disease association estimates.
 <br><br>
     <i>varname_gp#</i> variable containing the #th genotype-phenotype association estimates.
 <br><br>
-    For the analytic weights you need to specify the inverse of the genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+    For the analytic weights you need to specify the inverse of the genotype-disease standard
+    errors squared, i.e. aw=1/(gdse^2).
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
-    <span class=result>orient(</span><i>#</i><span class=result>)</span> specifies which phenotype to orient the data to. The default is 1, i.e. the phenotype in the first genotype-phenotype variable in the varlist.
+    <span class=result>orient(</span><i>#</i><span class=result>)</span> specifies which phenotype to orient the data to. The default is 1, i.e. the
+        phenotype in the first genotype-phenotype variable in the varlist.
 <br><br>
     <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
 <br><br>
-    <span class=result>tdist</span> specifies using the t-distribution, instead of the normal distribution, for calculating the Wald test and the confidence interval limits.
+    <span class=result>tdist</span> specifies using the t-distribution, instead of the normal distribution, for calculating
+        the Wald test and the confidence interval limits.
 <br><br>
 <a name="examples"></a><span class=result><u>Examples</u></span>
 <br><br>
@@ -90,21 +96,26 @@ BODY{background-color: ffffff;
     <span class=result>mrmvegger</span> stores the following in <span class=result>r()</span>:
 <br><br>
     Matrices       
-      <span class=result>r(table)</span>            Coefficient table with rownames: b, se, z, pvalue, ll, ul, df, crit, eform
+      <span class=result>r(table)</span>            Coefficient table with rownames: b, se, z, pvalue, ll, ul, df, crit,
+                            eform
 <br><br>
 <a name="references"></a><span class=result><u>References</u></span>
 <br><br>
-<a name="do"></a>    Do et al., 2013. Common variants associated with plasma triglycerides and risk for coronary artery disease. Nature Genetics. 45, 1345–1352.  DOI
+<a name="do"></a>    Do et al., 2013. Common variants associated with plasma triglycerides and risk for coronary
+        artery disease. Nature Genetics. 45, 1345–1352.  DOI
 <br><br>
-<a name="rees"></a>    Rees J, Wood A, Burgess S. Extending the MR-Egger method for multivariable Mendelian randomization to correct for both measured and unmeasured pleiotropy.  Statistics in Medicine, 2017, 36, 29,
-        4705-4718.  DOI
+<a name="rees"></a>    Rees J, Wood A, Burgess S. Extending the MR-Egger method for multivariable Mendelian
+        randomization to correct for both measured and unmeasured pleiotropy.  Statistics in
+        Medicine, 2017, 36, 29, 4705-4718.  DOI
 <br><br>
 <a name="author"></a><br><br>
 <span class=result><u>Author</u></span>
 <br><br>
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of
+        Bristol, UK. tom.palmer@bristol.ac.uk.
 <br><br>
-    If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: https://github.com/remlapmot/mrrobust/issues
+    If you find any bugs or have questions please send me an email or create an issue on the
+        GitHub repo: https://github.com/remlapmot/mrrobust/issues
 </pre>
 </body>
 </html>
