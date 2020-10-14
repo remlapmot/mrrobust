@@ -79,7 +79,7 @@ likely bias due measurement error in the MR-Egger slope estimate is around
 caution.
  
 {phang}
-{opt het:erogi} suppresses display of heterogeneity/pleiotropy 
+{opt het:erogi} displays heterogeneity/pleiotropy 
 statistics. In the heterogeneity output 
 the model based Q-statistic is reported by multiplying the variance of the 
 residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}).
