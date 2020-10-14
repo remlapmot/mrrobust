@@ -24,7 +24,7 @@ BODY{background-color: ffffff;
         <span class=result>mrratio</span> <i>#gd</i> <i>#gdse</i> <i>#gp</i> [<i>#gpse</i> <i>#cov</i>] [<span class=result>,</span> <i>options</i>]
 <br><br>
     <i>options</i>               Description
-    -------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       <span class=result>eform</span>               exp() estimate and CI limits
       <span class=result>fieller</span>             CI using Fieller's Theorem
       <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
@@ -32,22 +32,15 @@ BODY{background-color: ffffff;
 <br><br>
 <a name="description"></a><span class=result><u>Description</u></span>
 <br><br>
-    <span class=result>mrratio</span> implements the standard instrumental variable ratio (Wald)
-    estimator.
+    <span class=result>mrratio</span> implements the standard instrumental variable ratio (Wald) estimator.
 <br><br>
-    <span class=result>mrratio</span> can generate confidence interval limits using either a standard
-    error from a Taylor series expansion (the default), a standard error
-    using the NOME (no measurement error) in the genotype-phenotype
-    association assumption, or using Fieller's Theorem.
+    <span class=result>mrratio</span> can generate confidence interval limits using either a standard error from a Taylor series expansion (the default), a standard error using the NOME (no measurement error) in the
+    genotype-phenotype association assumption, or using Fieller's Theorem.
 <br><br>
-    The user needs to have summary level genotype-disease and
-    genotype-phenotype association estimates and their standard errors. If
-    assuming NOME the standard error of the genotype-phenotype association is
+    The user needs to have summary level genotype-disease and genotype-phenotype association estimates and their standard errors. If assuming NOME the standard error of the genotype-phenotype association is
     not required.
 <br><br>
-    It is also optional to provide the covariance between the
-    genotype-disease and genotype-phenotype estimates. If these are from
-    independent samples then this covariance is zero.
+    It is also optional to provide the covariance between the genotype-disease and genotype-phenotype estimates. If these are from independent samples then this covariance is zero.
 <br><br>
     <i>#gd</i> genotype-disease association estimate.
 <br><br>
@@ -57,21 +50,17 @@ BODY{background-color: ffffff;
 <br><br>
     <i>#gpse</i> standard error of the genotype-phenotype association estimate.
 <br><br>
-    <i>#cov</i> covariance between the genotype-disease and the genotype-phenotype
-    estimates.
+    <i>#cov</i> covariance between the genotype-disease and the genotype-phenotype estimates.
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
-    <span class=result>eform</span> specifies reporting the exponentiated ratio estimate and confidence
-        interval limits.
+    <span class=result>eform</span> specifies reporting the exponentiated ratio estimate and confidence interval limits.
 <br><br>
-    <span class=result>fieller</span> specifies deriving the confidence interval using Fieller's
-        Theorem.
+    <span class=result>fieller</span> specifies deriving the confidence interval using Fieller's Theorem.
 <br><br>
     <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
 <br><br>
-    <span class=result>nome</span> specifies the NOME (no measurement error in the genotype-phenotype
-        association) assumption.
+    <span class=result>nome</span> specifies the NOME (no measurement error in the genotype-phenotype association) assumption.
 <br><br>
 <a name="examples"></a><span class=result><u>Examples</u></span>
 <br><br>
@@ -95,9 +84,7 @@ BODY{background-color: ffffff;
     <span class=result>mrratio</span> stores the following in <span class=result>e()</span>:
 <br><br>
     Scalars        
-      <span class=result>e(fiellerres)</span>       Result code from the Fieller CI: . <span class=result>fieller</span> not
-                            specified; 1 closed CI; 2 union of two intervals;
-                            3 CI is whole real line
+      <span class=result>e(fiellerres)</span>       Result code from the Fieller CI: . <span class=result>fieller</span> not specified; 1 closed CI; 2 union of two intervals; 3 CI is whole real line
       <span class=result>e(level)</span>            level specified in first call to <span class=result>mrratio</span>.
 <br><br>
     When <span class=result>fieller</span> specified additional scalars:
@@ -115,12 +102,9 @@ BODY{background-color: ffffff;
 <a name="author"></a><br><br>
 <span class=result><u>Author</u></span>
 <br><br>
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
+    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
 <br><br>
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+    If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: https://github.com/remlapmot/mrrobust/issues
 </pre>
 </body>
 </html>
