@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  25 Aug 2020, 14:43:21
+ opened on:  15 Oct 2020, 15:19:02
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -265,8 +265,8 @@ Options
         slope estimate is around 10%. If I^2_GX values are less than 90%
         estimates should be treated with caution.
 
-    heterogi suppresses display of heterogeneity/pleiotropy statistics. In
-        the heterogeneity output the model based Q-statistic is reported by
+    heterogi displays heterogeneity/pleiotropy statistics. In the
+        heterogeneity output the model based Q-statistic is reported by
         multiplying the variance of the residuals by the degrees of freedom
         (Del Greco et al., 2015).
 
@@ -1863,7 +1863,7 @@ Author
 . 
 end of do-file
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  25 Aug 2020, 14:43:21
+ closed on:  15 Oct 2020, 15:19:02
 -------------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:   4 Aug 2020, 11:29:52
+ opened on:  15 Oct 2020, 15:07:16
 
 . * mrdeps cscript
 . * 20jan2020
@@ -11,7 +11,7 @@
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
@@ -20,19 +20,19 @@ checking addplot consistency and verifying not already installed...
 all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
-checking moremata consistency and verifying not already installed...
-all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
 all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
 all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
 
 . 
 end of do-file
       name:  mrdeps
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:   4 Aug 2020, 11:30:25
+ closed on:  15 Oct 2020, 15:07:55
 -------------------------------------------------------------------------------

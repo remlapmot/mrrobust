@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrivests
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:   4 Aug 2020, 11:38:00
+ opened on:  15 Oct 2020, 15:16:18
 
 . * mrivests testcode
 . * 10jun2017
@@ -11,7 +11,7 @@
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrivests.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
@@ -225,7 +225,7 @@ variable ivse not found
 . 
 end of do-file
       name:  mrivests
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:   4 Aug 2020, 11:38:02
+ closed on:  15 Oct 2020, 15:16:20
 -------------------------------------------------------------------------------

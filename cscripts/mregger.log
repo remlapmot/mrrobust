@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:   4 Aug 2020, 11:30:25
+ opened on:  15 Oct 2020, 15:07:55
 
 . * mregger cscript
 . * 04jun2016
@@ -11,7 +11,7 @@
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -799,7 +799,7 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-c:\ado\plus\t\tsci.ado
+c:\ado\personal\t\tsci.ado
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
@@ -1795,7 +1795,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:   4 Aug 2020, 11:30:32
+ closed on:  15 Oct 2020, 15:08:07
 -------------------------------------------------------------------------------

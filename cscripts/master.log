@@ -1,8 +1,8 @@
-----------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
       name:  master
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- opened on:   4 Aug 2020, 11:28:53
+ opened on:  15 Oct 2020, 15:06:04
 
 . 
 . cscript master
@@ -39,9 +39,9 @@
   5. }
 -------------------------------------------------------------------------------
       name:  mr
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:   4 Aug 2020, 11:28:53
+ opened on:  15 Oct 2020, 15:06:04
 
 . * mr cscript
 . * 20jan2020
@@ -67,76 +67,75 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mrmvegger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mr, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mr.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggerplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimex.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimexonce.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrforest.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrivests.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedian.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodal.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrratio.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
-. rcof "noi mr incorrectsubcommandname" ///
->         == 198
+. rcof "noi mr incorrectsubcommandname" == 198
 incorrectsubcommandname is not a valid subcommand.
 
 . 
@@ -145,13 +144,13 @@ checking addplot consistency and verifying not already installed...
 all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
-checking moremata consistency and verifying not already installed...
-all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
 all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
+all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
 all files already exist and are up to date.
 
 . 
@@ -315,6 +314,253 @@ chdbeta      |
 ------------------------------------------------------------------------------
 
 . 
+. gen byte sel2 = (ldlcp2 < 1e-25)
+
+. mr leaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid)
+
+Model fitted without genotype: rs1998013
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5282376   .0455961    11.59   0.000     .4388709    .6176042
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs4587594
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5429584   .0453622    11.97   0.000     .4540502    .6318666
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs646776
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5107593   .0493613    10.35   0.000     .4140128    .6075057
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs2587534
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5344288   .0453062    11.80   0.000     .4456302    .6232274
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs1367117
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |    .556469   .0479046    11.62   0.000     .4625777    .6503603
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs515135
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5320207   .0474703    11.21   0.000     .4389807    .6250607
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs6544713
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5122364   .0460225    11.13   0.000     .4220338    .6024389
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs7703051
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5281236    .046125    11.45   0.000     .4377202     .618527
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs6882076
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5254465   .0453343    11.59   0.000      .436593    .6143001
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs4240624
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5271701   .0452075    11.66   0.000      .438565    .6157752
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs2954022
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5081094   .0455969    11.14   0.000     .4187411    .5974778
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs579459
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |    .498307   .0454897    10.95   0.000     .4091488    .5874652
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs1535
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5364546   .0454439    11.80   0.000     .4473862    .6255229
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs10790162
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5053214   .0452312    11.17   0.000     .4166699    .5939729
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs2000999
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5217204   .0454508    11.48   0.000     .4326384    .6108024
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs6511720
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5182714    .046783    11.08   0.000     .4265784    .6099643
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs688
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5084139   .0455576    11.16   0.000     .4191226    .5977051
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs10401969
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5106048    .045641    11.19   0.000     .4211501    .6000594
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs6859
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5346733   .0456701    11.71   0.000     .4451615     .624185
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs7254892
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5422596   .0465593    11.65   0.000      .451005    .6335142
+------------------------------------------------------------------------------
+
+Model fitted without genotype: rs6065311
+
+                                                      Number of genotypes = 20
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5254198   .0452998    11.60   0.000     .4366339    .6142056
+------------------------------------------------------------------------------
+
+Model fitted to all genotypes
+
+                                                      Number of genotypes = 21
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .5240663   .0448781    11.68   0.000     .4361069    .6120257
+------------------------------------------------------------------------------
+
+. 
 . ** mrmedianobs test dataset
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, cl
@@ -334,15 +580,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:   4 Aug 2020, 11:29:52
+ closed on:  15 Oct 2020, 15:07:16
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:   4 Aug 2020, 11:29:52
+ opened on:  15 Oct 2020, 15:07:16
 
 . * mrdeps cscript
 . * 20jan2020
@@ -351,7 +597,7 @@ end of do-file
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
@@ -360,27 +606,27 @@ checking addplot consistency and verifying not already installed...
 all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
-checking moremata consistency and verifying not already installed...
-all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
 all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
 all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
 
 . 
 end of do-file
       name:  mrdeps
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:   4 Aug 2020, 11:30:25
+ closed on:  15 Oct 2020, 15:07:55
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:   4 Aug 2020, 11:30:25
+ opened on:  15 Oct 2020, 15:07:55
 
 . * mregger cscript
 . * 04jun2016
@@ -389,7 +635,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -1177,7 +1423,7 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-c:\ado\plus\t\tsci.ado
+c:\ado\personal\t\tsci.ado
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
@@ -2173,15 +2419,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:   4 Aug 2020, 11:30:32
+ closed on:  15 Oct 2020, 15:08:07
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:   4 Aug 2020, 11:30:32
+ opened on:  15 Oct 2020, 15:08:07
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2190,11 +2436,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggerplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -2502,15 +2748,15 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:   4 Aug 2020, 11:32:22
+ closed on:  15 Oct 2020, 15:09:48
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- opened on:   4 Aug 2020, 11:32:22
+ opened on:  15 Oct 2020, 15:09:48
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2519,11 +2765,11 @@ end of do-file
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimex.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimexonce.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
@@ -2679,15 +2925,15 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- closed on:   4 Aug 2020, 11:37:12
+ closed on:  15 Oct 2020, 15:15:02
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:   4 Aug 2020, 11:37:12
+ opened on:  15 Oct 2020, 15:15:02
 
 . * mrforest cscript
 . * 16jun2017
@@ -2696,7 +2942,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrforest.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
@@ -2831,15 +3077,15 @@ models(#) should be between 0 and 4
 . 
 end of do-file
       name:  mrforest
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:   4 Aug 2020, 11:37:48
+ closed on:  15 Oct 2020, 15:15:52
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:   4 Aug 2020, 11:37:48
+ opened on:  15 Oct 2020, 15:15:52
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -2848,7 +3094,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrfunnel
 
 -> which mrfunnel, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 . 
@@ -2883,23 +3129,53 @@ C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xscale(range(-4 4))
 
 . 
-. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, yscale(range(0 .6))
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, yscale(range(0 12))
 
 . 
-. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, mc(red)
+. discard
+
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, scatteropts(mc(red))
+
+. 
+. * legend off
+. discard
+
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)
+
+. 
+. * lines going down to zero
+. discard
+
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
+>         noivw nomregger ///
+>         extraplots(function .481, lp(dash) lc(gs0) hor range(0 10) || ///
+>                 function .617, lp(longdash) lc(gs0) hor range(0 10) || ) ///
+>         legend(on order(1 "Genotypes" 2 "IVW" 3 "MR-Egger") rows(1))
+
+. 
+. * set the range for the lines using xlrange option
+. discard
+
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
+
+. 
+. * original mrfunnel plot
+. discard
+
+. mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10) legend(off)
 
 . 
 end of do-file
       name:  mrfunnel
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:   4 Aug 2020, 11:38:00
+ closed on:  15 Oct 2020, 15:16:18
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:   4 Aug 2020, 11:38:00
+ opened on:  15 Oct 2020, 15:16:18
 
 . * mrivests testcode
 . * 10jun2017
@@ -2908,7 +3184,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrivests.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
@@ -3122,15 +3398,15 @@ variable ivse not found
 . 
 end of do-file
       name:  mrivests
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:   4 Aug 2020, 11:38:02
+ closed on:  15 Oct 2020, 15:16:20
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- opened on:   4 Aug 2020, 11:38:02
+ opened on:  15 Oct 2020, 15:16:20
 
 . * mrmedian test code
 . * 3jun2016
@@ -3139,7 +3415,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrmedian
 
 -> which mrmedian, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedian.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 . 
@@ -3322,7 +3598,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .071392     6.00   0.000     .2886458    .5684971
+        beta |   .4285714   .0700428     6.12   0.000     .2912901    .5658528
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3337,7 +3613,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .071392     6.00   0.000     .2886458    .5684971
+        beta |   .4285714   .0700428     6.12   0.000     .2912901    .5658528
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3420,7 +3696,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .069527     6.16   0.000      .292301    .5648419
+        beta |   .4285714   .0707885     6.05   0.000     .2898286    .5673143
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3435,7 +3711,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .069527     6.16   0.000      .292301    .5648419
+        beta |   .4285714   .0707885     6.05   0.000     .2898286    .5673143
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3457,7 +3733,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .069527     6.16   0.000      .292301    .5648419
+        beta |   .4285714   .0707885     6.05   0.000     .2898286    .5673143
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3471,7 +3747,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .069527     6.16   0.000     .3142097    .5429332
+        beta |   .4285714   .0707885     6.05   0.000     .3121347    .5450081
 ------------------------------------------------------------------------------
 
 . 
@@ -3482,7 +3758,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .069527     6.16   0.000     .3142097    .5429332
+        beta |   .4285714   .0707885     6.05   0.000     .3121347    .5450081
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3496,21 +3772,21 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .069527     6.16   0.000      .339469    .5176739
+        beta |   .4285714   .0707885     6.05   0.000     .3378523    .5192905
 ------------------------------------------------------------------------------
 
 . 
 end of do-file
       name:  mrmedian
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- closed on:   4 Aug 2020, 11:38:03
+ closed on:  15 Oct 2020, 15:16:23
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- opened on:   4 Aug 2020, 11:38:03
+ opened on:  15 Oct 2020, 15:16:23
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -3519,11 +3795,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -3875,15 +4151,15 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- closed on:   4 Aug 2020, 11:38:23
+ closed on:  15 Oct 2020, 15:16:45
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:   4 Aug 2020, 11:38:23
+ opened on:  15 Oct 2020, 15:16:45
 
 . * mrmodal cscript
 . * 2jun2017
@@ -3892,7 +4168,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodal.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
@@ -4664,15 +4940,15 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:   4 Aug 2020, 11:38:38
+ closed on:  15 Oct 2020, 15:17:06
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- opened on:   4 Aug 2020, 11:38:38
+ opened on:  15 Oct 2020, 15:17:06
 
 . * mrmodalplot example
 . * 2aug2017
@@ -4681,7 +4957,7 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmodalplot
 
 -> which mrmodalplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 . 
@@ -5540,15 +5816,15 @@ C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
 . 
 end of do-file
       name:  mrmodalplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- closed on:   4 Aug 2020, 11:39:32
+ closed on:  15 Oct 2020, 15:18:06
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:   4 Aug 2020, 11:39:32
+ opened on:  15 Oct 2020, 15:18:06
 
 . * mrratio cscript
 . * 6jun2017
@@ -5557,7 +5833,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrratio
 
 -> which mrratio, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrratio.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -5891,15 +6167,15 @@ With 3 inputs please specify the nome option.
 . 
 end of do-file
       name:  mrratio
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:   4 Aug 2020, 11:39:33
+ closed on:  15 Oct 2020, 15:18:08
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:   4 Aug 2020, 11:39:33
+ opened on:  15 Oct 2020, 15:18:08
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -5908,15 +6184,15 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmvivw
 
 -> which mrmvivw, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvivw, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvmr, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mvmr.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 . 
@@ -7322,15 +7598,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvivw
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:   4 Aug 2020, 11:39:47
+ closed on:  15 Oct 2020, 15:18:42
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:   4 Aug 2020, 11:39:47
+ opened on:  15 Oct 2020, 15:18:42
 
 . * mrmvegger cscript
 . * 22un2020
@@ -7339,7 +7615,7 @@ end of do-file
 ----------------------------------------------------------------BEGIN mrmvegger
 
 -> which mrmvegger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 . 
@@ -8127,15 +8403,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvegger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:   4 Aug 2020, 11:39:56
+ closed on:  15 Oct 2020, 15:19:02
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:   4 Aug 2020, 11:39:56
+ opened on:  15 Oct 2020, 15:19:02
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -8398,8 +8674,8 @@ Options
         slope estimate is around 10%. If I^2_GX values are less than 90%
         estimates should be treated with caution.
 
-    heterogi suppresses display of heterogeneity/pleiotropy statistics. In
-        the heterogeneity output the model based Q-statistic is reported by
+    heterogi displays heterogeneity/pleiotropy statistics. In the
+        heterogeneity output the model based Q-statistic is reported by
         multiplying the variance of the residuals by the degrees of freedom
         (Del Greco et al., 2015).
 
@@ -9507,6 +9783,12 @@ Examples
         . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
             models(4) modelslabel(All genotypes)
 
+    If you have data which require more than 2 decimal places, use metan's
+    undocumented dp option, e.g. for 4 decimal places specify dp(4)
+        . gen chdbeta2 = chdbeta / 100
+        . gen chdse2 = chdse / 100
+        . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) dp(4)
+
 References
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
@@ -9542,11 +9824,15 @@ Syntax
 
     options               Description
     -------------------------------------------------------------------------
+      extraplots(string)  extra plots to add to the overall plot
       metric(metric)      scale of y-axis
       noivw               do not plot IVW line
       nomregger           do not plot MR-Egger line
       mrivestsopts(opts)  options passed to mrivests
-      *                   Other options passed to the plot
+      scatteropts(opts)   options passed to the scatter command
+      xlrange(# #)        the range for the IVW and MR-Egger lines, see 
+                            twoway_function range() option
+      *                   other options passed to twoway
 
 Description
 
@@ -9554,7 +9840,8 @@ Description
     analysis.
 
     There are 3 choices of measures of instrument strength to plot on the
-    y-axis, which are described below.
+    y-axis, which are specified using the metric option and are described
+    below.
  
     On the plot the MR-Egger estimate is the line with the longer dashes, the
     IVW estimate is shown with the shorter dashes.
@@ -9604,6 +9891,12 @@ Examples
     Using inverse IV SEs on the y-axis
         . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(invse)
 
+    Remove the legend
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(off)
+
+    Extend the IVW and MR-Egger lines to the y-axis limits (as per the
+    original version of this command)
+        . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 
 References
 
@@ -9953,6 +10246,13 @@ Examples
         . mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1,
             method(mvmr) gyse(chdse) genotype(rsid)
 
+    If you have data which require more than 2 decimal places, use metan's
+    undocumented dp option, e.g. for 4 decimal places specify dp(4)
+        . gen chdbeta2 = chdbeta / 100
+        . gen chdse2 = chdse / 100
+        . mrleaveoneout chdbeta2 ldlcbeta if sel2==1, gyse(chdse2)
+            genotype(rsid) metanopts(dp(4))
+
 References
 
     Do et al. Common variants associated with plasma triglycerides and risk
@@ -9972,15 +10272,16 @@ Author
 . 
 end of do-file
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:   4 Aug 2020, 11:39:57
+ closed on:  15 Oct 2020, 15:19:02
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
+> g
   log type:  text
- opened on:   4 Aug 2020, 11:39:57
+ opened on:  15 Oct 2020, 15:19:02
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -9989,7 +10290,7 @@ end of do-file
 ------------------------------------------------------------BEGIN mrleaveoneout
 
 -> which mrleaveoneout, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrleaveoneout.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
 
 . 
@@ -16988,15 +17289,16 @@ chdbeta      |
 . 
 end of do-file
       name:  mrleaveoneout
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
+> g
   log type:  text
- closed on:   4 Aug 2020, 11:41:07
+ closed on:  15 Oct 2020, 15:20:38
 -------------------------------------------------------------------------------
 
 . 
 . log close _all
       name:  master
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- closed on:   4 Aug 2020, 11:41:07
+ closed on:  15 Oct 2020, 15:20:38
 -------------------------------------------------------------------------------
