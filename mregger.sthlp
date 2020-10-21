@@ -45,7 +45,7 @@ statistics{p_end}
 {pstd}
 {cmd:mregger} performs inverse-variance weighted (IVW; {help mregger##ivw:Burgess et al., 2013}) and Mendelian 
 randomization Egger (MR-Egger) regression ({help mregger##bowden:Bowden et al., 2015}) using summary level data 
-(i.e. using genotype-disease and phenotype-disease association estimates 
+(i.e. using genotype-disease [SNP-outcome] and genotype-phenotype [SNP-exposure] association estimates 
 and their standard errors).
 
 {pstd}
