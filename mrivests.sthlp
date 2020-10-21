@@ -23,7 +23,7 @@
 {synoptset 27 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt :{opt g:enerate(varlist, replace)}}Variables to contain IV ests and SEs or CI limits{p_end}
+{synopt :{opt g:enerate(varlist, replace)}}Variables to contain IV estimates and SEs or CI limits{p_end}
 {synopt :{opt *:}}options passed to {cmd:mrratio}{p_end}
 
 {marker description}{...}
