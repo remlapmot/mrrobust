@@ -504,9 +504,15 @@ else {
 
 ** heterogi
 if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
+	if "`ivw'" == "ivw" {
+		local qname Cochran's
+	}
+	else {
+		local qname Ruecker's
+	}
     qui heterogi `qstat' `df', level(`level')
-	local colstart = 79 - (44 + `=length("`r(df)'")')
-	di _col(`colstart') as txt "Heterogeneity; chi2(" ///
+	local colstart = 79 - (44 + 16 + `=length("`r(df)'")')
+	di _col(`colstart') as txt "`qname' Q for heterogeneity; chi2(" ///
 		as res r(df) as txt ") =", ///
 		as res %5.2f r(Q), as txt "(p = ", as res %5.4f r(pval) as txt ")"
     ereturn scalar I2 = r(I2)
