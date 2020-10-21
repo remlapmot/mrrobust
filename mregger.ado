@@ -13,7 +13,9 @@ if replay() {
 
 syntax varlist(min=2 max=2) [aweight] [if] [in] [, ivw fe re ///
 	reslope recons HETerogi noRESCale PENWeighted Level(cilevel) ///
-	gxse(varname numeric) tdist RADial unwi2gx oldnames *]
+	gxse(varname numeric) tdist RADial unwi2gx oldnames ///
+	MODified SECond COVariance(real 0) ///
+	*]
 
 local callersversion = _caller()
 
