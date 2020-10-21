@@ -38,8 +38,8 @@ obtain standard error{p_end}
 
 {pstd}
 {cmd:mrmodal} implements the zero modal estimator of {help mrmodal##hartwig:Hartwig et al. (2017)} 
-for use with summary level data (i.e. reported genotype-disease and phenotype-disease 
-association estimates and their standard errors for individual genotypes).
+for use with summary level data (i.e. reported genotype-disease [SNP-outcome] and genotype-phenotype 
+[SNP-exposure] association estimates and their standard errors for individual genotypes).
 
 {pstd}
 Standard errors are obtained by parametric bootstrapping.
