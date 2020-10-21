@@ -102,6 +102,12 @@ if "`radial'" != "" & "`penweighted'" != "" {
 	exit 198
 }
 
+// disallow second and modified
+if "`modified'" != "" & "`second'" != "" {
+	di as err "Please only specify one of options modified and second."
+	exit 198
+}
+
 ** estimation
 if "`ivw'" == "ivw" {
 	if "`heterogi'" != "" & "`penweighted'" == "" {
