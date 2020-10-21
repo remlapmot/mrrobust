@@ -244,7 +244,7 @@ multiple genetic variants using summarized data. Genetic Epidemiology, 2013, 37,
 Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in 
 Mendelian randomization studies with summary data and a continuous outcome. 
 Statistics in Medicine, 2015, 34, 21, 2926-2940. 
-{browse "http://dx.doi.org/10.1002/sim.6522":DOI}
+{browse "https://onlinelibrary.wiley.com/doi/full/10.1002/sim.6522":DOI}
 {p_end}
 
 {marker do}{...}
