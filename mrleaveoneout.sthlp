@@ -24,8 +24,8 @@
 {synoptline}
 {synopt :{opt astext:(#)}}Percentage of plot taken up by areas for text - some trial and error may be required{p_end}
 {p2col:{cmd:genotype(}{varname}{cmd:)}}Variable to label genotypes, usually containing RSIDs{p_end}
-{p2col:{cmd:gxse(}{varname}{cmd:)}}Variable with genotype-phenotype standard errors (if required by method){p_end}
-{p2col:{cmd:gyse(}{varname}{cmd:)}}Variable with genotype-disease standard errors{p_end}
+{p2col:{cmd:gxse(}{varname}{cmd:)}}Variable with genotype-phenotype (SNP-exposure) standard errors (if required by method){p_end}
+{p2col:{cmd:gyse(}{varname}{cmd:)}}Variable with genotype-disease (SNP-outcome) standard errors{p_end}
 {synopt :{opt metanopts(string)}}Options passed to {cmd:metan} for the plot{p_end}
 {synopt :{opt m:ethod(string)}}The method fitted for the analysis{p_end}
 {synopt :{opt noplot}}Suppresses the plot{p_end}
@@ -45,10 +45,10 @@ For multiple exposure models such as MVMR and MVMR-Egger the estimate is
 collected for the first phenotype.
 
 {pstd}
-{var:_gd} is a variable containing the genotype-disease association estimates.
+{var:_gd} is a variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gp} is a variable containing the genotype-phenotype association 
+{var:_gp} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimates.
 
 {marker options}{...}

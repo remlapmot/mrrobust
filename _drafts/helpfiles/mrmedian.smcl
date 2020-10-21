@@ -36,26 +36,26 @@ obtain standard error{p_end}
 
 {pstd}
 {cmd:mrmedian} performs unweighted, weighted, and penalized median IV 
-estimator on summary level data (i.e. reported genotype-disease and 
-phenotype-disease association estimates and their standard errors for individual 
+estimator on summary level data (i.e. reported genotype-disease [SNP-outcome] and 
+genotype-phenotype [SNP-exposure] association estimates and their standard errors for individual 
 genotypes).
 
 {pstd}
 See {help mrmedian##bowden:Bowden et al. (2016)} for more information.
 
 {pstd}
-{var:_gd} is a variable containing the genotype-disease association estimates.
+{var:_gd} is a variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gdse} is a variable containing the genotype-disease association estimate 
+{var:_gdse} is a variable containing the genotype-disease (SNP-outcome) association estimate 
 standard errors.
 
 {pstd}
-{var:_gp} is a variable containing the genotype-phenotype association 
+{var:_gp} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimates.
 
 {pstd}
-{var:_gpse} is a variable containing the genotype-phenotype association 
+{var:_gpse} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimate standard errors.
 
 {marker options}{...}

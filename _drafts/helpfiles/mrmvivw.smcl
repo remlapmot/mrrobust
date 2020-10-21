@@ -26,7 +26,7 @@
 {synoptline}
 {synopt:{opt fe:}}fixed effect standard errors (default is multiplicative random effect)
 {p_end}
-{synopt:{opt gxse(varlist)}}varlist of genotype-phenotype standard errors{p_end}
+{synopt:{opt gxse(varlist)}}varlist of genotype-phenotype (SNP-exposure) standard errors{p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt:{opt tdist:}}use t-distribution for Wald test and CI limits{p_end}
 
@@ -38,13 +38,13 @@
 See {help mrmvivw##burgess: Burgess et al. (2015)} for more information.
 
 {pstd}
-{var:_gd} variable containing the genotype-disease association estimates.
+{var:_gd} variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gp#} variable containing the #th genotype-phenotype association estimates.
+{var:_gp#} variable containing the #th genotype-phenotype (SNP-exposure) association estimates.
 
 {pstd}
-For the analytic weights you need to specify the inverse of the genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+For the analytic weights you need to specify the inverse of the genotype-disease (SNP-outcome) standard errors squared, i.e. aw=1/(gdse^2).
 
 {marker options}{...}
 {title:Options}
@@ -58,8 +58,8 @@ estimated residual variance is displayed (Residual standard error). If the resid
 variance is found to be less than 1 an error message is shown and the model is refitted with it constrained to 1.
 
 {phang}
-{opt gxse(varlist)} specifies a varlist of genotype-phenotype standard errors. 
-These should be in the same order as the genotype-phenotype variables in the main varlist. 
+{opt gxse(varlist)} specifies a varlist of genotype-phenotype (SNP-exposure) standard errors. 
+These should be in the same order as the genotype-phenotype (SNP-exposure) variables in the main varlist. 
 When this option is specified the Q_A statistic for instrument validity is calculated. 
 When this is specified and there are two or more phenotypes conditional F statistics 
 for instrument strength are calculated. 

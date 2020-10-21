@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  21 Oct 2020, 10:35:43
+ opened on:  21 Oct 2020, 11:27:16
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -217,7 +217,7 @@ Syntax
     -------------------------------------------------------------------------
       fe                  Fixed effect standard errors (default is
                             multiplicative)
-      gxse(varname)       variable of genotype-phenotype SEs
+      gxse(varname)       variable of genotype-phenotype (SNP-exposure) SEs
       heterogi            Display heterogeneity/pleiotropy statistics
       ivw                 Inverse-variance weighted estimator (default is
                             MR-Egger)
@@ -236,17 +236,19 @@ Description
 
     mregger performs inverse-variance weighted (IVW; Burgess et al., 2013)
     and Mendelian randomization Egger (MR-Egger) regression (Bowden et al.,
-    2015) using summary level data (i.e. using genotype-disease and
-    phenotype-disease association estimates and their standard errors).
+    2015) using summary level data (i.e. using genotype-disease [SNP-outcome]
+    and genotype-phenotype [SNP-exposure] association estimates and their
+    standard errors).
 
-    varname_gd variable containing the genotype-disease association
-    estimates.
+    varname_gd variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gp variable containing the genotype-phenotype association
-    estimates.
+    varname_gp variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
     For the analytic weights you need to specify the inverse of the
-    genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+    genotype-disease (SNP-outcome) standard errors squared, i.e.
+    aw=1/(gdse^2).
 
 Options
 
@@ -259,11 +261,11 @@ Options
         instrumental variable.
 
     gxse(varname) specifies the variable containing the genotype-phenotype
-        association standard errors. These are required for calculating the
-        I^2_GX statistic (Bowden et al., 2016). An I^2_GX statistic of 90%
-        means that the likely bias due measurement error in the MR-Egger
-        slope estimate is around 10%. If I^2_GX values are less than 90%
-        estimates should be treated with caution.
+        (SNP-exposure) association standard errors. These are required for
+        calculating the I^2_GX statistic (Bowden et al., 2016). An I^2_GX
+        statistic of 90% means that the likely bias due measurement error in
+        the MR-Egger slope estimate is around 10%. If I^2_GX values are less
+        than 90% estimates should be treated with caution.
 
     heterogi displays heterogeneity/pleiotropy statistics. In the
         heterogeneity output the model based Q-statistic is reported by
@@ -427,7 +429,8 @@ Syntax
     -------------------------------------------------------------------------
       mreggeropts           Options for mregger
       bsopts                Options for bootstrap
-      gxse(varname)         Variable containg genotype-phenotype SEs
+      gxse(varname)         Variable containg genotype-phenotype
+                              (SNP-exposure) SEs
       noboot                Do not perform bootstrapping for SEs
       nodraw                Do not draw SIMEX plot
       reps(#)               No. bootstrap replications
@@ -441,14 +444,14 @@ Description
     (Cook et al., 1995, Hardin et al., 2003) on mregger using the commonly
     applied quadratic extrapolation (Bowden et al., 2016).
 
-    varname_gd variable containing the genotype-disease association
-    estimates.
+    varname_gd variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gp variable containing the genotype-phenotype association
-    estimates.
+    varname_gp variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
     For the analytic weights you need to specify the inverse of the
-    genotype-disease SEs squared, i.e. aw=1/(gdse^2).
+    genotype-disease (SNP-outcome) SEs squared, i.e. aw=1/(gdse^2).
 
 Examples
 
@@ -550,17 +553,17 @@ Description
 
     mreggerplot plots a scatter plot for MR-Egger type models
 
-    varname_gd is a variable containing the genotype-disease association
-    estimates.
+    varname_gd is a variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gdse is a variable containing the genotype-disease association
-    estimate standard errors.
+    varname_gdse is a variable containing the genotype-disease (SNP-outcome)
+    association estimate standard errors.
 
-    varname_gp is a variable containing the genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
-    varname_gpse is a variable containing the genotype-phenotype association
-    estimate standard errors.
+    varname_gpse is a variable containing the genotype-phenotype
+    (SNP-exposure) association estimate standard errors.
 
 Examples
 
@@ -666,23 +669,23 @@ Syntax
 Description
 
     mrmedian performs unweighted, weighted, and penalized median IV estimator
-    on summary level data (i.e. reported genotype-disease and
-    phenotype-disease association estimates and their standard errors for
-    individual genotypes).
+    on summary level data (i.e. reported genotype-disease [SNP-outcome] and
+    genotype-phenotype [SNP-exposure] association estimates and their
+    standard errors for individual genotypes).
 
     See Bowden et al. (2016) for more information.
 
-    varname_gd is a variable containing the genotype-disease association
-    estimates.
+    varname_gd is a variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gdse is a variable containing the genotype-disease association
-    estimate standard errors.
+    varname_gdse is a variable containing the genotype-disease (SNP-outcome)
+    association estimate standard errors.
 
-    varname_gp is a variable containing the genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
-    varname_gpse is a variable containing the genotype-phenotype association
-    estimate standard errors.
+    varname_gpse is a variable containing the genotype-phenotype
+    (SNP-exposure) association estimate standard errors.
 
 Options
 
@@ -896,30 +899,30 @@ Syntax
 Description
 
     mrmodal implements the zero modal estimator of Hartwig et al. (2017) for
-    use with summary level data (i.e. reported genotype-disease and
-    phenotype-disease association estimates and their standard errors for
-    individual genotypes).
+    use with summary level data (i.e. reported genotype-disease [SNP-outcome]
+    and genotype-phenotype [SNP-exposure] association estimates and their
+    standard errors for individual genotypes).
 
     Standard errors are obtained by parametric bootstrapping.
 
-    varname_gd is a variable containing the genotype-disease association
-    estimates.
+    varname_gd is a variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gdse is a variable containing the genotype-disease association
-    estimate standard errors.
+    varname_gdse is a variable containing the genotype-disease (SNP-outcome)
+    association estimate standard errors.
 
-    varname_gp is a variable containing the genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
-    varname_gpse is a variable containing the genotype-phenotype association
-    estimate standard errors.
+    varname_gpse is a variable containing the genotype-phenotype
+    (SNP-exposure) association estimate standard errors.
 
 Options
 
     level(#); see [R] estimation options.
 
     nome specifies the NOME (no measurement error in the genotype-phenotype
-        associations) assumption.
+        [SNP-exposure] associations) assumption.
 
     nosave specifies that the density of the IV estimates and column vector
         of IV estimates should not be saved in Mata. If not specified these
@@ -1031,17 +1034,17 @@ Description
     mrmodalplot plots the density of the IV estimates used in the mrmodal
     estimator.
 
-    varname_gd is a variable containing the genotype-disease association
-    estimates.
+    varname_gd is a variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gdse is a variable containing the genotype-disease association
-    estimate standard errors.
+    varname_gdse is a variable containing the genotype-disease (SNP-outcome)
+    association estimate standard errors.
 
-    varname_gp is a variable containing the genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
-    varname_gpse is a variable containing the genotype-phenotype association
-    estimate standard errors.
+    varname_gpse is a variable containing the genotype-phenotype
+    (SNP-exposure) association estimate standard errors.
 
 Examples
 
@@ -1109,27 +1112,30 @@ Description
     mrratio can generate confidence interval limits using either a standard
     error from a Taylor series expansion (the default), a standard error
     using the NOME (no measurement error) in the genotype-phenotype
-    association assumption, or using Fieller's Theorem.
+    (SNP-exposure) association assumption, or using Fieller's Theorem.
 
-    The user needs to have summary level genotype-disease and
-    genotype-phenotype association estimates and their standard errors. If
-    assuming NOME the standard error of the genotype-phenotype association is
-    not required.
+    The user needs to have summary level genotype-disease (SNP-outcome) and
+    genotype-phenotype (SNP-exposure) association estimates and their
+    standard errors. If assuming NOME the standard error of the
+    genotype-phenotype (SNP-exposure) association is not required.
 
     It is also optional to provide the covariance between the
-    genotype-disease and genotype-phenotype estimates. If these are from
-    independent samples then this covariance is zero.
+    genotype-disease (SNP-outcome) and genotype-phenotype (SNP-exposure)
+    estimates. If these are from independent samples then this covariance is
+    zero.
 
-    #gd genotype-disease association estimate.
+    #gd genotype-disease (SNP-outcome) association estimate.
 
-    #gdse standard error of the genotype-disease association estimate.
+    #gdse standard error of the genotype-disease (SNP-outcome) association
+    estimate.
 
-    #gp genotype-phenotype association estimate.
+    #gp genotype-phenotype (SNP-exposure) association estimate.
 
-    #gpse standard error of the genotype-phenotype association estimate.
+    #gpse standard error of the genotype-phenotype (SNP-exposure) association
+    estimate.
 
-    #cov covariance between the genotype-disease and the genotype-phenotype
-    estimates.
+    #cov covariance between the genotype-disease (SNP-outcome) and the
+    genotype-phenotype (SNP-exposure) estimates.
 
 Options
 
@@ -1142,7 +1148,7 @@ Options
     level(#); see [R] estimation options.
 
     nome specifies the NOME (no measurement error in the genotype-phenotype
-        association) assumption.
+        [SNP-exposure] association) assumption.
 
 Examples
 
@@ -1204,8 +1210,8 @@ Syntax
 
     options                      Description
     -------------------------------------------------------------------------
-      generate(varlist, replace) Variables to contain IV ests and SEs or CI
-                                   limits
+      generate(varlist, replace) Variables to contain IV estimates and SEs or
+                                   CI limits
       *                          options passed to mrratio
 
 Description
@@ -1213,20 +1219,21 @@ Description
     mrivests calls mrratio to put the instrumental variable ratio (Wald)
     estimate and its standard error in the variables specified.
 
-    varname_gd is a variable containing genotype-disease association
-    estimates.
+    varname_gd is a variable containing genotype-disease (SNP-outcome)
+    association estimates.
 
     varname_gdse is a variable containing the standard errors of the
-    genotype-disease association estimates.
+    genotype-disease (SNP-outcome) association estimates.
 
-    varname_gp is a variable containing genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing genotype-phenotype (SNP-exposure)
+    association estimates.
 
     varname_gpse is a variable containing the standard errors of the
-    genotype-phenotype association estimates.
+    genotype-phenotype (SNP-exposure) association estimates.
 
     varname_cov is a variable containing the covariance between the
-    genotype-disease and the genotype-phenotype estimates.
+    genotype-disease (SNP-outcome) and the genotype-phenotype (SNP-exposure)
+    estimates.
 
 Options
 
@@ -1332,20 +1339,21 @@ Description
     If you do not already have metan, it can be installed by running: ssc
     install metan.
 
-    varname_gd is a variable containing the genotype-disease association
-    estimates.
+    varname_gd is a variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gdse is a variable containing the genotype-disease association
-    estimate standard errors.
+    varname_gdse is a variable containing the genotype-disease (SNP-outcome)
+    association estimate standard errors.
 
-    varname_gp is a variable containing the genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
-    varname_gpse is a variable containing the genotype-phenotype association
-    estimate standard errors.
+    varname_gpse is a variable containing the genotype-phenotype
+    (SNP-exposure) association estimate standard errors.
 
     varname_cov is a variable containing the covariances between the
-    genotype-disease and genotype-phenotype associations.
+    genotype-disease (SNP-outcome) and genotype-phenotype (SNP-exposure)
+    associations.
 
 
 Examples
@@ -1439,25 +1447,26 @@ Description
     On the plot the MR-Egger estimate is the line with the longer dashes, the
     IVW estimate is shown with the shorter dashes.
 
-    varname_gd is a variable containing the genotype-disease association
-    estimates.
+    varname_gd is a variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gdse is a variable containing the genotype-disease association
-    estimate standard errors.
+    varname_gdse is a variable containing the genotype-disease (SNP-outcome)
+    association estimate standard errors.
 
-    varname_gp is a variable containing the genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
-    varname_gpse is a variable containing the genotype-phenotype association
-    estimate standard errors.
+    varname_gpse is a variable containing the genotype-phenotype
+    (SNP-exposure) association estimate standard errors.
 
 Options
 
     metric(gpbeta|gpbetastd|invse) specifies the metric for the y-axis. Can
         be one of:
-    - gpbeta: the absolute value of the genotype-phenotype estimates,
-    - gpbetastd: gpbeta standardised by the genotype-disease standard errors
-    (the default),
+    - gpbeta: the absolute value of the genotype-phenotype (SNP-exposure)
+    estimates,
+    - gpbetastd: gpbeta standardised by the genotype-disease (SNP-outcome)
+    standard errors (the default),
     - invse: the inverse of the standard errors on the genotype specific IV
     ratio estimates.
 
@@ -1525,7 +1534,8 @@ Syntax
     -------------------------------------------------------------------------
       fe                  fixed effect standard errors (default is
                             multiplicative random effect)
-      gxse(varlist)       varlist of genotype-phenotype standard errors
+      gxse(varlist)       varlist of genotype-phenotype (SNP-exposure)
+                            standard errors
       level(#)            set confidence level; default is level(95)
       tdist               use t-distribution for Wald test and CI limits
 
@@ -1535,14 +1545,15 @@ Description
     regression using summary level data.  See  Burgess et al. (2015) for more
     information.
 
-    varname_gd variable containing the genotype-disease association
-    estimates.
+    varname_gd variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gp# variable containing the #th genotype-phenotype association
-    estimates.
+    varname_gp# variable containing the #th genotype-phenotype (SNP-exposure)
+    association estimates.
 
     For the analytic weights you need to specify the inverse of the
-    genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+    genotype-disease (SNP-outcome) standard errors squared, i.e.
+    aw=1/(gdse^2).
 
 Options
 
@@ -1554,13 +1565,14 @@ Options
         error). If the residual variance is found to be less than 1 an error
         message is shown and the model is refitted with it constrained to 1.
 
-    gxse(varlist) specifies a varlist of genotype-phenotype standard errors.
-        These should be in the same order as the genotype-phenotype variables
-        in the main varlist.  When this option is specified the Q_A statistic
-        for instrument validity is calculated.  When this is specified and
-        there are two or more phenotypes conditional F statistics for
-        instrument strength are calculated.  See Sanderson et al. (2019) and
-        Sanderson et al. (2020) for more information.
+    gxse(varlist) specifies a varlist of genotype-phenotype (SNP-exposure)
+        standard errors.  These should be in the same order as the
+        genotype-phenotype (SNP-exposure) variables in the main varlist.
+        When this option is specified the Q_A statistic for instrument
+        validity is calculated.  When this is specified and there are two or
+        more phenotypes conditional F statistics for instrument strength are
+        calculated.  See Sanderson et al. (2019) and Sanderson et al. (2020)
+        for more information.
 
     level(#); see [R] estimation options.
 
@@ -1668,8 +1680,8 @@ Syntax
     -------------------------------------------------------------------------
       orient(#)           orient the data wrt to the phenotype which
                             corresponds with the #th genotype-phenotype
-                            association variable in the varlist (default is
-                            1)
+                            (SNP-exposure) association variable in the
+                            varlist (default is 1)
       level(#)            set confidence level; default is level(95)
       tdist               use t-distribution for Wald test and CI limits
 
@@ -1682,20 +1694,21 @@ Description
     However, if the residual variance is found to be less than 1 the model is
     refitted with this constrained to 1.
 
-    varname_gd variable containing the genotype-disease association
-    estimates.
+    varname_gd variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gp# variable containing the #th genotype-phenotype association
-    estimates.
+    varname_gp# variable containing the #th genotype-phenotype (SNP-exposure)
+    association estimates.
 
     For the analytic weights you need to specify the inverse of the
-    genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+    genotype-disease (SNP-outcome) standard errors squared, i.e.
+    aw=1/(gdse^2).
 
 Options
 
     orient(#) specifies which phenotype to orient the data to. The default is
-        1, i.e. the phenotype in the first genotype-phenotype variable in the
-        varlist.
+        1, i.e. the phenotype in the first genotype-phenotype (SNP-exposure)
+        variable in the varlist.
 
     level(#); see [R] estimation options.
 
@@ -1738,8 +1751,8 @@ Stored results
     Macros         
       e(cmd)              Command name
       e(cmdline)          Command issued
-      e(orientvar)        Genotype-phenotype association variable the model
-                            is oriented wrt
+      e(orientvar)        Genotype-phenotype (SNP-exposure) association
+                            variable the model is oriented wrt
 
     Matrices       
       e(b)                coefficient vector
@@ -1786,9 +1799,10 @@ Syntax
                               some trial and error may be required
       genotype(varname)     Variable to label genotypes, usually containing
                               RSIDs
-      gxse(varname)         Variable with genotype-phenotype standard errors
-                              (if required by method)
-      gyse(varname)         Variable with genotype-disease standard errors
+      gxse(varname)         Variable with genotype-phenotype (SNP-exposure)
+                              standard errors (if required by method)
+      gyse(varname)         Variable with genotype-disease (SNP-outcome)
+                              standard errors
       metanopts(string)     Options passed to metan for the plot
       method(string)        The method fitted for the analysis
       noplot                Suppresses the plot
@@ -1809,11 +1823,11 @@ Description
     For multiple exposure models such as MVMR and MVMR-Egger the estimate is
     collected for the first phenotype.
 
-    varname_gd is a variable containing the genotype-disease association
-    estimates.
+    varname_gd is a variable containing the genotype-disease (SNP-outcome)
+    association estimates.
 
-    varname_gp is a variable containing the genotype-phenotype association
-    estimates.
+    varname_gp is a variable containing the genotype-phenotype (SNP-exposure)
+    association estimates.
 
 Options
 
@@ -1867,5 +1881,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  21 Oct 2020, 10:35:43
+ closed on:  21 Oct 2020, 11:27:16
 -------------------------------------------------------------------------------

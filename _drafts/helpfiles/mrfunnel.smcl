@@ -50,18 +50,18 @@ On the plot the MR-Egger estimate is the line with the longer dashes,
 the IVW estimate is shown with the shorter dashes.
 
 {pstd}
-{var:_gd} is a variable containing the genotype-disease association estimates.
+{var:_gd} is a variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gdse} is a variable containing the genotype-disease association estimate 
+{var:_gdse} is a variable containing the genotype-disease (SNP-outcome) association estimate 
 standard errors.
 
 {pstd}
-{var:_gp} is a variable containing the genotype-phenotype association 
+{var:_gp} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimates.
 
 {pstd}
-{var:_gpse} is a variable containing the genotype-phenotype association 
+{var:_gpse} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimate standard errors.
 
 {marker options}{...}
@@ -72,10 +72,10 @@ estimate standard errors.
 {it:y}-axis. Can be one of:
 {p_end}
 {pstd}
- - {cmd:gpbeta}: the absolute value of the genotype-phenotype estimates,
+ - {cmd:gpbeta}: the absolute value of the genotype-phenotype (SNP-exposure) estimates,
 {p_end}
 {pstd}
- - {cmd:gpbetastd}: gpbeta standardised by the genotype-disease standard errors (the default),
+ - {cmd:gpbetastd}: gpbeta standardised by the genotype-disease (SNP-outcome) standard errors (the default),
 {p_end}
 {pstd}
  - {cmd:invse}: the inverse of the standard errors on the genotype specific IV ratio estimates.

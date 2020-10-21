@@ -26,7 +26,7 @@ BODY{background-color: ffffff;
     <i>options</i>               Description
     ----------------------------------------------------------------------------------------------
       <span class=result>fe</span>                  Fixed effect standard errors (default is multiplicative)
-      <span class=result>gxse(</span><i>varname</i><span class=result>)</span>       variable of genotype-phenotype SEs
+      <span class=result>gxse(</span><i>varname</i><span class=result>)</span>       variable of genotype-phenotype (SNP-exposure) SEs
       <span class=result><u>het</u></span><span class=result>erogi</span>            Display heterogeneity/pleiotropy statistics
       <span class=result>ivw</span>                 Inverse-variance weighted estimator (default is MR-Egger)
       <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
@@ -41,14 +41,15 @@ BODY{background-color: ffffff;
 <br><br>
     <span class=result>mregger</span> performs inverse-variance weighted (IVW; Burgess et al., 2013) and Mendelian
     randomization Egger (MR-Egger) regression (Bowden et al., 2015) using summary level data (i.e.
-    using genotype-disease and phenotype-disease association estimates and their standard errors).
+    using genotype-disease [SNP-outcome] and genotype-phenotype [SNP-exposure] association
+    estimates and their standard errors).
 <br><br>
-    <i>varname_gd</i> variable containing the genotype-disease association estimates.
+    <i>varname_gd</i> variable containing the genotype-disease (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gp</i> variable containing the genotype-phenotype association estimates.
+    <i>varname_gp</i> variable containing the genotype-phenotype (SNP-exposure) association estimates.
 <br><br>
-    For the analytic weights you need to specify the inverse of the genotype-disease standard
-    errors squared, i.e. aw=1/(gdse^2).
+    For the analytic weights you need to specify the inverse of the genotype-disease (SNP-outcome)
+    standard errors squared, i.e. aw=1/(gdse^2).
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
@@ -58,15 +59,16 @@ BODY{background-color: ffffff;
         and Sharp (1999) for further details.  We recommend specifying this option when using an
         allelic score as the instrumental variable.
 <br><br>
-    <span class=result>gxse(</span><i>varname</i><span class=result>)</span> specifies the variable containing the genotype-phenotype association standard
-        errors. These are required for calculating the I^2_GX statistic (Bowden et al., 2016). An
-        I^2_GX statistic of 90% means that the likely bias due measurement error in the MR-Egger
-        slope estimate is around 10%. If I^2_GX values are less than 90% estimates should be
-        treated with caution.
+    <span class=result>gxse(</span><i>varname</i><span class=result>)</span> specifies the variable containing the genotype-phenotype (SNP-exposure)
+        association standard errors. These are required for calculating the I^2_GX statistic
+        (Bowden et al., 2016). An I^2_GX statistic of 90% means that the likely bias due
+        measurement error in the MR-Egger slope estimate is around 10%. If I^2_GX values are less
+        than 90% estimates should be treated with caution.
 <br><br>
     <span class=result><u>het</u></span><span class=result>erogi</span> displays heterogeneity/pleiotropy statistics. In the heterogeneity output the model
         based Q-statistic is reported by multiplying the variance of the residuals by the degrees
-        of freedom (Del Greco et al., 2015).
+        of freedom (Del Greco et al., 2015).  For the IVW model this is the Cochran Q-statistic,
+        and for the MR-Egger model this is the Ruecker's Q-statistic.
 <br><br>
     <span class=result>ivw</span> specifies inverse-variance weighted (IVW) model (Burgess et al., 2013), the default is
         MR-Egger.

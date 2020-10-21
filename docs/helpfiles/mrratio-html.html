@@ -36,25 +36,26 @@ BODY{background-color: ffffff;
 <br><br>
     <span class=result>mrratio</span> can generate confidence interval limits using either a standard error from a Taylor
     series expansion (the default), a standard error using the NOME (no measurement error) in the
-    genotype-phenotype association assumption, or using Fieller's Theorem.
+    genotype-phenotype (SNP-exposure) association assumption, or using Fieller's Theorem.
 <br><br>
-    The user needs to have summary level genotype-disease and genotype-phenotype association
-    estimates and their standard errors. If assuming NOME the standard error of the
-    genotype-phenotype association is not required.
+    The user needs to have summary level genotype-disease (SNP-outcome) and genotype-phenotype
+    (SNP-exposure) association estimates and their standard errors. If assuming NOME the standard
+    error of the genotype-phenotype (SNP-exposure) association is not required.
 <br><br>
-    It is also optional to provide the covariance between the genotype-disease and
-    genotype-phenotype estimates. If these are from independent samples then this covariance is
-    zero.
+    It is also optional to provide the covariance between the genotype-disease (SNP-outcome) and
+    genotype-phenotype (SNP-exposure) estimates. If these are from independent samples then this
+    covariance is zero.
 <br><br>
-    <i>#gd</i> genotype-disease association estimate.
+    <i>#gd</i> genotype-disease (SNP-outcome) association estimate.
 <br><br>
-    <i>#gdse</i> standard error of the genotype-disease association estimate.
+    <i>#gdse</i> standard error of the genotype-disease (SNP-outcome) association estimate.
 <br><br>
-    <i>#gp</i> genotype-phenotype association estimate.
+    <i>#gp</i> genotype-phenotype (SNP-exposure) association estimate.
 <br><br>
-    <i>#gpse</i> standard error of the genotype-phenotype association estimate.
+    <i>#gpse</i> standard error of the genotype-phenotype (SNP-exposure) association estimate.
 <br><br>
-    <i>#cov</i> covariance between the genotype-disease and the genotype-phenotype estimates.
+    <i>#cov</i> covariance between the genotype-disease (SNP-outcome) and the genotype-phenotype
+    (SNP-exposure) estimates.
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
@@ -64,8 +65,8 @@ BODY{background-color: ffffff;
 <br><br>
     <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
 <br><br>
-    <span class=result>nome</span> specifies the NOME (no measurement error in the genotype-phenotype association)
-        assumption.
+    <span class=result>nome</span> specifies the NOME (no measurement error in the genotype-phenotype [SNP-exposure]
+        association) assumption.
 <br><br>
 <a name="examples"></a><span class=result><u>Examples</u></span>
 <br><br>

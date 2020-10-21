@@ -45,21 +45,23 @@ BODY{background-color: ffffff;
     On the plot the MR-Egger estimate is the line with the longer dashes, the IVW estimate is
     shown with the shorter dashes.
 <br><br>
-    <i>varname_gd</i> is a variable containing the genotype-disease association estimates.
+    <i>varname_gd</i> is a variable containing the genotype-disease (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gdse</i> is a variable containing the genotype-disease association estimate standard
-    errors.
+    <i>varname_gdse</i> is a variable containing the genotype-disease (SNP-outcome) association estimate
+    standard errors.
 <br><br>
-    <i>varname_gp</i> is a variable containing the genotype-phenotype association estimates.
+    <i>varname_gp</i> is a variable containing the genotype-phenotype (SNP-exposure) association
+    estimates.
 <br><br>
-    <i>varname_gpse</i> is a variable containing the genotype-phenotype association estimate standard
-    errors.
+    <i>varname_gpse</i> is a variable containing the genotype-phenotype (SNP-exposure) association
+    estimate standard errors.
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
     <span class=result><u>m</u></span><span class=result>etric(</span><i>gpbeta</i>|<i>gpbetastd</i>|<i>invse</i><span class=result>)</span> specifies the metric for the <i>y</i>-axis. Can be one of:
-    - <span class=result>gpbeta</span>: the absolute value of the genotype-phenotype estimates,
-    - <span class=result>gpbetastd</span>: gpbeta standardised by the genotype-disease standard errors (the default),
+    - <span class=result>gpbeta</span>: the absolute value of the genotype-phenotype (SNP-exposure) estimates,
+    - <span class=result>gpbetastd</span>: gpbeta standardised by the genotype-disease (SNP-outcome) standard errors (the
+    default),
     - <span class=result>invse</span>: the inverse of the standard errors on the genotype specific IV ratio estimates.
 <br><br>
 <a name="examples"></a><span class=result><u>Examples</u></span>

@@ -56,18 +56,18 @@ obtain standard error{p_end}
 {cmd:mreggerplot} plots a scatter plot for MR-Egger type models
 
 {pstd}
-{var:_gd} is a variable containing the genotype-disease association estimates.
+{var:_gd} is a variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gdse} is a variable containing the genotype-disease association estimate 
+{var:_gdse} is a variable containing the genotype-disease (SNP-outcome) association estimate 
 standard errors.
 
 {pstd}
-{var:_gp} is a variable containing the genotype-phenotype association 
+{var:_gp} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimates.
 
 {pstd}
-{var:_gpse} is a variable containing the genotype-phenotype association 
+{var:_gpse} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimate standard errors.
 
 {marker examples}{...}

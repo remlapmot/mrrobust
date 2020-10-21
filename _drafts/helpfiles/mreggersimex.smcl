@@ -24,7 +24,7 @@
 {synoptline}
 {synopt :{opt mreggeropts}}Options for {help mregger}{p_end}
 {synopt :{opt bsopts}}Options for {help bootstrap}{p_end}
-{synopt :{opt gxse(varname)}}Variable containg genotype-phenotype SEs{p_end}
+{synopt :{opt gxse(varname)}}Variable containg genotype-phenotype (SNP-exposure) SEs{p_end}
 {synopt :{opt noboot}}Do not perform bootstrapping for SEs{p_end}
 {synopt :{opt nodraw}}Do not draw SIMEX plot{p_end}
 {synopt :{opt reps(#)}}No. bootstrap replications{p_end}
@@ -41,14 +41,14 @@ on {cmd:mregger} using the commonly applied quadratic extrapolation
 ({help mreggersimex##bowden:Bowden et al., 2016}).
 
 {pstd}
-{var:_gd} variable containing the genotype-disease association estimates.
+{var:_gd} variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gp} variable containing the genotype-phenotype association estimates.
+{var:_gp} variable containing the genotype-phenotype (SNP-exposure) association estimates.
 
 {pstd}
 For the analytic weights you need to specify the inverse of the 
-genotype-disease SEs squared, i.e. aw=1/(gdse^2).
+genotype-disease (SNP-outcome) SEs squared, i.e. aw=1/(gdse^2).
 
 {marker examples}{...}
 {title:Examples}

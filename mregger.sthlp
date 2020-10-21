@@ -26,7 +26,7 @@
 {synoptline}
 {synopt:{opt fe:}}Fixed effect standard errors (default is multiplicative)
 {p_end}
-{synopt:{opt gxse(varname)}}variable of genotype-phenotype SEs{p_end}
+{synopt:{opt gxse(varname)}}variable of genotype-phenotype (SNP-exposure) SEs{p_end}
 {synopt:{opt het:erogi}}Display heterogeneity/pleiotropy 
 statistics{p_end}
 {synopt:{opt ivw:}}Inverse-variance weighted estimator (default is MR-Egger)
@@ -45,18 +45,18 @@ statistics{p_end}
 {pstd}
 {cmd:mregger} performs inverse-variance weighted (IVW; {help mregger##ivw:Burgess et al., 2013}) and Mendelian 
 randomization Egger (MR-Egger) regression ({help mregger##bowden:Bowden et al., 2015}) using summary level data 
-(i.e. using genotype-disease and phenotype-disease association estimates 
+(i.e. using genotype-disease [SNP-outcome] and genotype-phenotype [SNP-exposure] association estimates 
 and their standard errors).
 
 {pstd}
-{var:_gd} variable containing the genotype-disease association estimates.
+{var:_gd} variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gp} variable containing the genotype-phenotype association estimates.
+{var:_gp} variable containing the genotype-phenotype (SNP-exposure) association estimates.
 
 {pstd}
 For the analytic weights you need to specify the inverse of the 
-genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+genotype-disease (SNP-outcome) standard errors squared, i.e. aw=1/(gdse^2).
  
 {marker options}{...}
 {title:Options}
@@ -71,7 +71,7 @@ We recommend specifying this option when using an
 allelic score as the instrumental variable.
 
 {phang}
-{opt gxse(varname)} specifies the variable containing the genotype-phenotype 
+{opt gxse(varname)} specifies the variable containing the genotype-phenotype (SNP-exposure) 
 association standard errors. These are required for calculating the I^2_GX
 statistic ({help mregger##i2gx:Bowden et al., 2016}). An I^2_GX statistic of 90% means that the 
 likely bias due measurement error in the MR-Egger slope estimate is around 

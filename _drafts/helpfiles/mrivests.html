@@ -27,7 +27,7 @@ dataset
 <br><br>
     <i>options</i>                      Description
     ----------------------------------------------------------------------------------------------
-      <span class=result><u>g</u></span><span class=result>enerate(</span><i>varlist</i><span class=result>,</span><i> replace</i><span class=result>)</span> Variables to contain IV ests and SEs or CI limits
+      <span class=result><u>g</u></span><span class=result>enerate(</span><i>varlist</i><span class=result>,</span><i> replace</i><span class=result>)</span> Variables to contain IV estimates and SEs or CI limits
       <span class=result>*</span>                          options passed to <span class=result>mrratio</span>
 <br><br>
 <a name="description"></a><span class=result><u>Description</u></span>
@@ -35,18 +35,18 @@ dataset
     <span class=result>mrivests</span> calls <span class=result>mrratio</span> to put the instrumental variable ratio (Wald) estimate and its standard
     error in the variables specified.
 <br><br>
-    <i>varname_gd</i> is a variable containing genotype-disease association estimates.
+    <i>varname_gd</i> is a variable containing genotype-disease (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gdse</i> is a variable containing the standard errors of the genotype-disease association
-    estimates.
+    <i>varname_gdse</i> is a variable containing the standard errors of the genotype-disease
+    (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gp</i> is a variable containing genotype-phenotype association estimates.
+    <i>varname_gp</i> is a variable containing genotype-phenotype (SNP-exposure) association estimates.
 <br><br>
     <i>varname_gpse</i> is a variable containing the standard errors of the genotype-phenotype
-    association estimates.
+    (SNP-exposure) association estimates.
 <br><br>
-    <i>varname_cov</i> is a variable containing the covariance between the genotype-disease and the
-    genotype-phenotype estimates.
+    <i>varname_cov</i> is a variable containing the covariance between the genotype-disease (SNP-outcome)
+    and the genotype-phenotype (SNP-exposure) estimates.
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>

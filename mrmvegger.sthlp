@@ -24,7 +24,7 @@
 {synoptset 20 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt:{opt orient:(#)}}orient the data wrt to the phenotype which corresponds with the #th genotype-phenotype association variable in the varlist (default is 1){p_end}
+{synopt:{opt orient:(#)}}orient the data wrt to the phenotype which corresponds with the #th genotype-phenotype (SNP-exposure) association variable in the varlist (default is 1){p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
 {synopt:{opt tdist:}}use t-distribution for Wald test and CI limits{p_end}
 
@@ -41,19 +41,19 @@ However, if the residual variance is found to be less than 1 the model
 is refitted with this constrained to 1.
 
 {pstd}
-{var:_gd} variable containing the genotype-disease association estimates.
+{var:_gd} variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gp#} variable containing the #th genotype-phenotype association estimates.
+{var:_gp#} variable containing the #th genotype-phenotype (SNP-exposure) association estimates.
 
 {pstd}
-For the analytic weights you need to specify the inverse of the genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+For the analytic weights you need to specify the inverse of the genotype-disease (SNP-outcome) standard errors squared, i.e. aw=1/(gdse^2).
 
 {marker options}{...}
 {title:Options}
 
 {phang}
-{opt orient(#)} specifies which phenotype to orient the data to. The default is 1, i.e. the phenotype in the first genotype-phenotype variable in the varlist.
+{opt orient(#)} specifies which phenotype to orient the data to. The default is 1, i.e. the phenotype in the first genotype-phenotype (SNP-exposure) variable in the varlist.
 
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
@@ -99,7 +99,7 @@ distribution, for calculating the Wald test and the confidence interval limits.
 {p2col 5 20 24 2: Macros}{p_end}
 {synopt:{cmd:e(cmd)}}Command name{p_end}
 {synopt:{cmd:e(cmdline)}}Command issued{p_end}
-{synopt:{cmd:e(orientvar)}}Genotype-phenotype association variable the model is oriented wrt{p_end}
+{synopt:{cmd:e(orientvar)}}Genotype-phenotype (SNP-exposure) association variable the model is oriented wrt{p_end}
 
 {synoptset 20 tabbed}{...}
 {p2col 5 20 24 2: Matrices}{p_end}

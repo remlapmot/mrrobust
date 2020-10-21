@@ -26,7 +26,8 @@ BODY{background-color: ffffff;
     <i>options</i>               Description
     ----------------------------------------------------------------------------------------------
       <span class=result>orient(</span><i>#</i><span class=result>)</span>           orient the data wrt to the phenotype which corresponds with the #th
-                            genotype-phenotype association variable in the varlist (default is 1)
+                            genotype-phenotype (SNP-exposure) association variable in the varlist
+                            (default is 1)
       <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
       <span class=result>tdist</span>               use t-distribution for Wald test and CI limits
 <br><br>
@@ -38,17 +39,18 @@ BODY{background-color: ffffff;
     By default multiplicative random effect standard errors are reported.  However, if the
     residual variance is found to be less than 1 the model is refitted with this constrained to 1.
 <br><br>
-    <i>varname_gd</i> variable containing the genotype-disease association estimates.
+    <i>varname_gd</i> variable containing the genotype-disease (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gp#</i> variable containing the #th genotype-phenotype association estimates.
+    <i>varname_gp#</i> variable containing the #th genotype-phenotype (SNP-exposure) association
+    estimates.
 <br><br>
-    For the analytic weights you need to specify the inverse of the genotype-disease standard
-    errors squared, i.e. aw=1/(gdse^2).
+    For the analytic weights you need to specify the inverse of the genotype-disease (SNP-outcome)
+    standard errors squared, i.e. aw=1/(gdse^2).
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
     <span class=result>orient(</span><i>#</i><span class=result>)</span> specifies which phenotype to orient the data to. The default is 1, i.e. the
-        phenotype in the first genotype-phenotype variable in the varlist.
+        phenotype in the first genotype-phenotype (SNP-exposure) variable in the varlist.
 <br><br>
     <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
 <br><br>
@@ -87,7 +89,8 @@ BODY{background-color: ffffff;
     Macros         
       <span class=result>e(cmd)</span>              Command name
       <span class=result>e(cmdline)</span>          Command issued
-      <span class=result>e(orientvar)</span>        Genotype-phenotype association variable the model is oriented wrt
+      <span class=result>e(orientvar)</span>        Genotype-phenotype (SNP-exposure) association variable the model is
+                            oriented wrt
 <br><br>
     Matrices       
       <span class=result>e(b)</span>                coefficient vector

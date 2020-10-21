@@ -27,7 +27,7 @@ BODY{background-color: ffffff;
     <i>options</i>               Description
     ----------------------------------------------------------------------------------------------
       <span class=result>fe</span>                  fixed effect standard errors (default is multiplicative random effect)
-      <span class=result>gxse(</span><i>varlist</i><span class=result>)</span>       varlist of genotype-phenotype standard errors
+      <span class=result>gxse(</span><i>varlist</i><span class=result>)</span>       varlist of genotype-phenotype (SNP-exposure) standard errors
       <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
       <span class=result>tdist</span>               use t-distribution for Wald test and CI limits
 <br><br>
@@ -36,12 +36,13 @@ BODY{background-color: ffffff;
     <span class=result>mrmvivw</span>/<span class=result>mvivw</span>/<span class=result>mvmr</span> performs multivariable inverse-variance weighted (IVW) regression using
     summary level data.  See  Burgess et al. (2015) for more information.
 <br><br>
-    <i>varname_gd</i> variable containing the genotype-disease association estimates.
+    <i>varname_gd</i> variable containing the genotype-disease (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gp#</i> variable containing the #th genotype-phenotype association estimates.
+    <i>varname_gp#</i> variable containing the #th genotype-phenotype (SNP-exposure) association
+    estimates.
 <br><br>
-    For the analytic weights you need to specify the inverse of the genotype-disease standard
-    errors squared, i.e. aw=1/(gdse^2).
+    For the analytic weights you need to specify the inverse of the genotype-disease (SNP-outcome)
+    standard errors squared, i.e. aw=1/(gdse^2).
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>
@@ -52,12 +53,12 @@ BODY{background-color: ffffff;
         variance is found to be less than 1 an error message is shown and the model is refitted
         with it constrained to 1.
 <br><br>
-    <span class=result>gxse(</span><i>varlist</i><span class=result>)</span> specifies a varlist of genotype-phenotype standard errors.  These should be in
-        the same order as the genotype-phenotype variables in the main varlist.  When this option
-        is specified the Q_A statistic for instrument validity is calculated.  When this is
-        specified and there are two or more phenotypes conditional F statistics for instrument
-        strength are calculated.  See Sanderson et al. (2019) and Sanderson et al. (2020) for more
-        information.
+    <span class=result>gxse(</span><i>varlist</i><span class=result>)</span> specifies a varlist of genotype-phenotype (SNP-exposure) standard errors.  These
+        should be in the same order as the genotype-phenotype (SNP-exposure) variables in the main
+        varlist.  When this option is specified the Q_A statistic for instrument validity is
+        calculated.  When this is specified and there are two or more phenotypes conditional F
+        statistics for instrument strength are calculated.  See Sanderson et al. (2019) and
+        Sanderson et al. (2020) for more information.
 <br><br>
     <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
 <br><br>

@@ -23,7 +23,7 @@
 {synoptset 27 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt :{opt g:enerate(varlist, replace)}}Variables to contain IV ests and SEs or CI limits{p_end}
+{synopt :{opt g:enerate(varlist, replace)}}Variables to contain IV estimates and SEs or CI limits{p_end}
 {synopt :{opt *:}}options passed to {cmd:mrratio}{p_end}
 
 {marker description}{...}
@@ -34,22 +34,22 @@
 (Wald) estimate and its standard error in the variables specified.
 
 {pstd}
-{var:_gd} is a variable containing genotype-disease association estimates.
+{var:_gd} is a variable containing genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
 {var:_gdse} is a variable containing the standard errors of the 
-genotype-disease association estimates.
+genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gp} is a variable containing genotype-phenotype association estimates.
+{var:_gp} is a variable containing genotype-phenotype (SNP-exposure) association estimates.
 
 {pstd}
 {var:_gpse} is a variable containing the standard errors of the 
-genotype-phenotype association estimates.
+genotype-phenotype (SNP-exposure) association estimates.
 
 {pstd}
 {var:_cov} is a variable containing the covariance between the 
-genotype-disease and the genotype-phenotype estimates.
+genotype-disease (SNP-outcome) and the genotype-phenotype (SNP-exposure) estimates.
 
 {marker options}{...}
 {title:Options}
