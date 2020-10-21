@@ -1,9 +1,9 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
+       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}25 Aug 2020, 15:01:57
+ {txt}opened on:  {res}21 Oct 2020, 10:43:46
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -52,7 +52,7 @@
 {col 42}{txt}I^2_GX statistic (weighted) = {res} 97.92%
 {col 55}{txt}Number of genotypes = {res}73
 {col 47}{txt}Residual standard error = {res} 1.548
-{col 33}{txt}Heterogeneity; chi2({res}71{txt}) = {res}170.11 {txt}(p =  {res}0.0000{txt})
+{col 17}{txt}Ruecker's Q for heterogeneity; chi2({res}71{txt}) = {res}170.11 {txt}(p =  {res}0.0000{txt})
 {res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -93,7 +93,7 @@
 
 {col 55}{txt}Number of genotypes = {res}73
 {col 47}{txt}Residual standard error = {res} 1.547
-{col 33}{txt}Heterogeneity; chi2({res}71{txt}) = {res}169.98 {txt}(p =  {res}0.0000{txt})
+{col 17}{txt}Ruecker's Q for heterogeneity; chi2({res}71{txt}) = {res}169.98 {txt}(p =  {res}0.0000{txt})
 {res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -230,9 +230,9 @@
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
+       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}25 Aug 2020, 15:02:20
+ {txt}closed on:  {res}21 Oct 2020, 10:44:17
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

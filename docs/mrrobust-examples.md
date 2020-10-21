@@ -103,7 +103,7 @@ MR-Egger reporting I^2_GX statistic and heterogeneity Q-test.
                                          I^2_GX statistic (weighted) =  97.92%
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
-                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -156,7 +156,7 @@ MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-t
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
-                                Heterogeneity; chi2(71) = 169.98 (p =  0.0000)
+                Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
