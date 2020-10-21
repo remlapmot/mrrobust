@@ -27,7 +27,7 @@ BODY{background-color: ffffff;
     ----------------------------------------------------------------------------------------------
       <span class=result>mreggeropts</span>           Options for mregger
       <span class=result>bsopts</span>                Options for bootstrap
-      <span class=result>gxse(</span><i>varname</i><span class=result>)</span>         Variable containg genotype-phenotype SEs
+      <span class=result>gxse(</span><i>varname</i><span class=result>)</span>         Variable containg genotype-phenotype (SNP-exposure) SEs
       <span class=result>noboot</span>                Do not perform bootstrapping for SEs
       <span class=result>nodraw</span>                Do not draw SIMEX plot
       <span class=result>reps(</span><i>#</i><span class=result>)</span>               No. bootstrap replications
@@ -40,12 +40,12 @@ BODY{background-color: ffffff;
     Hardin et al., 2003) on <span class=result>mregger</span> using the commonly applied quadratic extrapolation (Bowden et
     al., 2016).
 <br><br>
-    <i>varname_gd</i> variable containing the genotype-disease association estimates.
+    <i>varname_gd</i> variable containing the genotype-disease (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gp</i> variable containing the genotype-phenotype association estimates.
+    <i>varname_gp</i> variable containing the genotype-phenotype (SNP-exposure) association estimates.
 <br><br>
-    For the analytic weights you need to specify the inverse of the genotype-disease SEs squared,
-    i.e. aw=1/(gdse^2).
+    For the analytic weights you need to specify the inverse of the genotype-disease (SNP-outcome)
+    SEs squared, i.e. aw=1/(gdse^2).
 <br><br>
 <a name="examples"></a><span class=result><u>Examples</u></span>
 <br><br>

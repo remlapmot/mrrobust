@@ -28,9 +28,9 @@ BODY{background-color: ffffff;
       <span class=result>astext(</span><i>#</i><span class=result>)</span>             Percentage of plot taken up by areas for text - some trial and error
                               may be required
       <span class=result>genotype(</span><i>varname</i><span class=result>)</span>     Variable to label genotypes, usually containing RSIDs
-      <span class=result>gxse(</span><i>varname</i><span class=result>)</span>         Variable with genotype-phenotype standard errors (if required by
-                              method)
-      <span class=result>gyse(</span><i>varname</i><span class=result>)</span>         Variable with genotype-disease standard errors
+      <span class=result>gxse(</span><i>varname</i><span class=result>)</span>         Variable with genotype-phenotype (SNP-exposure) standard errors (if
+                              required by method)
+      <span class=result>gyse(</span><i>varname</i><span class=result>)</span>         Variable with genotype-disease (SNP-outcome) standard errors
       <span class=result>metanopts(</span><i>string</i><span class=result>)</span>     Options passed to <span class=result>metan</span> for the plot
       <span class=result><u>m</u></span><span class=result>ethod(</span><i>string</i><span class=result>)</span>        The method fitted for the analysis
       <span class=result>noplot</span>                Suppresses the plot
@@ -47,9 +47,10 @@ BODY{background-color: ffffff;
     For multiple exposure models such as MVMR and MVMR-Egger the estimate is collected for the
     first phenotype.
 <br><br>
-    <i>varname_gd</i> is a variable containing the genotype-disease association estimates.
+    <i>varname_gd</i> is a variable containing the genotype-disease (SNP-outcome) association estimates.
 <br><br>
-    <i>varname_gp</i> is a variable containing the genotype-phenotype association estimates.
+    <i>varname_gp</i> is a variable containing the genotype-phenotype (SNP-exposure) association
+    estimates.
 <br><br>
 <a name="options"></a><span class=result><u>Options</u></span>
 <br><br>

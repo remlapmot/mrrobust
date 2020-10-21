@@ -26,7 +26,7 @@
 {synoptline}
 {synopt:{opt fe:}}Fixed effect standard errors (default is multiplicative)
 {p_end}
-{synopt:{opt gxse(varname)}}variable of genotype-phenotype SEs{p_end}
+{synopt:{opt gxse(varname)}}variable of genotype-phenotype (SNP-exposure) SEs{p_end}
 {synopt:{opt het:erogi}}Display heterogeneity/pleiotropy 
 statistics{p_end}
 {synopt:{opt ivw:}}Inverse-variance weighted estimator (default is MR-Egger)
@@ -45,18 +45,18 @@ statistics{p_end}
 {pstd}
 {cmd:mregger} performs inverse-variance weighted (IVW; {help mregger##ivw:Burgess et al., 2013}) and Mendelian 
 randomization Egger (MR-Egger) regression ({help mregger##bowden:Bowden et al., 2015}) using summary level data 
-(i.e. using genotype-disease and phenotype-disease association estimates 
+(i.e. using genotype-disease [SNP-outcome] and genotype-phenotype [SNP-exposure] association estimates 
 and their standard errors).
 
 {pstd}
-{var:_gd} variable containing the genotype-disease association estimates.
+{var:_gd} variable containing the genotype-disease (SNP-outcome) association estimates.
 
 {pstd}
-{var:_gp} variable containing the genotype-phenotype association estimates.
+{var:_gp} variable containing the genotype-phenotype (SNP-exposure) association estimates.
 
 {pstd}
 For the analytic weights you need to specify the inverse of the 
-genotype-disease standard errors squared, i.e. aw=1/(gdse^2).
+genotype-disease (SNP-outcome) standard errors squared, i.e. aw=1/(gdse^2).
  
 {marker options}{...}
 {title:Options}
@@ -71,7 +71,7 @@ We recommend specifying this option when using an
 allelic score as the instrumental variable.
 
 {phang}
-{opt gxse(varname)} specifies the variable containing the genotype-phenotype 
+{opt gxse(varname)} specifies the variable containing the genotype-phenotype (SNP-exposure) 
 association standard errors. These are required for calculating the I^2_GX
 statistic ({help mregger##i2gx:Bowden et al., 2016}). An I^2_GX statistic of 90% means that the 
 likely bias due measurement error in the MR-Egger slope estimate is around 
@@ -82,7 +82,9 @@ caution.
 {opt het:erogi} displays heterogeneity/pleiotropy 
 statistics. In the heterogeneity output 
 the model based Q-statistic is reported by multiplying the variance of the 
-residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}).
+residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}). 
+For the IVW model this is the Cochran Q-statistic, and for the MR-Egger model this is the 
+Ruecker's Q-statistic.
  
 {phang}
 {opt ivw} specifies inverse-variance weighted (IVW) model ({help mregger##ivw:Burgess et al., 2013}), 
@@ -242,7 +244,7 @@ multiple genetic variants using summarized data. Genetic Epidemiology, 2013, 37,
 Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in 
 Mendelian randomization studies with summary data and a continuous outcome. 
 Statistics in Medicine, 2015, 34, 21, 2926-2940. 
-{browse "http://dx.doi.org/10.1002/sim.6522":DOI}
+{browse "https://onlinelibrary.wiley.com/doi/full/10.1002/sim.6522":DOI}
 {p_end}
 
 {marker do}{...}
