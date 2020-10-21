@@ -32,10 +32,12 @@ statistics{p_end}
 {synopt:{opt ivw:}}Inverse-variance weighted estimator (default is MR-Egger)
 {p_end}
 {synopt:{opt l:evel(#)}}set confidence level; default is {cmd:level(95)}{p_end}
+{synopt:{opt mod:ified}}use modified second order weights{p_end}
 {synopt:{opt noresc:ale}}Do not rescale residual variance to be 1 (if less than 1){p_end}
 {synopt:{opt oldnames}}Revert to using longer outcome name in b and V ereturned matrices{p_end}
 {synopt:{opt penw:eighted}}Use penalized weights{p_end}
 {synopt:{opt rad:ial}}Use radial formulations of the models{p_end}
+{synopt:{opt sec:ond}}use second order weights{p_end}
 {synopt:{opt tdist:}}Use t-distribution for Wald test and CI limits{p_end}
 {synopt:{opt unwi2gx:}}Additionally report unweighted Q_GX and I^2_GX statistics{p_end}
 
@@ -94,6 +96,9 @@ the default is MR-Egger.
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
 
 {phang}
+{opt mod:ified} specifies modified second order weights, {cmd:gxse()} must also be specified.
+
+{phang}
 {opt noresc:ale} specifies that the residual variance is not set to 1 (if 
 it is found to be less than 1). {help mregger##mrmedian:Bowden et al. (2016)} 
 rescale the residual variance to be 1 if it is found to be less than 1.
@@ -109,6 +114,9 @@ rescale the residual variance to be 1 if it is found to be less than 1.
 {opt rad:ial} specifies the radial formulation of the IVW and MR-Egger models 
 ({help mregger##radial:Bowden et al., 2017)}. 
 Note there is only a difference for the MR-Egger model.
+ 
+{phang}
+{opt sec:ond} specifies second order weights; {cmd:gxse()} must also be specified.
  
 {phang}
 {opt tdist} specifies using the t-distribution, instead of the normal 
@@ -149,6 +157,13 @@ LDL-c "All genetic variants" estimates.{p_end}
 {pstd}MR-Egger using the radial formulation and reporting heterogeneity Q-test{p_end}
 {phang2}{cmd:.} {stata "mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi"}{p_end}
 
+{pstd}TODO:IVW fitted with second order weights{p_end}
+
+{pstd}TODO:IVW fitted with modified second weights {p_end}
+
+{pstd}TODO:MR-Egger fitted with second order weights{p_end}
+
+{pstd}TODO:MR-Egger fitted with modified second weights {p_end}
 
 {marker results}{...}
 {title:Stored results}
