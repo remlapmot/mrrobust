@@ -2,7 +2,7 @@
       name:  mregger
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  15 Oct 2020, 15:07:55
+ opened on:  21 Oct 2020, 10:35:43
 
 . * mregger cscript
 . * 04jun2016
@@ -89,7 +89,7 @@ pvalue   2.419e-09   .10956752
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
-                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -120,7 +120,7 @@ pvalue   2.419e-09   .10956752
                                          I^2_GX statistic (weighted) =  97.92%
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
-                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -626,7 +626,7 @@ chdbeta      |
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
-                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -651,7 +651,7 @@ chdbeta      |
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
-                                Heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -674,7 +674,7 @@ chdbeta      |
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
-                                Heterogeneity; chi2(72) = 176.25 (p =  0.0000)
+                Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -695,7 +695,7 @@ chdbeta      |
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
-                                Heterogeneity; chi2(72) = 176.25 (p =  0.0000)
+                Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1638,7 +1638,7 @@ radialGD     |
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
-                                Heterogeneity; chi2(71) = 169.98 (p =  0.0000)
+                Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1797,5 +1797,5 @@ end of do-file
       name:  mregger
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  15 Oct 2020, 15:08:07
+ closed on:  21 Oct 2020, 10:35:55
 -------------------------------------------------------------------------------

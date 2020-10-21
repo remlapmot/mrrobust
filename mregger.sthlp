@@ -82,7 +82,9 @@ caution.
 {opt het:erogi} displays heterogeneity/pleiotropy 
 statistics. In the heterogeneity output 
 the model based Q-statistic is reported by multiplying the variance of the 
-residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}).
+residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}). 
+For the IVW model this is the Cochran Q-statistic, and for the MR-Egger model this is the 
+Ruecker's Q-statistic.
  
 {phang}
 {opt ivw} specifies inverse-variance weighted (IVW) model ({help mregger##ivw:Burgess et al., 2013}), 
@@ -242,7 +244,7 @@ multiple genetic variants using summarized data. Genetic Epidemiology, 2013, 37,
 Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy in 
 Mendelian randomization studies with summary data and a continuous outcome. 
 Statistics in Medicine, 2015, 34, 21, 2926-2940. 
-{browse "http://dx.doi.org/10.1002/sim.6522":DOI}
+{browse "https://onlinelibrary.wiley.com/doi/full/10.1002/sim.6522":DOI}
 {p_end}
 
 {marker do}{...}
