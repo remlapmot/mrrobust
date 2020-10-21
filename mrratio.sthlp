@@ -38,33 +38,33 @@ estimator.
 {pstd}
 {cmd:mrratio} can generate confidence interval limits using either a standard 
 error from a Taylor series expansion (the default), a standard error using 
-the NOME (no measurement error) in the genotype-phenotype association 
+the NOME (no measurement error) in the genotype-phenotype (SNP-exposure) association 
 assumption, or using Fieller's Theorem.
 
 {pstd}
-The user needs to have summary level genotype-disease and genotype-phenotype 
+The user needs to have summary level genotype-disease (SNP-outcome) and genotype-phenotype (SNP-exposure) 
 association estimates and their standard errors. If assuming NOME the 
-standard error of the genotype-phenotype association is not required.
+standard error of the genotype-phenotype (SNP-exposure) association is not required.
 
 {pstd}
-It is also optional to provide the covariance between the genotype-disease 
-and genotype-phenotype estimates. If these are from independent samples then 
+It is also optional to provide the covariance between the genotype-disease (SNP-outcome)
+and genotype-phenotype (SNP-exposure) estimates. If these are from independent samples then 
 this covariance is zero.
 
 {pstd}
-{it:#gd} genotype-disease association estimate.
+{it:#gd} genotype-disease (SNP-outcome) association estimate.
 
 {pstd}
-{it:#gdse} standard error of the genotype-disease association estimate.
+{it:#gdse} standard error of the genotype-disease (SNP-outcome) association estimate.
 
 {pstd}
-{it:#gp} genotype-phenotype association estimate.
+{it:#gp} genotype-phenotype (SNP-exposure) association estimate.
 
 {pstd}
-{it:#gpse} standard error of the genotype-phenotype association estimate.
+{it:#gpse} standard error of the genotype-phenotype (SNP-exposure) association estimate.
 
 {pstd}
-{it:#cov} covariance between the genotype-disease and the genotype-phenotype estimates.
+{it:#cov} covariance between the genotype-disease (SNP-outcome) and the genotype-phenotype (SNP-exposure) estimates.
 
 {marker options}{...}
 {title:Options}
@@ -81,7 +81,7 @@ Theorem.
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
 
 {phang}
-{opt nome} specifies the NOME (no measurement error in the genotype-phenotype 
+{opt nome} specifies the NOME (no measurement error in the genotype-phenotype [SNP-exposure] 
 association) assumption.
 
 {marker examples}{...}
