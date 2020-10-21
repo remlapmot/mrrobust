@@ -36,8 +36,8 @@ obtain standard error{p_end}
 
 {pstd}
 {cmd:mrmedian} performs unweighted, weighted, and penalized median IV 
-estimator on summary level data (i.e. reported genotype-disease and 
-phenotype-disease association estimates and their standard errors for individual 
+estimator on summary level data (i.e. reported genotype-disease [SNP-outcome] and 
+genotype-phenotype [SNP-exposure] association estimates and their standard errors for individual 
 genotypes).
 
 {pstd}
