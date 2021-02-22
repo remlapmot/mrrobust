@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmvivw
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  15 Oct 2020, 15:18:08
+ opened on:  22 Feb 2021, 18:14:06
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -11,15 +11,15 @@
 ------------------------------------------------------------------BEGIN mrmvivw
 
 -> which mrmvivw, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvivw, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mvivw.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvmr, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mvmr.ado
+C:\Users\tom\Documents\GitHub\mrrobust\mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 . 
@@ -1425,7 +1425,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvivw
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  15 Oct 2020, 15:18:42
+ closed on:  22 Feb 2021, 18:14:29
 -------------------------------------------------------------------------------
