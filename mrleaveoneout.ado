@@ -25,6 +25,24 @@ syntax varlist(min=2) [if] [in] , ///
 
 local callersversion = _caller()
 
+// check metan is installed
+capture which metan
+if _rc {
+	di as error "-metan- from SSC is required; install using"
+        di "{stata ssc install metan}"
+	exit 499
+}
+
+// check if metan9 is installed 
+// - if not I assume the old version of metan installed, which is what is required
+capture which metan9
+if _rc {
+	local metancmd metan
+}
+else {
+	local metancmd metan9
+}
+
 local nvarlist = wordcount("`varlist'")
 local npheno = `nvarlist' - 1
 
@@ -160,7 +178,7 @@ if "`plot'" != "noplot" {
 		if `astext' == 0 local astext 50
 	}
 
-	metan `b' `se', ///
+	`metancmd' `b' `se', ///
 		fixedi ///
 		notable ///
 		nowt ///
