@@ -17,8 +17,12 @@ To obtain the latest update please see instructions [below](#installing-and-upda
 * October 2020:
   - `dependency.do` and `mrdeps` now install the updated version of the `moremata` package
   - Checked the cscripts run under Stata 16.1
-  - Added description of Q-statistic as Cochran's and Ruecker's for the IVW and MR-Egger models respectively
-  - In various helpfiles added clarification that genotype-disease stands for SNP-outcome (or indeed instrument-outcome) and that genotype-phenotype stands for SNP-exposure (or indeed instrument-exposure) respectively; i.e. the estimates required for the top and bottom of the IV Wald ratio estimate
+  - Added description of Q-statistic as Cochran's and Ruecker's for the IVW and MR-Egger models 
+  respectively
+  - In various helpfiles added clarification that genotype-disease stands for SNP-outcome 
+  (or indeed instrument-outcome) and that genotype-phenotype stands for SNP-exposure (or indeed 
+  instrument-exposure) respectively; i.e. the estimates required for the top and bottom of the IV 
+  Wald ratio estimate
 * August 2020:
   - Added html versions of the helpfiles to the website. These are available from the website 
   menu bar or [here](https://remlapmot.github.io/mrrobust/docs/helpfiles/)
