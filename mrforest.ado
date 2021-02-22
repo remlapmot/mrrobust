@@ -256,7 +256,7 @@ else {
 }
 
 // call to metan
-metan `ivest' `ivcilow' `ivciupp' `modelsin', ///
+metan9 `ivest' `ivcilow' `ivciupp' `modelsin', ///
 	notable nooverall nobox ///
 	lcols(`ivid2') ///
 	effect(`"`effect'"') ///
