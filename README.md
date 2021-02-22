@@ -15,8 +15,10 @@
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
 * February 2021:
-  - Fixes to `mrforest` related to the recent update to `metan`. `mrforest` now uses `metan9` 
-  instead of `metan` since the new version of `metan` breaking changes to its syntax
+  - Fixes to `mrforest` and `mrleaveoneout` related to the recent update to `metan`. 
+  `mrforest` and `mrleaveoneout` now use `metan9` instead of `metan` because of the changes to 
+  `metan` syntax. No change was necessary in the dependency scripts because `metan9` is also 
+  installed with `ssc install metan`
 * October 2020:
   - `dependency.do` and `mrdeps` now install the updated version of the `moremata` package
   - Checked the cscripts run under Stata 16.1
