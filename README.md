@@ -14,11 +14,21 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* February 2021:
+  - Fixes to `mrforest` and `mrleaveoneout` related to the recent update to `metan`. 
+  `mrforest` and `mrleaveoneout` now use `metan9` instead of `metan` because of the changes to 
+  `metan` syntax. No change was necessary in the dependency scripts because `metan9` is also 
+  installed with `ssc install metan`
+  - Checked cscripts pass
 * October 2020:
   - `dependency.do` and `mrdeps` now install the updated version of the `moremata` package
   - Checked the cscripts run under Stata 16.1
-  - Added description of Q-statistic as Cochran's and Ruecker's for the IVW and MR-Egger models respectively
-  - In various helpfiles added clarification that genotype-disease stands for SNP-outcome (or indeed instrument-outcome) and that genotype-phenotype stands for SNP-exposure (or indeed instrument-exposure) respectively; i.e. the estimates required for the top and bottom of the IV Wald ratio estimate
+  - Added description of Q-statistic as Cochran's and Ruecker's for the IVW and MR-Egger models 
+  respectively
+  - In various helpfiles added clarification that genotype-disease stands for SNP-outcome 
+  (or indeed instrument-outcome) and that genotype-phenotype stands for SNP-exposure (or indeed 
+  instrument-exposure) respectively; i.e. the estimates required for the top and bottom of the IV 
+  Wald ratio estimate
 * August 2020:
   - Added html versions of the helpfiles to the website. These are available from the website 
   menu bar or [here](https://remlapmot.github.io/mrrobust/docs/helpfiles/)
@@ -265,4 +275,5 @@ GitHub or send me an email to tom.palmer@bristol.ac.uk.
 ## Acknowledgements
 Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, 
 Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, 
-Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, Lai-Te Chen, Sean Harrison, Emma Anderson, and Steve Burgess.
+Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, Lai-Te Chen, Sean Harrison, Emma 
+Anderson, and Steve Burgess.

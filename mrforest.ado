@@ -34,7 +34,17 @@ if _rc {
         di "{stata ssc install metan}"
 	exit 499
 }
-        
+
+// check if metan9 is installed 
+// - if not I assume the old version of metan installed, which is what is required
+capture which metan9
+if _rc {
+	local metancmd metan
+}
+else {
+	local metancmd metan9
+}
+
 // tokenize varlist
 tempvar gd gdse gp gpse cov
 local varlistlength : word count `varlist' 
@@ -256,7 +266,7 @@ else {
 }
 
 // call to metan
-metan `ivest' `ivcilow' `ivciupp' `modelsin', ///
+`metancmd' `ivest' `ivcilow' `ivciupp' `modelsin', ///
 	notable nooverall nobox ///
 	lcols(`ivid2') ///
 	effect(`"`effect'"') ///
