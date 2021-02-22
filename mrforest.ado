@@ -34,7 +34,7 @@ if _rc {
         di "{stata ssc install metan}"
 	exit 499
 }
-        
+
 // tokenize varlist
 tempvar gd gdse gp gpse cov
 local varlistlength : word count `varlist' 
