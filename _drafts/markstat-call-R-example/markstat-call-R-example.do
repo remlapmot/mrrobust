@@ -4,7 +4,7 @@ log using "markstat-call-R-example", smcl replace
 * ssc install whereis
 * ssc install markstat
 //_2
-whereis R "C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe"
+whereis R "C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe"
 //_3
 use dat, clear
 ds, v(28)

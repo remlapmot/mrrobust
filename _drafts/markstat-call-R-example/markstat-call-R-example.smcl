@@ -3,14 +3,14 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 3 Aug 2020, 11:29:03
+ {txt}opened on:  {res}24 Feb 2021, 14:50:58
 {txt}
 {com}. //_1
 . * ssc install whereis
 . * ssc install markstat
 . //_2
-. whereis R "C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe"
-{res}{txt}C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe
+. whereis R "C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe"
+{res}{txt}C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe
 
 {com}. //_3
 . use dat, clear
@@ -78,7 +78,7 @@ beta_exposure {c |}{col 15}{res}{space 2} .4689295{col 27}{space 2} .0392367{col
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4887676{col 26}{space 2} .0369263{col 37}{space 1}   13.24{col 46}{space 3}0.000{col 54}{space 4} .4163933{col 67}{space 3} .5611419
+{space 8}beta {c |}{col 14}{res}{space 2} .4887676{col 26}{space 2} .0373608{col 37}{space 1}   13.08{col 46}{space 3}0.000{col 54}{space 4} .4155418{col 67}{space 3} .5619934
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_9
@@ -90,7 +90,7 @@ beta_exposure {c |}{col 15}{res}{space 2} .4689295{col 27}{space 2} .0392367{col
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2}   .03687{col 37}{space 1}   14.07{col 46}{space 3}0.000{col 54}{space 4} .4466811{col 67}{space 3} .5912089
+{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0355571{col 37}{space 1}   14.59{col 46}{space 3}0.000{col 54}{space 4} .4492544{col 67}{space 3} .5886357
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_^
@@ -98,7 +98,7 @@ beta_exposure {c |}{col 15}{res}{space 2} .4689295{col 27}{space 2} .0392367{col
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 3 Aug 2020, 11:29:06
+ {txt}closed on:  {res}24 Feb 2021, 14:51:12
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
