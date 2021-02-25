@@ -10,7 +10,7 @@ cscript single
 
 cap noi ado describe mrrobust
 
-local cscripts helpfiles
+local cscripts mrdeps install
 
 foreach dofile of local cscripts {
     log using `dofile'.log, text replace name(`dofile')
