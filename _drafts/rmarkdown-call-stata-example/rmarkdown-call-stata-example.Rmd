@@ -111,6 +111,7 @@ mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 We then fit the MR-Egger, median, and modal based estimators.
 ```{stata}
 qui use dat, clear
+
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
 mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
