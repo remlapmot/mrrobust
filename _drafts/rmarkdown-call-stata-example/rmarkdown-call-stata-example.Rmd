@@ -87,7 +87,7 @@ write.dta(dat, file = "dat.dta")
 ## Analysis in Stata using the mrrobust package
 
 At this point in Stata install the `mrrobust` package and its dependencies if you have not done so previously.
-```{stata eval=FALSE}
+```{stata results=FALSE}
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
@@ -130,9 +130,6 @@ To run this `Rmd` file, open it in RStudio and click the `Knit` button in the to
 ## Session info
 
 For reproducibility
-```{r, results='asis'}
-sessioninfo::session_info() %>%
-  details::details(
-    summary = 'Current session info'
-  )
+```{r, collapse=TRUE}
+sessioninfo::session_info()
 ```
