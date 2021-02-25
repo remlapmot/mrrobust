@@ -1,0 +1,180 @@
+-------------------------------------------------------------------------------
+      name:  install
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\install.log
+  log type:  text
+ opened on:  25 Feb 2021, 14:14:24
+
+. * Test installation methods
+. * 2020-06-23
+. 
+. ** net install
+. 
+. cap noi ado uninstall mrrobust
+package not found
+
+. 
+. net desc mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/)
+
+-------------------------------------------------------------------------------
+package mrrobust from https://raw.github.com/remlapmot/mrrobust/master
+-------------------------------------------------------------------------------
+
+TITLE
+      'mrrobust': Stata package for two-sample Mendelian randomization analyses
+
+DESCRIPTION/AUTHOR(S)
+      Author: Tom Palmer
+      Distribution-Date: 20210222
+
+INSTALLATION FILES                             (type net install mrrobust)
+      mrmedian.ado
+      mrmedian.sthlp
+      mrmedianobs.ado
+      mrmedianobs_work.ado
+      mrmedianobs.sthlp
+      mregger.ado
+      mregger.sthlp
+      mrrobust.sthlp
+      mreggerplot.ado
+      mreggerplot.sthlp
+      mrmodal.ado
+      mrmodal.sthlp
+      mrratio.ado
+      mrratio.sthlp
+      mrivests.ado
+      mrivests.sthlp
+      mrforest.ado
+      mrforest.sthlp
+      mreggersimex.ado
+      mreggersimex.sthlp
+      mreggersimexonce.ado
+      mrmodalplot.ado
+      mrmodalplot.sthlp
+      mrfunnel.ado
+      mrfunnel.sthlp
+      mrdeps.ado
+      mrdeps.sthlp
+      mr.ado
+      mr.sthlp
+      mrmvivw.ado
+      mrmvivw.sthlp
+      mvivw.ado
+      mvivw.sthlp
+      mvmr.ado
+      mvmr.sthlp
+      mrmvegger.ado
+      mrmvegger.sthlp
+      mrleaveoneout.ado
+      mrleaveoneout.sthlp
+-------------------------------------------------------------------------------
+
+. 
+. net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/)
+>  replace
+checking mrrobust consistency and verifying not already installed...
+installing into c:\ado\plus\...
+installation complete.
+
+. mrdeps
+checking addplot consistency and verifying not already installed...
+all files already exist and are up to date.
+checking kdens consistency and verifying not already installed...
+all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
+checking heterogi consistency and verifying not already installed...
+all files already exist and are up to date.
+checking metan consistency and verifying not already installed...
+all files already exist and are up to date.
+checking grc1leg consistency and verifying not already installed...
+all files already exist and are up to date.
+
+. 
+. ** github package
+. 
+. cap noi ado uninstall mrrobust
+
+package mrrobust from https://raw.github.com/remlapmot/mrrobust/master
+      'mrrobust': Stata package for two-sample Mendelian randomization analyses
+
+(package uninstalled)
+
+. 
+. net install github, from("https://haghish.github.io/github/")
+checking github consistency and verifying not already installed...
+all files already exist and are up to date.
+
+. gitget mrrobust
+
+Installing mrrobust ...
+
+ ------------------------------------------------------------------------------
+> ----
+  Repository      Username    Install  Description 
+ ------------------------------------------------------------------------------
+> ----
+  mrrobust        remlapmot   Install  Stata package for two-sample Mendelian
+                              3465k    randomization analyses using summary dat
+> a
+                                       homepage https://remlapmot.github.io/~/
+                                       updated on 2018-12-31
+                                       Fork:5    Star:9    Lang:Stata  (depende
+> ncy)
+
+ ------------------------------------------------------------------------------
+> ----
+
+
+checking mrrobust consistency and verifying not already installed...
+installing into c:\ado\plus\...
+installation complete.
+
+Checking package dependencies
+installing mrrobust package dependencies:
+
+
+. * dependencies for mrrobust package; for github package
+. * Tom Palmer, 2018-12-21
+. 
+. foreach prog in addplot kdens moremata heterogi metan {
+  2.         cap noi ssc install `prog'
+  3.         if _rc == 602 {
+  4.                 di as txt "Installing the latest version of `prog'"
+  5.                 ssc install `prog', replace
+  6.         }
+  7. }
+checking addplot consistency and verifying not already installed...
+all files already exist and are up to date.
+checking kdens consistency and verifying not already installed...
+all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
+checking heterogi consistency and verifying not already installed...
+all files already exist and are up to date.
+checking metan consistency and verifying not already installed...
+all files already exist and are up to date.
+
+. 
+. net install grc1leg, from(http://www.stata.com/users/vwiggins)
+checking grc1leg consistency and verifying not already installed...
+all files already exist and are up to date.
+
+. 
+end of do-file
+
+. 
+. cap noi ado uninstall mrrobust
+
+package mrrobust from https://raw.githubusercontent.com/remlapmot/mrrobust/mast
+> er
+      'mrrobust': Stata package for two-sample Mendelian randomization analyses
+
+(package uninstalled)
+
+. 
+end of do-file
+      name:  install
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\install.log
+  log type:  text
+ closed on:  25 Feb 2021, 14:16:29
+-------------------------------------------------------------------------------
