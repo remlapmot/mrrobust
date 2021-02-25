@@ -141,16 +141,16 @@ mr(dat)
     ## 5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
     ##                          exposure                    method nsnp         b         se
     ## 1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5853125 0.06191076
-    ## 2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887311 0.03759648
+    ## 2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887311 0.03769205
     ## 3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4689295 0.03923672
-    ## 4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942 0.06547205
-    ## 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450 0.03238886
+    ## 4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942 0.06271801
+    ## 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450 0.03731330
     ##           pval
     ## 1 1.712795e-13
-    ## 2 1.233331e-38
+    ## 2 1.896774e-38
     ## 3 6.392333e-33
-    ## 4 1.297643e-09
-    ## 5 1.558019e-23
+    ## 4 3.739749e-10
+    ## 5 1.405375e-20
 
 ``` r
 mr_heterogeneity(dat)
@@ -320,94 +320,79 @@ in the toolbar of the Source code window.
 For reproducibility
 
 ``` r
-sessioninfo::session_info() %>%
-  details::details(
-    summary = 'Current session info'
-  )
+sessioninfo::session_info()
+## - Session info ---------------------------------------------------------------------
+##  setting  value                       
+##  version  R version 4.0.4 (2021-02-15)
+##  os       Windows 10 x64              
+##  system   x86_64, mingw32             
+##  ui       RStudio                     
+##  language (EN)                        
+##  collate  English_United Kingdom.1252 
+##  ctype    English_United Kingdom.1252 
+##  tz       Europe/London               
+##  date     2021-02-25                  
+## 
+## - Packages -------------------------------------------------------------------------
+##  package       * version date       lib source                               
+##  assertthat      0.2.1   2019-03-21 [1] CRAN (R 4.0.2)                       
+##  cli             2.3.1   2021-02-23 [1] CRAN (R 4.0.4)                       
+##  clipr           0.7.1   2020-10-08 [1] CRAN (R 4.0.2)                       
+##  codetools       0.2-18  2020-11-04 [2] CRAN (R 4.0.4)                       
+##  crayon          1.4.1   2021-02-08 [1] CRAN (R 4.0.3)                       
+##  curl            4.3     2019-12-02 [1] CRAN (R 4.0.2)                       
+##  DBI             1.1.1   2021-01-15 [1] CRAN (R 4.0.3)                       
+##  desc            1.2.0   2018-05-01 [1] CRAN (R 4.0.2)                       
+##  details         0.2.1   2020-01-12 [1] CRAN (R 4.0.3)                       
+##  digest          0.6.27  2020-10-24 [1] CRAN (R 4.0.3)                       
+##  dplyr           1.0.4   2021-02-02 [1] CRAN (R 4.0.3)                       
+##  ellipsis        0.3.1   2020-05-15 [1] CRAN (R 4.0.2)                       
+##  evaluate        0.14    2019-05-28 [1] CRAN (R 4.0.2)                       
+##  fansi           0.4.2   2021-01-15 [1] CRAN (R 4.0.3)                       
+##  foreach         1.5.1   2020-10-15 [1] CRAN (R 4.0.3)                       
+##  foreign       * 0.8-81  2020-12-22 [2] CRAN (R 4.0.4)                       
+##  generics        0.1.0   2020-10-31 [1] CRAN (R 4.0.3)                       
+##  glmnet          4.1-1   2021-02-21 [1] CRAN (R 4.0.4)                       
+##  glue            1.4.2   2020-08-27 [1] CRAN (R 4.0.2)                       
+##  htmltools       0.5.1.1 2021-01-22 [1] CRAN (R 4.0.3)                       
+##  httr            1.4.2   2020-07-20 [1] CRAN (R 4.0.2)                       
+##  ieugwasr        0.1.5   2021-02-10 [1] Github (mrcieu/ieugwasr@adee1fe)     
+##  iterators       1.0.13  2020-10-15 [1] CRAN (R 4.0.3)                       
+##  jsonlite        1.7.2   2020-12-09 [1] CRAN (R 4.0.3)                       
+##  knitr           1.31    2021-01-27 [1] CRAN (R 4.0.3)                       
+##  lattice         0.20-41 2020-04-02 [2] CRAN (R 4.0.4)                       
+##  lifecycle       1.0.0   2021-02-15 [1] CRAN (R 4.0.4)                       
+##  magrittr        2.0.1   2020-11-17 [1] CRAN (R 4.0.3)                       
+##  Matrix          1.3-2   2021-01-06 [2] CRAN (R 4.0.4)                       
+##  mr.raps         0.2     2018-01-30 [1] CRAN (R 4.0.0)                       
+##  MRInstruments * 0.3.2   2020-06-26 [1] Github (mrcieu/MRInstruments@efa2ca0)
+##  nortest         1.0-4   2015-07-30 [1] CRAN (R 4.0.0)                       
+##  pillar          1.5.0   2021-02-22 [1] CRAN (R 4.0.4)                       
+##  pkgconfig       2.0.3   2019-09-22 [1] CRAN (R 4.0.2)                       
+##  plyr            1.8.6   2020-03-03 [1] CRAN (R 4.0.2)                       
+##  png             0.1-7   2013-12-03 [1] CRAN (R 4.0.0)                       
+##  purrr           0.3.4   2020-04-17 [1] CRAN (R 4.0.2)                       
+##  R6              2.5.0   2020-10-28 [1] CRAN (R 4.0.3)                       
+##  Rcpp            1.0.6   2021-01-15 [1] CRAN (R 4.0.3)                       
+##  rlang           0.4.10  2020-12-30 [1] CRAN (R 4.0.3)                       
+##  rmarkdown       2.7     2021-02-19 [1] CRAN (R 4.0.4)                       
+##  rprojroot       2.0.2   2020-11-15 [1] CRAN (R 4.0.3)                       
+##  sessioninfo     1.1.1   2018-11-05 [1] CRAN (R 4.0.2)                       
+##  shape           1.4.5   2020-09-13 [1] CRAN (R 4.0.2)                       
+##  Statamarkdown * 0.5.5   2020-12-01 [1] Github (hemken/statamarkdown@32f5686)
+##  stringi         1.5.3   2020-09-09 [1] CRAN (R 4.0.2)                       
+##  stringr         1.4.0   2019-02-10 [1] CRAN (R 4.0.2)                       
+##  survival        3.2-7   2020-09-28 [2] CRAN (R 4.0.4)                       
+##  tibble          3.0.6   2021-01-29 [1] CRAN (R 4.0.3)                       
+##  tidyselect      1.1.0   2020-05-11 [1] CRAN (R 4.0.2)                       
+##  TwoSampleMR   * 0.5.5   2021-02-10 [1] Github (mrcieu/twosamplemr@78a32ce)  
+##  utf8            1.1.4   2018-05-24 [1] CRAN (R 4.0.2)                       
+##  vctrs           0.3.6   2020-12-17 [1] CRAN (R 4.0.3)                       
+##  withr           2.4.1   2021-01-26 [1] CRAN (R 4.0.3)                       
+##  xfun            0.21    2021-02-10 [1] CRAN (R 4.0.3)                       
+##  xml2            1.3.2   2020-04-23 [1] CRAN (R 4.0.2)                       
+##  yaml            2.2.1   2020-02-01 [1] CRAN (R 4.0.0)                       
+## 
+## [1] C:/Users/tom/Documents/R/win-library/4.0
+## [2] C:/Program Files/R/R-4.0.4/library
 ```
-
-<details closed>
-<summary>
-<span title="Click to Expand"> Current session info </span>
-</summary>
-
-``` r
-- Session info ---------------------------------------------------------------------
- setting  value                       
- version  R version 4.0.4 (2021-02-15)
- os       Windows 10 x64              
- system   x86_64, mingw32             
- ui       RStudio                     
- language (EN)                        
- collate  English_United Kingdom.1252 
- ctype    English_United Kingdom.1252 
- tz       Europe/London               
- date     2021-02-25                  
-
-- Packages -------------------------------------------------------------------------
- package       * version date       lib source                               
- assertthat      0.2.1   2019-03-21 [1] CRAN (R 4.0.2)                       
- cli             2.3.1   2021-02-23 [1] CRAN (R 4.0.4)                       
- clipr           0.7.1   2020-10-08 [1] CRAN (R 4.0.2)                       
- codetools       0.2-18  2020-11-04 [2] CRAN (R 4.0.4)                       
- crayon          1.4.1   2021-02-08 [1] CRAN (R 4.0.3)                       
- curl            4.3     2019-12-02 [1] CRAN (R 4.0.2)                       
- DBI             1.1.1   2021-01-15 [1] CRAN (R 4.0.3)                       
- desc            1.2.0   2018-05-01 [1] CRAN (R 4.0.2)                       
- details         0.2.1   2020-01-12 [1] CRAN (R 4.0.3)                       
- digest          0.6.27  2020-10-24 [1] CRAN (R 4.0.3)                       
- dplyr           1.0.4   2021-02-02 [1] CRAN (R 4.0.3)                       
- ellipsis        0.3.1   2020-05-15 [1] CRAN (R 4.0.2)                       
- evaluate        0.14    2019-05-28 [1] CRAN (R 4.0.2)                       
- fansi           0.4.2   2021-01-15 [1] CRAN (R 4.0.3)                       
- foreach         1.5.1   2020-10-15 [1] CRAN (R 4.0.3)                       
- foreign       * 0.8-81  2020-12-22 [2] CRAN (R 4.0.4)                       
- generics        0.1.0   2020-10-31 [1] CRAN (R 4.0.3)                       
- glmnet          4.1-1   2021-02-21 [1] CRAN (R 4.0.4)                       
- glue            1.4.2   2020-08-27 [1] CRAN (R 4.0.2)                       
- htmltools       0.5.1.1 2021-01-22 [1] CRAN (R 4.0.3)                       
- httr            1.4.2   2020-07-20 [1] CRAN (R 4.0.2)                       
- ieugwasr        0.1.5   2021-02-10 [1] Github (mrcieu/ieugwasr@adee1fe)     
- iterators       1.0.13  2020-10-15 [1] CRAN (R 4.0.3)                       
- jsonlite        1.7.2   2020-12-09 [1] CRAN (R 4.0.3)                       
- knitr           1.31    2021-01-27 [1] CRAN (R 4.0.3)                       
- lattice         0.20-41 2020-04-02 [2] CRAN (R 4.0.4)                       
- lifecycle       1.0.0   2021-02-15 [1] CRAN (R 4.0.4)                       
- magrittr        2.0.1   2020-11-17 [1] CRAN (R 4.0.3)                       
- Matrix          1.3-2   2021-01-06 [2] CRAN (R 4.0.4)                       
- mr.raps         0.2     2018-01-30 [1] CRAN (R 4.0.0)                       
- MRInstruments * 0.3.2   2020-06-26 [1] Github (mrcieu/MRInstruments@efa2ca0)
- nortest         1.0-4   2015-07-30 [1] CRAN (R 4.0.0)                       
- pillar          1.5.0   2021-02-22 [1] CRAN (R 4.0.4)                       
- pkgconfig       2.0.3   2019-09-22 [1] CRAN (R 4.0.2)                       
- plyr            1.8.6   2020-03-03 [1] CRAN (R 4.0.2)                       
- png             0.1-7   2013-12-03 [1] CRAN (R 4.0.0)                       
- purrr           0.3.4   2020-04-17 [1] CRAN (R 4.0.2)                       
- R6              2.5.0   2020-10-28 [1] CRAN (R 4.0.3)                       
- Rcpp            1.0.6   2021-01-15 [1] CRAN (R 4.0.3)                       
- rlang           0.4.10  2020-12-30 [1] CRAN (R 4.0.3)                       
- rmarkdown       2.7     2021-02-19 [1] CRAN (R 4.0.4)                       
- rprojroot       2.0.2   2020-11-15 [1] CRAN (R 4.0.3)                       
- sessioninfo     1.1.1   2018-11-05 [1] CRAN (R 4.0.2)                       
- shape           1.4.5   2020-09-13 [1] CRAN (R 4.0.2)                       
- Statamarkdown * 0.5.5   2020-12-01 [1] Github (hemken/statamarkdown@32f5686)
- stringi         1.5.3   2020-09-09 [1] CRAN (R 4.0.2)                       
- stringr         1.4.0   2019-02-10 [1] CRAN (R 4.0.2)                       
- survival        3.2-7   2020-09-28 [2] CRAN (R 4.0.4)                       
- tibble          3.0.6   2021-01-29 [1] CRAN (R 4.0.3)                       
- tidyselect      1.1.0   2020-05-11 [1] CRAN (R 4.0.2)                       
- TwoSampleMR   * 0.5.5   2021-02-10 [1] Github (mrcieu/twosamplemr@78a32ce)  
- utf8            1.1.4   2018-05-24 [1] CRAN (R 4.0.2)                       
- vctrs           0.3.6   2020-12-17 [1] CRAN (R 4.0.3)                       
- withr           2.4.1   2021-01-26 [1] CRAN (R 4.0.3)                       
- xfun            0.21    2021-02-10 [1] CRAN (R 4.0.3)                       
- xml2            1.3.2   2020-04-23 [1] CRAN (R 4.0.2)                       
- yaml            2.2.1   2020-02-01 [1] CRAN (R 4.0.0)                       
-
-[1] C:/Users/tom/Documents/R/win-library/4.0
-[2] C:/Program Files/R/R-4.0.4/library
-```
-
-</details>
-
-<br>
