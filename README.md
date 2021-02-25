@@ -20,6 +20,8 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   `metan` syntax. No change was necessary in the dependency scripts because `metan9` is also 
   installed with `ssc install metan`
   - Checked cscripts pass
+  - Checked examples on website run. And changed the 2 examples which use TwoSampleMR to use 
+  the new ID code for the exposure data
 * October 2020:
   - `dependency.do` and `mrdeps` now install the updated version of the `moremata` package
   - Checked the cscripts run under Stata 16.1

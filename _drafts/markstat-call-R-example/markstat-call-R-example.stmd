@@ -34,7 +34,7 @@ issue the following commands (I have commented them out because I have already i
 
 We first need to register the R executable with Stata.
 ```s
-whereis R "C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe"
+whereis R "C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe"
 ```
 
 Next we have an R code chunk in which we install the required packages in R (again I have commented 
@@ -75,7 +75,7 @@ ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Wil
 exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 
 # Get outcome data from Cardiogram 2015
-outcome <- extract_outcome_data(exposure$SNP, 7)
+outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 
 # Harmonise exposure and outcome datasets
 # Assume alleles are on the forward strand

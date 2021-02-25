@@ -37,8 +37,8 @@ issue the following commands (I have commented them out because I have already i
 We first need to register the R executable with Stata.
 
 ```stata
-. whereis R "C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe"
-C:\\Program Files\\R\\R-4.0.2\\bin\\R.exe
+. whereis R "C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe"
+C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe
 ```
 
 
@@ -87,7 +87,7 @@ We can access the data using the `MRInstruments` package.
 > exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 > 
 > # Get outcome data from Cardiogram 2015
-> outcome <- extract_outcome_data(exposure$SNP, 7)
+> outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 > 
 > # Harmonise exposure and outcome datasets
 > # Assume alleles are on the forward strand
@@ -116,10 +116,10 @@ The next two code chunks perform the analysis in R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06191076 1.712795e-13
-2 0.03788048 4.389972e-38
+2 0.03688406 4.483969e-40
 3 0.03923672 6.392333e-33
-4 0.06952032 6.722220e-09
-5 0.03554062 1.417609e-21
+4 0.06243576 3.271445e-10
+5 0.03210806 1.011992e-23
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
@@ -252,7 +252,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887676   .0369263    13.24   0.000     .4163933    .5611419
+        beta │   .4887676   .0360119    13.57   0.000     .4181856    .5593496
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -267,7 +267,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945     .03687    14.07   0.000     .4466811    .5912089
+        beta │    .518945   .0359903    14.42   0.000     .4484053    .5894848
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 

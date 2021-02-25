@@ -58,7 +58,7 @@ ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Wil
 exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 
 # Get outcome data from Cardiogram 2015
-outcome <- extract_outcome_data(exposure$SNP, 7)
+outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 
 # Harmonise exposure and outcome datasets
 # Assume alleles are on the forward strand
@@ -125,3 +125,14 @@ To run this `Rmd` file, open it in RStudio and click the `Knit` button in the to
 ## References
 
 - Hemani et al. The MR-Base platform supports systematic causal inference across the human phenome. eLife, 2018;7:e34408 <https://doi.org/10.7554/eLife.34408>
+
+## Session info
+
+For reproducibility
+```{r}
+sessioninfo::session_info()%>%
+  details::details(
+    summary = 'Current session info',
+    open    = FALSE
+  )
+```
