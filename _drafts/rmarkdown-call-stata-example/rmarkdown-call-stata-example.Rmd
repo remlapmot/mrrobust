@@ -130,10 +130,9 @@ To run this `Rmd` file, open it in RStudio and click the `Knit` button in the to
 ## Session info
 
 For reproducibility
-```{r}
-sessioninfo::session_info()%>%
+```{r, results='asis'}
+sessioninfo::session_info() %>%
   details::details(
-    summary = 'Current session info',
-    open    = FALSE
+    summary = 'Current session info'
   )
 ```
