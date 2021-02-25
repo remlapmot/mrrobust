@@ -22,6 +22,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - Checked cscripts pass
   - Checked examples on website run. And changed the 2 examples which use TwoSampleMR to use 
   the new ID code for the exposure data
+  - Updated `dependency.do` to make it more robust to the more regular updates to `metan`
 * October 2020:
   - `dependency.do` and `mrdeps` now install the updated version of the `moremata` package
   - Checked the cscripts run under Stata 16.1

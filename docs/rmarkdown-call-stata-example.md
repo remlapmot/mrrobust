@@ -40,7 +40,7 @@ Next we need to tell `Statamarkdown` where Stata is installed.
 stataexe <- find_stata()
 ```
 
-    Stata found at C:/Program Files (x86)/Stata15/StataMP-64.exe
+    ## Stata found at C:/Program Files (x86)/Stata15/StataMP-64.exe
 
 ``` r
 knitr::opts_chunk$set(engine.path = stataexe, cleanlog = FALSE)
@@ -99,18 +99,18 @@ ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Wil
 exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 ```
 
-    Extracting data for 62 SNP(s) from 1 GWAS(s)
+    ## Extracting data for 62 SNP(s) from 1 GWAS(s)
 
 ``` r
 # Get outcome data from Cardiogram 2015
 outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 ```
 
-    Extracting data for 62 SNP(s) from 1 GWAS(s)
+    ## Extracting data for 62 SNP(s) from 1 GWAS(s)
 
-    Finding proxies for 1 SNPs in outcome ieu-a-7
+    ## Finding proxies for 1 SNPs in outcome ieu-a-7
 
-    Extracting data for 1 SNP(s) from 1 GWAS(s)
+    ## Extracting data for 1 SNP(s) from 1 GWAS(s)
 
 ``` r
 # Harmonise exposure and outcome datasets
@@ -118,7 +118,7 @@ outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 dat <- harmonise_data(exposure, outcome, action = 1)
 ```
 
-    Harmonising LDL cholesterol || id:ieu-a-300 (ieu-a-300) and Coronary heart disease || id:ieu-a-7 (ieu-a-7)
+    ## Harmonising LDL cholesterol || id:ieu-a-300 (ieu-a-300) and Coronary heart disease || id:ieu-a-7 (ieu-a-7)
 
 At this point we have our harmonised genotype-exposure and
 genotype-outcome association data saved in an object in our R session
@@ -131,40 +131,40 @@ The next two code chunks perform the analysis in R.
 mr(dat)
 ```
 
-    Analysing 'ieu-a-300' on 'ieu-a-7'
+    ## Analysing 'ieu-a-300' on 'ieu-a-7'
 
-      id.exposure id.outcome                              outcome
-    1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    3   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    4   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-                             exposure                    method nsnp         b         se
-    1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5853125 0.06191076
-    2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887311 0.03619992
-    3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4689295 0.03923672
-    4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942 0.06307315
-    5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450 0.03341458
-              pval
-    1 1.712795e-13
-    2 1.545000e-41
-    3 6.392333e-33
-    4 4.417807e-10
-    5 7.218794e-23
+    ##   id.exposure id.outcome                              outcome
+    ## 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+    ## 2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+    ## 3   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+    ## 4   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+    ## 5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+    ##                          exposure                    method nsnp         b         se
+    ## 1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5853125 0.06191076
+    ## 2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887311 0.03759648
+    ## 3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4689295 0.03923672
+    ## 4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942 0.06547205
+    ## 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450 0.03238886
+    ##           pval
+    ## 1 1.712795e-13
+    ## 2 1.233331e-38
+    ## 3 6.392333e-33
+    ## 4 1.297643e-09
+    ## 5 1.558019e-23
 
 ``` r
 mr_heterogeneity(dat)
 ```
 
-      id.exposure id.outcome                              outcome
-    1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-                             exposure                    method        Q Q_df
-    1 LDL cholesterol || id:ieu-a-300                  MR Egger 170.9462   60
-    2 LDL cholesterol || id:ieu-a-300 Inverse variance weighted 187.0110   61
-            Q_pval
-    1 1.356009e-12
-    2 1.021208e-14
+    ##   id.exposure id.outcome                              outcome
+    ## 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+    ## 2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
+    ##                          exposure                    method        Q Q_df
+    ## 1 LDL cholesterol || id:ieu-a-300                  MR Egger 170.9462   60
+    ## 2 LDL cholesterol || id:ieu-a-300 Inverse variance weighted 187.0110   61
+    ##         Q_pval
+    ## 1 1.356009e-12
+    ## 2 1.021208e-14
 
 ``` r
 dat$exposure <- "LDL cholesterol"
@@ -209,28 +209,28 @@ ds, v(28)
 di _N
 ```
 
-
-
-    . use dat, cl(Written by R.              )
-
-    . ds, v(28)
-    SNP                     pos                     proxy_a1_outcome
-    effect_allele_exposure  se_outcome              proxy_a2_outcome
-    other_allele_exposure   samplesize_outcome      exposure
-    effect_allele_outcome   pval_outcome            chr_exposure
-    other_allele_outcome    outcome                 pos_exposure
-    beta_exposure           originalname_outcome    se_exposure
-    beta_outcome            outcome_deprecated      pval_exposure
-    eaf_exposure            mr_keep_outcome         mr_keep_exposure
-    eaf_outcome             data_source_outcome     pval_origin_exposure
-    remove                  proxy_outcome           id_exposure
-    palindromic             target_snp_outcome      action
-    ambiguous               proxy_snp_outcome       mr_keep
-    id_outcome              target_a1_outcome       labels
-    chr                     target_a2_outcome
-
-    . di _N
-    62
+    ## 
+    ## 
+    ## . use dat, cl(Written by R.              )
+    ## 
+    ## . ds, v(28)
+    ## SNP                     pos                     proxy_a1_outcome
+    ## effect_allele_exposure  se_outcome              proxy_a2_outcome
+    ## other_allele_exposure   samplesize_outcome      exposure
+    ## effect_allele_outcome   pval_outcome            chr_exposure
+    ## other_allele_outcome    outcome                 pos_exposure
+    ## beta_exposure           originalname_outcome    se_exposure
+    ## beta_outcome            outcome_deprecated      pval_exposure
+    ## eaf_exposure            mr_keep_outcome         mr_keep_exposure
+    ## eaf_outcome             data_source_outcome     pval_origin_exposure
+    ## remove                  proxy_outcome           id_exposure
+    ## palindromic             target_snp_outcome      action
+    ## ambiguous               proxy_snp_outcome       mr_keep
+    ## id_outcome              target_a1_outcome       labels
+    ## chr                     target_a2_outcome
+    ## 
+    ## . di _N
+    ## 62
 
 We can then run the IVW model using `mregger` with multiplicative
 standard errors.
@@ -240,19 +240,24 @@ qui use dat, clear
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 ```
 
-
-
-    . qui use dat, cl. mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
-    command mregger is unrecognized
-    r(199);
-
-    end of do-file
-    r(199);
+    ## 
+    ## 
+    ## . qui use dat, cl. mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
+    ## 
+    ##                                                       Number of genotypes = 62
+    ##                                               Residual standard error =  1.751
+    ## ------------------------------------------------------------------------------
+    ##              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+    ## -------------+----------------------------------------------------------------
+    ## beta_outcome |
+    ## beta_expos~e |   .4689295   .0392367    11.95   0.000      .392027    .5458321
+    ## ------------------------------------------------------------------------------
 
 We then fit the MR-Egger, median, and modal based estimators.
 
 ``` stata
 qui use dat, clear
+
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
 mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
@@ -260,14 +265,43 @@ mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
 mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
 
-
-
-    . qui use dat, cl. mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
-    command mregger is unrecognized
-    r(199);
-
-    end of do-file
-    r(199);
+    ## 
+    ## 
+    ## . qui use dat, cl. 
+    ## . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
+    ## 
+    ##                                                       Number of genotypes = 62
+    ##                                               Residual standard error =  1.688
+    ## ------------------------------------------------------------------------------
+    ##              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+    ## -------------+----------------------------------------------------------------
+    ## beta_outcome |
+    ##        slope |   .5853125   .0619108     9.45   0.000     .4639696    .7066554
+    ##        _cons |  -.0095226   .0040103    -2.37   0.018    -.0173826   -.0016626
+    ## ------------------------------------------------------------------------------
+    ## 
+    ## . 
+    ## . mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
+    ## 
+    ##                                                       Number of genotypes = 62
+    ##                                                            Replications = 1000
+    ## ------------------------------------------------------------------------------
+    ##              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+    ## -------------+----------------------------------------------------------------
+    ##         beta |   .4887676   .0360119    13.57   0.000     .4181856    .5593496
+    ## ------------------------------------------------------------------------------
+    ## 
+    ## . 
+    ## . mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+    ## 
+    ##                                                       Number of genotypes = 62
+    ##                                                            Replications = 1000
+    ##                                                                        Phi = 1
+    ## ------------------------------------------------------------------------------
+    ##              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+    ## -------------+----------------------------------------------------------------
+    ##         beta |    .518945   .0359903    14.42   0.000     .4484053    .5894848
+    ## ------------------------------------------------------------------------------
 
 And we could continue with additional Stata code (or indeed R code) as
 we liked.
@@ -286,10 +320,9 @@ in the toolbar of the Source code window.
 For reproducibility
 
 ``` r
-sessioninfo::session_info()%>%
+sessioninfo::session_info() %>%
   details::details(
-    summary = 'Current session info',
-    open    = FALSE
+    summary = 'Current session info'
   )
 ```
 

@@ -111,6 +111,7 @@ mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 We then fit the MR-Egger, median, and modal based estimators.
 ```{stata}
 qui use dat, clear
+
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
 mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
@@ -129,10 +130,9 @@ To run this `Rmd` file, open it in RStudio and click the `Knit` button in the to
 ## Session info
 
 For reproducibility
-```{r}
-sessioninfo::session_info()%>%
+```{r, results='asis'}
+sessioninfo::session_info() %>%
   details::details(
-    summary = 'Current session info',
-    open    = FALSE
+    summary = 'Current session info'
   )
 ```
