@@ -87,7 +87,7 @@ We can access the data using the `MRInstruments` package.
 > exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
 > 
 > # Get outcome data from Cardiogram 2015
-> outcome <- extract_outcome_data(exposure$SNP, 7)
+> outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 > 
 > # Harmonise exposure and outcome datasets
 > # Assume alleles are on the forward strand
@@ -116,10 +116,10 @@ The next two code chunks perform the analysis in R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06191076 1.712795e-13
-2 0.03716298 1.678936e-39
+2 0.03688406 4.483969e-40
 3 0.03923672 6.392333e-33
-4 0.06159768 2.183087e-10
-5 0.03478592 5.074427e-22
+4 0.06243576 3.271445e-10
+5 0.03210806 1.011992e-23
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
@@ -252,7 +252,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887676   .0373608    13.08   0.000     .4155418    .5619934
+        beta │   .4887676   .0360119    13.57   0.000     .4181856    .5593496
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -267,7 +267,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0355571    14.59   0.000     .4492544    .5886357
+        beta │    .518945   .0359903    14.42   0.000     .4484053    .5894848
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
