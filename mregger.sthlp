@@ -84,7 +84,7 @@ statistics. In the heterogeneity output
 the model based Q-statistic is reported by multiplying the variance of the 
 residuals by the degrees of freedom ({help mregger##delgreco:Del Greco et al., 2015}). 
 For the IVW model this is the Cochran Q-statistic, and for the MR-Egger model this is the 
-Ruecker's Q-statistic.
+Ruecker's Q-statistic. The corresponding I-squared statistic and its 95% CI is also reported.
  
 {phang}
 {opt ivw} specifies inverse-variance weighted (IVW) model ({help mregger##ivw:Burgess et al., 2013}), 
