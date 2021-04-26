@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}21 Oct 2020, 10:43:46
+ {txt}opened on:  {res}26 Apr 2021, 12:12:18
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -16,9 +16,8 @@
 > ivid(rsid) ///
 > xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 {res}{txt}
-{com}. gr export mrforest.svg, width(600) replace
-{txt}(file mrforest.svg written in SVG format)
-
+{com}. qui gr export mrforest.svg, width(600) replace
+{txt}
 {com}. //_4
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 
@@ -53,6 +52,7 @@
 {col 55}{txt}Number of genotypes = {res}73
 {col 47}{txt}Residual standard error = {res} 1.548
 {col 17}{txt}Ruecker's Q for heterogeneity; chi2({res}71{txt}) = {res}170.11 {txt}(p =  {res}0.0000{txt})
+{col 30}I-squared statistic = {res}58.3% {txt}(95% CI {res}45.8%{txt}, {res}67.8%{txt})
 {res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -94,6 +94,7 @@
 {col 55}{txt}Number of genotypes = {res}73
 {col 47}{txt}Residual standard error = {res} 1.547
 {col 17}{txt}Ruecker's Q for heterogeneity; chi2({res}71{txt}) = {res}169.98 {txt}(p =  {res}0.0000{txt})
+{col 30}I-squared statistic = {res}58.2% {txt}(95% CI {res}45.8%{txt}, {res}67.8%{txt})
 {res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -116,15 +117,13 @@
 {txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0089987{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
-{com}. gr export mreggersimex-plot.svg, width(600) replace
-{txt}(file mreggersimex-plot.svg written in SVG format)
-
+{com}. qui gr export mreggersimex-plot.svg, width(600) replace
+{txt}
 {com}. //_11
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}{txt}
-{com}. gr export mreggerplot.svg, width(600) replace
-{txt}(file mreggerplot.svg written in SVG format)
-
+{com}. qui gr export mreggerplot.svg, width(600) replace
+{txt}
 {com}. //_12
 . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 {res}
@@ -166,9 +165,8 @@
 {space 8}beta {c |}{col 14}{res}{space 2} .4917353{col 26}{space 2} .1356432{col 37}{space 1}    3.63{col 46}{space 3}0.000{col 54}{space 4} .2258796{col 67}{space 3}  .757591
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}{txt}
-{com}. gr export mrmodalplot.svg, width(600) replace
-{txt}(file mrmodalplot.svg written in SVG format)
-
+{com}. qui gr export mrmodalplot.svg, width(600) replace
+{txt}
 {com}. //_14
 . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1
 {res}
@@ -208,31 +206,28 @@
 {com}. //_17
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 {res}{txt}
-{com}. gr export mrfunnel.svg, width(600) replace
-{txt}(file mrfunnel.svg written in SVG format)
-
+{com}. qui gr export mrfunnel.svg, width(600) replace
+{txt}
 {com}. //_18
 . gen byte sel2 = (ldlcp2 < 1e-25)
 {txt}
 {com}. //_19
 . mrleaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid) noprint
 {res}{txt}
-{com}. gr export mrleaveoneout-plot-01.svg, width(600) replace
-{txt}(file mrleaveoneout-plot-01.svg written in SVG format)
-
+{com}. qui gr export mrleaveoneout-plot-01.svg, width(600) replace
+{txt}
 {com}. //_20
 . mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, ///
 > method(mvmr) gyse(chdse) genotype(rsid) noprint
 {res}{txt}
-{com}. gr export mrleaveoneout-plot-02.svg, width(600) replace
-{txt}(file mrleaveoneout-plot-02.svg written in SVG format)
-
+{com}. qui gr export mrleaveoneout-plot-02.svg, width(600) replace
+{txt}
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\mrrobust-examples\mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}21 Oct 2020, 10:44:17
+ {txt}closed on:  {res}26 Apr 2021, 12:12:40
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

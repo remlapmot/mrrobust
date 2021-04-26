@@ -47,8 +47,7 @@ labelling the genotypes with their RSID.
 > ivid(rsid) ///
 > xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 
-. gr export mrforest.svg, width(600) replace
-(file mrforest.svg written in SVG format)
+. qui gr export mrforest.svg, width(600) replace
 ```
 
 ![Example forest plot of genotype specific IV estimates](mrforest.svg)
@@ -104,6 +103,7 @@ MR-Egger reporting I^2_GX statistic and heterogeneity Q-test.
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -157,6 +157,7 @@ MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-t
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
                 Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
+                             I-squared statistic = 58.2% (95% CI 45.8%, 67.8%)
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
@@ -185,8 +186,7 @@ SEs).
        _cons │  -.0089987          .        .       .            .           .
 ─────────────┴────────────────────────────────────────────────────────────────
 
-. gr export mreggersimex-plot.svg, width(600) replace
-(file mreggersimex-plot.svg written in SVG format)
+. qui gr export mreggersimex-plot.svg, width(600) replace
 ```
 
 ![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg)
@@ -196,8 +196,7 @@ SEs).
 ```stata
 . mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 
-. gr export mreggerplot.svg, width(600) replace
-(file mreggerplot.svg written in SVG format)
+. qui gr export mreggerplot.svg, width(600) replace
 ```
 
 ![Scatter plot of the MR-Egger model](mreggerplot.svg)
@@ -250,8 +249,7 @@ Weighted median estimator.
         beta │   .4917353   .1356432     3.63   0.000     .2258796     .757591
 ─────────────┴────────────────────────────────────────────────────────────────
 
-. gr export mrmodalplot.svg, width(600) replace
-(file mrmodalplot.svg written in SVG format)
+. qui gr export mrmodalplot.svg, width(600) replace
 ```
 
 ![Densities of the IV estimates using different values of phi](mrmodalplot.svg)
@@ -309,8 +307,7 @@ Simple mode estimator with NOME assumption.
 ```stata
 . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 
-. gr export mrfunnel.svg, width(600) replace
-(file mrfunnel.svg written in SVG format)
+. qui gr export mrfunnel.svg, width(600) replace
 ```
 
 ![Example funnel plot](mrfunnel.svg)
@@ -328,8 +325,7 @@ Perform leave one out analysis using the IVW estimator
 ```stata
 . mrleaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid) noprint
 
-. gr export mrleaveoneout-plot-01.svg, width(600) replace
-(file mrleaveoneout-plot-01.svg written in SVG format)
+. qui gr export mrleaveoneout-plot-01.svg, width(600) replace
 ```
 
 ![Leave one out analysis for the IVW estimate](mrleaveoneout-plot-01.svg)
@@ -340,8 +336,7 @@ Perform leave one out analysis using MVMR collecting the estimate for LDL-c.
 . mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, ///
 > method(mvmr) gyse(chdse) genotype(rsid) noprint
 
-. gr export mrleaveoneout-plot-02.svg, width(600) replace
-(file mrleaveoneout-plot-02.svg written in SVG format)
+. qui gr export mrleaveoneout-plot-02.svg, width(600) replace
 ```
 
 ![Leave one out analysis for the MVMR estimate](mrleaveoneout-plot-02.svg)
