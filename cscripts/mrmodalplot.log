@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmodalplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- opened on:  22 Feb 2021, 18:13:03
+ opened on:  26 Apr 2021, 11:45:19
 
 . * mrmodalplot example
 . * 2aug2017
@@ -11,7 +11,7 @@
 --------------------------------------------------------------BEGIN mrmodalplot
 
 -> which mrmodalplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 . 
@@ -870,7 +870,7 @@ C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
 . 
 end of do-file
       name:  mrmodalplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- closed on:  22 Feb 2021, 18:14:06
+ closed on:  26 Apr 2021, 11:46:24
 -------------------------------------------------------------------------------

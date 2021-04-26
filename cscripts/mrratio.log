@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrratio
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:  22 Feb 2021, 18:14:06
+ opened on:  26 Apr 2021, 11:46:24
 
 . * mrratio cscript
 . * 6jun2017
@@ -11,7 +11,7 @@
 ------------------------------------------------------------------BEGIN mrratio
 
 -> which mrratio, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrratio.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -345,7 +345,7 @@ With 3 inputs please specify the nome option.
 . 
 end of do-file
       name:  mrratio
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:  22 Feb 2021, 18:14:06
+ closed on:  26 Apr 2021, 11:46:25
 -------------------------------------------------------------------------------

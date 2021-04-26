@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  22 Feb 2021, 18:03:43
+ opened on:  26 Apr 2021, 12:09:01
 
 . * mregger cscript
 . * 04jun2016
@@ -11,7 +11,7 @@
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -85,11 +85,14 @@ pvalue   2.419e-09   .10956752
  eform           0           0
 
 . 
+. discard
+
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -114,6 +117,38 @@ pvalue   2.419e-09   .10956752
  eform           0           0
 
 . 
+. discard
+
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi radial
+
+                                                      Number of genotypes = 73
+                                              Residual standard error =  1.547
+                Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
+                             I-squared statistic = 58.2% (95% CI 45.8%, 67.8%)
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+radialGD     |
+    radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
+       _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
+------------------------------------------------------------------------------
+
+. mat list r(table)
+
+r(table)[9,2]
+          radialGD:   radialGD:
+          radialGP       _cons
+     b   .64258196  -.57373006
+    se   .11578709   .35456584
+     z   5.5496858    -1.61812
+pvalue   2.862e-08   .10563675
+    ll   .41564344  -1.2686663
+    ul   .86952048   .12120621
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
+. 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
 
                                            Q_GX statistic (weighted) = 3454.26
@@ -121,6 +156,7 @@ pvalue   2.419e-09   .10956752
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -627,6 +663,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -652,6 +689,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -675,6 +713,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
                 Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
+                             I-squared statistic = 59.1% (95% CI 47.2%, 68.4%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -696,6 +735,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
                 Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
+                             I-squared statistic = 59.1% (95% CI 47.2%, 68.4%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -799,7 +839,7 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-c:\ado\plus\t\tsci.ado
+c:\ado\personal\t\tsci.ado
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
@@ -1733,6 +1773,7 @@ radialGD     |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
                 Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
+                             I-squared statistic = 58.2% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1889,7 +1930,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  22 Feb 2021, 18:03:51
+ closed on:  26 Apr 2021, 12:09:09
 -------------------------------------------------------------------------------
