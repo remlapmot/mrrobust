@@ -515,13 +515,13 @@ if "`heterogi'" != "" & "`penweighted'" == "" & "`re'" == "" {
 	di _col(`colstart') as txt "`qname' Q for heterogeneity; chi2(" ///
 		as res r(df) as txt ") =", ///
 		as res %5.2f r(Q), as txt "(p = ", as res %5.4f r(pval) as txt ")"
-	local colstart = 79 - 45
-	di _col(`colstart') as txt "I-squared statistic:", ///
-		as res %4.2f r(I2), ///
+	local colstart = 79 - 49
+	di _col(`colstart') as txt "I-squared statistic =", ///
+		as res %4.1f r(I2)*100 "%", ///
 		as txt "(95% CI", ///
-		as res %4.2f r(lb_I2_M1) ///
+		as res %4.1f r(lb_I2_M1)*100 "%" ///
 		as txt ",", ///
-		as res %4.2f r(ub_I2_M1) ///
+		as res %4.1f r(ub_I2_M1)*100 "%" ///
 		as txt ")"
     ereturn scalar I2 = r(I2)
     ereturn scalar ub_I2_M1 = r(ub_I2_M1)
