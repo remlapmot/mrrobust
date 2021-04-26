@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  master
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- opened on:  22 Feb 2021, 18:01:32
+ opened on:  26 Apr 2021, 11:34:18
 
 . 
 . cscript master
@@ -39,9 +39,9 @@
   5. }
 -------------------------------------------------------------------------------
       name:  mr
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  22 Feb 2021, 18:01:32
+ opened on:  26 Apr 2021, 11:34:18
 
 . * mr cscript
 . * 20jan2020
@@ -67,71 +67,71 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mrmvegger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mr, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mr.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggerplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimex.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimexonce.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrforest.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrivests.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedian.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodal.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrratio.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -144,13 +144,13 @@ checking addplot consistency and verifying not already installed...
 all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
 all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
-all files already exist and are up to date.
-checking moremata consistency and verifying not already installed...
 all files already exist and are up to date.
 
 . 
@@ -580,15 +580,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  22 Feb 2021, 18:02:49
+ closed on:  26 Apr 2021, 11:35:38
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:  22 Feb 2021, 18:02:49
+ opened on:  26 Apr 2021, 11:35:38
 
 . * mrdeps cscript
 . * 20jan2020
@@ -597,7 +597,7 @@ end of do-file
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
@@ -606,27 +606,27 @@ checking addplot consistency and verifying not already installed...
 all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
 all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
 all files already exist and are up to date.
-checking moremata consistency and verifying not already installed...
-all files already exist and are up to date.
 
 . 
 end of do-file
       name:  mrdeps
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:  22 Feb 2021, 18:03:43
+ closed on:  26 Apr 2021, 11:36:33
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  22 Feb 2021, 18:03:43
+ opened on:  26 Apr 2021, 11:36:33
 
 . * mregger cscript
 . * 04jun2016
@@ -635,7 +635,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -709,11 +709,14 @@ pvalue   2.419e-09   .10956752
  eform           0           0
 
 . 
+. discard
+
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi
 
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -738,6 +741,38 @@ pvalue   2.419e-09   .10956752
  eform           0           0
 
 . 
+. discard
+
+. mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, heterogi radial
+
+                                                      Number of genotypes = 73
+                                              Residual standard error =  1.547
+                Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
+                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
+------------------------------------------------------------------------------
+             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+radialGD     |
+    radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
+       _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
+------------------------------------------------------------------------------
+
+. mat list r(table)
+
+r(table)[9,2]
+          radialGD:   radialGD:
+          radialGP       _cons
+     b   .64258196  -.57373006
+    se   .11578709   .35456584
+     z   5.5496858    -1.61812
+pvalue   2.862e-08   .10563675
+    ll   .41564344  -1.2686663
+    ul   .86952048   .12120621
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
+. 
 . mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
 
                                            Q_GX statistic (weighted) = 3454.26
@@ -745,6 +780,7 @@ pvalue   2.419e-09   .10956752
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1251,6 +1287,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1276,6 +1313,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
+                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1299,6 +1337,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
                 Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
+                                 I-squared statistic: 0.59 (95% CI 0.47, 0.68)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1320,6 +1359,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
                 Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
+                                 I-squared statistic: 0.59 (95% CI 0.47, 0.68)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1423,7 +1463,7 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-c:\ado\plus\t\tsci.ado
+c:\ado\personal\t\tsci.ado
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
@@ -2357,6 +2397,7 @@ radialGD     |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
                 Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
+                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -2513,15 +2554,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  22 Feb 2021, 18:03:51
+ closed on:  26 Apr 2021, 11:36:42
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:  22 Feb 2021, 18:03:51
+ opened on:  26 Apr 2021, 11:36:42
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2530,11 +2571,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggerplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -2842,15 +2883,15 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:  22 Feb 2021, 18:05:56
+ closed on:  26 Apr 2021, 11:38:42
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- opened on:  22 Feb 2021, 18:05:56
+ opened on:  26 Apr 2021, 11:38:42
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2859,11 +2900,11 @@ end of do-file
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimex.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimexonce.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
@@ -3019,15 +3060,15 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- closed on:  22 Feb 2021, 18:11:18
+ closed on:  26 Apr 2021, 11:43:33
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  22 Feb 2021, 18:11:18
+ opened on:  26 Apr 2021, 11:43:33
 
 . * mrforest cscript
 . * 16jun2017
@@ -3036,7 +3077,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrforest.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
@@ -3171,15 +3212,15 @@ models(#) should be between 0 and 4
 . 
 end of do-file
       name:  mrforest
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  22 Feb 2021, 18:12:02
+ closed on:  26 Apr 2021, 11:44:18
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:  22 Feb 2021, 18:12:02
+ opened on:  26 Apr 2021, 11:44:18
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3188,7 +3229,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrfunnel
 
 -> which mrfunnel, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 . 
@@ -3261,15 +3302,15 @@ C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
 . 
 end of do-file
       name:  mrfunnel
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:  22 Feb 2021, 18:12:21
+ closed on:  26 Apr 2021, 11:44:37
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:  22 Feb 2021, 18:12:21
+ opened on:  26 Apr 2021, 11:44:37
 
 . * mrivests testcode
 . * 10jun2017
@@ -3278,7 +3319,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrivests.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
@@ -3492,15 +3533,15 @@ variable ivse not found
 . 
 end of do-file
       name:  mrivests
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:  22 Feb 2021, 18:12:23
+ closed on:  26 Apr 2021, 11:44:39
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- opened on:  22 Feb 2021, 18:12:23
+ opened on:  26 Apr 2021, 11:44:39
 
 . * mrmedian test code
 . * 3jun2016
@@ -3509,7 +3550,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrmedian
 
 -> which mrmedian, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedian.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 . 
@@ -3692,7 +3733,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727667     5.89   0.000     .2859513    .5711916
+        beta |   .4285714   .0751486     5.70   0.000     .2812829    .5758599
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3707,7 +3748,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0727667     5.89   0.000     .2859513    .5711916
+        beta |   .4285714   .0751486     5.70   0.000     .2812829    .5758599
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3790,7 +3831,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0720794     5.95   0.000     .2872984    .5698445
+        beta |   .4285714   .0695177     6.16   0.000     .2923192    .5648237
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3805,7 +3846,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0720794     5.95   0.000     .2872984    .5698445
+        beta |   .4285714   .0695177     6.16   0.000     .2923192    .5648237
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3827,7 +3868,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0720794     5.95   0.000     .2872984    .5698445
+        beta |   .4285714   .0695177     6.16   0.000     .2923192    .5648237
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3841,7 +3882,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0720794     5.95   0.000     .3100113    .5471315
+        beta |   .4285714   .0695177     6.16   0.000      .314225    .5429179
 ------------------------------------------------------------------------------
 
 . 
@@ -3852,7 +3893,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0720794     5.95   0.000     .3100113    .5471315
+        beta |   .4285714   .0695177     6.16   0.000      .314225    .5429179
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3866,21 +3907,21 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0720794     5.95   0.000     .3361979    .5209449
+        beta |   .4285714   .0695177     6.16   0.000     .3394809     .517662
 ------------------------------------------------------------------------------
 
 . 
 end of do-file
       name:  mrmedian
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedian.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- closed on:  22 Feb 2021, 18:12:25
+ closed on:  26 Apr 2021, 11:44:41
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- opened on:  22 Feb 2021, 18:12:25
+ opened on:  26 Apr 2021, 11:44:41
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -3889,11 +3930,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -4245,15 +4286,15 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- closed on:  22 Feb 2021, 18:12:47
+ closed on:  26 Apr 2021, 11:45:01
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  22 Feb 2021, 18:12:47
+ opened on:  26 Apr 2021, 11:45:01
 
 . * mrmodal cscript
 . * 2jun2017
@@ -4262,7 +4303,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodal.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
@@ -5034,15 +5075,15 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  22 Feb 2021, 18:13:03
+ closed on:  26 Apr 2021, 11:45:19
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- opened on:  22 Feb 2021, 18:13:03
+ opened on:  26 Apr 2021, 11:45:19
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5051,7 +5092,7 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmodalplot
 
 -> which mrmodalplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 . 
@@ -5910,15 +5951,15 @@ C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
 . 
 end of do-file
       name:  mrmodalplot
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- closed on:  22 Feb 2021, 18:14:06
+ closed on:  26 Apr 2021, 11:46:24
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:  22 Feb 2021, 18:14:06
+ opened on:  26 Apr 2021, 11:46:24
 
 . * mrratio cscript
 . * 6jun2017
@@ -5927,7 +5968,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrratio
 
 -> which mrratio, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrratio.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -6261,15 +6302,15 @@ With 3 inputs please specify the nome option.
 . 
 end of do-file
       name:  mrratio
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:  22 Feb 2021, 18:14:06
+ closed on:  26 Apr 2021, 11:46:25
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  22 Feb 2021, 18:14:06
+ opened on:  26 Apr 2021, 11:46:25
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -6278,15 +6319,15 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmvivw
 
 -> which mrmvivw, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvivw, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvmr, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mvmr.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 . 
@@ -7692,15 +7733,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvivw
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  22 Feb 2021, 18:14:29
+ closed on:  26 Apr 2021, 11:46:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:  22 Feb 2021, 18:14:29
+ opened on:  26 Apr 2021, 11:46:44
 
 . * mrmvegger cscript
 . * 22un2020
@@ -7709,7 +7750,7 @@ end of do-file
 ----------------------------------------------------------------BEGIN mrmvegger
 
 -> which mrmvegger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 . 
@@ -8497,15 +8538,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvegger
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:  22 Feb 2021, 18:14:43
+ closed on:  26 Apr 2021, 11:46:55
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  22 Feb 2021, 18:14:43
+ opened on:  26 Apr 2021, 11:46:55
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -10382,15 +10423,16 @@ Author
 . 
 end of do-file
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  22 Feb 2021, 18:14:43
+ closed on:  26 Apr 2021, 11:46:55
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
+> g
   log type:  text
- opened on:  22 Feb 2021, 18:14:43
+ opened on:  26 Apr 2021, 11:46:55
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -10399,7 +10441,7 @@ end of do-file
 ------------------------------------------------------------BEGIN mrleaveoneout
 
 -> which mrleaveoneout, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrleaveoneout.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
 
 . 
@@ -17398,15 +17440,16 @@ chdbeta      |
 . 
 end of do-file
       name:  mrleaveoneout
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
+> g
   log type:  text
- closed on:  22 Feb 2021, 18:16:13
+ closed on:  26 Apr 2021, 11:48:18
 -------------------------------------------------------------------------------
 
 . 
 . log close _all
       name:  master
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\master.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- closed on:  22 Feb 2021, 18:16:13
+ closed on:  26 Apr 2021, 11:48:18
 -------------------------------------------------------------------------------

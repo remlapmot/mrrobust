@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mr
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  22 Feb 2021, 18:01:32
+ opened on:  26 Apr 2021, 11:34:18
 
 . * mr cscript
 . * 20jan2020
@@ -28,71 +28,71 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mrmvegger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvegger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mr, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mr.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrdeps.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggerplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimex.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mreggersimexonce.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrforest.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrfunnel.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrivests.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedian.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodal.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrmodalplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-C:\Users\tom\Documents\GitHub\mrrobust\mrratio.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -105,13 +105,13 @@ checking addplot consistency and verifying not already installed...
 all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
+checking moremata consistency and verifying not already installed...
+all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
 all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
-all files already exist and are up to date.
-checking moremata consistency and verifying not already installed...
 all files already exist and are up to date.
 
 . 
@@ -541,7 +541,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  22 Feb 2021, 18:02:49
+ closed on:  26 Apr 2021, 11:35:38
 -------------------------------------------------------------------------------
