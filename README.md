@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* April 2021:
+  - Added the I-squared statistic and its 95% CI to the `mregger ..., heterogi` output
 * February 2021:
   - Fixes to `mrforest` and `mrleaveoneout` related to the recent update to `metan`. 
   `mrforest` and `mrleaveoneout` now use `metan9` instead of `metan` because of the changes to 
