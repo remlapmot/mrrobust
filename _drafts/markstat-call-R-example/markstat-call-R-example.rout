@@ -1,5 +1,5 @@
 
-R version 4.0.4 (2021-02-15) -- "Lost Library Book"
+R version 4.1.0 (2021-05-18) -- "Camp Pontanezen"
 Copyright (C) 2021 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
@@ -18,9 +18,9 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > #_1
-> # install.packages("devtools")
-> # devtools::install_github("MRCIEU/TwoSampleMR")
-> # devtools::install_github("MRCIEU/MRInstruments")
+> # install.packages("remotes")
+> # remotes::install_github("MRCIEU/TwoSampleMR")
+> # remotes::install_github("MRCIEU/MRInstruments")
 > #_2
 > library(TwoSampleMR)
 > library(MRInstruments)
@@ -59,10 +59,10 @@ Type 'q()' to quit R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06191076 1.712795e-13
-2 0.03688406 4.483969e-40
+2 0.03656638 9.607446e-41
 3 0.03923672 6.392333e-33
-4 0.06243576 3.271445e-10
-5 0.03210806 1.011992e-23
+4 0.06194137 2.580407e-10
+5 0.03331070 6.199048e-23
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
