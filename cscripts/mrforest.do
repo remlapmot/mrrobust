@@ -93,3 +93,10 @@ mrforest chdbeta chdse ldlcbeta ldlcse in 1/10, ivid(rsid) ///
         xlabel(-3,-2,-1,0,1,2,3)
 
 mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
+
+mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) nofe
+
+mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ivwopts(fe)
+
+rcof "noi mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ivwopts(fe) nofe" ///
+        == 198
