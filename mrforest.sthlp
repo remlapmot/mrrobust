@@ -42,7 +42,7 @@
 {synopt :{opt zcis:}}Use normal distribution CI limits (for IVW and MR-Egger){p_end}
 
 {p2col:Options passed to other commands:}{p_end}
-{p2col:{cmd:ivwopts(}{it:string}{cmd:)}}options for IVW estimate from {cmd:mregger, ivw}{p_end}
+{p2col:{cmd:ivwopts(}{it:string}{cmd:)}}options for IVW estimate from {cmd:mregger, ivw fe}{p_end}
 {p2col:{cmd:mreggeropts(}{it:string}{cmd:)}}options for MR-Egger estimate from {help mregger}{p_end}
 {p2col:{cmd:mrivestopts(}{it:string}{cmd:)}}options for {help mrivests} used to generate genotype specific ratio estimates and SEs{p_end}
 {p2col:{cmd:mrmedianopts(}{it:string}{cmd:)}}options for median estimate from {help mrmedian}{p_end}
