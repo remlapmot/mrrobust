@@ -2,7 +2,7 @@
       name:  master
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- opened on:  26 Apr 2021, 11:34:18
+ opened on:  25 Jun 2021, 10:24:13
 
 . 
 . cscript master
@@ -41,7 +41,7 @@
       name:  mr
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  26 Apr 2021, 11:34:18
+ opened on:  25 Jun 2021, 10:24:14
 
 . * mr cscript
 . * 20jan2020
@@ -582,13 +582,13 @@ end of do-file
       name:  mr
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  26 Apr 2021, 11:35:38
+ closed on:  25 Jun 2021, 10:25:47
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- opened on:  26 Apr 2021, 11:35:38
+ opened on:  25 Jun 2021, 10:25:47
 
 . * mrdeps cscript
 . * 20jan2020
@@ -620,13 +620,13 @@ end of do-file
       name:  mrdeps
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
   log type:  text
- closed on:  26 Apr 2021, 11:36:33
+ closed on:  25 Jun 2021, 10:27:05
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- opened on:  26 Apr 2021, 11:36:33
+ opened on:  25 Jun 2021, 10:27:05
 
 . * mregger cscript
 . * 04jun2016
@@ -716,7 +716,7 @@ pvalue   2.419e-09   .10956752
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
-                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -748,7 +748,7 @@ pvalue   2.419e-09   .10956752
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
                 Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
-                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
+                             I-squared statistic = 58.2% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -780,7 +780,7 @@ pvalue   2.862e-08   .10563675
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
-                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1287,7 +1287,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
-                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1313,7 +1313,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
-                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
+                             I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1337,7 +1337,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
                 Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
-                                 I-squared statistic: 0.59 (95% CI 0.47, 0.68)
+                             I-squared statistic = 59.1% (95% CI 47.2%, 68.4%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -1359,7 +1359,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
                 Cochran's Q for heterogeneity; chi2(72) = 176.25 (p =  0.0000)
-                                 I-squared statistic: 0.59 (95% CI 0.47, 0.68)
+                             I-squared statistic = 59.1% (95% CI 47.2%, 68.4%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -2397,7 +2397,7 @@ radialGD     |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
                 Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
-                                 I-squared statistic: 0.58 (95% CI 0.46, 0.68)
+                             I-squared statistic = 58.2% (95% CI 45.8%, 67.8%)
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
@@ -2556,13 +2556,13 @@ end of do-file
       name:  mregger
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
   log type:  text
- closed on:  26 Apr 2021, 11:36:42
+ closed on:  25 Jun 2021, 10:27:13
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:  26 Apr 2021, 11:36:42
+ opened on:  25 Jun 2021, 10:27:13
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2885,13 +2885,13 @@ end of do-file
       name:  mreggerplot
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:  26 Apr 2021, 11:38:42
+ closed on:  25 Jun 2021, 10:29:13
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- opened on:  26 Apr 2021, 11:38:42
+ opened on:  25 Jun 2021, 10:29:13
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -3062,13 +3062,13 @@ end of do-file
       name:  mreggersimex
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- closed on:  26 Apr 2021, 11:43:33
+ closed on:  25 Jun 2021, 10:33:50
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  26 Apr 2021, 11:43:33
+ opened on:  25 Jun 2021, 10:33:50
 
 . * mrforest cscript
 . * 16jun2017
@@ -3210,17 +3210,29 @@ models(#) should be between 0 and 4
 . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
 
 . 
+. mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) nofe
+
+. 
+. mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ivwopts(fe)
+
+. 
+. rcof "noi mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ivwop
+> ts(fe) nofe" ///
+>         == 198
+Options ivwopts(fe) and nofe may not be specified together
+
+. 
 end of do-file
       name:  mrforest
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  26 Apr 2021, 11:44:18
+ closed on:  25 Jun 2021, 10:34:35
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- opened on:  26 Apr 2021, 11:44:18
+ opened on:  25 Jun 2021, 10:34:35
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3304,13 +3316,13 @@ end of do-file
       name:  mrfunnel
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
   log type:  text
- closed on:  26 Apr 2021, 11:44:37
+ closed on:  25 Jun 2021, 10:34:53
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- opened on:  26 Apr 2021, 11:44:37
+ opened on:  25 Jun 2021, 10:34:53
 
 . * mrivests testcode
 . * 10jun2017
@@ -3535,13 +3547,13 @@ end of do-file
       name:  mrivests
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
   log type:  text
- closed on:  26 Apr 2021, 11:44:39
+ closed on:  25 Jun 2021, 10:34:55
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- opened on:  26 Apr 2021, 11:44:39
+ opened on:  25 Jun 2021, 10:34:55
 
 . * mrmedian test code
 . * 3jun2016
@@ -3733,7 +3745,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0751486     5.70   0.000     .2812829    .5758599
+        beta |   .4285714   .0741475     5.78   0.000      .283245    .5738978
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3748,7 +3760,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0751486     5.70   0.000     .2812829    .5758599
+        beta |   .4285714   .0741475     5.78   0.000      .283245    .5738978
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3831,7 +3843,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0695177     6.16   0.000     .2923192    .5648237
+        beta |   .4285714   .0730161     5.87   0.000     .2854624    .5716804
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3846,7 +3858,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0695177     6.16   0.000     .2923192    .5648237
+        beta |   .4285714   .0730161     5.87   0.000     .2854624    .5716804
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3868,7 +3880,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0695177     6.16   0.000     .2923192    .5648237
+        beta |   .4285714   .0730161     5.87   0.000     .2854624    .5716804
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3882,7 +3894,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0695177     6.16   0.000      .314225    .5429179
+        beta |   .4285714   .0730161     5.87   0.000     .3084706    .5486723
 ------------------------------------------------------------------------------
 
 . 
@@ -3893,7 +3905,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0695177     6.16   0.000      .314225    .5429179
+        beta |   .4285714   .0730161     5.87   0.000     .3084706    .5486723
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3907,7 +3919,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              |      Coef.   Std. Err.      z    P>|z|     [80% Conf. Interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0695177     6.16   0.000     .3394809     .517662
+        beta |   .4285714   .0730161     5.87   0.000     .3349975    .5221454
 ------------------------------------------------------------------------------
 
 . 
@@ -3915,13 +3927,13 @@ end of do-file
       name:  mrmedian
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
   log type:  text
- closed on:  26 Apr 2021, 11:44:41
+ closed on:  25 Jun 2021, 10:34:57
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- opened on:  26 Apr 2021, 11:44:41
+ opened on:  25 Jun 2021, 10:34:57
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -4288,13 +4300,13 @@ end of do-file
       name:  mrmedianobs
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
   log type:  text
- closed on:  26 Apr 2021, 11:45:01
+ closed on:  25 Jun 2021, 10:35:17
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- opened on:  26 Apr 2021, 11:45:01
+ opened on:  25 Jun 2021, 10:35:17
 
 . * mrmodal cscript
 . * 2jun2017
@@ -5077,13 +5089,13 @@ end of do-file
       name:  mrmodal
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
   log type:  text
- closed on:  26 Apr 2021, 11:45:19
+ closed on:  25 Jun 2021, 10:35:35
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- opened on:  26 Apr 2021, 11:45:19
+ opened on:  25 Jun 2021, 10:35:35
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5953,13 +5965,13 @@ end of do-file
       name:  mrmodalplot
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
   log type:  text
- closed on:  26 Apr 2021, 11:46:24
+ closed on:  25 Jun 2021, 10:36:39
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- opened on:  26 Apr 2021, 11:46:24
+ opened on:  25 Jun 2021, 10:36:39
 
 . * mrratio cscript
 . * 6jun2017
@@ -6304,13 +6316,13 @@ end of do-file
       name:  mrratio
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
   log type:  text
- closed on:  26 Apr 2021, 11:46:25
+ closed on:  25 Jun 2021, 10:36:40
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  26 Apr 2021, 11:46:25
+ opened on:  25 Jun 2021, 10:36:40
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -7735,13 +7747,13 @@ end of do-file
       name:  mrmvivw
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  26 Apr 2021, 11:46:44
+ closed on:  25 Jun 2021, 10:36:58
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- opened on:  26 Apr 2021, 11:46:44
+ opened on:  25 Jun 2021, 10:36:58
 
 . * mrmvegger cscript
 . * 22un2020
@@ -8540,13 +8552,13 @@ end of do-file
       name:  mrmvegger
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
   log type:  text
- closed on:  26 Apr 2021, 11:46:55
+ closed on:  25 Jun 2021, 10:37:08
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  26 Apr 2021, 11:46:55
+ opened on:  25 Jun 2021, 10:37:08
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -8816,7 +8828,8 @@ Options
         multiplying the variance of the residuals by the degrees of freedom
         (Del Greco et al., 2015).  For the IVW model this is the Cochran
         Q-statistic, and for the MR-Egger model this is the Ruecker's
-        Q-statistic.
+        Q-statistic. The corresponding I-squared statistic and its 95% CI is
+        also reported.
 
     ivw specifies inverse-variance weighted (IVW) model (Burgess et al.,
         2013), the default is MR-Egger.
@@ -9865,12 +9878,14 @@ Syntax
                               MR-Egger)
 
       Options passed to other commands:
-      ivwopts(string)       options for IVW estimate from mregger, ivw
+      ivwopts(string)       options for IVW estimate from mregger, ivw fe
       mreggeropts(string)   options for MR-Egger estimate from mregger
       mrivestopts(string)   options for mrivests used to generate genotype
                               specific ratio estimates and SEs
       mrmedianopts(string)  options for median estimate from mrmedian
       mrmodal(string)       options for modal estimate from mrmodal
+      nofe                  Remove fe option (fixed effect SE) from the IVW
+                              fit
 
       *                     Other options passed to the metan
 
@@ -10425,14 +10440,14 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  26 Apr 2021, 11:46:55
+ closed on:  25 Jun 2021, 10:37:08
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
 > g
   log type:  text
- opened on:  26 Apr 2021, 11:46:55
+ opened on:  25 Jun 2021, 10:37:08
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -17443,7 +17458,7 @@ end of do-file
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
 > g
   log type:  text
- closed on:  26 Apr 2021, 11:48:18
+ closed on:  25 Jun 2021, 10:38:28
 -------------------------------------------------------------------------------
 
 . 
@@ -17451,5 +17466,5 @@ end of do-file
       name:  master
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
   log type:  text
- closed on:  26 Apr 2021, 11:48:18
+ closed on:  25 Jun 2021, 10:38:28
 -------------------------------------------------------------------------------

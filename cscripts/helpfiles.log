@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  26 Apr 2021, 11:46:55
+ opened on:  25 Jun 2021, 10:37:08
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -272,7 +272,8 @@ Options
         multiplying the variance of the residuals by the degrees of freedom
         (Del Greco et al., 2015).  For the IVW model this is the Cochran
         Q-statistic, and for the MR-Egger model this is the Ruecker's
-        Q-statistic.
+        Q-statistic. The corresponding I-squared statistic and its 95% CI is
+        also reported.
 
     ivw specifies inverse-variance weighted (IVW) model (Burgess et al.,
         2013), the default is MR-Egger.
@@ -1321,12 +1322,14 @@ Syntax
                               MR-Egger)
 
       Options passed to other commands:
-      ivwopts(string)       options for IVW estimate from mregger, ivw
+      ivwopts(string)       options for IVW estimate from mregger, ivw fe
       mreggeropts(string)   options for MR-Egger estimate from mregger
       mrivestopts(string)   options for mrivests used to generate genotype
                               specific ratio estimates and SEs
       mrmedianopts(string)  options for median estimate from mrmedian
       mrmodal(string)       options for modal estimate from mrmodal
+      nofe                  Remove fe option (fixed effect SE) from the IVW
+                              fit
 
       *                     Other options passed to the metan
 
@@ -1881,5 +1884,5 @@ end of do-file
       name:  helpfiles
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  26 Apr 2021, 11:46:55
+ closed on:  25 Jun 2021, 10:37:08
 -------------------------------------------------------------------------------
