@@ -83,7 +83,7 @@
 	<line x1="1796.21" y1="7106.67" x2="2998.64" y2="7106.67" style="stroke:#000000;stroke-width:18.62"/>
 	<line x1="1663.63" y1="7199.82" x2="2717.27" y2="7199.82" style="stroke:#000000;stroke-width:18.62"/>
 	<line x1="1001.80" y1="7292.70" x2="2333.29" y2="7292.70" style="stroke:#000000;stroke-width:18.62"/>
-	<line x1="3069.65" y1="7572.15" x2="3159.84" y2="7572.15" style="stroke:#000000;stroke-width:18.62"/>
+	<line x1="3086.12" y1="7572.15" x2="3143.64" y2="7572.15" style="stroke:#000000;stroke-width:18.62"/>
 	<line x1="3088.28" y1="7665.30" x2="3244.09" y2="7665.30" style="stroke:#000000;stroke-width:18.62"/>
 	<line x1="1001.80" y1="7292.70" x2="1079.02" y2="7316.19" style="stroke:#000000;stroke-width:18.62"/>
 	<line x1="1001.80" y1="7292.70" x2="1079.02" y2="7269.48" style="stroke:#000000;stroke-width:18.62"/>
@@ -237,7 +237,7 @@
 	<text x="4954.43" y="7134.99" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">-1.42 (-3.01, 0.17)</text>
 	<text x="4954.43" y="7228.14" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">-1.96 (-3.36, -0.57)</text>
 	<text x="4954.43" y="7321.02" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">-3.35 (-5.11, -1.59)</text>
-	<text x="4954.43" y="7600.47" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">0.48 (0.36, 0.60)</text>
+	<text x="4954.43" y="7600.47" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">0.48 (0.41, 0.56)</text>
 	<text x="4954.43" y="7693.62" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">0.62 (0.41, 0.82)</text>
 	<text x="4954.43" y="338.82" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">Estimate (95% CI)</text>
 	<text x="4954.43" y="618.27" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">1.84 (0.98, 2.71)</text>
@@ -313,7 +313,7 @@
 	<text x="4954.43" y="7134.99" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">-1.42 (-3.01, 0.17)</text>
 	<text x="4954.43" y="7228.14" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">-1.96 (-3.36, -0.57)</text>
 	<text x="4954.43" y="7321.02" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">-3.35 (-5.11, -1.59)</text>
-	<text x="4954.43" y="7600.47" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">0.48 (0.36, 0.60)</text>
+	<text x="4954.43" y="7600.47" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">0.48 (0.41, 0.56)</text>
 	<text x="4954.43" y="7693.62" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">0.62 (0.41, 0.82)</text>
 	<text x="4954.43" y="338.82" style="font-family:'Helvetica';font-size:80.74px;fill:#000000">Estimate (95% CI)</text>
 	<polygon points="3592.76,589.95 3628.87,553.83 3664.99,589.95 3628.87,626.07" style="fill:#000000"/>
