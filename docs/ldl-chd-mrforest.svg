@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- This is a Stata 15.1 generated SVG file (http://www.stata.com) -->
+<!-- This is a Stata 16.1 generated SVG file (http://www.stata.com) -->
 
 <svg version="1.1" width="600px" height="770px" viewBox="0 0 6729 8640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Stata Graph - Graph</desc>
-	<rect x="0" y="0" width="6729" height="8640" style="fill:#EAF2F3;stroke:none"/>
+	<rect x="0" y="0" width="6729" height="8640" style="fill:#E1E6F0;stroke:none"/>
 	<rect x="0.00" y="0.27" width="6729.00" height="8639.73" style="fill:#FFFFFF"/>
 	<rect x="6.73" y="7.00" width="6715.54" height="8626.27" style="fill:none;stroke:#FFFFFF;stroke-width:13.46"/>
 	<rect x="411.47" y="235.71" width="5975.99" height="7630.47" style="fill:#FFFFFF"/>
@@ -72,7 +72,7 @@
 	<line x1="1862.67" y1="6912.27" x2="2834.91" y2="6912.27" style="stroke:#000000;stroke-width:20.19"/>
 	<line x1="1630.21" y1="7018.38" x2="2924.01" y2="7018.38" style="stroke:#000000;stroke-width:20.19"/>
 	<line x1="1088.61" y1="7124.22" x2="2382.14" y2="7124.22" style="stroke:#000000;stroke-width:20.19"/>
-	<line x1="3433.48" y1="7442.28" x2="3535.27" y2="7442.28" style="stroke:#000000;stroke-width:20.19"/>
+	<line x1="3455.35" y1="7442.28" x2="3513.40" y2="7442.28" style="stroke:#000000;stroke-width:20.19"/>
 	<line x1="3479.65" y1="7548.12" x2="3640.30" y2="7548.12" style="stroke:#000000;stroke-width:20.19"/>
 	<text x="509.47" y="591.35" style="font-family:'Helvetica';font-weight:bold;font-size:107.19px;fill:#000000">Genotypes</text>
 	<text x="509.47" y="697.19" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">rs6831256</text>
@@ -202,7 +202,7 @@
 	<text x="5369.86" y="6949.85" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">-1.28 (-2.03, -0.53)</text>
 	<text x="5369.86" y="7055.96" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">-1.39 (-2.39, -0.39)</text>
 	<text x="5369.86" y="7161.80" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">-2.23 (-3.22, -1.23)</text>
-	<text x="5369.86" y="7479.86" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">0.47 (0.39, 0.55)</text>
+	<text x="5369.86" y="7479.86" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">0.47 (0.42, 0.51)</text>
 	<text x="5369.86" y="7585.70" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">0.59 (0.46, 0.71)</text>
 	<text x="5369.86" y="379.40" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">Estimate (95% CI)</text>
 	<text x="5369.86" y="697.19" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">1.47 (0.32, 2.62)</text>
@@ -267,7 +267,7 @@
 	<text x="5369.86" y="6949.85" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">-1.28 (-2.03, -0.53)</text>
 	<text x="5369.86" y="7055.96" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">-1.39 (-2.39, -0.39)</text>
 	<text x="5369.86" y="7161.80" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">-2.23 (-3.22, -1.23)</text>
-	<text x="5369.86" y="7479.86" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">0.47 (0.39, 0.55)</text>
+	<text x="5369.86" y="7479.86" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">0.47 (0.42, 0.51)</text>
 	<text x="5369.86" y="7585.70" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">0.59 (0.46, 0.71)</text>
 	<text x="5369.86" y="379.40" style="font-family:'Helvetica';font-size:107.19px;fill:#000000">Estimate (95% CI)</text>
 	<polygon points="4094.73,659.88 4133.84,620.77 4172.95,659.88 4133.84,698.99" style="fill:#000000"/>

@@ -2,7 +2,7 @@
       name:  mrforest
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  26 Apr 2021, 11:43:33
+ opened on:  25 Jun 2021, 10:33:50
 
 . * mrforest cscript
 . * 16jun2017
@@ -144,9 +144,21 @@ models(#) should be between 0 and 4
 . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid)
 
 . 
+. mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) nofe
+
+. 
+. mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ivwopts(fe)
+
+. 
+. rcof "noi mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ivwop
+> ts(fe) nofe" ///
+>         == 198
+Options ivwopts(fe) and nofe may not be specified together
+
+. 
 end of do-file
       name:  mrforest
        log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  26 Apr 2021, 11:44:18
+ closed on:  25 Jun 2021, 10:34:35
 -------------------------------------------------------------------------------

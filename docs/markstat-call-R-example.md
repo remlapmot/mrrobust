@@ -37,8 +37,8 @@ issue the following commands (I have commented them out because I have already i
 We first need to register the R executable with Stata.
 
 ```stata
-. whereis R "C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe"
-C:\\Program Files\\R\\R-4.0.4\\bin\\R.exe
+. whereis R "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe
 ```
 
 
@@ -46,9 +46,9 @@ Next we have an R code chunk in which we install the required packages in R (aga
 these lines out because I already have them installed).
 
 ```r
-> # install.packages("devtools")
-> # devtools::install_github("MRCIEU/TwoSampleMR")
-> # devtools::install_github("MRCIEU/MRInstruments")
+> # install.packages("remotes")
+> # remotes::install_github("MRCIEU/TwoSampleMR")
+> # remotes::install_github("MRCIEU/MRInstruments")
 ```
 
 
@@ -116,10 +116,10 @@ The next two code chunks perform the analysis in R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06191076 1.712795e-13
-2 0.03688406 4.483969e-40
+2 0.03656638 9.607446e-41
 3 0.03923672 6.392333e-33
-4 0.06243576 3.271445e-10
-5 0.03210806 1.011992e-23
+4 0.06194137 2.580407e-10
+5 0.03331070 6.199048e-23
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
@@ -168,17 +168,20 @@ the variable names (note any `.` in the colnames of `dat` have been replaced wit
 (Written by R.              )
 
 . ds, v(28)
-SNP                     ambiguous               data_source_outcome     se_exposure
-effect_allele_exposure  id_outcome              proxy_outcome           pval_exposure
-other_allele_exposure   chr                     target_snp_outcome      mr_keep_exposure
-effect_allele_outcome   pos                     proxy_snp_outcome       pval_origin_exposure
-other_allele_outcome    se_outcome              target_a1_outcome       id_exposure
-beta_exposure           samplesize_outcome      target_a2_outcome       action
-beta_outcome            pval_outcome            proxy_a1_outcome        mr_keep
-eaf_exposure            outcome                 proxy_a2_outcome        labels
-eaf_outcome             originalname_outcome    exposure
-remove                  outcome_deprecated      chr_exposure
-palindromic             mr_keep_outcome         pos_exposure
+SNP                     pos                     proxy_a1_outcome
+effect_allele_exposure  se_outcome              proxy_a2_outcome
+other_allele_exposure   samplesize_outcome      exposure
+effect_allele_outcome   pval_outcome            chr_exposure
+other_allele_outcome    outcome                 pos_exposure
+beta_exposure           originalname_outcome    se_exposure
+beta_outcome            outcome_deprecated      pval_exposure
+eaf_exposure            mr_keep_outcome         mr_keep_exposure
+eaf_outcome             data_source_outcome     pval_origin_exposure
+remove                  proxy_outcome           id_exposure
+palindromic             target_snp_outcome      action
+ambiguous               proxy_snp_outcome       mr_keep
+id_outcome              target_a1_outcome       labels
+chr                     target_a2_outcome
 
 . di _N
 62
@@ -192,12 +195,12 @@ We can then run the IVW model using `mregger` with multiplicative standard error
 
                                                       Number of genotypes = 62
                                               Residual standard error =  1.751
-──────────────┬────────────────────────────────────────────────────────────────
-              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
-──────────────┼────────────────────────────────────────────────────────────────
-beta_outcome  │
-beta_exposure │   .4689295   .0392367    11.95   0.000      .392027    .5458321
-──────────────┴────────────────────────────────────────────────────────────────
+─────────────┬────────────────────────────────────────────────────────────────
+             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+─────────────┼────────────────────────────────────────────────────────────────
+beta_outcome │
+beta_expos~e │   .4689295   .0392367    11.95   0.000      .392027    .5458321
+─────────────┴────────────────────────────────────────────────────────────────
 ```
 
 
@@ -252,7 +255,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887676   .0360119    13.57   0.000     .4181856    .5593496
+        beta │   .4887676    .038216    12.79   0.000     .4138655    .5636697
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -267,7 +270,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0359903    14.42   0.000     .4484053    .5894848
+        beta │    .518945   .0363427    14.28   0.000     .4477147    .5901754
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 

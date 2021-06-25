@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* June 2021:
+  - By default `mrforest` now specifies a fixed effect standard error for its IVW estimate 
 * April 2021:
   - Added the I-squared statistic and its 95% CI to the `mregger ..., heterogi` output
 * February 2021:
@@ -282,4 +284,4 @@ GitHub or send me an email to tom.palmer@bristol.ac.uk.
 Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, 
 Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, 
 Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, Lai-Te Chen, Sean Harrison, Emma 
-Anderson, and Steve Burgess.
+Anderson, Cassianne Robinson-Cohen, and Steve Burgess.
