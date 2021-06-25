@@ -25,7 +25,8 @@ syntax varlist(min=3 max=5) [if] [in] [, ///
 	ivwlabel(string) ///
 	mreggerlabel(string) ///
 	mrmedianlabel(string) ///
-	mrmodallabel(string) * ]
+	mrmodallabel(string) ///
+	noFE * ]
 
 // check metan is installed
 capture which metan
@@ -124,6 +125,14 @@ if "`if'`in'" != "" {
 
 // sort the genotypes if required to
 `gsortcmd'
+
+// make fe SEs the default for the IVW fit
+if inlist(`"`ivwopts'"', "fe") & "`fe'" == "nofe" {
+	di as err "Options ivwopts(fe) and nofe may not be specified together"
+	exit 198
+}
+
+if !inlist(`"`ivwopts'"', "fe") & "`fe'" == "" local ivwopts "fe"
 
 if `models' > 0 {
 	if "`ivwlabel'" == "" local ivwlabel "IVW"
