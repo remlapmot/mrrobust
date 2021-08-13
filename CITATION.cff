@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "Please cite this software using the metadata from 'preferred-citation'."
 authors:
 - family-names: "Palmer"
   given-names: "Tom"
