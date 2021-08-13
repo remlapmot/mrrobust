@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Palmer"
+  given-names: "Tom"
+  orcid: "https://orcid.org/0000-0003-4655-4511"
+- family-names: "Spiller"
+  given-names: "Wes"
+  orcid: "https://orcid.org/0000-0002-8169-5531"
+- family-names: "Davies"
+  given-names: "Neil"
+  orcid: "https://orcid.org/0000-0002-2460-0508"
+title: "mrrobust - A tool for performing two-sample summary Mendelian randomization analyses"
+type: software
+version: 0.1.0
+date-released: 2021-06-28
+url: "https://remlapmot.github.io/mrrobust/index.html"
+repository-code: "https://github.com/remlapmot/mrrobust"
+license: GPL-3.0
+preferred-citation:
+  authors:
+    - family-names: "Spiller"
+      given-names: "Wes"
+      orcid: "https://orcid.org/0000-0002-8169-5531"
+    - family-names: "Davies"
+      given-names: "Neil"
+      orcid: "https://orcid.org/0000-0002-2460-0508"
+    - family-names: "Palmer"
+      given-names: "Tom"
+      orcid: "https://orcid.org/0000-0003-4655-4511"
+  title: "Software application profile: mrrobust - a tool for performing two-sample summary Mendelian randomization analyses"
+  type: article
+  journal: "International Journal of Epidemiology"
+  year: "2019"
+  volume: "48"
+  issue: "3"
+  pages: "684-690"
+  doi: 10.1093/ije/dyy195
+  url: "https://remlapmot.github.io/mrrobust/index.html"
