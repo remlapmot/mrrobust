@@ -34,6 +34,7 @@ preferred-citation:
   year: "2019"
   volume: "48"
   issue: "3"
-  pages: "684-690"
+  start: 684
+  end: 690
   doi: 10.1093/ije/dyy195
-  url: "https://remlapmot.github.io/mrrobust/index.html"
+  url: "https://doi.org/10.1093/ije/dyy195"
