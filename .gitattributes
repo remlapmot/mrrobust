@@ -2,5 +2,3 @@
 *.html linguist-vendored
 *.csv linguist-vendored
 *.svg linguist-vendored
-*.toc linguist-language=Stata
-*.pkg linguist-language=Stata
