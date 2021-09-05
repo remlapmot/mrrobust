@@ -4,3 +4,4 @@
 *.svg linguist-vendored
 *.toc linguist-language=Stata
 *.pkg linguist-language=Stata
+*.stmd linguist-language=Markdown
