@@ -1,3 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
 # exclude certain file extensions from Languages statistics by Linguist
 *.html linguist-vendored
 *.csv linguist-vendored
