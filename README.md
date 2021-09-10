@@ -261,7 +261,7 @@ Thank you to all our users who have cited mrrobust. We made
 
 ## Collaboration
 If you would like to extend the code or add new commands I am open to receiving pull requests on 
-GitHub or send me an email to tom.palmer@bristol.ac.uk.
+GitHub or send me an email to <tom.palmer@bristol.ac.uk>.
 
 ## References
 
