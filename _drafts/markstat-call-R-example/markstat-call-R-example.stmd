@@ -19,7 +19,7 @@ The general approach is detailed on the Stata Markdown website
 
 This means that we can use the functions provided by the 
 [`TwoSampleMR`](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from 
-[MR-Base](http://www.mrbase.org/).
+[MR-Base](https://www.mrbase.org/).
 
 To see the `stmd` code which generates this page see 
 [here](https://raw.githubusercontent.com/remlapmot/mrrobust/master/_drafts/markstat-call-R-example/markstat-call-R-example.stmd). 
