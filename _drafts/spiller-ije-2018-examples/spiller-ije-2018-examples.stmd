@@ -51,7 +51,7 @@ In `Height.csv` the exposure is standardised height in meters and also interpret
 deviation scale. The summary statistics are reported by Wood et al.
 
 For both analyses log transformed serum glucose was used as an outcome, reported by Shin et al.
-All the data was obtained from the MRBase GWAS catalogue available at <http://www.mrbase.org/>. 
+All the data was obtained from the MRBase GWAS catalogue available at <https://www.mrbase.org/>. 
 Genetic variants were pruned so as to be independent ($R^2$ = 0.0001), and the effect alleles were 
 aligned between the exposure and outcome datasets using the MRBase web application, prior to 
 implementing `mrrobust`.
