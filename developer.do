@@ -28,3 +28,6 @@ whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // Windows
 
 * Requirement to build helpfiles as html
 ssc install log2html
+
+* tsci used in the mregger cscript
+net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
