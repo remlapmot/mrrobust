@@ -55,7 +55,7 @@ for more information.
 Using R and Stata code in the same script means that we can use the
 functions provided by the
 [`TwoSampleMR`](https://github.com/MRCIEU/TwoSampleMR) package to obtain
-data from [MR-Base](http://www.mrbase.org/).
+data from [MR-Base](https://www.mrbase.org/).
 
 To see the `Rmd` code which generates this page see
 [here](https://raw.githubusercontent.com/remlapmot/mrrobust/master/_drafts/rmarkdown-call-stata-example/rmarkdown-call-stata-example.Rmd).
