@@ -201,7 +201,7 @@ Bowden J, Davey Smith G, Burgess S.
 Mendelian randomization with invalid instruments: effect estimation and bias 
 detection through Egger regression. International Journal of Epidemiology, 
 2015, 44, 2, 512-525. 
-{browse "http://dx.doi.org/10.1093/ije/dyv080":DOI}
+{browse "https://dx.doi.org/10.1093/ije/dyv080":DOI}
 {p_end}
 
 {marker mrmedian}{...}
@@ -209,7 +209,7 @@ detection through Egger regression. International Journal of Epidemiology,
 Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation 
 in Mendelian randomization with some invalid instruments using a weighted 
 median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
-{browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
+{browse "https://dx.doi.org/10.1002/gepi.21965":DOI}
 
 {marker i2gx}{...}
 {phang}
@@ -217,7 +217,7 @@ Bowden J, Del Greco F, Minelli C, Davey Smith G, Sheehan NA, Thompson JR.
 Assessing the suitability of summary data for two-sample Mendelian 
 randomization analyses using MR-Egger regression: the role of the I-squared 
 statistic. International Journal of Epidemiology, 2016, 45, 6, 1961-1974. 
-{browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
+{browse "https://dx.doi.org/10.1093/ije/dyw220":DOI}
 
 {marker radial}{...}
 {phang}
@@ -251,14 +251,14 @@ Statistics in Medicine, 2015, 34, 21, 2926-2940.
 {phang}
 Do R et al. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. DOI: 
-{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
+{browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker thompson}{...}
 {phang}
 Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: a 
 comparison of methods. Statistics in Medicine, 1999, 18, 20, 2693-2708. 
-{browse "http://dx.doi.org/10.1002/(SICI)1097-0258(19991030)18:20<2693::AID-SIM235>3.0.CO;2-V":DOI}
+{browse "https://dx.doi.org/10.1002/(SICI)1097-0258(19991030)18:20<2693::AID-SIM235>3.0.CO;2-V":DOI}
 {p_end}
 
 {marker author}

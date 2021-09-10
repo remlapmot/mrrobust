@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:  25 Jun 2021, 10:34:57
+ opened on:  10 Sep 2021, 20:45:57
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -11,11 +11,11 @@
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -367,7 +367,7 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:  25 Jun 2021, 10:35:17
+ closed on:  10 Sep 2021, 20:46:09
 -------------------------------------------------------------------------------

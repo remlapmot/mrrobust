@@ -120,7 +120,7 @@ distribution, for calculating the Wald test and the confidence interval limits.
 {phang}
 Do et al., 2013. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics. 45, 1345–1352. 
-{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
+{browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker rees}{...}
@@ -128,7 +128,7 @@ Do et al., 2013. Common variants associated with plasma triglycerides and risk
 Rees J, Wood A, Burgess S. Extending the MR-Egger method for multivariable Mendelian 
 randomization to correct for both measured and unmeasured pleiotropy. 
 Statistics in Medicine, 2017, 36, 29, 4705-4718.
-{browse "http://dx.doi.org/10.1002/sim.7492":DOI}
+{browse "https://dx.doi.org/10.1002/sim.7492":DOI}
 {p_end}
 
 {marker author}

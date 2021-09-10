@@ -20,9 +20,14 @@ do master
 * as per https://data.princeton.edu/stata/markdown/gettingStarted
 ssc install markstat
 ssc install whereis
-whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // wherever your pandoc exe is
+whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // Windows
+// whereis pandoc "/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc" // macOS
+// or wherever your pandoc exe is
 
 * ado uninstall mrrobust
 
 * Requirement to build helpfiles as html
 ssc install log2html
+
+* tsci used in the mregger cscript
+net install tsci, from(https://raw.github.com/remlapmot/tsci/master)

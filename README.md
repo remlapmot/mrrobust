@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* September 2021:
+  - Changed relevant `http:` URLs to `https:`
 * June 2021:
   - Published an interactive Code Ocean capsule demonstrating the use of the mrrobust package [here](https://doi.org/10.24433/CO.0587524.v1)
   - By default `mrforest` now specifies a fixed effect standard error for its IVW estimate 
@@ -132,7 +134,7 @@ examples you can click on the code to run it.
 The mrrobust package is a collection of commands for performing two-sample Mendelian randomization 
 analyses using summary data of genotype-phenotype and genotype-outcome associations. 
 
-Such data can be obtained from repositories such as MR-Base <http://www.mrbase.org> 
+Such data can be obtained from repositories such as MR-Base <https://www.mrbase.org> 
 ([Hemani et al. 2016](#references)).
 
 The package contains the following commands:
@@ -232,8 +234,8 @@ them manually:
  * the `metan` command is available [here](https://ideas.repec.org/c/boc/bocode/s456798.html)
  * `grc1leg` can be installed in Stata with
     ``` stata
-    net install grc1leg, from("http://www.stata.com/users/vwiggins")
-	```
+    net install grc1leg, from("https://www.stata.com/users/vwiggins")
+    ```
  
 Extract the zip archives and save all files on your `adopath`.
 
@@ -265,10 +267,10 @@ GitHub or send me an email to tom.palmer@bristol.ac.uk.
 
  * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect 
  estimation and bias detection through Egger regression. International Journal of Epidemiology, 
- 2015, 44, 2, 512-525. [doi](http://dx.doi.org/10.1093/ije/dyv080)
+ 2015, 44, 2, 512-525. [doi](https://dx.doi.org/10.1093/ije/dyv080)
  * Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian randomization 
  with some invalid instruments using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
- 304-314. [doi](http://dx.doi.org/10.1002/gepi.21965)
+ 304-314. [doi](https://dx.doi.org/10.1002/gepi.21965)
  * Hartwig FP, Davey Smith G, Bowden J. Robust inference in two-sample Mendelian randomisation via 
  the zero modal pleiotropy assumption. International Journal of Epidemiology, 2017, 46, 6, 
  1985-1998. [doi](https://doi.org/10.1093/ije/dyx102)

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmvegger
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:  25 Jun 2021, 10:36:58
+ opened on:  10 Sep 2021, 20:46:54
 
 . * mrmvegger cscript
 . * 22un2020
@@ -11,7 +11,7 @@
 ----------------------------------------------------------------BEGIN mrmvegger
 
 -> which mrmvegger, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 . 
@@ -799,7 +799,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvegger
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:  25 Jun 2021, 10:37:08
+ closed on:  10 Sep 2021, 20:46:55
 -------------------------------------------------------------------------------

@@ -81,7 +81,7 @@ Bowden J, Del Greco FM, Minelli C, Davey Smith G, Sheehan NA, Thompson JR.
 Assessing the suitability of summary data for two-sample Mendelian 
 randomization analyses using MR-Egger regression: the role of the I2 statistic. 
 International Journal of Epidemiology, 2016, 45, 6, 1961-1974.
-{browse "http://dx.doi.org/10.1093/ije/dyw220":DOI}
+{browse "https://dx.doi.org/10.1093/ije/dyw220":DOI}
 {p_end}
 
 {marker mrmedian}{...}
@@ -89,7 +89,7 @@ International Journal of Epidemiology, 2016, 45, 6, 1961-1974.
 Bowden J, Davey Smith G, Haycock PC, Burgess S. 
 Consistent estimation in Mendelian randomization with some invalid instruments
  using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314. 
-{browse "http://dx.doi.org/10.1002/gepi.21965":DOI}
+{browse "https://dx.doi.org/10.1002/gepi.21965":DOI}
 {p_end}
 
 {marker cook}{...}
@@ -104,7 +104,7 @@ measurement error models. Journal of the American Statistical Association, 1995,
 {phang}
 Do R et al. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. DOI: 
-{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
+{browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker hardin}{...}
@@ -112,7 +112,7 @@ Do R et al. Common variants associated with plasma triglycerides and risk
 Hardin JW, Schmiediche H, Carroll RJ. The simulation extrapolation method 
 for fitting linear models with additive measurement error. Stata Journal. 
 2003, 3, 4, 373-385. 
-{browse "http://www.stata-journal.com/article.html?article=st0051":DOI}
+{browse "https://www.stata-journal.com/article.html?article=st0051":DOI}
 {p_end}
 
 {marker author}

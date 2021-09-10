@@ -9,4 +9,4 @@ foreach prog in addplot kdens moremata heterogi metan {
 	}
 }
 
-net install grc1leg, from(http://www.stata.com/users/vwiggins)
+net install grc1leg, from(https://www.stata.com/users/vwiggins)

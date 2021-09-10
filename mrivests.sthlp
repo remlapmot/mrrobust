@@ -93,7 +93,7 @@ specific estimates for the LDL-c phenotype.{p_end}
 {phang}
 Do et al., 2013. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics. 45, 1345–1352. 
-{browse "http://dx.doi.org/10.1038/ng.2795":DOI}
+{browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
 {marker author}
