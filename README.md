@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* September 2021:
+  - Changed relevant `http:` URLs to `https:`
 * June 2021:
   - Published an interactive Code Ocean capsule demonstrating the use of the mrrobust package [here](https://doi.org/10.24433/CO.0587524.v1)
   - By default `mrforest` now specifies a fixed effect standard error for its IVW estimate 
