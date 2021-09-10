@@ -9,7 +9,7 @@ foreach prog in addplot kdens moremata heterogi metan {
 	}
 }
 
-cap noi net install grc1leg, from(http://www.stata.com/users/vwiggins)
+cap noi net install grc1leg, from(https://www.stata.com/users/vwiggins)
 
 end
 exit
