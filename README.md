@@ -232,8 +232,8 @@ them manually:
  * the `metan` command is available [here](https://ideas.repec.org/c/boc/bocode/s456798.html)
  * `grc1leg` can be installed in Stata with
     ``` stata
-    net install grc1leg, from("http://www.stata.com/users/vwiggins")
-	```
+    net install grc1leg, from("https://www.stata.com/users/vwiggins")
+    ```
  
 Extract the zip archives and save all files on your `adopath`.
 
