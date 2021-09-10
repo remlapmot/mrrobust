@@ -88,7 +88,7 @@ modal, mode, mvmr, mvivw, mvegger.
 {phang}
 Do et al. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. 
-{browse "http://dx.doi.org/10.1038/ng.2795":DOI}{p_end}
+{browse "https://dx.doi.org/10.1038/ng.2795":DOI}{p_end}
 
 {marker author}
 {title:Author}

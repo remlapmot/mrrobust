@@ -72,7 +72,7 @@ variables.
 
 {pstd}
 Most of the commands are designed to use summary level data as provided by 
-repositories such as {browse "http://www.mrbase.org":MR-Base}.
+repositories such as {browse "https://www.mrbase.org":MR-Base}.
 
 {pstd}
 The estimators were developed in the context of MR studies but 
