@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:  25 Jun 2021, 10:35:17
+ opened on:  10 Sep 2021, 20:46:09
 
 . * mrmodal cscript
 . * 2jun2017
@@ -11,7 +11,7 @@
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
@@ -783,7 +783,7 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:  25 Jun 2021, 10:35:35
+ closed on:  10 Sep 2021, 20:46:19
 -------------------------------------------------------------------------------

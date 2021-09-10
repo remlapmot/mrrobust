@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
-> g
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:  25 Jun 2021, 10:37:08
+ opened on:  10 Sep 2021, 20:46:55
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -12,7 +11,7 @@
 ------------------------------------------------------------BEGIN mrleaveoneout
 
 -> which mrleaveoneout, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrleaveoneout.ado
+/Users/tom/Documents/GitHub/mrrobust/mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
 
 . 
@@ -7011,8 +7010,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrleaveoneout
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
-> g
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:  25 Jun 2021, 10:38:28
+ closed on:  10 Sep 2021, 20:47:35
 -------------------------------------------------------------------------------
