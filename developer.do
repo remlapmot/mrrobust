@@ -24,6 +24,7 @@ if c(os) == "Windows" local pandocpath "C:\Program Files\RStudio\bin\pandoc\pand
 if c(os) == "MacOSX" local pandocpath "/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc"
 whereis pandoc "`pandocpath'"
 // or wherever your pandoc exe is
+// The markstat-call-R-example also sets the path to the R executable
 
 * ado uninstall mrrobust
 
