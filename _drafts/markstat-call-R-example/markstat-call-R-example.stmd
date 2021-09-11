@@ -34,7 +34,9 @@ issue the following commands (I have commented them out because I have already i
 
 We first need to register the R executable with Stata.
 ```s
-whereis R "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+else local rpath "/usr/local/bin/R"
+whereis R "`rpath'"
 ```
 
 Next we have an R code chunk in which we install the required packages in R (again I have commented 
