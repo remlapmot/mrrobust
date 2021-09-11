@@ -37,8 +37,12 @@ issue the following commands (I have commented them out because I have already i
 We first need to register the R executable with Stata.
 
 ```stata
-. whereis R "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
-C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe
+. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+
+. else local rpath "/usr/local/bin/R"
+
+. whereis R "`rpath'"
+/usr/local/bin/R
 ```
 
 
@@ -116,10 +120,10 @@ The next two code chunks perform the analysis in R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06191076 1.712795e-13
-2 0.03656638 9.607446e-41
+2 0.03849541 6.236747e-37
 3 0.03923672 6.392333e-33
-4 0.06194137 2.580407e-10
-5 0.03331070 6.199048e-23
+4 0.06418646 7.358770e-10
+5 0.03468905 4.437275e-22
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
@@ -255,7 +259,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887676    .038216    12.79   0.000     .4138655    .5636697
+        beta │   .4887676   .0376908    12.97   0.000      .414895    .5626402
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -270,7 +274,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0363427    14.28   0.000     .4477147    .5901754
+        beta │    .518945   .0357908    14.50   0.000     .4487963    .5890938
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 

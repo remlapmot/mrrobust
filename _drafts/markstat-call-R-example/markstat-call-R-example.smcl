@@ -1,16 +1,20 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
+       {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}25 Jun 2021, 09:46:59
+ {txt}opened on:  {res}11 Sep 2021, 06:56:30
 {txt}
 {com}. //_1
 . * ssc install whereis
 . * ssc install markstat
 . //_2
-. whereis R "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
-{res}{txt}C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe
+. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+{txt}
+{com}. else local rpath "/usr/local/bin/R"
+{txt}
+{com}. whereis R "`rpath'"
+{res}{txt}/usr/local/bin/R
 
 {com}. //_3
 . use dat, clear
@@ -81,7 +85,7 @@ beta_expos~e {c |}{col 14}{res}{space 2} .4689295{col 26}{space 2} .0392367{col 
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4887676{col 26}{space 2}  .038216{col 37}{space 1}   12.79{col 46}{space 3}0.000{col 54}{space 4} .4138655{col 67}{space 3} .5636697
+{space 8}beta {c |}{col 14}{res}{space 2} .4887676{col 26}{space 2} .0376908{col 37}{space 1}   12.97{col 46}{space 3}0.000{col 54}{space 4}  .414895{col 67}{space 3} .5626402
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_9
@@ -93,15 +97,15 @@ beta_expos~e {c |}{col 14}{res}{space 2} .4689295{col 26}{space 2} .0392367{col 
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0363427{col 37}{space 1}   14.28{col 46}{space 3}0.000{col 54}{space 4} .4477147{col 67}{space 3} .5901754
+{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0357908{col 37}{space 1}   14.50{col 46}{space 3}0.000{col 54}{space 4} .4487963{col 67}{space 3} .5890938
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
+       {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}25 Jun 2021, 09:47:04
+ {txt}closed on:  {res}11 Sep 2021, 06:56:32
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
