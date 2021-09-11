@@ -20,9 +20,11 @@ do master
 * as per https://data.princeton.edu/stata/markdown/gettingStarted
 ssc install markstat
 ssc install whereis
-whereis pandoc "C:\Program Files\RStudio\bin\pandoc\pandoc.exe" // Windows
-// whereis pandoc "/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc" // macOS
+if c(os) == "Windows" local pandocpath "C:\Program Files\RStudio\bin\pandoc\pandoc.exe"
+if c(os) == "MacOSX" local pandocpath "/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc"
+whereis pandoc "`pandocpath'"
 // or wherever your pandoc exe is
+// The markstat-call-R-example also sets the path to the R executable
 
 * ado uninstall mrrobust
 
