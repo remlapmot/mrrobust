@@ -1,6 +1,8 @@
 * Test installation methods
 * 2020-06-23
 
+log using install.log, text replace
+
 ** net install
 
 cap noi ado uninstall mrrobust
@@ -18,3 +20,5 @@ net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 
 cap noi ado uninstall mrrobust
+
+log close
