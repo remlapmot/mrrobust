@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  10 Sep 2021, 20:46:55
+ opened on:  17 Sep 2021, 15:57:39
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -99,19 +99,7 @@ Description
 
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-    Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    Development takes place on GitHub here 
-    https://github.com/remlapmot/mrrobust.
-
-    Please report any bugs or issues you find, either by email or by creating
-    an issue on the GitHub repository here 
-    https://github.com/remlapmot/mrrobust/issues.
-
-    I welcome additions to the code, either by email or pull request on
-    GitHub.
-
+INCLUDE help mrrobust-author
 Title
 
      mr -- Mendelian randomization programs
@@ -169,15 +157,9 @@ References
         risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
         DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrdeps -- Install dependencies for mrrobust package
@@ -196,15 +178,9 @@ Examples
     Install dependencies
         . mrdeps
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mregger -- Mendelian randomization Egger regression
@@ -409,15 +385,9 @@ References
         comparison of methods. Statistics in Medicine, 1999, 18, 20,
         2693-2708.  DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mreggersimex -- SIMEX for the MR-Egger estimator
@@ -502,15 +472,9 @@ References
         for fitting linear models with additive measurement error. Stata
         Journal.  2003, 3, 4, 373-385.  DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mreggerplot -- Scatter plot for MR-Egger type models
@@ -639,15 +603,9 @@ References
         for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
         DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrmedian -- Weighted median of instrumental variable estimates
@@ -754,15 +712,9 @@ References
         for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
         DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrmedianobs -- Weighted median of instrumental variable estimates
@@ -866,15 +818,9 @@ References
         weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
         304-314.  DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrmodal -- Modal estimator for summary data
@@ -998,15 +944,9 @@ References
         Mendelian randomisation via the zero modal pleiotropy assumption.
         International Journal of Epidemiology, 2017, 46, 6, 1985-1998.  DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrmodalplot -- Density plot to investigate values of phi in mrmodal
@@ -1081,15 +1021,9 @@ References
         for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
         DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrratio -- Instrumental variable ratio (Wald) estimator
@@ -1190,15 +1124,9 @@ Stored results
       e(b)                coefficient vector
       e(V)                variance-covariance matrix of the estimate
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrivests -- Generate genotype specific instrumental variable ratio (Wald)
@@ -1275,15 +1203,9 @@ References
         risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
         DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrforest -- Forest plot for MR-Egger type models
@@ -1408,15 +1330,9 @@ References
         metan: fixed- and random-effects meta-analysis.  Stata Journal, 2008,
         8, 1, 3-28. Link
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrfunnel -- Funnel plot for two-sample MR analysis
@@ -1514,15 +1430,9 @@ References
         weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
         304-314.  DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrmvivw/mvivw/mvmr -- Multivariable inverse variance weighted regression
@@ -1657,15 +1567,9 @@ References
         pleiotropic instruments in two-sample multivariable Mendelian
         randomisation.  bioRxiv preprint, 2020, 2020.04.02.021980 DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 .h mrmvivw
 {s6hlp}
 .h mrmvivw
@@ -1778,15 +1682,9 @@ References
         and unmeasured pleiotropy.  Statistics in Medicine, 2017, 36, 29,
         4705-4718.  DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 Title
 
      mrleaveoneout -- Leave one (genotype) out (at a time) analysis
@@ -1869,20 +1767,14 @@ References
         for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
         DOI
 
-
 Author
 
-    Tom Palmer, MRC Integrative Epidemiology Unit and Population Health
-        Sciences, University of Bristol, UK. tom.palmer@bristol.ac.uk.
-
-    If you find any bugs or have questions please send me an email or create
-        an issue on the GitHub repo: 
-        https://github.com/remlapmot/mrrobust/issues
+INCLUDE help mrrobust-author
 
 . 
 end of do-file
       name:  helpfiles
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
+       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  10 Sep 2021, 20:46:55
+ closed on:  17 Sep 2021, 15:57:39
 -------------------------------------------------------------------------------
