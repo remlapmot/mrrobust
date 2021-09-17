@@ -1,13 +1,9 @@
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\install.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/install.log
   log type:  text
- opened on:  17 Sep 2021, 16:03:45
+ opened on:  17 Sep 2021, 20:45:02
 
-. do install
-
-. * Test installation methods
-. * 2020-06-23
 . 
 . ** net install
 . 
@@ -17,9 +13,9 @@ package not found
 . 
 . net desc mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/)
 
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 package mrrobust from https://raw.github.com/remlapmot/mrrobust/master
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 TITLE
       'mrrobust': Stata package for two-sample Mendelian randomization analyses
@@ -69,101 +65,26 @@ INSTALLATION FILES                             (type net install mrrobust)
       mrleaveoneout.ado
       mrleaveoneout.sthlp
       mrrobust-author.ihlp
--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 . 
-. net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/)
->  replace
+. net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) 
+> replace
 checking mrrobust consistency and verifying not already installed...
-installing into c:\ado\plus\...
+installing into /Users/tom/Library/Application Support/Stata/ado/plus/...
 installation complete.
 
 . mrdeps
 checking addplot consistency and verifying not already installed...
-
-the following files already exist and are different:
-    c:\ado\plus\a\addplot.ado
-    c:\ado\plus\a\addplot.hlp
-
-no files installed or copied
-(no action taken)
-Installing the latest version of addplot
-checking addplot consistency and verifying not already installed...
-
-the following files will be replaced:
-    c:\ado\plus\a\addplot.ado
-    c:\ado\plus\a\addplot.hlp
-
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
 checking moremata consistency and verifying not already installed...
-
-the following files already exist and are different:
-    c:\ado\plus\l\lmoremata.mlib
-    c:\ado\plus\l\lmoremata11.mlib
-    c:\ado\plus\m\moremata.hlp
-    c:\ado\plus\m\moremata_source.hlp
-    c:\ado\plus\m\moremata11_source.hlp
-    c:\ado\plus\m\mf_mm_quantile.hlp
-    c:\ado\plus\m\mf_mm_ebal.sthlp
-
-no files installed or copied
-(no action taken)
-Installing the latest version of moremata
-checking moremata consistency and verifying not already installed...
-
-the following files will be replaced:
-    c:\ado\plus\l\lmoremata.mlib
-    c:\ado\plus\l\lmoremata11.mlib
-    c:\ado\plus\m\moremata.hlp
-    c:\ado\plus\m\moremata_source.hlp
-    c:\ado\plus\m\moremata11_source.hlp
-    c:\ado\plus\m\mf_mm_quantile.hlp
-    c:\ado\plus\m\mf_mm_ebal.sthlp
-
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
-
-the following files already exist and are different:
-    c:\ado\plus\m\metan.ado
-    c:\ado\plus\m\metan.mata
-    c:\ado\plus\m\metan.sthlp
-    c:\ado\plus\m\metan_binary.sthlp
-    c:\ado\plus\m\metan_continuous.sthlp
-    c:\ado\plus\m\metan_model.sthlp
-    c:\ado\plus\m\metan_pooling.ado
-    c:\ado\plus\m\metan_proportion.sthlp
-    c:\ado\plus\f\forestplot.ado
-    c:\ado\plus\f\forestplot.sthlp
-    c:\ado\plus\m\metani.ado
-    c:\ado\plus\m\metani.sthlp
-
-no files installed or copied
-(no action taken)
-Installing the latest version of metan
-checking metan consistency and verifying not already installed...
-
-the following files will be replaced:
-    c:\ado\plus\m\metan.ado
-    c:\ado\plus\m\metan.mata
-    c:\ado\plus\m\metan.sthlp
-    c:\ado\plus\m\metan_binary.sthlp
-    c:\ado\plus\m\metan_continuous.sthlp
-    c:\ado\plus\m\metan_model.sthlp
-    c:\ado\plus\m\metan_pooling.ado
-    c:\ado\plus\m\metan_proportion.sthlp
-    c:\ado\plus\f\forestplot.ado
-    c:\ado\plus\f\forestplot.sthlp
-    c:\ado\plus\m\metani.ado
-    c:\ado\plus\m\metani.sthlp
-
-installing into c:\ado\plus\...
-installation complete.
+all files already exist and are up to date.
 checking grc1leg consistency and verifying not already installed...
 all files already exist and are up to date.
 
@@ -186,25 +107,24 @@ all files already exist and are up to date.
 
 Installing mrrobust ...
 
- ------------------------------------------------------------------------------
-> ----
+ -------------------------------------------------------------------------------
+> ---
   Repository      Username    Install  Description 
- ------------------------------------------------------------------------------
-> ----
+ -------------------------------------------------------------------------------
+> ---
   mrrobust        remlapmot   Install  Stata package for two-sample Mendelian
-                              3465k    randomization analyses using summary dat
-> a
+                              3465k    randomization analyses using summary data
                                        homepage https://remlapmot.github.io/~/
                                        updated on 2018-12-31
-                                       Fork:5    Star:9    Lang:Stata  (depende
-> ncy)
+                                       Fork:5    Star:9    Lang:Stata  (dependen
+> cy)
 
- ------------------------------------------------------------------------------
-> ----
+ -------------------------------------------------------------------------------
+> ---
 
 
 checking mrrobust consistency and verifying not already installed...
-installing into c:\ado\plus\...
+installing into /Users/tom/Library/Application Support/Stata/ado/plus/...
 installation complete.
 
 Checking package dependencies
@@ -243,18 +163,16 @@ end of do-file
 . 
 . cap noi ado uninstall mrrobust
 
-package mrrobust from https://raw.githubusercontent.com/remlapmot/mrrobust/mast
-> er
+package mrrobust from https://raw.githubusercontent.com/remlapmot/mrrobust/maste
+> r
       'mrrobust': Stata package for two-sample Mendelian randomization analyses
 
 (package uninstalled)
 
 . 
-end of do-file
-
-. log cl
+. log close
       name:  <unnamed>
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\install.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/install.log
   log type:  text
- closed on:  17 Sep 2021, 16:07:47
--------------------------------------------------------------------------------
+ closed on:  17 Sep 2021, 20:47:17
+--------------------------------------------------------------------------------
