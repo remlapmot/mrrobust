@@ -81,16 +81,7 @@ could be used for other applications of instrumental variables.
 {pstd}
 There is a website showing the examples from the helpfiles here: {browse "https://remlapmot.github.io/mrrobust/"}{p_end}
 
-{title:Author}{marker author}
+{marker author}{...}
+{title:Author}
 
-{pstd}
-Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}. 
-
-{pstd}
-Development takes place on GitHub here {browse "https://github.com/remlapmot/mrrobust"}.
-
-{pstd}
-Please report any bugs or issues you find, either by email or by creating an issue on the GitHub repository here {browse "https://github.com/remlapmot/mrrobust/issues"}.
-
-{pstd}
-I welcome additions to the code, either by email or pull request on GitHub.
+INCLUDE help mrrobust-author

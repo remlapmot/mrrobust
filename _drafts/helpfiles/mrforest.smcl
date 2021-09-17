@@ -136,9 +136,7 @@ Do et al. Common variants associated with plasma triglycerides and risk
 Harris RJ, Bradburn MJ, Deeks JJ, Harbord RM, Altman DG, Sterne JAC. metan: fixed- and random-effects meta-analysis. 
 Stata Journal, 2008, 8, 1, 3-28. {browse "https://www.stata-journal.com/article.html?article=sbe24_2":Link}
 
-{marker author}
+{marker author}{...}
 {title:Author}
 
-{phang}Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
-
-{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}
+INCLUDE help mrrobust-author
