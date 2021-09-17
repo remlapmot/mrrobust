@@ -90,9 +90,7 @@ Do et al. Common variants associated with plasma triglycerides and risk
  for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. 
 {browse "https://dx.doi.org/10.1038/ng.2795":DOI}{p_end}
 
-{marker author}
+{marker author}{...}
 {title:Author}
 
-{phang}Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
-
-{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}
+INCLUDE help mrrobust-author

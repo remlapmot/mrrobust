@@ -160,9 +160,7 @@ Robust inference in two-sample Mendelian randomisation via the zero modal
 pleiotropy assumption. International Journal of Epidemiology, 2017, 46, 6, 1985-1998. 
 {browse "https://doi.org/10.1093/ije/dyx102":DOI}
 
-{marker author}
+{marker author}{...}
 {title:Author}
 
-{phang}Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
-
-{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}
+INCLUDE help mrrobust-author
