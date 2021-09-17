@@ -29,9 +29,7 @@
 {pstd}Install dependencies{p_end}
 {phang2}{cmd:.} {stata "mrdeps"}{p_end}
 
-{marker author}
+{marker author}{...}
 {title:Author}
 
-{phang}Tom Palmer, MRC Integrative Epidemiology Unit and Population Health Sciences, University of Bristol, UK. {browse "mailto:tom.palmer@bristol.ac.uk":tom.palmer@bristol.ac.uk}.{p_end}
-
-{phang}If you find any bugs or have questions please send me an email or create an issue on the GitHub repo: {browse "https://github.com/remlapmot/mrrobust/issues"} {p_end}
+INCLUDE help mrrobust-author
