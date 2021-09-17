@@ -1,8 +1,10 @@
 -------------------------------------------------------------------------------
-      name:  install
+      name:  <unnamed>
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\install.log
   log type:  text
- opened on:  25 Feb 2021, 14:14:24
+ opened on:  17 Sep 2021, 16:03:45
+
+. do install
 
 . * Test installation methods
 . * 2020-06-23
@@ -24,7 +26,7 @@ TITLE
 
 DESCRIPTION/AUTHOR(S)
       Author: Tom Palmer
-      Distribution-Date: 20210222
+      Distribution-Date: 20210917
 
 INSTALLATION FILES                             (type net install mrrobust)
       mrmedian.ado
@@ -66,6 +68,7 @@ INSTALLATION FILES                             (type net install mrrobust)
       mrmvegger.sthlp
       mrleaveoneout.ado
       mrleaveoneout.sthlp
+      mrrobust-author.ihlp
 -------------------------------------------------------------------------------
 
 . 
@@ -77,15 +80,90 @@ installation complete.
 
 . mrdeps
 checking addplot consistency and verifying not already installed...
-all files already exist and are up to date.
+
+the following files already exist and are different:
+    c:\ado\plus\a\addplot.ado
+    c:\ado\plus\a\addplot.hlp
+
+no files installed or copied
+(no action taken)
+Installing the latest version of addplot
+checking addplot consistency and verifying not already installed...
+
+the following files will be replaced:
+    c:\ado\plus\a\addplot.ado
+    c:\ado\plus\a\addplot.hlp
+
+installing into c:\ado\plus\...
+installation complete.
 checking kdens consistency and verifying not already installed...
 all files already exist and are up to date.
 checking moremata consistency and verifying not already installed...
-all files already exist and are up to date.
+
+the following files already exist and are different:
+    c:\ado\plus\l\lmoremata.mlib
+    c:\ado\plus\l\lmoremata11.mlib
+    c:\ado\plus\m\moremata.hlp
+    c:\ado\plus\m\moremata_source.hlp
+    c:\ado\plus\m\moremata11_source.hlp
+    c:\ado\plus\m\mf_mm_quantile.hlp
+    c:\ado\plus\m\mf_mm_ebal.sthlp
+
+no files installed or copied
+(no action taken)
+Installing the latest version of moremata
+checking moremata consistency and verifying not already installed...
+
+the following files will be replaced:
+    c:\ado\plus\l\lmoremata.mlib
+    c:\ado\plus\l\lmoremata11.mlib
+    c:\ado\plus\m\moremata.hlp
+    c:\ado\plus\m\moremata_source.hlp
+    c:\ado\plus\m\moremata11_source.hlp
+    c:\ado\plus\m\mf_mm_quantile.hlp
+    c:\ado\plus\m\mf_mm_ebal.sthlp
+
+installing into c:\ado\plus\...
+installation complete.
 checking heterogi consistency and verifying not already installed...
 all files already exist and are up to date.
 checking metan consistency and verifying not already installed...
-all files already exist and are up to date.
+
+the following files already exist and are different:
+    c:\ado\plus\m\metan.ado
+    c:\ado\plus\m\metan.mata
+    c:\ado\plus\m\metan.sthlp
+    c:\ado\plus\m\metan_binary.sthlp
+    c:\ado\plus\m\metan_continuous.sthlp
+    c:\ado\plus\m\metan_model.sthlp
+    c:\ado\plus\m\metan_pooling.ado
+    c:\ado\plus\m\metan_proportion.sthlp
+    c:\ado\plus\f\forestplot.ado
+    c:\ado\plus\f\forestplot.sthlp
+    c:\ado\plus\m\metani.ado
+    c:\ado\plus\m\metani.sthlp
+
+no files installed or copied
+(no action taken)
+Installing the latest version of metan
+checking metan consistency and verifying not already installed...
+
+the following files will be replaced:
+    c:\ado\plus\m\metan.ado
+    c:\ado\plus\m\metan.mata
+    c:\ado\plus\m\metan.sthlp
+    c:\ado\plus\m\metan_binary.sthlp
+    c:\ado\plus\m\metan_continuous.sthlp
+    c:\ado\plus\m\metan_model.sthlp
+    c:\ado\plus\m\metan_pooling.ado
+    c:\ado\plus\m\metan_proportion.sthlp
+    c:\ado\plus\f\forestplot.ado
+    c:\ado\plus\f\forestplot.sthlp
+    c:\ado\plus\m\metani.ado
+    c:\ado\plus\m\metani.sthlp
+
+installing into c:\ado\plus\...
+installation complete.
 checking grc1leg consistency and verifying not already installed...
 all files already exist and are up to date.
 
@@ -155,7 +233,7 @@ checking metan consistency and verifying not already installed...
 all files already exist and are up to date.
 
 . 
-. net install grc1leg, from(http://www.stata.com/users/vwiggins)
+. net install grc1leg, from(https://www.stata.com/users/vwiggins)
 checking grc1leg consistency and verifying not already installed...
 all files already exist and are up to date.
 
@@ -173,8 +251,10 @@ package mrrobust from https://raw.githubusercontent.com/remlapmot/mrrobust/mast
 
 . 
 end of do-file
-      name:  install
+
+. log cl
+      name:  <unnamed>
        log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\install.log
   log type:  text
- closed on:  25 Feb 2021, 14:16:29
+ closed on:  17 Sep 2021, 16:07:47
 -------------------------------------------------------------------------------
