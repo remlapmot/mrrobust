@@ -38,7 +38,7 @@ IVW (with fixed effect standard errors)
                                                       Number of genotypes = 73
                                       Residual standard error constrained at 1
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -56,7 +56,7 @@ MR-Egger (with SEs using an unconstrained residual variance)
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4145405    .8200858
@@ -75,7 +75,7 @@ MR-Egger using the radial formulation
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 radialGD     │
     radialGP │    .642582   .1157871     5.55   0.000     .4156434    .8695205
@@ -95,7 +95,7 @@ Weighted mode estimator
                                                            Replications = 1000
                                                                        Phi = 1
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4789702   .0684667     7.00   0.000      .344778    .6131624
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -112,7 +112,7 @@ Weighted median estimator
                                                       Number of genotypes = 73
                                                            Replications = 1000
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4582573   .0631822     7.25   0.000     .3344224    .5820923
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -242,7 +242,7 @@ Export matrix to dataset
 . svmat output, names(col)
 number of observations will be reset to 7
 Press any key to continue, or Break to abort
-number of observations (_N) was 0, now 7
+Number of observations (_N) was 0, now 7.
 
 . local rownames : rownames output
 

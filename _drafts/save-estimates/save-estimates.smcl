@@ -1,9 +1,9 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
+       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 3 Aug 2020, 11:43:55
+ {txt}opened on:  {res} 1 Feb 2022, 12:46:51
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -17,7 +17,7 @@
 {col 55}{txt}Number of genotypes = {res}73
 {col 39}{txt}Residual standard error constrained at 1
 {res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}chdbeta      {txt}{c |}
 {space 4}ldlcbeta {c |}{col 14}{res}{space 2} .4815055{col 26}{space 2}  .038221{col 37}{space 1}   12.60{col 46}{space 3}0.000{col 54}{space 4} .4065938{col 67}{space 3} .5564173
@@ -31,7 +31,7 @@
 {col 55}{txt}Number of genotypes = {res}73
 {col 47}{txt}Residual standard error = {res} 1.548
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}chdbeta      {txt}{c |}
 {space 7}slope {c |}{col 14}{res}{space 2} .6173131{col 26}{space 2} .1034573{col 37}{space 1}    5.97{col 46}{space 3}0.000{col 54}{space 4} .4145405{col 67}{space 3} .8200858
@@ -46,7 +46,7 @@
 {col 55}{txt}Number of genotypes = {res}73
 {col 47}{txt}Residual standard error = {res} 1.547
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}radialGD     {txt}{c |}
 {space 4}radialGP {c |}{col 14}{res}{space 2}  .642582{col 26}{space 2} .1157871{col 37}{space 1}    5.55{col 46}{space 3}0.000{col 54}{space 4} .4156434{col 67}{space 3} .8695205
@@ -62,7 +62,7 @@
 {col 60}{txt}Replications = {res}1000
 {col 72}{txt}Phi = {res}1
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {space 8}beta {c |}{col 14}{res}{space 2} .4789702{col 26}{space 2} .0684667{col 37}{space 1}    7.00{col 46}{space 3}0.000{col 54}{space 4}  .344778{col 67}{space 3} .6131624
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -75,7 +75,7 @@
 {col 55}{txt}Number of genotypes = {res}73
 {col 60}{txt}Replications = {res}1000
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {space 8}beta {c |}{col 14}{res}{space 2} .4582573{col 26}{space 2} .0631822{col 37}{space 1}    7.25{col 46}{space 3}0.000{col 54}{space 4} .3344224{col 67}{space 3} .5820923
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
@@ -192,8 +192,8 @@
 {txt}number of observations will be reset to 7
 Press any key to continue, or Break to abort
 {p}
-number of observations (_N)  was 0,
-now 7
+Number of observations ({bf:_N}) was 0,
+now 7.
 {p_end}
 
 {com}. local rownames : rownames output
@@ -231,18 +231,22 @@ now 7
 
 {com}. //_12
 . save myestimates, replace
-{txt}file myestimates.dta saved
+{txt}{p 0 4 2}
+file {bf}
+myestimates.dta{rm}
+saved
+{p_end}
 
 {com}. //_13
 . export delimited using myestimates.txt, delimiter(tab) replace
-{res}{txt}file myestimates.txt saved
+{res}{txt}file {bf:myestimates.txt} saved
 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
+       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\save-estimates\save-estimates.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 3 Aug 2020, 11:43:56
+ {txt}closed on:  {res} 1 Feb 2022, 12:46:52
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
