@@ -1,4 +1,4 @@
-local path = subinstr("`c(pwd)'", "\_drafts\mvcommands-example", "", 1)
+local path = subinstr("`c(pwd)'", "/_drafts/mvcommands-example", "", 1)
 di "`path'"
 cap noi adopath ++ "`path'"
 
