@@ -16,6 +16,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
 
 * February 2022:
   - Ran cscripts under Stata 17.0
+  - Updated website examples to run under Stata 17.0
 * September 2021:
   - Changed relevant `http:` URLs to `https:`
   - Minor edits to the helpfiles
