@@ -10,7 +10,8 @@ cap noi ado uninstall mrrobust
 * run after having merged the new branch into master on GitHub
 * net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
 net install github, from("https://haghish.github.io/github/")
-gitget mrrobust
+//gitget mrrobust
+do dependency
 
 * tsci used in the mregger cscript
 net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
@@ -19,7 +20,7 @@ net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
 // cd cscripts
 // do master
 
-ado uninstall mrrobust
+// ado uninstall mrrobust
 
 * Requirements to build md files of examples in _drafts
 * Setup markstat
