@@ -12,6 +12,9 @@ cap noi ado uninstall mrrobust
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 
+* tsci used in the mregger cscript
+net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+
 // To run the certification scripts uncomment and run
 // cd cscripts
 // do master
@@ -32,5 +35,3 @@ whereis pandoc "`pandocpath'"
 * Requirement to build helpfiles as html
 ssc install log2html
 
-* tsci used in the mregger cscript
-net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
