@@ -9,12 +9,12 @@ cap noi ado uninstall mrrobust
 
 * run after having merged the new branch into master on GitHub
 * net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
-net install github, from("https://haghish.github.io/github/")
+net install github, from("https://haghish.github.io/github/") replace
 //gitget mrrobust
 do dependency
 
 * tsci used in the mregger cscript
-net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+net install tsci, from(https://raw.github.com/remlapmot/tsci/master) replace
 
 // To run the certification scripts uncomment and run
 // cd cscripts
