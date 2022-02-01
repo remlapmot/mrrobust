@@ -34,7 +34,7 @@ following in R.
 library(Statamarkdown)
 ```
 
-    ## Stata found at /Applications/Stata/StataMP.app/Contents/MacOS/StataMP
+    ## Stata found at C:/Program Files/Stata17/StataMP-64.exe
 
     ## The 'stata' engine is ready to use.
 
@@ -44,7 +44,7 @@ Next we need to tell `Statamarkdown` where Stata is installed.
 stataexe <- find_stata()
 ```
 
-    Stata found at /Applications/Stata/StataMP.app/Contents/MacOS/StataMP
+    Stata found at C:/Program Files/Stata17/StataMP-64.exe
 
 ``` r
 knitr::opts_chunk$set(engine.path = stataexe, cleanlog = FALSE)
@@ -147,38 +147,26 @@ mr(dat)
 
     Analysing 'ieu-a-300' on 'ieu-a-7'
 
-      id.exposure id.outcome                              outcome
-    1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    3   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    4   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-                             exposure                    method nsnp         b         se
-    1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5853125 0.06191076
-    2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887311 0.03890664
-    3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4689295 0.03923672
-    4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942 0.06240971
-    5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450 0.03385942
+      id.exposure id.outcome                              outcome                        exposure                    method nsnp         b         se
+    1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5854136 0.06182590
+    2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887319 0.03814809
+    3   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4686211 0.03919370
+    4   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942 0.06338355
+    5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450 0.03477515
               pval
-    1 1.712795e-13
-    2 3.431670e-36
-    3 6.392333e-33
-    4 3.231102e-10
-    5 1.375547e-22
+    1 1.619410e-13
+    2 1.414881e-37
+    3 6.000986e-33
+    4 5.102500e-10
+    5 4.999412e-22
 
 ``` r
 mr_heterogeneity(dat)
 ```
 
-      id.exposure id.outcome                              outcome
-    1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-    2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-                             exposure                    method        Q Q_df
-    1 LDL cholesterol || id:ieu-a-300                  MR Egger 170.9462   60
-    2 LDL cholesterol || id:ieu-a-300 Inverse variance weighted 187.0110   61
-            Q_pval
-    1 1.356009e-12
-    2 1.021208e-14
+      id.exposure id.outcome                              outcome                        exposure                    method        Q Q_df       Q_pval
+    1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7 LDL cholesterol || id:ieu-a-300                  MR Egger 170.4804   60 1.583556e-12
+    2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7 LDL cholesterol || id:ieu-a-300 Inverse variance weighted 186.6560   61 1.154072e-14
 
 ``` r
 dat$exposure <- "LDL cholesterol"
@@ -255,13 +243,13 @@ mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
     . qui use dat, cl. mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 
                                                           Number of genotypes = 62
-                                                  Residual standard error =  1.751
-    -------------------------------------------------------------------------------
-                  |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
-    --------------+----------------------------------------------------------------
-    beta_outcome  |
-    beta_exposure |   .4689295   .0392367    11.95   0.000      .392027    .5458321
-    -------------------------------------------------------------------------------
+                                                  Residual standard error =  1.749
+    ------------------------------------------------------------------------------
+                 | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+    -------------+----------------------------------------------------------------
+    beta_outcome |
+    beta_expos~e |   .4686211   .0391937    11.96   0.000     .3918029    .5454394
+    ------------------------------------------------------------------------------
 
 We then fit the MR-Egger, median, and modal based estimators.
 
@@ -279,13 +267,13 @@ mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
     . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
                                                           Number of genotypes = 62
-                                                  Residual standard error =  1.688
+                                                  Residual standard error =  1.686
     ------------------------------------------------------------------------------
-                 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+                 | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
     -------------+----------------------------------------------------------------
     beta_outcome |
-           slope |   .5853125   .0619108     9.45   0.000     .4639696    .7066554
-           _cons |  -.0095226   .0040103    -2.37   0.018    -.0173826   -.0016626
+           slope |   .5854136   .0618259     9.47   0.000     .4642371    .7065902
+           _cons |  -.0095539   .0040042    -2.39   0.017    -.0174019   -.0017059
     ------------------------------------------------------------------------------
 
     . 
@@ -294,9 +282,9 @@ mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
                                                           Number of genotypes = 62
                                                                Replications = 1000
     ------------------------------------------------------------------------------
-                 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+                 | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
     -------------+----------------------------------------------------------------
-            beta |   .4887676   .0360119    13.57   0.000     .4181856    .5593496
+            beta |   .4887683   .0359701    13.59   0.000     .4182682    .5592685
     ------------------------------------------------------------------------------
 
     . 
@@ -306,9 +294,9 @@ mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
                                                                Replications = 1000
                                                                            Phi = 1
     ------------------------------------------------------------------------------
-                 |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+                 | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
     -------------+----------------------------------------------------------------
-            beta |    .518945   .0359903    14.42   0.000     .4484053    .5894848
+            beta |    .518945   .0361584    14.35   0.000     .4480759    .5898141
     ------------------------------------------------------------------------------
 
 And we could continue with additional Stata code (or indeed R code) as
@@ -329,73 +317,76 @@ For reproducibility
 
 ``` r
 sessioninfo::session_info()
-─ Session info ─────────────────────────────────────────────────────────────────────
- setting  value                       
- version  R version 4.1.1 (2021-08-10)
- os       macOS Big Sur 11.5.2        
- system   aarch64, darwin20           
- ui       RStudio                     
- language (EN)                        
- collate  en_GB.UTF-8                 
- ctype    en_GB.UTF-8                 
- tz       Europe/London               
- date     2021-09-10                  
+- Session info ---------------------------------------------------------------------------------------------------------------------------------------
+ setting  value
+ version  R version 4.1.2 (2021-11-01)
+ os       Windows 10 x64 (build 19044)
+ system   x86_64, mingw32
+ ui       RStudio
+ language (EN)
+ collate  English_United Kingdom.1252
+ ctype    English_United Kingdom.1252
+ tz       Europe/London
+ date     2022-02-01
+ rstudio  2022.02.0-preview+392 Prairie Trillium (desktop)
+ pandoc   2.17.0.1 @ C:/Program Files/RStudio/bin/quarto/bin/ (via rmarkdown)
 
-─ Packages ─────────────────────────────────────────────────────────────────────────
- package       * version date       lib source                               
- assertthat      0.2.1   2019-03-21 [1] CRAN (R 4.1.0)                       
- cli             3.0.1   2021-07-17 [1] CRAN (R 4.1.0)                       
- codetools       0.2-18  2020-11-04 [1] CRAN (R 4.1.1)                       
- crayon          1.4.1   2021-02-08 [1] CRAN (R 4.1.0)                       
- curl            4.3.2   2021-06-23 [1] CRAN (R 4.1.0)                       
- DBI             1.1.1   2021-01-15 [1] CRAN (R 4.1.0)                       
- digest          0.6.27  2020-10-24 [1] CRAN (R 4.1.0)                       
- dplyr           1.0.7   2021-06-18 [1] CRAN (R 4.1.0)                       
- ellipsis        0.3.2   2021-04-29 [1] CRAN (R 4.1.0)                       
- evaluate        0.14    2019-05-28 [1] CRAN (R 4.1.0)                       
- fansi           0.5.0   2021-05-25 [1] CRAN (R 4.1.0)                       
- fastmap         1.1.0   2021-01-25 [1] CRAN (R 4.1.0)                       
- foreach         1.5.1   2020-10-15 [1] CRAN (R 4.1.0)                       
- foreign       * 0.8-81  2020-12-22 [1] CRAN (R 4.1.1)                       
- generics        0.1.0   2020-10-31 [1] CRAN (R 4.1.0)                       
- glmnet          4.1-2   2021-06-24 [1] CRAN (R 4.1.0)                       
- glue            1.4.2   2020-08-27 [1] CRAN (R 4.1.0)                       
- htmltools       0.5.2   2021-08-25 [1] CRAN (R 4.1.1)                       
- httr            1.4.2   2020-07-20 [1] CRAN (R 4.1.0)                       
- ieugwasr        0.1.5   2021-08-13 [1] Github (mrcieu/ieugwasr@8a24a94)     
- iterators       1.0.13  2020-10-15 [1] CRAN (R 4.1.0)                       
- jsonlite        1.7.2   2020-12-09 [1] CRAN (R 4.1.0)                       
- knitr           1.34    2021-09-09 [1] CRAN (R 4.1.1)                       
- lattice         0.20-44 2021-05-02 [1] CRAN (R 4.1.1)                       
- lifecycle       1.0.0   2021-02-15 [1] CRAN (R 4.1.0)                       
- magrittr        2.0.1   2020-11-17 [1] CRAN (R 4.1.0)                       
- Matrix          1.3-4   2021-06-01 [1] CRAN (R 4.1.1)                       
- mr.raps         0.2     2018-01-30 [1] CRAN (R 4.1.0)                       
- MRInstruments * 0.3.2   2021-08-13 [1] Github (mrcieu/MRInstruments@efa2ca0)
- nortest         1.0-4   2015-07-30 [1] CRAN (R 4.1.0)                       
- pillar          1.6.2   2021-07-29 [1] CRAN (R 4.1.0)                       
- pkgconfig       2.0.3   2019-09-22 [1] CRAN (R 4.1.0)                       
- plyr            1.8.6   2020-03-03 [1] CRAN (R 4.1.0)                       
- purrr           0.3.4   2020-04-17 [1] CRAN (R 4.1.0)                       
- R6              2.5.1   2021-08-19 [1] CRAN (R 4.1.1)                       
- Rcpp            1.0.7   2021-07-07 [1] CRAN (R 4.1.0)                       
- remotes         2.4.0   2021-06-02 [1] CRAN (R 4.1.0)                       
- rlang           0.4.11  2021-04-30 [1] CRAN (R 4.1.0)                       
- rmarkdown       2.10    2021-08-06 [1] CRAN (R 4.1.1)                       
- sessioninfo     1.1.1   2018-11-05 [1] CRAN (R 4.1.0)                       
- shape           1.4.6   2021-05-19 [1] CRAN (R 4.1.0)                       
- Statamarkdown * 0.7.0   2021-08-26 [1] Github (Hemken/Statamarkdown@a68a8b9)
- stringi         1.7.4   2021-08-25 [1] CRAN (R 4.1.1)                       
- stringr         1.4.0   2019-02-10 [1] CRAN (R 4.1.1)                       
- survival        3.2-13  2021-08-24 [1] CRAN (R 4.1.1)                       
- tibble          3.1.4   2021-08-25 [1] CRAN (R 4.1.1)                       
- tidyselect      1.1.1   2021-04-30 [1] CRAN (R 4.1.0)                       
- TwoSampleMR   * 0.5.6   2021-08-20 [1] Github (mrcieu/twosamplemr@12b3236)  
- utf8            1.2.2   2021-07-24 [1] CRAN (R 4.1.0)                       
- vctrs           0.3.8   2021-04-29 [1] CRAN (R 4.1.0)                       
- withr           2.4.2   2021-04-18 [1] CRAN (R 4.1.0)                       
- xfun            0.25    2021-08-06 [1] CRAN (R 4.1.1)                       
- yaml            2.2.1   2020-02-01 [1] CRAN (R 4.1.0)                       
+- Packages -------------------------------------------------------------------------------------------------------------------------------------------
+ package       * version date (UTC) lib source
+ assertthat      0.2.1   2019-03-21 [1] CRAN (R 4.1.0)
+ cli             3.1.1   2022-01-20 [1] CRAN (R 4.1.2)
+ codetools       0.2-18  2020-11-04 [2] CRAN (R 4.1.2)
+ crayon          1.4.2   2021-10-29 [1] CRAN (R 4.1.1)
+ curl            4.3.2   2021-06-23 [1] CRAN (R 4.1.0)
+ DBI             1.1.2   2021-12-20 [1] CRAN (R 4.1.2)
+ digest          0.6.29  2021-12-01 [1] CRAN (R 4.1.2)
+ dplyr           1.0.7   2021-06-18 [1] CRAN (R 4.1.0)
+ ellipsis        0.3.2   2021-04-29 [1] CRAN (R 4.1.0)
+ evaluate        0.14    2019-05-28 [1] CRAN (R 4.1.0)
+ fansi           1.0.2   2022-01-14 [1] CRAN (R 4.1.2)
+ fastmap         1.1.0   2021-01-25 [1] CRAN (R 4.1.0)
+ foreach         1.5.1   2020-10-15 [1] CRAN (R 4.1.0)
+ foreign       * 0.8-82  2022-01-13 [2] CRAN (R 4.1.2)
+ generics        0.1.2   2022-01-31 [1] CRAN (R 4.1.2)
+ glmnet          4.1-3   2021-11-02 [1] CRAN (R 4.1.2)
+ glue            1.6.1   2022-01-22 [1] CRAN (R 4.1.2)
+ htmltools       0.5.2   2021-08-25 [1] CRAN (R 4.1.1)
+ httr            1.4.2   2020-07-20 [1] CRAN (R 4.1.0)
+ ieugwasr        0.1.5   2021-06-28 [1] Github (mrcieu/ieugwasr@8a24a94)
+ iterators       1.0.13  2020-10-15 [1] CRAN (R 4.1.0)
+ jsonlite        1.7.3   2022-01-17 [1] CRAN (R 4.1.2)
+ knitr           1.37    2021-12-16 [1] CRAN (R 4.1.2)
+ lattice         0.20-45 2021-09-22 [2] CRAN (R 4.1.2)
+ lifecycle       1.0.1   2021-09-24 [1] CRAN (R 4.1.1)
+ magrittr        2.0.2   2022-01-26 [1] CRAN (R 4.1.2)
+ Matrix          1.4-0   2021-12-08 [2] CRAN (R 4.1.2)
+ mr.raps         0.2     2018-01-30 [1] CRAN (R 4.1.0)
+ MRInstruments * 0.3.2   2021-06-28 [1] Github (mrcieu/MRInstruments@efa2ca0)
+ nortest         1.0-4   2015-07-30 [1] CRAN (R 4.1.0)
+ pillar          1.7.0   2022-02-01 [1] CRAN (R 4.1.2)
+ pkgconfig       2.0.3   2019-09-22 [1] CRAN (R 4.1.0)
+ plyr            1.8.6   2020-03-03 [1] CRAN (R 4.1.0)
+ purrr           0.3.4   2020-04-17 [1] CRAN (R 4.1.0)
+ R6              2.5.1   2021-08-19 [1] CRAN (R 4.1.1)
+ Rcpp            1.0.8   2022-01-13 [1] CRAN (R 4.1.2)
+ rlang           1.0.0   2022-01-26 [1] CRAN (R 4.1.2)
+ rmarkdown       2.11    2021-09-14 [1] CRAN (R 4.1.1)
+ sessioninfo     1.2.2   2021-12-06 [1] CRAN (R 4.1.2)
+ shape           1.4.6   2021-05-19 [1] CRAN (R 4.1.0)
+ Statamarkdown * 0.7.0   2021-09-15 [1] Github (Hemken/Statamarkdown@a68a8b9)
+ stringi         1.7.6   2021-11-29 [1] CRAN (R 4.1.2)
+ stringr         1.4.0   2019-02-10 [1] CRAN (R 4.1.0)
+ survival        3.2-13  2021-08-24 [2] CRAN (R 4.1.2)
+ tibble          3.1.6   2021-11-07 [1] CRAN (R 4.1.2)
+ tidyselect      1.1.1   2021-04-30 [1] CRAN (R 4.1.0)
+ TwoSampleMR   * 0.5.6   2021-09-15 [1] Github (mrcieu/twosamplemr@2bb4947)
+ utf8            1.2.2   2021-07-24 [1] CRAN (R 4.1.0)
+ vctrs           0.3.8   2021-04-29 [1] CRAN (R 4.1.0)
+ xfun            0.29    2021-12-14 [1] CRAN (R 4.1.2)
+ yaml            2.2.2   2022-01-25 [1] CRAN (R 4.1.2)
 
-[1] /Library/Frameworks/R.framework/Versions/4.1-arm64/Resources/library
+ [1] C:/Users/eptmp/Documents/R/win-library/4.1
+ [2] C:/Program Files/R/R-4.1.2/library
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
