@@ -1,13 +1,11 @@
 
-R version 4.1.1 (2021-08-10) -- "Kick Things"
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
 Copyright (C) 2021 The R Foundation for Statistical Computing
-Platform: aarch64-apple-darwin20 (64-bit)
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -18,9 +16,9 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > #_1
-> # install.packages("remotes")
-> # remotes::install_github("MRCIEU/TwoSampleMR")
-> # remotes::install_github("MRCIEU/MRInstruments")
+> if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+> if (!requireNamespace("TwoSampleMR", quietly = TRUE)) remotes::install_github("MRCIEU/TwoSampleMR")
+> if (!requireNamespace("MRInstruments", quietly = TRUE)) remotes::install_github("MRCIEU/MRInstruments")
 > #_2
 > library(TwoSampleMR)
 > library(MRInstruments)
@@ -52,27 +50,27 @@ Type 'q()' to quit R.
 4   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
 5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
                          exposure                    method nsnp         b
-1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5853125
-2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887311
-3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4689295
+1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5854136
+2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887319
+3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4686211
 4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
-1 0.06191076 1.712795e-13
-2 0.03849541 6.236747e-37
-3 0.03923672 6.392333e-33
-4 0.06418646 7.358770e-10
-5 0.03468905 4.437275e-22
+1 0.06182590 1.619410e-13
+2 0.03793316 5.536750e-38
+3 0.03919370 6.000986e-33
+4 0.06119844 1.793472e-10
+5 0.03383043 1.319435e-22
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
 2   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
                          exposure                    method        Q Q_df
-1 LDL cholesterol || id:ieu-a-300                  MR Egger 170.9462   60
-2 LDL cholesterol || id:ieu-a-300 Inverse variance weighted 187.0110   61
+1 LDL cholesterol || id:ieu-a-300                  MR Egger 170.4804   60
+2 LDL cholesterol || id:ieu-a-300 Inverse variance weighted 186.6560   61
         Q_pval
-1 1.356009e-12
-2 1.021208e-14
+1 1.583556e-12
+2 1.154072e-14
 > dat$exposure <- "LDL cholesterol"
 > dat$outcome <- "Coronary heart disease"
 > 
