@@ -12,8 +12,11 @@ cap noi ado uninstall mrrobust
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 
-cd cscripts
-do master
+// To run the certification scripts uncomment and run
+// cd cscripts
+// do master
+
+ado uninstall mrrobust
 
 * Requirements to build md files of examples in _drafts
 * Setup markstat
@@ -25,8 +28,6 @@ if c(os) == "MacOSX" local pandocpath "/Applications/RStudio.app/Contents/MacOS/
 whereis pandoc "`pandocpath'"
 // or wherever your pandoc exe is
 // The markstat-call-R-example also sets the path to the R executable
-
-* ado uninstall mrrobust
 
 * Requirement to build helpfiles as html
 ssc install log2html
