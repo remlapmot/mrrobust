@@ -35,3 +35,5 @@ whereis pandoc "`pandocpath'"
 * Requirement to build helpfiles as html
 ssc install log2html
 
+// To run the examples for the website cd into an appropriate sub-directory of _drafts and run
+// do render
