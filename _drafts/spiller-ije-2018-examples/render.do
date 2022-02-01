@@ -1,4 +1,5 @@
-local path = subinstr("`c(pwd)'", "\_drafts\spiller-ije-2018-examples", "", 1)
+if c(os) == "Windows" local path = subinstr("`c(pwd)'", "\_drafts\spiller-ije-2018-examples", "", 1)
+else local path = subinstr("`c(pwd)'", "/_drafts/spiller-ije-2018-examples", "", 1)
 di "`path'"
 cap noi adopath ++ "`path'"
 
