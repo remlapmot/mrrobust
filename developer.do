@@ -23,7 +23,7 @@ ado uninstall mrrobust
 * as per https://data.princeton.edu/stata/markdown/gettingStarted
 ssc install markstat
 ssc install whereis
-if c(os) == "Windows" local pandocpath "C:\Program Files\RStudio\bin\pandoc\pandoc.exe"
+if c(os) == "Windows" local pandocpath "C:\Program Files\RStudio\bin\quarto\bin\pandoc.exe"
 if c(os) == "MacOSX" local pandocpath "/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc"
 whereis pandoc "`pandocpath'"
 // or wherever your pandoc exe is
