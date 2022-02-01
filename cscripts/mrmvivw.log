@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmvivw
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- opened on:  10 Sep 2021, 20:46:52
+ opened on:   1 Feb 2022, 11:22:39
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -11,15 +11,15 @@
 ------------------------------------------------------------------BEGIN mrmvivw
 
 -> which mrmvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvmr, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mvmr.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 . 
@@ -38,7 +38,7 @@
                                                       Number of genotypes = 73
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -50,7 +50,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
@@ -66,7 +66,7 @@ chdbeta      |
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -103,7 +103,7 @@ pvalue  2.167e-36
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -123,7 +123,7 @@ chdbeta      |
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -146,7 +146,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -176,7 +176,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -206,7 +206,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -237,7 +237,7 @@ chdbeta      |
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
@@ -267,7 +267,7 @@ chdbeta      |
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
@@ -297,7 +297,7 @@ chdbeta      |
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0409208    10.47   0.000     .3484166    .5088234
@@ -329,7 +329,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [90% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
@@ -353,7 +353,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [90% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
@@ -377,7 +377,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [90% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [90% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3283397    .5289003
@@ -415,9 +415,6 @@ matrices:
 . * ret list
 . ret list
 
-scalars:
-              r(level) =  90
-
 macros:
            r(mcmethod) : "noadjust"
 
@@ -435,7 +432,7 @@ matrices:
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -448,7 +445,7 @@ chdbeta      |
                                                  Standard errors: Fixed effect
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -469,7 +466,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
@@ -482,7 +479,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
@@ -501,7 +498,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
@@ -530,7 +527,7 @@ mrmvivw chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
@@ -558,7 +555,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.502
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4237414   .0613912     6.90   0.000     .3034169    .5440659
@@ -580,7 +577,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.932
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     hdlcbeta |  -.1446141   .1694317    -0.85   0.393    -.4766941    .1874659
@@ -602,7 +599,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -648,7 +645,7 @@ matrices:
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -704,7 +701,7 @@ matrices:
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -751,7 +748,7 @@ matrices:
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -814,7 +811,7 @@ The number of variables in gxse() does not match the number of genotype-phenoty
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -849,7 +846,7 @@ matrices:
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -867,7 +864,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
@@ -904,7 +901,7 @@ matrices:
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
@@ -937,7 +934,7 @@ matrices:
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
@@ -970,7 +967,7 @@ pvalue  8.144e-16
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
@@ -1018,7 +1015,7 @@ hdlcbeta  43.776104
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -1094,7 +1091,7 @@ hdlcbeta  36.293714
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -1181,7 +1178,7 @@ hdlcbeta  36.293714
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3643009    .5987101
@@ -1206,7 +1203,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+             | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3070269     .550213
@@ -1235,7 +1232,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+             | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3070269     .550213
@@ -1259,7 +1256,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -1287,7 +1284,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+             | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3510441    .5830997
@@ -1314,7 +1311,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+             | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3510441    .5830997
@@ -1336,7 +1333,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+             | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3622976    .6007134
@@ -1359,7 +1356,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.565
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+             | Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055   .0597994     8.05   0.000     .3622976    .6007134
@@ -1377,7 +1374,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -1397,7 +1394,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
@@ -1413,7 +1410,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4670719   .0581901     8.03   0.000     .3530214    .5811224
@@ -1425,7 +1422,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvivw
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
   log type:  text
- closed on:  10 Sep 2021, 20:46:54
+ closed on:   1 Feb 2022, 11:22:57
 -------------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- opened on:  10 Sep 2021, 20:42:00
+ opened on:   1 Feb 2022, 11:14:12
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -11,11 +11,11 @@
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
@@ -37,7 +37,7 @@ Bootstrap replications (25)
                                                    Bootstrap replications = 25
                                                   Simulation replications = 50
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
        slope |   .6256194   .1166245     5.36   0.000     .3970396    .8541991
        _cons |  -.0089987   .0062257    -1.45   0.148    -.0212009    .0032035
@@ -70,7 +70,7 @@ Bootstrap replications (3)
                                                     Bootstrap replications = 3
                                                   Simulation replications = 20
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
        slope |   .6396257   .0485306    13.18   0.000     .5445074     .734744
        _cons |   -.009941   .0061239    -1.62   0.105    -.0219436    .0020616
@@ -89,7 +89,7 @@ Bootstrap replications (25)
                                                    Bootstrap replications = 25
                                                   Simulation replications = 10
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
        slope |   .6047862   .1314017     4.60   0.000     .3472436    .8623287
        _cons |  -.0079552   .0053891    -1.48   0.140    -.0185177    .0026073
@@ -103,7 +103,7 @@ Bootstrap replications (25)
                                                     Bootstrap replications = 0
                                                   Simulation replications = 10
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
        slope |   .6047862          .        .       .            .           .
        _cons |  -.0079552          .        .       .            .           .
@@ -115,7 +115,7 @@ Bootstrap replications (25)
                                                     Bootstrap replications = 0
                                                   Simulation replications = 10
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
        slope |   .6047862          .        .       .            .           .
        _cons |  -.0079552          .        .       .            .           .
@@ -148,7 +148,7 @@ Bootstrap replications (25)
                                                    Bootstrap replications = 25
                                                   Simulation replications = 10
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
        slope |   .6047862   .1314017     4.60   0.000     .3472436    .8623287
        _cons |  -.0079552   .0053891    -1.48   0.140    -.0185177    .0026073
@@ -171,7 +171,7 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
   log type:  text
- closed on:  10 Sep 2021, 20:45:20
+ closed on:   1 Feb 2022, 11:19:21
 -------------------------------------------------------------------------------

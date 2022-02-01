@@ -34,17 +34,17 @@ issue the following commands (I have commented them out because I have already i
 
 We first need to register the R executable with Stata.
 ```s
-if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.2\\bin\\x64\\R.exe"
+else if c(os) == "Unix" local rpath "/usr/bin/R"
 else local rpath "/usr/local/bin/R"
 whereis R "`rpath'"
 ```
 
-Next we have an R code chunk in which we install the required packages in R (again I have commented 
-these lines out because I already have them installed).
+Next we have an R code chunk in which we install the required packages in R.
 ```r
-# install.packages("remotes")
-# remotes::install_github("MRCIEU/TwoSampleMR")
-# remotes::install_github("MRCIEU/MRInstruments")
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+if (!requireNamespace("TwoSampleMR", quietly = TRUE)) remotes::install_github("MRCIEU/TwoSampleMR")
+if (!requireNamespace("MRInstruments", quietly = TRUE)) remotes::install_github("MRCIEU/MRInstruments")
 ```
 
 ## Extracting data from MR-Base

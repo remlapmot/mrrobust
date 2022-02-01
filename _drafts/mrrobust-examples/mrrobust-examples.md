@@ -66,7 +66,7 @@ IVW (with fixed effect standard errors, i.e. variance of residuals
                                                       Number of genotypes = 73
                                       Residual standard error constrained at 1
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -83,7 +83,7 @@ MR-Egger (with SEs using an unconstrained residual variance
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4145405    .8200858
@@ -105,7 +105,7 @@ MR-Egger reporting I^2_GX statistic and heterogeneity Q-test.
                 Ruecker's Q for heterogeneity; chi2(71) = 170.11 (p =  0.0000)
                              I-squared statistic = 58.3% (95% CI 45.8%, 67.8%)
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4145405    .8200858
@@ -122,7 +122,7 @@ MR-Egger using a t-distribution for inference (p-values) & CI limits.
                                                       Number of genotypes = 73
                                               Residual standard error =  1.548
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      t    P>|t|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
        slope │   .6173131   .1034573     5.97   0.000     .4110251    .8236012
@@ -139,7 +139,7 @@ MR-Egger using the radial formulation.
                                                       Number of genotypes = 73
                                               Residual standard error =  1.547
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 radialGD     │
     radialGP │    .642582   .1157871     5.55   0.000     .4156434    .8695205
@@ -159,7 +159,7 @@ MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-t
                 Ruecker's Q for heterogeneity; chi2(71) = 169.98 (p =  0.0000)
                              I-squared statistic = 58.2% (95% CI 45.8%, 67.8%)
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 radialGD     │
     radialGP │    .642582   .1157871     5.55   0.000     .4156434    .8695205
@@ -180,7 +180,7 @@ SEs).
                                                     Bootstrap replications = 0
                                                   Simulation replications = 50
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
        slope │   .6256194          .        .       .            .           .
        _cons │  -.0089987          .        .       .            .           .
@@ -210,7 +210,7 @@ Weighted median estimator.
                                                       Number of genotypes = 73
                                                            Replications = 1000
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4582573   .0624892     7.33   0.000     .3357807    .5807339
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -226,7 +226,7 @@ Weighted median estimator.
                                                            Replications = 1000
                                                                      Phi = .25
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4198713   .2267297     1.85   0.064    -.0245107    .8642533
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -235,7 +235,7 @@ Weighted median estimator.
                                                            Replications = 1000
                                                                       Phi = .5
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4218667   .1981169     2.13   0.033     .0335647    .8101688
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -244,7 +244,7 @@ Weighted median estimator.
                                                            Replications = 1000
                                                                        Phi = 1
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4917353   .1356432     3.63   0.000     .2258796     .757591
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -263,7 +263,7 @@ Simple mode estimator.
                                                            Replications = 1000
                                                                        Phi = 1
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4917353   .1314983     3.74   0.000     .2340034    .7494672
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -279,7 +279,7 @@ Weighted mode estimator.
                                                            Replications = 1000
                                                                        Phi = 1
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4789702    .067441     7.10   0.000     .3467882    .6111522
 ─────────────┴────────────────────────────────────────────────────────────────
@@ -295,7 +295,7 @@ Simple mode estimator with NOME assumption.
                                                            Replications = 1000
                                                                        Phi = 1
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
         beta │   .4917353   .1341723     3.66   0.000     .2287624    .7547081
 ─────────────┴────────────────────────────────────────────────────────────────

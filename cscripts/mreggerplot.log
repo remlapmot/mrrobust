@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- opened on:  10 Sep 2021, 20:41:03
+ opened on:   1 Feb 2022, 11:10:50
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -11,11 +11,11 @@
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -258,7 +258,7 @@ only one of options ivw or egger allowed
                                                      Number of genotypes = 185
                                               Residual standard error =  1.576
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5042238    .058028     8.69   0.000     .3904911    .6179565
@@ -323,7 +323,7 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
   log type:  text
- closed on:  10 Sep 2021, 20:42:00
+ closed on:   1 Feb 2022, 11:14:12
 -------------------------------------------------------------------------------

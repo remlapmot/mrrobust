@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- This is a Stata 16.1 generated SVG file (http://www.stata.com) -->
+<!-- This is a Stata 17.0 generated SVG file (http://www.stata.com) -->
 
 <svg version="1.1" width="600px" height="436px" viewBox="0 0 3960 2880" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Stata Graph - Graph</desc>
@@ -14,8 +14,8 @@
 	<line x1="390.80" y1="966.64" x2="3859.02" y2="966.64" style="stroke:#E1E6F0;stroke-width:8.64"/>
 	<line x1="390.80" y1="565.43" x2="3859.02" y2="565.43" style="stroke:#E1E6F0;stroke-width:8.64"/>
 	<line x1="390.80" y1="164.22" x2="3859.02" y2="164.22" style="stroke:#E1E6F0;stroke-width:8.64"/>
-	<circle cx="2884.36" cy="1686.02" r="26.35" style="fill:#000000"/>
-	<circle cx="2884.36" cy="1686.02" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<circle cx="2884.37" cy="1686.02" r="26.35" style="fill:#000000"/>
+	<circle cx="2884.37" cy="1686.02" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
 	<circle cx="2901.69" cy="1380.23" r="26.35" style="fill:#000000"/>
 	<circle cx="2901.69" cy="1380.23" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
 	<circle cx="2488.61" cy="1519.08" r="26.35" style="fill:#000000"/>
@@ -680,12 +680,12 @@
 	<line x1="1655.03" y1="2651.43" x2="1712.58" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
 	<line x1="1741.41" y1="2651.43" x2="1798.95" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
 	<line x1="1827.79" y1="2651.43" x2="1885.33" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1914.16" y1="2651.43" x2="1971.83" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1914.17" y1="2651.43" x2="1971.83" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
 	<line x1="2000.54" y1="2651.43" x2="2029.38" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
 	<line x1="2430.70" y1="2651.43" x2="2545.91" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
 	<line x1="2574.74" y1="2651.43" x2="2689.95" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
 	<line x1="2718.79" y1="2651.43" x2="2805.04" y2="2651.43" style="stroke:#000000;stroke-width:8.64"/>
 	<text x="1013.39" y="2686.46" style="font-family:'Helvetica';font-size:99.99px;fill:#000000">Genotypes</text>
-	<text x="2089.39" y="2686.46" style="font-family:'Helvetica';font-size:99.99px;fill:#000000">IVW</text>
+	<text x="2089.40" y="2686.46" style="font-family:'Helvetica';font-size:99.99px;fill:#000000">IVW</text>
 	<text x="2865.06" y="2686.46" style="font-family:'Helvetica';font-size:99.99px;fill:#000000">MR-Egger</text>
 </svg>

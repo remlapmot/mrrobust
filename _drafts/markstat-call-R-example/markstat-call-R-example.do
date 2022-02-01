@@ -4,7 +4,8 @@ log using "markstat-call-R-example", smcl replace
 * ssc install whereis
 * ssc install markstat
 //_2
-if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.2\\bin\\x64\\R.exe"
+else if c(os) == "Unix" local rpath "/usr/bin/R"
 else local rpath "/usr/local/bin/R"
 whereis R "`rpath'"
 //_3

@@ -38,7 +38,7 @@ Mendelian randomization, MVMR) estimator with phenotypes LDL-c and HDL-c [@burge
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4670719   .0581901     8.03   0.000     .3530214    .5811224
@@ -57,7 +57,7 @@ Additionally include a third phenotype -- triglycerides.
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -80,7 +80,7 @@ F-statistics for instrument strength for each phenotype [@sanderson-ije-2019;
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -108,7 +108,7 @@ to the first phenotype in the main varlist.
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.469
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .5672993   .1002611     5.66   0.000      .370791    .7638075
@@ -130,7 +130,7 @@ We can also orient the model wrt HDL-C instead of LDL-C.
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.501
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4286398   .0614056     6.98   0.000      .308287    .5489926
@@ -152,7 +152,7 @@ Or we can orient the model wrt triglycerides instead of LDL-C.
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.499
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4203073   .0660026     6.37   0.000     .2909447      .54967

@@ -1,40 +1,37 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
+       {txt}log:  {res}/mnt/c/Users/eptmp/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}11 Sep 2021, 06:56:30
+ {txt}opened on:  {res} 1 Feb 2022, 11:56:29
 {txt}
 {com}. //_1
 . * ssc install whereis
 . * ssc install markstat
 . //_2
-. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.0\\bin\\R.exe"
+. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.2\\bin\\x64\\R.exe"
+{txt}
+{com}. else if c(os) == "Unix" local rpath "/usr/bin/R"
 {txt}
 {com}. else local rpath "/usr/local/bin/R"
 {txt}
 {com}. whereis R "`rpath'"
-{res}{txt}/usr/local/bin/R
+{res}{txt}/usr/bin/R
 
 {com}. //_3
 . use dat, clear
 {txt}(Written by R.              )
 
 {com}. ds, v(28)
-{txt}{col 1}SNP{col 25}pos{col 49}proxy_a1_outcome
-{col 1}effect_allele_exposure{col 25}se_outcome{col 49}proxy_a2_outcome
-{col 1}other_allele_exposure{col 25}samplesize_outcome{col 49}exposure
-{col 1}effect_allele_outcome{col 25}pval_outcome{col 49}chr_exposure
-{col 1}other_allele_outcome{col 25}outcome{col 49}pos_exposure
-{col 1}beta_exposure{col 25}originalname_outcome{col 49}se_exposure
-{col 1}beta_outcome{col 25}outcome_deprecated{col 49}pval_exposure
-{col 1}eaf_exposure{col 25}mr_keep_outcome{col 49}mr_keep_exposure
-{col 1}eaf_outcome{col 25}data_source_outcome{col 49}pval_origin_exposure
-{col 1}remove{col 25}proxy_outcome{col 49}id_exposure
-{col 1}palindromic{col 25}target_snp_outcome{col 49}action
-{col 1}ambiguous{col 25}proxy_snp_outcome{col 49}mr_keep
-{col 1}id_outcome{col 25}target_a1_outcome{col 49}labels
-{col 1}chr{col 25}target_a2_outcome
+{txt}{col 1}SNP{col 25}remove{col 49}outcome{col 73}target_a2_outcome{col 97}pval_origin_exposure
+{col 1}effect_allele_exposure{col 25}palindromic{col 49}originalname_outcome{col 73}proxy_a1_outcome{col 97}id_exposure
+{col 1}other_allele_exposure{col 25}ambiguous{col 49}outcome_deprecated{col 73}proxy_a2_outcome{col 97}action
+{col 1}effect_allele_outcome{col 25}id_outcome{col 49}mr_keep_outcome{col 73}exposure{col 97}mr_keep
+{col 1}other_allele_outcome{col 25}chr{col 49}data_source_outcome{col 73}chr_exposure{col 97}labels
+{col 1}beta_exposure{col 25}pos{col 49}proxy_outcome{col 73}pos_exposure
+{col 1}beta_outcome{col 25}se_outcome{col 49}target_snp_outcome{col 73}se_exposure
+{col 1}eaf_exposure{col 25}samplesize_outcome{col 49}proxy_snp_outcome{col 73}pval_exposure
+{col 1}eaf_outcome{col 25}pval_outcome{col 49}target_a1_outcome{col 73}mr_keep_exposure
 
 {com}. di _N
 {res}62
@@ -44,25 +41,37 @@
 
 {col 55}{txt}Number of genotypes = {res}62
 {col 47}{txt}Residual standard error = {res} 1.751
-{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
-{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{res}beta_outcome {txt}{c |}
-beta_expos~e {c |}{col 14}{res}{space 2} .4689295{col 26}{space 2} .0392367{col 37}{space 1}   11.95{col 46}{space 3}0.000{col 54}{space 4}  .392027{col 67}{space 3} .5458321
-{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{txt}{hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 15}{c |} Coefficient{col 27}  Std. err.{col 39}      z{col 47}   P>|z|{col 55}     [95% con{col 68}f. interval]
+{hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}beta_outcome  {txt}{c |}
+beta_exposure {c |}{col 15}{res}{space 2} .4689295{col 27}{space 2} .0392367{col 38}{space 1}   11.95{col 47}{space 3}0.000{col 55}{space 4}  .392027{col 68}{space 3} .5458321
+{txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_5
 . mrforest beta_outcome se_outcome beta_exposure se_exposure, ivid(SNP) ///
 > xlabel(-3,-2,-1,0,1,2,3)
 {res}{txt}
 {com}. graph export ldl-chd-mrforest.svg, width(600) replace
-{txt}(file ldl-chd-mrforest.svg written in SVG format)
+{txt}{p 0 4 2}
+file {bf}
+ldl-chd-mrforest.svg{rm}
+saved as
+SVG
+format
+{p_end}
 
 {com}. //_6
 . mreggerplot beta_outcome se_outcome beta_exposure se_exposure
 {res}{txt}
 {com}. graph export ldl-chd-mreggerplot.svg, width(600) replace
-{txt}(file ldl-chd-mreggerplot.svg written in SVG format)
+{txt}{p 0 4 2}
+file {bf}
+ldl-chd-mreggerplot.svg{rm}
+saved as
+SVG
+format
+{p_end}
 
 {com}. //_7
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
@@ -70,7 +79,7 @@ beta_expos~e {c |}{col 14}{res}{space 2} .4689295{col 26}{space 2} .0392367{col 
 {col 55}{txt}Number of genotypes = {res}62
 {col 47}{txt}Residual standard error = {res} 1.688
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}beta_outcome {txt}{c |}
 {space 7}slope {c |}{col 14}{res}{space 2} .5853125{col 26}{space 2} .0619108{col 37}{space 1}    9.45{col 46}{space 3}0.000{col 54}{space 4} .4639696{col 67}{space 3} .7066554
@@ -83,9 +92,9 @@ beta_expos~e {c |}{col 14}{res}{space 2} .4689295{col 26}{space 2} .0392367{col 
 {col 55}{txt}Number of genotypes = {res}62
 {col 60}{txt}Replications = {res}1000
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4887676{col 26}{space 2} .0376908{col 37}{space 1}   12.97{col 46}{space 3}0.000{col 54}{space 4}  .414895{col 67}{space 3} .5626402
+{space 8}beta {c |}{col 14}{res}{space 2} .4887676{col 26}{space 2} .0360119{col 37}{space 1}   13.57{col 46}{space 3}0.000{col 54}{space 4} .4181856{col 67}{space 3} .5593496
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_9
@@ -95,17 +104,17 @@ beta_expos~e {c |}{col 14}{res}{space 2} .4689295{col 26}{space 2} .0392367{col 
 {col 60}{txt}Replications = {res}1000
 {col 72}{txt}Phi = {res}1
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0357908{col 37}{space 1}   14.50{col 46}{space 3}0.000{col 54}{space 4} .4487963{col 67}{space 3} .5890938
+{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0359903{col 37}{space 1}   14.42{col 46}{space 3}0.000{col 54}{space 4} .4484053{col 67}{space 3} .5894848
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
+       {txt}log:  {res}/mnt/c/Users/eptmp/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}11 Sep 2021, 06:56:32
+ {txt}closed on:  {res} 1 Feb 2022, 11:56:34
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

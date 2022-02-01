@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mr
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- opened on:  10 Sep 2021, 20:39:10
+ opened on:   1 Feb 2022, 11:09:08
 
 . * mr cscript
 . * 20jan2020
@@ -28,71 +28,71 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mrmvegger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mr, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mr.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mregger.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrivests.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodalplot.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrratio.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -127,7 +127,7 @@ all files already exist and are up to date.
                                                       Number of genotypes = 73
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
@@ -144,7 +144,7 @@ chdbeta      |
                                                     Bootstrap replications = 0
                                                   Simulation replications = 50
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
        slope |   .6256194          .        .       .            .           .
        _cons |  -.0089987          .        .       .            .           .
@@ -165,7 +165,7 @@ chdbeta      |
                                                       Number of genotypes = 73
                                                            Replications = 1000
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
         beta |   .4285714   .0715535     5.99   0.000     .2883292    .5688136
 ------------------------------------------------------------------------------
@@ -177,7 +177,7 @@ chdbeta      |
                                                            Replications = 1000
                                                                        Phi = 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
         beta |   .4789702   .0652193     7.34   0.000     .3511427    .6067977
 ------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ chdbeta      |
                                                            Replications = 1000
                                                                      Phi = .25
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
         beta |   .4198713   .2332927     1.80   0.072     -.037374    .8771166
 ------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ chdbeta      |
                                                            Replications = 1000
                                                                       Phi = .5
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
         beta |   .4218667   .1905195     2.21   0.027     .0484554    .7952781
 ------------------------------------------------------------------------------
@@ -207,7 +207,7 @@ chdbeta      |
                                                            Replications = 1000
                                                                        Phi = 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
         beta |   .4917353   .1312092     3.75   0.000     .2345699    .7489007
 ------------------------------------------------------------------------------
@@ -216,7 +216,7 @@ chdbeta      |
 . mr ratio 1 .5 1 .25, eform
 
 ------------------------------------------------------------------------------
-             |      exp()   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             |      exp()   Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
         beta |   2.718282   1.519566     1.79   0.074     .9087791     8.13075
 ------------------------------------------------------------------------------
@@ -231,7 +231,7 @@ chdbeta      |
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -247,7 +247,7 @@ chdbeta      |
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.469
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5672993   .1002611     5.66   0.000      .370791    .7638075
@@ -265,7 +265,7 @@ chdbeta      |
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.501
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .4286398   .0614056     6.98   0.000      .308287    .5489926
@@ -284,7 +284,7 @@ Model fitted without genotype: rs1998013
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5282376   .0455961    11.59   0.000     .4388709    .6176042
@@ -295,7 +295,7 @@ Model fitted without genotype: rs4587594
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5429584   .0453622    11.97   0.000     .4540502    .6318666
@@ -306,7 +306,7 @@ Model fitted without genotype: rs646776
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5107593   .0493613    10.35   0.000     .4140128    .6075057
@@ -317,7 +317,7 @@ Model fitted without genotype: rs2587534
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5344288   .0453062    11.80   0.000     .4456302    .6232274
@@ -328,7 +328,7 @@ Model fitted without genotype: rs1367117
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |    .556469   .0479046    11.62   0.000     .4625777    .6503603
@@ -339,7 +339,7 @@ Model fitted without genotype: rs515135
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5320207   .0474703    11.21   0.000     .4389807    .6250607
@@ -350,7 +350,7 @@ Model fitted without genotype: rs6544713
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5122364   .0460225    11.13   0.000     .4220338    .6024389
@@ -361,7 +361,7 @@ Model fitted without genotype: rs7703051
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5281236    .046125    11.45   0.000     .4377202     .618527
@@ -372,7 +372,7 @@ Model fitted without genotype: rs6882076
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5254465   .0453343    11.59   0.000      .436593    .6143001
@@ -383,7 +383,7 @@ Model fitted without genotype: rs4240624
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5271701   .0452075    11.66   0.000      .438565    .6157752
@@ -394,7 +394,7 @@ Model fitted without genotype: rs2954022
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5081094   .0455969    11.14   0.000     .4187411    .5974778
@@ -405,7 +405,7 @@ Model fitted without genotype: rs579459
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |    .498307   .0454897    10.95   0.000     .4091488    .5874652
@@ -416,7 +416,7 @@ Model fitted without genotype: rs1535
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5364546   .0454439    11.80   0.000     .4473862    .6255229
@@ -427,7 +427,7 @@ Model fitted without genotype: rs10790162
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5053214   .0452312    11.17   0.000     .4166699    .5939729
@@ -438,7 +438,7 @@ Model fitted without genotype: rs2000999
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5217204   .0454508    11.48   0.000     .4326384    .6108024
@@ -449,7 +449,7 @@ Model fitted without genotype: rs6511720
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5182714    .046783    11.08   0.000     .4265784    .6099643
@@ -460,7 +460,7 @@ Model fitted without genotype: rs688
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5084139   .0455576    11.16   0.000     .4191226    .5977051
@@ -471,7 +471,7 @@ Model fitted without genotype: rs10401969
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5106048    .045641    11.19   0.000     .4211501    .6000594
@@ -482,7 +482,7 @@ Model fitted without genotype: rs6859
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5346733   .0456701    11.71   0.000     .4451615     .624185
@@ -493,7 +493,7 @@ Model fitted without genotype: rs7254892
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5422596   .0465593    11.65   0.000      .451005    .6335142
@@ -504,7 +504,7 @@ Model fitted without genotype: rs6065311
                                                       Number of genotypes = 20
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5254198   .0452998    11.60   0.000     .4366339    .6142056
@@ -515,7 +515,7 @@ Model fitted to all genotypes
                                                       Number of genotypes = 21
                                       Residual standard error constrained at 1
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
 chdbeta      |
     ldlcbeta |   .5240663   .0448781    11.68   0.000     .4361069    .6120257
@@ -533,7 +533,7 @@ chdbeta      |
                                                           Number of obs = 1000
                                                              Replications = 50
 ------------------------------------------------------------------------------
-             |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
         beta |   .9987268   .0633445    15.77   0.000     .8745738     1.12288
 ------------------------------------------------------------------------------
@@ -541,7 +541,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
   log type:  text
- closed on:  10 Sep 2021, 20:40:11
+ closed on:   1 Feb 2022, 11:10:08
 -------------------------------------------------------------------------------

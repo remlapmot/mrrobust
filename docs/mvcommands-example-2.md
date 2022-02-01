@@ -32,7 +32,7 @@ LDL-c and HDL-c (Burgess, Dudbridge, and Thompson 2015).
                                                 Standard errors: Random effect
                                               Residual standard error =  1.514
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4670719   .0581901     8.03   0.000     .3530214    .5811224
@@ -50,7 +50,7 @@ Additionally include a third phenotype – triglycerides.
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -72,7 +72,7 @@ conditional F-statistics for instrument strength for each phenotype
                                                 Standard errors: Random effect
                                               Residual standard error =  1.490
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │     .42862   .0609661     7.03   0.000     .3091286    .5481113
@@ -99,7 +99,7 @@ orienting the model to the first phenotype in the main varlist.
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.469
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .5672993   .1002611     5.66   0.000      .370791    .7638075
@@ -120,7 +120,7 @@ We can also orient the model wrt HDL-C instead of LDL-C.
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.501
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4286398   .0614056     6.98   0.000      .308287    .5489926
@@ -141,7 +141,7 @@ Or we can orient the model wrt triglycerides instead of LDL-C.
                                                       Number of phenotypes = 3
                                               Residual standard error =  1.499
 ─────────────┬────────────────────────────────────────────────────────────────
-             │      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+             │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 chdbeta      │
     ldlcbeta │   .4203073   .0660026     6.37   0.000     .2909447      .54967
@@ -153,22 +153,43 @@ chdbeta      │
 
 ## References
 
-Burgess, S, F Dudbridge, and SG Thompson. 2015. “Multivariable Mendelian
-randomization: the use of pleiotropic genetic variants to estimate
-causal effects.” *American Journal of Epidemiology* 181 (4): 251–60.
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-burgess-aje-2015" class="csl-entry">
+
+Burgess, S, F Dudbridge, and SG Thompson. 2015. “<span
+class="nocase">Multivariable Mendelian randomization: the use of
+pleiotropic genetic variants to estimate causal effects</span>.”
+*American Journal of Epidemiology* 181: 251--260.
 <https://doi.org/10.1093/aje/kwu283>.
 
-Rees, J, A Wood, and S Burgess. 2017. “Extending the MR-Egger method for
-multivariable Mendelian randomization to correct for both measured and
-unmeasured pleiotropy.” *Statistics in Medicine* 36 (29): 4705–18.
-<https://doi.org/10.1002/sim.7492>.
+</div>
 
-Sanderson, E, G Davey Smith, F Windmeijer, and J Bowden. 2019. “An
-examination of multivariable Mendelian randomization in the
-single-sample and two-sample summary data settings.” *International
-Journal of Epidemiology* 48 (3): 713–27.
+<div id="ref-rees-statsmed-2017" class="csl-entry">
+
+Rees, J, A Wood, and S Burgess. 2017. “<span class="nocase">Extending
+the MR-Egger method for multivariable Mendelian randomization to correct
+for both measured and unmeasured pleiotropy</span>.” *Statistics in
+Medicine* 36: 4705–18. <https://doi.org/10.1002/sim.7492>.
+
+</div>
+
+<div id="ref-sanderson-ije-2019" class="csl-entry">
+
+Sanderson, E, G Davey Smith, F Windmeijer, and J Bowden. 2019. “<span
+class="nocase">An examination of multivariable Mendelian randomization
+in the single-sample and two-sample summary data settings</span>.”
+*International Journal of Epidemiology* 48: 713–27.
 <https://doi.org/10.1093/ije/dyy262>.
+
+</div>
+
+<div id="ref-sanderson-biorxiv-2020" class="csl-entry">
 
 Sanderson, E, W Spiller, and J Bowden. 2020. “Testing and Correcting for
 Weak and Pleiotropic Instruments in Two-Sample Multivariable Mendelian
 Randomisation.” *bioRxiv*. <https://doi.org/10.1101/2020.04.02.021980>.
+
+</div>
+
+</div>
