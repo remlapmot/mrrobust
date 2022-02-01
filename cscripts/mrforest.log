@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- opened on:  10 Sep 2021, 20:45:20
+ opened on:   1 Feb 2022, 11:19:21
 
 . * mrforest cscript
 . * 16jun2017
@@ -11,7 +11,7 @@
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
+C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
@@ -158,7 +158,7 @@ Options ivwopts(fe) and nofe may not be specified together
 . 
 end of do-file
       name:  mrforest
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
   log type:  text
- closed on:  10 Sep 2021, 20:45:45
+ closed on:   1 Feb 2022, 11:20:14
 -------------------------------------------------------------------------------

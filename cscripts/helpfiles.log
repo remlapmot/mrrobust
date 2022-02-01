@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- opened on:  17 Sep 2021, 15:57:39
+ opened on:   1 Feb 2022, 11:23:07
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -1774,7 +1774,7 @@ INCLUDE help mrrobust-author
 . 
 end of do-file
       name:  helpfiles
-       log:  C:\Users\tom\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
   log type:  text
- closed on:  17 Sep 2021, 15:57:39
+ closed on:   1 Feb 2022, 11:23:07
 -------------------------------------------------------------------------------
