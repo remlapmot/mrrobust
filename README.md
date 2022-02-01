@@ -14,6 +14,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* February 2022:
+  - Ran cscripts under Stata 17.0
 * September 2021:
   - Changed relevant `http:` URLs to `https:`
   - Minor edits to the helpfiles
