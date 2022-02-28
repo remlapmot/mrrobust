@@ -1,5 +1,5 @@
 permalink: pretty
-title: mrrobust - Two-sample Mendelian randomization in Stata
+title: mrrobust
 email: tom.palmer@bristol.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   Stata package for two-sample Mendelian randomization analyses
