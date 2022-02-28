@@ -1,4 +1,4 @@
-# mrrobust Stata package
+# mrrobust: Stata package for two-sample Mendelian randomization analyses
 
 * [Latest updates](#latest-updates)
 * [Short video introduction](#short-video-introduction)
