@@ -16,6 +16,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* September 2022:
+  - Updated manual installation instructions
 * February 2022:
   - Ran cscripts under Stata 17.0
   - Updated website examples to run under Stata 17.0
@@ -216,22 +218,23 @@ To uninstall mrrobust issue:
 github uninstall mrrobust
 ```
 
-### Installation for Stata version 12 and earlier versions
+### Installation for Stata version 12 and earlier versions (and perhaps Stata version 13)
 The `net install` syntax for installing `mrrobust` does not work under Stata version 12 and earlier 
 because this webpage has an address starting with https rather than http. In such cases you need to 
 do a manual installation.
 
 #### To download and install mrrobust manually:
 
-* click the green "Clone or download" button at the top of the GitHub repository 
-[here](https://github.com/remlapmot/mrrobust) and download as a zip archive.
-* On your computer, extract the zip archive and move the extracted files to your `adopath` 
-* Typing `adopath` in Stata shows you the folders where the Stata programs, ado-files, are saved. 
-Save the mrrobust files in the folder marked `PERSONAL`. If the folder Stata is pointing to does 
-not exist simply make it, e.g. using Windows Explorer.
+* Click the green "Clone or download" button at the top of the GitHub repository 
+[here](https://github.com/remlapmot/mrrobust) and download as a zip archive or click this direct [link](https://github.com/remlapmot/mrrobust/archive/refs/heads/master.zip).
+* In your file explorer extract the zip archive and find its filepath, e.g. `C:\Users\tom\Downloads\mrrobust-master\mrrobust-master`
+* In Stata run
+  ```stata
+  net install mrrobust, from("C:\Users\tom\Downloads\mrrobust-master\mrrobust-master") replace
+  ```
 
-The installation commands for the other dependencies should work. However, if you want to install 
-them manually: 
+The installation commands for the other dependencies should work. However, if you need to install 
+them manually their zip archives are available at the following links (as use the same `net install ...` trick as above): 
 
  * the `moremata` package is available as a zip file 
  [here](http://fmwww.bc.edu/repec/bocode/m/moremata.zip)
@@ -243,10 +246,6 @@ them manually:
     ``` stata
     net install grc1leg, from("https://www.stata.com/users/vwiggins")
     ```
- 
-Extract the zip archives and save all files on your `adopath`.
-
-To uninstall a manual installation simply delete the files that you placed on your adopath.
 
 ## Code testing
 As far as I know, and unlike R which has the `testthat` package, there is no recognised standard 
@@ -294,4 +293,4 @@ GitHub or send me an email to <tom.palmer@bristol.ac.uk>.
 Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, 
 Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, 
 Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, Lai-Te Chen, Sean Harrison, Emma 
-Anderson, Cassianne Robinson-Cohen, and Steve Burgess.
+Anderson, Cassianne Robinson-Cohen, Alisa Kjaergaard, and Steve Burgess.
