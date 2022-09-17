@@ -234,7 +234,7 @@ do a manual installation.
   ```
 
 The installation commands for the other dependencies should work. However, if you need to install 
-them manually their zip archives are available at the following links (as use the same `net install ...` trick as above): 
+them manually their zip archives are available at the following links (extract the files from the downloaded zip archives and place them in your `PERSONAL` directory on your `adopath`): 
 
  * the `moremata` package is available as a zip file 
  [here](http://fmwww.bc.edu/repec/bocode/m/moremata.zip)
