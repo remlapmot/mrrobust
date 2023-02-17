@@ -37,14 +37,14 @@ issue the following commands (I have commented them out because I have already i
 We first need to register the R executable with Stata.
 
 ```stata
-. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.2\\bin\\x64\\R.exe"
+. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.2.2\\bin\\x64\\R.exe"
 
 . else if c(os) == "Unix" local rpath "/usr/bin/R"
 
 . else local rpath "/usr/local/bin/R"
 
 . whereis R "`rpath'"
-/usr/bin/R
+C:\\Program Files\\R\\R-4.2.2\\bin\\x64\\R.exe
 ```
 
 
@@ -121,10 +121,10 @@ The next two code chunks perform the analysis in R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06182590 1.619410e-13
-2 0.03793316 5.536750e-38
+2 0.03807123 1.013424e-37
 3 0.03919370 6.000986e-33
-4 0.06119844 1.793472e-10
-5 0.03383043 1.319435e-22
+4 0.06472604 9.363083e-10
+5 0.03164044 4.876146e-24
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
@@ -194,12 +194,12 @@ We can then run the IVW model using `mregger` with multiplicative standard error
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 
                                                       Number of genotypes = 62
-                                              Residual standard error =  1.751
+                                              Residual standard error =  1.749
 ──────────────┬────────────────────────────────────────────────────────────────
               │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ──────────────┼────────────────────────────────────────────────────────────────
 beta_outcome  │
-beta_exposure │   .4689295   .0392367    11.95   0.000      .392027    .5458321
+beta_exposure │   .4686211   .0391937    11.96   0.000     .3918029    .5454394
 ──────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -235,13 +235,13 @@ We then fit the MR-Egger, median, and modal based estimators.
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
                                                       Number of genotypes = 62
-                                              Residual standard error =  1.688
+                                              Residual standard error =  1.686
 ─────────────┬────────────────────────────────────────────────────────────────
              │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
 beta_outcome │
-       slope │   .5853125   .0619108     9.45   0.000     .4639696    .7066554
-       _cons │  -.0095226   .0040103    -2.37   0.018    -.0173826   -.0016626
+       slope │   .5854136   .0618259     9.47   0.000     .4642371    .7065902
+       _cons │  -.0095539   .0040042    -2.39   0.017    -.0174019   -.0017059
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -255,7 +255,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887676   .0360119    13.57   0.000     .4181856    .5593496
+        beta │   .4887683   .0359701    13.59   0.000     .4182682    .5592685
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -270,7 +270,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0359903    14.42   0.000     .4484053    .5894848
+        beta │    .518945   .0361584    14.35   0.000     .4480759    .5898141
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 

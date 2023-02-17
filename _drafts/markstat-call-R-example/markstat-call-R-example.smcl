@@ -1,22 +1,22 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}/mnt/c/Users/eptmp/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
+       {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 1 Feb 2022, 11:56:29
+ {txt}opened on:  {res}17 Feb 2023, 11:53:31
 {txt}
 {com}. //_1
 . * ssc install whereis
 . * ssc install markstat
 . //_2
-. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.2\\bin\\x64\\R.exe"
+. if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.2.2\\bin\\x64\\R.exe"
 {txt}
 {com}. else if c(os) == "Unix" local rpath "/usr/bin/R"
 {txt}
 {com}. else local rpath "/usr/local/bin/R"
 {txt}
 {com}. whereis R "`rpath'"
-{res}{txt}/usr/bin/R
+{res}{txt}C:\\Program Files\\R\\R-4.2.2\\bin\\x64\\R.exe
 
 {com}. //_3
 . use dat, clear
@@ -40,12 +40,12 @@
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 
 {col 55}{txt}Number of genotypes = {res}62
-{col 47}{txt}Residual standard error = {res} 1.751
+{col 47}{txt}Residual standard error = {res} 1.749
 {txt}{hline 14}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 15}{c |} Coefficient{col 27}  Std. err.{col 39}      z{col 47}   P>|z|{col 55}     [95% con{col 68}f. interval]
 {hline 14}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}beta_outcome  {txt}{c |}
-beta_exposure {c |}{col 15}{res}{space 2} .4689295{col 27}{space 2} .0392367{col 38}{space 1}   11.95{col 47}{space 3}0.000{col 55}{space 4}  .392027{col 68}{space 3} .5458321
+beta_exposure {c |}{col 15}{res}{space 2} .4686211{col 27}{space 2} .0391937{col 38}{space 1}   11.96{col 47}{space 3}0.000{col 55}{space 4} .3918029{col 68}{space 3} .5454394
 {txt}{hline 14}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_5
@@ -77,13 +77,13 @@ format
 . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
 {col 55}{txt}Number of genotypes = {res}62
-{col 47}{txt}Residual standard error = {res} 1.688
+{col 47}{txt}Residual standard error = {res} 1.686
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {res}beta_outcome {txt}{c |}
-{space 7}slope {c |}{col 14}{res}{space 2} .5853125{col 26}{space 2} .0619108{col 37}{space 1}    9.45{col 46}{space 3}0.000{col 54}{space 4} .4639696{col 67}{space 3} .7066554
-{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0095226{col 26}{space 2} .0040103{col 37}{space 1}   -2.37{col 46}{space 3}0.018{col 54}{space 4}-.0173826{col 67}{space 3}-.0016626
+{space 7}slope {c |}{col 14}{res}{space 2} .5854136{col 26}{space 2} .0618259{col 37}{space 1}    9.47{col 46}{space 3}0.000{col 54}{space 4} .4642371{col 67}{space 3} .7065902
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0095539{col 26}{space 2} .0040042{col 37}{space 1}   -2.39{col 46}{space 3}0.017{col 54}{space 4}-.0174019{col 67}{space 3}-.0017059
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_8
@@ -94,7 +94,7 @@ format
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2} .4887676{col 26}{space 2} .0360119{col 37}{space 1}   13.57{col 46}{space 3}0.000{col 54}{space 4} .4181856{col 67}{space 3} .5593496
+{space 8}beta {c |}{col 14}{res}{space 2} .4887683{col 26}{space 2} .0359701{col 37}{space 1}   13.59{col 46}{space 3}0.000{col 54}{space 4} .4182682{col 67}{space 3} .5592685
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_9
@@ -106,15 +106,15 @@ format
 {txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 {col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
 {hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
-{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0359903{col 37}{space 1}   14.42{col 46}{space 3}0.000{col 54}{space 4} .4484053{col 67}{space 3} .5894848
+{space 8}beta {c |}{col 14}{res}{space 2}  .518945{col 26}{space 2} .0361584{col 37}{space 1}   14.35{col 46}{space 3}0.000{col 54}{space 4} .4480759{col 67}{space 3} .5898141
 {txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}/mnt/c/Users/eptmp/Documents/GitHub/mrrobust/_drafts/markstat-call-R-example/markstat-call-R-example.smcl
+       {txt}log:  {res}C:\Users\tom\Documents\GitHub\mrrobust\_drafts\markstat-call-R-example\markstat-call-R-example.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 1 Feb 2022, 11:56:34
+ {txt}closed on:  {res}17 Feb 2023, 11:53:36
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
