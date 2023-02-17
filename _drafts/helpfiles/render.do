@@ -14,4 +14,3 @@ foreach file in `helpfiles' {
 	if _rc != 0 di as err "Conversersion of `file'.smcl failed"
 	cap noi copy ./`file'.html ../../docs/helpfiles/`file'-html.html, replace
 }
-
