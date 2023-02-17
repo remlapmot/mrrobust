@@ -13,8 +13,7 @@ output:
 
 This example shows how to run R and Stata code within the same Rmarkdown (`.Rmd`) script using the `Statamarkdown` R package. More information about this package is available [here](https://github.com/Hemken/Statamarkdown) and [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataMarkdown.html). To install this package and load it into your current R session run the following in R.
 ```{r}
-# install.packages("remotes") # uncomment on first run
-# remotes::install_github("Hemken/Statamarkdown") # uncomment on first run
+# install.packages("Statamarkdown") # uncomment on first run
 library(Statamarkdown)
 ```
 
