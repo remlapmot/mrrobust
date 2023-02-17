@@ -27,7 +27,7 @@ net install tsci, from(https://raw.github.com/remlapmot/tsci/master) replace
 * as per https://data.princeton.edu/stata/markdown/gettingStarted
 ssc install markstat
 ssc install whereis
-if c(os) == "Windows" local pandocpath "C:\Program Files\RStudio\bin\quarto\bin\pandoc.exe"
+if c(os) == "Windows" local pandocpath "C:\Program Files\RStudio\resources\app\bin\quarto\bin\tools" // "C:\Program Files\RStudio\bin\quarto\bin\pandoc.exe"
 if c(os) == "MacOSX" local pandocpath "/Applications/RStudio.app/Contents/MacOS/quarto/bin/pandoc"
 if c(os) == "Unix" local pandocpath "/usr/bin/pandoc"
 whereis pandoc "`pandocpath'"
