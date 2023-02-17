@@ -34,7 +34,7 @@ issue the following commands (I have commented them out because I have already i
 
 We first need to register the R executable with Stata.
 ```s
-if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.1.2\\bin\\x64\\R.exe"
+if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.2.2\\bin\\x64\\R.exe"
 else if c(os) == "Unix" local rpath "/usr/bin/R"
 else local rpath "/usr/local/bin/R"
 whereis R "`rpath'"
