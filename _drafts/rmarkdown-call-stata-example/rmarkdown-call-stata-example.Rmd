@@ -15,12 +15,7 @@ This example shows how to run R and Stata code within the same Rmarkdown (`.Rmd`
 ```{r}
 # install.packages("Statamarkdown") # uncomment on first run
 library(Statamarkdown)
-```
-
-Next we need to tell `Statamarkdown` where Stata is installed.
-```{r}
-stataexe <- find_stata()
-knitr::opts_chunk$set(engine.path = stataexe, cleanlog = FALSE)
+knitr::opts_chunk$set(cleanlog = FALSE)
 ```
 
 Note when writing our Stata code chunks we need to be careful when we specify the `collectcode=TRUE` code chunk option, because each Stata code chunk is run as a separate batch job. See [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataProfile.html) for more information.
