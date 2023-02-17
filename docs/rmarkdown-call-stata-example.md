@@ -29,7 +29,8 @@ about this package is available
 [here](https://github.com/Hemken/Statamarkdown) and
 [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Stata%20and%20R%20Markdown/StataMarkdown.html).
 To install this package and load it into your current R session run the
-following in R.
+following in R, we also set the knitr chunk option not to remove the
+Stata command from the log file output.
 
 ``` r
 # install.packages("Statamarkdown") # uncomment on first run
@@ -40,16 +41,8 @@ library(Statamarkdown)
 
     ## The 'stata' engine is ready to use.
 
-Next we need to tell `Statamarkdown` where Stata is installed.
-
 ``` r
-stataexe <- find_stata()
-```
-
-    Stata found at C:/Program Files/Stata17/StataMP-64.exe
-
-``` r
-knitr::opts_chunk$set(engine.path = stataexe, cleanlog = FALSE)
+knitr::opts_chunk$set(cleanlog = FALSE)
 ```
 
 Note when writing our Stata code chunks we need to be careful when we
@@ -163,10 +156,10 @@ mr(dat)
     5 LDL cholesterol || id:ieu-a-300             Weighted mode   62
               b         se         pval
     1 0.5854136 0.06182590 1.619410e-13
-    2 0.4887319 0.03708370 1.156792e-39
+    2 0.4887319 0.03839183 4.023135e-37
     3 0.4686211 0.03919370 6.000986e-33
-    4 0.4678942 0.06158973 2.174610e-10
-    5 0.5189450 0.03354318 8.708671e-23
+    4 0.4678942 0.05998396 9.706099e-11
+    5 0.5189450 0.03600191 2.615948e-21
 
 ``` r
 mr_heterogeneity(dat)
