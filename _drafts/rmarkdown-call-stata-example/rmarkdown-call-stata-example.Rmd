@@ -7,7 +7,7 @@ output:
     toc: true
 ---
 
-# Example showing mrrobust Stata code in an R Markdown file
+# Example showing how to include mrrobust Stata code in an R Markdown file using the Statamarkdown R package
 
 ## Introduction
 
