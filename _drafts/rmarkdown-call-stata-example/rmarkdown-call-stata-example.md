@@ -149,10 +149,10 @@ mr(dat)
     5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
               se         pval
     1 0.06182590 1.619410e-13
-    2 0.03761448 1.337454e-38
+    2 0.03875778 1.862189e-36
     3 0.03919370 6.000986e-33
-    4 0.06583693 1.518028e-09
-    5 0.03509519 7.760303e-22
+    4 0.06093547 1.573445e-10
+    5 0.03205925 9.383735e-24
 
 ``` r
 mr_heterogeneity(dat)
@@ -196,14 +196,6 @@ gitget mrrobust
 We now read the dataset into Stata and look at the variable names and
 the number of observations.
 
-``` stata
-qui use dat, clear
-```
-
-``` stata
-ds, v(28)
-```
-
     > . ds, v(28)
     SNP                     pos                     proxy_a1_outcome
     effect_allele_exposure  se_outcome              proxy_a2_outcome
@@ -220,19 +212,11 @@ ds, v(28)
     id_outcome              target_a1_outcome       labels
     chr                     target_a2_outcome
 
-``` stata
-di _N
-```
-
     > . di _N
     62
 
 We can then run the IVW model using `mregger` with fixed effect standard
 errors.
-
-``` stata
-mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
-```
 
     > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 
@@ -247,14 +231,6 @@ mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 
 We then fit the MR-Egger, median, and modal based estimators.
 
-``` stata
-mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
-
-mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
-
-mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
-```
-
     > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
                                                           Number of genotypes = 62
@@ -267,6 +243,8 @@ mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
            _cons |  -.0095539   .0040042    -2.39   0.017    -.0174019   -.0017059
     ------------------------------------------------------------------------------
 
+    > . mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
+
                                                           Number of genotypes = 62
                                                                Replications = 1000
     ------------------------------------------------------------------------------
@@ -275,13 +253,15 @@ mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
             beta |   .4887683   .0359701    13.59   0.000     .4182682    .5592685
     ------------------------------------------------------------------------------
 
+    > . mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+
                                                           Number of genotypes = 62
                                                                Replications = 1000
                                                                            Phi = 1
     ------------------------------------------------------------------------------
                  | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
     -------------+----------------------------------------------------------------
-            beta |    .518945   .0361584    14.35   0.000     .4480759    .5898141
+            beta |    .518945   .0340225    15.25   0.000     .4522621     .585628
     ------------------------------------------------------------------------------
 
 And we could continue with additional Stata code (or indeed R code) as
