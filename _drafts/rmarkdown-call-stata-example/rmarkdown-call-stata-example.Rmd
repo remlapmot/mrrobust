@@ -61,7 +61,7 @@ At this point we have our harmonised genotype-exposure and genotype-outcome asso
 
 The next two code chunks perform the analysis in R.
 ```{r}
-# Perform MR
+# Perform MR analysis
 mr(dat)
 mr_heterogeneity(dat)
 dat$exposure <- "LDL cholesterol"
