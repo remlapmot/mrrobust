@@ -7,19 +7,17 @@ output:
     toc: true
 ---
 
-- <a href="#example-showing-mrrobust-stata-code-in-an-r-markdown-file"
-  id="toc-example-showing-mrrobust-stata-code-in-an-r-markdown-file">Example
-  showing mrrobust Stata code in an R Markdown file</a>
-  - <a href="#introduction" id="toc-introduction">Introduction</a>
-  - <a href="#extracting-data-from-mr-base"
-    id="toc-extracting-data-from-mr-base">Extracting data from MR-Base</a>
-  - <a href="#analysis-in-stata-using-the-mrrobust-package"
-    id="toc-analysis-in-stata-using-the-mrrobust-package">Analysis in Stata
-    using the mrrobust package</a>
-  - <a href="#references" id="toc-references">References</a>
-  - <a href="#session-info" id="toc-session-info">Session info</a>
+- [Example showing how to include mrrobust Stata code in an R Markdown
+  file using the Statamarkdown R
+  package](#example-showing-how-to-include-mrrobust-stata-code-in-an-r-markdown-file-using-the-statamarkdown-r-package)
+  - [Introduction](#introduction)
+  - [Extracting data from MR-Base](#extracting-data-from-mr-base)
+  - [Analysis in Stata using the mrrobust
+    package](#analysis-in-stata-using-the-mrrobust-package)
+  - [References](#references)
+  - [Session info](#session-info)
 
-# Example showing mrrobust Stata code in an R Markdown file
+# Example showing how to include mrrobust Stata code in an R Markdown file using the Statamarkdown R package
 
 ## Introduction
 
@@ -36,13 +34,15 @@ following in R.
 library(Statamarkdown)
 ```
 
-    ## Stata found at C:/Program Files/Stata17/StataMP-64.exe
+    ## Stata found at /Applications/Stata/StataMP.app/Contents/MacOS/StataMP
 
     ## The 'stata' engine is ready to use.
 
 Note when writing our Stata code chunks we need to be careful when we
 specify the `collectcode=TRUE` code chunk option, because each Stata
-code chunk is run as a separate batch job.
+code chunk is run as a separate batch job. For example, we include this
+chunk option in a chunk which reads in a dataset which we wish to use in
+subsequent chunks.
 
 Using R and Stata code in the same script means that we can use the
 functions provided by the
@@ -129,7 +129,7 @@ called `dat`.
 The next two code chunks perform the analysis in R.
 
 ``` r
-# Perform MR
+# Perform MR analysis
 mr(dat)
 ```
 
@@ -141,18 +141,18 @@ mr(dat)
     3   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
     4   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
     5   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
-                             exposure                    method nsnp
-    1 LDL cholesterol || id:ieu-a-300                  MR Egger   62
-    2 LDL cholesterol || id:ieu-a-300           Weighted median   62
-    3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62
-    4 LDL cholesterol || id:ieu-a-300               Simple mode   62
-    5 LDL cholesterol || id:ieu-a-300             Weighted mode   62
-              b         se         pval
-    1 0.5854136 0.06182590 1.619410e-13
-    2 0.4887319 0.03781608 3.299105e-38
-    3 0.4686211 0.03919370 6.000986e-33
-    4 0.4678942 0.05816448 3.690329e-11
-    5 0.5189450 0.03622652 3.510856e-21
+                             exposure                    method nsnp         b
+    1 LDL cholesterol || id:ieu-a-300                  MR Egger   62 0.5854136
+    2 LDL cholesterol || id:ieu-a-300           Weighted median   62 0.4887319
+    3 LDL cholesterol || id:ieu-a-300 Inverse variance weighted   62 0.4686211
+    4 LDL cholesterol || id:ieu-a-300               Simple mode   62 0.4678942
+    5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
+              se         pval
+    1 0.06182590 1.619410e-13
+    2 0.03761448 1.337454e-38
+    3 0.03919370 6.000986e-33
+    4 0.06583693 1.518028e-09
+    5 0.03509519 7.760303e-22
 
 ``` r
 mr_heterogeneity(dat)
@@ -204,8 +204,7 @@ qui use dat, clear
 ds, v(28)
 ```
 
-    Running C:\Users\tom\Documents\GitHub\mrrobust\_drafts\rmarkdown-call-stata-exa
-    > mple\profile.do . ds, v(28)
+    > . ds, v(28)
     SNP                     pos                     proxy_a1_outcome
     effect_allele_exposure  se_outcome              proxy_a2_outcome
     other_allele_exposure   samplesize_outcome      exposure
@@ -225,8 +224,7 @@ ds, v(28)
 di _N
 ```
 
-    Running C:\Users\tom\Documents\GitHub\mrrobust\_drafts\rmarkdown-call-stata-exa
-    > mple\profile.do . di _N
+    > . di _N
     62
 
 We can then run the IVW model using `mregger` with fixed effect standard
@@ -236,17 +234,16 @@ errors.
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 ```
 
-    Running C:\Users\tom\Documents\GitHub\mrrobust\_drafts\rmarkdown-call-stata-exa
-    > mple\profile.do . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
+    > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 
                                                           Number of genotypes = 62
                                           Residual standard error constrained at 1
-    ------------------------------------------------------------------------------
-                 | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
-    -------------+----------------------------------------------------------------
-    beta_outcome |
-    beta_expos~e |   .4686211   .0224058    20.92   0.000     .4247066    .5125357
-    ------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------
+                  | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
+    --------------+----------------------------------------------------------------
+    beta_outcome  |
+    beta_exposure |   .4686211   .0224058    20.92   0.000     .4247066    .5125357
+    -------------------------------------------------------------------------------
 
 We then fit the MR-Egger, median, and modal based estimators.
 
@@ -258,8 +255,7 @@ mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
 mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
 
-    Running C:\Users\tom\Documents\GitHub\mrrobust\_drafts\rmarkdown-call-stata-exa
-    > mple\profile.do . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
+    > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
                                                           Number of genotypes = 62
                                                   Residual standard error =  1.686
@@ -310,70 +306,67 @@ For reproducibility
 
 ``` r
 sessioninfo::session_info()
-─ Session info ─────────────────────────────────────────────────────────
+─ Session info ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.2.2 (2022-10-31 ucrt)
- os       Windows 10 x64 (build 22623)
- system   x86_64, mingw32
- ui       RStudio
+ version  R version 4.2.2 (2022-10-31)
+ os       macOS Ventura 13.2.1
+ system   aarch64, darwin20
+ ui       X11
  language (EN)
- collate  English_United Kingdom.utf8
- ctype    English_United Kingdom.utf8
+ collate  en_US.UTF-8
+ ctype    en_US.UTF-8
  tz       Europe/London
- date     2023-02-17
- rstudio  2022.12.0+353 Elsbeth Geranium (desktop)
- pandoc   2.19.2 @ C:/Program Files/RStudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown)
+ date     2023-02-18
+ pandoc   3.1 @ /opt/homebrew/bin/ (via rmarkdown)
 
-─ Packages ─────────────────────────────────────────────────────────────
+─ Packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  package       * version date (UTC) lib source
  cli             3.6.0   2023-01-09 [1] CRAN (R 4.2.2)
- codetools       0.2-19  2023-02-01 [2] CRAN (R 4.2.2)
+ codetools       0.2-19  2023-02-01 [1] CRAN (R 4.2.0)
  curl            5.0.0   2023-01-12 [1] CRAN (R 4.2.2)
  digest          0.6.31  2022-12-11 [1] CRAN (R 4.2.2)
- dplyr           1.1.0   2023-01-29 [1] CRAN (R 4.2.2)
+ dplyr           1.1.0   2023-01-29 [1] CRAN (R 4.2.0)
  evaluate        0.20    2023-01-17 [1] CRAN (R 4.2.2)
- fansi           1.0.4   2023-01-22 [1] CRAN (R 4.2.2)
+ fansi           1.0.4   2023-01-22 [1] CRAN (R 4.2.0)
  fastmap         1.1.0   2021-01-25 [1] CRAN (R 4.2.0)
- foreach         1.5.2   2022-02-02 [1] CRAN (R 4.2.2)
- foreign       * 0.8-84  2022-12-06 [2] CRAN (R 4.2.2)
+ foreach         1.5.2   2022-02-02 [1] CRAN (R 4.2.0)
+ foreign       * 0.8-84  2022-12-06 [1] CRAN (R 4.2.2)
  generics        0.1.3   2022-07-05 [1] CRAN (R 4.2.1)
  glmnet          4.1-6   2022-11-27 [1] CRAN (R 4.2.2)
  glue            1.6.2   2022-02-24 [1] CRAN (R 4.2.0)
  htmltools       0.5.4   2022-12-07 [1] CRAN (R 4.2.2)
  httr            1.4.4   2022-08-17 [1] CRAN (R 4.2.1)
- ieugwasr        0.1.5   2023-02-17 [1] Github (mrcieu/ieugwasr@33e4629)
- iterators       1.0.14  2022-02-05 [1] CRAN (R 4.2.2)
+ ieugwasr        0.1.5   2023-01-18 [1] Github (mrcieu/ieugwasr@33e4629)
+ iterators       1.0.14  2022-02-05 [1] CRAN (R 4.2.0)
  jsonlite        1.8.4   2022-12-06 [1] CRAN (R 4.2.2)
- knitr           1.42.3  2023-02-17 [1] Github (yihui/knitr@78f1db5)
- lattice         0.20-45 2021-09-22 [2] CRAN (R 4.2.2)
+ knitr           1.42.3  2023-02-18 [1] Github (yihui/knitr@78f1db5)
+ lattice         0.20-45 2021-09-22 [1] CRAN (R 4.2.2)
  lifecycle       1.0.3   2022-10-07 [1] CRAN (R 4.2.1)
  magrittr        2.0.3   2022-03-30 [1] CRAN (R 4.2.0)
  Matrix          1.5-3   2022-11-11 [1] CRAN (R 4.2.2)
  mr.raps         0.2     2018-01-30 [1] CRAN (R 4.2.0)
- MRInstruments * 0.3.2   2022-11-28 [1] Github (mrcieu/MRInstruments@efa2ca0)
+ MRInstruments * 0.3.2   2022-06-28 [1] Github (mrcieu/MRInstruments@efa2ca0)
  nortest         1.0-4   2015-07-30 [1] CRAN (R 4.2.0)
- pillar          1.8.1   2022-08-19 [1] CRAN (R 4.2.1)
+ pillar          1.8.1   2022-08-19 [1] CRAN (R 4.2.0)
  pkgconfig       2.0.3   2019-09-22 [1] CRAN (R 4.2.0)
  plyr            1.8.8   2022-11-11 [1] CRAN (R 4.2.2)
  R6              2.5.1   2021-08-19 [1] CRAN (R 4.2.0)
- Rcpp            1.0.10  2023-01-22 [1] CRAN (R 4.2.2)
- rlang           1.0.6   2022-09-24 [1] CRAN (R 4.2.1)
+ Rcpp            1.0.10  2023-01-22 [1] CRAN (R 4.2.0)
+ rlang           1.0.6   2022-09-24 [1] CRAN (R 4.2.0)
  rmarkdown       2.20    2023-01-19 [1] CRAN (R 4.2.2)
- rstudioapi      0.14    2022-08-22 [1] CRAN (R 4.2.1)
- sessioninfo     1.2.2   2021-12-06 [1] CRAN (R 4.2.1)
+ sessioninfo     1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
  shape           1.4.6   2021-05-19 [1] CRAN (R 4.2.0)
- Statamarkdown * 0.7.2   2023-02-15 [1] CRAN (R 4.2.2)
- survival        3.5-3   2023-02-12 [2] CRAN (R 4.2.2)
+ Statamarkdown * 0.7.2   2023-02-15 [1] CRAN (R 4.2.0)
+ survival        3.5-3   2023-02-12 [1] CRAN (R 4.2.0)
  tibble          3.1.8   2022-07-22 [1] CRAN (R 4.2.1)
  tidyselect      1.2.0   2022-10-10 [1] CRAN (R 4.2.1)
- TwoSampleMR   * 0.5.6   2023-02-17 [1] Github (MRCIEU/TwoSampleMR@f5935b5)
- utf8            1.2.3   2023-01-31 [1] CRAN (R 4.2.2)
+ TwoSampleMR   * 0.5.6   2023-02-18 [1] Github (MRCIEU/TwoSampleMR@f5935b5)
+ utf8            1.2.3   2023-01-31 [1] CRAN (R 4.2.0)
  vctrs           0.5.2   2023-01-23 [1] CRAN (R 4.2.2)
- xfun            0.37    2023-01-31 [1] CRAN (R 4.2.2)
+ xfun            0.37    2023-01-31 [1] CRAN (R 4.2.0)
  yaml            2.3.7   2023-01-23 [1] CRAN (R 4.2.2)
 
- [1] C:/Users/tom/AppData/Local/R/win-library/4.2
- [2] C:/Program Files/R/R-4.2.2/library
+ [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
 
-────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 ```
