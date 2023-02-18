@@ -5,7 +5,7 @@
 * [Helpfile examples](#helpfile-examples)
 * [Overview](#overview)
 * [Installing and updating mrrobust](#installing-and-updating-mrrobust)
-* [Code testing](#code-testing)
+* [Unit tests](#unit-tests)
 * [Authors](#authors)
 * [How to cite the mrrobust package](#how-to-cite-the-mrrobust-package)
 * [References](#references)
@@ -14,10 +14,10 @@
 
 ## Latest updates
 
-To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
+To obtain the latest update please see the instructions [below](#installing-and-updating-mrrobust).
 
 * February 2023:
-  - Updated R Markdown example to use CRAN version of [**Statamarkdown**](https://cran.r-project.org/package=Statamarkdown) package
+  - Updated R Markdown example to use the CRAN version of the [**Statamarkdown**](https://cran.r-project.org/package=Statamarkdown) package
 * September 2022:
   - Updated manual installation instructions
 * February 2022:
@@ -27,7 +27,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - Changed relevant `http:` URLs to `https:`
   - Minor edits to the helpfiles
 * June 2021:
-  - Published an interactive Code Ocean capsule demonstrating the use of the mrrobust package 
+  - Published an interactive Code Ocean capsule demonstrating the use of the **mrrobust** package 
   [here](https://doi.org/10.24433/CO.0587524.v1)
   - By default `mrforest` now specifies a fixed effect standard error for its IVW estimate 
 * April 2021:
@@ -38,8 +38,8 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   `metan` syntax. No change was necessary in the dependency scripts because `metan9` is also 
   installed with `ssc install metan`
   - Checked cscripts pass
-  - Checked examples on website run. And changed the 2 examples which use TwoSampleMR to use 
-  the new ID code for the exposure data
+  - Checked examples on website run. And changed the 2 examples which use the **TwoSampleMR** R
+  package to use the new ID code for the exposure data
   - Updated `dependency.do` to make it more robust to the more frequent updates to `metan`
   - Updated `mrdeps` to make it more robust to the more frequent updates to `metan`
 * October 2020:
@@ -69,7 +69,7 @@ To obtain the latest update please see instructions [below](#installing-and-upda
   - Checked that examples on website still run
   - Added `mrleaveoneout` command to perform leave one out analysis
 * June 2020:
-  - Simplified the outcome variable name in `mregger` b and V e-returned matrices. Turn this off 
+  - Simplified the outcome variable name in `mregger` `b` and `V` e-returned matrices. Turn this off 
   with new `oldnames` option
   - Added basic multivariable MR-Egger command, `mrmvegger`
   - Added basic multivariable IVW command, `mrmvivw` (currently command names `mvmr` and `mvivw` 
@@ -94,21 +94,21 @@ To obtain the latest update please see instructions [below](#installing-and-upda
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches 
-  the output from the `mr_egger()` function in the `MendelianRandomization` R package. Use the 
+  the output from the `mr_egger()` function in the **MendelianRandomization** R package. Use the 
   `unwi2gx` option to report the unweighted statistics.
 * July 2019:
   - Checked that examples on website still run
 * December 2018: 
-  - Improved compatibility with the [`github` package](https://haghish.github.io/github/), i.e. 
-  mrrobust and its dependencies can be installed simply by issuing: `gitget mrrobust` , assuming 
-  that you have the `github` package installed. 
+  - Improved compatibility with the [**github**](https://haghish.github.io/github/) Stata package,
+  i.e., **mrrobust** and its dependencies can be installed simply by issuing: `gitget mrrobust`,
+  if you have the **github** package installed. 
   [See below for instructions](#2-use-the-github-package).
   - `mrdeps` command added for conveniently installing dependencies
 * November 2018:
-  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same 
+  - Example showing the use of the **TwoSampleMR** R package and **mrrobust** in the same 
   [R Markdown script](https://rmarkdown.rstudio.com/) (`.Rmd` file) is 
   [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example)
-  - Example showing the use of `TwoSampleMR` and `mrrobust` in the same 
+  - Example showing the use of the **TwoSampleMR** R package and **mrrobust** in the same 
   [Stata Markdown](https://data.princeton.edu/stata/markdown) script (`.stmd` file) is 
   [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
 * September 2018: 
@@ -142,7 +142,7 @@ This has links to the helpfile for each command, which has an example near the b
 examples you can click on the code to run it.
 
 ## Overview
-The mrrobust package is a collection of commands for performing two-sample Mendelian randomization 
+The **mrrobust** package is a collection of commands for performing two-sample Mendelian randomization 
 analyses using summary data of genotype-phenotype and genotype-outcome associations. 
 
 Such data can be obtained from repositories such as MR-Base <https://www.mrbase.org> 
@@ -173,7 +173,7 @@ The package contains the following commands:
  - `mrleaveoneout` implements leave one (genotype) out analysis
 
 ## Installing and updating mrrobust
-To install mrrobust in Stata versions 13 and later you have two choices.
+To install **mrrobust** in Stata versions 13 and later you have two choices.
 
 ### 1. Use `net install`
 
@@ -186,20 +186,20 @@ packages (all by Ben Jann), the `heterogi` command (Orsini et al.), the `metan` 
 al.), and the `grc1leg` command (Wiggins).
 
 If you have previously installed the package and the `net install` command above fails with an error
- message that there are two copies of the package installed simply run `adoupdate`.
+message that there are two copies of the package installed simply run `adoupdate`.
 
 To check if there is an update available to any of your user-written Stata packages run `adoupdate`.
- To update mrrobust run:
+To update **mrrobust** run:
 ``` stata
 adoupdate mrrobust, update
 ```
 
-To uninstall mrrobust, issue in Stata:
+To uninstall **mrrobust**, issue in Stata:
 ``` stata
 ado uninstall mrrobust
 ```
-If this fails with an error message mentioning that you have "multiple citations/instances of the 
-package installed" simply issue `adoupdate mrrobust` which should leave you with the most recent 
+If this fails with an error message mentioning that you have *"multiple citations/instances of the 
+package installed"* simply issue `adoupdate mrrobust`. This should leave you with the most recent 
 version of the package you previously installed. You can then run `ado uninstall mrrobust`.
 
 ### 2. Use the `github` package
@@ -220,7 +220,7 @@ To uninstall mrrobust issue:
 github uninstall mrrobust
 ```
 
-### Installation for Stata version 12 and earlier versions (and perhaps Stata version 13)
+### Installation instructions for Stata version 12 and earlier versions (and perhaps Stata version 13)
 The `net install` syntax for installing `mrrobust` does not work under Stata version 12 and earlier 
 because this webpage has an address starting with https rather than http. In such cases you need to 
 do a manual installation.
@@ -238,23 +238,23 @@ do a manual installation.
 The installation commands for the other dependencies should work. However, if you need to install 
 them manually their zip archives are available at the following links (extract the files from the downloaded zip archives and place them in your `PERSONAL` directory on your `adopath`): 
 
- * the `moremata` package is available as a zip file 
+ * the **moremata** package is available as a zip file 
  [here](http://fmwww.bc.edu/repec/bocode/m/moremata.zip)
- * the `addplot` package is available [here](http://fmwww.bc.edu/repec/bocode/a/addplot.zip) 
+ * the `addplot` command is available [here](http://fmwww.bc.edu/repec/bocode/a/addplot.zip) 
  * the `heterogi` command is available [here](https://ideas.repec.org/c/boc/bocode/s449201.html)
- * the `kdens` package is available [here](http://fmwww.bc.edu/repec/bocode/k/kdens.zip)
+ * the `kdens` command is available [here](http://fmwww.bc.edu/repec/bocode/k/kdens.zip)
  * the `metan` command is available [here](https://ideas.repec.org/c/boc/bocode/s456798.html)
- * `grc1leg` can be installed in Stata with
+ * the `grc1leg` command can be installed with
     ``` stata
     net install grc1leg, from("https://www.stata.com/users/vwiggins")
     ```
 
-## Code testing
-As far as I know, and unlike R which has the `testthat` package, there is no recognised standard 
-for writing unit tests for Stata commands. However, StataCorp refer to such do-files as cscripts 
-(certification scripts). If you are interested I publish my cscripts (and their log files of output)
- in the [cscripts directory](https://github.com/remlapmot/mrrobust/tree/master/cscripts) in the 
- GitHub repository. 
+## Unit tests
+As far as I know, and unlike R which has the **testthat** package (and other testing packages),
+there is no recognised standard for writing unit tests for Stata commands.
+StataCorp. refer to do-files with tests as cscripts (certification scripts).
+I publish my cscripts (and their log files of output) in the
+[cscripts directory](https://github.com/remlapmot/mrrobust/tree/master/cscripts). 
 
 ## Authors
 Tom Palmer <tom.palmer@bristol.ac.uk>, Wesley Spiller, Neil Davies
@@ -264,7 +264,7 @@ Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool
 two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, 2019, 
 48, 3, 684-690. <https://doi.org/10.1093/ije/dyy195>
 
-Thank you to all our users who have cited mrrobust. We made 
+Thank you to all our users who have cited **mrrobust**. We made 
 [*The Best of IJE 2019*](https://academic.oup.com/ije/pages/the_best_of_ije)!
 
 ## Collaboration
@@ -294,5 +294,5 @@ GitHub or send me an email to <tom.palmer@bristol.ac.uk>.
 ## Acknowledgements
 Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, 
 Michael Holmes, Caroline Dale, Amy Taylor, Rebecca Richmond, Judith Brand, Yanchun Bao, 
-Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, Lai-Te Chen, Sean Harrison, Emma 
-Anderson, Cassianne Robinson-Cohen, Alisa Kjaergaard, and Steve Burgess.
+Kawthar Al-Dabhani, Michalis Katsoulis, Ghazaleh Fatemifar, Lai-Te Chen, Sean Harrison,
+Emma Anderson, Cassianne Robinson-Cohen, Alisa Kjaergaard, and Steve Burgess.
