@@ -127,7 +127,7 @@ called `dat`.
 The next two code chunks perform the analysis in R.
 
 ``` r
-# Perform MR
+# Perform MR analysis
 mr(dat)
 ```
 
@@ -147,10 +147,10 @@ mr(dat)
     5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
               se         pval
     1 0.06182590 1.619410e-13
-    2 0.03747011 6.943589e-39
+    2 0.03728463 2.957924e-39
     3 0.03919370 6.000986e-33
-    4 0.06146089 2.041472e-10
-    5 0.03341545 7.228073e-23
+    4 0.06207760 2.755800e-10
+    5 0.03456416 3.729547e-22
 
 ``` r
 mr_heterogeneity(dat)
@@ -198,15 +198,11 @@ the number of observations.
 qui use dat, clear
 ```
 
-    end of do-file
-
 ``` stata
 ds, v(28)
 ```
 
-    Running /Users/tom/Documents/GitHub/mrrobust/_drafts/rmarkdown-call-stata-example/profile.> ...
-
-
+    > . ds, v(28)
     SNP                     pos                     proxy_a1_outcome
     effect_allele_exposure  se_outcome              proxy_a2_outcome
     other_allele_exposure   samplesize_outcome      exposure
@@ -226,9 +222,7 @@ ds, v(28)
 di _N
 ```
 
-    Running /Users/tom/Documents/GitHub/mrrobust/_drafts/rmarkdown-call-stata-example/profile.> ...
-
-
+    > . di _N
     62
 
 We can then run the IVW model using `mregger` with fixed effect standard
@@ -238,7 +232,7 @@ errors.
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 ```
 
-    Running /Users/tom/Documents/GitHub/mrrobust/_drafts/rmarkdown-call-stata-example/profile.> ...
+    > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 
                                                           Number of genotypes = 62
                                           Residual standard error constrained at 1
@@ -259,7 +253,7 @@ mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
 mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
 
-    Running /Users/tom/Documents/GitHub/mrrobust/_drafts/rmarkdown-call-stata-example/profile.> ...
+    > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 
                                                           Number of genotypes = 62
                                                   Residual standard error =  1.686
@@ -343,7 +337,7 @@ sessioninfo::session_info()
  ieugwasr        0.1.5   2023-01-18 [1] Github (mrcieu/ieugwasr@33e4629)
  iterators       1.0.14  2022-02-05 [1] CRAN (R 4.2.0)
  jsonlite        1.8.4   2022-12-06 [1] CRAN (R 4.2.2)
- knitr           1.42    2023-01-25 [1] CRAN (R 4.2.0)
+ knitr           1.42.3  2023-02-18 [1] Github (yihui/knitr@78f1db5)
  lattice         0.20-45 2021-09-22 [1] CRAN (R 4.2.2)
  lifecycle       1.0.3   2022-10-07 [1] CRAN (R 4.2.1)
  magrittr        2.0.3   2022-03-30 [1] CRAN (R 4.2.0)
