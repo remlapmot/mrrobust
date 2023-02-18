@@ -40,7 +40,9 @@ library(Statamarkdown)
 
 Note when writing our Stata code chunks we need to be careful when we
 specify the `collectcode=TRUE` code chunk option, because each Stata
-code chunk is run as a separate batch job.
+code chunk is run as a separate batch job. For example, we include this
+chunk option in a chunk which reads in a dataset which we wish to use in
+subsequent chunks.
 
 Using R and Stata code in the same script means that we can use the
 functions provided by the
@@ -147,10 +149,10 @@ mr(dat)
     5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
               se         pval
     1 0.06182590 1.619410e-13
-    2 0.03728463 2.957924e-39
+    2 0.03761448 1.337454e-38
     3 0.03919370 6.000986e-33
-    4 0.06207760 2.755800e-10
-    5 0.03456416 3.729547e-22
+    4 0.06583693 1.518028e-09
+    5 0.03509519 7.760303e-22
 
 ``` r
 mr_heterogeneity(dat)
