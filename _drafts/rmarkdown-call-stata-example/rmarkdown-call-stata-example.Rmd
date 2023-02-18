@@ -124,6 +124,6 @@ rmarkdown::render('rmarkdown-call-stata-example.Rmd')
 ## Session info
 
 For reproducibility
-```{r, collapse=TRUE, echo=TRUE}
+```{r, collapse=TRUE}
 sessioninfo::session_info()
 ```
