@@ -17,7 +17,7 @@ This example shows how to run R and Stata code within the same R Markdown (`.Rmd
 library(Statamarkdown)
 ```
 
-Note when writing our Stata code chunks we need to be careful when we specify the `collectcode=TRUE` code chunk option, because each Stata code chunk is run as a separate batch job. 
+Note when writing our Stata code chunks we need to be careful when we specify the `collectcode=TRUE` code chunk option, because each Stata code chunk is run as a separate batch job. For example, we include this chunk option in a chunk which reads in a dataset which we wish to use in subsequent chunks.
 
 Using R and Stata code in the same script means that we can use the functions provided by the [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](https://www.mrbase.org/).
 
