@@ -16,6 +16,8 @@
 
 To obtain the latest update please see instructions [below](#installing-and-updating-mrrobust).
 
+* February 2023:
+  - Updated R Markdown example to use CRAN version of [**Statamarkdown**](https://cran.r-project.org/package=Statamarkdown) package
 * September 2022:
   - Updated manual installation instructions
 * February 2022:
