@@ -86,29 +86,29 @@ gitget mrrobust
 ```
 
 We now read the dataset into Stata and look at the variable names and the number of observations.
-```{stata, collectcode=TRUE, echo=FALSE}
+```{stata, collectcode=TRUE}
 qui use dat, clear
 ```
-```{stata, echo=FALSE}
+```{stata}
 ds, v(28)
 ```
-```{stata, echo=FALSE}
+```{stata}
 di _N
 ```
 
 We can then run the IVW model using `mregger` with fixed effect standard errors.
-```{stata, echo=FALSE}
+```{stata}
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 ```
 
 We then fit the MR-Egger, median, and modal based estimators.
-```{stata, echo=FALSE}
+```{stata}
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 ```
-```{stata, echo=FALSE}
+```{stata}
 mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
-```{stata, echo=FALSE}
+```{stata}
 mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
 
