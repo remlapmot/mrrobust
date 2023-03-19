@@ -34,10 +34,6 @@ following in R.
 library(Statamarkdown)
 ```
 
-    ## Stata found at /Applications/Stata/StataMP.app/Contents/MacOS/StataMP
-
-    ## The 'stata' engine is ready to use.
-
 Note when writing our Stata code chunks we need to be careful when we
 specify the `collectcode=TRUE` code chunk option, because each Stata
 code chunk is run as a separate batch job. For example, we include this
@@ -149,10 +145,10 @@ mr(dat)
     5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
               se         pval
     1 0.06182590 1.619410e-13
-    2 0.03875778 1.862189e-36
+    2 0.03782321 3.405189e-38
     3 0.03919370 6.000986e-33
-    4 0.06093547 1.573445e-10
-    5 0.03205925 9.383735e-24
+    4 0.06388963 6.434096e-10
+    5 0.03309571 4.513679e-23
 
 ``` r
 mr_heterogeneity(dat)
@@ -196,7 +192,14 @@ gitget mrrobust
 We now read the dataset into Stata and look at the variable names and
 the number of observations.
 
-    > . ds, v(28)
+``` stata
+qui use dat, clear
+```
+
+``` stata
+ds, v(28)
+```
+
     SNP                     pos                     proxy_a1_outcome
     effect_allele_exposure  se_outcome              proxy_a2_outcome
     other_allele_exposure   samplesize_outcome      exposure
@@ -212,13 +215,18 @@ the number of observations.
     id_outcome              target_a1_outcome       labels
     chr                     target_a2_outcome
 
-    > . di _N
+``` stata
+di _N
+```
+
     62
 
 We can then run the IVW model using `mregger` with fixed effect standard
 errors.
 
-    > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
+``` stata
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
+```
 
                                                           Number of genotypes = 62
                                           Residual standard error constrained at 1
@@ -231,7 +239,9 @@ errors.
 
 We then fit the MR-Egger, median, and modal based estimators.
 
-    > . mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
+``` stata
+mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
+```
 
                                                           Number of genotypes = 62
                                                   Residual standard error =  1.686
@@ -243,7 +253,9 @@ We then fit the MR-Egger, median, and modal based estimators.
            _cons |  -.0095539   .0040042    -2.39   0.017    -.0174019   -.0017059
     ------------------------------------------------------------------------------
 
-    > . mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
+``` stata
+mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
+```
 
                                                           Number of genotypes = 62
                                                                Replications = 1000
@@ -253,7 +265,9 @@ We then fit the MR-Egger, median, and modal based estimators.
             beta |   .4887683   .0359701    13.59   0.000     .4182682    .5592685
     ------------------------------------------------------------------------------
 
-    > . mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+``` stata
+mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
+```
 
                                                           Number of genotypes = 62
                                                                Replications = 1000
@@ -286,67 +300,69 @@ For reproducibility
 
 ``` r
 sessioninfo::session_info()
-─ Session info ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─ Session info ──────────────────────────────────────────────────────────────
  setting  value
- version  R version 4.2.2 (2022-10-31)
+ version  R version 4.2.3 (2023-03-15)
  os       macOS Ventura 13.2.1
  system   aarch64, darwin20
- ui       X11
+ ui       RStudio
  language (EN)
  collate  en_US.UTF-8
  ctype    en_US.UTF-8
  tz       Europe/London
- date     2023-02-18
- pandoc   3.1 @ /opt/homebrew/bin/ (via rmarkdown)
+ date     2023-03-19
+ rstudio  2023.03.0-daily+361 Cherry Blossom (desktop)
+ pandoc   3.1.1 @ /opt/homebrew/bin/ (via rmarkdown)
 
-─ Packages ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─ Packages ──────────────────────────────────────────────────────────────────
  package       * version date (UTC) lib source
- cli             3.6.0   2023-01-09 [1] CRAN (R 4.2.2)
- codetools       0.2-19  2023-02-01 [1] CRAN (R 4.2.0)
- curl            5.0.0   2023-01-12 [1] CRAN (R 4.2.2)
- digest          0.6.31  2022-12-11 [1] CRAN (R 4.2.2)
+ cli             3.6.0   2023-01-09 [1] CRAN (R 4.2.0)
+ codetools       0.2-19  2023-02-01 [1] CRAN (R 4.2.3)
+ curl            5.0.0   2023-01-12 [1] CRAN (R 4.2.0)
+ digest          0.6.31  2022-12-11 [1] CRAN (R 4.2.0)
  dplyr           1.1.0   2023-01-29 [1] CRAN (R 4.2.0)
- evaluate        0.20    2023-01-17 [1] CRAN (R 4.2.2)
+ evaluate        0.20    2023-01-17 [1] CRAN (R 4.2.0)
  fansi           1.0.4   2023-01-22 [1] CRAN (R 4.2.0)
- fastmap         1.1.0   2021-01-25 [1] CRAN (R 4.2.0)
+ fastmap         1.1.1   2023-02-24 [1] CRAN (R 4.2.0)
  foreach         1.5.2   2022-02-02 [1] CRAN (R 4.2.0)
- foreign       * 0.8-84  2022-12-06 [1] CRAN (R 4.2.2)
- generics        0.1.3   2022-07-05 [1] CRAN (R 4.2.1)
- glmnet          4.1-6   2022-11-27 [1] CRAN (R 4.2.2)
+ foreign       * 0.8-84  2022-12-06 [1] CRAN (R 4.2.3)
+ generics        0.1.3   2022-07-05 [1] CRAN (R 4.2.0)
+ glmnet          4.1-6   2022-11-27 [1] CRAN (R 4.2.0)
  glue            1.6.2   2022-02-24 [1] CRAN (R 4.2.0)
- htmltools       0.5.4   2022-12-07 [1] CRAN (R 4.2.2)
- httr            1.4.4   2022-08-17 [1] CRAN (R 4.2.1)
- ieugwasr        0.1.5   2023-01-18 [1] Github (mrcieu/ieugwasr@33e4629)
+ htmltools       0.5.4   2022-12-07 [1] CRAN (R 4.2.0)
+ httr            1.4.5   2023-02-24 [1] CRAN (R 4.2.0)
+ ieugwasr        0.1.5   2023-03-19 [1] Github (mrcieu/ieugwasr@33e4629)
  iterators       1.0.14  2022-02-05 [1] CRAN (R 4.2.0)
- jsonlite        1.8.4   2022-12-06 [1] CRAN (R 4.2.2)
- knitr           1.42.3  2023-02-18 [1] Github (yihui/knitr@78f1db5)
- lattice         0.20-45 2021-09-22 [1] CRAN (R 4.2.2)
- lifecycle       1.0.3   2022-10-07 [1] CRAN (R 4.2.1)
+ jsonlite        1.8.4   2022-12-06 [1] CRAN (R 4.2.0)
+ knitr           1.42.5  2023-03-15 [1] Github (yihui/knitr@c50d307)
+ lattice         0.20-45 2021-09-22 [1] CRAN (R 4.2.3)
+ lifecycle       1.0.3   2022-10-07 [1] CRAN (R 4.2.0)
  magrittr        2.0.3   2022-03-30 [1] CRAN (R 4.2.0)
- Matrix          1.5-3   2022-11-11 [1] CRAN (R 4.2.2)
+ Matrix          1.5-3   2022-11-11 [1] CRAN (R 4.2.3)
  mr.raps         0.2     2018-01-30 [1] CRAN (R 4.2.0)
- MRInstruments * 0.3.2   2022-06-28 [1] Github (mrcieu/MRInstruments@efa2ca0)
+ MRInstruments * 0.3.2   2023-03-19 [1] Github (MRCIEU/MRInstruments@efa2ca0)
  nortest         1.0-4   2015-07-30 [1] CRAN (R 4.2.0)
  pillar          1.8.1   2022-08-19 [1] CRAN (R 4.2.0)
  pkgconfig       2.0.3   2019-09-22 [1] CRAN (R 4.2.0)
- plyr            1.8.8   2022-11-11 [1] CRAN (R 4.2.2)
+ plyr            1.8.8   2022-11-11 [1] CRAN (R 4.2.0)
  R6              2.5.1   2021-08-19 [1] CRAN (R 4.2.0)
  Rcpp            1.0.10  2023-01-22 [1] CRAN (R 4.2.0)
- rlang           1.0.6   2022-09-24 [1] CRAN (R 4.2.0)
- rmarkdown       2.20    2023-01-19 [1] CRAN (R 4.2.2)
+ rlang           1.1.0   2023-03-14 [1] CRAN (R 4.2.0)
+ rmarkdown       2.20    2023-01-19 [1] CRAN (R 4.2.0)
+ rstudioapi      0.14    2022-08-22 [1] CRAN (R 4.2.0)
  sessioninfo     1.2.2   2021-12-06 [1] CRAN (R 4.2.0)
  shape           1.4.6   2021-05-19 [1] CRAN (R 4.2.0)
  Statamarkdown * 0.7.2   2023-02-15 [1] CRAN (R 4.2.0)
- survival        3.5-3   2023-02-12 [1] CRAN (R 4.2.0)
- tibble          3.1.8   2022-07-22 [1] CRAN (R 4.2.1)
- tidyselect      1.2.0   2022-10-10 [1] CRAN (R 4.2.1)
- TwoSampleMR   * 0.5.6   2023-02-18 [1] Github (MRCIEU/TwoSampleMR@f5935b5)
+ survival        3.5-5   2023-03-12 [1] CRAN (R 4.2.0)
+ tibble          3.2.0   2023-03-08 [1] CRAN (R 4.2.0)
+ tidyselect      1.2.0   2022-10-10 [1] CRAN (R 4.2.0)
+ TwoSampleMR   * 0.5.6   2023-03-19 [1] Github (MRCIEU/TwoSampleMR@f5935b5)
  utf8            1.2.3   2023-01-31 [1] CRAN (R 4.2.0)
- vctrs           0.5.2   2023-01-23 [1] CRAN (R 4.2.2)
+ vctrs           0.6.0   2023-03-16 [1] CRAN (R 4.2.2)
  xfun            0.37    2023-01-31 [1] CRAN (R 4.2.0)
- yaml            2.3.7   2023-01-23 [1] CRAN (R 4.2.2)
+ yaml            2.3.7   2023-01-23 [1] CRAN (R 4.2.0)
 
  [1] /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/library
 
-───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+─────────────────────────────────────────────────────────────────────────────
 ```
