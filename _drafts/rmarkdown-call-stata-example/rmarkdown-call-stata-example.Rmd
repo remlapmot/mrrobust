@@ -80,7 +80,7 @@ write.dta(dat, file = "dat.dta")
 ## Analysis in Stata using the mrrobust package
 
 At this point in Stata install the **mrrobust** package and its dependencies if you have not done so previously.
-```{stata results=FALSE}
+```stata
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
