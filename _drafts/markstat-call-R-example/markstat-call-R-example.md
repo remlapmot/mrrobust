@@ -121,10 +121,10 @@ The next two code chunks perform the analysis in R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06182590 1.619410e-13
-2 0.03717171 1.748467e-39
+2 0.03677498 2.653127e-40
 3 0.03919370 6.000986e-33
-4 0.05780893 3.033789e-11
-5 0.03253902 1.958240e-23
+4 0.06696409 2.437194e-09
+5 0.03541836 1.202826e-21
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
@@ -215,7 +215,8 @@ file ldl-chd-mrforest.svg saved as SVG format
 ```
 
 
-![Forest plot of genotype specific IV estimates.](ldl-chd-mrforest.svg){:style="text-align:center;"}
+{:style="text-align:center;"}
+![Forest plot of genotype specific IV estimates.](ldl-chd-mrforest.svg)
 
 We can visualise this model with `mreggerplot`.
 
@@ -255,7 +256,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │   .4887683   .0387247    12.62   0.000     .4128693    .5646673
+        beta │   .4887683   .0372405    13.12   0.000     .4157782    .5617584
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
@@ -270,7 +271,7 @@ beta_outcome │
 ─────────────┬────────────────────────────────────────────────────────────────
              │ Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 ─────────────┼────────────────────────────────────────────────────────────────
-        beta │    .518945   .0360917    14.38   0.000     .4482067    .5896834
+        beta │    .518945   .0349531    14.85   0.000     .4504382    .5874518
 ─────────────┴────────────────────────────────────────────────────────────────
 ```
 
