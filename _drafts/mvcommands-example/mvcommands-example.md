@@ -2,6 +2,7 @@
 title: "mv commands"
 author: "Tom Palmer"
 date: "2020-07-02"
+link-bibliography: false
 ---
 
 * [Example demonstrating MVMR commands](#example-demonstrating-mvmr-commands)
