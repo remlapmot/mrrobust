@@ -134,7 +134,7 @@ mrforest beta_outcome se_outcome beta_exposure se_exposure, ivid(SNP) ///
 graph export ldl-chd-mrforest.svg, width(600) replace
 ```
 
-![Forest plot of genotype specific IV estimates.](ldl-chd-mrforest.svg){class="center"}
+![Forest plot of genotype specific IV estimates.](ldl-chd-mrforest.svg){:style="text-align:center;"}
 
 We can visualise this model with `mreggerplot`.
 ```s
