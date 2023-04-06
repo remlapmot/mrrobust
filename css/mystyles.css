@@ -1,0 +1,4 @@
+/* From https://github.com/tonsky/FiraCode#browser-support */
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+code { font-family: 'Fira Code', monospace; }
