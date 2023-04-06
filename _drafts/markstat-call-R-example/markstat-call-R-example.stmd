@@ -134,7 +134,7 @@ mrforest beta_outcome se_outcome beta_exposure se_exposure, ivid(SNP) ///
 graph export ldl-chd-mrforest.svg, width(600) replace
 ```
 
-![Forest plot of genotype specific IV estimates.](ldl-chd-mrforest.svg)
+![Forest plot of genotype specific IV estimates.](ldl-chd-mrforest.svg){class="center"}
 
 We can visualise this model with `mreggerplot`.
 ```s
@@ -142,7 +142,7 @@ mreggerplot beta_outcome se_outcome beta_exposure se_exposure
 graph export ldl-chd-mreggerplot.svg, width(600) replace
 ```
 
-![Plot of the MR-Egger model.](ldl-chd-mreggerplot.svg)
+![Plot of the MR-Egger model.](ldl-chd-mreggerplot.svg){class="center"}
 
 We then fit the MR-Egger, median, and modal based estimators.
 ```s
