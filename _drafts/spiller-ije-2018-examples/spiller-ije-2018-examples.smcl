@@ -1,9 +1,9 @@
 {smcl}
 {com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\spiller-ije-2018-examples\spiller-ije-2018-examples.smcl
+       {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 1 Feb 2022, 12:47:42
+ {txt}opened on:  {res} 6 Apr 2023, 07:20:04
 {txt}
 {com}. //_1
 . import delimited using BMI.csv, clear
@@ -168,9 +168,9 @@ betaexposure {c |}{col 14}{res}{space 2} .0015412{col 26}{space 2} .0033017{col 
 {com}. //_^
 . log close
       {txt}name:  {res}<unnamed>
-       {txt}log:  {res}C:\Users\eptmp\Documents\GitHub\mrrobust\_drafts\spiller-ije-2018-examples\spiller-ije-2018-examples.smcl
+       {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 1 Feb 2022, 12:47:56
+ {txt}closed on:  {res} 6 Apr 2023, 07:20:09
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

@@ -108,7 +108,7 @@ betaoutcome  │
 ```
 
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.svg)
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.svg){class="center"}
 
     
 ### Weighted median
@@ -167,7 +167,7 @@ value, as shown in the Figure.
 ```
 
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg)
+![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg){class="center"}
 
     
 ## Stata output for each estimation method using mrrobust: Height-Serum Glucose {#height}
@@ -222,7 +222,7 @@ betaoutcome  │
 ```
 
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.svg)
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.svg){class="center"}
 
     
 ### Weighted median
@@ -278,7 +278,7 @@ betaoutcome  │
 ```
 
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-height.svg)
+![Densities of the IV estimates using different values of phi.](mrmodalplot-height.svg){class="center"}
 
 ## References
 
@@ -290,4 +290,4 @@ variation in the genomic and biological architecture of adult human height. Nat 
 3. Shin S-Y, Fauman EB, Petersen A-K, Krumsiek J, Santos R, Huang J, et al. An atlas of genetic 
 influences on human blood metabolites. Nat Genet. 2014;46(6):543-50.
 4. Hemani G, Zheng J, Elsworth B, Wade KH, Haberland V, Baird D, et al. The MR-Base platform 
-supports systematic causal inference across the human phenome. Elife. 2018;7.
+supports systematic causal inference across the human phenome. eLife. 2018;7:e34408. <https://doi.org/10.7554/eLife.34408>
