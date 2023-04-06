@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/mrrobust-examples/mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 6 Apr 2023, 07:15:05
+ {txt}opened on:  {res} 6 Apr 2023, 11:07:40
 {txt}
 {com}. //_1
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -227,7 +227,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/mrrobust-examples/mrrobust-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 6 Apr 2023, 07:15:19
+ {txt}closed on:  {res} 6 Apr 2023, 11:07:54
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
