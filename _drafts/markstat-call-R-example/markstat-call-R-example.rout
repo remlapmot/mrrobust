@@ -59,10 +59,10 @@ Type 'q()' to quit R.
 5 LDL cholesterol || id:ieu-a-300             Weighted mode   62 0.5189450
           se         pval
 1 0.06182590 1.619410e-13
-2 0.03838650 3.933039e-37
+2 0.03717171 1.748467e-39
 3 0.03919370 6.000986e-33
-4 0.06505469 1.082108e-09
-5 0.03334331 6.503107e-23
+4 0.05780893 3.033789e-11
+5 0.03253902 1.958240e-23
 > mr_heterogeneity(dat)
   id.exposure id.outcome                              outcome
 1   ieu-a-300    ieu-a-7 Coronary heart disease || id:ieu-a-7
