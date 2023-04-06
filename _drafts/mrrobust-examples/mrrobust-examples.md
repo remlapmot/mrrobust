@@ -50,7 +50,7 @@ labelling the genotypes with their RSID.
 . qui gr export mrforest.svg, width(600) replace
 ```
 
-![Example forest plot of genotype specific IV estimates](mrforest.svg)
+![Example forest plot of genotype specific IV estimates.](mrforest.svg){class="center"}
 
 ## mregger examples
 Using the data provided by [Do et al. (2013)](https://doi.org/10.1038/ng.2795) 
@@ -189,7 +189,7 @@ SEs).
 . qui gr export mreggersimex-plot.svg, width(600) replace
 ```
 
-![SIMEX applied to the MR-Egger model](mreggersimex-plot.svg)
+![SIMEX plots for the MR-Egger model.](mreggersimex-plot.svg){class="center"}
 
 ## mreggerplot examples
 
@@ -199,7 +199,7 @@ SEs).
 . qui gr export mreggerplot.svg, width(600) replace
 ```
 
-![Scatter plot of the MR-Egger model](mreggerplot.svg)
+![Scatter plot showing the genotype summary level data points and the fitted MR-Egger model.](mreggerplot.svg){class="center"}
 
 ## mrmedian examples
 Weighted median estimator.
@@ -252,7 +252,7 @@ Weighted median estimator.
 . qui gr export mrmodalplot.svg, width(600) replace
 ```
 
-![Densities of the IV estimates using different values of phi](mrmodalplot.svg)
+![Densities of the IV estimates using different values of the phi parameter.](mrmodalplot.svg){class="center"}
 
 Simple mode estimator.
 
@@ -310,7 +310,7 @@ Simple mode estimator with NOME assumption.
 . qui gr export mrfunnel.svg, width(600) replace
 ```
 
-![Example funnel plot](mrfunnel.svg)
+![Example funnel plot.](mrfunnel.svg){class="center"}
 
 ## Leave one out analysis
 Create a smaller subset of data.
@@ -328,7 +328,7 @@ Perform leave one out analysis using the IVW estimator
 . qui gr export mrleaveoneout-plot-01.svg, width(600) replace
 ```
 
-![Leave one out analysis for the IVW estimate](mrleaveoneout-plot-01.svg)
+![Plot showing leave one (genotype) out analysis for the IVW estimate.](mrleaveoneout-plot-01.svg){class="center"}
 
 Perform leave one out analysis using MVMR collecting the estimate for LDL-c.
 
@@ -339,4 +339,4 @@ Perform leave one out analysis using MVMR collecting the estimate for LDL-c.
 . qui gr export mrleaveoneout-plot-02.svg, width(600) replace
 ```
 
-![Leave one out analysis for the MVMR estimate](mrleaveoneout-plot-02.svg)
+![Plot showing leave one out analysis for the MVMR estimate.](mrleaveoneout-plot-02.svg){class="center"}

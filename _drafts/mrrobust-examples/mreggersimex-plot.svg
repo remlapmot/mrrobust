@@ -3,18 +3,18 @@
 
 <svg version="1.1" width="600px" height="436px" viewBox="0 0 3960 2880" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<desc>Stata Graph - mreggersimex</desc>
-	<rect x="0" y="0" width="3960" height="2880" style="fill:#E1E6F0;stroke:none"/>
-	<rect x="0.00" y="0.00" width="3959.88" height="2880.00" style="fill:#E1E6F0"/>
-	<rect x="2.88" y="2.88" width="3954.12" height="2874.24" style="fill:none;stroke:#E1E6F0;stroke-width:5.76"/>
-	<rect x="63.36" y="63.36" width="1916.64" height="2377.81" style="fill:#E1E6F0"/>
-	<rect x="65.52" y="65.52" width="1912.32" height="2373.49" style="fill:none;stroke:#E1E6F0;stroke-width:4.32"/>
+	<rect x="0" y="0" width="3960" height="2880" style="fill:#EAF2F3;stroke:none"/>
+	<rect x="0.00" y="0.00" width="3959.88" height="2880.00" style="fill:#EAF2F3"/>
+	<rect x="2.88" y="2.88" width="3954.12" height="2874.24" style="fill:none;stroke:#EAF2F3;stroke-width:5.76"/>
+	<rect x="63.36" y="63.36" width="1916.64" height="2377.81" style="fill:#EAF2F3"/>
+	<rect x="65.52" y="65.52" width="1912.32" height="2373.49" style="fill:none;stroke:#EAF2F3;stroke-width:4.32"/>
 	<rect x="356.40" y="138.98" width="1547.99" height="2009.02" style="fill:#FFFFFF"/>
 	<rect x="358.56" y="141.14" width="1543.67" height="2004.70" style="fill:none;stroke:#FFFFFF;stroke-width:4.32"/>
-	<line x1="356.40" y1="2100.47" x2="1904.39" y2="2100.47" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="1622.04" x2="1904.39" y2="1622.04" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="1143.49" x2="1904.39" y2="1143.49" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="665.05" x2="1904.39" y2="665.05" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="356.40" y1="186.50" x2="1904.39" y2="186.50" style="stroke:#E1E6F0;stroke-width:6.48"/>
+	<line x1="356.40" y1="2100.47" x2="1904.39" y2="2100.47" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="1622.04" x2="1904.39" y2="1622.04" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="1143.49" x2="1904.39" y2="1143.49" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="665.05" x2="1904.39" y2="665.05" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="356.40" y1="186.50" x2="1904.39" y2="186.50" style="stroke:#EAF2F3;stroke-width:6.48"/>
 	<circle cx="1856.75" cy="1861.26" r="19.70" style="fill:#000000"/>
 	<circle cx="1856.75" cy="1861.26" r="16.46" style="fill:none;stroke:#000000;stroke-width:6.48"/>
 	<circle cx="1614.57" cy="1490.24" r="19.70" style="fill:#000000"/>
@@ -125,13 +125,13 @@
 	<line x1="1856.87" y1="2148.00" x2="1856.87" y2="2178.07" style="stroke:#000000;stroke-width:4.32"/>
 	<text x="1856.87" y="2245.48" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">2</text>
 	<text x="1130.33" y="2328.02" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">λ</text>
-	<rect x="1980.00" y="63.36" width="1916.52" height="2377.81" style="fill:#E1E6F0"/>
-	<rect x="1982.16" y="65.52" width="1912.20" height="2373.49" style="fill:none;stroke:#E1E6F0;stroke-width:4.32"/>
+	<rect x="1980.00" y="63.36" width="1916.52" height="2377.81" style="fill:#EAF2F3"/>
+	<rect x="1982.16" y="65.52" width="1912.20" height="2373.49" style="fill:none;stroke:#EAF2F3;stroke-width:4.32"/>
 	<rect x="2273.04" y="138.98" width="1547.87" height="2009.02" style="fill:#FFFFFF"/>
 	<rect x="2275.20" y="141.14" width="1543.55" height="2004.70" style="fill:none;stroke:#FFFFFF;stroke-width:4.32"/>
-	<line x1="2273.04" y1="2100.47" x2="3820.91" y2="2100.47" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="2273.04" y1="1462.52" x2="3820.91" y2="1462.52" style="stroke:#E1E6F0;stroke-width:6.48"/>
-	<line x1="2273.04" y1="824.45" x2="3820.91" y2="824.45" style="stroke:#E1E6F0;stroke-width:6.48"/>
+	<line x1="2273.04" y1="2100.47" x2="3820.91" y2="2100.47" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="2273.04" y1="1462.52" x2="3820.91" y2="1462.52" style="stroke:#EAF2F3;stroke-width:6.48"/>
+	<line x1="2273.04" y1="824.45" x2="3820.91" y2="824.45" style="stroke:#EAF2F3;stroke-width:6.48"/>
 	<circle cx="3773.39" cy="578.43" r="19.70" style="fill:#000000"/>
 	<circle cx="3773.39" cy="578.43" r="16.46" style="fill:none;stroke:#000000;stroke-width:6.48"/>
 	<circle cx="3531.21" cy="1080.25" r="19.70" style="fill:#000000"/>
@@ -240,22 +240,22 @@
 	<line x1="3773.39" y1="2148.00" x2="3773.39" y2="2178.07" style="stroke:#000000;stroke-width:4.32"/>
 	<text x="3773.39" y="2245.48" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">2</text>
 	<text x="3046.97" y="2328.02" style="font-family:'Helvetica';font-size:74.99px;fill:#000000" text-anchor="middle">λ</text>
-	<rect x="664.29" y="2475.70" width="2631.30" height="306.41" style="fill:#FFFFFF"/>
-	<rect x="667.17" y="2478.58" width="2625.54" height="300.65" style="fill:none;stroke:#000000;stroke-width:5.76"/>
-	<line x1="869.82" y1="2583.62" x2="919.35" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<line x1="919.35" y1="2583.62" x2="869.82" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<circle cx="1914.54" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<circle cx="2801.95" cy="2558.86" r="26.35" style="fill:#000000"/>
-	<circle cx="2801.95" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
-	<line x1="707.48" y1="2688.92" x2="1081.82" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1727.30" y1="2688.92" x2="1784.85" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1813.68" y1="2688.92" x2="1871.22" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1900.06" y1="2688.92" x2="1957.60" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="1986.44" y1="2688.92" x2="2043.98" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<line x1="2072.81" y1="2688.92" x2="2101.77" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
-	<text x="1141.84" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">SIMEX</text>
-	<text x="2161.67" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Original</text>
-	<text x="2883.87" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Simulated</text>
-	<text x="1141.84" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Quadratic fit</text>
-	<text x="2161.67" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Extrapolation</text>
+	<rect x="652.16" y="2475.70" width="2655.55" height="306.41" style="fill:#FFFFFF"/>
+	<rect x="655.04" y="2478.58" width="2649.79" height="300.65" style="fill:none;stroke:#000000;stroke-width:5.76"/>
+	<line x1="857.82" y1="2583.62" x2="907.35" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<line x1="907.35" y1="2583.62" x2="857.82" y2="2534.09" stroke-linecap="round" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<circle cx="1909.71" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<circle cx="2809.00" cy="2558.86" r="26.35" style="fill:#000000"/>
+	<circle cx="2809.00" cy="2558.86" r="22.03" style="fill:none;stroke:#000000;stroke-width:8.64"/>
+	<line x1="695.48" y1="2688.92" x2="1069.82" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1722.48" y1="2688.92" x2="1780.02" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1808.85" y1="2688.92" x2="1866.40" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1895.23" y1="2688.92" x2="1952.78" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="1981.61" y1="2688.92" x2="2039.28" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<line x1="2067.99" y1="2688.92" x2="2096.94" y2="2688.92" style="stroke:#000000;stroke-width:8.64"/>
+	<text x="1129.84" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">SIMEX</text>
+	<text x="2156.96" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Original</text>
+	<text x="2891.05" y="2586.87" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Simulated</text>
+	<text x="1129.84" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Quadratic fit</text>
+	<text x="2156.96" y="2716.94" style="font-family:'Helvetica';font-size:79.94px;fill:#000000">Extrapolation</text>
 </svg>
