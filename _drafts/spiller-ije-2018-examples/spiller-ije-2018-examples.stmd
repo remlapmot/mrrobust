@@ -70,7 +70,7 @@ implementing `mrrobust`.
 	mreggerplot betaoutcome seoutcome betaexposure seexposure
 	qui gr export mreggerplot-bmi.svg, width(600) replace
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.svg)
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.svg){class="center"}
 
 	
 ### Weighted median
@@ -85,7 +85,7 @@ value, as shown in the Figure.
 		lc(gs10 gs5 gs0) seed(300818)
 	qui gr export mrmodalplot-bmi.svg, width(600) replace
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg)
+![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg){class="center"}
 
 	
 ## Stata output for each estimation method using mrrobust: Height-Serum Glucose {#height}
@@ -102,7 +102,7 @@ value, as shown in the Figure.
 	mreggerplot betaoutcome seoutcome betaexposure seexposure
 	qui gr export mreggerplot-height.svg, width(600) replace
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.svg)
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.svg){class="center"}
 
 	
 ### Weighted median
@@ -114,7 +114,7 @@ value, as shown in the Figure.
 		lc(gs10 gs5 gs0) seed(300818)
 	qui gr export mrmodalplot-height.svg, width(600) replace
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-height.svg)
+![Densities of the IV estimates using different values of phi.](mrmodalplot-height.svg){class="center"}
 
 ## References
 
