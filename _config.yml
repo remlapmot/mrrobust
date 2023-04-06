@@ -20,10 +20,10 @@ header_pages:
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge  
+# highlighter: rouge
+# kramdown:
+#   input: GFM
+#   syntax_highlighter: rouge  
 # theme: jekyll-theme-primer 
 theme: minima
 google_analytics: UA-156933160-1
