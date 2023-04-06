@@ -161,7 +161,7 @@ Burgess, S, F Dudbridge, and SG Thompson. 2015.
 “<span class="nocase">Multivariable Mendelian randomization: the use of
 pleiotropic genetic variants to estimate causal effects</span>.”
 *American Journal of Epidemiology* 181: 251–60.
-https://doi.org/10.1093/aje/kwu283.
+<https://doi.org/10.1093/aje/kwu283>.
 
 </div>
 
@@ -170,7 +170,7 @@ https://doi.org/10.1093/aje/kwu283.
 Rees, J, A Wood, and S Burgess. 2017. “<span class="nocase">Extending
 the MR-Egger method for multivariable Mendelian randomization to correct
 for both measured and unmeasured pleiotropy</span>.” *Statistics in
-Medicine* 36: 4705–18. https://doi.org/10.1002/sim.7492.
+Medicine* 36: 4705–18. <https://doi.org/10.1002/sim.7492>.
 
 </div>
 
@@ -180,7 +180,7 @@ Sanderson, E, G Davey Smith, F Windmeijer, and J Bowden. 2019.
 “<span class="nocase">An examination of multivariable Mendelian
 randomization in the single-sample and two-sample summary data
 settings</span>.” *International Journal of Epidemiology* 48: 713–27.
-https://doi.org/10.1093/ije/dyy262.
+<https://doi.org/10.1093/ije/dyy262>.
 
 </div>
 
@@ -188,7 +188,7 @@ https://doi.org/10.1093/ije/dyy262.
 
 Sanderson, E, W Spiller, and J Bowden. 2020. “Testing and Correcting for
 Weak and Pleiotropic Instruments in Two-Sample Multivariable Mendelian
-Randomisation.” *bioRxiv*. https://doi.org/10.1101/2020.04.02.021980.
+Randomisation.” *bioRxiv*. <https://doi.org/10.1101/2020.04.02.021980>.
 
 </div>
 
