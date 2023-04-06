@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 6 Apr 2023, 07:20:04
+ {txt}opened on:  {res} 6 Apr 2023, 11:12:07
 {txt}
 {com}. //_1
 . import delimited using BMI.csv, clear
@@ -170,7 +170,7 @@ betaexposure {c |}{col 14}{res}{space 2} .0015412{col 26}{space 2} .0033017{col 
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/tom/Documents/GitHub/mrrobust/_drafts/spiller-ije-2018-examples/spiller-ije-2018-examples.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 6 Apr 2023, 07:20:09
+ {txt}closed on:  {res} 6 Apr 2023, 11:12:12
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

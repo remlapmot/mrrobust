@@ -108,7 +108,8 @@ betaoutcome  │
 ```
 
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.svg){class="center"}
+{:style="text-align:center;"}
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-bmi.svg)
 
     
 ### Weighted median
@@ -167,7 +168,8 @@ value, as shown in the Figure.
 ```
 
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg){class="center"}
+{:style="text-align:center;"}
+![Densities of the IV estimates using different values of phi.](mrmodalplot-bmi.svg)
 
     
 ## Stata output for each estimation method using mrrobust: Height-Serum Glucose {#height}
@@ -222,7 +224,8 @@ betaoutcome  │
 ```
 
 
-![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.svg){class="center"}
+{:style="text-align:center;"}
+![Plot of the MR-Egger model for the BMI data.](mreggerplot-height.svg)
 
     
 ### Weighted median
@@ -278,7 +281,8 @@ betaoutcome  │
 ```
 
 
-![Densities of the IV estimates using different values of phi.](mrmodalplot-height.svg){class="center"}
+{:style="text-align:center;"}
+![Densities of the IV estimates using different values of phi.](mrmodalplot-height.svg)
 
 ## References
 
