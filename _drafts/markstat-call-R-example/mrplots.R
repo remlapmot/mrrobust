@@ -1,7 +1,7 @@
-library(ggplot2)
-library(ggrepel)
-library(dplyr)
-library(gridExtra)
+if (!requireNamespace("ggplot2", quietly = TRUE)) install.packages("ggplot2")
+if (!requireNamespace("ggrepel", quietly = TRUE)) install.packages("ggrepel")
+if (!requireNamespace("dplyr", quietly = TRUE)) install.packages("dplyr")
+if (!requireNamespace("gridExtra", quietly = TRUE)) install.packages("gridExtra")
 
 mr_plots <- function(dat)
 {
