@@ -11,10 +11,13 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: examples.qmd
-        text: Examples
-      - href: helpfiles.qmd
-        text: Helpfiles
+      - text: Examples
+        menu:
+          - text: "Examples from the helpfiles"
+            href: examples/mrrobust-examples.qmd
+      - text: Helpfiles
+        menu:
+          - text: "mrrobust"
       - href: about.qmd
         text: About
     right:
