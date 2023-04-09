@@ -11,7 +11,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: examples.qmd
+        text: Examples
+      - href: helpfiles.qmd
+        text: Helpfiles
+      - href: about.qmd
+        text: About
 
 format:
   html:
