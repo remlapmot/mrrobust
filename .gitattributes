@@ -12,4 +12,4 @@
 *.log linguist-language=Stata
 *.smcl linguist-language=Stata
 *.stmd linguist-language=Markdown
-*.[Rr]md linguist-detectable
+*.[Rrq]md linguist-detectable
