@@ -4,6 +4,7 @@ project:
 
 website:
   title: "mrrobust"
+  repo-url: https://github.com/remlapmot/mrrobust
   navbar:
     left:
       - href: index.qmd
