@@ -17,6 +17,10 @@ website:
         text: Helpfiles
       - href: about.qmd
         text: About
+    right:
+      - icon: github
+        href: https://github.com/remlapmot/mrrobust
+        aria-label: GitHub
 
 format:
   html:
