@@ -18,6 +18,7 @@ To obtain the latest update please see the instructions [below](#installing-and-
 
 * April 2023:
   - Improved the alt text descriptions for the images in the *README* and package website, and also centred the images
+  - Remade the **mrrobust** website using [**Quarto**](https://quarto.org/)
 * February 2023:
   - Updated R Markdown example to use the CRAN version of the [**Statamarkdown**](https://cran.r-project.org/package=Statamarkdown) package
 * September 2022:
