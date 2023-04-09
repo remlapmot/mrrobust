@@ -3,7 +3,7 @@ project:
   output-dir: ../docs
 
 website:
-  title: "site"
+  title: "mrrobust"
   navbar:
     left:
       - href: index.qmd
