@@ -1,1 +1,0 @@
-set linesize 86
