@@ -18,6 +18,39 @@ website:
       - text: Helpfiles
         menu:
           - text: "mrrobust"
+            href: helpfiles/mrrobust.html
+          - text: "mr"
+            href: helpfiles/mr.html
+          - text: "mrdeps"
+            href: helpfiles/mrdeps.html
+          - text: "mregger"
+            href: helpfiles/mregger.html
+          - text: "mreggerplot"
+            href: helpfiles/mreggerplot.html
+          - text: "mreggersimex"
+            href: helpfiles/mreggersimex.html
+          - text: "mrmedian"
+            href: helpfiles/mrmedian.html
+          - text: "mrmedianobs"
+            href: helpfiles/mrmedianobs.html
+          - text: "mrmodal"
+            href: helpfiles/mrmodalplot.html
+          - text: "mrratio"
+            href: helpfiles/mrratio.html
+          - text: "mrivests"
+            href: helpfiles/mrivests.html
+          - text: "mrforest"
+            href: helpfiles/mrforest.html
+          - text: "mrfunnel"
+            href: helpfiles/mrfunnel.html
+          - text: "mrmvivw"
+            href: helpfiles/mrmvivw.html
+          - text: "mrmvegger"
+            href: helpfiles/mrmvegger.html
+          - text: "mrleaveoneout"
+            href: helpfiles/mrleaveoneout.html
+          - text: "mvmr"
+            href: helpfiles/mvmr.html
       - href: about.qmd
         text: About
     right:
