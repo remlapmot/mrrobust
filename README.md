@@ -248,9 +248,9 @@ them manually their zip archives are available at the following links (extract t
  * the `kdens` command is available [here](http://fmwww.bc.edu/repec/bocode/k/kdens.zip)
  * the `metan` command is available [here](https://ideas.repec.org/c/boc/bocode/s456798.html)
  * the `grc1leg` command can be installed with
-    ``` stata
-    net install grc1leg, from("https://www.stata.com/users/vwiggins")
-    ```
+   ``` stata
+   net install grc1leg, from("https://www.stata.com/users/vwiggins")
+   ```
 
 ## Unit tests
 As far as I know, and unlike R which has the **testthat** package (and other testing packages),
