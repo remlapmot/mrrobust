@@ -55,8 +55,8 @@ To obtain the latest update please see the instructions [below](#installing-and-
   instrument-exposure) respectively; i.e. the estimates required for the top and bottom of the IV 
   Wald ratio estimate
 * August 2020:
-  - Added html versions of the helpfiles to the website. These are available from the website 
-  menu bar or [here](https://remlapmot.github.io/mrrobust/docs/helpfiles/)
+  - Added html versions of the helpfiles to the website. These are available from the *Helpfiles* website 
+  menu bar item
   - Added extra decimal places examples to helpfiles of `mrforest` and `mrleaveoneout`
   - `mrfunnel` now includes a legend on its plot
 * July 2020:
@@ -93,7 +93,7 @@ To obtain the latest update please see the instructions [below](#installing-and-
   - `mrmedian`, `mrmedianobs`, `mreggersimex`, `mrmodal`, and `mrratio` now additionally return 
   the `r(table)` matrix (the information from the coefficient table)
   - Added an example showing how you can save and export your estimates using `r(table)`, see 
-  [here](https://remlapmot.github.io/mrrobust/docs/save-estimates)
+  [here](https://remlapmot.github.io/mrrobust/examples/save-estimates/index.html)
 * December 2019:
   - Added `Q_GX` to ereturn and display output when `gxse()` option specified to `mregger`
   - Changed `Q_GX` and `I^2_GX` output to use first order weights in `mregger` output. This matches 
@@ -110,17 +110,17 @@ To obtain the latest update please see the instructions [below](#installing-and-
 * November 2018:
   - Example showing the use of the **TwoSampleMR** R package and **mrrobust** in the same 
   [R Markdown script](https://rmarkdown.rstudio.com/) (`.Rmd` file) is 
-  [here](https://remlapmot.github.io/mrrobust/docs/rmarkdown-call-stata-example)
+  [here](https://remlapmot.github.io/mrrobust/examples/rmarkdown-call-stata-example/index.html)
   - Example showing the use of the **TwoSampleMR** R package and **mrrobust** in the same 
   [Stata Markdown](https://data.princeton.edu/stata/markdown) script (`.stmd` file) is 
-  [here](https://remlapmot.github.io/mrrobust/docs/markstat-call-R-example)
+  [here](https://remlapmot.github.io/mrrobust/examples/markstat-call-R-example/index.html)
 * September 2018: 
   - IJE paper published online [here](https://doi.org/10.1093/ije/dyy195)
 * August 2018:
-  - Click [here](https://remlapmot.github.io/mrrobust/docs/spiller-ije-2018-examples) for the 
+  - Click [here](https://remlapmot.github.io/mrrobust/examples/spiller-ije-2018-examples/index.html) for the 
   example code and output from our IJE article
 * May 2018: 
-  - Click [here](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples) for code and output 
+  - Click [here](https://remlapmot.github.io/mrrobust/examples/mrrobust-examples/index.html) for code and output 
   from the examples in the helpfiles
   - This page is now rendered on GitHub Pages [here](https://remlapmot.github.io/mrrobust/)
 * April 2018: 
@@ -134,7 +134,7 @@ demonstrating the use of the package.
 <p align="center"><a href="https://drive.google.com/open?id=0B1owQlNgzNcPY0lMSGk0SnFfQWs"><img src="./img/mrconf2017_video_mrforest_screenshot.png" width="528" height="300" alt="A screenshot of a video demonstrating the use of the mrrobust package."></a></p>
 
 ## Helpfile examples
-Click [here](https://remlapmot.github.io/mrrobust/docs/mrrobust-examples) for some of the code and 
+Click [here](https://remlapmot.github.io/mrrobust/examples/mrrobust-examples/index.html) for some of the code and 
 output from the examples in the helpfiles.
 
 Once the package is installed, there is a summary helpfile which can be viewed in Stata with:
