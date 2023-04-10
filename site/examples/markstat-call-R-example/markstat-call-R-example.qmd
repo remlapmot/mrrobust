@@ -22,6 +22,8 @@ ssc install whereis
 ssc install markstat
 ```
 
+## Example Stata Markdown document
+
 The following is the example Stata Markdown document.
 ````{verbatim, lang='markdown'}
 We first need to register the R executable with Stata.
