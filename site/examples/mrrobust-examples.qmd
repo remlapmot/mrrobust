@@ -39,8 +39,9 @@ gen byte sel1 = (ldlcp2 < 1e-8)
 ## mrforest examples
 Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates, 
 labelling the genotypes with their RSID.
-```{stata}
-mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+```{stata results="hide"}
+mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) ///
+    xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 qui gr export mrforest.svg, width(600) replace
 ```
 
