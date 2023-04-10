@@ -16,14 +16,17 @@ website:
       - text: Examples
         menu:
           - text: "Examples from the helpfiles"
-            href: examples/mrrobust-examples/mrrobust-examples.qmd
+            href: examples/mrrobust-examples/index.qmd
           - text: "IJE article examples"
-            href: examples/spiller-ije-2018-examples/spiller-ije-2018-examples.qmd
+            href: examples/spiller-ije-2018-examples/index.qmd
           - text: "Using TwoSampleMR and mrrobust in a Stata Markdown document"
-            href: examples/markstat-call-R-example/markstat-call-R-example.qmd
+            href: examples/markstat-call-R-example/index.qmd
           - text: "Using TwoSampleMR and mrrobust in an R Markdown or Quarto document"
-          - text: "Collecting a exporting results using `r(table)`"
+            href: examples/rmarkdown-call-stata-example/index.qmd
+          - text: "Collecting and exporting results using `r(table)`"
+            href: examples/save-estimates/index.qmd
           - text: "Fitting MVMR models"
+            href: examples/mvcommands-example/index.qmd
       - text: Helpfiles
         menu:
           - text: "mrrobust"
