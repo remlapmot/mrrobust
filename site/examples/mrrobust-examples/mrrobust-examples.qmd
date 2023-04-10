@@ -15,7 +15,7 @@ library(Statamarkdown)
 ```
 
 ```{stata, include=FALSE, collectcode=TRUE}
-adopath ++ ../..
+adopath ++ ../../..
 ```
 
 ## Install the mrrobust package
