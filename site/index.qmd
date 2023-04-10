@@ -4,3 +4,22 @@
 
 ```{r, child='../README.md'}
 ```
+
+<!-- For generating the html versions of the helpfiles -->
+```{r, include=FALSE}
+if (file.exists('profile.do')) file.remove('profile.do')
+library(Statamarkdown)
+```
+
+```{stata, include=FALSE}
+* ssc install log2html
+local helpfiles mrrobust mr mrdeps mregger mreggerplot mreggersimex mrforest mrfunnel mrivests mrleaveoneout mrmedian mrmedianobs mrmodal mrmodalplot mrmvegger mrmvivw mrratio mrivw mvmr
+foreach file in `helpfiles' {
+	di _n "`file'"
+	copy ../`file'.sthlp ./helpfiles/`file'.smcl, replace
+	cap noi log2html ./helpfiles/`file', bold replace linesize(100)
+	if _rc != 0 di as err "Conversersion of `file'.smcl failed"
+	if c(os) != "Windows" rm ./helpfiles/`file'.smcl
+    else erase ./helpfiles/`file'.smcl
+}
+```
