@@ -7,6 +7,10 @@ title: Examples from helpfiles in the mrrobust package
 library(Statamarkdown)
 ```
 
+```{stata, include=FALSE, collectcode=TRUE}
+adopath ++ ..
+```
+
 ## Install the mrrobust package
 ```stata
 net install github, from("https://haghish.github.io/github/")
