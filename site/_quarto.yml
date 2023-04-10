@@ -18,7 +18,7 @@ website:
       - text: Helpfiles
         menu:
           - text: "mrrobust"
-            href: helpfiles/mrrobust.html
+            href: mrrobust-helpfile.html
           - text: "mr"
             href: helpfiles/mr.html
           - text: "mrdeps"
