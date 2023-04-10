@@ -20,37 +20,37 @@ website:
           - text: "mrrobust"
             href: mrrobust-helpfile.html
           - text: "mr"
-            href: helpfiles/mr.html
+            href: mr-helpfile.html
           - text: "mrdeps"
-            href: helpfiles/mrdeps.html
+            href: mrdeps-helpfile.html
           - text: "mregger"
-            href: helpfiles/mregger.html
+            href: mregger-helpfile.html
           - text: "mreggerplot"
-            href: helpfiles/mreggerplot.html
+            href: mreggerplot-helpfile.html
           - text: "mreggersimex"
-            href: helpfiles/mreggersimex.html
+            href: mreggersimex-helpfile.html
           - text: "mrmedian"
-            href: helpfiles/mrmedian.html
+            href: mrmedian-helpfile.html
           - text: "mrmedianobs"
-            href: helpfiles/mrmedianobs.html
+            href: mrmedianobs-helpfile.html
           - text: "mrmodal"
-            href: helpfiles/mrmodalplot.html
+            href: mrmodal-helpfile.html
+          - text: "mrmodalplot"
+            href: mrmodalplot-helpfile.html
           - text: "mrratio"
-            href: helpfiles/mrratio.html
+            href: mrratio-helpfile.html
           - text: "mrivests"
-            href: helpfiles/mrivests.html
+            href: mrivests-helpfile.html
           - text: "mrforest"
-            href: helpfiles/mrforest.html
+            href: mrforest-helpfile.html
           - text: "mrfunnel"
-            href: helpfiles/mrfunnel.html
+            href: mrfunnel-helpfile.html
           - text: "mrmvivw"
-            href: helpfiles/mrmvivw.html
+            href: mrmvivw-helpfile.html
           - text: "mrmvegger"
-            href: helpfiles/mrmvegger.html
+            href: mrmvegger-helpfile.html
           - text: "mrleaveoneout"
-            href: helpfiles/mrleaveoneout.html
-          - text: "mvmr"
-            href: helpfiles/mvmr.html
+            href: mrleaveoneout-helpfile.html
       - href: about.qmd
         text: About
     right:
