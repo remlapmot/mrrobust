@@ -40,9 +40,7 @@ gen byte sel1 = (ldlcp2 < 1e-8)
 Forest plot of genotype specific IV estimates and IVW and MR-Egger estimates, 
 labelling the genotypes with their RSID.
 ```{stata}
-mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ///
-	ivid(rsid) ///
-	xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
+mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) xlabel(-5,-4,-3,-2,-1,0,1,2,3,4,5)
 qui gr export mrforest.svg, width(600) replace
 ```
 
@@ -68,8 +66,7 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 
 MR-Egger reporting I^2^~GX~ statistic and heterogeneity Q-test.
 ```{stata}
-mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
-	gxse(ldlcse) heterogi
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse) heterogi
 ```
 
 MR-Egger using a t-distribution for inference (p-values) & CI limits.
@@ -84,16 +81,14 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 
 MR-Egger using the radial formulation and reporting heterogeneity (Rucker's) Q-test.
 ```{stata}
-mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ///
-	radial heterogi
+mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
 ```
 
 ## mreggersimex examples
 SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain 
 SEs).
 ```{stata}
-mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, ///
-	gxse(ldlcse) seed(12345) noboot
+mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) seed(12345) noboot
 qui gr export mreggersimex-plot.svg, width(600) replace
 ```
 
@@ -165,8 +160,7 @@ qui gr export mrleaveoneout-plot-01.svg, width(600) replace
 
 Perform leave one out analysis using MVMR collecting the estimate for LDL-c.
 ```{stata}
-mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, ///
-	method(mvmr) gyse(chdse) genotype(rsid) noprint
+mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, method(mvmr) gyse(chdse) genotype(rsid) noprint
 qui gr export mrleaveoneout-plot-02.svg, width(600) replace
 ```
 
