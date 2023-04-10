@@ -1,0 +1,143 @@
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+BODY{background-color: ffffff;
+    font-family: monaco, "courier new", monospace;
+     color: #000000}
+.input, .result, .error{font-weight: bold}
+.input {color: #CC6600}
+.result{color: #000099}
+.error{color: #dd0000}
+</style>
+</head>
+<body>
+<pre>
+<span class=result><u>Title</u></span>
+<br><br>
+     <span class=result>mrmvivw</span>/<span class=result>mvivw</span>/<span class=result>mvmr</span> -- Multivariable inverse variance weighted regression (MVIVW)
+<br><br>
+<a name="syntax"></a><span class=result><u>Syntax</u></span>
+<br><br>
+        <span class=result>mrmvivw</span>/<span class=result>mvivw</span>/<span class=result>mvmr</span> <i>varname_gd</i> <i>varname_gp1</i> [<i>varname_gp2</i> ...] [<i>aweight</i>] [<i>if</i>] [<i>in</i>] [<span class=result>,</span>
+                <i>options</i>]
+<br><br>
+    <i>options</i>               Description
+    ----------------------------------------------------------------------------------------------
+      <span class=result>fe</span>                  fixed effect standard errors (default is multiplicative random effect)
+      <span class=result>gxse(</span><i>varlist</i><span class=result>)</span>       varlist of genotype-phenotype (SNP-exposure) standard errors
+      <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
+      <span class=result>tdist</span>               use t-distribution for Wald test and CI limits
+<br><br>
+<a name="description"></a><span class=result><u>Description</u></span>
+<br><br>
+    <span class=result>mrmvivw</span>/<span class=result>mvivw</span>/<span class=result>mvmr</span> performs multivariable inverse-variance weighted (IVW) regression using
+    summary level data.  See  Burgess et al. (2015) for more information.
+<br><br>
+    <i>varname_gd</i> variable containing the genotype-disease (SNP-outcome) association estimates.
+<br><br>
+    <i>varname_gp#</i> variable containing the #th genotype-phenotype (SNP-exposure) association
+    estimates.
+<br><br>
+    For the analytic weights you need to specify the inverse of the genotype-disease (SNP-outcome)
+    standard errors squared, i.e. aw=1/(gdse^2).
+<br><br>
+<a name="options"></a><span class=result><u>Options</u></span>
+<br><br>
+    <span class=result>fe</span> specifies fixed effect standard errors (i.e. variance of residuals constrained to 1 as in
+        fixed effect meta-analysis models). The default is multiplicative random effect standard
+        errors in which case the variance of the residuals is unconstrained and the square root of
+        the estimated residual variance is displayed (Residual standard error). If the residual
+        variance is found to be less than 1 an error message is shown and the model is refitted
+        with it constrained to 1.
+<br><br>
+    <span class=result>gxse(</span><i>varlist</i><span class=result>)</span> specifies a varlist of genotype-phenotype (SNP-exposure) standard errors.  These
+        should be in the same order as the genotype-phenotype (SNP-exposure) variables in the main
+        varlist.  When this option is specified the Q_A statistic for instrument validity is
+        calculated.  When this is specified and there are two or more phenotypes conditional F
+        statistics for instrument strength are calculated.  See Sanderson et al. (2019) and
+        Sanderson et al. (2021) for more information.
+<br><br>
+    <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
+<br><br>
+    <span class=result>tdist</span> specifies using the t-distribution, instead of the normal distribution, for calculating
+        the Wald test and the confidence interval limits.
+<br><br>
+<a name="examples"></a><span class=result><u>Examples</u></span>
+<br><br>
+    Using the data provided by Do et al. (2013).
+<br><br>
+    Setup
+        <span class=result>.</span> use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+<br><br>
+    Select observations (<i>p</i>-value with LDL-C &lt; 10^-8)
+        <span class=result>.</span> gen byte sel1 = (ldlcp2 &lt; 1e-8)
+<br><br>
+    Fit MVMR/MVIVW
+        <span class=result>.</span> mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+<br><br>
+        <span class=result>.</span> mvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+<br><br>
+        <span class=result>.</span> mvmr chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
+<br><br>
+    Report Q_A statistic and conditional F-statistics
+        <span class=result>.</span> mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse
+            tgse)
+<br><br>
+<a name="results"></a><span class=result><u>Stored results</u></span>
+<br><br>
+    <span class=result>mrmvivw</span>/<span class=result>mvivw</span>/<span class=result>mvmr</span> stores the following in <span class=result>e()</span>:
+<br><br>
+    Scalars        
+      <span class=result>e(df_r)</span>             residual degrees of freedom (with <span class=result>tdist</span> option)
+      <span class=result>e(N)</span>                Number of genotypes
+      <span class=result>e(Np)</span>               Number of phenotypes
+      <span class=result>e(phi)</span>              Scale parameter (root mean squared error)
+    If <span class=result>gxse()</span> specified
+      <span class=result>e(Qa)</span>               Q_A statistic
+      <span class=result>e(Qadf)</span>             Degrees of freedom of Q_A statistic
+      <span class=result>e(Qap)</span>              P-value for Q_A chi-squared test
+<br><br>
+    Macros         
+      <span class=result>e(cmd)</span>              Command name
+      <span class=result>e(cmdline)</span>          Command issued
+      <span class=result>e(setype)</span>           Standard error type
+<br><br>
+    Matrices       
+      <span class=result>e(b)</span>                coefficient vector
+      <span class=result>e(V)</span>                variance-covariance matrix of the estimates
+    If <span class=result>gxse()</span> specified
+      <span class=result>e(Fx)</span>               vector of conditional F-statistics
+      <span class=result>e(Qx)</span>               vector of Q_x statistics
+<br><br>
+    <span class=result>mrmvivw</span>/<span class=result>mvivw</span>/<span class=result>mvmr</span> stores the following in <span class=result>r()</span>:
+<br><br>
+    Matrices       
+      <span class=result>r(table)</span>            Coefficient table with rownames: b, se, z, pvalue, ll, ul, df, crit,
+                            eform
+<br><br>
+<a name="references"></a><span class=result><u>References</u></span>
+<br><br>
+<a name="burgess"></a>    Burgess S, Dudbridge F, Thompson SG. Multivariable Mendelian randomization:  the use of
+        pleiotropic genetic variants to estimate causal effects.  American Journal of
+        Epidemiology, 2015, 181, 4, 251-260.  DOI
+<br><br>
+<a name="do"></a>    Do et al., 2013. Common variants associated with plasma triglycerides and risk for coronary
+        artery disease. Nature Genetics. 45, 1345-1352.  DOI
+<br><br>
+<a name="sanderson"></a>    Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of multivariable Mendelian
+        randomization in the single-sample and two-sample summary data settings. International
+        Journal of Epidemiology, 2019, 48, 3, 713-727.  DOI
+<br><br>
+<a name="sanderson2"></a>    Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and pleiotropic instruments
+        in two-sample multivariable Mendelian randomization.  Statistics in Medicine, 2021, 40,
+        25, 5434-5452.  DOI
+<br><br>
+<a name="author"></a><span class=result><u>Author</u></span>
+<br><br>
+INCLUDE help mrrobust-author
+</pre>
+</body>
+</html>

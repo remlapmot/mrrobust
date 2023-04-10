@@ -1,0 +1,89 @@
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+BODY{background-color: ffffff;
+    font-family: monaco, "courier new", monospace;
+     color: #000000}
+.input, .result, .error{font-weight: bold}
+.input {color: #CC6600}
+.result{color: #000099}
+.error{color: #dd0000}
+</style>
+</head>
+<body>
+<pre>
+<span class=result><u>Title</u></span>
+<br><br>
+     <span class=result>mrmodalplot</span> -- Density plot to investigate values of phi in mrmodal
+<br><br>
+<a name="syntax"></a><span class=result><u>Syntax</u></span>
+<br><br>
+        <span class=result>mrmodalplot</span> <i>varname_gd</i> <i>varname_gdse</i> <i>varname_gp</i> <i>varname_gpse</i> [<i>if</i>] [<i>in</i>] [<span class=result>,</span> <i>options</i>]
+<br><br>
+    <i>options</i>               Description
+    ----------------------------------------------------------------------------------------------
+      <span class=result>lc(</span><i>optlist</i><span class=result>)</span>         list of line colors
+      <span class=result>lp(</span><i>optlist</i><span class=result>)</span>         list of line patterns
+      <span class=result>lw(</span><i>optlist</i><span class=result>)</span>         list of line widths
+      <span class=result>nome</span>                NOME assumption
+      <span class=result>phi(</span><i>numlist</i><span class=result>)</span>        value/s of phi (for bandwidth), default is .25 .5 1
+      <span class=result>reps(</span><i>#</i><span class=result>)</span>             number of bootstrap replications to obtain standard error
+      <span class=result>seed(</span><i>#</i><span class=result>)</span>             seed for random number generator for bootstrapping to obtain standard
+                            error
+      <span class=result><u>weight</u></span><span class=result>ed</span>            weighted IV estimates
+      <span class=result>*</span>                   Other options passed to the <span class=result>twoway</span> plot
+<br><br>
+<a name="description"></a><span class=result><u>Description</u></span>
+<br><br>
+    <span class=result>mrmodalplot</span> plots the density of the IV estimates used in the mrmodal estimator.
+<br><br>
+    <i>varname_gd</i> is a variable containing the genotype-disease (SNP-outcome) association estimates.
+<br><br>
+    <i>varname_gdse</i> is a variable containing the genotype-disease (SNP-outcome) association estimate
+    standard errors.
+<br><br>
+    <i>varname_gp</i> is a variable containing the genotype-phenotype (SNP-exposure) association
+    estimates.
+<br><br>
+    <i>varname_gpse</i> is a variable containing the genotype-phenotype (SNP-exposure) association
+    estimate standard errors.
+<br><br>
+<a name="examples"></a><span class=result><u>Examples</u></span>
+<br><br>
+    Using the data provided by Do et al. (2013) recreate Bowden et (2016), Figure 4, LDL-c "All
+    genetic variants" (plot in row 2, column 1).
+<br><br>
+    Setup
+        <span class=result>.</span> use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+<br><br>
+    Select observations (<i>p</i>-value with exposure &lt; 10^-8)
+        <span class=result>.</span> gen byte sel1 = (ldlcp2 &lt; 1e-8)
+<br><br>
+    Densities with phi=.25, .5, 1 and reproducible standard error
+        <span class=result>.</span> mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
+<br><br>
+    Densities with phi=.4, .6, .8, 1 and reproducible standard error
+        <span class=result>.</span> mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, phi(.4(.2)1) seed(12345)
+<br><br>
+    Lines in grayscale and reproducible standard error
+        <span class=result>.</span> mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, lc(gs10 gs5 gs0) seed(12345)
+<br><br>
+<br><br>
+<a name="references"></a><span class=result><u>References</u></span>
+<br><br>
+<a name="bowden"></a>    Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian
+        randomization with some invalid instruments using a weighted median estimator. Genetic
+        Epidemiology, 2016, 40, 4, 304-314.  DOI
+<br><br>
+<a name="do"></a>    Do et al. Common variants associated with plasma triglycerides and risk for coronary artery
+        disease. Nature Genetics, 2013, 45, 1345-1352.  DOI
+<br><br>
+<a name="author"></a><span class=result><u>Author</u></span>
+<br><br>
+INCLUDE help mrrobust-author
+</pre>
+</body>
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>mrrobust - Examples from our IJE paper</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">mrrobust</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Examples</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-examples">    
+        <li>
+    <a class="dropdown-item" href="../../examples/mrrobust-examples/index.html">
+ <span class="dropdown-text">Examples from the helpfiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/spiller-ije-2018-examples/index.html">
+ <span class="dropdown-text">IJE article examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/markstat-call-R-example/index.html">
+ <span class="dropdown-text">Using TwoSampleMR and mrrobust in a Stata Markdown document</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/rmarkdown-call-stata-example/index.html">
+ <span class="dropdown-text">Using TwoSampleMR and mrrobust in an R Markdown or Quarto document</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/save-estimates/index.html">
+ <span class="dropdown-text">Collecting and exporting results using <code>r(table)</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/mvcommands-example/index.html">
+ <span class="dropdown-text">Fitting MVMR models</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-helpfiles" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Helpfiles</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-helpfiles">    
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrrobust-helpfile.html">
+ <span class="dropdown-text">mrrobust</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mr-helpfile.html">
+ <span class="dropdown-text">mr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrdeps-helpfile.html">
+ <span class="dropdown-text">mrdeps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mregger-helpfile.html">
+ <span class="dropdown-text">mregger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mreggerplot-helpfile.html">
+ <span class="dropdown-text">mreggerplot</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mreggersimex-helpfile.html">
+ <span class="dropdown-text">mreggersimex</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmedian-helpfile.html">
+ <span class="dropdown-text">mrmedian</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmedianobs-helpfile.html">
+ <span class="dropdown-text">mrmedianobs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmodal-helpfile.html">
+ <span class="dropdown-text">mrmodal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmodalplot-helpfile.html">
+ <span class="dropdown-text">mrmodalplot</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrratio-helpfile.html">
+ <span class="dropdown-text">mrratio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrivests-helpfile.html">
+ <span class="dropdown-text">mrivests</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrforest-helpfile.html">
+ <span class="dropdown-text">mrforest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrfunnel-helpfile.html">
+ <span class="dropdown-text">mrfunnel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmvivw-helpfile.html">
+ <span class="dropdown-text">mrmvivw</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmvegger-helpfile.html">
+ <span class="dropdown-text">mrmvegger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrleaveoneout-helpfile.html">
+ <span class="dropdown-text">mrleaveoneout</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/remlapmot/mrrobust"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#mrrobust-set-up" id="toc-mrrobust-set-up" class="nav-link active" data-scroll-target="#mrrobust-set-up">mrrobust set-up</a></li>
+  <li><a href="#summary-data-description-and-overview" id="toc-summary-data-description-and-overview" class="nav-link" data-scroll-target="#summary-data-description-and-overview">Summary data description and overview</a></li>
+  <li><a href="#estimation" id="toc-estimation" class="nav-link" data-scroll-target="#estimation">Stata output for each estimation method using mrrobust: BMI-Serum Glucose</a>
+  <ul class="collapse">
+  <li><a href="#read-in-data" id="toc-read-in-data" class="nav-link" data-scroll-target="#read-in-data">Read in data</a></li>
+  <li><a href="#ivw" id="toc-ivw" class="nav-link" data-scroll-target="#ivw">IVW</a></li>
+  <li><a href="#mr-egger" id="toc-mr-egger" class="nav-link" data-scroll-target="#mr-egger">MR-Egger</a></li>
+  <li><a href="#plot-of-the-mr-egger-model" id="toc-plot-of-the-mr-egger-model" class="nav-link" data-scroll-target="#plot-of-the-mr-egger-model">Plot of the MR-Egger model</a></li>
+  <li><a href="#weighted-median" id="toc-weighted-median" class="nav-link" data-scroll-target="#weighted-median">Weighted median</a></li>
+  </ul></li>
+  <li><a href="#mode" id="toc-mode" class="nav-link" data-scroll-target="#mode">Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose</a></li>
+  <li><a href="#height" id="toc-height" class="nav-link" data-scroll-target="#height">Stata output for each estimation method using mrrobust: Height-Serum Glucose</a>
+  <ul class="collapse">
+  <li><a href="#read-in-data-1" id="toc-read-in-data-1" class="nav-link" data-scroll-target="#read-in-data-1">Read in data</a></li>
+  <li><a href="#ivw-1" id="toc-ivw-1" class="nav-link" data-scroll-target="#ivw-1">IVW</a></li>
+  <li><a href="#mr-egger-1" id="toc-mr-egger-1" class="nav-link" data-scroll-target="#mr-egger-1">MR-Egger</a></li>
+  <li><a href="#plot-of-the-mr-egger-model-1" id="toc-plot-of-the-mr-egger-model-1" class="nav-link" data-scroll-target="#plot-of-the-mr-egger-model-1">Plot of the MR-Egger model</a></li>
+  <li><a href="#weighted-median-1" id="toc-weighted-median-1" class="nav-link" data-scroll-target="#weighted-median-1">Weighted median</a></li>
+  </ul></li>
+  <li><a href="#height-mode" id="toc-height-mode" class="nav-link" data-scroll-target="#height-mode">Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Examples from our IJE paper</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The paper is available <a href="https://doi.org/10.1093/ije/dyy195">here</a>.</p>
+<section id="mrrobust-set-up" class="level2">
+<h2 class="anchored" data-anchor-id="mrrobust-set-up">mrrobust set-up</h2>
+<p>Install the <code>mrrobust</code> package using the user-written <code>github</code> package.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>net install github, from(<span class="st">"https://haghish.github.io/github/"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>gitget mrrobust</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you have Stata 12 or earlier you will need to install some of these manually (see <a href="https://remlapmot.github.io/mrrobust/#installing-and-updating-mrrobust">here</a> for instructions).</p>
+</section>
+<section id="summary-data-description-and-overview" class="level2">
+<h2 class="anchored" data-anchor-id="summary-data-description-and-overview">Summary data description and overview</h2>
+<p>Accompanying this paper are two sets of data <code>BMI.csv</code>, and <code>Height.csv</code>, containing the set of summary estimates required for performing the BMI-serum glucose and height-serum glucose analyses respectively. Each dataset is organised into 5 columns under the following headings:</p>
+<ul>
+<li><code>SNP</code>: A set of identifying numbers (rsids) for each genetic variant</li>
+<li><code>beta.exposure</code>: a set of values representing the coefficient from regressing the exposure upon the genetic variant within a GWAS</li>
+<li><code>beta.outcome</code>: a set of values representing the coefficient from regressing the outcome upon the genetic variant within a GWAS</li>
+<li><code>se.exposure</code>: a set of values representing the standard error corresponding to the coefficient in beta.exposure</li>
+<li><code>se.outcome</code>: a set of values representing the standard error corresponding to the coefficient in beta.outcome.</li>
+</ul>
+<p>Note Stata removes the <code>.</code> in the variable names when the data is imported.</p>
+<p>In <code>BMI.csv</code> the exposure is standardised body mass index (BMI), and is therefore interpreted on a standard deviation scale. The summary statistics are reported by Locke et al. In <code>Height.csv</code> the exposure is standardised height in meters and also interpreted on a standard deviation scale. The summary statistics are reported by Wood et al.</p>
+<p>For both analyses log transformed serum glucose was used as an outcome, reported by Shin et al. All the data was obtained from the MRBase GWAS catalogue available at <a href="https://www.mrbase.org/" class="uri">https://www.mrbase.org/</a>. Genetic variants were pruned so as to be independent (<span class="math inline">\(R^2\)</span> = 0.0001), and the effect alleles were aligned between the exposure and outcome datasets using the MRBase web application, prior to implementing <code>mrrobust</code>.</p>
+</section>
+<section id="estimation" class="level2">
+<h2 class="anchored" data-anchor-id="estimation">Stata output for each estimation method using mrrobust: BMI-Serum Glucose</h2>
+<section id="read-in-data" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-data">Read in data</h3>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>import delimited <span class="kw">using</span> BMI.csv, <span class="kw">clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ivw" class="level3">
+<h3 class="anchored" data-anchor-id="ivw">IVW</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 79
+                                              Residual standard error =  1.039
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+betaoutcome  |
+betaexposure |   .0231866   .0079957     2.90   0.004     .0075154    .0388578
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+<section id="mr-egger" class="level3">
+<h3 class="anchored" data-anchor-id="mr-egger">MR-Egger</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 79
+                                              Residual standard error =  1.046
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+betaoutcome  |
+       slope |   .0218507   .0221852     0.98   0.325    -.0216315    .0653329
+       _cons |    .000038   .0005877     0.06   0.948    -.0011138    .0011897
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-of-the-mr-egger-model" class="level3">
+<h3 class="anchored" data-anchor-id="plot-of-the-mr-egger-model">Plot of the MR-Egger model</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mreggerplot betaoutcome seoutcome betaexposure seexposure</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mreggerplot-bmi.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mreggerplot-bmi.svg" class="img-fluid figure-img" alt="Plot of the MR-Egger model for the BMI data."></p>
+<p></p><figcaption class="figure-caption">Plot of the MR-Egger model for the BMI data.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="weighted-median" class="level3">
+<h3 class="anchored" data-anchor-id="weighted-median">Weighted median</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mrmedian betaoutcome seoutcome betaexposure seexposure, weighted <span class="dv">seed</span>(300818)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 79
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .0339256   .0120248     2.82   0.005     .0103576    .0574937
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="mode" class="level2">
+<h2 class="anchored" data-anchor-id="mode">Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose</h2>
+<p>Using the <code>mrmodalplot</code> command, modal estimates are calculated using bandwidths of 0.25, 0.5, and 1 respectively. This command also produces three overlaid density plots for each value, as shown in the Figure.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) <span class="dv">seed</span>(300818)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrmodalplot-bmi.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 79
+                                                           Replications = 1000
+                                                                     Phi = .25
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .0374507   .0424036     0.88   0.377    -.0456588    .1205602
+------------------------------------------------------------------------------
+
+                                                      Number of genotypes = 79
+                                                           Replications = 1000
+                                                                      Phi = .5
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .0416424   .0369758     1.13   0.260    -.0308289    .1141137
+------------------------------------------------------------------------------
+
+                                                      Number of genotypes = 79
+                                                           Replications = 1000
+                                                                       Phi = 1
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .0431816   .0281684     1.53   0.125    -.0120274    .0983906
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mrmodalplot-bmi.svg" class="img-fluid figure-img" alt="Densities of the IV estimates using different values of phi."></p>
+<p></p><figcaption class="figure-caption">Densities of the IV estimates using different values of phi.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="height" class="level2">
+<h2 class="anchored" data-anchor-id="height">Stata output for each estimation method using mrrobust: Height-Serum Glucose</h2>
+<section id="read-in-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="read-in-data-1">Read in data</h3>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>import delimited <span class="kw">using</span> Height.csv, <span class="kw">clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ivw-1" class="level3">
+<h3 class="anchored" data-anchor-id="ivw-1">IVW</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                     Number of genotypes = 367
+                                              Residual standard error =  1.044
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+betaoutcome  |
+betaexposure |   .0015412   .0033017     0.47   0.641      -.00493    .0080124
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+<section id="mr-egger-1" class="level3">
+<h3 class="anchored" data-anchor-id="mr-egger-1">MR-Egger</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                     Number of genotypes = 367
+                                              Residual standard error =  1.045
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+betaoutcome  |
+       slope |  -.0025878   .0091178    -0.28   0.777    -.0204584    .0152828
+       _cons |   .0001338   .0002754     0.49   0.627     -.000406    .0006736
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-of-the-mr-egger-model-1" class="level3">
+<h3 class="anchored" data-anchor-id="plot-of-the-mr-egger-model-1">Plot of the MR-Egger model</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mreggerplot betaoutcome seoutcome betaexposure seexposure</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mreggerplot-height.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mreggerplot-height.svg" class="img-fluid figure-img" alt="Plot of the MR-Egger model for the Height data."></p>
+<p></p><figcaption class="figure-caption">Plot of the MR-Egger model for the Height data.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="weighted-median-1" class="level3">
+<h3 class="anchored" data-anchor-id="weighted-median-1">Weighted median</h3>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mrmedian betaoutcome seoutcome betaexposure seexposure, weighted <span class="dv">seed</span>(300818)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                     Number of genotypes = 367
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |          0   .0052323     0.00   1.000    -.0102551    .0102551
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="height-mode" class="level2">
+<h2 class="anchored" data-anchor-id="height-mode">Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) <span class="dv">seed</span>(300818)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrmodalplot-height.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                     Number of genotypes = 367
+                                                           Replications = 1000
+                                                                     Phi = .25
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .0061368   .0245472     0.25   0.803    -.0419748    .0542484
+------------------------------------------------------------------------------
+
+                                                     Number of genotypes = 367
+                                                           Replications = 1000
+                                                                      Phi = .5
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .0015595   .0212232     0.07   0.941    -.0400372    .0431561
+------------------------------------------------------------------------------
+
+                                                     Number of genotypes = 367
+                                                           Replications = 1000
+                                                                       Phi = 1
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |  -.0054772   .0149074    -0.37   0.713    -.0346952    .0237408
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mrmodalplot-height.svg" class="img-fluid figure-img" alt="Densities of the IV estimates using different values of phi."></p>
+<p></p><figcaption class="figure-caption">Densities of the IV estimates using different values of phi.</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ol type="1">
+<li>Locke AE, Kahali B, Berndt SI, Justice AE, Pers TH, Day FR, et al.&nbsp;Genetic studies of body mass index yield new insights for obesity biology. Nature. 2015;518(7538):197-206.</li>
+<li>Wood AR, Esko T, Yang J, Vedantam S, Pers TH, Gustafsson S, et al.&nbsp;Defining the role of common variation in the genomic and biological architecture of adult human height. Nat Genet. 2014;46(11):1173-86.</li>
+<li>Shin S-Y, Fauman EB, Petersen A-K, Krumsiek J, Santos R, Huang J, et al.&nbsp;An atlas of genetic influences on human blood metabolites. Nat Genet. 2014;46(6):543-50.</li>
+<li>Hemani G, Zheng J, Elsworth B, Wade KH, Haberland V, Baird D, et al.&nbsp;The MR-Base platform supports systematic causal inference across the human phenome. eLife. 2018;7:e34408. <a href="https://doi.org/10.7554/eLife.34408" class="uri">https://doi.org/10.7554/eLife.34408</a></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

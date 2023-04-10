@@ -1,0 +1,91 @@
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+BODY{background-color: ffffff;
+    font-family: monaco, "courier new", monospace;
+     color: #000000}
+.input, .result, .error{font-weight: bold}
+.input {color: #CC6600}
+.result{color: #000099}
+.error{color: #dd0000}
+</style>
+</head>
+<body>
+<pre>
+<span class=result><u>Title</u></span>
+<br><br>
+     <span class=result>mrivests</span> -- Generate genotype specific instrumental variable ratio (Wald) estimates in a
+dataset
+<br><br>
+<a name="syntax"></a><span class=result><u>Syntax</u></span>
+<br><br>
+        <span class=result>mrivests</span> <i>varname_gd</i> <i>varname_gdse</i> <i>varname_gp</i> [<i>varname_gpse</i> <i>varname_cov</i>] [<i>if</i>] [<i>in</i>] [<span class=result>,</span>
+                <i>options</i>]
+<br><br>
+    <i>options</i>                      Description
+    ----------------------------------------------------------------------------------------------
+      <span class=result><u>g</u></span><span class=result>enerate(</span><i>varlist</i><span class=result>,</span><i> replace</i><span class=result>)</span> Variables to contain IV estimates and SEs or CI limits
+      <span class=result>*</span>                          options passed to <span class=result>mrratio</span>
+<br><br>
+<a name="description"></a><span class=result><u>Description</u></span>
+<br><br>
+    <span class=result>mrivests</span> calls <span class=result>mrratio</span> to put the instrumental variable ratio (Wald) estimate and its standard
+    error in the variables specified.
+<br><br>
+    <i>varname_gd</i> is a variable containing genotype-disease (SNP-outcome) association estimates.
+<br><br>
+    <i>varname_gdse</i> is a variable containing the standard errors of the genotype-disease
+    (SNP-outcome) association estimates.
+<br><br>
+    <i>varname_gp</i> is a variable containing genotype-phenotype (SNP-exposure) association estimates.
+<br><br>
+    <i>varname_gpse</i> is a variable containing the standard errors of the genotype-phenotype
+    (SNP-exposure) association estimates.
+<br><br>
+    <i>varname_cov</i> is a variable containing the covariance between the genotype-disease (SNP-outcome)
+    and the genotype-phenotype (SNP-exposure) estimates.
+<br><br>
+<a name="options"></a><span class=result><u>Options</u></span>
+<br><br>
+    <span class=result><u>g</u></span><span class=result>enerate(</span><i>varlist</i><span class=result>,</span><i> replace</i><span class=result>)</span> specifies the variables (2 or 3) to contain the IV estimates and
+        their standard errors or confidence interval limits. Specifying <span class=result>replace</span> replaces the
+        values in these variables if they already exist in the dataset.
+<br><br>
+    <span class=result>*</span> options passed through to mrratio, e.g. <span class=result>nome</span>.
+<br><br>
+<a name="examples"></a><span class=result><u>Examples</u></span>
+<br><br>
+    Using the data provided by Do et al. (2013) generate genotype specific estimates for the LDL-c
+    phenotype.
+<br><br>
+    Setup
+        <span class=result>.</span> use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+<br><br>
+    Select observations (<i>p</i>-value with exposure &lt; 10^-8)
+        <span class=result>.</span> gen byte sel1 = (ldlcp2 &lt; 1e-8)
+<br><br>
+    Generate IV estimates in dataset
+        <span class=result>.</span> mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivse)
+<br><br>
+    Generate IV estimates with SEs assuming NOME
+        <span class=result>.</span> mrivests chdbeta chdse ldlcbeta if sel1==1, generate(ivest ivse, replace) nome
+<br><br>
+    Generate IV estimates with CI limits using Fieller's Theorem
+        <span class=result>.</span> drop ivest
+        <span class=result>.</span> mrivests chdbeta chdse ldlcbeta ldlcse if sel1==1, generate(ivest ivcilow ivciupp)
+            fieller
+<br><br>
+<a name="references"></a><span class=result><u>References</u></span>
+<br><br>
+<a name="do"></a>    Do et al., 2013. Common variants associated with plasma triglycerides and risk for coronary
+        artery disease. Nature Genetics. 45, 1345-1352.  DOI
+<br><br>
+<a name="author"></a><span class=result><u>Author</u></span>
+<br><br>
+INCLUDE help mrrobust-author
+</pre>
+</body>
+</html>

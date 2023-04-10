@@ -1,0 +1,116 @@
+
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css">
+BODY{background-color: ffffff;
+    font-family: monaco, "courier new", monospace;
+     color: #000000}
+.input, .result, .error{font-weight: bold}
+.input {color: #CC6600}
+.result{color: #000099}
+.error{color: #dd0000}
+</style>
+</head>
+<body>
+<pre>
+<span class=result><u>Title</u></span>
+<br><br>
+     <span class=result>mrmedianobs</span> -- Weighted median of instrumental variable estimates
+<br><br>
+<a name="syntax"></a><span class=result><u>Syntax</u></span>
+<br><br>
+        <span class=result>mrmedianobs</span> <i>depvar</i> [<i>varlist1</i>] <span class=result>(</span><i>varname_endog</i> <span class=result>=</span> <i>varlist_ivs</i><span class=result>)</span> [<i>if</i>] [<i>in</i>] [<span class=result>,</span> <i>options</i>]
+<br><br>
+    <i>options</i>               Description
+    ----------------------------------------------------------------------------------------------
+      <span class=result>all</span>                 report percentile and bias corrected confidence intervals
+      <span class=result><u>l</u></span><span class=result>evel(</span><i>#</i><span class=result>)</span>            set confidence level; default is <span class=result>level(95)</span>
+      <span class=result>obsboot</span>             obtain standard error by bootstrapping at observation level
+      <span class=result><u>penw</u></span><span class=result>eighted</span>         penalized weighted estimator
+      <span class=result>reps(</span><i>#</i><span class=result>)</span>             number of bootstrap replications to obtain standard error
+      <span class=result>seed(</span><i>#</i><span class=result>)</span>             seed for random number generator for bootstrapping to obtain standard
+                            error
+      <span class=result><u>w</u></span><span class=result>eighted</span>            weighted estimator
+<br><br>
+<a name="description"></a><span class=result><u>Description</u></span>
+<br><br>
+    <span class=result>mrmedianobs</span> performs unweighted, weighted, and penalized IV estimator on observation level
+    data (Bowden et al., 2016).
+<br><br>
+         <i>depvar</i>          outcome variable
+         <i>varlist1</i>        covariates to adjust for
+         <i>varname_endog</i>   exposure/treatment received/endogenous variable
+         <i>varlist_ivs</i>     instrumental variables
+<br><br>
+<a name="options"></a><span class=result><u>Options</u></span>
+<br><br>
+    <span class=result>all</span> report percentile and bias corrected bootstrap confidence interval limits (only applies to
+        observation level bootstrapping with <span class=result>obsboot</span>).
+<br><br>
+    <span class=result>level(</span><i>#</i><span class=result>)</span>; see <span class=result>[R] estimation options</span>.
+<br><br>
+    <span class=result>obsboot</span> obtain bootstrap standard error by bootstrapping at the observation level.
+<br><br>
+    <span class=result>reps(</span><i>#</i><span class=result>)</span> specifies the number of bootstrap replications for obtaining the standard error. The
+        default is 50 replications.
+<br><br>
+    <span class=result>seed(</span><i>#</i><span class=result>)</span> specifies the initial value of the random-number seed.  The default is the current
+        random-number seed. Specifying <span class=result>seed(</span><i>#</i><span class=result>)</span> is the same as typing <span class=result>set seed</span> <i>#</i> before issuing the
+        command; see <span class=result>set_seed</span>.
+<br><br>
+    <span class=result>weighted</span> use weights.
+<br><br>
+    <span class=result>penweighted</span> use penalized weights.
+<br><br>
+<br><br>
+<a name="examples"></a><span class=result><u>Examples</u></span>
+<br><br>
+    Simulated test dataset.
+<br><br>
+    Setup
+        <span class=result>.</span> use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, clear
+<br><br>
+    Unweighted median estimator
+        <span class=result>.</span> mrmedianobs y (x = z1-z20)
+<br><br>
+    Weighted median estimator
+        <span class=result>.</span> mrmedianobs y (x = z1-z20), weighted
+<br><br>
+    Penalized weighted median estimator
+        <span class=result>.</span> mrmedianobs y (x = z1-z20), penweighted
+<br><br>
+    Unweighted median estimator with percentile CI limits of observation level bootstrapping
+        <span class=result>.</span> mrmedianobs y (x = z1-z20), obsboot all
+<br><br>
+<br><br>
+<a name="results"></a><span class=result><u>Stored results</u></span>
+<br><br>
+    <span class=result>mrmedian</span> stores the following in <span class=result>e()</span>:
+<br><br>
+    Scalars        
+      <span class=result>e(k)</span>                number of instruments
+      <span class=result>e(N)</span>                number of observations
+      <span class=result>e(reps)</span>             number of (bootstrap) replications
+<br><br>
+    Macros         
+      <span class=result>e(cmd)</span>              <span class=result>mrmedianobs</span>
+      <span class=result>e(cmdline)</span>          command as typed
+<br><br>
+    Matrices       
+      <span class=result>e(b)</span>                coefficient vector
+      <span class=result>e(V)</span>                variance-covariance matrix of the estimates
+<br><br>
+<a name="references"></a><span class=result><u>References</u></span>
+<br><br>
+<a name="bowden"></a>    Bowden J, Davey Smith G, Haycock PC, Burgess S.  Consistent estimation in Mendelian
+        randomization with some invalid instruments using a weighted median estimator. Genetic
+        Epidemiology, 2016, 40, 4, 304-314.  DOI
+<br><br>
+<a name="author"></a><span class=result><u>Author</u></span>
+<br><br>
+INCLUDE help mrrobust-author
+</pre>
+</body>
+</html>

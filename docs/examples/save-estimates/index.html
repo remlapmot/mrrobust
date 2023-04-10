@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>mrrobust – index</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">mrrobust</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Examples</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-examples">    
+        <li>
+    <a class="dropdown-item" href="../../examples/mrrobust-examples/index.html">
+ <span class="dropdown-text">Examples from the helpfiles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/spiller-ije-2018-examples/index.html">
+ <span class="dropdown-text">IJE article examples</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/markstat-call-R-example/index.html">
+ <span class="dropdown-text">Using TwoSampleMR and mrrobust in a Stata Markdown document</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/rmarkdown-call-stata-example/index.html">
+ <span class="dropdown-text">Using TwoSampleMR and mrrobust in an R Markdown or Quarto document</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/save-estimates/index.html">
+ <span class="dropdown-text">Collecting and exporting results using <code>r(table)</code></span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../examples/mvcommands-example/index.html">
+ <span class="dropdown-text">Fitting MVMR models</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-helpfiles" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Helpfiles</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-helpfiles">    
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrrobust-helpfile.html">
+ <span class="dropdown-text">mrrobust</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mr-helpfile.html">
+ <span class="dropdown-text">mr</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrdeps-helpfile.html">
+ <span class="dropdown-text">mrdeps</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mregger-helpfile.html">
+ <span class="dropdown-text">mregger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mreggerplot-helpfile.html">
+ <span class="dropdown-text">mreggerplot</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mreggersimex-helpfile.html">
+ <span class="dropdown-text">mreggersimex</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmedian-helpfile.html">
+ <span class="dropdown-text">mrmedian</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmedianobs-helpfile.html">
+ <span class="dropdown-text">mrmedianobs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmodal-helpfile.html">
+ <span class="dropdown-text">mrmodal</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmodalplot-helpfile.html">
+ <span class="dropdown-text">mrmodalplot</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrratio-helpfile.html">
+ <span class="dropdown-text">mrratio</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrivests-helpfile.html">
+ <span class="dropdown-text">mrivests</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrforest-helpfile.html">
+ <span class="dropdown-text">mrforest</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrfunnel-helpfile.html">
+ <span class="dropdown-text">mrfunnel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmvivw-helpfile.html">
+ <span class="dropdown-text">mrmvivw</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrmvegger-helpfile.html">
+ <span class="dropdown-text">mrmvegger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../helpfiles/mrleaveoneout-helpfile.html">
+ <span class="dropdown-text">mrleaveoneout</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/remlapmot/mrrobust"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#how-to-collect-and-export-results" id="toc-how-to-collect-and-export-results" class="nav-link active" data-scroll-target="#how-to-collect-and-export-results">How to collect and export results</a>
+  <ul class="collapse">
+  <li><a href="#setup-example-data" id="toc-setup-example-data" class="nav-link" data-scroll-target="#setup-example-data">Setup example data</a></li>
+  <li><a href="#fit" id="toc-fit" class="nav-link" data-scroll-target="#fit">Fit estimators - collecting results using <code>r(table)</code> matrix</a></li>
+  <li><a href="#combine-and-export-results" id="toc-combine-and-export-results" class="nav-link" data-scroll-target="#combine-and-export-results">Combine and export results</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="how-to-collect-and-export-results" class="level1">
+<h1>How to collect and export results</h1>
+<p>This example shows how to conveniently save and export your estimates using the <code>r(table)</code> matrix that is now returned by each command.</p>
+<section id="setup-example-data" class="level2">
+<h2 class="anchored" data-anchor-id="setup-example-data">Setup example data</h2>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> https:<span class="co">//raw.github.com/remlapmot/mrrobust/master/dodata, clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
+<p>Select observations (p-value with exposure &lt; 10<sup>-8</sup>)</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> <span class="kw">byte</span> sel1 = (ldlcp2 &lt; 1e-8)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code></code></pre>
+</div>
+</div>
+</section>
+<section id="fit" class="level2">
+<h2 class="anchored" data-anchor-id="fit">Fit estimators - collecting results using <code>r(table)</code> matrix</h2>
+<p>IVW (with fixed effect standard errors)</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mregger chdbeta ldlcbeta [aw=1/(chdse^2)] <span class="kw">if</span> sel1==1, ivw <span class="kw">fe</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mat ivw = <span class="fu">r</span>(<span class="kw">table</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 73
+                                      Residual standard error constrained at 1
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+    ldlcbeta |   .4815055    .038221    12.60   0.000     .4065938    .5564173
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<p>MR-Egger (with SEs using an unconstrained residual variance)</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mregger chdbeta ldlcbeta [aw=1/(chdse^2)] <span class="kw">if</span> sel1==1</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mat mregger = <span class="fu">r</span>(<span class="kw">table</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 73
+                                              Residual standard error =  1.548
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+chdbeta      |
+       slope |   .6173131   .1034573     5.97   0.000     .4145405    .8200858
+       _cons |  -.0087706   .0054812    -1.60   0.110    -.0195136    .0019723
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<p>MR-Egger using the radial formulation</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mregger chdbeta ldlcbeta [aw=1/(chdse^2)] <span class="kw">if</span> sel1==1, radial</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mat radial = <span class="fu">r</span>(<span class="kw">table</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 73
+                                              Residual standard error =  1.547
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+radialGD     |
+    radialGP |    .642582   .1157871     5.55   0.000     .4156434    .8695205
+       _cons |  -.5737301   .3545658    -1.62   0.106    -1.268666    .1212062
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<p>Weighted mode estimator</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mrmodal chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, weighted</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mat <span class="kw">mode</span> = <span class="fu">r</span>(<span class="kw">table</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 73
+                                                           Replications = 1000
+                                                                       Phi = 1
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .4789702   .0663145     7.22   0.000     .3489963    .6089441
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+<p>Weighted median estimator</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mrmedian chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, weighted</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>mat <span class="kw">median</span> = <span class="fu">r</span>(<span class="kw">table</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      Number of genotypes = 73
+                                                           Replications = 1000
+------------------------------------------------------------------------------
+             | Coefficient  Std. err.      z    P&gt;|z|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+        beta |   .4582573   .0653722     7.01   0.000     .3301302    .5863845
+------------------------------------------------------------------------------</code></pre>
+</div>
+</div>
+</section>
+<section id="combine-and-export-results" class="level2">
+<h2 class="anchored" data-anchor-id="combine-and-export-results">Combine and export results</h2>
+<p>Check our matrices</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">dir</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">list</span> ivw</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">list</span> mregger</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">list</span> radial</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">list</span> <span class="kw">mode</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">list</span> <span class="kw">median</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       median[9,1]
+         mode[9,1]
+       radial[9,2]
+      mregger[9,2]
+          ivw[9,1]
+
+
+ivw[9,1]
+          chdbeta:
+         ldlcbeta
+     b  .48150551
+    se  .03822098
+     z  12.597937
+pvalue  2.167e-36
+    ll  .40659377
+    ul  .55641726
+    df          .
+  crit   1.959964
+ eform          0
+
+
+mregger[9,2]
+           chdbeta:    chdbeta:
+             slope       _cons
+     b   .61731315  -.00877065
+    se   .10345735   .00548118
+     z   5.9668371    -1.60014
+pvalue   2.419e-09   .10956752
+    ll   .41454047  -.01951356
+    ul   .82008582   .00197226
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
+
+radial[9,2]
+          radialGD:   radialGD:
+          radialGP       _cons
+     b   .64258196  -.57373006
+    se   .11578709   .35456584
+     z   5.5496858    -1.61812
+pvalue   2.862e-08   .10563675
+    ll   .41564344  -1.2686663
+    ul   .86952048   .12120621
+    df           .           .
+  crit    1.959964    1.959964
+ eform           0           0
+
+
+mode[9,1]
+             beta
+     b   .4789702
+    se  .06631445
+     z   7.222712
+pvalue  5.096e-13
+    ll  .34899626
+    ul  .60894415
+    df          .
+  crit   1.959964
+ eform          0
+
+
+median[9,1]
+             beta
+     b  .45825733
+    se   .0653722
+     z  7.0099725
+pvalue  2.384e-12
+    ll  .33013017
+    ul  .58638448
+    df          .
+  crit   1.959964
+ eform          0</code></pre>
+</div>
+</div>
+<p>Combined into single matrix</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mat output = (ivw, mregger, radial, <span class="kw">mode</span>, <span class="kw">median</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">colnames</span> output = ivw_beta mregger_beta mregger_cons <span class="co">///</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    radial_beta radial_cons mode_beta median_beta</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">coleq</span> output = <span class="st">""</span> <span class="st">""</span> <span class="st">""</span> <span class="st">""</span> <span class="st">""</span> <span class="st">""</span> <span class="st">""</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>mat output = output'</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">list</span> output, <span class="kw">format</span>(%4.3f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>output[7,9]
+                   b      se       z  pvalue      ll      ul      df    crit   eform
+    ivw_beta   0.482   0.038  12.598   0.000   0.407   0.556       .   1.960   0.000
+mregger_beta   0.617   0.103   5.967   0.000   0.415   0.820       .   1.960   0.000
+mregger_cons  -0.009   0.005  -1.600   0.110  -0.020   0.002       .   1.960   0.000
+ radial_beta   0.643   0.116   5.550   0.000   0.416   0.870       .   1.960   0.000
+ radial_cons  -0.574   0.355  -1.618   0.106  -1.269   0.121       .   1.960   0.000
+   mode_beta   0.479   0.066   7.223   0.000   0.349   0.609       .   1.960   0.000
+ median_beta   0.458   0.065   7.010   0.000   0.330   0.586       .   1.960   0.000</code></pre>
+</div>
+</div>
+<p>Export matrix to dataset</p>
+<div class="cell" data-layout-align="center" data-collectcode="true">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">drop</span> <span class="dt">_all</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">svmat</span> output, names(col)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> <span class="ot">rownames</span> : <span class="ot">rownames</span> output</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">di</span> <span class="st">"`rownames'"</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="kw">tokenize</span> <span class="ot">`rownames'</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> str15 estimate = <span class="st">""</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="kw">forvalues</span> i = 1/7 {</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">replace</span> estimate = <span class="st">"``i''"</span> <span class="kw">in</span> <span class="ot">`i'</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Show dataset</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ot">list</span> estimate b se z pvalue ll ul, <span class="kw">clean</span> <span class="kw">noobs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        estimate           b         se          z     pvalue          ll         ul  
+        ivw_beta    .4815055    .038221   12.59794   2.17e-36    .4065938   .5564172  
+    mregger_beta    .6173131   .1034573   5.966837   2.42e-09    .4145405   .8200858  
+    mregger_cons   -.0087707   .0054812   -1.60014   .1095675   -.0195136   .0019723  
+     radial_beta    .6425819   .1157871   5.549686   2.86e-08    .4156434   .8695205  
+     radial_cons   -.5737301   .3545658   -1.61812   .1056367   -1.268666   .1212062  
+       mode_beta    .4789702   .0663145   7.222712   5.10e-13    .3489963   .6089441  
+     median_beta    .4582573   .0653722   7.009973   2.38e-12    .3301302   .5863845  </code></pre>
+</div>
+</div>
+<p>Save dataset</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">save</span> myestimates, <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Export as tab-delimited textfile</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">export</span> delimited <span class="kw">using</span> myestimates.txt, delimiter(<span class="kw">tab</span>) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
