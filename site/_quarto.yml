@@ -20,6 +20,7 @@ website:
           - text: "IJE article examples"
             href: examples/spiller-ije-2018-examples/spiller-ije-2018-examples.qmd
           - text: "Using TwoSampleMR and mrrobust in a Stata Markdown document"
+            href: examples/markstat-call-R-example/markstat-call-R-example.qmd
           - text: "Using TwoSampleMR and mrrobust in an R Markdown or Quarto document"
           - text: "Collecting a exporting results using `r(table)`"
           - text: "Fitting MVMR models"
