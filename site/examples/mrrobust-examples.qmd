@@ -47,6 +47,7 @@ qui gr export mrforest.svg, width(600) replace
 ```{r}
 #| echo: false
 #| fig-alt: "Example forest plot of genotype specific IV estimates."
+#| fig-cap: "Example forest plot of genotype specific IV estimates."
 knitr::include_graphics("mrforest.svg")
 ```
 
@@ -95,7 +96,12 @@ mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) seed(12345
 qui gr export mreggersimex-plot.svg, width(600) replace
 ```
 
-![SIMEX plots for the MR-Egger model.](mreggersimex-plot.svg)
+```{r}
+#| echo: false
+#| fig-alt: "SIMEX plots for the MR-Egger model."
+#| fig-cap: "SIMEX plots for the MR-Egger model."
+knitr::include_graphics("mreggersimex-plot.svg")
+```
 
 ## mreggerplot examples
 ```{stata}
@@ -103,7 +109,12 @@ mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1
 qui gr export mreggerplot.svg, width(600) replace
 ```
 
-![Scatter plot showing the genotype summary level data points and the fitted MR-Egger model.](mreggerplot.svg)
+```{r}
+#| echo: false
+#| fig-alt: "Scatter plot showing the genotype summary level data points and the fitted MR-Egger model."
+#| fig-cap: "Scatter plot showing the genotype summary level data points and the fitted MR-Egger model."
+knitr::include_graphics("mreggerplot.svg")
+```
 
 ## mrmedian examples
 Weighted median estimator.
@@ -117,7 +128,12 @@ mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
 qui gr export mrmodalplot.svg, width(600) replace
 ```
 
-![Densities of the IV estimates using different values of the phi parameter.](mrmodalplot.svg)
+```{r}
+#| echo: false
+#| fig-alt: "Densities of the IV estimates using different values of the phi parameter."
+#| fig-cap: "Densities of the IV estimates using different values of the phi parameter."
+knitr::include_graphics("mrmodalplot.svg")
+```
 
 Simple mode estimator.
 ```{stata}
@@ -140,7 +156,12 @@ mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 qui gr export mrfunnel.svg, width(600) replace
 ```
 
-![Example funnel plot.](mrfunnel.svg)
+```{r}
+#| echo: false
+#| fig-alt: "Example funnel plot."
+#| fig-cap: "Example funnel plot."
+knitr::include_graphics("mrfunnel.svg")
+```
 
 ## Leave one out analysis
 Create a smaller subset of data.
@@ -155,7 +176,12 @@ mrleaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid) noprint
 qui gr export mrleaveoneout-plot-01.svg, width(600) replace
 ```
 
-![Plot showing leave one (genotype) out analysis for the IVW estimate.](mrleaveoneout-plot-01.svg)
+```{r}
+#| echo: false
+#| fig-alt: "Plot showing leave one (genotype) out at a time analysis for the IVW estimate."
+#| fig-cap: "Plot showing leave one (genotype) out at a time analysis for the IVW estimate."
+knitr::include_graphics("mrleaveoneout-plot-01.svg")
+```
 
 Perform leave one out analysis using MVMR collecting the estimate for LDL-c.
 ```{stata}
@@ -163,4 +189,9 @@ mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta if sel2==1, method(mvmr) gyse(chd
 qui gr export mrleaveoneout-plot-02.svg, width(600) replace
 ```
 
-![Plot showing leave one out analysis for the MVMR estimate.](mrleaveoneout-plot-02.svg)
+```{r}
+#| echo: false
+#| fig-alt: "Plot showing leave one (genotype) out at a time analysis for the MVMR estimate."
+#| fig-cap: "Plot showing leave one (genotype) out at a time analysis for the MVMR estimate."
+knitr::include_graphics("mrleaveoneout-plot-02.svg")
+```
