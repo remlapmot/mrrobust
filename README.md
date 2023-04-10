@@ -19,7 +19,7 @@ To obtain the latest update please see the instructions [below](#installing-and-
 * April 2023:
   - Improved the alt text descriptions for the images in the *README* and package website, and also centred the images
   - Remade the **mrrobust** website using [**Quarto**](https://quarto.org/)
-  - Updated the Sanderson et al., bioRxiv, 2020 reference to its published version in Statistics in Medicine, 2021, [doi](https://doi.org/10.1002/sim.9133) 
+  - Updated the Sanderson et al., bioRxiv, 2020, [doi](https://doi.org/10.1101/2020.04.02.021980) reference to its published version Sanderson et al., Statistics in Medicine, 2021, [doi](https://doi.org/10.1002/sim.9133) 
 * February 2023:
   - Updated R Markdown example to use the CRAN version of the [**Statamarkdown**](https://cran.r-project.org/package=Statamarkdown) package
 * September 2022:
