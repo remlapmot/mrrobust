@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:   1 Feb 2022, 11:14:12
+ opened on:  10 Apr 2023, 22:37:15
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -11,11 +11,11 @@
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
@@ -171,7 +171,7 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:   1 Feb 2022, 11:19:21
+ closed on:  10 Apr 2023, 22:40:22
 -------------------------------------------------------------------------------

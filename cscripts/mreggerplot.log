@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:   1 Feb 2022, 11:10:50
+ opened on:  10 Apr 2023, 22:36:32
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -11,11 +11,11 @@
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
+/Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -323,7 +323,7 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:   1 Feb 2022, 11:14:12
+ closed on:  10 Apr 2023, 22:37:15
 -------------------------------------------------------------------------------

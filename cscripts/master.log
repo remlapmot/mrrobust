@@ -1,8 +1,8 @@
----------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
       name:  master
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- opened on:   1 Feb 2022, 11:09:08
+ opened on:  10 Apr 2023, 22:35:02
 
 . 
 . cscript master
@@ -39,9 +39,9 @@
   5. }
 -------------------------------------------------------------------------------
       name:  mr
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- opened on:   1 Feb 2022, 11:09:08
+ opened on:  10 Apr 2023, 22:35:02
 
 . * mr cscript
 . * 20jan2020
@@ -67,71 +67,71 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mrmvegger, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mr, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mr.ado
+/Users/tom/Documents/GitHub/mrrobust/mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
+/Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
+/Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
+/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
+/Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
+/Users/tom/Documents/GitHub/mrrobust/mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
+/Users/tom/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -580,15 +580,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mr.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- closed on:   1 Feb 2022, 11:10:08
+ closed on:  10 Apr 2023, 22:35:54
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:   1 Feb 2022, 11:10:08
+ opened on:  10 Apr 2023, 22:35:54
 
 . * mrdeps cscript
 . * 20jan2020
@@ -597,7 +597,7 @@ end of do-file
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrdeps.ado
+/Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
@@ -618,15 +618,15 @@ all files already exist and are up to date.
 . 
 end of do-file
       name:  mrdeps
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrdeps.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:   1 Feb 2022, 11:10:41
+ closed on:  10 Apr 2023, 22:36:30
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:   1 Feb 2022, 11:10:41
+ opened on:  10 Apr 2023, 22:36:30
 
 . * mregger cscript
 . * 04jun2016
@@ -635,7 +635,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
+/Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -1463,7 +1463,7 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-c:\ado\personal\t\tsci.ado
+/Users/tom/Library/Application Support/Stata/ado/plus/t/tsci.ado
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
@@ -2554,15 +2554,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mregger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:   1 Feb 2022, 11:10:50
+ closed on:  10 Apr 2023, 22:36:32
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:   1 Feb 2022, 11:10:50
+ opened on:  10 Apr 2023, 22:36:32
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2571,11 +2571,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggerplot.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mregger.ado
+/Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -2883,15 +2883,15 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggerplot.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:   1 Feb 2022, 11:14:12
+ closed on:  10 Apr 2023, 22:37:15
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:   1 Feb 2022, 11:14:12
+ opened on:  10 Apr 2023, 22:37:15
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2900,11 +2900,11 @@ end of do-file
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimex.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mreggersimexonce.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
@@ -3060,15 +3060,15 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mreggersimex.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:   1 Feb 2022, 11:19:21
+ closed on:  10 Apr 2023, 22:40:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- opened on:   1 Feb 2022, 11:19:21
+ opened on:  10 Apr 2023, 22:40:22
 
 . * mrforest cscript
 . * 16jun2017
@@ -3077,7 +3077,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrforest.ado
+/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
@@ -3224,15 +3224,15 @@ Options ivwopts(fe) and nofe may not be specified together
 . 
 end of do-file
       name:  mrforest
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrforest.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- closed on:   1 Feb 2022, 11:20:14
+ closed on:  10 Apr 2023, 22:40:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- opened on:   1 Feb 2022, 11:20:14
+ opened on:  10 Apr 2023, 22:40:44
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3241,7 +3241,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrfunnel
 
 -> which mrfunnel, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
+/Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 . 
@@ -3314,15 +3314,15 @@ C:\Users\eptmp\Documents\GitHub\mrrobust\mrfunnel.ado
 . 
 end of do-file
       name:  mrfunnel
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrfunnel.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- closed on:   1 Feb 2022, 11:20:36
+ closed on:  10 Apr 2023, 22:40:52
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- opened on:   1 Feb 2022, 11:20:36
+ opened on:  10 Apr 2023, 22:40:52
 
 . * mrivests testcode
 . * 10jun2017
@@ -3331,7 +3331,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrivests.ado
+/Users/tom/Documents/GitHub/mrrobust/mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
@@ -3545,15 +3545,15 @@ variable ivse not found
 . 
 end of do-file
       name:  mrivests
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrivests.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- closed on:   1 Feb 2022, 11:20:38
+ closed on:  10 Apr 2023, 22:40:53
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- opened on:   1 Feb 2022, 11:20:38
+ opened on:  10 Apr 2023, 22:40:53
 
 . * mrmedian test code
 . * 3jun2016
@@ -3562,7 +3562,7 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrmedian
 
 -> which mrmedian, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedian.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 . 
@@ -3745,7 +3745,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716419     5.98   0.000     .2881559     .568987
+        beta |   .4285714    .071556     5.99   0.000     .2883242    .5688187
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3760,7 +3760,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0716419     5.98   0.000     .2881559     .568987
+        beta |   .4285714    .071556     5.99   0.000     .2883242    .5688187
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3843,7 +3843,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0706725     6.06   0.000     .2900558    .5670871
+        beta |   .4285714    .073249     5.85   0.000     .2850061    .5721368
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3858,7 +3858,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0706725     6.06   0.000     .2900558    .5670871
+        beta |   .4285714    .073249     5.85   0.000     .2850061    .5721368
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3880,7 +3880,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0706725     6.06   0.000     .2900558    .5670871
+        beta |   .4285714    .073249     5.85   0.000     .2850061    .5721368
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3894,7 +3894,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [90% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0706725     6.06   0.000     .3123254    .5448174
+        beta |   .4285714    .073249     5.85   0.000     .3080876    .5490553
 ------------------------------------------------------------------------------
 
 . 
@@ -3905,7 +3905,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [90% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0706725     6.06   0.000     .3123254    .5448174
+        beta |   .4285714    .073249     5.85   0.000     .3080876    .5490553
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3919,21 +3919,21 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [80% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714   .0706725     6.06   0.000     .3380009    .5191419
+        beta |   .4285714    .073249     5.85   0.000     .3346991    .5224438
 ------------------------------------------------------------------------------
 
 . 
 end of do-file
       name:  mrmedian
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedian.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- closed on:   1 Feb 2022, 11:20:40
+ closed on:  10 Apr 2023, 22:40:54
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:   1 Feb 2022, 11:20:40
+ opened on:  10 Apr 2023, 22:40:54
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -3942,11 +3942,11 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmedianobs_work.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
@@ -4298,15 +4298,15 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmedianobs.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:   1 Feb 2022, 11:21:00
+ closed on:  10 Apr 2023, 22:41:05
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:   1 Feb 2022, 11:21:00
+ opened on:  10 Apr 2023, 22:41:05
 
 . * mrmodal cscript
 . * 2jun2017
@@ -4315,7 +4315,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodal.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
@@ -5087,15 +5087,15 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodal.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:   1 Feb 2022, 11:21:20
+ closed on:  10 Apr 2023, 22:41:16
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- opened on:   1 Feb 2022, 11:21:20
+ opened on:  10 Apr 2023, 22:41:16
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5104,7 +5104,7 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmodalplot
 
 -> which mrmodalplot, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 . 
@@ -5963,15 +5963,15 @@ C:\Users\eptmp\Documents\GitHub\mrrobust\mrmodalplot.ado
 . 
 end of do-file
       name:  mrmodalplot
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmodalplot.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- closed on:   1 Feb 2022, 11:22:38
+ closed on:  10 Apr 2023, 22:41:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- opened on:   1 Feb 2022, 11:22:38
+ opened on:  10 Apr 2023, 22:41:44
 
 . * mrratio cscript
 . * 6jun2017
@@ -5980,7 +5980,7 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrratio
 
 -> which mrratio, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrratio.ado
+/Users/tom/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
@@ -6314,15 +6314,15 @@ With 3 inputs please specify the nome option.
 . 
 end of do-file
       name:  mrratio
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrratio.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- closed on:   1 Feb 2022, 11:22:39
+ closed on:  10 Apr 2023, 22:41:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- opened on:   1 Feb 2022, 11:22:39
+ opened on:  10 Apr 2023, 22:41:44
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -6331,15 +6331,15 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmvivw
 
 -> which mrmvivw, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvivw.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvivw, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mvivw.ado
+/Users/tom/Documents/GitHub/mrrobust/mvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvmr, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mvmr.ado
+/Users/tom/Documents/GitHub/mrrobust/mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 . 
@@ -7742,15 +7742,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvivw
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvivw.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- closed on:   1 Feb 2022, 11:22:57
+ closed on:  10 Apr 2023, 22:41:47
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:   1 Feb 2022, 11:22:57
+ opened on:  10 Apr 2023, 22:41:47
 
 . * mrmvegger cscript
 . * 22un2020
@@ -7759,7 +7759,7 @@ end of do-file
 ----------------------------------------------------------------BEGIN mrmvegger
 
 -> which mrmvegger, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrmvegger.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 . 
@@ -8544,15 +8544,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvegger
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrmvegger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:   1 Feb 2022, 11:23:07
+ closed on:  10 Apr 2023, 22:41:48
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:   1 Feb 2022, 11:23:07
+ opened on:  10 Apr 2023, 22:41:48
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -8704,7 +8704,7 @@ References
         304-314.  DOI
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
-        risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
+        risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
         DOI
 
 Author
@@ -8921,14 +8921,14 @@ References
 
     Burgess S, Butterworth A, Thompson S. Mendelian randomization analysis
         with multiple genetic variants using summarized data. Genetic
-        Epidemiology, 2013, 37, 7, 658–665.   DOI
+        Epidemiology, 2013, 37, 7, 658-665.   DOI
 
     Del Greco F M, Minelli C, Sheehan NA, Thompson JR. Detecting pleiotropy
         in Mendelian randomization studies with summary data and a continuous
         outcome.  Statistics in Medicine, 2015, 34, 21, 2926-2940.  DOI
 
     Do R et al. Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI:  DOI
 
     Thompson SG, Sharp SJ. Explaining heterogeneity in meta-analysis: a
@@ -9015,7 +9015,7 @@ References
         Association, 1995, 85, 652-663.  Link
 
     Do R et al. Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI:  DOI
 
     Hardin JW, Schmiediche H, Carroll RJ. The simulation extrapolation method
@@ -9150,7 +9150,7 @@ References
         304-314.  DOI
 
     Do et al.Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
 Author
@@ -9259,7 +9259,7 @@ References
         304-314.  DOI
 
     Do et al. Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
 Author
@@ -9487,7 +9487,7 @@ Stored results
 References
 
     Do et al. Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
     Hartwig FP, Davey Smith G, Bowden J.  Robust inference in two-sample
@@ -9568,7 +9568,7 @@ References
         304-314.  DOI
 
     Do et al. Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
 Author
@@ -9750,7 +9750,7 @@ Examples
 References
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
-        risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
+        risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
         DOI
 
 Author
@@ -9873,7 +9873,7 @@ References
         304-314.  DOI
 
     Do et al. Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
     Harris RJ, Bradburn MJ, Deeks JJ, Harbord RM, Altman DG, Sterne JAC.
@@ -9972,7 +9972,7 @@ Examples
 References
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
-        risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
+        risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
         DOI
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
@@ -10034,7 +10034,7 @@ Options
         When this option is specified the Q_A statistic for instrument
         validity is calculated.  When this is specified and there are two or
         more phenotypes conditional F statistics for instrument strength are
-        calculated.  See Sanderson et al. (2019) and Sanderson et al. (2020)
+        calculated.  See Sanderson et al. (2019) and Sanderson et al. (2021)
         for more information.
 
     level(#); see [R] estimation options.
@@ -10102,10 +10102,10 @@ References
     Burgess S, Dudbridge F, Thompson SG. Multivariable Mendelian
         randomization:  the use of pleiotropic genetic variants to estimate
         causal effects.  American Journal of Epidemiology, 2015, 181, 4,
-        251–260.  DOI
+        251-260.  DOI
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
-        risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
+        risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
         DOI
 
     Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of
@@ -10115,7 +10115,7 @@ References
 
     Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and
         pleiotropic instruments in two-sample multivariable Mendelian
-        randomisation.  bioRxiv preprint, 2020, 2020.04.02.021980 DOI
+        randomization.  Statistics in Medicine, 2021, 40, 25, 5434-5452.  DOI
 
 Author
 
@@ -10224,7 +10224,7 @@ Stored results
 References
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
-        risk for coronary artery disease. Nature Genetics. 45, 1345–1352.
+        risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
         DOI
 
     Rees J, Wood A, Burgess S. Extending the MR-Egger method for
@@ -10314,7 +10314,7 @@ Examples
 References
 
     Do et al. Common variants associated with plasma triglycerides and risk
-        for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352.
+        for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
 Author
@@ -10324,16 +10324,15 @@ INCLUDE help mrrobust-author
 . 
 end of do-file
       name:  helpfiles
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\helpfiles.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:   1 Feb 2022, 11:23:07
+ closed on:  10 Apr 2023, 22:41:48
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
-> g
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:   1 Feb 2022, 11:23:07
+ opened on:  10 Apr 2023, 22:41:48
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -10342,7 +10341,7 @@ end of do-file
 ------------------------------------------------------------BEGIN mrleaveoneout
 
 -> which mrleaveoneout, usesysdir
-C:\Users\eptmp\Documents\GitHub\mrrobust\mrleaveoneout.ado
+/Users/tom/Documents/GitHub/mrrobust/mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
 
 . 
@@ -17341,16 +17340,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrleaveoneout
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\mrleaveoneout.lo
-> g
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:   1 Feb 2022, 11:24:30
+ closed on:  10 Apr 2023, 22:42:25
 -------------------------------------------------------------------------------
 
 . 
 . log close _all
       name:  master
-       log:  C:\Users\eptmp\Documents\GitHub\mrrobust\cscripts\master.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- closed on:   1 Feb 2022, 11:24:30
+ closed on:  10 Apr 2023, 22:42:25
 -------------------------------------------------------------------------------
