@@ -7,7 +7,7 @@
 
 <!-- For generating the html versions of the helpfiles -->
 ```{r, include=FALSE}
-if (file.exists('profile.do')) file.remove('profile.do')
+# if (file.exists('profile.do')) file.remove('profile.do')
 library(Statamarkdown)
 ```
 
