@@ -103,7 +103,7 @@ measurement error models. Journal of the American Statistical Association, 1995,
 {marker do}{...}
 {phang}
 Do R et al. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. DOI: 
+ for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352. DOI: 
 {browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 

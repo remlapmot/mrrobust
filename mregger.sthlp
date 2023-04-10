@@ -236,7 +236,7 @@ randomization. arXiv:1606.03729v1, 2016.
 {marker ivw}{...}
 {phang}
 Burgess S, Butterworth A, Thompson S. Mendelian randomization analysis with 
-multiple genetic variants using summarized data. Genetic Epidemiology, 2013, 37, 7, 658–665. 
+multiple genetic variants using summarized data. Genetic Epidemiology, 2013, 37, 7, 658-665. 
 {browse "https://dx.doi.org/10.1002%2Fgepi.21758": DOI}
 
 {marker delgreco}{...}
@@ -250,7 +250,7 @@ Statistics in Medicine, 2015, 34, 21, 2926-2940.
 {marker do}{...}
 {phang}
 Do R et al. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. DOI: 
+ for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352. DOI: 
 {browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 

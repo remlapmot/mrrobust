@@ -141,7 +141,7 @@ Consistent estimation in Mendelian randomization with some invalid instruments
 {marker do}{...}
 {phang}
 Do et al. Common variants associated with plasma triglycerides and risk
- for coronary artery disease. Nature Genetics, 2013, 45, 1345–1352. 
+ for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352. 
 {browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
 
