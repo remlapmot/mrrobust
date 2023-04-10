@@ -141,6 +141,7 @@ qui gr export mrfunnel.svg, width(600) replace
 ## Leave one out analysis
 Create a smaller subset of data.
 ```{stata}
+#| collectcode: true
 gen byte sel2 = (ldlcp2 < 1e-25)
 ```
 
