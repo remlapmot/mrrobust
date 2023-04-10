@@ -162,7 +162,7 @@ Journal of Epidemiology, 2019, 48, 3, 713-727.
 {phang}
 Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and 
 pleiotropic instruments in two-sample multivariable Mendelian randomisation. 
-Statistics in Medicine, 2021, 40, 25, 5434-5452
+Statistics in Medicine, 2021, 40, 25, 5434-5452.
 {browse "https://doi.org/10.1002/sim.9133":DOI}
 {p_end}
 
