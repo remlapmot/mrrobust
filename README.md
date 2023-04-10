@@ -292,7 +292,7 @@ GitHub or send me an email to <tom.palmer@bristol.ac.uk>.
  randomization in the single-sample and two-sample summary data settings. International Journal of 
  Epidemiology, 2019, 48, 3, 713-727. [doi](https://doi.org/10.1093/ije/dyy262)
  * Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and pleiotropic instruments in 
- two-sample multivariable Mendelian randomisation. Statistics in Medicine, 2021, 40, 25, 5434-5452.
+ two-sample multivariable Mendelian randomization. Statistics in Medicine, 2021, 40, 25, 5434-5452.
  [doi](https://doi.org/10.1002/sim.9133)
 
 ## Acknowledgements
