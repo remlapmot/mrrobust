@@ -4,6 +4,13 @@ title: Examples from helpfiles in the mrrobust package
 
 ```{r}
 #| include: false
+knitr::opts_chunk$set(
+    fig.align = "center"
+)
+```
+
+```{r}
+#| include: false
 library(Statamarkdown)
 ```
 
