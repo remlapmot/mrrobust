@@ -90,8 +90,7 @@ mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial heterogi
 ```
 
 ## mreggersimex examples
-SIMEX suppressing bootstrapped SEs (for speed - remove `noboot` option to obtain 
-SEs).
+SIMEX suppressing bootstrapped SEs (for speed - remove the `noboot` option to obtain SEs).
 ```{stata}
 mreggersimex chdbeta ldlcbeta [aw=1/chdse^2] if sel1==1, gxse(ldlcse) seed(12345) noboot
 qui gr export mreggersimex-plot.svg, width(600) replace
