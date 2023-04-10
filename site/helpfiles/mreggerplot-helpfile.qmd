@@ -1,5 +1,5 @@
 ---
 ---
 
-<iframe src="./helpfiles/mreggerplot.html" width="100%" style="height: 100em; border: none">
+<iframe src="./mreggerplot.html" width="100%" style="height: 100em; border: none">
 </iframe>
