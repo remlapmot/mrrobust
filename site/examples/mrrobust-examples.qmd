@@ -20,12 +20,12 @@ gitget mrrobust
 ## Read in example data
 
 Read in example data.
-```{stata}
+```{stata collectcode=TRUE, results='hide'}
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 ```
 
 Select observations (*p*-value with exposure < 10^-8^).
-```{stata}
+```{stata collectcode=TRUE, results='hide'}
 gen byte sel1 = (ldlcp2 < 1e-8)
 ```
 
