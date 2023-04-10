@@ -64,7 +64,7 @@ When this option is specified the Q_A statistic for instrument validity is calcu
 When this is specified and there are two or more phenotypes conditional F statistics 
 for instrument strength are calculated. 
 See {help mrmvivw##sanderson:Sanderson et al. (2019)} and 
-{help mrmvivw##sanderson2:Sanderson et al. (2020)} for more information.
+{help mrmvivw##sanderson2:Sanderson et al. (2021)} for more information.
 
 {phang}
 {opt level(#)}; see {helpb estimation options##level():[R] estimation options}.
@@ -162,8 +162,8 @@ Journal of Epidemiology, 2019, 48, 3, 713-727.
 {phang}
 Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and 
 pleiotropic instruments in two-sample multivariable Mendelian randomisation. 
-bioRxiv preprint, 2020, 2020.04.02.021980
-{browse "https://doi.org/10.1101/2020.04.02.021980":DOI}
+Statistics in Medicine, 2021, 40, 25, 5434-5452
+{browse "https://doi.org/10.1002/sim.9133":DOI}
 {p_end}
 
 {marker author}{...}
