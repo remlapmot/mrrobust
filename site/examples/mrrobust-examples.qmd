@@ -44,7 +44,11 @@ mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) xlabel(-5,-4,-3,-2
 qui gr export mrforest.svg, width(600) replace
 ```
 
-![Example forest plot of genotype specific IV estimates.](mrforest.svg)
+```{r}
+#| echo: false
+#| fig-alt: "Example forest plot of genotype specific IV estimates."
+knitr::include_graphics("mrforest.svg")
+```
 
 ## mregger examples
 Using the data provided by [Do et al. (2013)](https://doi.org/10.1038/ng.2795) 
