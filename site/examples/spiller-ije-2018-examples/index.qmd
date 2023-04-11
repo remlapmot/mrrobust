@@ -2,6 +2,7 @@
 title: "Examples from our IJE paper"
 #author: "Wes Spiller, Neil Davies, Tom Palmer"
 #date: "30 August 2018"
+engine: knitr
 ---
 
 ```{r}
