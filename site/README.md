@@ -12,7 +12,7 @@ do ../developer.do
 
 In R the **Statamarkdown** package (from CRAN) and the development version of **knitr** (> 1.42) is required.
 
-To preview the site as it's built run
+To preview the site as it's built run (from the top level of the repo, i.e., the directory above)
 
 ```
 quarto preview site
