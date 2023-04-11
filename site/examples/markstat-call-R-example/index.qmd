@@ -26,6 +26,10 @@ ssc install markstat
 
 The following is the example Stata Markdown document.
 ````{verbatim, lang='markdown'}
+---
+title: Using mrrobust in a Markstat document example
+---
+
 We first need to register the R executable with Stata.
 ```s
 if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.2.3\\bin\\x64\\R.exe"
