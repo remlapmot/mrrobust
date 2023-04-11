@@ -27,6 +27,10 @@ remotes::install_github("MRCIEU/MRInstruments") # uncomment on first run
 ## Example R Markdown document
 
 ````{verbatim, lang='markdown'}
+---
+title: Using mrrobust in an R Markdown or Quarto document
+---
+
 ## Extracting data from MR-Base
 
 We will be running the script from the MR-Base paper ([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is from [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
