@@ -1,5 +1,6 @@
 ---
 engine: knitr
+bibliography: refs.bib
 ---
 
 # How to include mrrobust Stata code in an R Markdown or Quarto document using the Statamarkdown R package
@@ -14,7 +15,7 @@ library(Statamarkdown)
 
 Note when writing our Stata code chunks we need to be careful when we specify the `collectcode=TRUE` code chunk option, because each Stata code chunk is run as a separate batch job. For example, we include this chunk option in a chunk which reads in a dataset which we wish to use in subsequent chunks.
 
-Using R and Stata code in the same script means that we can use the functions provided by the [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](https://www.mrbase.org/).
+Using R and Stata code in the same script means that we can use the functions provided by the [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](https://www.mrbase.org/) [@mrbase].
 
 Next we install the other required packages in R.
 ```r
@@ -123,4 +124,5 @@ rmarkdown::render('rmarkdown-call-stata-example.Rmd')
 
 ## References
 
-- Hemani et al. The MR-Base platform supports systematic causal inference across the human phenome. eLife, 2018;7:e34408 <https://doi.org/10.7554/eLife.34408>
+::: {#refs}
+:::
