@@ -76,3 +76,5 @@ format:
     css: styles.css
     toc: true
     highlight-style: arrow
+
+freeze: auto  # re-render only when source changes
