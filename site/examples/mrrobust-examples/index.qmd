@@ -1,5 +1,6 @@
 ---
 title: Examples from helpfiles in the mrrobust package
+bibliography: refs.bib
 ---
 
 ```{r}
@@ -26,7 +27,7 @@ gitget mrrobust
 
 ## Read in example data
 
-Read in example data.
+Read in example data from @do-natgen-2013.
 ```{stata collectcode=TRUE, results='hide'}
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 ```
@@ -53,9 +54,8 @@ knitr::include_graphics("mrforest.svg")
 ```
 
 ## mregger examples
-Using the data provided by [Do et al. (2013)](https://doi.org/10.1038/ng.2795) 
-recreate [Bowden et al. (2016)](https://doi.org/10.1002/gepi.21965), 
-Table 4, LDL-c "All genetic variants" estimates.
+Using the data provided by @do-natgen-2013 
+recreate from @bowden-genepi-2016 the Table 4, LDL-c "All genetic variants" estimates.
 
 IVW (with fixed effect standard errors, i.e. variance of residuals 
 [residual variance] constrained to 1).
@@ -196,3 +196,9 @@ qui gr export mrleaveoneout-plot-02.svg, width(600) replace
 #| fig-cap: "Plot showing leave one (genotype) out at a time analysis for the MVMR estimate."
 knitr::include_graphics("mrleaveoneout-plot-02.svg")
 ```
+
+## References
+
+::: {#refs}
+:::
+
