@@ -20,7 +20,7 @@ adopath ++ ../../..
 
 # Example demonstrating MVMR commands
 
-Read in the Do et al. example dataset.
+Read in the @do-natgen-2013 example dataset.
 ```{stata collectcode=TRUE}
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 ```
