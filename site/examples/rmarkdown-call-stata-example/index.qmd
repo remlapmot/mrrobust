@@ -33,9 +33,14 @@ title: Using mrrobust in an R Markdown or Quarto document
 
 ## Extracting data from MR-Base
 
-We will be running the script from the MR-Base paper ([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is from [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
+We will be running the script from the MR-Base paper 
+([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)).
+The R code we will use is from
+[here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
 
-We load the packages into our R session. Note that the **foreign** package provides the `write.dta()` function which we will use to save the data in Stata format.
+We load the packages into our R session.
+Note that the **foreign** package provides the `write.dta()` function
+which we will use to save the data in Stata format.
 ```{r}
 library(TwoSampleMR)
 library(MRInstruments)
@@ -47,10 +52,14 @@ We can access the data using the **MRInstruments** package.
 data(gwas_catalog)
 
 # Get published SNPs for LDL cholesterol
-ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
+ldl_snps <-
+  subset(gwas_catalog,
+    grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
 
 # Extract from GLGC dataset
-exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
+exposure <-
+  convert_outcome_to_exposure(
+    extract_outcome_data(ldl_snps, "ieu-a-300"))
 
 # Get outcome data from Cardiogram 2015
 outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
@@ -59,7 +68,8 @@ outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 # Assume alleles are on the forward strand
 dat <- harmonise_data(exposure, outcome, action = 1)
 ```
-At this point we have our harmonised genotype-exposure and genotype-outcome association data saved in an object in our R session called `dat`.
+At this point we have our harmonised genotype-exposure and genotype-outcome
+association data saved in an object in our R session called `dat`.
 
 The next two code chunks perform the analysis in R.
 ```{r}
@@ -81,13 +91,15 @@ write.dta(dat, file = "dat.dta")
 
 ## Analysis in Stata using the mrrobust package
 
-At this point in Stata install the **mrrobust** package and its dependencies if you have not done so previously.
+At this point in Stata install the **mrrobust** package and its
+dependencies if you have not done so previously.
 ```stata
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
 
-We now read the dataset into Stata and look at the variable names and the number of observations.
+We now read the dataset into Stata and look at the variable names
+and the number of observations.
 ```{stata, collectcode=TRUE}
 qui use dat, clear
 ```
