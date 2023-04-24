@@ -40,9 +40,9 @@ whereis R "`rpath'"
 
 Next we have an R code chunk in which we install the required packages in R.
 ```r
-if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-if (!requireNamespace("TwoSampleMR", quietly = TRUE)) remotes::install_github("MRCIEU/TwoSampleMR")
-if (!requireNamespace("MRInstruments", quietly = TRUE)) remotes::install_github("MRCIEU/MRInstruments")
+install.packages("remotes")
+remotes::install_github("MRCIEU/TwoSampleMR")
+remotes::install_github("MRCIEU/MRInstruments")
 ```
 
 ## Extracting data from MR-Base
