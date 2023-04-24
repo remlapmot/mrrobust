@@ -1,5 +1,6 @@
 ---
 engine: knitr
+bibliography: refs.bib
 ---
 
 # Run MR-Base from a Stata do-file or Stata Markdown script {#title}
@@ -13,7 +14,7 @@ The general approach is detailed on the Stata Markdown website
 
 This means that we can use the functions provided by the 
 [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from 
-[MR-Base](https://www.mrbase.org/).
+[MR-Base](https://www.mrbase.org/) [@mrbase].
 
 Before you start please install the following two Stata packages from the SSC archive, so in Stata 
 issue the following commands (I have commented them out because I have already installed them).
@@ -166,5 +167,5 @@ markstat using markstat-call-R-example
 
 ## References
 
-- Hemani et al. The MR-Base platform supports systematic causal inference across the human phenome. 
-eLife, 2018;7:e34408 <https://doi.org/10.7554/eLife.34408>
+::: {#refs}
+:::
