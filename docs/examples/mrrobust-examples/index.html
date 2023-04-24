@@ -83,6 +83,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -289,6 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#mrmodal-examples" id="toc-mrmodal-examples" class="nav-link" data-scroll-target="#mrmodal-examples">mrmodal examples</a></li>
   <li><a href="#mrfunnel-examples" id="toc-mrfunnel-examples" class="nav-link" data-scroll-target="#mrfunnel-examples">mrfunnel examples</a></li>
   <li><a href="#leave-one-out-analysis" id="toc-leave-one-out-analysis" class="nav-link" data-scroll-target="#leave-one-out-analysis">Leave one out analysis</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -319,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="read-in-example-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-example-data">Read in example data</h2>
-<p>Read in example data.</p>
+<p>Read in example data from <span class="citation" data-cites="do-natgen-2013">Do et al. (<a href="#ref-do-natgen-2013" role="doc-biblioref">2013</a>)</span>.</p>
 <div class="cell" data-layout-align="center" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> https:<span class="co">//raw.github.com/remlapmot/mrrobust/master/dodata, clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -349,7 +369,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="mregger-examples" class="level2">
 <h2 class="anchored" data-anchor-id="mregger-examples">mregger examples</h2>
-<p>Using the data provided by <a href="https://doi.org/10.1038/ng.2795">Do et al.&nbsp;(2013)</a> recreate <a href="https://doi.org/10.1002/gepi.21965">Bowden et al.&nbsp;(2016)</a>, Table 4, LDL-c “All genetic variants” estimates.</p>
+<p>Using the data provided by <span class="citation" data-cites="do-natgen-2013">Do et al. (<a href="#ref-do-natgen-2013" role="doc-biblioref">2013</a>)</span> recreate from <span class="citation" data-cites="bowden-genepi-2016">Bowden et al. (<a href="#ref-bowden-genepi-2016" role="doc-biblioref">2016</a>)</span> the Table 4, LDL-c “All genetic variants” estimates.</p>
 <p>IVW (with fixed effect standard errors, i.e.&nbsp;variance of residuals [residual variance] constrained to 1).</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mregger chdbeta ldlcbeta [aw=1/(chdse^2)] <span class="kw">if</span> sel1==1, ivw <span class="kw">fe</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -659,6 +679,17 @@ radialGD     |
 <p></p><figcaption class="figure-caption">Plot showing leave one (genotype) out at a time analysis for the MVMR estimate.</figcaption><p></p>
 </figure>
 </div>
+</div>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-bowden-genepi-2016" class="csl-entry" role="doc-biblioentry">
+Bowden, Jack, George Davey Smith, Philip C Haycock, and Stephen Burgess. 2016. <span>“<span class="nocase">Consistent estimation in Mendelian randomization with some invalid instruments using a weighted median estimator</span>.”</span> <em>Genetic Epidemiology</em> 40 (4): 304–14. <a href="https://doi.org/10.1002/gepi.21965">https://doi.org/10.1002/gepi.21965</a>.
+</div>
+<div id="ref-do-natgen-2013" class="csl-entry" role="doc-biblioentry">
+Do, Ron, Cristen J Willer, Ellen M Schmidt, Sebanti Sengupta, Chi Gao, Gina M Peloso, Stefan Gustafsson, et al. 2013. <span>“Common Variants Associated with Plasma Triglycerides and Risk for Coronary Artery Disease.”</span> <em>Nature Genetics</em> 45 (11): 1345–52. <a href="https://doi.org/10.1038/ng.2795">https://doi.org/10.1038/ng.2795</a>.
 </div>
 </div>
 
