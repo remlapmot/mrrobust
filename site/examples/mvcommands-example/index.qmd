@@ -58,12 +58,12 @@ to the first phenotype in the main varlist.
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 ```
 
-We can also orient the model wrt HDL-C instead of LDL-C.
+We can also orient the model with respect to HDL-C instead of LDL-C.
 ```{stata}
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
 ```
 
-Or we can orient the model wrt triglycerides instead of LDL-C.
+Or we can orient the model with respect to triglycerides instead of LDL-C.
 ```{stata}
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(3)
 ```
