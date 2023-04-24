@@ -314,7 +314,7 @@ div.csl-indent {
 
 <section id="example-demonstrating-mvmr-commands" class="level1">
 <h1>Example demonstrating MVMR commands</h1>
-<p>Read in the Do et al.&nbsp;example dataset.</p>
+<p>Read in the <span class="citation" data-cites="do-natgen-2013">Do et al. (<a href="#ref-do-natgen-2013" role="doc-biblioref">2013</a>)</span> example dataset.</p>
 <div class="cell" data-layout-align="center" data-collectcode="true">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> https:<span class="co">//raw.github.com/remlapmot/mrrobust/master/dodata, clear</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -410,7 +410,7 @@ chdbeta      |
 ------------------------------------------------------------------------------</code></pre>
 </div>
 </div>
-<p>We can also orient the model wrt HDL-C instead of LDL-C.</p>
+<p>We can also orient the model with respect to HDL-C instead of LDL-C.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] <span class="kw">if</span> sel1==1, orient(2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -429,7 +429,7 @@ chdbeta      |
 ------------------------------------------------------------------------------</code></pre>
 </div>
 </div>
-<p>Or we can orient the model wrt triglycerides instead of LDL-C.</p>
+<p>Or we can orient the model with respect to triglycerides instead of LDL-C.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] <span class="kw">if</span> sel1==1, orient(3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -454,6 +454,9 @@ chdbeta      |
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-burgess-aje-2015" class="csl-entry" role="doc-biblioentry">
 Burgess, S, F Dudbridge, and SG Thompson. 2015. <span>“<span class="nocase">Multivariable Mendelian randomization: the use of pleiotropic genetic variants to estimate causal effects</span>.”</span> <em>American Journal of Epidemiology</em> 181 (4): 251–60. <a href="https://doi.org/10.1093/aje/kwu283">https://doi.org/10.1093/aje/kwu283</a>.
+</div>
+<div id="ref-do-natgen-2013" class="csl-entry" role="doc-biblioentry">
+Do, Ron, Cristen J Willer, Ellen M Schmidt, Sebanti Sengupta, Chi Gao, Gina M Peloso, Stefan Gustafsson, et al. 2013. <span>“Common Variants Associated with Plasma Triglycerides and Risk for Coronary Artery Disease.”</span> <em>Nature Genetics</em> 45 (11): 1345–52. <a href="https://doi.org/10.1038/ng.2795">https://doi.org/10.1038/ng.2795</a>.
 </div>
 <div id="ref-rees-statsmed-2017" class="csl-entry" role="doc-biblioentry">
 Rees, J, A Wood, and S Burgess. 2017. <span>“<span class="nocase">Extending the MR-Egger method for multivariable Mendelian randomization to correct for both measured and unmeasured pleiotropy</span>.”</span> <em>Statistics in Medicine</em> 36 (29): 4705–18. <a href="https://doi.org/10.1002/sim.7492">https://doi.org/10.1002/sim.7492</a>.
