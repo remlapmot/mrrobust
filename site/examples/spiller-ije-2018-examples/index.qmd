@@ -3,6 +3,7 @@ title: "Examples from our IJE paper"
 #author: "Wes Spiller, Neil Davies, Tom Palmer"
 #date: "30 August 2018"
 engine: knitr
+bibliography: refs.bib
 ---
 
 ```{r}
@@ -21,7 +22,7 @@ library(Statamarkdown)
 adopath ++ ../../..
 ```
 
-The paper is available [here](https://doi.org/10.1093/ije/dyy195).
+The paper is available [here](https://doi.org/10.1093/ije/dyy195) [@spiller-ije-2018].
 
 ## mrrobust set-up
 Install the `mrrobust` package using the user-written `github` package.
@@ -52,12 +53,12 @@ in beta.outcome.
 Note Stata removes the `.` in the variable names when the data is imported.
 
 In `BMI.csv` the exposure is standardised body mass index (BMI), and is therefore interpreted on a
-standard deviation scale. The summary statistics are reported by Locke et al.
+standard deviation scale. The summary statistics are reported by @locke-nat-2015.
 In `Height.csv` the exposure is standardised height in meters and also interpreted on a standard
-deviation scale. The summary statistics are reported by Wood et al.
+deviation scale. The summary statistics are reported by @wood-natgen-2014.
 
-For both analyses log transformed serum glucose was used as an outcome, reported by Shin et al.
-All the data was obtained from the MRBase GWAS catalogue available at <https://www.mrbase.org/>. 
+For both analyses log transformed serum glucose was used as an outcome, reported by @shin-natgen-2014.
+All the data was obtained from the MRBase GWAS catalogue available at <https://www.mrbase.org/> [@mrbase].
 Genetic variants were pruned so as to be independent ($R^2$ = 0.0001), and the effect alleles were 
 aligned between the exposure and outcome datasets using the MRBase web application, prior to 
 implementing `mrrobust`.
@@ -163,12 +164,5 @@ knitr::include_graphics("mrmodalplot-height.svg")
 
 ## References
 
-1. Locke AE, Kahali B, Berndt SI, Justice AE, Pers TH, Day FR, et al. Genetic studies of body mass 
-index yield new insights for obesity biology. Nature. 2015;518(7538):197-206.
-2. Wood AR, Esko T, Yang J, Vedantam S, Pers TH, Gustafsson S, et al. Defining the role of common 
-variation in the genomic and biological architecture of adult human height. Nat Genet.
-2014;46(11):1173-86.
-3. Shin S-Y, Fauman EB, Petersen A-K, Krumsiek J, Santos R, Huang J, et al. An atlas of genetic 
-influences on human blood metabolites. Nat Genet. 2014;46(6):543-50.
-4. Hemani G, Zheng J, Elsworth B, Wade KH, Haberland V, Baird D, et al. The MR-Base platform 
-supports systematic causal inference across the human phenome. eLife. 2018;7:e34408. <https://doi.org/10.7554/eLife.34408>
+::: {#refs}
+:::
