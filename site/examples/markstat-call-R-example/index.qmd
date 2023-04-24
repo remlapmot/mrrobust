@@ -49,10 +49,12 @@ remotes::install_github("MRCIEU/MRInstruments")
 ## Extracting data from MR-Base
 
 We will be running the script from the MR-Base paper 
-([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). The R code we will use is from 
+([Hemani et al., 2018](https://doi.org/10.7554/eLife.34408)). 
+The R code we will use is from 
 [here](https://raw.githubusercontent.com/explodecomputer/mr-base-methods-paper/master/scripts/ldl-chd.R).
 
-First, we load the packages into our R session. Note that the **foreign** package provides the 
+First, we load the packages into our R session.
+Note that the **foreign** package provides the 
 `write.dta()` function which we will use to save the data in Stata format.
 ```r
 library(TwoSampleMR)
@@ -60,7 +62,8 @@ library(MRInstruments)
 library(foreign)
 ```
 
-Our edited version of the code starts by reading in some code to generate a set of plots in R.
+Our edited version of the code starts by reading in some code
+to generate a set of plots in R.
 ```r
 source("mrplots.R")
 ```
@@ -70,20 +73,25 @@ We can access the data using the **MRInstruments** package.
 data(gwas_catalog)
 
 # Get published SNPs for LDL cholesterol
-ldl_snps <- subset(gwas_catalog, grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
+ldl_snps <- 
+  subset(gwas_catalog, 
+    grepl("LDL choles", Phenotype) & Author == "Willer CJ")$SNP
 
 # Extract from GLGC dataset
-exposure <- convert_outcome_to_exposure(extract_outcome_data(ldl_snps, "ieu-a-300"))
+exposure <- 
+  convert_outcome_to_exposure(
+    extract_outcome_data(ldl_snps, "ieu-a-300"))
 
 # Get outcome data from Cardiogram 2015
 outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 
 # Harmonise exposure and outcome datasets
 # Assume alleles are on the forward strand
-dat <- harmonise_data(exposure, outcome, action=1)
+dat <- harmonise_data(exposure, outcome, action = 1)
 ```
-At this point we have our harmonised genotype-exposure and genotype-outcome association data saved 
-in an object in our R session called `dat`.
+At this point we have our harmonised genotype-exposure and 
+genotype-outcome association data saved in an object in our 
+R session called `dat`.
 
 The next two code chunks perform the analysis in R.
 ```r
@@ -113,15 +121,17 @@ write.dta(dat, file = "dat.dta")
 
 ## Performing the analysis using mrrobust in Stata
 
-We now switch from using R code chunks to Stata code chunks. We read the data into Stata and list 
-the variable names (note any `.` in the colnames of `dat` have been replaced with `_`).
+We now switch from using R code chunks to Stata code chunks.
+We read the data into Stata and list the variable names
+(note any `.` in the colnames of `dat` have been replaced with `_`).
 ```s
 use dat, clear
 ds, v(28)
 di _N
 ```
 
-We can then run the IVW model using `mregger` with multiplicative standard errors.
+We can then run the IVW model using `mregger` with multiplicative
+standard errors.
 ```s
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw
 ```
