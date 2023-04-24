@@ -16,10 +16,11 @@ Note when writing our Stata code chunks we need to be careful when we specify th
 
 Using R and Stata code in the same script means that we can use the functions provided by the [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](https://www.mrbase.org/).
 
-Next we install the other required packages in R. Note I don't run these lines of code in this script because I already have these packages installed.
+Next we install the other required packages in R.
 ```r
-remotes::install_github("MRCIEU/TwoSampleMR") # uncomment on first run
-remotes::install_github("MRCIEU/MRInstruments") # uncomment on first run
+remotes::install_github("MRCIEU/TwoSampleMR")
+remotes::install_github("MRCIEU/MRInstruments")
+install.packages("foreign")
 ```
 
 ## Example R Markdown document
