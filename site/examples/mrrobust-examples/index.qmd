@@ -1,6 +1,5 @@
 ---
 title: Examples from helpfiles in the mrrobust package
-bibliography: refs.bib
 ---
 
 ```{r}

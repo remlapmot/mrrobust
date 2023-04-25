@@ -1,6 +1,5 @@
 ---
 engine: knitr
-bibliography: refs.bib
 ---
 
 # How to include mrrobust Stata code in an R Markdown or Quarto document using the Statamarkdown R package

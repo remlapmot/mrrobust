@@ -1,6 +1,5 @@
 ---
 engine: knitr
-bibliography: refs.bib
 ---
 
 # Run MR-Base from a Stata do-file or Stata Markdown script {#title}
