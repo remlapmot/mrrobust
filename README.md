@@ -265,9 +265,9 @@ I publish my cscripts (and their log files of output) in the
 Tom Palmer <tom.palmer@bristol.ac.uk>, Wesley Spiller, Neil Davies
 
 ## How to cite the mrrobust package
-Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust - A tool for performing 
+Spiller W, Davies NM, Palmer TM. Software Application Profile: mrrobust &mdash; A tool for performing 
 two-sample summary Mendelian randomization analyses. International Journal of Epidemiology, 2019, 
-48, 3, 684-690. <https://doi.org/10.1093/ije/dyy195>
+48, 3, 684&mdash;690. <https://doi.org/10.1093/ije/dyy195>.
 
 Thank you to all our users who have cited **mrrobust**. We made 
 [*The Best of IJE 2019*](https://academic.oup.com/ije/pages/the_best_of_ije)!
@@ -278,23 +278,31 @@ GitHub or send me an email to <tom.palmer@bristol.ac.uk>.
 
 ## References
 
- * Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect 
- estimation and bias detection through Egger regression. International Journal of Epidemiology, 
- 2015, 44, 2, 512-525. [doi](https://dx.doi.org/10.1093/ije/dyv080)
- * Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian randomization 
- with some invalid instruments using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
- 304-314. [doi](https://dx.doi.org/10.1002/gepi.21965)
- * Hartwig FP, Davey Smith G, Bowden J. Robust inference in two-sample Mendelian randomisation via 
- the zero modal pleiotropy assumption. International Journal of Epidemiology, 2017, 46, 6, 
- 1985-1998. [doi](https://doi.org/10.1093/ije/dyx102)
- * Hemani G et al. The MR-Base platform supports systematic causal inference across the human 
- phenome. eLife, 2018, 7:e34408. [doi](https://doi.org/10.7554/eLife.34408.001)
- * Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of multivariable Mendelian 
- randomization in the single-sample and two-sample summary data settings. International Journal of 
- Epidemiology, 2019, 48, 3, 713-727. [doi](https://doi.org/10.1093/ije/dyy262)
- * Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and pleiotropic instruments in 
- two-sample multivariable Mendelian randomization. Statistics in Medicine, 2021, 40, 25, 5434-5452.
- [doi](https://doi.org/10.1002/sim.9133)
+<div class="hanging-indent">
+
+Bowden J, Davey Smith G, Burgess S. Mendelian randomization with invalid instruments: effect
+estimation and bias detection through Egger regression. International Journal of Epidemiology,
+2015, 44, 2, 512&mdash;525. <https://dx.doi.org/10.1093/ije/dyv080>.
+
+Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in Mendelian randomization
+with some invalid instruments using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
+304&mdash;314. <https://dx.doi.org/10.1002/gepi.21965>.
+
+Hartwig FP, Davey Smith G, Bowden J. Robust inference in two-sample Mendelian randomisation via
+the zero modal pleiotropy assumption. International Journal of Epidemiology, 2017, 46, 6,
+1985&mdash;1998. <https://doi.org/10.1093/ije/dyx102>.
+
+Hemani G et al. The MR-Base platform supports systematic causal inference across the human
+phenome. eLife, 2018, 7:e34408. <https://doi.org/10.7554/eLife.34408.001>.
+
+Sanderson E, Davey Smith G, Windmeijer F, Bowden J. An examination of multivariable Mendelian
+randomization in the single-sample and two-sample summary data settings. International Journal of
+Epidemiology, 2019, 48, 3, 713&mdash;727. <https://doi.org/10.1093/ije/dyy262>.
+
+Sanderson E, Spiller W, Bowden J. Testing and correcting for weak and pleiotropic instruments in
+two-sample multivariable Mendelian randomization. Statistics in Medicine, 2021, 40, 25, 5434&mdash;5452.
+<https://doi.org/10.1002/sim.9133>.
+</div>
 
 ## Acknowledgements
 Thanks for helpful feedback and suggestions to (in no particular order): Jasmine Khouja, 
