@@ -3,6 +3,8 @@
 
 cscript mrmedianobs adofiles mrmedianobs mrmedianobs_work
 
+about
+
 ** simulate data
 set seed 12345
 

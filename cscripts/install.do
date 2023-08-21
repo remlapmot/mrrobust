@@ -3,6 +3,8 @@
 
 log using install.log, text replace
 
+about
+
 ** net install
 
 cap noi ado uninstall mrrobust

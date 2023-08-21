@@ -3,6 +3,8 @@
 
 cscript mregger adofiles mregger
 
+about
+
 *** load in dataset
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 

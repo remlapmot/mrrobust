@@ -3,6 +3,8 @@
 
 cscript mrmedian adofiles mrmedian
 
+about
+
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 *** test error messages

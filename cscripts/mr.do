@@ -20,6 +20,8 @@ mrmodal ///
 mrmodalplot ///
 mrratio
 
+about
+
 rcof "noi mr incorrectsubcommandname" == 198
 
 mr deps

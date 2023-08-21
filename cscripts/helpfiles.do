@@ -1,6 +1,8 @@
 * render the helpfiles in the Results window, to check they are approx ok
 * 2020-07-02
 
+about
+
 local helpfiles ///
 mrrobust ///
 mr ///

@@ -3,6 +3,8 @@
 
 cscript mrmodal adofiles mrmodal
 
+about
+
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 ** error messages

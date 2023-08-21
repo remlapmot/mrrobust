@@ -3,6 +3,8 @@
 
 cscript mrratio adofiles mrratio
 
+about
+
 // basic call
 mrratio 1 .5 1 .25
 eret list

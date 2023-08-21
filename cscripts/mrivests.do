@@ -3,6 +3,8 @@
 
 cscript mrivests adofiles mrivests
 
+about
+
 use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear
 
 gen byte sel1 = (ldlcp2 < 1e-8)
