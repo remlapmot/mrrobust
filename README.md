@@ -16,6 +16,8 @@
 
 To obtain the latest update please see the instructions [below](#installing-and-updating-mrrobust).
 
+* August 2023:
+  - Added a record of the Stata version in the certification scripts
 * April 2023:
   - Improved the alt text descriptions for the images in the *README* and package website, and also centred the images
   - Remade the **mrrobust** website using [**Quarto**](https://quarto.org/)
