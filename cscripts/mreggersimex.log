@@ -2,7 +2,7 @@
       name:  mreggersimex
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:  10 Apr 2023, 22:37:15
+ opened on:  27 Jan 2024, 18:20:21
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -19,6 +19,20 @@
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
+
+. 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
@@ -29,9 +43,7 @@
 >         gxse(ldlcse) seed(12345)
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (25)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-.........................
+Bootstrap replications (25): .........10.........20..... done
 
                                                       Number of genotypes = 73
                                                    Bootstrap replications = 25
@@ -62,9 +74,7 @@ pvalue   8.122e-08   .14834403
 >         gxse(ldlcse) seed(12345) simreps(20) reps(3)
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (3)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-...
+Bootstrap replications (3): ... done
 
                                                       Number of genotypes = 73
                                                     Bootstrap replications = 3
@@ -81,9 +91,7 @@ Bootstrap replications (3)
 >         gxse(ldlcse) seed(12345) simreps(10)
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (25)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-.........................
+Bootstrap replications (25): .........10.........20..... done
 
                                                       Number of genotypes = 73
                                                    Bootstrap replications = 25
@@ -140,9 +148,7 @@ pvalue           .           .
 >         gxse(ldlcse) seed(12345) simreps(10) nodraw
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (25)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-.........................
+Bootstrap replications (25): .........10.........20..... done
 
                                                       Number of genotypes = 73
                                                    Bootstrap replications = 25
@@ -173,5 +179,5 @@ end of do-file
       name:  mreggersimex
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:  10 Apr 2023, 22:40:22
+ closed on:  27 Jan 2024, 18:24:44
 -------------------------------------------------------------------------------

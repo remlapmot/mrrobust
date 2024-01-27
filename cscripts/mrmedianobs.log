@@ -2,7 +2,7 @@
       name:  mrmedianobs
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:  10 Apr 2023, 22:40:54
+ opened on:  27 Jan 2024, 18:25:21
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -17,6 +17,20 @@
 -> which mrmedianobs_work, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . ** simulate data
@@ -100,9 +114,7 @@ Number of observations (_N) was 0, now 1,000.
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -121,9 +133,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -222,9 +232,7 @@ pvalue  1.622e-28
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -239,9 +247,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -256,9 +262,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345) weighted
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -273,9 +277,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345) penweighted
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -291,9 +293,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345) all
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 ------------------------------------------------------------------------------
              |    Observed               Bootstrap
              | coefficient       Bias    std. err.  [95% conf. interval]
@@ -369,5 +369,5 @@ end of do-file
       name:  mrmedianobs
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:05
+ closed on:  27 Jan 2024, 18:25:35
 -------------------------------------------------------------------------------

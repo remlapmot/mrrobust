@@ -2,7 +2,7 @@
       name:  mrmvivw
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:44
+ opened on:  27 Jan 2024, 18:26:18
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -21,6 +21,20 @@
 -> which mvmr, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . * load in dataset
@@ -1424,5 +1438,5 @@ end of do-file
       name:  mrmvivw
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:47
+ closed on:  27 Jan 2024, 18:26:21
 -------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
       name:  mrforest
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- opened on:  10 Apr 2023, 22:40:22
+ opened on:  27 Jan 2024, 18:24:44
 
 . * mrforest cscript
 . * 16jun2017
@@ -13,6 +13,20 @@
 -> which mrforest, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -160,5 +174,5 @@ end of do-file
       name:  mrforest
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- closed on:  10 Apr 2023, 22:40:44
+ closed on:  27 Jan 2024, 18:25:10
 -------------------------------------------------------------------------------

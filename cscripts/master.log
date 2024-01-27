@@ -1,8 +1,8 @@
--------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
       name:  master
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- opened on:  10 Apr 2023, 22:35:02
+ opened on:  27 Jan 2024, 18:18:09
 
 . 
 . cscript master
@@ -41,7 +41,7 @@
       name:  mr
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- opened on:  10 Apr 2023, 22:35:02
+ opened on:  27 Jan 2024, 18:18:10
 
 . * mr cscript
 . * 20jan2020
@@ -133,6 +133,20 @@
 -> which mrratio, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . rcof "noi mr incorrectsubcommandname" == 198
@@ -582,13 +596,13 @@ end of do-file
       name:  mr
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- closed on:  10 Apr 2023, 22:35:54
+ closed on:  27 Jan 2024, 18:18:55
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:  10 Apr 2023, 22:35:54
+ opened on:  27 Jan 2024, 18:18:55
 
 . * mrdeps cscript
 . * 20jan2020
@@ -599,6 +613,20 @@ end of do-file
 -> which mrdeps, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . mrdeps
@@ -620,13 +648,13 @@ end of do-file
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:  10 Apr 2023, 22:36:30
+ closed on:  27 Jan 2024, 18:19:24
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:  10 Apr 2023, 22:36:30
+ opened on:  27 Jan 2024, 18:19:24
 
 . * mregger cscript
 . * 04jun2016
@@ -637,6 +665,20 @@ end of do-file
 -> which mregger, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . *** load in dataset
@@ -2556,13 +2598,13 @@ end of do-file
       name:  mregger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:  10 Apr 2023, 22:36:32
+ closed on:  27 Jan 2024, 18:19:27
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:  10 Apr 2023, 22:36:32
+ opened on:  27 Jan 2024, 18:19:27
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2577,6 +2619,20 @@ end of do-file
 -> which mregger, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -2885,13 +2941,13 @@ end of do-file
       name:  mreggerplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:  10 Apr 2023, 22:37:15
+ closed on:  27 Jan 2024, 18:20:21
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:  10 Apr 2023, 22:37:15
+ opened on:  27 Jan 2024, 18:20:21
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2908,6 +2964,20 @@ end of do-file
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
+
+. 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
@@ -2918,9 +2988,7 @@ end of do-file
 >         gxse(ldlcse) seed(12345)
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (25)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-.........................
+Bootstrap replications (25): .........10.........20..... done
 
                                                       Number of genotypes = 73
                                                    Bootstrap replications = 25
@@ -2951,9 +3019,7 @@ pvalue   8.122e-08   .14834403
 >         gxse(ldlcse) seed(12345) simreps(20) reps(3)
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (3)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-...
+Bootstrap replications (3): ... done
 
                                                       Number of genotypes = 73
                                                     Bootstrap replications = 3
@@ -2970,9 +3036,7 @@ Bootstrap replications (3)
 >         gxse(ldlcse) seed(12345) simreps(10)
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (25)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-.........................
+Bootstrap replications (25): .........10.........20..... done
 
                                                       Number of genotypes = 73
                                                    Bootstrap replications = 25
@@ -3029,9 +3093,7 @@ pvalue           .           .
 >         gxse(ldlcse) seed(12345) simreps(10) nodraw
 (running mreggersimexonce on estimation sample)
 
-Bootstrap replications (25)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-.........................
+Bootstrap replications (25): .........10.........20..... done
 
                                                       Number of genotypes = 73
                                                    Bootstrap replications = 25
@@ -3062,13 +3124,13 @@ end of do-file
       name:  mreggersimex
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:  10 Apr 2023, 22:40:22
+ closed on:  27 Jan 2024, 18:24:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- opened on:  10 Apr 2023, 22:40:22
+ opened on:  27 Jan 2024, 18:24:44
 
 . * mrforest cscript
 . * 16jun2017
@@ -3079,6 +3141,20 @@ end of do-file
 -> which mrforest, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -3226,13 +3302,13 @@ end of do-file
       name:  mrforest
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- closed on:  10 Apr 2023, 22:40:44
+ closed on:  27 Jan 2024, 18:25:10
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- opened on:  10 Apr 2023, 22:40:44
+ opened on:  27 Jan 2024, 18:25:10
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3243,6 +3319,20 @@ end of do-file
 -> which mrfunnel, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
@@ -3316,13 +3406,13 @@ end of do-file
       name:  mrfunnel
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- closed on:  10 Apr 2023, 22:40:52
+ closed on:  27 Jan 2024, 18:25:19
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- opened on:  10 Apr 2023, 22:40:52
+ opened on:  27 Jan 2024, 18:25:19
 
 . * mrivests testcode
 . * 10jun2017
@@ -3333,6 +3423,20 @@ end of do-file
 -> which mrivests, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear
@@ -3547,13 +3651,13 @@ end of do-file
       name:  mrivests
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- closed on:  10 Apr 2023, 22:40:53
+ closed on:  27 Jan 2024, 18:25:21
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- opened on:  10 Apr 2023, 22:40:53
+ opened on:  27 Jan 2024, 18:25:21
 
 . * mrmedian test code
 . * 3jun2016
@@ -3564,6 +3668,20 @@ end of do-file
 -> which mrmedian, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -3745,7 +3863,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .071556     5.99   0.000     .2883242    .5688187
+        beta |   .4285714    .074461     5.76   0.000     .2826306    .5745123
 ------------------------------------------------------------------------------
 
 . scalar b2 = _b[beta]
@@ -3760,7 +3878,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .071556     5.99   0.000     .2883242    .5688187
+        beta |   .4285714    .074461     5.76   0.000     .2826306    .5745123
 ------------------------------------------------------------------------------
 
 . assert e(k) == 73
@@ -3843,7 +3961,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .073249     5.85   0.000     .2850061    .5721368
+        beta |   .4285714   .0735764     5.82   0.000     .2843644    .5727785
 ------------------------------------------------------------------------------
 
 . scalar b4 = _b[beta]
@@ -3858,7 +3976,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .073249     5.85   0.000     .2850061    .5721368
+        beta |   .4285714   .0735764     5.82   0.000     .2843644    .5727785
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - scalar(b4)) < 1e-7
@@ -3880,7 +3998,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .073249     5.85   0.000     .2850061    .5721368
+        beta |   .4285714   .0735764     5.82   0.000     .2843644    .5727785
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3894,7 +4012,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [90% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .073249     5.85   0.000     .3080876    .5490553
+        beta |   .4285714   .0735764     5.82   0.000     .3075491    .5495938
 ------------------------------------------------------------------------------
 
 . 
@@ -3905,7 +4023,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [90% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .073249     5.85   0.000     .3080876    .5490553
+        beta |   .4285714   .0735764     5.82   0.000     .3075491    .5495938
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .429) < 1e-3
@@ -3919,7 +4037,7 @@ pvalue  4.089e-13
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [80% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4285714    .073249     5.85   0.000     .3346991    .5224438
+        beta |   .4285714   .0735764     5.82   0.000     .3342795    .5228633
 ------------------------------------------------------------------------------
 
 . 
@@ -3927,13 +4045,13 @@ end of do-file
       name:  mrmedian
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- closed on:  10 Apr 2023, 22:40:54
+ closed on:  27 Jan 2024, 18:25:21
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:  10 Apr 2023, 22:40:54
+ opened on:  27 Jan 2024, 18:25:21
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -3948,6 +4066,20 @@ end of do-file
 -> which mrmedianobs_work, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . ** simulate data
@@ -4031,9 +4163,7 @@ Number of observations (_N) was 0, now 1,000.
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -4052,9 +4182,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -4153,9 +4281,7 @@ pvalue  1.622e-28
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -4170,9 +4296,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345)
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -4187,9 +4311,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345) weighted
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -4204,9 +4326,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345) penweighted
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 
                                                       Number of genotypes = 20
                                                           Number of obs = 1000
@@ -4222,9 +4342,7 @@ Bootstrap replications (10)
 . mrmedianobs y (x = z*), obsboot reps(10) seed(12345) all
 (running mrmedianobs_work on estimation sample)
 
-Bootstrap replications (10)
-----+--- 1 ---+--- 2 ---+--- 3 ---+--- 4 ---+--- 5 
-..........
+Bootstrap replications (10): .........10 done
 ------------------------------------------------------------------------------
              |    Observed               Bootstrap
              | coefficient       Bias    std. err.  [95% conf. interval]
@@ -4300,13 +4418,13 @@ end of do-file
       name:  mrmedianobs
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:05
+ closed on:  27 Jan 2024, 18:25:35
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:05
+ opened on:  27 Jan 2024, 18:25:35
 
 . * mrmodal cscript
 . * 2jun2017
@@ -4317,6 +4435,20 @@ end of do-file
 -> which mrmodal, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -5089,13 +5221,13 @@ end of do-file
       name:  mrmodal
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:16
+ closed on:  27 Jan 2024, 18:25:46
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:16
+ opened on:  27 Jan 2024, 18:25:46
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5106,6 +5238,20 @@ end of do-file
 -> which mrmodalplot, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -5965,13 +6111,13 @@ end of do-file
       name:  mrmodalplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:44
+ closed on:  27 Jan 2024, 18:26:18
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:44
+ opened on:  27 Jan 2024, 18:26:18
 
 . * mrratio cscript
 . * 6jun2017
@@ -5982,6 +6128,20 @@ end of do-file
 -> which mrratio, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . // basic call
@@ -6316,13 +6476,13 @@ end of do-file
       name:  mrratio
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:44
+ closed on:  27 Jan 2024, 18:26:18
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:44
+ opened on:  27 Jan 2024, 18:26:18
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -6341,6 +6501,20 @@ end of do-file
 -> which mvmr, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . * load in dataset
@@ -7744,13 +7918,13 @@ end of do-file
       name:  mrmvivw
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:47
+ closed on:  27 Jan 2024, 18:26:21
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:47
+ opened on:  27 Jan 2024, 18:26:21
 
 . * mrmvegger cscript
 . * 22un2020
@@ -7761,6 +7935,20 @@ end of do-file
 -> which mrmvegger, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . * load in dataset
@@ -8546,16 +8734,30 @@ end of do-file
       name:  mrmvegger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:48
+ closed on:  27 Jan 2024, 18:26:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:48
+ opened on:  27 Jan 2024, 18:26:22
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
+
 . 
 . local helpfiles ///
 > mrrobust ///
@@ -10326,13 +10528,13 @@ end of do-file
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:48
+ closed on:  27 Jan 2024, 18:26:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:48
+ opened on:  27 Jan 2024, 18:26:22
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -10343,6 +10545,20 @@ end of do-file
 -> which mrleaveoneout, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
@@ -17342,7 +17558,7 @@ end of do-file
       name:  mrleaveoneout
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:  10 Apr 2023, 22:42:25
+ closed on:  27 Jan 2024, 18:27:04
 -------------------------------------------------------------------------------
 
 . 
@@ -17350,5 +17566,5 @@ end of do-file
       name:  master
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- closed on:  10 Apr 2023, 22:42:25
+ closed on:  27 Jan 2024, 18:27:04
 -------------------------------------------------------------------------------

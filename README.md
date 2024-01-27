@@ -16,6 +16,8 @@
 
 To obtain the latest update please see the instructions [below](#installing-and-updating-mrrobust).
 
+* January 2024:
+  - Reran certification scripts under Stata 18.0
 * August 2023:
   - Added a record of the Stata version in the certification scripts
 * April 2023:

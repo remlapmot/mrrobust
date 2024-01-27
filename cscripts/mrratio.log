@@ -2,7 +2,7 @@
       name:  mrratio
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- opened on:  10 Apr 2023, 22:41:44
+ opened on:  27 Jan 2024, 18:26:18
 
 . * mrratio cscript
 . * 6jun2017
@@ -13,6 +13,20 @@
 -> which mrratio, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . // basic call
@@ -347,5 +361,5 @@ end of do-file
       name:  mrratio
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- closed on:  10 Apr 2023, 22:41:44
+ closed on:  27 Jan 2024, 18:26:18
 -------------------------------------------------------------------------------

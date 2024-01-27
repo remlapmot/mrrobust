@@ -2,7 +2,7 @@
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:  10 Apr 2023, 22:35:54
+ opened on:  27 Jan 2024, 18:18:55
 
 . * mrdeps cscript
 . * 20jan2020
@@ -13,6 +13,20 @@
 -> which mrdeps, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . mrdeps
@@ -34,5 +48,5 @@ end of do-file
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:  10 Apr 2023, 22:36:30
+ closed on:  27 Jan 2024, 18:19:24
 -------------------------------------------------------------------------------

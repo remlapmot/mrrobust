@@ -2,7 +2,7 @@
       name:  mreggerplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:  10 Apr 2023, 22:36:32
+ opened on:  27 Jan 2024, 18:19:27
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -17,6 +17,20 @@
 -> which mregger, usesysdir
 /Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
+
+. 
+. about
+
+Stata/MP 18.0 for Mac (Apple Silicon)
+Revision 20 Dec 2023
+Copyright 1985-2023 StataCorp LLC
+
+Total physical memory: 8.01 GB
+
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Serial number: 501809305331
+  Licensed to: Tom Palmer
+               University of Bristol
 
 . 
 . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -325,5 +339,5 @@ end of do-file
       name:  mreggerplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:  10 Apr 2023, 22:37:15
+ closed on:  27 Jan 2024, 18:20:21
 -------------------------------------------------------------------------------
