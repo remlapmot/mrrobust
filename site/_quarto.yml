@@ -3,6 +3,9 @@ project:
   output-dir: ../docs
   preview:
     port: 4200
+  render: 
+    - "*.qmd"
+    - "!README.md"
 
 website:
   title: "mrrobust"
@@ -77,6 +80,6 @@ format:
     toc: true
     highlight-style: arrow
 
-freeze: auto  # re-render only when source changes
+# freeze: auto  # re-render only when source changes
 
 bibliography: refs.bib
