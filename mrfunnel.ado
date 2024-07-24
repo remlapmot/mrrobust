@@ -10,7 +10,7 @@ syntax varlist [if] [in] [, Metric(string) ///
 	*]
 
 if !inlist("`metric'","gpbeta","gpbetastd","invse","") {
-	di as error "metric must be one of #"
+	di as error "metric must be one of gpbeta, gpbetastd, or invse"
 	exit 198
 }
 if "`metric'" == "" {
