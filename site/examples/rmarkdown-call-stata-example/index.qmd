@@ -26,7 +26,8 @@ install.packages(
   repos = c(
     "https://mrcieu.r-universe.dev",
     "https://cloud.r-project.org"
-  )
+  ),
+  dependencies = TRUE
 )
 install.packages("foreign")
 ```
