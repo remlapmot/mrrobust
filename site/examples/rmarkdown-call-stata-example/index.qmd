@@ -32,7 +32,9 @@ install.packages(
 install.packages("foreign")
 ```
 
-## Example R Markdown document
+## Example R Markdown or Quarto document
+
+Save the following code chunk as an _.Rmd_ or _.qmd_ file.
 
 ````{verbatim, lang='markdown'}
 ---
@@ -150,10 +152,16 @@ mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 And we could continue with additional Stata code (or indeed R code) as we like.
 ````
 
-To run this R Markdown file, either; open it in RStudio and click the `Knit` button in the toolbar of the Source code window, or run
+To render your R Markdown file, either; open it in RStudio and click the `Knit` button in the toolbar of the Source code window, or run
 
 ```r
-rmarkdown::render('rmarkdown-call-stata-example.Rmd')
+rmarkdown::render('myanalysis.Rmd')
+```
+
+or to render a Quarto file run the following in your Terminal
+
+```sh
+quarto render myanalysis.qmd
 ```
 
 ## References
