@@ -80,6 +80,6 @@ format:
     toc: true
     highlight-style: arrow
 
-# freeze: auto  # re-render only when source changes
+freeze: auto  # re-render only when source changes
 
 bibliography: refs.bib
