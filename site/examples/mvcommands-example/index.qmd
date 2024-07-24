@@ -20,11 +20,13 @@ adopath ++ ../../..
 # Example demonstrating MVMR commands
 
 Read in the @do-natgen-2013 example dataset.
+
 ```{stata collectcode=TRUE}
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 ```
 
 Select observations (p-value with LDL-C < 10<sup>-8</sup>)
+
 ```{stata collectcode=TRUE}
 gen byte sel1 = (ldlcp2 < 1e-8)
 ```
@@ -33,11 +35,13 @@ gen byte sel1 = (ldlcp2 < 1e-8)
 
 Fit the multivariable inverse-variance weighted (MV-IVW a.k.a. multivariable 
 Mendelian randomization, MVMR) estimator with phenotypes LDL-c and HDL-c [@burgess-aje-2015].
+
 ```{stata}
 mrmvivw chdbeta ldlcbeta hdlcbeta [aw=1/(chdse^2)] if sel1==1
 ```
 
 Additionally include a third phenotype -- triglycerides.
+
 ```{stata}
 mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 ```
@@ -45,6 +49,7 @@ mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 Report the Q<sub>A</sub> statistic for instrument validity and the conditional 
 F-statistics for instrument strength for each phenotype [@sanderson-ije-2019; 
 @sanderson-statsmed-2021].
+
 ```{stata}
 mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcse hdlcse tgse)
 ```
@@ -53,16 +58,19 @@ mrmvivw chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, gxse(ldlcs
 
 Fit MVMR-Egger regression [@rees-statsmed-2017], by default orienting the model 
 to the first phenotype in the main varlist.
+
 ```{stata}
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1
 ```
 
 We can also orient the model with respect to HDL-C instead of LDL-C.
+
 ```{stata}
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(2)
 ```
 
 Or we can orient the model with respect to triglycerides instead of LDL-C.
+
 ```{stata}
 mrmvegger chdbeta ldlcbeta hdlcbeta tgbeta [aw=1/(chdse^2)] if sel1==1, orient(3)
 ```
