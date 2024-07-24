@@ -103,3 +103,8 @@ mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, nome weighted seed(12345) 
 
 mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, nome weighted seed(12345) phi(1) ///
         lc(gs0) lw(vthick) lp(dash)
+
+mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345) legend(pos(6))
+mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345) legend(pos(3))
+mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345) legend(pos(12))
+mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345) legend(off)
