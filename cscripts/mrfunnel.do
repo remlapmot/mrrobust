@@ -50,3 +50,8 @@ mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 * original mrfunnel plot
 discard
 mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10) legend(off)
+
+* Try different legend positions
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(6))
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(12))
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(3))
