@@ -7,6 +7,7 @@ engine: knitr
 ## Introduction
 
 This example shows how to run R and Stata code within the same R Markdown (`.Rmd`) file using the **Statamarkdown** R package. More information about this package is available [here](https://github.com/Hemken/Statamarkdown) and [here](https://www.ssc.wisc.edu/~hemken/Stataworkshops/Statamarkdown/stata-and-r-markdown.html). To install this package and load it into your current R session run the following in R.
+
 ```r
 # install.packages("Statamarkdown") # uncomment on first run
 library(Statamarkdown)
@@ -14,12 +15,20 @@ library(Statamarkdown)
 
 Note when writing our Stata code chunks we need to be careful when we specify the `collectcode=TRUE` code chunk option, because each Stata code chunk is run as a separate batch job. For example, we include this chunk option in a chunk which reads in a dataset which we wish to use in subsequent chunks.
 
-Using R and Stata code in the same script means that we can use the functions provided by the [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from [MR-Base](https://www.mrbase.org/) [@mrbase].
+Using R and Stata code in the same script means that we can use the functions provided by the [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from the [OpenGWAS API](https://api.opengwas.io/), which is the successor to [MR-Base](https://www.mrbase.org/) [@mrbase].
+
+The OpenGWAS API requires authentication. You must place an `OPENGWAS_JWT` token (by creating a free account on <https://api.opengwas.io/profile/>) in your _.Renviron_ file before running the code below. See the [**ieugwasr** website](https://mrcieu.github.io/ieugwasr/articles/guide.html#authentication) for more information.
 
 Next we install the other required packages in R.
+
 ```r
-remotes::install_github("MRCIEU/TwoSampleMR")
-remotes::install_github("MRCIEU/MRInstruments")
+install.packages(
+  "TwoSampleMR",
+  repos = c(
+    "https://mrcieu.r-universe.dev",
+    "https://cloud.r-project.org"
+  )
+)
 install.packages("foreign")
 ```
 
@@ -40,6 +49,7 @@ The R code we will use is from
 We load the packages into our R session.
 Note that the **foreign** package provides the `write.dta()` function
 which we will use to save the data in Stata format.
+
 ```{r}
 library(TwoSampleMR)
 library(MRInstruments)
@@ -47,6 +57,7 @@ library(foreign)
 ```
 
 We can access the data using the **MRInstruments** package.
+
 ```{r}
 data(gwas_catalog)
 
@@ -67,10 +78,12 @@ outcome <- extract_outcome_data(exposure$SNP, "ieu-a-7")
 # Assume alleles are on the forward strand
 dat <- harmonise_data(exposure, outcome, action = 1)
 ```
+
 At this point we have our harmonised genotype-exposure and genotype-outcome
 association data saved in an object in our R session called `dat`.
 
 The next two code chunks perform the analysis in R.
+
 ```{r}
 # Perform MR analysis
 mr(dat)
@@ -84,6 +97,7 @@ dat$labels[! dat$SNP %in% c("rs11065987", "rs1250229", "rs4530754")] <- NA
 ```
 
 To proceed in Stata we can save our `dat` object as a Stata dataset
+
 ```{r}
 write.dta(dat, file = "dat.dta")
 ```
@@ -92,6 +106,7 @@ write.dta(dat, file = "dat.dta")
 
 At this point in Stata install the **mrrobust** package and its
 dependencies if you have not done so previously.
+
 ```stata
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
@@ -99,28 +114,35 @@ gitget mrrobust
 
 We now read the dataset into Stata and look at the variable names
 and the number of observations.
+
 ```{stata, collectcode=TRUE}
 qui use dat, clear
 ```
+
 ```{stata}
 ds, v(28)
 ```
+
 ```{stata}
 di _N
 ```
 
 We can then run the IVW model using `mregger` with fixed effect standard errors.
+
 ```{stata}
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)], ivw fe
 ```
 
 We then fit the MR-Egger, median, and modal based estimators.
+
 ```{stata}
 mregger beta_outcome beta_exposure [aw=1/(se_outcome^2)]
 ```
+
 ```{stata}
 mrmedian beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
+
 ```{stata}
 mrmodal beta_outcome se_outcome beta_exposure se_exposure, weighted
 ```
@@ -129,6 +151,7 @@ And we could continue with additional Stata code (or indeed R code) as we like.
 ````
 
 To run this R Markdown file, either; open it in RStudio and click the `Knit` button in the toolbar of the Source code window, or run
+
 ```r
 rmarkdown::render('rmarkdown-call-stata-example.Rmd')
 ```
