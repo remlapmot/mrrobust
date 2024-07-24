@@ -514,7 +514,7 @@ radialGD     |
 <section id="mrmodal-examples" class="level2">
 <h2 class="anchored" data-anchor-id="mrmodal-examples">mrmodal examples</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, <span class="dv">seed</span>(12345)</span>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, <span class="dv">seed</span>(12345) <span class="bn">legend</span>(pos(6))</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrmodalplot.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      Number of genotypes = 73
@@ -601,7 +601,7 @@ radialGD     |
 <section id="mrfunnel-examples" class="level2">
 <h2 class="anchored" data-anchor-id="mrfunnel-examples">mrfunnel examples</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>mrfunnel chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, xlrange(0 10)</span>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>mrfunnel chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, xlrange(0 10) <span class="bn">legend</span>(pos(6))</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrfunnel.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
