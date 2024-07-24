@@ -23,3 +23,9 @@ To build the site run
 ```sh
 quarto render site
 ```
+
+To build the site ignoring the cache
+
+```sh
+quarto render site --no-cache
+```
