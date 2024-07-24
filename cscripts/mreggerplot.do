@@ -184,3 +184,5 @@ mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, nolci ///
 
 // test moving legend
 mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(6))
+mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(3))
+mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(12))
