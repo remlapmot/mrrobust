@@ -83,20 +83,24 @@ forvalues i=1/`nphi' {
 	getmata (g`i')=mrmodal_g_`i', double
 	if `i' == 1 {
 		local legordercmd `"1 "{&phi} = `: word 1 of `phi''""'
+		local legendtext on order(`legordercmd') rows(1)
+		if (_caller() >= 18.0) & (strpos(`"`options'"', "pos") == 0) local legendtext `legendtext' pos(6)
 		twoway line density`i' g`i', `lpcmd`i'' ///
 			`lccmd`i'' ///
 			`lwcmd`i'' ///
 			xtitle(IV estimates) ///
 			ytitle(Density) ///
-			legend(on order(`legordercmd') rows(1)) `options'
+			legend(`legendtext') `options'
 	}
 	else {
 		local legordercmd `"`legordercmd' `i' "{&phi} = `: word `i' of `phi''""'
+		local legendtext on order(`legordercmd') rows(1)
+		if (_caller() >= 18.0) & (strpos(`"`options'"', "pos") == 0) local legendtext `legendtext' pos(6)
 		addplot : line density`i' g`i', ///
 			`lpcmd`i'' ///
 			`lccmd`i'' ///
 			`lwcmd`i'' ///
-			legend(on order(`legordercmd') rows(1)) `options'
+			legend(`legendtext') `options'
 	}
 }
 
