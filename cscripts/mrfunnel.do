@@ -18,6 +18,8 @@ mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(gpbetastd)
 
 mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(invse)
 
+rcof "mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, metric(wrongmetric)" == 198
+
 mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, noivw
 
 mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, nomregger
