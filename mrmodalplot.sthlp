@@ -54,6 +54,10 @@ estimates.
 {var:_gpse} is a variable containing the genotype-phenotype (SNP-exposure) association 
 estimate standard errors.
 
+{pstd}
+Note that in Stata 18.0 the default legend position of a twoway plot was changed from the 6 o'clock position to the 3 o'clock position.
+In Stata 18.0 and above {cmd:mrmodalplot} resets the default back to 6 o'clock (which can be overridden with, for example, {cmd:legend(pos(12))}).
+
 {marker examples}{...}
 {title:Examples}
 
