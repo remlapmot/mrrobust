@@ -24,18 +24,21 @@ adopath ++ ../../..
 The paper is available [here](https://doi.org/10.1093/ije/dyy195) [@spiller-ije-2018].
 
 ## mrrobust set-up
+
 Install the `mrrobust` package using the user-written `github` package.
 
 ```stata
 net install github, from("https://haghish.github.io/github/")
 gitget mrrobust
 ```
+
 If you have Stata 12 or earlier you will need to install some of these manually 
 (see [here](https://remlapmot.github.io/mrrobust/#installing-and-updating-mrrobust) 
 for instructions).
 
 ## Summary data description and overview
-Accompanying this paper are two sets of data `BMI.csv`, and `Height.csv`, containing the set of 
+
+Accompanying this paper are two sets of data _BMI.csv_, and _Height.csv_, containing the set of 
 summary estimates required for performing the BMI-serum glucose and height-serum glucose analyses 
 respectively. Each dataset is organised into 5 columns under the following headings:
 
@@ -51,34 +54,39 @@ in beta.outcome.
 
 Note Stata removes the `.` in the variable names when the data is imported.
 
-In `BMI.csv` the exposure is standardised body mass index (BMI), and is therefore interpreted on a
+In _BMI.csv_ the exposure is standardised body mass index (BMI), and is therefore interpreted on a
 standard deviation scale. The summary statistics are reported by @locke-nat-2015.
-In `Height.csv` the exposure is standardised height in meters and also interpreted on a standard
+In _Height.csv_ the exposure is standardised height in meters and also interpreted on a standard
 deviation scale. The summary statistics are reported by @wood-natgen-2014.
 
 For both analyses log transformed serum glucose was used as an outcome, reported by @shin-natgen-2014.
-All the data was obtained from the MRBase GWAS catalogue available at <https://www.mrbase.org/> [@mrbase].
+All the data was obtained from the MRBase GWAS catalogue available at <https://www.mrbase.org/> [@mrbase] which has now been superseeded by the [OpenGWAS API](https://api.opengwas.io/).
 Genetic variants were pruned so as to be independent ($R^2$ = 0.0001), and the effect alleles were 
 aligned between the exposure and outcome datasets using the MRBase web application, prior to 
 implementing `mrrobust`.
 
 ## Stata output for each estimation method using mrrobust: BMI-Serum Glucose {#estimation}
+
 ### Read in data
+
 ```{stata collectcode=TRUE, results='hide'}
 import delimited using BMI.csv, clear
 ```
 
 ### IVW
+
 ```{stata}
 mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw
 ```
 
 ### MR-Egger
+
 ```{stata}
 mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]
 ```
 
 ### Plot of the MR-Egger model
+
 ```{stata}
 mreggerplot betaoutcome seoutcome betaexposure seexposure
 qui gr export mreggerplot-bmi.svg, width(600) replace
@@ -92,14 +100,17 @@ knitr::include_graphics("mreggerplot-bmi.svg")
 ```
 	
 ### Weighted median
+
 ```{stata}
 mrmedian betaoutcome seoutcome betaexposure seexposure, weighted seed(300818)
 ```
 
 ## Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose {#mode}
+
 Using the `mrmodalplot` command, modal estimates are calculated using bandwidths of 0.25,
 0.5, and 1 respectively. This command also produces three overlaid density plots for each
 value, as shown in the Figure.
+
 ```{stata}
 mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
 qui gr export mrmodalplot-bmi.svg, width(600) replace
@@ -115,16 +126,19 @@ knitr::include_graphics("mrmodalplot-bmi.svg")
 ## Stata output for each estimation method using mrrobust: Height-Serum Glucose {#height}
 
 ### Read in data
+
 ```{stata collectcode=TRUE, results='hide'}
 import delimited using Height.csv, clear
 ```
 
 ### IVW
+
 ```{stata}
 mregger betaoutcome betaexposure [aw=1/(seoutcome^2)], ivw
 ```
 
 ### MR-Egger
+
 ```{stata}
 mregger betaoutcome betaexposure [aw=1/(seoutcome^2)]
 ```
@@ -144,11 +158,13 @@ knitr::include_graphics("mreggerplot-height.svg")
 ```
 
 ### Weighted median
+
 ```{stata}
 mrmedian betaoutcome seoutcome betaexposure seexposure, weighted seed(300818)
 ```
 
 ## Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose {#height-mode}
+
 ```{stata}
 mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) seed(300818)
 qui gr export mrmodalplot-height.svg, width(600) replace
