@@ -23,11 +23,13 @@ This example shows how to conveniently save and export your estimates using the 
 that is now returned by each command.
 
 ## Setup example data
+
 ```{stata collectcode=TRUE}
 use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
 ```
 
 Select observations (p-value with exposure < 10^-8^)
+
 ```{stata collectcode=TRUE}
 gen byte sel1 = (ldlcp2 < 1e-8)
 ```
@@ -35,30 +37,35 @@ gen byte sel1 = (ldlcp2 < 1e-8)
 ## Fit estimators - collecting results using `r(table)` matrix {#fit}
 
 IVW (with fixed effect standard errors)
+
 ```{stata collectcode=TRUE}
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
 mat ivw = r(table)
 ```
 
 MR-Egger (with SEs using an unconstrained residual variance)
+
 ```{stata collectcode=TRUE}
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1
 mat mregger = r(table)
 ```
 
 MR-Egger using the radial formulation
+
 ```{stata collectcode=TRUE}
 mregger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, radial
 mat radial = r(table)
 ```
 
 Weighted mode estimator
+
 ```{stata collectcode=TRUE}
 mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 mat mode = r(table)
 ```
 
 Weighted median estimator
+
 ```{stata collectcode=TRUE}
 mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 mat median = r(table)
@@ -67,6 +74,7 @@ mat median = r(table)
 ## Combine and export results
 
 Check our matrices
+
 ```{stata}
 mat dir
 mat list ivw
@@ -77,6 +85,7 @@ mat list median
 ```
 
 Combined into single matrix
+
 ```{stata collectcode=TRUE}
 mat output = (ivw, mregger, radial, mode, median)
 mat colnames output = ivw_beta mregger_beta mregger_cons ///
@@ -87,6 +96,7 @@ mat list output, format(%4.3f)
 ```
 
 Export matrix to dataset
+
 ```{stata results='hide', collectcode=TRUE}
 drop _all
 svmat output, names(col)
@@ -100,16 +110,19 @@ forvalues i = 1/7 {
 ```
 
 Show dataset
+
 ```{stata}
 list estimate b se z pvalue ll ul, clean noobs
 ```
 
 Save dataset
+
 ```stata
 save myestimates, replace
 ```
 
 Export as tab-delimited textfile
+
 ```stata
 export delimited using myestimates.txt, delimiter(tab) replace
 ```
