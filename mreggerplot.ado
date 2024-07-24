@@ -168,6 +168,9 @@ if `"`legend'"' != "off" {
 			local legend `"order(2 "`mleglabel'" 3 "`lname'") rows(1) size(small)"'
 		}
 	}
+	if (`callersversion' >= 18.0) & (strpos(`"`legendusertext'"', "pos") == 0) {
+	   local legend `legend' pos(6)
+	}
 	local legend `legendusertext' `legend'
 }
 
