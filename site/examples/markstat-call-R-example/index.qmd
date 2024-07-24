@@ -14,7 +14,7 @@ The general approach is detailed on the Stata Markdown website
 This means that we can use the functions provided by the 
 [**TwoSampleMR**](https://github.com/MRCIEU/TwoSampleMR) package to obtain data from the [OpenGWAS API}(https://api.opengwas.io/) which is the successor to [MR-Base](https://www.mrbase.org/) [@mrbase].
 
-The OpenGWAS API requires authentication. You must place an `OPENGWAS_JWT` token (by creating a free account on <https://api.opengwas.io/profile/>) and place it in your _.Renviron_ file before running the code below. See the [**ieugwasr** website](https://mrcieu.github.io/ieugwasr/articles/guide.html#authentication) for more information.
+The OpenGWAS API requires authentication. You must place an `OPENGWAS_JWT` token (by creating a free account on <https://api.opengwas.io/profile/>) in your _.Renviron_ file before running the code below. See the [**ieugwasr** website](https://mrcieu.github.io/ieugwasr/articles/guide.html#authentication) for more information.
 
 Before you start please install the following two Stata packages from the SSC archive, so in Stata 
 issue the following commands (I have commented them out because I have already installed them).
