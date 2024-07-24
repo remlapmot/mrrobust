@@ -79,6 +79,9 @@ if `legendwc' == 0 {
 	local legend on
 }
 
+// copy contents of legend option
+local legendusertext `legend'
+
 if "`median'" == "median" {
 	local lci nolci
 }
@@ -89,7 +92,7 @@ if "`ellipses'" == "" & "`errorbars'" == "" {
 }
 
 // set-up local for legend
-if `"`legend'"' == "on" {
+if `"`legend'"' != "off" {
 	if "`egger'" == "egger" {
 		local lname MR-Egger
 	}
@@ -165,6 +168,7 @@ if `"`legend'"' == "on" {
 			local legend `"order(2 "`mleglabel'" 3 "`lname'") rows(1) size(small)"'
 		}
 	}
+	local legend `legendusertext' `legend'
 }
 
 // weighted markers

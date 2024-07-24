@@ -181,3 +181,6 @@ cap noi drop mlabvar
 gen mlabvar = rsid if abs(ldlcbeta) > .3
 mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, nolci ///
         mlab(mlabvar) mlabsize(vsmall) mlabp(10) mlabc(gs0)
+
+// test moving legend
+mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(6))
