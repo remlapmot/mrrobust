@@ -45,9 +45,14 @@ whereis R "`rpath'"
 Next we have an R code chunk in which we install the required packages in R.
 
 ```r
-install.packages("remotes")
-remotes::install_github("MRCIEU/TwoSampleMR")
-remotes::install_github("MRCIEU/MRInstruments")
+install.packages(
+  "TwoSampleMR",
+  repos = c(
+    "https://mrcieu.r-universe.dev",
+    "https://cloud.r-project.org"
+  ),
+  dependencies = TRUE
+)
 ```
 
 ## Extracting data from the OpenGWAS API
