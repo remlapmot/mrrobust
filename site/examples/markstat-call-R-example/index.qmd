@@ -34,6 +34,7 @@ title: Using mrrobust in a Markstat document example
 ---
 
 We first need to register the R executable with Stata.
+
 ```s
 if c(os) == "Windows" local rpath "C:\\Program Files\\R\\R-4.4.1\\bin\\x64\\R.exe"
 else if c(os) == "Unix" local rpath "/usr/bin/R"

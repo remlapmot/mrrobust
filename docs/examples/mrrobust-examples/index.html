@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>mrrobust - Examples from helpfiles in the mrrobust package</title>
+<title>Examples from helpfiles in the mrrobust package – mrrobust</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -137,7 +137,7 @@ div.csl-indent {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -147,7 +147,7 @@ div.csl-indent {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Examples</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-examples">    
@@ -178,7 +178,7 @@ div.csl-indent {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-helpfiles" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-helpfiles" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Helpfiles</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-helpfiles">    
@@ -265,7 +265,7 @@ div.csl-indent {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -343,7 +343,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mrforest.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Example forest plot of genotype specific IV estimates."></p>
+<p><img src="mrforest.svg" class="img-fluid figure-img" alt="Example forest plot of genotype specific IV estimates."></p>
 <figcaption>Example forest plot of genotype specific IV estimates.</figcaption>
 </figure>
 </div>
@@ -471,7 +471,7 @@ radialGD     |
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mreggersimex-plot.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="SIMEX plots for the MR-Egger model."></p>
+<p><img src="mreggersimex-plot.svg" class="img-fluid figure-img" alt="SIMEX plots for the MR-Egger model."></p>
 <figcaption>SIMEX plots for the MR-Egger model.</figcaption>
 </figure>
 </div>
@@ -483,15 +483,12 @@ radialGD     |
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mreggerplot chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mreggerplot.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code></code></pre>
-</div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mreggerplot.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Scatter plot showing the genotype summary level data points and the fitted MR-Egger model."></p>
+<p><img src="mreggerplot.svg" class="img-fluid figure-img" alt="Scatter plot showing the genotype summary level data points and the fitted MR-Egger model."></p>
 <figcaption>Scatter plot showing the genotype summary level data points and the fitted MR-Egger model.</figcaption>
 </figure>
 </div>
@@ -502,7 +499,7 @@ radialGD     |
 <h2 class="anchored" data-anchor-id="mrmedian-examples">mrmedian examples</h2>
 <p>Weighted median estimator.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mrmedian chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, weighted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mrmedian chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, weighted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      Number of genotypes = 73
                                                            Replications = 1000
@@ -517,8 +514,8 @@ radialGD     |
 <section id="mrmodal-examples" class="level2">
 <h2 class="anchored" data-anchor-id="mrmodal-examples">mrmodal examples</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, <span class="dv">seed</span>(12345)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrmodalplot.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, <span class="dv">seed</span>(12345)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrmodalplot.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      Number of genotypes = 73
                                                            Replications = 1000
@@ -552,7 +549,7 @@ radialGD     |
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mrmodalplot.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Densities of the IV estimates using different values of the phi parameter."></p>
+<p><img src="mrmodalplot.svg" class="img-fluid figure-img" alt="Densities of the IV estimates using different values of the phi parameter."></p>
 <figcaption>Densities of the IV estimates using different values of the phi parameter.</figcaption>
 </figure>
 </div>
@@ -560,7 +557,7 @@ radialGD     |
 </div>
 <p>Simple mode estimator.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mrmodal chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mrmodal chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      Number of genotypes = 73
                                                            Replications = 1000
@@ -574,7 +571,7 @@ radialGD     |
 </div>
 <p>Weighted mode estimator.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mrmodal chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, weighted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>mrmodal chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, weighted</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      Number of genotypes = 73
                                                            Replications = 1000
@@ -588,7 +585,7 @@ radialGD     |
 </div>
 <p>Simple mode estimator with NOME assumption.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>mrmodal chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, nome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>mrmodal chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, nome</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      Number of genotypes = 73
                                                            Replications = 1000
@@ -604,17 +601,14 @@ radialGD     |
 <section id="mrfunnel-examples" class="level2">
 <h2 class="anchored" data-anchor-id="mrfunnel-examples">mrfunnel examples</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mrfunnel chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, xlrange(0 10)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrfunnel.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code></code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>mrfunnel chdbeta chdse ldlcbeta ldlcse <span class="kw">if</span> sel1==1, xlrange(0 10)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrfunnel.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mrfunnel.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Example funnel plot."></p>
+<p><img src="mrfunnel.svg" class="img-fluid figure-img" alt="Example funnel plot."></p>
 <figcaption>Example funnel plot.</figcaption>
 </figure>
 </div>
@@ -625,24 +619,18 @@ radialGD     |
 <h2 class="anchored" data-anchor-id="leave-one-out-analysis">Leave one out analysis</h2>
 <p>Create a smaller subset of data.</p>
 <div class="cell" data-layout-align="center" data-collectcode="true">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> <span class="kw">byte</span> sel2 = (ldlcp2 &lt; 1e-25)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code></code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span> <span class="kw">byte</span> sel2 = (ldlcp2 &lt; 1e-25)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Perform leave one out analysis using the IVW estimator</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>mrleaveoneout chdbeta ldlcbeta <span class="kw">if</span> sel2==1, gyse(chdse) genotype(rsid) noprint</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrleaveoneout-plot-01.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code></code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>mrleaveoneout chdbeta ldlcbeta <span class="kw">if</span> sel2==1, gyse(chdse) genotype(rsid) noprint</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrleaveoneout-plot-01.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mrleaveoneout-plot-01.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Plot showing leave one (genotype) out at a time analysis for the IVW estimate."></p>
+<p><img src="mrleaveoneout-plot-01.svg" class="img-fluid figure-img" alt="Plot showing leave one (genotype) out at a time analysis for the IVW estimate."></p>
 <figcaption>Plot showing leave one (genotype) out at a time analysis for the IVW estimate.</figcaption>
 </figure>
 </div>
@@ -650,15 +638,15 @@ radialGD     |
 </div>
 <p>Perform leave one out analysis using MVMR collecting the estimate for LDL-c.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta <span class="kw">if</span> sel2==1, <span class="co">///</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    method(mvmr) gyse(chdse) genotype(rsid) noprint</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrleaveoneout-plot-02.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mrleaveoneout chdbeta ldlcbeta hdlcbeta tgbeta <span class="kw">if</span> sel2==1, <span class="co">///</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    method(mvmr) gyse(chdse) genotype(rsid) noprint</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrleaveoneout-plot-02.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mrleaveoneout-plot-02.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Plot showing leave one (genotype) out at a time analysis for the MVMR estimate."></p>
+<p><img src="mrleaveoneout-plot-02.svg" class="img-fluid figure-img" alt="Plot showing leave one (genotype) out at a time analysis for the MVMR estimate."></p>
 <figcaption>Plot showing leave one (genotype) out at a time analysis for the MVMR estimate.</figcaption>
 </figure>
 </div>
@@ -715,18 +703,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -758,7 +735,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -793,7 +810,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
