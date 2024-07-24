@@ -16,6 +16,8 @@
 
 To obtain the latest update please see the instructions [below](#installing-and-updating-mrrobust).
 
+* July 2024:
+  - Updated website to mention [OpenGWAS](https://api.opengwas.io/) instead of MR-Base
 * January 2024:
   - Reran certification scripts under Stata 18.0
 * August 2023:
