@@ -141,7 +141,7 @@ mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted
 ## mrmodal examples
 
 ```{stata}
-mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345) legend(pos(6))
+mrmodalplot chdbeta chdse ldlcbeta ldlcse if sel1==1, seed(12345)
 qui gr export mrmodalplot.svg, width(600) replace
 ```
 
@@ -173,7 +173,7 @@ mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, nome
 ## mrfunnel examples
 
 ```{stata}
-mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10) legend(pos(6))
+mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 qui gr export mrfunnel.svg, width(600) replace
 ```
 
