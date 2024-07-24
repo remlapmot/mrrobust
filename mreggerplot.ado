@@ -197,11 +197,11 @@ if ("`ivw'" == "ivw" | "`median'" == "median") & "`egger'" == "" {
 	la var `3' `"Instrument-exposure associations"'
 	la var `1' `"Instrument-outcome associations"'
 	twoway scatter `1' `3' `if' `in', mc(none) ///
-		graphregion(color(white)) `options'
+		graphregion(color(white)) `options' legend(`legend')
 }
 else if "`egger'" == "egger" {
 	twoway scatter `eggery' `eggerx' `if' `in', mc(none) ///
-		graphregion(color(white)) `options'
+		graphregion(color(white)) `options' legend(`legend')
 }
 
 // fit ivw, mr-egger, or weighted median
