@@ -68,6 +68,8 @@ if "`mregger'" == "" {
 	else local legend legend(on order(1 "Genotypes" 2 "MR-Egger") rows(1))	
 }
 
+if (_caller() >= 18.0) & (strpos(`"`options'"', "pos") == 0) local legend `legend' pos(6)
+
 // plot
 twoway scatter `yvar' `iv' `if'`in', ///
 	mc(gs0) ///
