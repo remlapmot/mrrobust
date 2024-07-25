@@ -20,6 +20,6 @@ foreach file in `helpfiles' {
 	cap noi log2html ./helpfiles/`file', bold replace linesize(100)
 	if _rc != 0 di as err "Conversersion of `file'.smcl failed"
 	if c(os) != "Windows" rm ./helpfiles/`file'.smcl
-    else erase ./helpfiles/`file'.smcl
+	else erase ./helpfiles/`file'.smcl
 }
 ```
