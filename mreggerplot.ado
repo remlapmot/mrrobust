@@ -117,61 +117,62 @@ if `"`legend'"' != "off" {
 			else {
 				local mlabn = 4 + `k'
 			}
-			local legend `"order(`mlabn' "`mleglabel'" 4 "`level'% CIs" `lleg' 2 "`lname' `level'% CI") size(small)"'
+			local legend `"order(`mlabn' "`mleglabel'" 4 "`level'% CIs" `lleg' 2 "`lname' `level'% CI")"'
 		}
 		else {
-			local legend `"order(3 "`mleglabel'" 2 "`level'% CIs" 5 "`lname'" 4 "`lname' `level'% CI") size(small)"'
+			local legend `"order(3 "`mleglabel'" 2 "`level'% CIs" 5 "`lname'" 4 "`lname' `level'% CI")"'
 		}
 	}
 	if "`line'" == "" & "`lci'" == "" & "`gpci'" == "gpci" & ///
 		"`mcis'" == "" {
 		if "`linetop'" == "" {
-			local legend `"order(6 "`mleglabel'" 4 "`level'% CIs" 3 "`lname'" 2 "`lname' `level'% CI") size(small)"'
+			local legend `"order(6 "`mleglabel'" 4 "`level'% CIs" 3 "`lname'" 2 "`lname' `level'% CI")"'
 		}
 		else {
-			local legend `"order(4 "`mleglabel'" 2 "`level'% CIs" 6 "`lname'" 5 "`lname' `level'% CI") size(small)"'
+			local legend `"order(4 "`mleglabel'" 2 "`level'% CIs" 6 "`lname'" 5 "`lname' `level'% CI")"'
 		}
 	}
 	if "`line'" == "" & "`lci'" == "" & "`gpci'" == "" & ///
 		"`mcis'" == "nomcis" {
 		if "`linetop'" == "" {
-			local legend `"order(4 "`mleglabel'" 3 "`lname'" 2 "`lname' `level'% CI") size(small)"'
+			local legend `"order(4 "`mleglabel'" 3 "`lname'" 2 "`lname' `level'% CI")"'
 		}
 		else {
-			local legend `"order(2 "`mleglabel'" 4 "`lname'" 3 "`lname' `level'% CI") size(small)"'
+			local legend `"order(2 "`mleglabel'" 4 "`lname'" 3 "`lname' `level'% CI")"'
 		}
 	}
 	if "`line'" == "" & "`lci'" == "nolci" & "`gpci'" == "" & ///
 		"`mcis'" == "" {
 		if "`linetop'" == "" {
-			local legend `"order(4 "`mleglabel'" 3 "`level'% CIs" 2 "`lname'") size(small)"'
+			local legend `"order(4 "`mleglabel'" 3 "`level'% CIs" 2 "`lname'")"'
 		}
 		else {
-			local legend `"order(3 "`mleglabel'" 2 "`level'% CIs" 4 "`lname'") size(small)"'
+			local legend `"order(3 "`mleglabel'" 2 "`level'% CIs" 4 "`lname'")"'
 		}
 	}
 	if "`line'" == "" & "`lci'" == "nolci" & ///
 		"`gpci'" == "gpci" & "`mcis'" == "" {
 		if "`linetop'" == "" {
-			local legend `"order(5 "`mleglabel'" 4 "`level'% CIs" 2 "`lname'") size(small)"'
+			local legend `"order(5 "`mleglabel'" 4 "`level'% CIs" 2 "`lname'")"'
 		}
 		else {
-			local legend `"order(4 "`mleglabel'" 2 "`level'% CIs" 5 "`lname'") size(small)"'
+			local legend `"order(4 "`mleglabel'" 2 "`level'% CIs" 5 "`lname'")"'
 		}
 	}
 	if "`line'" == "" & "`lci'" == "nolci" & "`gpci'" == "" & ///
 	"`mcis'" == "nomcis" {
 		if "`linetop'" == "" {
-			local legend `"order(3 "`mleglabel'" 2 "`lname'") size(small)"'
+			local legend `"order(3 "`mleglabel'" 2 "`lname'")"'
 		}
 		else {
-			local legend `"order(2 "`mleglabel'" 3 "`lname'") size(small)"'
+			local legend `"order(2 "`mleglabel'" 3 "`lname'")"'
 		}
 	}
 	if (`callersversion' >= 18.0) & (strpos(`"`legendusertext'"', "pos") == 0) {
 	   local legend `legend' pos(6)
 	}
 	if (strpos(`"`legendusertext'"', "rows") == 0) local legend `legend' rows(1)
+	if (strpos(`"`legendusertext'"', "size(") == 0) local legend `legend' size(small)
 	local legend `legendusertext' `legend'
 }
 
