@@ -1,19 +1,19 @@
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:  27 Jan 2024, 18:26:22
+ opened on:  25 Jul 2024, 09:19:29
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
 . 
 . about
 
-Stata/MP 18.0 for Mac (Apple Silicon)
-Revision 20 Dec 2023
+StataNow/MP 18.5 for Mac (Apple Silicon)
+Revision 16 Jul 2024
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 8.01 GB
+Total physical memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
 Serial number: 501809305331
@@ -544,6 +544,11 @@ Description
     varname_gpse is a variable containing the genotype-phenotype
     (SNP-exposure) association estimate standard errors.
 
+    Note that in Stata 18.0 the default legend position of a twoway plot was
+    changed from the 6 o'clock position to the 3 o'clock position.  In Stata
+    18.0 and above mreggerplot resets the default back to 6 o'clock (which
+    can be overridden with, for example, legend(pos(12))).
+
 Examples
 
     Using the data provided by Do et al. (2013) recreate Bowden et al.
@@ -1001,6 +1006,11 @@ Description
     varname_gpse is a variable containing the genotype-phenotype
     (SNP-exposure) association estimate standard errors.
 
+    Note that in Stata 18.0 the default legend position of a twoway plot was
+    changed from the 6 o'clock position to the 3 o'clock position.  In Stata
+    18.0 and above mrmodalplot resets the default back to 6 o'clock (which
+    can be overridden with, for example, legend(pos(12))).
+
 Examples
 
     Using the data provided by Do et al. (2013) recreate Bowden et (2016),
@@ -1403,6 +1413,11 @@ Options
     - invse: the inverse of the standard errors on the genotype specific IV
     ratio estimates.
 
+    Note that in Stata 18.0 the default legend position of a twoway plot was
+    changed from the 6 o'clock position to the 3 o'clock position.  In Stata
+    18.0 and above mrfunnel resets the default back to 6 o'clock (which can
+    be overridden with, for example, legend(pos(12))).
+
 Examples
 
     Using the data provided by Do et al. (2013) recreate Bowden et al. (2016)
@@ -1788,7 +1803,7 @@ INCLUDE help mrrobust-author
 . 
 end of do-file
       name:  helpfiles
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:  27 Jan 2024, 18:26:22
+ closed on:  25 Jul 2024, 09:19:29
 -------------------------------------------------------------------------------

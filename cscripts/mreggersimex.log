@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:  27 Jan 2024, 18:20:21
+ opened on:  25 Jul 2024, 09:14:50
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -11,21 +11,21 @@
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
 . about
 
-Stata/MP 18.0 for Mac (Apple Silicon)
-Revision 20 Dec 2023
+StataNow/MP 18.5 for Mac (Apple Silicon)
+Revision 16 Jul 2024
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 8.01 GB
+Total physical memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
 Serial number: 501809305331
@@ -51,8 +51,8 @@ Bootstrap replications (25): .........10.........20..... done
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-       slope |   .6256194   .1166245     5.36   0.000     .3970396    .8541991
-       _cons |  -.0089987   .0062257    -1.45   0.148    -.0212009    .0032035
+       slope |   .6256194    .116624     5.36   0.000     .3970405    .8541982
+       _cons |  -.0089987   .0062257    -1.45   0.148    -.0212008    .0032035
 ------------------------------------------------------------------------------
 
 . mat li r(table)
@@ -60,11 +60,11 @@ Bootstrap replications (25): .........10.........20..... done
 r(table)[9,2]
              slope       _cons
      b   .62561937  -.00899868
-    se   .11662446   .00622571
-     z   5.3643922  -1.4454055
-pvalue   8.122e-08   .14834403
-    ll   .39703962  -.02120085
-    ul   .85419912   .00320349
+    se   .11662401   .00622569
+     z   5.3644133    -1.44541
+pvalue   8.121e-08   .14834275
+    ll   .39704052  -.02120082
+    ul   .85419822   .00320346
     df           .           .
   crit    1.959964    1.959964
  eform           0           0
@@ -177,7 +177,7 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:  27 Jan 2024, 18:24:44
+ closed on:  25 Jul 2024, 09:17:57
 -------------------------------------------------------------------------------

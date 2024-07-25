@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmvivw
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- opened on:  27 Jan 2024, 18:26:18
+ opened on:  25 Jul 2024, 09:19:25
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -11,25 +11,25 @@
 ------------------------------------------------------------------BEGIN mrmvivw
 
 -> which mrmvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mvivw.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvmr, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mvmr.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 . 
 . about
 
-Stata/MP 18.0 for Mac (Apple Silicon)
-Revision 20 Dec 2023
+StataNow/MP 18.5 for Mac (Apple Silicon)
+Revision 16 Jul 2024
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 8.01 GB
+Total physical memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
 Serial number: 501809305331
@@ -1436,7 +1436,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvivw
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- closed on:  27 Jan 2024, 18:26:21
+ closed on:  25 Jul 2024, 09:19:27
 -------------------------------------------------------------------------------

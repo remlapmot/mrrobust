@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:  27 Jan 2024, 18:25:21
+ opened on:  25 Jul 2024, 09:18:31
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -11,21 +11,21 @@
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
-Stata/MP 18.0 for Mac (Apple Silicon)
-Revision 20 Dec 2023
+StataNow/MP 18.5 for Mac (Apple Silicon)
+Revision 16 Jul 2024
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 8.01 GB
+Total physical memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
 Serial number: 501809305331
@@ -367,7 +367,7 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:  27 Jan 2024, 18:25:35
+ closed on:  25 Jul 2024, 09:18:42
 -------------------------------------------------------------------------------

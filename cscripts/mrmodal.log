@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:  27 Jan 2024, 18:25:35
+ opened on:  25 Jul 2024, 09:18:42
 
 . * mrmodal cscript
 . * 2jun2017
@@ -11,17 +11,17 @@
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
 . about
 
-Stata/MP 18.0 for Mac (Apple Silicon)
-Revision 20 Dec 2023
+StataNow/MP 18.5 for Mac (Apple Silicon)
+Revision 16 Jul 2024
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 8.01 GB
+Total physical memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
 Serial number: 501809305331
@@ -222,7 +222,7 @@ pvalue  1.270e-12
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .5820001   .1364848     4.26   0.000     .3144948    .8495054
+        beta |   .5820001   .1364857     4.26   0.000     .3144931    .8495071
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .5820001) < 1e-7
@@ -797,7 +797,7 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:  27 Jan 2024, 18:25:46
+ closed on:  25 Jul 2024, 09:18:52
 -------------------------------------------------------------------------------

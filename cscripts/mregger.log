@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:  27 Jan 2024, 18:19:24
+ opened on:  25 Jul 2024, 09:13:55
 
 . * mregger cscript
 . * 04jun2016
@@ -11,17 +11,17 @@
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mregger.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
-Stata/MP 18.0 for Mac (Apple Silicon)
-Revision 20 Dec 2023
+StataNow/MP 18.5 for Mac (Apple Silicon)
+Revision 16 Jul 2024
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 8.01 GB
+Total physical memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
 Serial number: 501809305331
@@ -853,7 +853,7 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-/Users/tom/Library/Application Support/Stata/ado/plus/t/tsci.ado
+/Users/eptmp/Library/Application Support/Stata/ado/plus/t/tsci.ado
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
@@ -1944,7 +1944,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:  27 Jan 2024, 18:19:27
+ closed on:  25 Jul 2024, 09:13:58
 -------------------------------------------------------------------------------
