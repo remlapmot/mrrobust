@@ -92,7 +92,7 @@ if "`ellipses'" == "" & "`errorbars'" == "" {
 }
 
 // set-up local for legend
-if `"`legend'"' != "off" {
+if (`"`legend'"' != "off") & (strpos(`"`legend'"', "order(") == 0) {
 	if "`egger'" == "egger" {
 		local lname MR-Egger
 	}
