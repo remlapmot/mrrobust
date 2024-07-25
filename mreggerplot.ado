@@ -74,11 +74,6 @@ if "`gpci'" == "gpci" & "`mcis'" == "nomcis" {
 	exit 198
 }
 
-local legendwc : word count `legend'
-if `legendwc' == 0 {
-	local legend on
-}
-
 // copy contents of legend option
 local legendusertext `legend'
 
