@@ -47,7 +47,7 @@ else if "`metric'" == "invse" {
 	local ytitle "Instrument strength (1/{it:{&sigma}}{sub:IV})"
 }
 
-local legend legend(on order(1 "Genotypes") rows(1))
+local legend on order(1 "Genotypes")
 
 if "`ivw'" == "" {
 	qui mregger `gdbeta' `gpbeta' [aw=1/`segdbeta'^2] `if'`in', ivw fe
@@ -55,7 +55,7 @@ if "`ivw'" == "" {
 	if "`xlrange'" == "" local range range(`yvar')
 	else local range range(`xlrange')
 	local ivwaddplot function `ivwest', lp(dash) lc(gs0) hor `range' || 
-	local legend legend(on order(1 "Genotypes" 2 "IVW") rows(1))
+	local legend on order(1 "Genotypes" 2 "IVW")
 }
 
 if "`mregger'" == "" {
@@ -64,11 +64,12 @@ if "`mregger'" == "" {
 	if "`xlrange'" == "" local range range(`yvar')
 	else local range range(`xlrange')
 	local mreggeraddplot function `mreggerest', lp(longdash) lc(gs0) hor `range' || 
-	if "`ivw'" == "" local legend legend(on order(1 "Genotypes" 2 "IVW" 3 "MR-Egger") rows(1))
-	else local legend legend(on order(1 "Genotypes" 2 "MR-Egger") rows(1))	
+	if "`ivw'" == "" local legend on order(1 "Genotypes" 2 "IVW" 3 "MR-Egger")
+	else local legend on order(1 "Genotypes" 2 "MR-Egger")
 }
 
 if (_caller() >= 18.0) & (strpos(`"`options'"', "pos") == 0) local legend `legend' pos(6)
+if (strpos(`"`options'"', "rows") == 0) local legend `legend' rows(1)
 
 // plot
 twoway scatter `yvar' `iv' `if'`in', ///
@@ -79,7 +80,7 @@ twoway scatter `yvar' `iv' `if'`in', ///
 	`ivwaddplot' ///
 	`mreggeraddplot' ///
 	`extraplots', ///
-	`legend' ///
+	legend(`legend') ///
 	`options'
 
 end
