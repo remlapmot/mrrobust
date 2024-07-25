@@ -454,7 +454,7 @@ betaoutcome  |
 <h2 class="anchored" data-anchor-id="mode">Stata output using the mode-based estimator using mrrobust: BMI-Serum Glucose</h2>
 <p>Using the <code>mrmodalplot</code> command, modal estimates are calculated using bandwidths of 0.25, 0.5, and 1 respectively. This command also produces three overlaid density plots for each value, as shown in the Figure.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) <span class="dv">seed</span>(300818) <span class="bn">legend</span>(pos(6))</span>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) <span class="dv">seed</span>(300818)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrmodalplot-bmi.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      Number of genotypes = 79
@@ -573,7 +573,7 @@ betaoutcome  |
 <section id="height-mode" class="level2">
 <h2 class="anchored" data-anchor-id="height-mode">Stata output using the mode-based estimator using mrrobust: Height-Serum Glucose</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) <span class="dv">seed</span>(300818) <span class="bn">legend</span>(pos(6))</span>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>mrmodalplot betaoutcome seoutcome betaexposure seexposure, lc(gs10 gs5 gs0) <span class="dv">seed</span>(300818)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">qui</span> <span class="kw">gr</span> <span class="kw">export</span> mrmodalplot-height.svg, <span class="kw">width</span>(600) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                     Number of genotypes = 367

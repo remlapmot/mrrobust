@@ -66,6 +66,10 @@ BODY{background-color: ffffff;
     <i>varname_gpse</i> is a variable containing the genotype-phenotype (SNP-exposure) association
     estimate standard errors.
 <br><br>
+    Note that in Stata 18.0 the default legend position of a twoway plot was changed from the 6
+    o'clock position to the 3 o'clock position.  In Stata 18.0 and above <span class=result>mreggerplot</span> resets the
+    default back to 6 o'clock (which can be overridden with, for example, <span class=result>legend(pos(12))</span>).
+<br><br>
 <a name="examples"></a><span class=result><u>Examples</u></span>
 <br><br>
     Using the data provided by Do et al. (2013) recreate Bowden et al. (2016), Figure 4, LDL-c
