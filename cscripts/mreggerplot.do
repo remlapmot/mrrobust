@@ -186,3 +186,4 @@ mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, nolci ///
 mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(6))
 mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(3))
 mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(pos(12))
+mreggerplot chdbeta chdse ldlcbeta ldlcse if sel1==1, legend(size(large))
