@@ -6,7 +6,7 @@ Install quarto from <https://quarto.org/docs/get-started/>.
 
 Then install the Stata dependencies in Stata with
 
-```sh
+```stata
 do ../developer.do
 ```
 
