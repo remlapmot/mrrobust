@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrratio
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrratio.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- opened on:  25 Jul 2024, 09:19:25
+ opened on:   1 May 2025, 21:16:34
 
 . * mrratio cscript
 . * 6jun2017
@@ -11,19 +11,19 @@
 ------------------------------------------------------------------BEGIN mrratio
 
 -> which mrratio, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrratio.ado
+/Users/tom/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
 . about
 
 StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 16 Jul 2024
+Revision 26 Feb 2025
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 18.00 GB
+Total physical memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
 Serial number: 501809305331
   Licensed to: Tom Palmer
                University of Bristol
@@ -359,7 +359,7 @@ With 3 inputs please specify the nome option.
 . 
 end of do-file
       name:  mrratio
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrratio.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- closed on:  25 Jul 2024, 09:19:25
+ closed on:   1 May 2025, 21:16:34
 -------------------------------------------------------------------------------

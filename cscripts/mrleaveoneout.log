@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:  25 Jul 2024, 09:19:29
+ opened on:   1 May 2025, 21:16:37
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -11,19 +11,19 @@
 ------------------------------------------------------------BEGIN mrleaveoneout
 
 -> which mrleaveoneout, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrleaveoneout.ado
+/Users/tom/Documents/GitHub/mrrobust/mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 16 Jul 2024
+Revision 26 Feb 2025
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 18.00 GB
+Total physical memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
 Serial number: 501809305331
   Licensed to: Tom Palmer
                University of Bristol
@@ -2511,7 +2511,7 @@ Model fitted without genotype: 10
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4568323   .0728014     6.28   0.000     .3141441    .5995205
+        beta |   .4568323   .0728909     6.27   0.000     .3139687    .5996959
 ------------------------------------------------------------------------------
 
 Model fitted without genotype: 11
@@ -7024,7 +7024,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrleaveoneout
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:  25 Jul 2024, 09:20:07
+ closed on:   1 May 2025, 21:17:07
 -------------------------------------------------------------------------------

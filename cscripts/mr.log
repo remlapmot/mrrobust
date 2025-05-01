@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mr
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- opened on:  25 Jul 2024, 09:12:34
+ opened on:   1 May 2025, 21:10:45
 
 . * mr cscript
 . * 20jan2020
@@ -28,83 +28,83 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mrmvegger, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmvegger.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmvivw.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mr, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mr.ado
+/Users/tom/Documents/GitHub/mrrobust/mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrdeps.ado
+/Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mregger.ado
+/Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mreggerplot.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mreggersimex.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mreggersimexonce.ado
+/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrforest.ado
+/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrfunnel.ado
+/Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrivests.ado
+/Users/tom/Documents/GitHub/mrrobust/mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmedian.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs_work.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmodal.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmodalplot.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrratio.ado
+/Users/tom/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
 . about
 
 StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 16 Jul 2024
+Revision 26 Feb 2025
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 18.00 GB
+Total physical memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
 Serial number: 501809305331
   Licensed to: Tom Palmer
                University of Bristol
@@ -223,7 +223,7 @@ chdbeta      |
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .4917353   .1312143     3.75   0.000     .2345599    .7489107
+        beta |   .4917353   .1312092     3.75   0.000     .2345699    .7489007
 ------------------------------------------------------------------------------
 
 . 
@@ -555,7 +555,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- closed on:  25 Jul 2024, 09:13:22
+ closed on:   1 May 2025, 21:11:26
 -------------------------------------------------------------------------------

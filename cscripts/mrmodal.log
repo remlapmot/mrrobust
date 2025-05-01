@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:  25 Jul 2024, 09:18:42
+ opened on:   1 May 2025, 21:15:58
 
 . * mrmodal cscript
 . * 2jun2017
@@ -11,19 +11,19 @@
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmodal.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 16 Jul 2024
+Revision 26 Feb 2025
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 18.00 GB
+Total physical memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
 Serial number: 501809305331
   Licensed to: Tom Palmer
                University of Bristol
@@ -222,7 +222,7 @@ pvalue  1.270e-12
 ------------------------------------------------------------------------------
              | Coefficient  Std. err.      z    P>|z|     [95% conf. interval]
 -------------+----------------------------------------------------------------
-        beta |   .5820001   .1364857     4.26   0.000     .3144931    .8495071
+        beta |   .5820001   .1364848     4.26   0.000     .3144948    .8495054
 ------------------------------------------------------------------------------
 
 . assert abs(_b[beta] - .5820001) < 1e-7
@@ -797,7 +797,7 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:  25 Jul 2024, 09:18:52
+ closed on:   1 May 2025, 21:16:06
 -------------------------------------------------------------------------------

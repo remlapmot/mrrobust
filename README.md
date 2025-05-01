@@ -16,6 +16,8 @@
 
 To obtain the latest update please see the instructions [below](#installing-and-updating-mrrobust).
 
+* May 2025:
+  - Reran certification scripts (a.k.a. tests) on StataNow 18.5
 * July 2024:
   - Updated website to mention [OpenGWAS](https://api.opengwas.io/) instead of MR-Base
   - In Stata 18 on a `graph twoway` plot the default legend position appears to have changed from the 6 o'clock to the 3 o'clock position. Amendments have been made to `mreggerplot`, `mrfunnel`, and `mrmodalplot` to use the 6 o'clock position as the default again.

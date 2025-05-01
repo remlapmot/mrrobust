@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmvegger
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:  25 Jul 2024, 09:19:27
+ opened on:   1 May 2025, 21:16:36
 
 . * mrmvegger cscript
 . * 22un2020
@@ -11,19 +11,19 @@
 ----------------------------------------------------------------BEGIN mrmvegger
 
 -> which mrmvegger, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrmvegger.ado
+/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 16 Jul 2024
+Revision 26 Feb 2025
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 18.00 GB
+Total physical memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
 Serial number: 501809305331
   Licensed to: Tom Palmer
                University of Bristol
@@ -810,7 +810,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvegger
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:  25 Jul 2024, 09:19:29
+ closed on:   1 May 2025, 21:16:37
 -------------------------------------------------------------------------------

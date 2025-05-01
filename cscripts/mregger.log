@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:  25 Jul 2024, 09:13:55
+ opened on:   1 May 2025, 21:11:56
 
 . * mregger cscript
 . * 04jun2016
@@ -11,19 +11,19 @@
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mregger.ado
+/Users/tom/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 16 Jul 2024
+Revision 26 Feb 2025
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 18.00 GB
+Total physical memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
 Serial number: 501809305331
   Licensed to: Tom Palmer
                University of Bristol
@@ -853,11 +853,13 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-/Users/eptmp/Library/Application Support/Stata/ado/plus/t/tsci.ado
-*! 1.0.0 Tom Palmer 8jan2010
+command tsci not found as either built-in or ado-file
 
 . if _rc != 0 {
 .         net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+checking tsci consistency and verifying not already installed...
+installing into /Users/tom/Library/Application Support/Stata/ado/plus/...
+installation complete.
 . }
 
 . 
@@ -1944,7 +1946,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:  25 Jul 2024, 09:13:58
+ closed on:   1 May 2025, 21:12:00
 -------------------------------------------------------------------------------

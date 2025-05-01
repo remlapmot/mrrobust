@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrforest.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- opened on:  25 Jul 2024, 09:17:57
+ opened on:   1 May 2025, 21:15:21
 
 . * mrforest cscript
 . * 16jun2017
@@ -11,19 +11,19 @@
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-/Users/eptmp/Documents/GitHub/mrrobust/mrforest.ado
+/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
 . about
 
 StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 16 Jul 2024
+Revision 26 Feb 2025
 Copyright 1985-2023 StataCorp LLC
 
-Total physical memory: 18.00 GB
+Total physical memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2025
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
 Serial number: 501809305331
   Licensed to: Tom Palmer
                University of Bristol
@@ -172,7 +172,7 @@ Options ivwopts(fe) and nofe may not be specified together
 . 
 end of do-file
       name:  mrforest
-       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrforest.log
+       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- closed on:  25 Jul 2024, 09:18:19
+ closed on:   1 May 2025, 21:15:39
 -------------------------------------------------------------------------------
