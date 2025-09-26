@@ -16,6 +16,8 @@
 
 To obtain the latest update please see the instructions [below](#installing-and-updating-mrrobust).
 
+* September 2025:
+  - Reran certification scripts on StataNow 19.5
 * May 2025:
   - Reran certification scripts (a.k.a. tests) on StataNow 18.5
 * July 2024:
