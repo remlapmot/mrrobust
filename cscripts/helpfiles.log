@@ -2,21 +2,21 @@
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:   1 May 2025, 21:16:37
+ opened on:  26 Sep 2025, 17:51:50
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
 . 
 . about
 
-StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 26 Feb 2025
-Copyright 1985-2023 StataCorp LLC
+StataNow/MP 19.5 for Unix (Apple Silicon)
+Revision 24 Sep 2025
+Copyright 1985-2025 StataCorp LLC
 
-Total physical memory: 16.00 GB
+Total usable memory: 16.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
-Serial number: 501809305331
+Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
 
@@ -47,6 +47,7 @@ Serial number: 501809305331
   2.         type ../`helpfile'.sthlp
   3. }
 Title
+-----
 
     mrrobust -- commands for two-sample Mendelian randomization (MR)
         analyses.
@@ -54,6 +55,7 @@ Title
     https://remlapmot.github.io/mrrobust/
 
 Commands
+--------
 
       mr            Primary command syntax, i.e. use mr egger ... syntax
                       instead of mregger ...
@@ -97,6 +99,7 @@ Commands
       mrleaveoneout Leave one out analysis
 
 Description
+-----------
 
     mrrobust is a suite of programs implementing recently developed
     estimators which are robust to certain proportions of invalid
@@ -112,17 +115,21 @@ Description
     https://remlapmot.github.io/mrrobust/
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mr -- Mendelian randomization programs
 
 Syntax
+------
 
         mr subcommand ... [aweight] [if] [in] [, options]
 
 Description
+-----------
 
     mr is a simple wrapper to the commands in the mrrobust package.
 
@@ -131,10 +138,12 @@ Description
     egger ....
 
 Options
+-------
 
     mr takes the options for the specified subcommand.
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et al.
     (2016), Table 4, LDL-c "All genetic variants" estimates.
@@ -156,11 +165,13 @@ Examples
             sel1==1
 
 Stored results
+--------------
 
     mr returns the results from the specified subcommand.
 
 
 References
+----------
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
         Mendelian randomization with some invalid instruments using a
@@ -172,34 +183,42 @@ References
         DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrdeps -- Install dependencies for mrrobust package
 
 Syntax
+------
 
         mrdeps
 
 Description
+-----------
 
     mrdeps simply installs the dependencies for the mrrobust package. It has
     no options.
 
 Examples
+--------
 
     Install dependencies
         . mrdeps
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mregger -- Mendelian randomization Egger regression
 
 Syntax
+------
 
         mregger varname_gd varname_gp [aweight] [if] [in] [, options]
 
@@ -223,6 +242,7 @@ Syntax
                             statistics
 
 Description
+-----------
 
     mregger performs inverse-variance weighted (IVW; Burgess et al., 2013)
     and Mendelian randomization Egger (MR-Egger) regression (Bowden et al.,
@@ -241,6 +261,7 @@ Description
     aw=1/(gdse^2).
 
 Options
+-------
 
     fe specifies fixed effect standard errors (i.e. variance of residuals
         constrained to 1 as in fixed effect meta-analysis models). The
@@ -292,6 +313,7 @@ Options
         additionally displayed in the output and in the ereturn scalars.
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et al.
     (2016), Table 4, LDL-c "All genetic variants" estimates.
@@ -324,6 +346,7 @@ Examples
 
 
 Stored results
+--------------
 
     mregger stores the following in e():
 
@@ -356,6 +379,7 @@ Stored results
                             ll, ul, df, crit, eform
 
 References
+----------
 
     Bowden J, Davey Smith G, Burgess S.  Mendelian randomization with invalid
         instruments: effect estimation and bias detection through Egger
@@ -400,13 +424,16 @@ References
         2693-2708.  DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mreggersimex -- SIMEX for the MR-Egger estimator
 
 Syntax
+------
 
         mreggersimex varname_gd varname_gp [aweight] [if] [in] [, options]
 
@@ -424,6 +451,7 @@ Syntax
       simreps(#)            No. simulation replications
 
 Description
+-----------
 
     mreggersimex performs the simulation extrapolation (SIMEX) algorithm
     (Cook et al., 1995, Hardin et al., 2003) on mregger using the commonly
@@ -439,6 +467,7 @@ Description
     genotype-disease (SNP-outcome) SEs squared, i.e. aw=1/(gdse^2).
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et el.
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
@@ -462,6 +491,7 @@ Examples
             gxse(ldlcse) seed(12345) noboot nodraw
 
 References
+----------
 
     Bowden J, Del Greco FM, Minelli C, Davey Smith G, Sheehan NA, Thompson
         JR.  Assessing the suitability of summary data for two-sample
@@ -487,13 +517,16 @@ References
         Journal.  2003, 3, 4, 373-385.  DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mreggerplot -- Scatter plot for MR-Egger type models
 
 Syntax
+------
 
         mreggerplot varname_gd varname_gdse varname_gp varname_gpse [if] [in]
               [, options]
@@ -529,6 +562,7 @@ Syntax
       *                   Other options passed to the twoway plot
 
 Description
+-----------
 
     mreggerplot plots a scatter plot for MR-Egger type models
 
@@ -550,6 +584,7 @@ Description
     can be overridden with, for example, legend(pos(12))).
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et al.
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
@@ -612,6 +647,7 @@ Examples
             rows(1))
 
 References
+----------
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S.  Consistent estimation in
         Mendelian randomization with some invalid instruments using a
@@ -623,13 +659,16 @@ References
         DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrmedian -- Weighted median of instrumental variable estimates
 
 Syntax
+------
 
         mrmedian varname_gd varname_gdse varname_gp varname_gpse [if] [in] [,
                 options]
@@ -645,6 +684,7 @@ Syntax
       weighted            weighted estimator
 
 Description
+-----------
 
     mrmedian performs unweighted, weighted, and penalized median IV estimator
     on summary level data (i.e. reported genotype-disease [SNP-outcome] and
@@ -666,6 +706,7 @@ Description
     (SNP-exposure) association estimate standard errors.
 
 Options
+-------
 
     level(#); see [R] estimation options.
 
@@ -682,6 +723,7 @@ Options
 
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et al.
     (2016), Table 4, LDL-c "All genetic variants" median estimates.
@@ -705,6 +747,7 @@ Examples
         . mrmedian chdbeta chdse ldlcbeta ldlcse if sel1==1, penweighted
 
 Stored results
+--------------
 
     mrmedian stores the following in e():
 
@@ -721,6 +764,7 @@ Stored results
       e(V)                variance-covariance matrix of the estimates
 
 References
+----------
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S.  Consistent estimation in
         Mendelian randomization with some invalid instruments using a
@@ -732,13 +776,16 @@ References
         DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrmedianobs -- Weighted median of instrumental variable estimates
 
 Syntax
+------
 
         mrmedianobs depvar [varlist1] (varname_endog = varlist_ivs) [if] [in]
               [, options]
@@ -758,6 +805,7 @@ Syntax
       weighted            weighted estimator
 
 Description
+-----------
 
     mrmedianobs performs unweighted, weighted, and penalized IV estimator on
     observation level data (Bowden et al., 2016).
@@ -768,6 +816,7 @@ Description
          varlist_ivs     instrumental variables
 
 Options
+-------
 
     all report percentile and bias corrected bootstrap confidence interval
         limits (only applies to observation level bootstrapping with
@@ -791,6 +840,7 @@ Options
 
 
 Examples
+--------
 
     Simulated test dataset.
 
@@ -814,6 +864,7 @@ Examples
 
 
 Stored results
+--------------
 
     mrmedian stores the following in e():
 
@@ -831,6 +882,7 @@ Stored results
       e(V)                variance-covariance matrix of the estimates
 
 References
+----------
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S.  Consistent estimation in
         Mendelian randomization with some invalid instruments using a
@@ -838,13 +890,16 @@ References
         304-314.  DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrmodal -- Modal estimator for summary data
 
 Syntax
+------
 
         mrmodal varname_gd varname_gdse varname_gp varname_gpse [if] [in] [,
                 options]
@@ -863,6 +918,7 @@ Syntax
       weighted            weighted IV estimates
 
 Description
+-----------
 
     mrmodal implements the zero modal estimator of Hartwig et al. (2017) for
     use with summary level data (i.e. reported genotype-disease [SNP-outcome]
@@ -884,6 +940,7 @@ Description
     (SNP-exposure) association estimate standard errors.
 
 Options
+-------
 
     level(#); see [R] estimation options.
 
@@ -908,6 +965,7 @@ Options
     weighted weight the instrumental variable estimates.
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013).
 
@@ -937,6 +995,7 @@ Examples
         . mrmodal chdbeta chdse ldlcbeta ldlcse if sel1==1, weighted nome
 
 Stored results
+--------------
 
     mrmodal stores the following in e():
 
@@ -954,6 +1013,7 @@ Stored results
       e(V)                variance-covariance matrix of the estimates
 
 References
+----------
 
     Do et al. Common variants associated with plasma triglycerides and risk
         for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
@@ -964,13 +1024,16 @@ References
         International Journal of Epidemiology, 2017, 46, 6, 1985-1998.  DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrmodalplot -- Density plot to investigate values of phi in mrmodal
 
 Syntax
+------
 
         mrmodalplot varname_gd varname_gdse varname_gp varname_gpse [if] [in]
                 [, options]
@@ -990,6 +1053,7 @@ Syntax
       *                   Other options passed to the twoway plot
 
 Description
+-----------
 
     mrmodalplot plots the density of the IV estimates used in the mrmodal
     estimator.
@@ -1012,6 +1076,7 @@ Description
     can be overridden with, for example, legend(pos(12))).
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et (2016),
     Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
@@ -1035,6 +1100,7 @@ Examples
 
 
 References
+----------
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
         Mendelian randomization with some invalid instruments using a
@@ -1046,13 +1112,16 @@ References
         DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrratio -- Instrumental variable ratio (Wald) estimator
 
 Syntax
+------
 
         mrratio #gd #gdse #gp [#gpse #cov] [, options]
 
@@ -1064,6 +1133,7 @@ Syntax
       nome                NOME assumption
 
 Description
+-----------
 
     mrratio implements the standard instrumental variable ratio (Wald)
     estimator.
@@ -1097,6 +1167,7 @@ Description
     genotype-phenotype (SNP-exposure) estimates.
 
 Options
+-------
 
     eform specifies reporting the exponentiated ratio estimate and confidence
         interval limits.
@@ -1110,6 +1181,7 @@ Options
         [SNP-exposure] association) assumption.
 
 Examples
+--------
 
     Hypothetical example
         . mrratio 1 .5 1 .25
@@ -1127,6 +1199,7 @@ Examples
         . mrratio 1 .5 1 .25, fieller
 
 Stored results
+--------------
 
     mrratio stores the following in e():
 
@@ -1149,14 +1222,17 @@ Stored results
       e(V)                variance-covariance matrix of the estimate
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrivests -- Generate genotype specific instrumental variable ratio (Wald)
 estimates in a dataset
 
 Syntax
+------
 
         mrivests varname_gd varname_gdse varname_gp [varname_gpse 
                 varname_cov] [if] [in] [, options]
@@ -1168,6 +1244,7 @@ Syntax
       *                          options passed to mrratio
 
 Description
+-----------
 
     mrivests calls mrratio to put the instrumental variable ratio (Wald)
     estimate and its standard error in the variables specified.
@@ -1189,6 +1266,7 @@ Description
     estimates.
 
 Options
+-------
 
     generate(varlist, replace) specifies the variables (2 or 3) to contain
         the IV estimates and their standard errors or confidence interval
@@ -1198,6 +1276,7 @@ Options
     * options passed through to mrratio, e.g. nome.
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) generate genotype specific
     estimates for the LDL-c phenotype.
@@ -1222,19 +1301,23 @@ Examples
             ivcilow ivciupp) fieller
 
 References
+----------
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
         risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
         DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrforest -- Forest plot for MR-Egger type models
 
 Syntax
+------
 
         mrforest varname_gd varname_gdse varname_gp varname_gpse [
               varname_cov] [if] [in] [, options]
@@ -1280,6 +1363,7 @@ Syntax
       *                     Other options passed to the metan
 
 Description
+-----------
 
     mrforest plots a forest plot for MR-Egger type models.  It is really a
     wrapper program for a call to metan (Harris et al., 2008), which must be
@@ -1306,6 +1390,7 @@ Description
 
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et al. (2016)
     Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
@@ -1340,6 +1425,7 @@ Examples
         . mrforest chdbeta chdse ldlcbeta ldlcse if sel1==1, ivid(rsid) dp(4)
 
 References
+----------
 
     Bowden J, Davey Smith G, Haycock PC, Burgess S. Consistent estimation in
         Mendelian randomization with some invalid instruments using a
@@ -1355,13 +1441,16 @@ References
         8, 1, 3-28. Link
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrfunnel -- Funnel plot for two-sample MR analysis
 
 Syntax
+------
 
         mrfunnel varname_gd varname_gdse varname_gp varname_gpse [if] [in] [,
                 options]
@@ -1379,6 +1468,7 @@ Syntax
       *                   other options passed to twoway
 
 Description
+-----------
 
     mrfunnel provides a funnel plot for a two-sample Mendelian randomization
     analysis.
@@ -1403,6 +1493,7 @@ Description
     (SNP-exposure) association estimate standard errors.
 
 Options
+-------
 
     metric(gpbeta|gpbetastd|invse) specifies the metric for the y-axis. Can
         be one of:
@@ -1419,6 +1510,7 @@ Options
     be overridden with, for example, legend(pos(12))).
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013) recreate Bowden et al. (2016)
     Web Figure A2 (top-right plot, LDL-C with 73 genotypes).
@@ -1449,6 +1541,7 @@ Examples
         . mrfunnel chdbeta chdse ldlcbeta ldlcse if sel1==1, xlrange(0 10)
 
 References
+----------
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
         risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
@@ -1460,14 +1553,17 @@ References
         304-314.  DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrmvivw/mvivw/mvmr -- Multivariable inverse variance weighted regression
 (MVIVW)
 
 Syntax
+------
 
         mrmvivw/mvivw/mvmr varname_gd varname_gp1 [varname_gp2 ...] [aweight]
                 [if] [in] [, options]
@@ -1482,6 +1578,7 @@ Syntax
       tdist               use t-distribution for Wald test and CI limits
 
 Description
+-----------
 
     mrmvivw/mvivw/mvmr performs multivariable inverse-variance weighted (IVW)
     regression using summary level data.  See  Burgess et al. (2015) for more
@@ -1498,6 +1595,7 @@ Description
     aw=1/(gdse^2).
 
 Options
+-------
 
     fe specifies fixed effect standard errors (i.e. variance of residuals
         constrained to 1 as in fixed effect meta-analysis models). The
@@ -1523,6 +1621,7 @@ Options
         interval limits.
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013).
 
@@ -1545,6 +1644,7 @@ Examples
             sel1==1, gxse(ldlcse hdlcse tgse)
 
 Stored results
+--------------
 
     mrmvivw/mvivw/mvmr stores the following in e():
 
@@ -1577,6 +1677,7 @@ Stored results
                             ll, ul, df, crit, eform
 
 References
+----------
 
     Burgess S, Dudbridge F, Thompson SG. Multivariable Mendelian
         randomization:  the use of pleiotropic genetic variants to estimate
@@ -1597,6 +1698,7 @@ References
         randomization.  Statistics in Medicine, 2021, 40, 25, 5434-5452.  DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 .h mrmvivw
@@ -1604,10 +1706,12 @@ INCLUDE help mrrobust-author
 .h mrmvivw
 {s6hlp}
 Title
+-----
 
      mrmvegger -- Multivariable MR-Egger regression (MVMR-Egger)
 
 Syntax
+------
 
         mrmvegger varname_gd varname_gp1 [varname_gp2 ...] [aweight] [if] [
                 in] [, options]
@@ -1622,6 +1726,7 @@ Syntax
       tdist               use t-distribution for Wald test and CI limits
 
 Description
+-----------
 
     mrmvegger performs multivariable MR-Egger regression.  For further
     information see Rees et al. (2017).
@@ -1641,6 +1746,7 @@ Description
     aw=1/(gdse^2).
 
 Options
+-------
 
     orient(#) specifies which phenotype to orient the data to. The default is
         1, i.e. the phenotype in the first genotype-phenotype (SNP-exposure)
@@ -1653,6 +1759,7 @@ Options
         interval limits.
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013).
 
@@ -1675,6 +1782,7 @@ Examples
             sel1==1, orient(3)
 
 Stored results
+--------------
 
     mrmvegger stores the following in e():
 
@@ -1701,6 +1809,7 @@ Stored results
                             ll, ul, df, crit, eform
 
 References
+----------
 
     Do et al., 2013. Common variants associated with plasma triglycerides and
         risk for coronary artery disease. Nature Genetics. 45, 1345-1352.
@@ -1712,13 +1821,16 @@ References
         4705-4718.  DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 Title
+-----
 
      mrleaveoneout -- Leave one (genotype) out (at a time) analysis
 
 Syntax
+------
 
         mrleaveoneout varname_gd varname_gp [if] [in], gyse(varname)
               [options]
@@ -1745,6 +1857,7 @@ Syntax
                               command
 
 Description
+-----------
 
     mrleaveoneout performs leave one out analysis, in which each genotype is
     omitted in turn from the analysis.  A plot of the estimates is shown by
@@ -1760,12 +1873,14 @@ Description
     association estimates.
 
 Options
+-------
 
     method(string) Specifies the method used for the analysis.  Must be one
         of ivw, egger, mregger, mrivw, median, mrmedian, mrmodal, modal,
         mode, mvmr, mvivw, mvegger.
 
 Examples
+--------
 
     Using the data provided by Do et al. (2013).
 
@@ -1791,12 +1906,14 @@ Examples
             genotype(rsid) metanopts(dp(4))
 
 References
+----------
 
     Do et al. Common variants associated with plasma triglycerides and risk
         for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
 Author
+------
 
 INCLUDE help mrrobust-author
 
@@ -1805,5 +1922,5 @@ end of do-file
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:   1 May 2025, 21:16:37
+ closed on:  26 Sep 2025, 17:51:50
 -------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
       name:  mregger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:   1 May 2025, 21:11:56
+ opened on:  26 Sep 2025, 17:48:18
 
 . * mregger cscript
 . * 04jun2016
@@ -17,14 +17,14 @@
 . 
 . about
 
-StataNow/MP 18.5 for Mac (Apple Silicon)
-Revision 26 Feb 2025
-Copyright 1985-2023 StataCorp LLC
+StataNow/MP 19.5 for Unix (Apple Silicon)
+Revision 24 Sep 2025
+Copyright 1985-2025 StataCorp LLC
 
-Total physical memory: 16.00 GB
+Total usable memory: 16.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
-Serial number: 501809305331
+Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
 
@@ -853,13 +853,11 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-command tsci not found as either built-in or ado-file
+/Users/tom/Library/Application Support/Stata/ado/plus/t/tsci.ado
+*! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
 .         net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
-checking tsci consistency and verifying not already installed...
-installing into /Users/tom/Library/Application Support/Stata/ado/plus/...
-installation complete.
 . }
 
 . 
@@ -1948,5 +1946,5 @@ end of do-file
       name:  mregger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:   1 May 2025, 21:12:00
+ closed on:  26 Sep 2025, 17:48:20
 -------------------------------------------------------------------------------
