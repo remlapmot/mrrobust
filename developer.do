@@ -40,4 +40,4 @@ ssc install log2html
 // To run the examples for the website cd into an appropriate sub-directory of _drafts and run
 // do render
 
-exit
+exit, STATA
