@@ -136,7 +136,7 @@ using a weighted median estimator. Genetic Epidemiology, 2016, 40, 4, 304-314.
 {p_end}
 
 {marker do}{...}{phang}
-Do et al.Common variants associated with plasma triglycerides and risk 
+Do et al. Common variants associated with plasma triglycerides and risk
 for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.  
 {browse "https://dx.doi.org/10.1038/ng.2795":DOI}
 {p_end}
