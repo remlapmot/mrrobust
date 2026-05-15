@@ -189,7 +189,7 @@ knitr::include_graphics("mrfunnel.svg")
 Create a smaller subset of data.
 
 ```{stata}
-#| collectcode: true
+*| collectcode: true
 gen byte sel2 = (ldlcp2 < 1e-25)
 ```
 
