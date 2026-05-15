@@ -54,7 +54,7 @@ genotype-disease (SNP-outcome) SEs squared, i.e. aw=1/(gdse^2).
 {title:Examples}
 
 {pstd}Using the data provided by {help mreggersimex##do:Do et al. (2013)} recreate 
-{help mreggersimex##mrmedian:Bowden et el. (2016)}, Figure 4, 
+{help mreggersimex##mrmedian:Bowden et al. (2016)}, Figure 4, 
 LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
