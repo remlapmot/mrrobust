@@ -62,7 +62,7 @@ In Stata 18.0 and above {cmd:mrmodalplot} resets the default back to 6 o'clock (
 {title:Examples}
 
 {pstd}Using the data provided by {help mrmodalplot##do:Do et al. (2013)} recreate 
-{help mrmodalplot##bowden:Bowden et (2016)}, Figure 4, 
+{help mrmodalplot##bowden:Bowden et al. (2016)}, Figure 4, 
 LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
