@@ -81,7 +81,7 @@ To obtain the latest update please see the instructions [below](#installing-and-
   - Added `tdist` option to `mrmvivw` and `mrmvegger`
   - `mrmvivw` and `mrmvegger` now ereturn the RMSE in `e(phi)`
   - `mregger, ivw` now displays the square root of the residual variance (residual standard error) 
-  and ereturns this is `e(phi)`
+  and ereturns `e(phi)`
   - Checked that examples on website still run
   - Added `mrleaveoneout` command to perform leave one out analysis
 * June 2020:
