@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Examples from helpfiles in the mrrobust package – mrrobust</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -59,7 +62,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -87,15 +89,14 @@ div.csl-indent {
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -135,8 +136,6 @@ div.csl-indent {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">mrrobust</span>
     </a>
@@ -327,7 +326,7 @@ div.csl-indent {
 </section>
 <section id="read-in-example-data" class="level2">
 <h2 class="anchored" data-anchor-id="read-in-example-data">Read in example data</h2>
-<p>Read in example data from <span class="citation" data-cites="do-natgen-2013">Do et al. (<a href="#ref-do-natgen-2013" role="doc-biblioref">2013</a>)</span>.</p>
+<p>Read in example data from <span class="citation" data-cites="do-natgen-2013"><span class="nocase">Do et al.</span> (<a href="#ref-do-natgen-2013" role="doc-biblioref">2013</a>)</span>.</p>
 <div class="cell" data-layout-align="center" data-collectcode="true">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> https:<span class="co">//raw.github.com/remlapmot/mrrobust/master/dodata, clear</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -357,7 +356,7 @@ div.csl-indent {
 </section>
 <section id="mregger-examples" class="level2">
 <h2 class="anchored" data-anchor-id="mregger-examples">mregger examples</h2>
-<p>Using the data provided by <span class="citation" data-cites="do-natgen-2013">Do et al. (<a href="#ref-do-natgen-2013" role="doc-biblioref">2013</a>)</span> recreate from <span class="citation" data-cites="bowden-genepi-2016">Bowden et al. (<a href="#ref-bowden-genepi-2016" role="doc-biblioref">2016</a>)</span> the Table 4, LDL-c “All genetic variants” estimates.</p>
+<p>Using the data provided by <span class="citation" data-cites="do-natgen-2013"><span class="nocase">Do et al.</span> (<a href="#ref-do-natgen-2013" role="doc-biblioref">2013</a>)</span> recreate from <span class="citation" data-cites="bowden-genepi-2016">Bowden et al. (<a href="#ref-bowden-genepi-2016" role="doc-biblioref">2016</a>)</span> the Table 4, LDL-c “All genetic variants” estimates.</p>
 <p>IVW (with fixed effect standard errors, i.e.&nbsp;variance of residuals [residual variance] constrained to 1).</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mregger chdbeta ldlcbeta [aw=1/(chdse^2)] <span class="kw">if</span> sel1==1, ivw <span class="kw">fe</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -660,12 +659,12 @@ radialGD     |
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-bowden-genepi-2016" class="csl-entry" role="listitem">
 Bowden, Jack, George Davey Smith, Philip C Haycock, and Stephen Burgess. 2016. <span>“<span class="nocase">Consistent estimation in Mendelian randomization with some invalid instruments using a weighted median estimator</span>.”</span> <em>Genetic Epidemiology</em> 40 (4): 304–14. <a href="https://doi.org/10.1002/gepi.21965">https://doi.org/10.1002/gepi.21965</a>.
 </div>
 <div id="ref-do-natgen-2013" class="csl-entry" role="listitem">
-Do, Ron, Cristen J Willer, Ellen M Schmidt, Sebanti Sengupta, Chi Gao, Gina M Peloso, Stefan Gustafsson, et al. 2013. <span>“Common Variants Associated with Plasma Triglycerides and Risk for Coronary Artery Disease.”</span> <em>Nature Genetics</em> 45 (11): 1345–52. <a href="https://doi.org/10.1038/ng.2795">https://doi.org/10.1038/ng.2795</a>.
+<span class="nocase">Do, Ron, Cristen J Willer, Ellen M Schmidt, et al.</span> 2013. <span>“Common Variants Associated with Plasma Triglycerides and Risk for Coronary Artery Disease.”</span> <em>Nature Genetics</em> 45 (11): 1345–52. <a href="https://doi.org/10.1038/ng.2795">https://doi.org/10.1038/ng.2795</a>.
 </div>
 </div>
 
