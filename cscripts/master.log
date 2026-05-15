@@ -2,7 +2,7 @@
       name:  master
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- opened on:  26 Sep 2025, 17:47:06
+ opened on:  15 May 2026, 07:34:44
 
 . 
 . cscript master
@@ -41,7 +41,7 @@
       name:  mr
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- opened on:  26 Sep 2025, 17:47:06
+ opened on:  15 May 2026, 07:34:44
 
 . * mr cscript
 . * 20jan2020
@@ -138,12 +138,12 @@
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -596,13 +596,13 @@ end of do-file
       name:  mr
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- closed on:  26 Sep 2025, 17:47:46
+ closed on:  15 May 2026, 07:35:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:  26 Sep 2025, 17:47:46
+ opened on:  15 May 2026, 07:35:22
 
 . * mrdeps cscript
 . * 20jan2020
@@ -618,12 +618,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -648,13 +648,13 @@ end of do-file
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:  26 Sep 2025, 17:48:18
+ closed on:  15 May 2026, 07:35:53
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:  26 Sep 2025, 17:48:18
+ opened on:  15 May 2026, 07:35:53
 
 . * mregger cscript
 . * 04jun2016
@@ -670,12 +670,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -2598,13 +2598,13 @@ end of do-file
       name:  mregger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:  26 Sep 2025, 17:48:20
+ closed on:  15 May 2026, 07:35:55
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:  26 Sep 2025, 17:48:20
+ opened on:  15 May 2026, 07:35:55
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2624,12 +2624,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -2951,13 +2951,13 @@ end of do-file
       name:  mreggerplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:  26 Sep 2025, 17:48:43
+ closed on:  15 May 2026, 07:36:15
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:  26 Sep 2025, 17:48:43
+ opened on:  15 May 2026, 07:36:15
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2977,12 +2977,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -3134,13 +3134,13 @@ end of do-file
       name:  mreggersimex
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:  26 Sep 2025, 17:50:53
+ closed on:  15 May 2026, 07:38:05
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- opened on:  26 Sep 2025, 17:50:53
+ opened on:  15 May 2026, 07:38:05
 
 . * mrforest cscript
 . * 16jun2017
@@ -3156,12 +3156,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -3312,13 +3312,13 @@ end of do-file
       name:  mrforest
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:05
+ closed on:  15 May 2026, 07:38:17
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:05
+ opened on:  15 May 2026, 07:38:17
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3334,12 +3334,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -3428,13 +3428,13 @@ end of do-file
       name:  mrfunnel
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:10
+ closed on:  15 May 2026, 07:38:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:10
+ opened on:  15 May 2026, 07:38:22
 
 . * mrivests testcode
 . * 10jun2017
@@ -3450,12 +3450,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -3673,13 +3673,13 @@ end of do-file
       name:  mrivests
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:11
+ closed on:  15 May 2026, 07:38:23
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:11
+ opened on:  15 May 2026, 07:38:23
 
 . * mrmedian test code
 . * 3jun2016
@@ -3695,12 +3695,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -4067,13 +4067,13 @@ end of do-file
       name:  mrmedian
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:12
+ closed on:  15 May 2026, 07:38:23
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:12
+ opened on:  15 May 2026, 07:38:23
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -4093,12 +4093,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -4440,13 +4440,13 @@ end of do-file
       name:  mrmedianobs
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:20
+ closed on:  15 May 2026, 07:38:30
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:20
+ opened on:  15 May 2026, 07:38:30
 
 . * mrmodal cscript
 . * 2jun2017
@@ -4462,12 +4462,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -5243,13 +5243,13 @@ end of do-file
       name:  mrmodal
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:27
+ closed on:  15 May 2026, 07:38:37
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:27
+ opened on:  15 May 2026, 07:38:37
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5265,12 +5265,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -6253,13 +6253,13 @@ end of do-file
       name:  mrmodalplot
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:47
+ closed on:  15 May 2026, 07:38:54
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:47
+ opened on:  15 May 2026, 07:38:54
 
 . * mrratio cscript
 . * 6jun2017
@@ -6275,12 +6275,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -6618,13 +6618,13 @@ end of do-file
       name:  mrratio
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:47
+ closed on:  15 May 2026, 07:38:54
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:47
+ opened on:  15 May 2026, 07:38:54
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -6648,12 +6648,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -8060,13 +8060,13 @@ end of do-file
       name:  mrmvivw
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:49
+ closed on:  15 May 2026, 07:38:55
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:49
+ opened on:  15 May 2026, 07:38:55
 
 . * mrmvegger cscript
 . * 22un2020
@@ -8082,12 +8082,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -8876,13 +8876,13 @@ end of do-file
       name:  mrmvegger
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:50
+ closed on:  15 May 2026, 07:38:56
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:50
+ opened on:  15 May 2026, 07:38:56
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -8890,12 +8890,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -9349,7 +9349,7 @@ Description
 Examples
 --------
 
-    Using the data provided by Do et al. (2013) recreate Bowden et el.
+    Using the data provided by Do et al. (2013) recreate Bowden et al.
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
@@ -9534,7 +9534,7 @@ References
         weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
         304-314.  DOI
 
-    Do et al.Common variants associated with plasma triglycerides and risk
+    Do et al. Common variants associated with plasma triglycerides and risk
         for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
@@ -9958,8 +9958,8 @@ Description
 Examples
 --------
 
-    Using the data provided by Do et al. (2013) recreate Bowden et (2016),
-    Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
+    Using the data provided by Do et al. (2013) recreate Bowden et al.
+    (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
         . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -10236,7 +10236,7 @@ Syntax
       mrivestopts(string)   options for mrivests used to generate genotype
                               specific ratio estimates and SEs
       mrmedianopts(string)  options for median estimate from mrmedian
-      mrmodal(string)       options for modal estimate from mrmodal
+      mrmodalopts(string)   options for modal estimate from mrmodal
       nofe                  Remove fe option (fixed effect SE) from the IVW
                               fit
 
@@ -10802,13 +10802,13 @@ end of do-file
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:50
+ closed on:  15 May 2026, 07:38:56
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:50
+ opened on:  15 May 2026, 07:38:56
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -10824,12 +10824,12 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -17832,7 +17832,7 @@ end of do-file
       name:  mrleaveoneout
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:  26 Sep 2025, 17:52:13
+ closed on:  15 May 2026, 07:39:18
 -------------------------------------------------------------------------------
 
 . 
@@ -17840,5 +17840,5 @@ end of do-file
       name:  master
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- closed on:  26 Sep 2025, 17:52:13
+ closed on:  15 May 2026, 07:39:18
 -------------------------------------------------------------------------------

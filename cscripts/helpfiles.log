@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:  26 Sep 2025, 17:51:50
+ opened on:  15 May 2026, 07:38:56
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -10,12 +10,12 @@
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -469,7 +469,7 @@ Description
 Examples
 --------
 
-    Using the data provided by Do et al. (2013) recreate Bowden et el.
+    Using the data provided by Do et al. (2013) recreate Bowden et al.
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
@@ -654,7 +654,7 @@ References
         weighted median estimator. Genetic Epidemiology, 2016, 40, 4,
         304-314.  DOI
 
-    Do et al.Common variants associated with plasma triglycerides and risk
+    Do et al. Common variants associated with plasma triglycerides and risk
         for coronary artery disease. Nature Genetics, 2013, 45, 1345-1352.
         DOI
 
@@ -1078,8 +1078,8 @@ Description
 Examples
 --------
 
-    Using the data provided by Do et al. (2013) recreate Bowden et (2016),
-    Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
+    Using the data provided by Do et al. (2013) recreate Bowden et al.
+    (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
         . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
@@ -1356,7 +1356,7 @@ Syntax
       mrivestopts(string)   options for mrivests used to generate genotype
                               specific ratio estimates and SEs
       mrmedianopts(string)  options for median estimate from mrmedian
-      mrmodal(string)       options for modal estimate from mrmodal
+      mrmodalopts(string)   options for modal estimate from mrmodal
       nofe                  Remove fe option (fixed effect SE) from the IVW
                               fit
 
@@ -1922,5 +1922,5 @@ end of do-file
       name:  helpfiles
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:  26 Sep 2025, 17:51:50
+ closed on:  15 May 2026, 07:38:56
 -------------------------------------------------------------------------------

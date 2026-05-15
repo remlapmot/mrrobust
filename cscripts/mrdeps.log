@@ -2,7 +2,7 @@
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:  26 Sep 2025, 17:47:46
+ opened on:  15 May 2026, 07:35:22
 
 . * mrdeps cscript
 . * 20jan2020
@@ -18,12 +18,12 @@
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 24 Sep 2025
+Revision 15 Apr 2026
 Copyright 1985-2025 StataCorp LLC
 
 Total usable memory: 16.00 GB
 
-Stata license: Unlimited-user 2-core network, expiring 29 Jan 2026
+Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
   Licensed to: Tom Palmer
                University of Bristol
@@ -48,5 +48,5 @@ end of do-file
       name:  mrdeps
        log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:  26 Sep 2025, 17:48:18
+ closed on:  15 May 2026, 07:35:53
 -------------------------------------------------------------------------------
