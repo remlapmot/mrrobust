@@ -57,7 +57,7 @@ local phenovarlist : subinstr local varlist "`gd' " ""
 if "`method'" == "" local method ivw
 // check method
 if !inlist("`method'", "ivw", "egger", "mregger", "mrivw", ///
-	"median" "mrmedian", "mrmodal", "modal", "mode") & ///
+	"median", "mrmedian", "mrmodal", "modal", "mode") & ///
 	!inlist("`method'", "mvmr", "mvivw", "mvegger") {
 	di as error "method should be one of: ivw, egger, mregger," ///
 		"mrivw, median, mrmedian, mrmodal, modal, mode, mvmr, mvivw, mvegger"
