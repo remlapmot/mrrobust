@@ -121,7 +121,7 @@ if "`ivw'" == "ivw" {
 			qui sem (`wrady' <- `wradx', nocons) `if'`in'
 			if e(converged) == 1 {
 				local df = e(N) - 1
-				local qstat = _b[var(e.`wrad'):_cons]*e(N)
+				local qstat = _b[var(e.`wrady'):_cons]*e(N)
 				// if using glm: local qstat = e(phi)*(e(N) - 1)
 				scalar `dfr' = e(df)
 			}
