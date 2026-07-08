@@ -18,12 +18,10 @@ forvalues i=1/`k' {
 	mata gp[`i'] = st_matrix("e(b)")[1]
 	mata gpse[`i'] = sqrt(st_matrix("e(V)")[1,1])
 }
-ereturn scalar k = `k'
 preserve
 drop _all
 cap set obs `k'
 qui getmata gd gdse gp gpse, double replace
-ereturn scalar reps = e(reps)
 qui mrmedian gd gdse gp gpse, `weighted' `penweighted' reps(`reps')
 restore
 end
