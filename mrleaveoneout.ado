@@ -59,7 +59,7 @@ if "`method'" == "" local method ivw
 if !inlist("`method'", "ivw", "egger", "mregger", "mrivw", ///
 	"median", "mrmedian", "mrmodal", "modal", "mode") & ///
 	!inlist("`method'", "mvmr", "mvivw", "mvegger") {
-	di as error "method should be one of: ivw, egger, mregger," ///
+	di as error "method should be one of: ivw, egger, mregger, " ///
 		"mrivw, median, mrmedian, mrmodal, modal, mode, mvmr, mvivw, mvegger"
 	exit 198
 }
