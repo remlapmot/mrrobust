@@ -97,6 +97,7 @@ foreach i of numlist `selobs' {
 		qui mrratio `one' `two' `thr' `fou', `options'
 	}
 	else if `varlistlength' == 5 {
+		local fou : di `gpse'[`i']
 		local fiv : di `cov'[`i']
 		qui mrratio `one' `two' `thr' `fou' `fiv', `options'
 	}
