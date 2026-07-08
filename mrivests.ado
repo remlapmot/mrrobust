@@ -25,7 +25,7 @@ else if `varlistlength' == 5 {
 }
 
 // work out whether fieller is in `options'
-local fmatch = strmatch("`options'","fieller")
+local fmatch = strmatch("`options'","*fieller*")
 if `fmatch' == 1 {
 	local fieller fieller
 }
