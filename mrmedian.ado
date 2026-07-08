@@ -54,7 +54,7 @@ if "`seed'" != "" {
 
 ** weighted options
 if "`weighted'" == "weighted" & "`penweighted'" == "penweighted" {
-	di as err "Specify both weighted and penweighted options " ///
+	di as err "Specifying both weighted and penweighted options " ///
 		"is not allowed."
 	exit 198
 }
