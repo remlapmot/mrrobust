@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:  15 May 2026, 07:36:15
+ opened on:   8 Jul 2026, 12:00:56
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -11,21 +11,21 @@
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -177,7 +177,7 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:  15 May 2026, 07:38:05
+ closed on:   8 Jul 2026, 12:03:18
 -------------------------------------------------------------------------------

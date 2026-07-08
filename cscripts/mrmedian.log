@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmedian
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- opened on:  15 May 2026, 07:38:23
+ opened on:   8 Jul 2026, 12:03:42
 
 . * mrmedian test code
 . * 3jun2016
@@ -11,17 +11,17 @@
 -----------------------------------------------------------------BEGIN mrmedian
 
 -> which mrmedian, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -48,7 +48,7 @@ too many variables specified
 . 
 . rcof "noi mrmedian chdbeta chdse ldlcbeta ldlcse, weighted penweighted" == 19
 > 8
-Specify both weighted and penweighted options is not allowed.
+Specifying both weighted and penweighted options is not allowed.
 
 . 
 . *** ldlc - analysis 1
@@ -388,7 +388,7 @@ pvalue  4.089e-13
 . 
 end of do-file
       name:  mrmedian
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- closed on:  15 May 2026, 07:38:23
+ closed on:   8 Jul 2026, 12:03:43
 -------------------------------------------------------------------------------

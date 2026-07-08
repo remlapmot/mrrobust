@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:  15 May 2026, 07:38:56
+ opened on:   8 Jul 2026, 12:04:29
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -11,17 +11,17 @@
 ------------------------------------------------------------BEGIN mrleaveoneout
 
 -> which mrleaveoneout, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrleaveoneout.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -867,8 +867,8 @@ chdbeta      |
 
 . rcof "noi mrleaveoneout chdbeta chdse ldlcbeta ldlcse if sel1==1, gyse(chdse)
 >  method(incorrectoption)" == 198
-method should be one of: ivw, egger, mregger,mrivw, median, mrmedian, mrmodal, 
-> modal, mode, mvmr, mvivw, mvegger
+method should be one of: ivw, egger, mregger, mrivw, median, mrmedian, mrmodal,
+>  modal, mode, mvmr, mvivw, mvegger
 
 . 
 . discard
@@ -7024,7 +7024,7 @@ chdbeta      |
 . 
 end of do-file
       name:  mrleaveoneout
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:  15 May 2026, 07:39:18
+ closed on:   8 Jul 2026, 12:05:01
 -------------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrfunnel
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- opened on:  15 May 2026, 07:38:17
+ opened on:   8 Jul 2026, 12:03:34
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -11,17 +11,17 @@
 -----------------------------------------------------------------BEGIN mrfunnel
 
 -> which mrfunnel, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -110,7 +110,7 @@ Serial number: 501909307934
 . 
 end of do-file
       name:  mrfunnel
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- closed on:  15 May 2026, 07:38:22
+ closed on:   8 Jul 2026, 12:03:42
 -------------------------------------------------------------------------------

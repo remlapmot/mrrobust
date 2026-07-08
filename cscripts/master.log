@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  master
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- opened on:  15 May 2026, 07:34:44
+ opened on:   8 Jul 2026, 11:59:10
 
 . 
 . cscript master
@@ -39,9 +39,9 @@
   5. }
 -------------------------------------------------------------------------------
       name:  mr
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- opened on:  15 May 2026, 07:34:44
+ opened on:   8 Jul 2026, 11:59:10
 
 . * mr cscript
 . * 20jan2020
@@ -67,81 +67,81 @@
 -----------------------------------------------------------------------BEGIN mr
 
 -> which mrmvegger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 -> which mrmvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mr, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mr.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mr.ado
 *! version 0.1.0 19jan2020 Tom Palmer
 
 -> which mrdeps, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 -> which mregger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mregger.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mreggerplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mreggersimex, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 -> which mrforest, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 -> which mrfunnel, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 -> which mrivests, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrivests.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 -> which mrmedian, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 -> which mrmedianobs, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmodal, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 -> which mrmodalplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodalplot.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 -> which mrratio, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrratio.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -594,15 +594,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mr
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mr.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- closed on:  15 May 2026, 07:35:22
+ closed on:   8 Jul 2026, 11:59:52
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:  15 May 2026, 07:35:22
+ opened on:   8 Jul 2026, 11:59:52
 
 . * mrdeps cscript
 . * 20jan2020
@@ -611,17 +611,17 @@ end of do-file
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -646,15 +646,15 @@ all files already exist and are up to date.
 . 
 end of do-file
       name:  mrdeps
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:  15 May 2026, 07:35:53
+ closed on:   8 Jul 2026, 12:00:24
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:  15 May 2026, 07:35:53
+ opened on:   8 Jul 2026, 12:00:24
 
 . * mregger cscript
 . * 04jun2016
@@ -663,17 +663,17 @@ end of do-file
 ------------------------------------------------------------------BEGIN mregger
 
 -> which mregger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mregger.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -1505,7 +1505,7 @@ chdbeta      |
 . 
 . *** check the i^2 and q stats for this example
 . cap noi which tsci
-/Users/tom/Library/Application Support/Stata/ado/plus/t/tsci.ado
+/Users/eptmp/Library/Application Support/Stata/ado/plus/t/tsci.ado
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
@@ -2596,15 +2596,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mregger
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mregger.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:  15 May 2026, 07:35:55
+ closed on:   8 Jul 2026, 12:00:29
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:  15 May 2026, 07:35:55
+ opened on:   8 Jul 2026, 12:00:29
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2613,21 +2613,21 @@ end of do-file
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mregger.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -2949,15 +2949,15 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:  15 May 2026, 07:36:15
+ closed on:   8 Jul 2026, 12:00:56
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:  15 May 2026, 07:36:15
+ opened on:   8 Jul 2026, 12:00:56
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2966,21 +2966,21 @@ end of do-file
 -------------------------------------------------------------BEGIN mreggersimex
 
 -> which mreggersimex, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimex.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimex.ado
 *! 0.1.0 20jul2017 Tom Palmer
 
 -> which mreggersimexonce, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggersimexonce.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggersimexonce.ado
 *! 0.1.0 23jul2017 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -3132,15 +3132,15 @@ pvalue   4.173e-06   .13990412
 . 
 end of do-file
       name:  mreggersimex
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:  15 May 2026, 07:38:05
+ closed on:   8 Jul 2026, 12:03:18
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- opened on:  15 May 2026, 07:38:05
+ opened on:   8 Jul 2026, 12:03:18
 
 . * mrforest cscript
 . * 16jun2017
@@ -3149,17 +3149,17 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrforest
 
 -> which mrforest, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrforest.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrforest.ado
 *! version 0.1.0 Tom Palmer 15jun2017
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -3310,15 +3310,15 @@ Options ivwopts(fe) and nofe may not be specified together
 . 
 end of do-file
       name:  mrforest
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrforest.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- closed on:  15 May 2026, 07:38:17
+ closed on:   8 Jul 2026, 12:03:34
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- opened on:  15 May 2026, 07:38:17
+ opened on:   8 Jul 2026, 12:03:34
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3327,17 +3327,17 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrfunnel
 
 -> which mrfunnel, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrfunnel.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrfunnel.ado
 *! 0.1.0 Tom Palmer 29aug2017
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -3426,15 +3426,15 @@ Serial number: 501909307934
 . 
 end of do-file
       name:  mrfunnel
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- closed on:  15 May 2026, 07:38:22
+ closed on:   8 Jul 2026, 12:03:42
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- opened on:  15 May 2026, 07:38:22
+ opened on:   8 Jul 2026, 12:03:42
 
 . * mrivests testcode
 . * 10jun2017
@@ -3443,17 +3443,17 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrivests.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -3671,15 +3671,15 @@ variable ivse not found
 . 
 end of do-file
       name:  mrivests
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- closed on:  15 May 2026, 07:38:23
+ closed on:   8 Jul 2026, 12:03:42
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- opened on:  15 May 2026, 07:38:23
+ opened on:   8 Jul 2026, 12:03:42
 
 . * mrmedian test code
 . * 3jun2016
@@ -3688,17 +3688,17 @@ end of do-file
 -----------------------------------------------------------------BEGIN mrmedian
 
 -> which mrmedian, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedian.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedian.ado
 *! version 0.1.0 03jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -3725,7 +3725,7 @@ too many variables specified
 . 
 . rcof "noi mrmedian chdbeta chdse ldlcbeta ldlcse, weighted penweighted" == 19
 > 8
-Specify both weighted and penweighted options is not allowed.
+Specifying both weighted and penweighted options is not allowed.
 
 . 
 . *** ldlc - analysis 1
@@ -4065,15 +4065,15 @@ pvalue  4.089e-13
 . 
 end of do-file
       name:  mrmedian
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedian.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- closed on:  15 May 2026, 07:38:23
+ closed on:   8 Jul 2026, 12:03:43
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:  15 May 2026, 07:38:23
+ opened on:   8 Jul 2026, 12:03:43
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -4082,21 +4082,21 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -4438,15 +4438,15 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:  15 May 2026, 07:38:30
+ closed on:   8 Jul 2026, 12:03:52
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:  15 May 2026, 07:38:30
+ opened on:   8 Jul 2026, 12:03:52
 
 . * mrmodal cscript
 . * 2jun2017
@@ -4455,17 +4455,17 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -5241,15 +5241,15 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:  15 May 2026, 07:38:37
+ closed on:   8 Jul 2026, 12:04:00
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- opened on:  15 May 2026, 07:38:37
+ opened on:   8 Jul 2026, 12:04:00
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5258,17 +5258,17 @@ end of do-file
 --------------------------------------------------------------BEGIN mrmodalplot
 
 -> which mrmodalplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodalplot.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmodalplot.ado
 *! 0.1.0 2aug2017 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -6251,15 +6251,15 @@ Serial number: 501909307934
 . 
 end of do-file
       name:  mrmodalplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- closed on:  15 May 2026, 07:38:54
+ closed on:   8 Jul 2026, 12:04:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- opened on:  15 May 2026, 07:38:54
+ opened on:   8 Jul 2026, 12:04:22
 
 . * mrratio cscript
 . * 6jun2017
@@ -6268,17 +6268,17 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrratio
 
 -> which mrratio, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrratio.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrratio.ado
 *! 1.0.0 Tom Palmer 30may2017, based on my old tsci.ado from 8jan2010
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -6616,15 +6616,15 @@ With 3 inputs please specify the nome option.
 . 
 end of do-file
       name:  mrratio
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrratio.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- closed on:  15 May 2026, 07:38:54
+ closed on:   8 Jul 2026, 12:04:22
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- opened on:  15 May 2026, 07:38:54
+ opened on:   8 Jul 2026, 12:04:22
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -6633,25 +6633,25 @@ end of do-file
 ------------------------------------------------------------------BEGIN mrmvivw
 
 -> which mrmvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvivw.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvivw, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mvivw.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mvivw.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 -> which mvmr, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mvmr.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mvmr.ado
 *! version 0.1.0 22jun2020 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -8058,15 +8058,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvivw
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- closed on:  15 May 2026, 07:38:55
+ closed on:   8 Jul 2026, 12:04:27
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:  15 May 2026, 07:38:55
+ opened on:   8 Jul 2026, 12:04:27
 
 . * mrmvegger cscript
 . * 22un2020
@@ -8075,17 +8075,17 @@ end of do-file
 ----------------------------------------------------------------BEGIN mrmvegger
 
 -> which mrmvegger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmvegger.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmvegger.ado
 *! version 0.1.0 23jun2020 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -8874,15 +8874,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrmvegger
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:  15 May 2026, 07:38:56
+ closed on:   8 Jul 2026, 12:04:29
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:  15 May 2026, 07:38:56
+ opened on:   8 Jul 2026, 12:04:29
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -8890,10 +8890,10 @@ end of do-file
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -10800,15 +10800,15 @@ INCLUDE help mrrobust-author
 . 
 end of do-file
       name:  helpfiles
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/helpfiles.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:  15 May 2026, 07:38:56
+ closed on:   8 Jul 2026, 12:04:29
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:  15 May 2026, 07:38:56
+ opened on:   8 Jul 2026, 12:04:29
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -10817,17 +10817,17 @@ end of do-file
 ------------------------------------------------------------BEGIN mrleaveoneout
 
 -> which mrleaveoneout, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrleaveoneout.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrleaveoneout.ado
 *! version 0.1.0 31jul2020 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -11673,8 +11673,8 @@ chdbeta      |
 
 . rcof "noi mrleaveoneout chdbeta chdse ldlcbeta ldlcse if sel1==1, gyse(chdse)
 >  method(incorrectoption)" == 198
-method should be one of: ivw, egger, mregger,mrivw, median, mrmedian, mrmodal, 
-> modal, mode, mvmr, mvivw, mvegger
+method should be one of: ivw, egger, mregger, mrivw, median, mrmedian, mrmodal,
+>  modal, mode, mvmr, mvivw, mvegger
 
 . 
 . discard
@@ -17830,15 +17830,15 @@ chdbeta      |
 . 
 end of do-file
       name:  mrleaveoneout
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:  15 May 2026, 07:39:18
+ closed on:   8 Jul 2026, 12:05:01
 -------------------------------------------------------------------------------
 
 . 
 . log close _all
       name:  master
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/master.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- closed on:  15 May 2026, 07:39:18
+ closed on:   8 Jul 2026, 12:05:01
 -------------------------------------------------------------------------------

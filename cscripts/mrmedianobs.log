@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmedianobs
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:  15 May 2026, 07:38:23
+ opened on:   8 Jul 2026, 12:03:43
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -11,21 +11,21 @@
 --------------------------------------------------------------BEGIN mrmedianobs
 
 -> which mrmedianobs, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 -> which mrmedianobs_work, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmedianobs_work.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmedianobs_work.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -367,7 +367,7 @@ pvalue          0
 . 
 end of do-file
       name:  mrmedianobs
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:  15 May 2026, 07:38:30
+ closed on:   8 Jul 2026, 12:03:52
 -------------------------------------------------------------------------------

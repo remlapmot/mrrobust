@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrdeps
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:  15 May 2026, 07:35:22
+ opened on:   8 Jul 2026, 11:59:52
 
 . * mrdeps cscript
 . * 20jan2020
@@ -11,17 +11,17 @@
 -------------------------------------------------------------------BEGIN mrdeps
 
 -> which mrdeps, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrdeps.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrdeps.ado
 *! version 0.1.0 18dec2018 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -46,7 +46,7 @@ all files already exist and are up to date.
 . 
 end of do-file
       name:  mrdeps
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrdeps.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:  15 May 2026, 07:35:53
+ closed on:   8 Jul 2026, 12:00:24
 -------------------------------------------------------------------------------

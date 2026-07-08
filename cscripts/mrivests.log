@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrivests
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- opened on:  15 May 2026, 07:38:22
+ opened on:   8 Jul 2026, 12:03:42
 
 . * mrivests testcode
 . * 10jun2017
@@ -11,17 +11,17 @@
 -----------------------------------------------------------------BEGIN mrivests
 
 -> which mrivests, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrivests.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrivests.ado
 *! 0.1.0 Tom Palmer 10jun2017
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -239,7 +239,7 @@ variable ivse not found
 . 
 end of do-file
       name:  mrivests
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrivests.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- closed on:  15 May 2026, 07:38:23
+ closed on:   8 Jul 2026, 12:03:42
 -------------------------------------------------------------------------------

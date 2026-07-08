@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mrmodal
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:  15 May 2026, 07:38:30
+ opened on:   8 Jul 2026, 12:03:52
 
 . * mrmodal cscript
 . * 2jun2017
@@ -11,17 +11,17 @@
 ------------------------------------------------------------------BEGIN mrmodal
 
 -> which mrmodal, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mrmodal.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mrmodal.ado
 *! version 0.1.0 02jun2017 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -797,7 +797,7 @@ pvalue  9.369e-12
 . 
 end of do-file
       name:  mrmodal
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mrmodal.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:  15 May 2026, 07:38:37
+ closed on:   8 Jul 2026, 12:04:00
 -------------------------------------------------------------------------------

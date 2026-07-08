@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
       name:  mreggerplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:  15 May 2026, 07:35:55
+ opened on:   8 Jul 2026, 12:00:29
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -11,21 +11,21 @@
 --------------------------------------------------------------BEGIN mreggerplot
 
 -> which mreggerplot, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mreggerplot.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mreggerplot.ado
 *! version 0.1.0 Tom Palmer 06jun2016
 
 -> which mregger, usesysdir
-/Users/tom/Documents/GitHub/mrrobust/mregger.ado
+/Users/eptmp/Documents/GitHub/mrrobust/mregger.ado
 *! version 0.1.0 04jun2016 Tom Palmer
 
 . 
 . about
 
 StataNow/MP 19.5 for Unix (Apple Silicon)
-Revision 15 Apr 2026
+Revision 03 Jun 2026
 Copyright 1985-2025 StataCorp LLC
 
-Total usable memory: 16.00 GB
+Total usable memory: 18.00 GB
 
 Stata license: Unlimited-user 2-core network, expiring 29 Jan 2027
 Serial number: 501909307934
@@ -347,7 +347,7 @@ variable mlabvar not found
 . 
 end of do-file
       name:  mreggerplot
-       log:  /Users/tom/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
+       log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:  15 May 2026, 07:36:15
+ closed on:   8 Jul 2026, 12:00:56
 -------------------------------------------------------------------------------
