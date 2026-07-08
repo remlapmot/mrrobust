@@ -24,20 +24,10 @@ else if `n' > 5 {
 	exit 198
 }
 
-* only allow one of fieller or paramboot
-if "`fieller'" != "" & "`paramboot'" != "" {
-	di as err "The fieller and paramboot options may not both be specified"
-	exit 198
-}
-
 * only allow one of fieller or nome
 if "`fieller'" != "" & "`nome'" != "" {
 	di as err "fieller and nome options may not be specified together"
 	exit 198
-}
-
-if "`level'" == "" {
-	local level c(level)
 }
 
 tokenize `anything'
