@@ -137,11 +137,11 @@ if "`gxse'" != "" {
 			tempname delta`i'
 			
 			// other phenos without i
-			local phenoswithouti : subinstr local phenovarlist "`phenoname`i''" ""
+			local phenoswithouti : subinstr local phenovarlist "`phenoname`i''" "", word
 			local phenoswithouti = stritrim(strtrim("`phenoswithouti'"))
-			
+
 			// sephenos without i
-			local sephenoswithouti : subinstr local gxse "`sephenoname`i''" ""
+			local sephenoswithouti : subinstr local gxse "`sephenoname`i''" "", word
 			local sephenoswithouti = stritrim(strtrim("`sephenoswithouti'"))
 			
 			qui regress `phenoname`i'' `phenoswithouti' `if'`in', noc // TODO: does this need weighting??
