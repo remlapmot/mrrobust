@@ -2,7 +2,7 @@
       name:  mr
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- opened on:   8 Jul 2026, 11:59:10
+ opened on:   9 Jul 2026, 11:01:21
 
 . * mr cscript
 . * 20jan2020
@@ -131,7 +131,7 @@ all files already exist and are up to date.
 . 
 . ** Do et al. dataset
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . gen byte sel1 = (ldlcp2 < 1e-8)
 
@@ -538,8 +538,8 @@ chdbeta      |
 . 
 . ** mrmedianobs test dataset
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, cl
-> ear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/mrmedianobs_t
+> estdata, clear
 
 . mr medianobs y (x = z1-z20), weighted
 
@@ -557,5 +557,5 @@ end of do-file
       name:  mr
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- closed on:   8 Jul 2026, 11:59:52
+ closed on:   9 Jul 2026, 11:02:02
 -------------------------------------------------------------------------------

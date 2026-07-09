@@ -2,7 +2,7 @@
       name:  mreggersimex
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:   8 Jul 2026, 12:00:56
+ opened on:   9 Jul 2026, 11:03:04
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -33,7 +33,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -179,5 +179,5 @@ end of do-file
       name:  mreggersimex
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:18
+ closed on:   9 Jul 2026, 11:05:27
 -------------------------------------------------------------------------------

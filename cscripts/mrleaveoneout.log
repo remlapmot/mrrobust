@@ -2,7 +2,7 @@
       name:  mrleaveoneout
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:29
+ opened on:   9 Jul 2026, 11:06:39
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -29,7 +29,8 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata.dta, c
+> lear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -7026,5 +7027,5 @@ end of do-file
       name:  mrleaveoneout
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:   8 Jul 2026, 12:05:01
+ closed on:   9 Jul 2026, 11:07:11
 -------------------------------------------------------------------------------

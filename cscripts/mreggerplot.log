@@ -2,7 +2,7 @@
       name:  mreggerplot
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:   8 Jul 2026, 12:00:29
+ opened on:   9 Jul 2026, 11:02:37
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -33,7 +33,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -349,5 +349,5 @@ end of do-file
       name:  mreggerplot
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:   8 Jul 2026, 12:00:56
+ closed on:   9 Jul 2026, 11:03:04
 -------------------------------------------------------------------------------

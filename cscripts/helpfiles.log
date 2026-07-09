@@ -2,7 +2,7 @@
       name:  helpfiles
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:29
+ opened on:   9 Jul 2026, 11:06:39
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -149,7 +149,9 @@ Examples
     (2016), Table 4, LDL-c "All genetic variants" estimates.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -319,7 +321,9 @@ Examples
     (2016), Table 4, LDL-c "All genetic variants" estimates.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -473,7 +477,9 @@ Examples
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -590,7 +596,9 @@ Examples
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -729,7 +737,9 @@ Examples
     (2016), Table 4, LDL-c "All genetic variants" median estimates.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -846,8 +856,8 @@ Examples
 
     Setup
         . use
-            https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_test
-            > data, clear
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/mrmed
+            > ianobs_testdata, clear
 
     Unweighted median estimator
         . mrmedianobs y (x = z1-z20)
@@ -970,7 +980,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -1082,7 +1094,9 @@ Examples
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -1282,7 +1296,9 @@ Examples
     estimates for the LDL-c phenotype.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -1396,7 +1412,9 @@ Examples
     Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -1516,7 +1534,9 @@ Examples
     Web Figure A2 (top-right plot, LDL-C with 73 genotypes).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -1626,7 +1646,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with LDL-C < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -1764,7 +1786,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with LDL-C < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -1885,7 +1909,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel2 = (ldlcp2 < 1e-25)
@@ -1922,5 +1948,5 @@ end of do-file
       name:  helpfiles
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:29
+ closed on:   9 Jul 2026, 11:06:39
 -------------------------------------------------------------------------------

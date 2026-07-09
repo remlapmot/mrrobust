@@ -2,7 +2,7 @@
       name:  master
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- opened on:   8 Jul 2026, 11:59:10
+ opened on:   9 Jul 2026, 11:01:21
 
 . 
 . cscript master
@@ -41,7 +41,7 @@
       name:  mr
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- opened on:   8 Jul 2026, 11:59:10
+ opened on:   9 Jul 2026, 11:01:21
 
 . * mr cscript
 . * 20jan2020
@@ -170,7 +170,7 @@ all files already exist and are up to date.
 . 
 . ** Do et al. dataset
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . gen byte sel1 = (ldlcp2 < 1e-8)
 
@@ -577,8 +577,8 @@ chdbeta      |
 . 
 . ** mrmedianobs test dataset
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, cl
-> ear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/mrmedianobs_t
+> estdata, clear
 
 . mr medianobs y (x = z1-z20), weighted
 
@@ -596,13 +596,13 @@ end of do-file
       name:  mr
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mr.log
   log type:  text
- closed on:   8 Jul 2026, 11:59:52
+ closed on:   9 Jul 2026, 11:02:02
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrdeps
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- opened on:   8 Jul 2026, 11:59:52
+ opened on:   9 Jul 2026, 11:02:02
 
 . * mrdeps cscript
 . * 20jan2020
@@ -648,13 +648,13 @@ end of do-file
       name:  mrdeps
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrdeps.log
   log type:  text
- closed on:   8 Jul 2026, 12:00:24
+ closed on:   9 Jul 2026, 11:02:33
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mregger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:   8 Jul 2026, 12:00:24
+ opened on:   9 Jul 2026, 11:02:33
 
 . * mregger cscript
 . * 04jun2016
@@ -682,7 +682,7 @@ Serial number: 501909307934
 
 . 
 . *** load in dataset
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . *** ldlc - analysis 1
@@ -1509,7 +1509,8 @@ chdbeta      |
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
-.         net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+.         net install tsci, from(https://raw.githubusercontent.com/remlapmot/ts
+> ci/master)
 . }
 
 . 
@@ -2598,13 +2599,13 @@ end of do-file
       name:  mregger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:   8 Jul 2026, 12:00:29
+ closed on:   9 Jul 2026, 11:02:37
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggerplot
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- opened on:   8 Jul 2026, 12:00:29
+ opened on:   9 Jul 2026, 11:02:37
 
 . * mreggerplot testcode
 . * 6jun2016
@@ -2635,7 +2636,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -2951,13 +2952,13 @@ end of do-file
       name:  mreggerplot
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggerplot.log
   log type:  text
- closed on:   8 Jul 2026, 12:00:56
+ closed on:   9 Jul 2026, 11:03:04
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mreggersimex
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- opened on:   8 Jul 2026, 12:00:56
+ opened on:   9 Jul 2026, 11:03:04
 
 . * cscript for mreggersimex
 . * 23jul2017
@@ -2988,7 +2989,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -3134,13 +3135,13 @@ end of do-file
       name:  mreggersimex
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mreggersimex.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:18
+ closed on:   9 Jul 2026, 11:05:27
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrforest
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- opened on:   8 Jul 2026, 12:03:18
+ opened on:   9 Jul 2026, 11:05:27
 
 . * mrforest cscript
 . * 16jun2017
@@ -3167,7 +3168,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -3312,13 +3313,13 @@ end of do-file
       name:  mrforest
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrforest.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:34
+ closed on:   9 Jul 2026, 11:05:44
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrfunnel
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- opened on:   8 Jul 2026, 12:03:34
+ opened on:   9 Jul 2026, 11:05:44
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -3345,7 +3346,8 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata.dta, c
+> lear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -3428,13 +3430,13 @@ end of do-file
       name:  mrfunnel
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:42
+ closed on:   9 Jul 2026, 11:05:51
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrivests
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- opened on:   8 Jul 2026, 12:03:42
+ opened on:   9 Jul 2026, 11:05:51
 
 . * mrivests testcode
 . * 10jun2017
@@ -3461,7 +3463,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrmedian/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrmedian/master/dodata, clear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -3673,13 +3675,13 @@ end of do-file
       name:  mrivests
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrivests.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:42
+ closed on:   9 Jul 2026, 11:05:51
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedian
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- opened on:   8 Jul 2026, 12:03:42
+ opened on:   9 Jul 2026, 11:05:51
 
 . * mrmedian test code
 . * 3jun2016
@@ -3706,7 +3708,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . *** test error messages
@@ -4067,13 +4069,13 @@ end of do-file
       name:  mrmedian
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedian.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:43
+ closed on:   9 Jul 2026, 11:05:52
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmedianobs
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- opened on:   8 Jul 2026, 12:03:43
+ opened on:   9 Jul 2026, 11:05:52
 
 . * mrmedianobs cscript
 . * 4jun2016
@@ -4440,13 +4442,13 @@ end of do-file
       name:  mrmedianobs
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmedianobs.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:52
+ closed on:   9 Jul 2026, 11:06:01
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodal
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- opened on:   8 Jul 2026, 12:03:52
+ opened on:   9 Jul 2026, 11:06:01
 
 . * mrmodal cscript
 . * 2jun2017
@@ -4473,7 +4475,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . ** error messages
@@ -5243,13 +5245,13 @@ end of do-file
       name:  mrmodal
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodal.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:00
+ closed on:   9 Jul 2026, 11:06:10
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmodalplot
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:00
+ opened on:   9 Jul 2026, 11:06:10
 
 . * mrmodalplot example
 . * 2aug2017
@@ -5276,7 +5278,7 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -6253,13 +6255,13 @@ end of do-file
       name:  mrmodalplot
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmodalplot.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:22
+ closed on:   9 Jul 2026, 11:06:32
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrratio
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:22
+ opened on:   9 Jul 2026, 11:06:32
 
 . * mrratio cscript
 . * 6jun2017
@@ -6618,13 +6620,13 @@ end of do-file
       name:  mrratio
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrratio.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:22
+ closed on:   9 Jul 2026, 11:06:32
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvivw
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:22
+ opened on:   9 Jul 2026, 11:06:32
 
 . * mrmvivw cscript
 . * 22jun2020
@@ -6660,7 +6662,7 @@ Serial number: 501909307934
 
 . 
 . * load in dataset
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . * ldlc - analysis 1
@@ -8060,13 +8062,13 @@ end of do-file
       name:  mrmvivw
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvivw.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:27
+ closed on:   9 Jul 2026, 11:06:36
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrmvegger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:27
+ opened on:   9 Jul 2026, 11:06:36
 
 . * mrmvegger cscript
 . * 22un2020
@@ -8094,7 +8096,7 @@ Serial number: 501909307934
 
 . 
 . * load in dataset
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . * ldlc - analysis 1
@@ -8876,13 +8878,13 @@ end of do-file
       name:  mrmvegger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:29
+ closed on:   9 Jul 2026, 11:06:39
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  helpfiles
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:29
+ opened on:   9 Jul 2026, 11:06:39
 
 . * render the helpfiles in the Results window, to check they are approx ok
 . * 2020-07-02
@@ -9029,7 +9031,9 @@ Examples
     (2016), Table 4, LDL-c "All genetic variants" estimates.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -9199,7 +9203,9 @@ Examples
     (2016), Table 4, LDL-c "All genetic variants" estimates.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -9353,7 +9359,9 @@ Examples
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -9470,7 +9478,9 @@ Examples
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -9609,7 +9619,9 @@ Examples
     (2016), Table 4, LDL-c "All genetic variants" median estimates.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -9726,8 +9738,8 @@ Examples
 
     Setup
         . use
-            https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_test
-            > data, clear
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/mrmed
+            > ianobs_testdata, clear
 
     Unweighted median estimator
         . mrmedianobs y (x = z1-z20)
@@ -9850,7 +9862,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -9962,7 +9976,9 @@ Examples
     (2016), Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -10162,7 +10178,9 @@ Examples
     estimates for the LDL-c phenotype.
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -10276,7 +10294,9 @@ Examples
     Figure 4, LDL-c "All genetic variants" (plot in row 2, column 1).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -10396,7 +10416,9 @@ Examples
     Web Figure A2 (top-right plot, LDL-C with 73 genotypes).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -10506,7 +10528,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with LDL-C < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -10644,7 +10668,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with LDL-C < 10^-8)
         . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -10765,7 +10791,9 @@ Examples
     Using the data provided by Do et al. (2013).
 
     Setup
-        . use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+        . use
+            https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodat
+            > a, clear
 
     Select observations (p-value with exposure < 10^-8)
         . gen byte sel2 = (ldlcp2 < 1e-25)
@@ -10802,13 +10830,13 @@ end of do-file
       name:  helpfiles
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/helpfiles.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:29
+ closed on:   9 Jul 2026, 11:06:39
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
       name:  mrleaveoneout
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:29
+ opened on:   9 Jul 2026, 11:06:39
 
 . * mrleaveoneout cscript
 . * 2020-07-31
@@ -10835,7 +10863,8 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata.dta, c
+> lear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -17832,7 +17861,7 @@ end of do-file
       name:  mrleaveoneout
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrleaveoneout.log
   log type:  text
- closed on:   8 Jul 2026, 12:05:01
+ closed on:   9 Jul 2026, 11:07:11
 -------------------------------------------------------------------------------
 
 . 
@@ -17840,5 +17869,5 @@ end of do-file
       name:  master
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/master.log
   log type:  text
- closed on:   8 Jul 2026, 12:05:01
+ closed on:   9 Jul 2026, 11:07:11
 -------------------------------------------------------------------------------

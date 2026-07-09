@@ -2,7 +2,7 @@
       name:  mregger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- opened on:   8 Jul 2026, 12:00:24
+ opened on:   9 Jul 2026, 11:02:33
 
 . * mregger cscript
 . * 04jun2016
@@ -30,7 +30,7 @@ Serial number: 501909307934
 
 . 
 . *** load in dataset
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . *** ldlc - analysis 1
@@ -857,7 +857,8 @@ chdbeta      |
 *! 1.0.0 Tom Palmer 8jan2010
 
 . if _rc != 0 {
-.         net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+.         net install tsci, from(https://raw.githubusercontent.com/remlapmot/ts
+> ci/master)
 . }
 
 . 
@@ -1946,5 +1947,5 @@ end of do-file
       name:  mregger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mregger.log
   log type:  text
- closed on:   8 Jul 2026, 12:00:29
+ closed on:   9 Jul 2026, 11:02:37
 -------------------------------------------------------------------------------

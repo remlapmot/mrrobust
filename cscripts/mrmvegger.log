@@ -2,7 +2,7 @@
       name:  mrmvegger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- opened on:   8 Jul 2026, 12:04:27
+ opened on:   9 Jul 2026, 11:06:36
 
 . * mrmvegger cscript
 . * 22un2020
@@ -30,7 +30,7 @@ Serial number: 501909307934
 
 . 
 . * load in dataset
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 . 
 . * ldlc - analysis 1
@@ -812,5 +812,5 @@ end of do-file
       name:  mrmvegger
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrmvegger.log
   log type:  text
- closed on:   8 Jul 2026, 12:04:29
+ closed on:   9 Jul 2026, 11:06:39
 -------------------------------------------------------------------------------

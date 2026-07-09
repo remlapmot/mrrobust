@@ -2,7 +2,7 @@
       name:  mrfunnel
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- opened on:   8 Jul 2026, 12:03:34
+ opened on:   9 Jul 2026, 11:05:44
 
 . * mrfunnel testcode
 . * 29aug2017
@@ -29,7 +29,8 @@ Serial number: 501909307934
                University of Bristol
 
 . 
-. use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
+. use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata.dta, c
+> lear
 
 . 
 . gen byte sel1 = (ldlcp2 < 1e-8)
@@ -112,5 +113,5 @@ end of do-file
       name:  mrfunnel
        log:  /Users/eptmp/Documents/GitHub/mrrobust/cscripts/mrfunnel.log
   log type:  text
- closed on:   8 Jul 2026, 12:03:42
+ closed on:   9 Jul 2026, 11:05:51
 -------------------------------------------------------------------------------
