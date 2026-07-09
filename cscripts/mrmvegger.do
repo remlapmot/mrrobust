@@ -6,7 +6,7 @@ cscript mrmvegger adofiles mrmvegger
 about
 
 * load in dataset
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 * ldlc - analysis 1
 gen byte sel1 = (ldlcp2 < 1e-8)

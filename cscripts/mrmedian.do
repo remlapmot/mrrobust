@@ -5,7 +5,7 @@ cscript mrmedian adofiles mrmedian
 
 about
 
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 *** test error messages
 rcof "noi mrmedian chdbeta" == 102

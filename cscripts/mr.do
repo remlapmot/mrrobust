@@ -28,7 +28,7 @@ mr deps
 
 ** Do et al. dataset
 
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 gen byte sel1 = (ldlcp2 < 1e-8)
 
 mr egger chdbeta ldlcbeta [aw=1/(chdse^2)] if sel1==1, ivw fe
@@ -64,5 +64,5 @@ mr leaveoneout chdbeta ldlcbeta if sel2==1, gyse(chdse) genotype(rsid)
 
 ** mrmedianobs test dataset
 
-use https://raw.github.com/remlapmot/mrrobust/master/mrmedianobs_testdata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/mrmedianobs_testdata, clear
 mr medianobs y (x = z1-z20), weighted

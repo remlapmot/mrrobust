@@ -9,9 +9,9 @@ about
 
 cap noi ado uninstall mrrobust
 
-net desc mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/)
+net desc mrrobust, from(https://raw.githubusercontent.com/remlapmot/mrrobust/master/)
 
-net install mrrobust, from(https://raw.github.com/remlapmot/mrrobust/master/) replace
+net install mrrobust, from(https://raw.githubusercontent.com/remlapmot/mrrobust/master/) replace
 mrdeps
 
 ** github package

@@ -79,7 +79,7 @@ distribution, for calculating the Wald test and the confidence interval limits.
 {pstd}Using the data provided by {help mrmvivw##do:Do et al. (2013)}.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with LDL-C < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}

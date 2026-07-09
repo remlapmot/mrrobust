@@ -66,7 +66,7 @@ In Stata 18.0 and above {cmd:mrmodalplot} resets the default back to 6 o'clock (
 LDL-c "All genetic variants" (plot in row 2, column 1).{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}

@@ -5,7 +5,7 @@ cscript mrfunnel adofiles mrfunnel
 
 about
 
-use https://raw.github.com/remlapmot/mrrobust/master/dodata.dta, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata.dta, clear
 
 gen byte sel1 = (ldlcp2 < 1e-8)
 

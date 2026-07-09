@@ -64,7 +64,7 @@ modal, mode, mvmr, mvivw, mvegger.
 {pstd}Using the data provided by {help mrforest##do:Do et al. (2013)}.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel2 = (ldlcp2 < 1e-25)"}{p_end}

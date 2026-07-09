@@ -41,7 +41,7 @@ The {it:subcommand} is specified as the mrrobust program name without its mr pre
 {help mr##bowden:Bowden et al. (2016)}, Table 4, LDL-c "All genetic variants" estimates.{p_end}
 
 {pstd}Setup{p_end}
-{phang2}{cmd:.} {stata "use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
+{phang2}{cmd:.} {stata "use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear"}{p_end}
 
 {pstd}Select observations ({it:p}-value with exposure < 10^-8){p_end}
 {phang2}{cmd:.} {stata "gen byte sel1 = (ldlcp2 < 1e-8)"}{p_end}

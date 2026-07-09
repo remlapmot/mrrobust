@@ -5,7 +5,7 @@ cscript mrmodal adofiles mrmodal
 
 about
 
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 ** error messages
 

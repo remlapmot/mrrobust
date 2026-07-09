@@ -6,7 +6,7 @@ cscript mregger adofiles mregger
 about
 
 *** load in dataset
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 
 *** ldlc - analysis 1
 gen byte sel1 = (ldlcp2 < 1e-8)
@@ -194,7 +194,7 @@ mregger
 *** check the i^2 and q stats for this example
 cap noi which tsci
 if _rc != 0 {
-	net install tsci, from(https://raw.github.com/remlapmot/tsci/master)
+	net install tsci, from(https://raw.githubusercontent.com/remlapmot/tsci/master)
 }
 
 gen double ivests = chdbeta/ldlcbeta if sel1==1
