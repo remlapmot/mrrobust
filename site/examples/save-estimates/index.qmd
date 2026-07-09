@@ -25,7 +25,7 @@ that is now returned by each command.
 ## Setup example data
 
 ```{stata collectcode=TRUE}
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 ```
 
 Select observations (p-value with exposure < 10^-8^)

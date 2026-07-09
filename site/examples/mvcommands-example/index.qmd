@@ -22,7 +22,7 @@ adopath ++ ../../..
 Read in the @do-natgen-2013 example dataset.
 
 ```{stata collectcode=TRUE}
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 ```
 
 Select observations (p-value with LDL-C < 10<sup>-8</sup>)

@@ -30,7 +30,7 @@ gitget mrrobust
 Read in example data from @do-natgen-2013.
 
 ```{stata collectcode=TRUE, results='hide'}
-use https://raw.github.com/remlapmot/mrrobust/master/dodata, clear
+use https://raw.githubusercontent.com/remlapmot/mrrobust/master/dodata, clear
 ```
 
 Select observations (*p*-value with exposure < 10^-8^).
