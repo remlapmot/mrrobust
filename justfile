@@ -1,6 +1,6 @@
 dev:
     stata-mp "do developer"
-render:
+render: uninstall
     quarto render site
     rm -r docs/*
     mv site/_site/* docs/
